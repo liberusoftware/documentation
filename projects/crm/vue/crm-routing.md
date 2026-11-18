@@ -18,7 +18,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Crm Routing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Rule:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Territory:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Skill:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Language:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Availability:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Workload:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Value:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **SLA:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Round-robin assignment with fallback and acceptance timers:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `crm-routing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `rule`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `territory`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `skill`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `language`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `availability`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `workload`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `value`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `sla`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `round-robin-assignment-with-fallback-and-acceptance-timers`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,66 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-routing` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-crm-routing-vue-inertia`](https://github.com/liberusoftware/module-crm-routing-vue-inertia) (`@liberusoftware/module-crm-routing-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/crm-routing.md) · [Core plan](../core/crm-routing.md) · [API plan](../api/crm-routing.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Rule** | Render `rule` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Territory** | Render `territory` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Skill** | Render `skill` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Language** | Render `language` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Availability** | Render `availability` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Workload** | Render `workload` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Value** | Render `value` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **SLA** | Render `sla` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Round-robin assignment with fallback and acceptance timers** | Render `round-robin assignment with fallback and acceptance timers` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [RoutingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Queries/RoutingQuery.php) | `public function rules(int $teamId)`<br>`public function agents(int $teamId)`<br>`public function assignments(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AcceptAssignment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/AcceptAssignment.php) | `public function execute(int $teamId, int $actorId, int $id, string $status): RoutingAssignment` |
+| [AssignSubject.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/AssignSubject.php) | `public function execute(int $teamId, int $actorId, array $data): RoutingAssignment` |
+| [CreateRoutingRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/CreateRoutingRule.php) | `public function execute(int $teamId, int $actorId, array $data): RoutingRule` |
+| [UpsertRoutingAgent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/UpsertRoutingAgent.php) | `public function execute(int $teamId, int $actorId, array $data): RoutingAgent` |
+| [RoutingPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Services/RoutingPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [RoutingAgent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Models/RoutingAgent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [RoutingAssignment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Models/RoutingAssignment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [RoutingRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Models/RoutingRule.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [RoutingController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing-api/src/Http/Controllers/RoutingController.php) | `public function rules(Request $r, RoutingQuery $q)`<br>`public function rule(Request $r, CreateRoutingRule $a)`<br>`public function agent(Request $r, UpsertRoutingAgent $a)`<br>`public function agents(Request $r, RoutingQuery $q)`<br>`public function assignments(Request $r, RoutingQuery $q)`<br>`public function assign(Request $r, AssignSubject $a)`<br>`public function status(Request $r, int $assignment, string $status, AcceptAssignment $a)` |
+
+**Observed route declarations:**
+
+[modules/crm-routing-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/routing')->group(function (): void {
+Route::get('/rules', [RoutingController::class, 'rules']);
+Route::post('/rules', [RoutingController::class, 'rule']);
+Route::get('/agents', [RoutingController::class, 'agents']);
+Route::post('/agents', [RoutingController::class, 'agent']);
+Route::get('/assignments', [RoutingController::class, 'assignments']);
+Route::post('/assignments', [RoutingController::class, 'assign']);
+Route::post('/assignments/{assignment}/{status}', [RoutingController::class, 'status'])->whereIn('status', ['accepted', 'rejected', 'expired']);
+```
+<!-- layer-implementation-plan:end -->

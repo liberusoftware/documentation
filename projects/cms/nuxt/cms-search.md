@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Cms Search:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Authorized indexing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Search contracts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Filters:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Pagination:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reindexing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Provider adapters:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `cms-search`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `authorized-indexing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `search-contracts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `filters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `pagination`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reindexing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `provider-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,38 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-search` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/cms-search.md)) |
+| Capability Nuxt module skeleton | [`module-cms-search-nuxt`](https://github.com/liberusoftware/module-cms-search-nuxt) (`@liberusoftware/module-cms-search-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Authorized indexing** | Expose composable and Vue 3 component for `authorized indexing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Search contracts** | Expose composable and Vue 3 component for `search contracts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Filters** | Expose composable and Vue 3 component for `filters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Pagination** | Expose composable and Vue 3 component for `pagination` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Reindexing** | Expose composable and Vue 3 component for `reindexing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Provider adapters** | Expose composable and Vue 3 component for `provider adapters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ContentSearchService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Services/ContentSearchService.php) | `public function __construct(private SearchIndexInterface $index)`<br>`public function search(string $query, ?int $teamId = null, string $source = 'api'): array`<br>`public function analytics(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function autocomplete(string $prefix, ?int $teamId = null): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SearchAnalytic.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Models/SearchAnalytic.php) | `team_id`, `query`, `result_count`, `duration_ms`, `source` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [SearchController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Http/Controllers/SearchController.php) | `public function __construct( private SearchIndexInterface $index, private Container $container, )`<br>`public function index(SearchRequest $request): AnonymousResourceCollection` |
+<!-- layer-implementation-plan:end -->

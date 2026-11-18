@@ -33,7 +33,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `manifest/service-worker-integration-points`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `manifest-service-worker-integration-points`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `content-caching-policy`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `offline-pages`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `update-behavior`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -50,3 +50,35 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-offline-and-pwa` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-offline-and-pwa-filament`](https://github.com/liberusoftware/module-cms-offline-and-pwa-filament) (`liberusoftware/cms-offline-and-pwa-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/offline-and-pwa.md) · [API plan](../api/offline-and-pwa.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Manifest/service-worker integration points** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `manifest/service-worker integration points`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Content caching policy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `content caching policy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Offline pages** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `offline pages`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Update behavior** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `update behavior`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Install metadata** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `install metadata`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [OfflineAndPwaFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-offline-and-pwa-filament/src/OfflineAndPwaFilamentServiceProvider.php) · [ListPwaConfigurations.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-offline-and-pwa-filament/src/Resources/Pages/ListPwaConfigurations.php) · [PwaConfigurationResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-offline-and-pwa-filament/src/Resources/PwaConfigurationResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [OfflineAndPwaService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-offline-and-pwa/src/Services/OfflineAndPwaService.php) | `public function configure(string $siteKey, string $name, string $shortName, ?int $teamId = null, array $attributes = []): PwaConfiguration`<br>`public function update(PwaConfiguration $configuration, array $attributes): PwaConfiguration`<br>`public function setCachePolicy(PwaConfiguration $configuration, array $policy): PwaConfiguration`<br>`public function publishUpdate(PwaConfiguration $configuration, ?string $version = null): PwaConfiguration`<br>`public function manifest(PwaConfiguration $configuration): array`<br>`public function serviceWorker(PwaConfiguration $configuration): string` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PwaConfiguration.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-offline-and-pwa/src/Models/PwaConfiguration.php) | `site_key`, `name`, `short_name`, `start_url`, `scope`, `display`, `theme_color`, `background_color`, `icon_url`, `offline_url`, `cache_policy`, `service_worker_version`, `last_updated_at`, `team_id` |
+<!-- layer-implementation-plan:end -->

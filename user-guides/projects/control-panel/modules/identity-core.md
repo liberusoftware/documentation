@@ -12,7 +12,7 @@
 
 The intended **Identity Core** workspace covers identity core domain behavior.
 
-The relevant capability areas are **Identity Core**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Registration**, **Authentication**, **Logout**, **Password recovery**, **Verification**, **Identity linking**, **Security events**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

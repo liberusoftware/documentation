@@ -18,7 +18,17 @@ The Crm Landing Pages And Funnels module owns crm landing pages and funnels doma
 
 ## 2. Full feature scope
 
-- **Crm Landing Pages And Funnels:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Multi-step funnels:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Landing/thank-you pages:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Templates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Domains:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **SEO metadata:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Personalization:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Forms:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Order links:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Preview:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Publish:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Conversion tracking:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +88,41 @@ The Crm Landing Pages And Funnels module owns crm landing pages and funnels doma
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Multi-step funnels** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `multi-step funnels`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Landing/thank-you pages** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `landing/thank-you pages`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Templates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `templates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Domains** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `domains`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **SEO metadata** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `seo metadata`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Personalization** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `personalization`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Forms** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `forms`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Order links** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `order links`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Preview** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `preview`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Publish** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `publish`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Conversion tracking** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `conversion tracking`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-landing-pages-and-funnels.md) | [Source map](../SOURCE-MAPPING.md#crm-landing-pages-and-funnels) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-landing-pages-and-funnels.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-landing-pages-and-funnels.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-landing-pages-and-funnels-filament`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-filament) (`liberusoftware/crm-landing-pages-and-funnels-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-landing-pages-and-funnels.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-landing-pages-and-funnels.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-landing-pages-and-funnels-react-inertia`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-react-inertia) (`@liberusoftware/module-crm-landing-pages-and-funnels-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-landing-pages-and-funnels.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-landing-pages-and-funnels-vue-inertia`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-vue-inertia) (`@liberusoftware/module-crm-landing-pages-and-funnels-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-landing-pages-and-funnels.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-landing-pages-and-funnels-nuxt`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-nuxt) (`@liberusoftware/module-crm-landing-pages-and-funnels-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-landing-pages-and-funnels.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-landing-pages-and-funnels-nextjs`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-nextjs) (`@liberusoftware/module-crm-landing-pages-and-funnels-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-landing-pages-and-funnels.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-landing-pages-and-funnels-react-native`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-react-native) (`@liberusoftware/module-crm-landing-pages-and-funnels-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-landing-pages-and-funnels.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-landing-pages-and-funnels-flutter`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-flutter) (`module_crm_landing_pages_and_funnels_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-landing-pages-and-funnels.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-landing-pages-and-funnels-dart-mobile`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-dart-mobile) (`module_crm_landing_pages_and_funnels_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-landing-pages-and-funnels-dart-desktop`](https://github.com/liberusoftware/module-crm-landing-pages-and-funnels-dart-desktop) (`module_crm_landing_pages_and_funnels_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -34,7 +34,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `account/tax/dimension/payee-suggestions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `account-tax-dimension-payee-suggestions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `confidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `explanations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `user-feedback`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -52,3 +52,43 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-coding-suggestions` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-coding-suggestions-filament`](https://github.com/liberusoftware/module-accounting-coding-suggestions-filament) (`liberusoftware/accounting-coding-suggestions-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/coding-suggestions.md) · [API plan](../api/coding-suggestions.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Account/tax/dimension/payee suggestions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `account/tax/dimension/payee suggestions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Confidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `confidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Explanations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `explanations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **User feedback** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `user feedback`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Policy thresholds** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `policy thresholds`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Review** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `review`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [CodingSuggestionsFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions-filament/src/CodingSuggestionsFilamentPlugin.php) · [CodingSuggestionsFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions-filament/src/CodingSuggestionsFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CodingSuggestionQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Queries/CodingSuggestionQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ApplySuggestionFeedback.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ApplySuggestionFeedback.php) | `public function handle(CodingSuggestion $suggestion, array $feedback): CodingSuggestion` |
+| [CreateCodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/CreateCodingSuggestion.php) | `public function handle(array $attributes): CodingSuggestion` |
+| [ReviewCodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ReviewCodingSuggestion.php) | `public function handle(CodingSuggestion $suggestion, array $review): CodingSuggestion` |
+| [SetSuggestionPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/SetSuggestionPolicy.php) | `public function handle(CodingSuggestion $suggestion, array $policy): CodingSuggestion` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Models/CodingSuggestion.php) | `team_id`, `source_ref`, `target_type`, `target_ref`, `confidence`, `explanation`, `status`, `feedback`, `policy`, `review` |
+<!-- layer-implementation-plan:end -->

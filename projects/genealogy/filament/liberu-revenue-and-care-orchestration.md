@@ -18,7 +18,8 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Liberu Revenue And Care Orchestration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Liberu revenue and care orchestration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Liberu revenue and care orchestration lifecycle:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -30,6 +31,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 ### Capability mapping
 
 - `liberu-revenue-and-care-orchestration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `liberu-revenue-and-care-orchestration-lifecycle`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +44,32 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `liberu-revenue-and-care-orchestration` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-module-liberu-revenue-and-care-orchestration-5c59bca7-filament`](https://github.com/liberusoftware/module-module-liberu-revenue-and-care-orchestration-5c59bca7-filament) (`liberusoftware/module-liberu-revenue-and-care-orchestration-5c59bca7-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/liberu-revenue-and-care-orchestration.md) · [API plan](../api/liberu-revenue-and-care-orchestration.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Liberu revenue and care orchestration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `liberu revenue and care orchestration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Liberu revenue and care orchestration lifecycle** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `liberu revenue and care orchestration lifecycle`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [CarePlanResource.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource.php) · [CreateCarePlan.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/CreateCarePlan.php) · [EditCarePlan.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/EditCarePlan.php) · [ListCarePlans.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/ListCarePlans.php) · [RevenueAndCareOrchestrationFilamentServiceProvider.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/RevenueAndCareOrchestrationFilamentServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) | `public function execute(array $attributes): CarePlan` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Models/CarePlan.php) | `name`, `status`, `metadata` |
+<!-- layer-implementation-plan:end -->

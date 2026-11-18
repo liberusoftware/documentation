@@ -18,11 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Shared payment-core integration:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Tender selection:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Shared payment-contracts and payment-core integration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tender selection and dynamic capability routing:** resource/table/form/action or page behavior for this module's authorized workflow.
 - **Authorize/capture/void/refund references:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Payment status projection:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Reconciliation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Saved payment method vault and 3DS/SCA continuation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Payment status projection and settlement reconciliation:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -33,11 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `shared-payment-core-integration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `tender-selection`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `authorize/capture/void/refund-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `payment-status-projection`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `reconciliation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `shared-payment-contracts-and-payment-core-integration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tender-selection-and-dynamic-capability-routing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `authorize-capture-void-refund-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `saved-payment-method-vault-and-3ds-sca-continuation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `payment-status-projection-and-settlement-reconciliation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -50,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-payments` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-payments-filament`](https://github.com/liberusoftware/module-ecommerce-payments-filament) (`liberusoftware/ecommerce-payments-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/payments.md) · [API plan](../api/payments.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Shared payment-contracts and payment-core integration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `shared payment-contracts and payment-core integration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tender selection and dynamic capability routing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tender selection and dynamic capability routing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Authorize/capture/void/refund references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `authorize/capture/void/refund references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Saved payment method vault and 3DS/SCA continuation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `saved payment method vault and 3ds/sca continuation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Payment status projection and settlement reconciliation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payment status projection and settlement reconciliation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

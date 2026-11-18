@@ -18,7 +18,16 @@ The Module Automation Automation Core module owns module automation automation c
 
 ## 2. Full feature scope
 
-- **Module Automation Automation Core:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Workflow definitions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Versions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Triggers:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **State:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Runs:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Variables:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Schedules:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Retries:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Cancellation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Compensation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +87,40 @@ The Module Automation Automation Core module owns module automation automation c
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Workflow definitions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `workflow definitions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Versions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `versions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Triggers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `triggers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **State** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `state`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Runs** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `runs`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Variables** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `variables`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Schedules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `schedules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Retries** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `retries`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Cancellation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `cancellation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Compensation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `compensation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-automation-automation-core.md) | [Source map](../SOURCE-MAPPING.md#module-automation-automation-core) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-automation-automation-core.md) | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-automation-automation-core.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) · [`module-automation-automation-core-filament`](https://github.com/liberusoftware/module-automation-automation-core-filament) (`liberusoftware/automation-automation-core-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-automation-automation-core.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-automation-automation-core.md) | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) · [`module-automation-automation-core-react-inertia`](https://github.com/liberusoftware/module-automation-automation-core-react-inertia) (`@liberusoftware/module-automation-automation-core-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-automation-automation-core.md) | [`project-automation-laravel-inertia-vue`](https://github.com/liberusoftware/project-automation-laravel-inertia-vue) · [`module-automation-automation-core-vue-inertia`](https://github.com/liberusoftware/module-automation-automation-core-vue-inertia) (`@liberusoftware/module-automation-automation-core-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-automation-automation-core.md) | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) · [`module-automation-automation-core-nuxt`](https://github.com/liberusoftware/module-automation-automation-core-nuxt) (`@liberusoftware/module-automation-automation-core-nuxt`) | Standalone Vue SSR client consuming `project-automation-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-automation-automation-core.md) | [`project-automation-next-react`](https://github.com/liberusoftware/project-automation-next-react) · [`module-automation-automation-core-nextjs`](https://github.com/liberusoftware/module-automation-automation-core-nextjs) (`@liberusoftware/module-automation-automation-core-nextjs`) | App Router Server/Client components consuming `project-automation-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-automation-automation-core.md) | [`project-automation-mobile-react`](https://github.com/liberusoftware/project-automation-mobile-react) · [`module-automation-automation-core-react-native`](https://github.com/liberusoftware/module-automation-automation-core-react-native) (`@liberusoftware/module-automation-automation-core-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-automation-automation-core.md) | [`project-automation-mobile-flutter`](https://github.com/liberusoftware/project-automation-mobile-flutter) · [`module-automation-automation-core-flutter`](https://github.com/liberusoftware/module-automation-automation-core-flutter) (`module_automation_automation_core_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-automation-automation-core.md) | [`project-automation-dart-mobile`](https://github.com/liberusoftware/project-automation-dart-mobile) · [`module-automation-automation-core-dart-mobile`](https://github.com/liberusoftware/module-automation-automation-core-dart-mobile) (`module_automation_automation_core_dart_mobile`)<br>[`project-automation-dart-desktop`](https://github.com/liberusoftware/project-automation-dart-desktop) · [`module-automation-automation-core-dart-desktop`](https://github.com/liberusoftware/module-automation-automation-core-dart-desktop) (`module_automation_automation_core_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

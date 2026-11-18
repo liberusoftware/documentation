@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `planned:ecommerce:promotions`.
+**Adapter group:** `planned:ecommerce:promotions`.<br>
+**Matching domain module:** `promotions`
 
 **Proposed design identifier:** `module-ecommerce-promotions-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/promotions.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/promotions.md)) |
+| Capability Next.js module skeleton | [module-ecommerce-promotions-nextjs](https://github.com/liberusoftware/module-ecommerce-promotions-nextjs) (`@liberusoftware/module-ecommerce-promotions-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 No dedicated API package name match is established among the mapped consumers of this core identity. Review routes in the core/application tree and define an authorized HTTP contract before implementing browser mutations; PHP actions are not directly callable by JavaScript.
 
@@ -20,17 +27,17 @@ Observed application sources for this capability: [app/Models/Coupon.php](https:
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Codes | A focused authorized view or workflow section for codes; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Automatic discounts | A focused authorized view or workflow section for automatic discounts; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Buy-X-get-Y | A focused authorized view or workflow section for buy-x-get-y; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Bundles | A focused authorized view or workflow section for bundles; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Free shipping/gifts | A focused authorized view or workflow section for free shipping/gifts; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Customer/product eligibility | A focused authorized view or workflow section for customer/product eligibility; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Limits | A focused authorized view or workflow section for limits; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Attribution | A focused authorized view or workflow section for attribution; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Fraud controls | A focused authorized view or workflow section for fraud controls; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Codes** | Server Component loads authorized `codes` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Automatic discounts** | Server Component loads authorized `automatic discounts` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Buy-X-get-Y** | Server Component loads authorized `buy-x-get-y` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Bundles** | Server Component loads authorized `bundles` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Free shipping/gifts** | Server Component loads authorized `free shipping/gifts` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Customer/product eligibility** | Server Component loads authorized `customer/product eligibility` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Limits** | Server Component loads authorized `limits` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Attribution** | Server Component loads authorized `attribution` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Fraud controls** | Server Component loads authorized `fraud controls` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 

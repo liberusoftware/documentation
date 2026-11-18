@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-maintenance-commercial`.
+**Adapter group:** `liberusoftware/module-maintenance-commercial`.<br>
+**Matching domain module:** `commercial`
 
 **Proposed design identifier:** `module-maintenance-commercial-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/commercial.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-maintenance-next-react`](https://github.com/liberusoftware/project-maintenance-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-maintenance-laravel-api`](https://github.com/liberusoftware/project-maintenance-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/commercial.md)) |
+| Capability Next.js module skeleton | [module-maintenance-commercial-nextjs](https://github.com/liberusoftware/module-maintenance-commercial-nextjs) (`@liberusoftware/module-maintenance-commercial-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 This plan is the shared documentation home for **2 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
 
@@ -21,15 +28,15 @@ This plan is the shared documentation home for **2 existing design spellings/con
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Quotes | A focused authorized view or workflow section for quotes; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Contracts | A focused authorized view or workflow section for contracts; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Covered assets/services | A focused authorized view or workflow section for covered assets/services; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Rates | A focused authorized view or workflow section for rates; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Renewals | A focused authorized view or workflow section for renewals; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| SLA | A focused authorized view or workflow section for sla; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Billable lines | A focused authorized view or workflow section for billable lines; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Quotes** | Server Component loads authorized `quotes` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-maintenance-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Contracts** | Server Component loads authorized `contracts` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-maintenance-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Covered assets/services** | Server Component loads authorized `covered assets/services` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-maintenance-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Rates** | Server Component loads authorized `rates` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-maintenance-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Renewals** | Server Component loads authorized `renewals` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-maintenance-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **SLA** | Server Component loads authorized `sla` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-maintenance-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Billable lines** | Server Component loads authorized `billable lines` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-maintenance-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 
@@ -43,6 +50,7 @@ Observed action/service candidates for the transport review are below. A service
 | [DeleteCommercialRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial/src/Actions/DeleteCommercialRecord.php) | `public function handle(int $teamId, CommercialRecord $record): void` |
 | [TransitionCommercialRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial/src/Actions/TransitionCommercialRecord.php) | `public function handle(int $teamId, CommercialRecord $record, string $status): CommercialRecord` |
 | [UpdateCommercialRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial/src/Actions/UpdateCommercialRecord.php) | `public function handle(int $teamId, CommercialRecord $record, array $attributes): CommercialRecord` |
+| [CommercialRecordPolicy.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial/src/Policies/CommercialRecordPolicy.php) | `public function viewAny(object $user): bool`<br>`public function view(object $user, CommercialRecord $record): bool`<br>`public function create(object $user): bool`<br>`public function update(object $user, CommercialRecord $record): bool`<br>`public function delete(object $user, CommercialRecord $record): bool` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 

@@ -40,3 +40,41 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Payment links** | Model `payment links` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Deposits** | Model `deposits` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Order/subscription references** | Model `order/subscription references` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Invoice/payment status** | Model `invoice/payment status` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Refunds/disputes visibility** | Model `refunds/disputes visibility` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Billing/Ecommerce handoff** | Model `billing/ecommerce handoff` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_08_26_100000_create_crm_orders_payments_tables.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/database/migrations/2026_08_26_100000_create_crm_orders_payments_tables.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [TransactionQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Queries/TransactionQuery.php) | `public function forTeam(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateTransaction.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Actions/CreateTransaction.php) | `public function __construct(private readonly OrdersPaymentsPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PaymentTransaction` |
+| [RecordPaymentEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Actions/RecordPaymentEvent.php) | `public function __construct(private readonly OrdersPaymentsPolicy $policy)`<br>`public function execute(int $teamId, int $userId, PaymentTransaction $transaction, array $input): PaymentEvent` |
+| [OrdersPaymentsPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Services/OrdersPaymentsPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PaymentEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Models/PaymentEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentTransaction.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Models/PaymentTransaction.php) | No literal fillable array detected; inspect the model and API schema. |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/orders-and-payments-workspace.md) · [Filament 5](../filament/orders-and-payments-workspace.md) · [Livewire 4](../livewire/orders-and-payments-workspace.md) · [React + Inertia](../react/orders-and-payments-workspace.md) · [Vue + Inertia](../vue/orders-and-payments-workspace.md) · [Nuxt 4](../nuxt/orders-and-payments-workspace.md) · [Next.js](../nextjs/orders-and-payments-workspace.md) · [React Native](../react-native/orders-and-payments-workspace.md) · [Flutter & Dart](../flutter/orders-and-payments-workspace.md)
+<!-- core-implementation-plan:end -->

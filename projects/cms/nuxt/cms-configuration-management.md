@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Cms Configuration Management:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Exportable versioned CMS configuration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Environment comparison:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Dependency validation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Promotion:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Secrets exclusion:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Rollback:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `cms-configuration-management`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `exportable-versioned-cms-configuration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `environment-comparison`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `dependency-validation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `promotion`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `secrets-exclusion`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `rollback`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,34 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-configuration-management` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/cms-configuration-management.md)) |
+| Capability Nuxt module skeleton | [`module-cms-configuration-management-nuxt`](https://github.com/liberusoftware/module-cms-configuration-management-nuxt) (`@liberusoftware/module-cms-configuration-management-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Exportable versioned CMS configuration** | Expose composable and Vue 3 component for `exportable versioned cms configuration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-configuration-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Environment comparison** | Expose composable and Vue 3 component for `environment comparison` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-configuration-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Dependency validation** | Expose composable and Vue 3 component for `dependency validation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-configuration-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Promotion** | Expose composable and Vue 3 component for `promotion` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-configuration-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Secrets exclusion** | Expose composable and Vue 3 component for `secrets exclusion` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-configuration-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Rollback** | Expose composable and Vue 3 component for `rollback` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-configuration-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ConfigurationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-configuration-management/src/Services/ConfigurationService.php) | `public function __construct(private DatabaseManager $db)`<br>`public function releases(?int $teamId, string $environment, int $perPage = 25): LengthAwarePaginator`<br>`public function export(array $payload, string $version, string $environment, ?int $actorId = null, ?int $teamId = null, array $dependencies = []): ConfigurationRelease`<br>`public function compare(ConfigurationRelease $from, ConfigurationRelease $to): array`<br>`public function validateDependencies(ConfigurationRelease $release, array $available): array`<br>`public function promote(ConfigurationRelease $release, array $available = []): ConfigurationRelease`<br>`public function rollback(ConfigurationRelease $release): ConfigurationRelease` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ConfigurationRelease.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-configuration-management/src/Models/ConfigurationRelease.php) | `team_id`, `version`, `environment`, `payload`, `dependencies`, `checksum`, `status`, `created_by`, `promoted_at`, `rolled_back_at` |
+<!-- layer-implementation-plan:end -->

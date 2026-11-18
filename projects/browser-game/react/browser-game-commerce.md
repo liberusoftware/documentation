@@ -18,7 +18,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Browser Game Commerce:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Premium membership:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Entitlements:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Store:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Regional pricing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Receipts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Refunds:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Parental controls:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `browser-game-commerce`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `premium-membership`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `entitlements`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `store`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `regional-pricing`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `receipts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `refunds`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `parental-controls`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,57 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `browser-game-commerce` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-browser-game-laravel-inertia-react`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-browser-game-commerce-react-inertia`](https://github.com/liberusoftware/module-browser-game-commerce-react-inertia) (`@liberusoftware/module-browser-game-commerce-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/browser-game-commerce.md) · [Core plan](../core/browser-game-commerce.md) · [API plan](../api/browser-game-commerce.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Premium membership** | Render `premium membership` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Entitlements** | Render `entitlements` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Store** | Render `store` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Regional pricing** | Render `regional pricing` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Receipts** | Render `receipts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Refunds** | Render `refunds` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Parental controls** | Render `parental controls` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CommerceQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Queries/CommerceQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CommerceEntitlement.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceEntitlement.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CommerceOrder.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceOrder.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CommerceOrderLine.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceOrderLine.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CommerceProduct.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceProduct.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CommerceRecord.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceRecord.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CommerceController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/src/Http/Controllers/CommerceController.php) | `public function index(Request $request): JsonResponse`<br>`public function products(Request $request): JsonResponse`<br>`public function checkout(Request $request): JsonResponse`<br>`public function complete(Request $request, CommerceOrder $order): JsonResponse`<br>`public function refund(Request $request, CommerceOrder $order): JsonResponse`<br>`public function show(Request $request, CommerceRecord $commerce): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/browser-game-commerce-api/routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/browser-game/commerce')->middleware(['api', 'auth:sanctum', 'throttle:api'])->group(function (): void {
+Route::get('/', [CommerceController::class, 'index'])->name('browser-game.commerce.index');
+Route::get('/products', [CommerceController::class, 'products'])->name('browser-game.commerce.products');
+Route::post('/checkout', [CommerceController::class, 'checkout'])->name('browser-game.commerce.checkout');
+Route::post('/orders/{order}/complete', [CommerceController::class, 'complete'])->name('browser-game.commerce.orders.complete');
+Route::post('/orders/{order}/refund', [CommerceController::class, 'refund'])->name('browser-game.commerce.orders.refund');
+Route::get('/{commerce}', [CommerceController::class, 'show'])->name('browser-game.commerce.show');
+```
+<!-- layer-implementation-plan:end -->

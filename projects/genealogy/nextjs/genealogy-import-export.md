@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-genealogy-import-export`.
+**Adapter group:** `liberusoftware/module-genealogy-import-export`.<br>
+**Matching domain module:** `genealogy-import-export`
 
 **Proposed design identifier:** `module-genealogy-import-export-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/genealogy-import-export.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-genealogy-next-react`](https://github.com/liberusoftware/project-genealogy-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/genealogy-import-export.md)) |
+| Capability Next.js module skeleton | [module-genealogy-import-export-nextjs](https://github.com/liberusoftware/module-genealogy-import-export-nextjs) (`@liberusoftware/module-genealogy-import-export-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 | Boundary | Observed package reference |
 | --- | --- |
@@ -19,9 +26,14 @@ The [domain specification](../features/genealogy-import-export.md) owns the inte
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Genealogy Import Export | A focused authorized view or workflow section for genealogy import export; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **GEDCOM and GRAMPS mapping** | Server Component loads authorized `gedcom and gramps mapping` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-genealogy-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Validation** | Server Component loads authorized `validation` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-genealogy-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Dry run** | Server Component loads authorized `dry run` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-genealogy-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Duplicate detection** | Server Component loads authorized `duplicate detection` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-genealogy-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Reports** | Server Component loads authorized `reports` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-genealogy-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Round trip** | Server Component loads authorized `round trip` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-genealogy-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 
@@ -33,7 +45,7 @@ Observed action/service candidates for the transport review are below. A service
 | --- | --- |
 | [CreateDataTransfer.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-import-export/src/Actions/CreateDataTransfer.php) | `public function execute(array $attributes): DataTransfer`<br>`public function validate(array $values): void` |
 | [DeleteDataTransfer.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-import-export/src/Actions/DeleteDataTransfer.php) | `public function execute(DataTransfer $transfer): void` |
-| [ExportGenealogyData.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-import-export/src/Actions/ExportGenealogyData.php) | `public function execute(string $format = 'gedcom', string $name = 'Genealogy export'): ExportedGenealogyData` |
+| [ExportGenealogyData.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-import-export/src/Actions/ExportGenealogyData.php) | `public function __construct( private readonly CreateDataTransfer $create, private readonly UpdateDataTransfer $update, private readonly GedcomExporter $gedcom, private readonly GedcomXExporter $gedcomX, private readonly GrampsExporter $gramps, )`<br>`public function execute(string $format = 'gedcom', string $name = 'Genealogy export'): ExportedGenealogyData` |
 | [UndoDataTransfer.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-import-export/src/Actions/UndoDataTransfer.php) | `public function execute(DataTransfer $transfer): DataTransfer` |
 | [UpdateDataTransfer.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-import-export/src/Actions/UpdateDataTransfer.php) | `public function execute(DataTransfer $transfer, array $attributes): DataTransfer` |
 

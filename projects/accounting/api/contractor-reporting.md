@@ -19,12 +19,12 @@ This optional API presentation package exposes approved HTTP operations for the 
 The domain capability includes:
 
 - 1099-style thresholds
-- classifications
-- payee validation
-- forms
-- electronic filing adapters
-- corrections
-- evidence
+- Classifications
+- Payee validation
+- Forms
+- Electronic filing adapters
+- Corrections
+- Evidence
 
 Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
 
@@ -39,6 +39,30 @@ Installation does not expose every capability automatically. The host applicatio
 ## 3. Endpoint examples
 
 **Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
+
+### Product API backend and client integration
+
+This module API adapter is composed into [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api), the shared Laravel HTTP backend for independent web, mobile, and desktop clients ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [repository map](../../REPOSITORIES.md#laravel-applications)).
+
+| Consuming client surface | Host repository | Module adapter plan | Transport and auth contract |
+| --- | --- | --- | --- |
+| Next.js React | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) | [Next.js plan](../nextjs/contractor-reporting.md) | Server Component / Route Handler / BFF or Sanctum SPA with `no-store` private reads |
+| Nuxt 4 Vue | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | [Nuxt plan](../nuxt/contractor-reporting.md) | Nitro SSR / BFF or Sanctum SPA with actor/tenant-scoped `useFetch` keys |
+| React Native Expo | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) | [React Native plan](../react-native/contractor-reporting.md) | Typed client with Keychain/Keystore token storage, PKCE/Sanctum, and idempotent retries |
+| Flutter mobile | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) | [Flutter plan](../flutter/contractor-reporting.md) | Typed Dart DTOs and platform-secure credentials on iOS and Android |
+| Dart mobile & desktop | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) | [Flutter & Dart plan](../flutter/contractor-reporting.md) | Separate mobile and desktop native hosts consuming the same versioned `/api/v1` contract |
+
+### Feature-to-API capability and operation matrix
+
+| Feature / aspect | HTTP query and command intent | DTO allowlist, concurrency, and error contract |
+| --- | --- | --- |
+| **1099-style thresholds** | Expose authorized query/read projection and explicit domain transition command for `1099-style thresholds` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Classifications** | Expose authorized query/read projection and explicit domain transition command for `classifications` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Payee validation** | Expose authorized query/read projection and explicit domain transition command for `payee validation` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Forms** | Expose authorized query/read projection and explicit domain transition command for `forms` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Electronic filing adapters** | Expose authorized query/read projection and explicit domain transition command for `electronic filing adapters` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Corrections** | Expose authorized query/read projection and explicit domain transition command for `corrections` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Evidence** | Expose authorized query/read projection and explicit domain transition command for `evidence` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
 
 | Boundary | Observed identity and implementation reference |
 | --- | --- |
@@ -67,6 +91,25 @@ The signatures identify request handlers to review; their argument names are not
 | Controller source | Public handler signatures |
 | --- | --- |
 | [ContractorReportsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-reporting-api/src/Http/Controllers/ContractorReportsController.php) | `public function index(ContractorReportQuery $query): JsonResponse`<br>`public function store(Request $request, CreateContractorReport $action): JsonResponse`<br>`public function validateReport(Request $request, string $report, ValidateContractorReport $action): JsonResponse`<br>`public function file(Request $request, string $report, FileContractorReport $action): JsonResponse` |
+
+### Observed domain queries, actions, and storage models
+
+API controllers delegate to these observed core domain entry points and serialize only allowlisted DTO fields rather than raw storage models.
+
+| Core query source | Observed signatures |
+| --- | --- |
+| [ContractorReportQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-reporting/src/Queries/ContractorReportQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Core action / service source | Observed signatures |
+| --- | --- |
+| [CorrectContractorReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-reporting/src/Actions/CorrectContractorReport.php) | `public function handle(ContractorReport $report, array $correction): ContractorReport` |
+| [CreateContractorReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-reporting/src/Actions/CreateContractorReport.php) | `public function handle(array $attributes): ContractorReport` |
+| [FileContractorReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-reporting/src/Actions/FileContractorReport.php) | `public function handle(ContractorReport $report, string $adapter): ContractorReport` |
+| [ValidateContractorReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-reporting/src/Actions/ValidateContractorReport.php) | `public function handle(ContractorReport $report, array $validation): ContractorReport` |
+
+| Core storage model | Observed fillable fields (review for DTO allowlist) |
+| --- | --- |
+| [ContractorReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-reporting/src/Models/ContractorReport.php) | `team_id`, `payee_ref`, `tax_year`, `classification`, `threshold`, `reportable_amount`, `form_type`, `status`, `filing_adapter`, `payee_validation`, `correction`, `evidence` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

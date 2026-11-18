@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-cms-digital-asset-management`.
+**Adapter group:** `liberusoftware/module-cms-digital-asset-management`.<br>
+**Matching domain module:** `digital-asset-management`
 
 **Proposed design identifier:** `module-cms-digital-asset-management-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/digital-asset-management.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/digital-asset-management.md)) |
+| Capability Next.js module skeleton | [module-cms-digital-asset-management-nextjs](https://github.com/liberusoftware/module-cms-digital-asset-management-nextjs) (`@liberusoftware/module-cms-digital-asset-management-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 This plan is the shared documentation home for **3 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
 
@@ -21,17 +28,17 @@ This plan is the shared documentation home for **3 existing design spellings/con
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Rights | A focused authorized view or workflow section for rights; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Licenses | A focused authorized view or workflow section for licenses; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Attribution | A focused authorized view or workflow section for attribution; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Consent/model releases | A focused authorized view or workflow section for consent/model releases; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Expiry | A focused authorized view or workflow section for expiry; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Brand assets | A focused authorized view or workflow section for brand assets; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Renditions | A focused authorized view or workflow section for renditions; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Approvals | A focused authorized view or workflow section for approvals; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Distribution | A focused authorized view or workflow section for distribution; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Rights** | Server Component loads authorized `rights` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Licenses** | Server Component loads authorized `licenses` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Attribution** | Server Component loads authorized `attribution` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Consent/model releases** | Server Component loads authorized `consent/model releases` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Expiry** | Server Component loads authorized `expiry` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Brand assets** | Server Component loads authorized `brand assets` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Renditions** | Server Component loads authorized `renditions` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Approvals** | Server Component loads authorized `approvals` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Distribution** | Server Component loads authorized `distribution` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-cms-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 

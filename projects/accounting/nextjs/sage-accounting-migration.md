@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-accounting-sage-accounting-migration`.
+**Adapter group:** `liberusoftware/module-accounting-sage-accounting-migration`.<br>
+**Matching domain module:** `sage-accounting-migration`
 
 **Proposed design identifier:** `module-accounting-sage-accounting-migration-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/sage-accounting-migration.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/sage-accounting-migration.md)) |
+| Capability Next.js module skeleton | [module-accounting-sage-accounting-migration-nextjs](https://github.com/liberusoftware/module-accounting-sage-accounting-migration-nextjs) (`@liberusoftware/module-accounting-sage-accounting-migration-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 This plan is the shared documentation home for **2 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
 
@@ -21,19 +28,19 @@ This plan is the shared documentation home for **2 existing design spellings/con
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Chart/analysis types | A focused authorized view or workflow section for chart/analysis types; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Contacts | A focused authorized view or workflow section for contacts; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Products | A focused authorized view or workflow section for products; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Sales/purchases | A focused authorized view or workflow section for sales/purchases; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Payments | A focused authorized view or workflow section for payments; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Bank | A focused authorized view or workflow section for bank; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| VAT/CIS evidence | A focused authorized view or workflow section for vat/cis evidence; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Currencies | A focused authorized view or workflow section for currencies; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Budgets | A focused authorized view or workflow section for budgets; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Attachments | A focused authorized view or workflow section for attachments; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Source IDs | A focused authorized view or workflow section for source ids; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Chart/analysis types** | Server Component loads authorized `chart/analysis types` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Contacts** | Server Component loads authorized `contacts` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Products** | Server Component loads authorized `products` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Sales/purchases** | Server Component loads authorized `sales/purchases` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Payments** | Server Component loads authorized `payments` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Bank** | Server Component loads authorized `bank` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **VAT/CIS evidence** | Server Component loads authorized `vat/cis evidence` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Currencies** | Server Component loads authorized `currencies` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Budgets** | Server Component loads authorized `budgets` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Attachments** | Server Component loads authorized `attachments` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Source IDs** | Server Component loads authorized `source ids` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-accounting-erp-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 

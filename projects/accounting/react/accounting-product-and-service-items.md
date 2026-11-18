@@ -18,7 +18,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Product And Service Items:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Items/services:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Codes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Purchase/sales descriptions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Accounts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Tax defaults:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Units:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Costs/prices:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Ecommerce references:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-product-and-service-items`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `items-services`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `codes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `purchase-sales-descriptions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `accounts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `tax-defaults`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `units`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `costs-prices`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `ecommerce-references`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,56 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-product-and-service-items` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-product-and-service-items-react-inertia`](https://github.com/liberusoftware/module-accounting-product-and-service-items-react-inertia) (`@liberusoftware/module-accounting-product-and-service-items-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-product-and-service-items.md) · [Core plan](../core/accounting-product-and-service-items.md) · [API plan](../api/accounting-product-and-service-items.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Items/services** | Render `items/services` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Codes** | Render `codes` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Purchase/sales descriptions** | Render `purchase/sales descriptions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Accounts** | Render `accounts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Tax defaults** | Render `tax defaults` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Units** | Render `units` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Costs/prices** | Render `costs/prices` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Ecommerce references** | Render `ecommerce references` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [FindAccountingItems.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-product-and-service-items/src/Queries/FindAccountingItems.php) | `public function search(?string $term = null): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [SaveAccountingItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-product-and-service-items/src/Actions/SaveAccountingItem.php) | `public function handle(array $attributes): AccountingItem` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AccountingItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-product-and-service-items/src/Models/AccountingItem.php) | `team_id`, `code`, `name`, `kind`, `purchase_description`, `sales_description`, `sales_account_ref`, `purchase_account_ref`, `tax_default_ref`, `unit`, `purchase_price`, `sales_price`, `currency`, `status`, `ecommerce_refs`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ProductAndServiceItemsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-product-and-service-items-api/src/Http/Controllers/ProductAndServiceItemsController.php) | `public function index(Request $request, FindAccountingItems $query): AnonymousResourceCollection`<br>`public function store(Request $request, SaveAccountingItem $action): JsonResponse`<br>`public function show(Request $request, AccountingItem $accountingItem): AccountingItemResource` |
+
+**Observed route declarations:**
+
+[modules/accounting-product-and-service-items-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-product-and-service-items-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/product-and-service-items')->group(function (): void {
+Route::middleware('ability:accounting.product-and-service-items.read')->group(function (): void {
+Route::get('/', [ProductAndServiceItemsController::class, 'index']);
+Route::get('/{accountingItem}', [ProductAndServiceItemsController::class, 'show']);
+Route::post('/', [ProductAndServiceItemsController::class, 'store'])->middleware('ability:accounting.product-and-service-items.write');
+```
+<!-- layer-implementation-plan:end -->

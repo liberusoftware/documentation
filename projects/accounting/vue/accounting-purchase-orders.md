@@ -18,7 +18,17 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Accounting Purchase Orders:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Supplier items:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Prices:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Quantities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Delivery:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Approval:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Issue:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Receipts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Partials:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Changes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Closure:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Commitments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +39,17 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `accounting-purchase-orders`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `supplier-items`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `prices`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `quantities`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `delivery`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `approval`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `issue`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `receipts`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `partials`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `changes`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `closure`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `commitments`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +80,66 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-purchase-orders` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-accounting-purchase-orders-vue-inertia`](https://github.com/liberusoftware/module-accounting-purchase-orders-vue-inertia) (`@liberusoftware/module-accounting-purchase-orders-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/accounting-purchase-orders.md) · [Core plan](../core/accounting-purchase-orders.md) · [API plan](../api/accounting-purchase-orders.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Supplier items** | Render `supplier items` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Prices** | Render `prices` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Quantities** | Render `quantities` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Delivery** | Render `delivery` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Approval** | Render `approval` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Issue** | Render `issue` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Receipts** | Render `receipts` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Partials** | Render `partials` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Changes** | Render `changes` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Closure** | Render `closure` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Commitments** | Render `commitments` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreatePurchaseOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Actions/CreatePurchaseOrder.php) | `public function handle(array $attributes, array $lines): PurchaseOrder` |
+| [RecordPurchaseOrderChange.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Actions/RecordPurchaseOrderChange.php) | `public function handle(PurchaseOrder $order, array $attributes): PurchaseOrderChange` |
+| [RecordPurchaseReceipt.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Actions/RecordPurchaseReceipt.php) | `public function handle(PurchaseOrder $order, array $attributes): PurchaseReceipt` |
+| [TransitionPurchaseOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Actions/TransitionPurchaseOrder.php) | `public function handle(PurchaseOrder $order, PurchaseOrderStatus $status, array $attributes = []): PurchaseOrder` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PurchaseOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Models/PurchaseOrder.php) | `team_id`, `supplier_ref`, `order_number`, `currency`, `order_date`, `expected_delivery_on`, `total_amount`, `status`, `commitment_ref`, `source_requisition_ref`, `notes`, `metadata` |
+| [PurchaseOrderChange.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Models/PurchaseOrderChange.php) | `order_id`, `version`, `changes`, `reason`, `actor_ref`, `approved_at`, `metadata` |
+| [PurchaseOrderLine.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Models/PurchaseOrderLine.php) | `order_id`, `item_ref`, `description`, `quantity`, `unit_price`, `received_quantity`, `delivery_metadata`, `metadata` |
+| [PurchaseReceipt.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders/src/Models/PurchaseReceipt.php) | `order_id`, `receipt_ref`, `received_on`, `lines`, `status`, `document_ref`, `metadata` |
+| [PurchaseOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders-api/src/Models/PurchaseOrder.php) | `supplier_id`, `po_number`, `order_date`, `expected_delivery_date`, `total_amount`, `status`, `notes`, `purchase_request_id`, `team_id` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [PurchaseOrdersController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders-api/src/Http/Controllers/PurchaseOrdersController.php) | `public function index(Request $request): AnonymousResourceCollection`<br>`public function store(Request $request, CreatePurchaseOrder $action): JsonResponse`<br>`public function show(Request $request, PurchaseOrder $order): PurchaseOrderResource`<br>`public function transition(Request $request, PurchaseOrder $order, TransitionPurchaseOrder $action): PurchaseOrderResource`<br>`public function receipt(Request $request, PurchaseOrder $order, RecordPurchaseReceipt $action): JsonResponse`<br>`public function change(Request $request, PurchaseOrder $order, RecordPurchaseOrderChange $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-purchase-orders-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-orders-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/purchase-orders')->group(function (): void {
+Route::middleware('ability:accounting.purchase-orders.read')->group(function (): void {
+Route::get('/', [PurchaseOrdersController::class, 'index']);
+Route::get('/{order}', [PurchaseOrdersController::class, 'show']);
+Route::middleware('ability:accounting.purchase-orders.write')->group(function (): void {
+Route::post('/', [PurchaseOrdersController::class, 'store']);
+Route::post('/{order}/transition', [PurchaseOrdersController::class, 'transition']);
+Route::post('/{order}/receipts', [PurchaseOrdersController::class, 'receipt']);
+Route::post('/{order}/changes', [PurchaseOrdersController::class, 'change']);
+```
+<!-- layer-implementation-plan:end -->

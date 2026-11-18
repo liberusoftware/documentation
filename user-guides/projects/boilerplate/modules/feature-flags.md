@@ -12,7 +12,7 @@
 
 The intended **Feature Flags** workspace covers feature flags domain behavior.
 
-The relevant capability areas are **Feature Flags**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Typed flags**, **Environment/tenant/user targeting**, **Rollout**, **Telemetry**, **Ownership**, **Cleanup**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -18,7 +18,16 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Cpq:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Guided configuration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Compatibility rules:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Price books:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Tiers:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Discounts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Approvals:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Margin guardrails:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Amendments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Renewals:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Authoritative pricing adapters:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +38,16 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-cpq`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `guided-configuration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `compatibility-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `price-books`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `tiers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `discounts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `approvals`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `margin-guardrails`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `amendments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `renewals`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `authoritative-pricing-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +68,60 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-cpq` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-cpq.md)) |
+| Capability Nuxt module skeleton | [`module-crm-cpq-nuxt`](https://github.com/liberusoftware/module-crm-cpq-nuxt) (`@liberusoftware/module-crm-cpq-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Guided configuration** | Expose composable and Vue 3 component for `guided configuration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Compatibility rules** | Expose composable and Vue 3 component for `compatibility rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Price books** | Expose composable and Vue 3 component for `price books` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Tiers** | Expose composable and Vue 3 component for `tiers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Discounts** | Expose composable and Vue 3 component for `discounts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Approvals** | Expose composable and Vue 3 component for `approvals` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Margin guardrails** | Expose composable and Vue 3 component for `margin guardrails` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Amendments** | Expose composable and Vue 3 component for `amendments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Renewals** | Expose composable and Vue 3 component for `renewals` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Authoritative pricing adapters** | Expose composable and Vue 3 component for `authoritative pricing adapters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-cpq.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CpqQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Queries/CpqQuery.php) | `public function quotes(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PriceQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Actions/PriceQuote.php) | `public function execute(int $teamId, int $userId, array $input): CpqQuote` |
+| [SubmitQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Actions/SubmitQuote.php) | `public function execute(int $teamId, int $userId, CpqQuote $quote): CpqApproval` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CpqApproval.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Models/CpqApproval.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CpqQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Models/CpqQuote.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CpqController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-api/src/Http/Controllers/CpqController.php) | `public function __construct(private readonly CpqQuery $query)`<br>`public function index(Request $request): JsonResponse`<br>`public function show(int $quote): CpqQuoteResource`<br>`public function store(PriceQuote $action): JsonResponse`<br>`public function submit(int $quote, SubmitQuote $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-cpq-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/cpq')->group(function (): void {
+Route::get('quotes', [CpqController::class, 'index']);
+Route::post('quotes', [CpqController::class, 'store']);
+Route::get('quotes/{quote}', [CpqController::class, 'show']);
+Route::post('quotes/{quote}/submit', [CpqController::class, 'submit']);
+```
+<!-- layer-implementation-plan:end -->

@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-crm-consent-and-preferences`.
+**Adapter group:** `liberusoftware/module-crm-consent-and-preferences`.<br>
+**Matching domain module:** `consent-and-preferences`
 
 **Proposed design identifier:** `module-crm-consent-and-preferences-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/consent-and-preferences.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/consent-and-preferences.md)) |
+| Capability Next.js module skeleton | [module-crm-consent-and-preferences-nextjs](https://github.com/liberusoftware/module-crm-consent-and-preferences-nextjs) (`@liberusoftware/module-crm-consent-and-preferences-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 This plan is the shared documentation home for **2 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
 
@@ -21,18 +28,18 @@ This plan is the shared documentation home for **2 existing design spellings/con
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Lawful basis | A focused authorized view or workflow section for lawful basis; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Subscriptions | A focused authorized view or workflow section for subscriptions; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Channel/topic preferences | A focused authorized view or workflow section for channel/topic preferences; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Suppression | A focused authorized view or workflow section for suppression; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Quiet hours | A focused authorized view or workflow section for quiet hours; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Recording consent | A focused authorized view or workflow section for recording consent; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Proof | A focused authorized view or workflow section for proof; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Expiry | A focused authorized view or workflow section for expiry; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Withdrawal | A focused authorized view or workflow section for withdrawal; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Policy evaluation | A focused authorized view or workflow section for policy evaluation; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Lawful basis** | Server Component loads authorized `lawful basis` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Subscriptions** | Server Component loads authorized `subscriptions` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Channel/topic preferences** | Server Component loads authorized `channel/topic preferences` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Suppression** | Server Component loads authorized `suppression` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Quiet hours** | Server Component loads authorized `quiet hours` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Recording consent** | Server Component loads authorized `recording consent` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Proof** | Server Component loads authorized `proof` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Expiry** | Server Component loads authorized `expiry` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Withdrawal** | Server Component loads authorized `withdrawal` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Policy evaluation** | Server Component loads authorized `policy evaluation` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 

@@ -18,7 +18,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Collections:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Custom collections:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Hierarchical and flat taxonomies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Term assignments and ordering:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Filterable archive queries:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Localized term slugs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-cms-collections`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `custom-collections`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `hierarchical-and-flat-taxonomies`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `term-assignments-and-ordering`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `filterable-archive-queries`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `localized-term-slugs`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,42 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-collections` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-collections-vue-inertia`](https://github.com/liberusoftware/module-cms-collections-vue-inertia) (`@liberusoftware/module-cms-collections-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-cms-collections.md) · [Core plan](../core/module-cms-collections.md) · [API plan](../api/module-cms-collections.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Custom collections** | Render `custom collections` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Hierarchical and flat taxonomies** | Render `hierarchical and flat taxonomies` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Term assignments and ordering** | Render `term assignments and ordering` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Filterable archive queries** | Render `filterable archive queries` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Localized term slugs** | Render `localized term slugs` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CollectionQuery.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-collections/src/Queries/CollectionQuery.php) | `public function paginate(int $perPage = 15, string $search = ''): LengthAwarePaginator`<br>`public function published(string $slug, int $perPage = 15, string $search = ''): LengthAwarePaginator`<br>`public function publishedCollection(string $slug): ?Collection`<br>`public function item(string $collection, string $slug): ?CollectionItem` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CollectionMutationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-collections/src/Actions/CollectionMutationService.php) | `public function create(array $attributes): Collection`<br>`public function update(Collection $collection, array $attributes): Collection`<br>`public function delete(Collection $collection): void`<br>`public function createItem(Collection $collection, array $attributes): CollectionItem`<br>`public function updateItem(CollectionItem $item, array $attributes): CollectionItem`<br>`public function deleteItem(CollectionItem $item): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Collection.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-collections/src/Models/Collection.php) | `name`, `slug`, `type`, `description`, `schema`, `team_id` |
+| [CollectionItem.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-collections/src/Models/CollectionItem.php) | `title`, `slug`, `content`, `excerpt`, `data`, `metadata`, `status`, `published_at`, `collection_id`, `user_id`, `team_id` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CollectionApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-collections/src/Http/Controllers/CollectionApiController.php) | `public function __construct(private CollectionQuery $collections)`<br>`public function index(): AnonymousResourceCollection`<br>`public function show(string $slug): CollectionResource`<br>`public function items(string $collection): AnonymousResourceCollection`<br>`public function item(string $collection, string $slug): CollectionItemResource` |
+<!-- layer-implementation-plan:end -->

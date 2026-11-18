@@ -12,7 +12,7 @@
 
 The intended **Referrals** workspace covers referral programs, links/codes, advocates, prospects, qualification, rewards, fraud/duplicate controls, status, and attribution.
 
-The relevant capability areas are **Referral programs**, **Links/codes**, **Advocates**, **Prospects**, **Qualification**, **Rewards**, **Fraud/duplicate controls**, **Status**, **Attribution**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Referral programs extending AffiliateProgramContract**, **Links/codes via ReferralAttributionContract**, **Advocates and referred prospects**, **Qualification via ConversionRecorderContract**, **Rewards via RewardFulfillmentContract**, **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract**, **Status and multi-touch attribution**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

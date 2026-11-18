@@ -37,12 +37,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 ### Capability mapping
 
 - `fixed-fee`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `time/material`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `time-material`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `milestone`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `progress`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `retainer`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `billable-time/expense`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `write-up/down`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `billable-time-expense`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `write-up-down`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `invoice-handoff`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
@@ -64,3 +64,61 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-project-billing` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/project-billing.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-project-billing-nuxt`](https://github.com/liberusoftware/module-accounting-project-billing-nuxt) (`@liberusoftware/module-accounting-project-billing-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Fixed fee** | Expose composable and Vue 3 component for `fixed fee` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Time/material** | Expose composable and Vue 3 component for `time/material` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Milestone** | Expose composable and Vue 3 component for `milestone` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Progress** | Expose composable and Vue 3 component for `progress` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Retainer** | Expose composable and Vue 3 component for `retainer` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Billable time/expense** | Expose composable and Vue 3 component for `billable time/expense` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Write-up/down** | Expose composable and Vue 3 component for `write-up/down` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Invoice handoff** | Expose composable and Vue 3 component for `invoice handoff` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/project-billing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ProjectBillingSummary.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-billing/src/Queries/ProjectBillingSummary.php) | `public function forProject(int $projectJobId, ?int $teamId = null): array`<br>`public function summarize(Collection $rows): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [HandoffProjectBilling.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-billing/src/Actions/HandoffProjectBilling.php) | `public function handle(ProjectBilling $billing, ?string $invoiceRef = null): ProjectBilling` |
+| [RecordProjectBilling.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-billing/src/Actions/RecordProjectBilling.php) | `public function handle(array $attributes): ProjectBilling` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ProjectBilling.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-billing/src/Models/ProjectBilling.php) | `team_id`, `project_job_id`, `method`, `status`, `period_start`, `period_end`, `currency`, `quantity`, `rate`, `amount`, `progress_percent`, `billable_time_amount`, `billable_expense_amount`, `retainer_amount`, `write_up_down_amount`, `source_ref`, `invoice_ref`, `metadata` |
+| [Project.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-billing-api/src/Models/Project.php) | `name`, `code`, `description`, `start_date`, `end_date`, `status`, `allocation_percentage` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ProjectBillingController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-billing-api/src/Http/Controllers/ProjectBillingController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, RecordProjectBilling $action): mixed`<br>`public function show(Request $request, ProjectBilling $projectBilling): ProjectBilling`<br>`public function handoff(Request $request, ProjectBilling $projectBilling, HandoffProjectBilling $action): ProjectBilling`<br>`public function summary(Request $request, int $projectJobId, ProjectBillingSummary $query): array` |
+
+**Observed route declarations:**
+
+[modules/accounting-project-billing-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-billing-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/project-billing')->group(function (): void {
+Route::middleware('ability:accounting.project-billing.read')->group(function (): void {
+Route::get('/', [ProjectBillingController::class, 'index']);
+Route::get('/{projectBilling}', [ProjectBillingController::class, 'show']);
+Route::get('/project/{projectJobId}/summary', [ProjectBillingController::class, 'summary']);
+Route::middleware('ability:accounting.project-billing.write')->group(function (): void {
+Route::post('/', [ProjectBillingController::class, 'store']);
+Route::post('/{projectBilling}/handoff', [ProjectBillingController::class, 'handoff']);
+```
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Module Automation Voice:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Speech-to-text:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Text-to-speech:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Streaming sessions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Interruption:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Transcripts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Consent controls:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `module-automation-voice`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `speech-to-text`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `text-to-speech`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `streaming-sessions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `interruption`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `transcripts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `consent-controls`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,53 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-automation-voice` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-automation-voice-react-inertia`](https://github.com/liberusoftware/module-automation-voice-react-inertia) (`@liberusoftware/module-automation-voice-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/module-automation-voice.md) · [Core plan](../core/module-automation-voice.md) · [API plan](../api/module-automation-voice.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Speech-to-text** | Render `speech-to-text` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Text-to-speech** | Render `text-to-speech` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Streaming sessions** | Render `streaming sessions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Interruption** | Render `interruption` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Transcripts** | Render `transcripts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Consent controls** | Render `consent controls` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateVoiceResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice/src/Actions/CreateVoiceResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): VoiceResource` |
+| [TransitionVoiceResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice/src/Actions/TransitionVoiceResource.php) | `public function execute(VoiceResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): VoiceResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [VoiceResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice/src/Models/VoiceResource.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [VoiceResourceController.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/src/Http/Controllers/VoiceResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateVoiceResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionVoiceResource $transition): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/module-automation-voice-api/routes/api.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/automation/voice')->group(function (): void {
+Route::get('/', [VoiceResourceController::class, 'index']);
+Route::post('/', [VoiceResourceController::class, 'store']);
+Route::get('/{id}', [VoiceResourceController::class, 'show']);
+Route::patch('/{id}', [VoiceResourceController::class, 'update']);
+Route::delete('/{id}', [VoiceResourceController::class, 'destroy']);
+Route::post('/{id}/transition', [VoiceResourceController::class, 'transition']);
+```
+<!-- layer-implementation-plan:end -->

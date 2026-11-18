@@ -9,3 +9,13 @@ This page was previously generated from the source directory `modules/filament`.
 Use the [actual capability specifications](../features/README.md), [core owners](../core/README.md), [API adapters](../api/README.md) and [project scope](../README.md) to select real packages. The [presentation catalog](../../../modules/skeletons/README.md) lists capability repositories across the requested layers.
 
 Filament and Livewire are presentation boundaries; API and feature indexes are navigation. Local code-analysis caches are development artifacts. Keep those roles separate from business ownership and package identity.
+
+<!-- inertia-transport:start -->
+### Inertia transport boundary
+
+Use Laravel-owned Inertia page/command routes for visits and forms. The controller can invoke the module's public application actions in the same host or use a deliberate API adapter, then return an Inertia page/redirect response. A bare REST JSON resource response is not an Inertia page. Keep authoritative domain authorization and validation in the owning boundary for either path.
+
+Independent API consumers and Next.js use their reviewed HTTP/session integration. Share DTOs and framework-independent UI primitives; keep Inertia page props, visits, form errors and redirects in the Inertia wrapper. Do not introduce loopback HTTP solely to reuse a public action inside the same Laravel host.
+
+See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](https://inertiajs.com/docs/v3/core-concepts/how-it-works) and [redirect behavior](https://inertiajs.com/docs/v3/the-basics/redirects).
+<!-- inertia-transport:end -->

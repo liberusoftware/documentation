@@ -18,7 +18,15 @@ The Accounting Chart Of Accounts module owns accounting chart of accounts domain
 
 ## 2. Full feature scope
 
-- **Accounting Chart Of Accounts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Account types:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Codes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Hierarchies:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Control accounts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Normal balances:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Templates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Restrictions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Localization:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Lifecycle:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Accounting Chart Of Accounts module owns accounting chart of accounts domain
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Account types** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `account types`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Codes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `codes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Hierarchies** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `hierarchies`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Control accounts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `control accounts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Normal balances** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `normal balances`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Templates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `templates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Restrictions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `restrictions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Localization** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `localization`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Lifecycle** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `lifecycle`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounting-chart-of-accounts.md) | [Source map](../SOURCE-MAPPING.md#accounting-chart-of-accounts) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounting-chart-of-accounts.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounting-chart-of-accounts.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-chart-of-accounts-filament`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-filament) (`liberusoftware/accounting-chart-of-accounts-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounting-chart-of-accounts.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounting-chart-of-accounts.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-chart-of-accounts-react-inertia`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-react-inertia) (`@liberusoftware/module-accounting-chart-of-accounts-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounting-chart-of-accounts.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-chart-of-accounts-vue-inertia`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-vue-inertia) (`@liberusoftware/module-accounting-chart-of-accounts-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounting-chart-of-accounts.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-chart-of-accounts-nuxt`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-nuxt) (`@liberusoftware/module-accounting-chart-of-accounts-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounting-chart-of-accounts.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-chart-of-accounts-nextjs`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-nextjs) (`@liberusoftware/module-accounting-chart-of-accounts-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounting-chart-of-accounts.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-chart-of-accounts-react-native`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-react-native) (`@liberusoftware/module-accounting-chart-of-accounts-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounting-chart-of-accounts.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-chart-of-accounts-flutter`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-flutter) (`module_accounting_chart_of_accounts_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounting-chart-of-accounts.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-chart-of-accounts-dart-mobile`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-dart-mobile) (`module_accounting_chart_of_accounts_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-chart-of-accounts-dart-desktop`](https://github.com/liberusoftware/module-accounting-chart-of-accounts-dart-desktop) (`module_accounting_chart_of_accounts_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -62,3 +62,62 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-search` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-search.md)) |
+| Capability Nuxt module skeleton | [`module-crm-search-nuxt`](https://github.com/liberusoftware/module-crm-search-nuxt) (`@liberusoftware/module-crm-search-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Permission-aware global search** | Expose composable and Vue 3 component for `permission-aware global search` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Saved views** | Expose composable and Vue 3 component for `saved views` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Filters** | Expose composable and Vue 3 component for `filters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Related-record search** | Expose composable and Vue 3 component for `related-record search` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Recents** | Expose composable and Vue 3 component for `recents` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Suggestions** | Expose composable and Vue 3 component for `suggestions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Index reconciliation** | Expose composable and Vue 3 component for `index reconciliation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CrmSearchQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Queries/CrmSearchQuery.php) | `public function search(int $teamId, string $term)`<br>`public function views(int $teamId, int $userId)`<br>`public function recents(int $teamId, int $userId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [IndexSearchDocument.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Actions/IndexSearchDocument.php) | `public function __construct(private readonly CrmSearchPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): SearchDocument` |
+| [RecordSearchRecent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Actions/RecordSearchRecent.php) | `public function __construct(private readonly CrmSearchPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): SearchRecent` |
+| [SaveSearchView.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Actions/SaveSearchView.php) | `public function __construct(private readonly CrmSearchPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): SearchView` |
+| [CrmSearchPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Services/CrmSearchPolicy.php) | `public function canSearch(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SearchDocument.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Models/SearchDocument.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SearchRecent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Models/SearchRecent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SearchView.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search/src/Models/SearchView.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CrmSearchController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search-api/src/Http/Controllers/CrmSearchController.php) | `public function __construct(private readonly CrmSearchQuery $query)`<br>`public function search(): JsonResponse`<br>`public function index(IndexSearchDocument $action): JsonResponse`<br>`public function views(): JsonResponse`<br>`public function saveView(SaveSearchView $action): JsonResponse`<br>`public function recents(): JsonResponse`<br>`public function recent(RecordSearchRecent $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-search-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-search-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/crm-search')->group(function (): void {
+Route::get('/', [CrmSearchController::class, 'search']);
+Route::post('index', [CrmSearchController::class, 'index']);
+Route::get('views', [CrmSearchController::class, 'views']);
+Route::post('views', [CrmSearchController::class, 'saveView']);
+Route::get('recents', [CrmSearchController::class, 'recents']);
+Route::post('recents', [CrmSearchController::class, 'recent']);
+```
+<!-- layer-implementation-plan:end -->

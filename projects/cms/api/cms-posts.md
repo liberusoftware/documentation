@@ -18,8 +18,11 @@ This optional API presentation package exposes approved HTTP operations for the 
 
 The domain capability includes:
 
-- Cms Posts domain entities, lifecycle, validation, permissions, and audit
-- Stable contracts, typed DTOs, and past-tense domain events
+- Articles and editorial posts
+- Authors and contributor attribution
+- Series and category assignments
+- Scheduled publication and feeds
+- Reading metadata and SEO
 
 Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
 
@@ -35,6 +38,28 @@ Installation does not expose every capability automatically. The host applicatio
 
 **Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
 
+### Product API backend and client integration
+
+This module API adapter is composed into [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api), the shared Laravel HTTP backend for independent web, mobile, and desktop clients ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [repository map](../../REPOSITORIES.md#laravel-applications)).
+
+| Consuming client surface | Host repository | Module adapter plan | Transport and auth contract |
+| --- | --- | --- | --- |
+| Next.js React | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) | [Next.js plan](../nextjs/cms-posts.md) | Server Component / Route Handler / BFF or Sanctum SPA with `no-store` private reads |
+| Nuxt 4 Vue | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | [Nuxt plan](../nuxt/cms-posts.md) | Nitro SSR / BFF or Sanctum SPA with actor/tenant-scoped `useFetch` keys |
+| React Native Expo | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) | [React Native plan](../react-native/cms-posts.md) | Typed client with Keychain/Keystore token storage, PKCE/Sanctum, and idempotent retries |
+| Flutter mobile | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) | [Flutter plan](../flutter/cms-posts.md) | Typed Dart DTOs and platform-secure credentials on iOS and Android |
+| Dart mobile & desktop | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) | [Flutter & Dart plan](../flutter/cms-posts.md) | Separate mobile and desktop native hosts consuming the same versioned `/api/v1` contract |
+
+### Feature-to-API capability and operation matrix
+
+| Feature / aspect | HTTP query and command intent | DTO allowlist, concurrency, and error contract |
+| --- | --- | --- |
+| **Articles and editorial posts** | Expose authorized query/read projection and explicit domain transition command for `articles and editorial posts` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Authors and contributor attribution** | Expose authorized query/read projection and explicit domain transition command for `authors and contributor attribution` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Series and category assignments** | Expose authorized query/read projection and explicit domain transition command for `series and category assignments` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Scheduled publication and feeds** | Expose authorized query/read projection and explicit domain transition command for `scheduled publication and feeds` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Reading metadata and SEO** | Expose authorized query/read projection and explicit domain transition command for `reading metadata and seo` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+
 | Boundary | Observed identity and implementation reference |
 | --- | --- |
 | Source package | [liberusoftware/module-cms-posts](../../../modules/source/liberusoftware--module-cms-posts.md) |
@@ -47,10 +72,24 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [PostApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Http/Controllers/PostApiController.php) | `public function index(Request $request): AnonymousResourceCollection`<br>`public function show(string $slug): PostResource` |
-| [PostWriteController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Http/Controllers/PostWriteController.php) | `public function store(StorePostRequest $request): JsonResponse`<br>`public function update(UpdatePostRequest $request, int $id): PostResource`<br>`public function destroy(int $id): Response` |
+| [PostApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Http/Controllers/PostApiController.php) | `public function __construct(private PostRepositoryInterface $posts)`<br>`public function index(Request $request): AnonymousResourceCollection`<br>`public function show(string $slug): PostResource` |
+| [PostWriteController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Http/Controllers/PostWriteController.php) | `public function __construct(private PostRepositoryInterface $posts)`<br>`public function store(StorePostRequest $request): JsonResponse`<br>`public function update(UpdatePostRequest $request, int $id): PostResource`<br>`public function destroy(int $id): Response` |
 
 Request validation sources: [StorePostRequest.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Http/Requests/StorePostRequest.php) · [UpdatePostRequest.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Http/Requests/UpdatePostRequest.php).
+
+### Observed domain queries, actions, and storage models
+
+API controllers delegate to these observed core domain entry points and serialize only allowlisted DTO fields rather than raw storage models.
+
+| Core action / service source | Observed signatures |
+| --- | --- |
+| [PostRepositoryInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Contracts/PostRepositoryInterface.php) | `public function find(int $id): ?Post`<br>`public function findBySlug(string $slug): ?Post`<br>`public function published(): array`<br>`public function featured(): array`<br>`public function byCategory(string $categorySlug): array`<br>`public function byTag(string $tagSlug): array`<br>`public function search(string $query, int $limit): array` |
+
+| Core storage model | Observed fillable fields (review for DTO allowlist) |
+| --- | --- |
+| [Category.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Category.php) | `name`, `slug`, `description`, `team_id` |
+| [Post.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Post.php) | `title`, `slug`, `content`, `excerpt`, `status`, `published_at`, `is_featured`, `featured_media_id`, `author_id`, `team_id` |
+| [Tag.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Tag.php) | `name`, `slug`, `team_id` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

@@ -19,14 +19,14 @@ This optional API presentation package exposes approved HTTP operations for the 
 The domain capability includes:
 
 - Inclusive/exclusive pricing
-- classes
-- nexus/registration
-- destination/origin rules
-- exemptions
-- evidence
-- rounding
-- calculation adapters
-- reports
+- Classes
+- Nexus/registration
+- Destination/origin rules
+- Exemptions
+- Evidence
+- Rounding
+- Calculation adapters
+- Reports
 
 Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
 
@@ -41,6 +41,32 @@ Installation does not expose every capability automatically. The host applicatio
 ## 3. Endpoint examples
 
 **Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
+
+### Product API backend and client integration
+
+This module API adapter is composed into [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api), the shared Laravel HTTP backend for independent web, mobile, and desktop clients ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [repository map](../../REPOSITORIES.md#laravel-applications)).
+
+| Consuming client surface | Host repository | Module adapter plan | Transport and auth contract |
+| --- | --- | --- | --- |
+| Next.js React | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) | [Next.js plan](../nextjs/tax.md) | Server Component / Route Handler / BFF or Sanctum SPA with `no-store` private reads |
+| Nuxt 4 Vue | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | [Nuxt plan](../nuxt/tax.md) | Nitro SSR / BFF or Sanctum SPA with actor/tenant-scoped `useFetch` keys |
+| React Native Expo | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) | [React Native plan](../react-native/tax.md) | Typed client with Keychain/Keystore token storage, PKCE/Sanctum, and idempotent retries |
+| Flutter mobile | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) | [Flutter plan](../flutter/tax.md) | Typed Dart DTOs and platform-secure credentials on iOS and Android |
+| Dart mobile & desktop | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) | [Flutter & Dart plan](../flutter/tax.md) | Separate mobile and desktop native hosts consuming the same versioned `/api/v1` contract |
+
+### Feature-to-API capability and operation matrix
+
+| Feature / aspect | HTTP query and command intent | DTO allowlist, concurrency, and error contract |
+| --- | --- | --- |
+| **Inclusive/exclusive pricing** | Expose authorized query/read projection and explicit domain transition command for `inclusive/exclusive pricing` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Classes** | Expose authorized query/read projection and explicit domain transition command for `classes` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Nexus/registration** | Expose authorized query/read projection and explicit domain transition command for `nexus/registration` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Destination/origin rules** | Expose authorized query/read projection and explicit domain transition command for `destination/origin rules` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Exemptions** | Expose authorized query/read projection and explicit domain transition command for `exemptions` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Evidence** | Expose authorized query/read projection and explicit domain transition command for `evidence` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Rounding** | Expose authorized query/read projection and explicit domain transition command for `rounding` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Calculation adapters** | Expose authorized query/read projection and explicit domain transition command for `calculation adapters` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Reports** | Expose authorized query/read projection and explicit domain transition command for `reports` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
 
 No route file was established under the matched module roots for this spelling. That is a source-location observation, not proof that the capability has no API or UI. Review application-owned routes and the public domain boundary before proposing HTTP commands.
 

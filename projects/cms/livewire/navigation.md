@@ -37,7 +37,7 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 - `unlimited-menus`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `nested-items`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `content/custom/system-links`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `content-custom-system-links`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `menu-variants`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `visibility-rules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `active-trails`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
@@ -54,3 +54,29 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-navigation` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/navigation.md) · [API plan](../api/navigation.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Unlimited menus** | Expose a focused Livewire 4 component and namespaced Blade default view for `unlimited menus` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Nested items** | Expose a focused Livewire 4 component and namespaced Blade default view for `nested items` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Content/custom/system links** | Expose a focused Livewire 4 component and namespaced Blade default view for `content/custom/system links` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Menu variants** | Expose a focused Livewire 4 component and namespaced Blade default view for `menu variants` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Visibility rules** | Expose a focused Livewire 4 component and namespaced Blade default view for `visibility rules` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Active trails** | Expose a focused Livewire 4 component and namespaced Blade default view for `active trails` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Validation** | Expose a focused Livewire 4 component and namespaced Blade default view for `validation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [NavigationMenu.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-navigation-livewire/src/Livewire/NavigationMenu.php) · [NavigationLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-navigation-livewire/src/NavigationLivewireServiceProvider.php).
+<!-- layer-implementation-plan:end -->

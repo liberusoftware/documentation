@@ -38,7 +38,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 - `redirect-records`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `imports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `automatic-slug-change-redirects`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `chains/loops`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `chains-loops`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `hit-counts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `expiry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `404-suggestions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -54,3 +54,37 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-redirects` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-redirects-filament`](https://github.com/liberusoftware/module-cms-redirects-filament) (`liberusoftware/cms-redirects-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/redirects.md) · [API plan](../api/redirects.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Redirect records** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `redirect records`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Imports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `imports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Automatic slug-change redirects** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `automatic slug-change redirects`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Chains/loops** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `chains/loops`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Hit counts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `hit counts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Expiry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `expiry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **404 suggestions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `404 suggestions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [RedirectsFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-redirects-filament/src/RedirectsFilamentServiceProvider.php) · [ListRedirects.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-redirects-filament/src/Resources/Pages/ListRedirects.php) · [RedirectResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-redirects-filament/src/Resources/RedirectResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RedirectService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-redirects/src/Services/RedirectService.php) | `public function create(string $from, string $to, int $statusCode = 301, ?string $source = null, ?int $teamId = null): Redirect`<br>`public function resolve(string $path, int $maxHops = 10, ?int $teamId = null): array`<br>`public function import(iterable $rows, ?int $teamId = null): int`<br>`public function recordSlugChange(string $oldPath, string $newPath, ?int $teamId = null): Redirect`<br>`public function suggestions(string $missingPath, int $limit = 5, ?int $teamId = null): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Redirect.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-redirects/src/Models/Redirect.php) | `from_path`, `to_path`, `status_code`, `hit_count`, `expires_at`, `active`, `source`, `team_id` |
+<!-- layer-implementation-plan:end -->

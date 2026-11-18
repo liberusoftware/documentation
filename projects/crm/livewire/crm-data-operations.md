@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Crm Data Operations:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Imports/exports:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Field mapping:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Normalization:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Enrichment orchestration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Duplicate detection/merge:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Formatting:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Quality rules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Schedules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Exception queues:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `crm-data-operations`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `imports-exports`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `field-mapping`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `normalization`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `enrichment-orchestration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `duplicate-detection-merge`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `formatting`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `quality-rules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `schedules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `exception-queues`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,47 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-data-operations` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/crm-data-operations.md) · [API plan](../api/crm-data-operations.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Imports/exports** | Expose a focused Livewire 4 component and namespaced Blade default view for `imports/exports` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Field mapping** | Expose a focused Livewire 4 component and namespaced Blade default view for `field mapping` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Normalization** | Expose a focused Livewire 4 component and namespaced Blade default view for `normalization` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Enrichment orchestration** | Expose a focused Livewire 4 component and namespaced Blade default view for `enrichment orchestration` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Duplicate detection/merge** | Expose a focused Livewire 4 component and namespaced Blade default view for `duplicate detection/merge` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Formatting** | Expose a focused Livewire 4 component and namespaced Blade default view for `formatting` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Quality rules** | Expose a focused Livewire 4 component and namespaced Blade default view for `quality rules` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Schedules** | Expose a focused Livewire 4 component and namespaced Blade default view for `schedules` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Exception queues** | Expose a focused Livewire 4 component and namespaced Blade default view for `exception queues` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [OperationBrowser.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations-livewire/src/Components/OperationBrowser.php) · [DataOperationsLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations-livewire/src/DataOperationsLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateDataOperation.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Actions/CreateDataOperation.php) | `public function execute(int $teamId, ?int $actorId, array $attributes, array $mappings = []): DataOperation` |
+| [ResolveException.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Actions/ResolveException.php) | `public function execute(OperationException $exception, int $actorId): OperationException` |
+| [TransitionDataOperation.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Actions/TransitionDataOperation.php) | `public function execute(DataOperation $operation, string $status, ?string $reason = null): DataOperation` |
+| [DataOperationService.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Services/DataOperationService.php) | `public function mapAndNormalize(array $row, array $mapping): array`<br>`public function duplicateConfidence(array $left, array $right, array $fields): float` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [DataOperation.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Models/DataOperation.php) | `team_id`, `actor_id`, `kind`, `status`, `source`, `target`, `options`, `total_rows`, `processed_rows`, `failed_rows`, `failure_reason`, `started_at`, `completed_at` |
+| [DuplicateMatch.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Models/DuplicateMatch.php) | `team_id`, `operation_id`, `left_record_id`, `right_record_id`, `confidence`, `status` |
+| [FieldMapping.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Models/FieldMapping.php) | `operation_id`, `source_field`, `target_field`, `transform`, `required` |
+| [OperationException.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Models/OperationException.php) | `team_id`, `operation_id`, `row_number`, `payload`, `reason`, `status`, `resolved_by`, `resolved_at` |
+| [OperationRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Models/OperationRule.php) | `team_id`, `name`, `kind`, `definition`, `active` |
+| [OperationSchedule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-data-operations/src/Models/OperationSchedule.php) | `team_id`, `operation_id`, `cron`, `timezone`, `active`, `next_run_at` |
+<!-- layer-implementation-plan:end -->

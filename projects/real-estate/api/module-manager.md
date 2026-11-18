@@ -18,8 +18,13 @@ This optional API presentation package exposes approved HTTP operations for the 
 
 The domain capability includes:
 
-- Module Manager domain entities, lifecycle, validation, permissions, and audit
-- Stable contracts, typed DTOs, and past-tense domain events
+- Manifest discovery
+- Dependency resolution
+- Enablement
+- Lifecycle
+- Compatibility
+- Registry caching
+- Diagnostics
 
 Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
 
@@ -34,6 +39,30 @@ Installation does not expose every capability automatically. The host applicatio
 ## 3. Endpoint examples
 
 **Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
+
+### Product API backend and client integration
+
+This module API adapter is composed into [`project-real-estate-laravel-api`](https://github.com/liberusoftware/project-real-estate-laravel-api), the shared Laravel HTTP backend for independent web, mobile, and desktop clients ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [repository map](../../REPOSITORIES.md#laravel-applications)).
+
+| Consuming client surface | Host repository | Module adapter plan | Transport and auth contract |
+| --- | --- | --- | --- |
+| Next.js React | [`project-real-estate-next-react`](https://github.com/liberusoftware/project-real-estate-next-react) | [Next.js plan](../nextjs/module-manager.md) | Server Component / Route Handler / BFF or Sanctum SPA with `no-store` private reads |
+| Nuxt 4 Vue | [`project-real-estate-nuxt-vue`](https://github.com/liberusoftware/project-real-estate-nuxt-vue) | [Nuxt plan](../nuxt/module-manager.md) | Nitro SSR / BFF or Sanctum SPA with actor/tenant-scoped `useFetch` keys |
+| React Native Expo | [`project-real-estate-mobile-react`](https://github.com/liberusoftware/project-real-estate-mobile-react) | [React Native plan](../react-native/module-manager.md) | Typed client with Keychain/Keystore token storage, PKCE/Sanctum, and idempotent retries |
+| Flutter mobile | [`project-real-estate-mobile-flutter`](https://github.com/liberusoftware/project-real-estate-mobile-flutter) | [Flutter plan](../flutter/module-manager.md) | Typed Dart DTOs and platform-secure credentials on iOS and Android |
+| Dart mobile & desktop | [`project-real-estate-dart-mobile`](https://github.com/liberusoftware/project-real-estate-dart-mobile) · [`project-real-estate-dart-desktop`](https://github.com/liberusoftware/project-real-estate-dart-desktop) | [Flutter & Dart plan](../flutter/module-manager.md) | Separate mobile and desktop native hosts consuming the same versioned `/api/v1` contract |
+
+### Feature-to-API capability and operation matrix
+
+| Feature / aspect | HTTP query and command intent | DTO allowlist, concurrency, and error contract |
+| --- | --- | --- |
+| **Manifest discovery** | Expose authorized query/read projection and explicit domain transition command for `manifest discovery` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Dependency resolution** | Expose authorized query/read projection and explicit domain transition command for `dependency resolution` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Enablement** | Expose authorized query/read projection and explicit domain transition command for `enablement` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Lifecycle** | Expose authorized query/read projection and explicit domain transition command for `lifecycle` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Compatibility** | Expose authorized query/read projection and explicit domain transition command for `compatibility` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Registry caching** | Expose authorized query/read projection and explicit domain transition command for `registry caching` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Diagnostics** | Expose authorized query/read projection and explicit domain transition command for `diagnostics` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
 
 | Boundary | Observed identity and implementation reference |
 | --- | --- |
@@ -57,7 +86,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [StatusController.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/module-manager-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
+| [StatusController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/module-manager-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

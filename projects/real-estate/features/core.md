@@ -18,7 +18,14 @@ The Core module owns core domain behavior. It is the authoritative boundary for 
 
 ## 2. Full feature scope
 
-- **Core:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Agencies:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Branches:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Teams:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Territories:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Terminology:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Statuses:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Numbering:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Audit:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,38 @@ The Core module owns core domain behavior. It is the authoritative boundary for 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Agencies** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `agencies`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Branches** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `branches`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Teams** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `teams`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Territories** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `territories`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Terminology** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `terminology`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Statuses** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `statuses`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Numbering** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `numbering`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Audit** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `audit`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/core.md) | [Source map](../SOURCE-MAPPING.md#core) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/core.md) | [`project-real-estate-laravel-api`](https://github.com/liberusoftware/project-real-estate-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/core.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) · [`module-real-estate-core-filament`](https://github.com/liberusoftware/module-real-estate-core-filament) (`liberusoftware/real-estate-core-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/core.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/core.md) | [`project-real-estate-laravel-inertia-react`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-react) · [`module-real-estate-core-react-inertia`](https://github.com/liberusoftware/module-real-estate-core-react-inertia) (`@liberusoftware/module-real-estate-core-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/core.md) | [`project-real-estate-laravel-inertia-vue`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-vue) · [`module-real-estate-core-vue-inertia`](https://github.com/liberusoftware/module-real-estate-core-vue-inertia) (`@liberusoftware/module-real-estate-core-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/core.md) | [`project-real-estate-nuxt-vue`](https://github.com/liberusoftware/project-real-estate-nuxt-vue) · [`module-real-estate-core-nuxt`](https://github.com/liberusoftware/module-real-estate-core-nuxt) (`@liberusoftware/module-real-estate-core-nuxt`) | Standalone Vue SSR client consuming `project-real-estate-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/core.md) | [`project-real-estate-next-react`](https://github.com/liberusoftware/project-real-estate-next-react) · [`module-real-estate-core-nextjs`](https://github.com/liberusoftware/module-real-estate-core-nextjs) (`@liberusoftware/module-real-estate-core-nextjs`) | App Router Server/Client components consuming `project-real-estate-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/core.md) | [`project-real-estate-mobile-react`](https://github.com/liberusoftware/project-real-estate-mobile-react) · [`module-real-estate-core-react-native`](https://github.com/liberusoftware/module-real-estate-core-react-native) (`@liberusoftware/module-real-estate-core-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/core.md) | [`project-real-estate-mobile-flutter`](https://github.com/liberusoftware/project-real-estate-mobile-flutter) · [`module-real-estate-core-flutter`](https://github.com/liberusoftware/module-real-estate-core-flutter) (`module_real_estate_core_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/core.md) | [`project-real-estate-dart-mobile`](https://github.com/liberusoftware/project-real-estate-dart-mobile) · [`module-real-estate-core-dart-mobile`](https://github.com/liberusoftware/module-real-estate-core-dart-mobile) (`module_real_estate_core_dart_mobile`)<br>[`project-real-estate-dart-desktop`](https://github.com/liberusoftware/project-real-estate-dart-desktop) · [`module-real-estate-core-dart-desktop`](https://github.com/liberusoftware/module-real-estate-core-dart-desktop) (`module_real_estate_core_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

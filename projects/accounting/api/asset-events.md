@@ -19,14 +19,14 @@ This optional API presentation package exposes approved HTTP operations for the 
 The domain capability includes:
 
 - Transfer
-- improvement
-- revaluation
-- impairment
-- disposal
-- sale
-- write-off
-- gain/loss
-- complete history
+- Improvement
+- Revaluation
+- Impairment
+- Disposal
+- Sale
+- Write-off
+- Gain/loss
+- Complete history
 
 Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
 
@@ -41,6 +41,32 @@ Installation does not expose every capability automatically. The host applicatio
 ## 3. Endpoint examples
 
 **Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
+
+### Product API backend and client integration
+
+This module API adapter is composed into [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api), the shared Laravel HTTP backend for independent web, mobile, and desktop clients ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [repository map](../../REPOSITORIES.md#laravel-applications)).
+
+| Consuming client surface | Host repository | Module adapter plan | Transport and auth contract |
+| --- | --- | --- | --- |
+| Next.js React | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) | [Next.js plan](../nextjs/asset-events.md) | Server Component / Route Handler / BFF or Sanctum SPA with `no-store` private reads |
+| Nuxt 4 Vue | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | [Nuxt plan](../nuxt/asset-events.md) | Nitro SSR / BFF or Sanctum SPA with actor/tenant-scoped `useFetch` keys |
+| React Native Expo | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) | [React Native plan](../react-native/asset-events.md) | Typed client with Keychain/Keystore token storage, PKCE/Sanctum, and idempotent retries |
+| Flutter mobile | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) | [Flutter plan](../flutter/asset-events.md) | Typed Dart DTOs and platform-secure credentials on iOS and Android |
+| Dart mobile & desktop | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) | [Flutter & Dart plan](../flutter/asset-events.md) | Separate mobile and desktop native hosts consuming the same versioned `/api/v1` contract |
+
+### Feature-to-API capability and operation matrix
+
+| Feature / aspect | HTTP query and command intent | DTO allowlist, concurrency, and error contract |
+| --- | --- | --- |
+| **Transfer** | Expose authorized query/read projection and explicit domain transition command for `transfer` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Improvement** | Expose authorized query/read projection and explicit domain transition command for `improvement` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Revaluation** | Expose authorized query/read projection and explicit domain transition command for `revaluation` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Impairment** | Expose authorized query/read projection and explicit domain transition command for `impairment` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Disposal** | Expose authorized query/read projection and explicit domain transition command for `disposal` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Sale** | Expose authorized query/read projection and explicit domain transition command for `sale` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Write-off** | Expose authorized query/read projection and explicit domain transition command for `write-off` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Gain/loss** | Expose authorized query/read projection and explicit domain transition command for `gain/loss` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Complete history** | Expose authorized query/read projection and explicit domain transition command for `complete history` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
 
 | Boundary | Observed identity and implementation reference |
 | --- | --- |
@@ -66,6 +92,24 @@ The signatures identify request handlers to review; their argument names are not
 | Controller source | Public handler signatures |
 | --- | --- |
 | [AssetEventsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events-api/src/Http/Controllers/AssetEventsController.php) | `public function index(Request $request, AssetEventQuery $query): mixed`<br>`public function store(Request $request, RecordAssetEvent $action): AssetEventResource` |
+
+### Observed domain queries, actions, and storage models
+
+API controllers delegate to these observed core domain entry points and serialize only allowlisted DTO fields rather than raw storage models.
+
+| Core query source | Observed signatures |
+| --- | --- |
+| [AssetEventQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Queries/AssetEventQuery.php) | `public function paginate(int $teamId, ?int $assetId = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Core action / service source | Observed signatures |
+| --- | --- |
+| [RecordAssetEvent.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Actions/RecordAssetEvent.php) | `public function handle(array $attributes): AssetEvent` |
+| [AssetEventPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events-api/src/Policies/AssetEventPolicy.php) | `public function viewAny(?object $user): bool`<br>`public function create(?object $user): bool` |
+
+| Core storage model | Observed fillable fields (review for DTO allowlist) |
+| --- | --- |
+| [AssetEvent.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Models/AssetEvent.php) | `team_id`, `asset_id`, `event_type`, `event_date`, `description`, `source_type`, `source_id`, `old_values`, `new_values`, `evidence`, `actor_id` |
+| [Asset.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events-api/src/Models/Asset.php) | `asset_name`, `asset_cost`, `useful_life_years`, `depreciation_method`, `salvage_value`, `acquisition_date`, `is_active` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

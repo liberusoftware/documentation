@@ -39,7 +39,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - `typed-content-blocks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `nesting-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `patterns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `reusable/global-blocks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reusable-global-blocks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `locking`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `transforms`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `previews`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -64,3 +64,37 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-block-editor` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/block-editor.md)) |
+| Capability Nuxt module skeleton | [`module-cms-block-editor-nuxt`](https://github.com/liberusoftware/module-cms-block-editor-nuxt) (`@liberusoftware/module-cms-block-editor-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Typed content blocks** | Expose composable and Vue 3 component for `typed content blocks` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Nesting rules** | Expose composable and Vue 3 component for `nesting rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Patterns** | Expose composable and Vue 3 component for `patterns` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Reusable/global blocks** | Expose composable and Vue 3 component for `reusable/global blocks` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Locking** | Expose composable and Vue 3 component for `locking` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Transforms** | Expose composable and Vue 3 component for `transforms` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Previews** | Expose composable and Vue 3 component for `previews` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Revision-safe data** | Expose composable and Vue 3 component for `revision-safe data` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/block-editor.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [BlockEditorService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-block-editor/src/Services/BlockEditorService.php) | `public function __construct(private BlockTypeRegistry $registry, private BlockRenderer $renderer)`<br>`public function save(?int $teamId, string $subjectType, string $subjectId, array $blocks, ?int $expectedVersion = null): BlockDocument`<br>`public function createPattern(?int $teamId, string $name, array $blocks, bool $reusable = true): BlockPattern`<br>`public function lock(BlockDocument $document, bool $locked = true): BlockDocument` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [BlockDocument.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-block-editor/src/Models/BlockDocument.php) | `team_id`, `subject_type`, `subject_id`, `blocks`, `version`, `locked`, `preview_html` |
+| [BlockPattern.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-block-editor/src/Models/BlockPattern.php) | `team_id`, `name`, `blocks`, `reusable`, `locked` |
+<!-- layer-implementation-plan:end -->

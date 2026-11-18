@@ -18,7 +18,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Feature Flags:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Typed flags:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Environment/tenant/user targeting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Rollout:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Telemetry:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Ownership:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cleanup:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `feature-flags`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `typed-flags`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `environment-tenant-user-targeting`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `rollout`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `telemetry`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `ownership`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `cleanup`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `feature-flags` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-feature-flags-vue-inertia`](https://github.com/liberusoftware/module-feature-flags-vue-inertia) (`@liberusoftware/module-feature-flags-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/feature-flags.md) · [Core plan](../core/feature-flags.md) · [API plan](../api/feature-flags.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Typed flags** | Render `typed flags` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Environment/tenant/user targeting** | Render `environment/tenant/user targeting` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Rollout** | Render `rollout` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Telemetry** | Render `telemetry` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Ownership** | Render `ownership` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Cleanup** | Render `cleanup` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+**Observed route declarations:**
+
+[modules/feature-flags-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/feature-flags-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/feature-flags')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('feature-flags-api.status');
+```
+<!-- layer-implementation-plan:end -->

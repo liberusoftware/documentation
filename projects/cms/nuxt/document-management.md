@@ -38,7 +38,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 - `documents`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `previews`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `ocr/text-extraction-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `ocr-text-extraction-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `versions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `access`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `downloads`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -64,3 +64,37 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-document-management` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/document-management.md)) |
+| Capability Nuxt module skeleton | [`module-cms-document-management-nuxt`](https://github.com/liberusoftware/module-cms-document-management-nuxt) (`@liberusoftware/module-cms-document-management-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Documents** | Expose composable and Vue 3 component for `documents` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Previews** | Expose composable and Vue 3 component for `previews` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **OCR/text extraction adapters** | Expose composable and Vue 3 component for `ocr/text extraction adapters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Versions** | Expose composable and Vue 3 component for `versions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Access** | Expose composable and Vue 3 component for `access` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Downloads** | Expose composable and Vue 3 component for `downloads` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Watermarks** | Expose composable and Vue 3 component for `watermarks` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Retention** | Expose composable and Vue 3 component for `retention` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/document-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [DocumentManagementService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Services/DocumentManagementService.php) | `public function documents(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function create(array $data, ?int $teamId = null): Document`<br>`public function transition(Document $document, string $status): Document`<br>`public function recordDownload(Document $document, ?int $userId = null, ?string $ip = null): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Document.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Models/Document.php) | `team_id`, `title`, `slug`, `path`, `mime_type`, `size`, `status`, `extracted_text`, `retention_until` |
+| [DocumentDownload.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Models/DocumentDownload.php) | `user_id`, `ip_address`, `downloaded_at` |
+<!-- layer-implementation-plan:end -->

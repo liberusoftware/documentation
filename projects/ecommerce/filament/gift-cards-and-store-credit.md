@@ -62,3 +62,33 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-gift-cards-and-store-credit` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-gift-cards-and-store-credit-filament`](https://github.com/liberusoftware/module-ecommerce-gift-cards-and-store-credit-filament) (`liberusoftware/ecommerce-gift-cards-and-store-credit-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/gift-cards-and-store-credit.md) · [API plan](../api/gift-cards-and-store-credit.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Issue** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `issue`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Activate** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `activate`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Send** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `send`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Redeem** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `redeem`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Partial use** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `partial use`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Balances** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `balances`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Expiry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `expiry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Refund** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `refund`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Transfer policy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `transfer policy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Liabilities** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `liabilities`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Immutable ledger** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `immutable ledger`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

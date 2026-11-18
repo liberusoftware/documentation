@@ -1,7 +1,7 @@
 # Ecommerce: Copilot Filament
 
 <!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. This retained spelling maps to `copilot`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
 ## Canonical one-to-one Filament 5 implementation
@@ -33,7 +33,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `permission-bounded-product/order/customer-search`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `permission-bounded-product-order-customer-search`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `summaries`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `catalog-assistance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `safe-operational-actions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -50,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-copilot` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-commerce-copilot-filament`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-filament) (`liberusoftware/ecommerce-commerce-copilot-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/commerce-copilot.md) · [API plan](../api/commerce-copilot.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Permission-bounded product/order/customer search** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `permission-bounded product/order/customer search`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Summaries** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `summaries`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Catalog assistance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `catalog assistance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Safe operational actions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `safe operational actions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Confirmation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `confirmation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

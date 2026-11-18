@@ -18,7 +18,17 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Learning And Courses:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Courses:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Lessons:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Media:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Cohorts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Enrollment:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Access:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Progress:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Assessments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Certificates:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Drip schedules:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Product/contract entitlements:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +39,17 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-learning-and-courses`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `courses`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `lessons`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `media`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `cohorts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `enrollment`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `access`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `progress`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `assessments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `certificates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `drip-schedules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `product-contract-entitlements`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +70,53 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-learning-and-courses` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-learning-and-courses.md)) |
+| Capability Nuxt module skeleton | [`module-crm-learning-and-courses-nuxt`](https://github.com/liberusoftware/module-crm-learning-and-courses-nuxt) (`@liberusoftware/module-crm-learning-and-courses-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Courses** | Expose composable and Vue 3 component for `courses` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Lessons** | Expose composable and Vue 3 component for `lessons` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Media** | Expose composable and Vue 3 component for `media` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Cohorts** | Expose composable and Vue 3 component for `cohorts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Enrollment** | Expose composable and Vue 3 component for `enrollment` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Access** | Expose composable and Vue 3 component for `access` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Progress** | Expose composable and Vue 3 component for `progress` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Assessments** | Expose composable and Vue 3 component for `assessments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Certificates** | Expose composable and Vue 3 component for `certificates` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Drip schedules** | Expose composable and Vue 3 component for `drip schedules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Product/contract entitlements** | Expose composable and Vue 3 component for `product/contract entitlements` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-learning-and-courses.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [LearningQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Queries/LearningQuery.php) | `public function forTeam(int $teamId)`<br>`public function records(int $teamId, int $enrollmentId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCourse.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Actions/CreateCourse.php) | `public function __construct(private readonly LearningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): LearningCourse` |
+| [EnrollLearner.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Actions/EnrollLearner.php) | `public function __construct(private readonly LearningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, LearningCourse $course, array $input): LearningEnrollment` |
+| [RecordLearningProgress.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Actions/RecordLearningProgress.php) | `public function __construct(private readonly LearningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, LearningEnrollment $enrollment, array $input): LearningRecord` |
+| [LearningPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Services/LearningPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [LearningCourse.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Models/LearningCourse.php) | No literal fillable array detected; inspect the model and API schema. |
+| [LearningEnrollment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Models/LearningEnrollment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [LearningLesson.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Models/LearningLesson.php) | No literal fillable array detected; inspect the model and API schema. |
+| [LearningRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses/src/Models/LearningRecord.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [LearningController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/src/Http/Controllers/LearningController.php) | `public function index(Request $r, LearningQuery $q): JsonResponse`<br>`public function store(Request $r, CreateCourse $a): JsonResponse`<br>`public function enroll(Request $r, LearningCourse $course, EnrollLearner $a): JsonResponse`<br>`public function record(Request $r, LearningEnrollment $enrollment, RecordLearningProgress $a): JsonResponse`<br>`public function records(Request $r, LearningEnrollment $enrollment, LearningQuery $q): JsonResponse` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Webhooks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Endpoint registration:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Signing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Delivery attempts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Retries:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Replay:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Event filtering:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `webhooks`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `endpoint-registration`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `signing`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `delivery-attempts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `retries`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `replay`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `event-filtering`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `logs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,44 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `webhooks` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-social-network-laravel-inertia-react`](https://github.com/liberusoftware/project-social-network-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-webhooks-react-inertia`](https://github.com/liberusoftware/module-webhooks-react-inertia) (`@liberusoftware/module-webhooks-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/webhooks.md) · [Core plan](../core/webhooks.md) · [API plan](../api/webhooks.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Endpoint registration** | Render `endpoint registration` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Signing** | Render `signing` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Delivery attempts** | Render `delivery attempts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Retries** | Render `retries` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Replay** | Render `replay` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Event filtering** | Render `event filtering` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Logs** | Render `logs` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [WebhooksController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/webhooks-api/src/Http/Controllers/WebhooksController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, RegisterEndpoint $register): JsonResponse`<br>`public function rotate(WebhookEndpoint $endpoint, Request $request, RotateEndpointSecret $rotate): JsonResponse`<br>`public function deliveries(WebhookEndpoint $endpoint, Request $request): JsonResponse`<br>`public function replay(WebhookEndpoint $endpoint, WebhookDelivery $delivery, Request $request, DeliverWebhook $deliver): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/webhooks-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/webhooks')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::get('/', [WebhooksController::class, 'index']);
+Route::post('/', [WebhooksController::class, 'store']);
+Route::post('/{endpoint}/rotate-secret', [WebhooksController::class, 'rotate']);
+Route::get('/{endpoint}/deliveries', [WebhooksController::class, 'deliveries']);
+Route::post('/{endpoint}/deliveries/{delivery}/replay', [WebhooksController::class, 'replay']);
+```
+<!-- layer-implementation-plan:end -->

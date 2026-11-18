@@ -12,7 +12,7 @@
 
 The intended **Affiliate Management** workspace covers affiliates, applications, links, campaigns, clicks, conversions, commission rules, payout approvals/exports, disputes, assets, and portal.
 
-The relevant capability areas are **Affiliates**, **Applications**, **Links**, **Campaigns**, **Clicks**, **Conversions**, **Commission rules**, **Payout approvals/exports**, **Disputes**, **Assets**, **Portal**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Affiliates and partner profiles**, **Applications and onboarding approval**, **Links, promo codes, and campaigns**, **Clicks and first-party touch attribution**, **Conversions and cross-product clawback ledger**, **Commission rules and tiered calculation**, **Payout approvals/exports via PayoutSettlementContract**, **Disputes, fraud controls, assets, and partner portal**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

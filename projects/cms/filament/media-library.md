@@ -37,7 +37,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `files/media-entities`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `files-media-entities`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `folders`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `tags`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `collections`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -58,3 +58,31 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-media-library` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-media-library-filament`](https://github.com/liberusoftware/module-cms-media-library-filament) (`liberusoftware/cms-media-library-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/media-library.md) · [API plan](../api/media-library.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Files/media entities** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `files/media entities`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Folders** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `folders`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tags** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tags`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Collections** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `collections`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Metadata** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `metadata`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Usage references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `usage references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Search** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `search`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Bulk operations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `bulk operations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Replacement** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `replacement`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Financial Statements:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Profit and loss:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Balance sheet:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Cash flow:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Changes in equity:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Comparative periods:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Dimensions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Drill-through:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-financial-statements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `profit-and-loss`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `balance-sheet`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cash-flow`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `changes-in-equity`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `comparative-periods`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `dimensions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `drill-through`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,37 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-financial-statements` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-financial-statements-filament`](https://github.com/liberusoftware/module-accounting-financial-statements-filament) (`liberusoftware/accounting-financial-statements-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-financial-statements.md) · [API plan](../api/accounting-financial-statements.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Profit and loss** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `profit and loss`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Balance sheet** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `balance sheet`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cash flow** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cash flow`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Changes in equity** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `changes in equity`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Comparative periods** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `comparative periods`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Dimensions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `dimensions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Drill-through** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `drill-through`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [FinancialStatementsFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements-filament/src/FinancialStatementsFilamentPlugin.php) · [FinancialStatementsFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements-filament/src/FinancialStatementsFilamentServiceProvider.php) · [FinancialStatements.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements-filament/src/Pages/FinancialStatements.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [StatementQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements/src/Queries/StatementQuery.php) | `public function profitAndLoss(int $bookId, string $start, string $end, ?array $dimensions = null): array`<br>`public function balanceSheet(int $bookId, string $asOf, ?array $dimensions = null): array`<br>`public function cashFlow(int $bookId, string $start, string $end, ?array $dimensions = null): array`<br>`public function changesInEquity(int $bookId, string $start, string $end, ?array $dimensions = null): array`<br>`public function comparative(int $bookId, string $start, string $end, string $compareStart, string $compareEnd, ?array $dimensions = null): array`<br>`public function drillThrough(int $bookId, int $accountId, string $start, string $end, ?array $dimensions = null): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [FinancialStatementsPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements-api/src/Policies/FinancialStatementsPolicy.php) | `public function view(?Authenticatable $user): bool` |
+<!-- layer-implementation-plan:end -->

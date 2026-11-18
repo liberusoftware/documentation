@@ -18,7 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Crm Attribution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **First/last/multi-touch models:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Campaign members:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Source normalization:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **UTM/click IDs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Offline conversions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Influence:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Cost allocation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Model comparison:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `crm-attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `first-last-multi-touch-models`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `campaign-members`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `source-normalization`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `utm-click-ids`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `offline-conversions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `influence`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cost-allocation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `model-comparison`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,44 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-attribution` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/crm-attribution.md) · [API plan](../api/crm-attribution.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **First/last/multi-touch models** | Expose a focused Livewire 4 component and namespaced Blade default view for `first/last/multi-touch models` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Campaign members** | Expose a focused Livewire 4 component and namespaced Blade default view for `campaign members` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Source normalization** | Expose a focused Livewire 4 component and namespaced Blade default view for `source normalization` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **UTM/click IDs** | Expose a focused Livewire 4 component and namespaced Blade default view for `utm/click ids` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Offline conversions** | Expose a focused Livewire 4 component and namespaced Blade default view for `offline conversions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Influence** | Expose a focused Livewire 4 component and namespaced Blade default view for `influence` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cost allocation** | Expose a focused Livewire 4 component and namespaced Blade default view for `cost allocation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Model comparison** | Expose a focused Livewire 4 component and namespaced Blade default view for `model comparison` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [AttributionLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution-livewire/src/AttributionLivewireServiceProvider.php) · [AttributionBrowser.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution-livewire/src/Components/AttributionBrowser.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AttributionQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Queries/AttributionQuery.php) | `public function touchpoints(int $teamId): Builder`<br>`public function conversions(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordConversion.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Actions/RecordConversion.php) | `public function execute(int $teamId, array $input): Conversion` |
+| [RecordTouchpoint.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Actions/RecordTouchpoint.php) | `public function execute(int $teamId, array $input): Touchpoint` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Conversion.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Models/Conversion.php) | No literal fillable array detected; inspect the model and API schema. |
+| [Touchpoint.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Models/Touchpoint.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

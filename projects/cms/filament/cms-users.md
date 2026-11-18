@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Users:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Editorial roles and permissions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Section and site-scoped access:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Author profiles:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Approval authority:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Audit of permission changes:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-users`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `editorial-roles-and-permissions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `section-and-site-scoped-access`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `author-profiles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `approval-authority`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `audit-of-permission-changes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-users` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-users-filament`](https://github.com/liberusoftware/module-cms-users-filament) (`liberusoftware/cms-users-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-users.md) · [API plan](../api/cms-users.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Editorial roles and permissions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `editorial roles and permissions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Section and site-scoped access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `section and site-scoped access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Author profiles** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `author profiles`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Approval authority** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `approval authority`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Audit of permission changes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `audit of permission changes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

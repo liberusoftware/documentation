@@ -42,7 +42,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 - `reserves`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `adjustments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `seller-statements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `payout-approval/export`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `payout-approval-export`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `reconciliation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
@@ -56,3 +56,30 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-commissions-and-settlements` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-commissions-and-settlements-filament`](https://github.com/liberusoftware/module-ecommerce-commissions-and-settlements-filament) (`liberusoftware/ecommerce-commissions-and-settlements-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/commissions-and-settlements.md) · [API plan](../api/commissions-and-settlements.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Commission rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `commission rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Fees** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `fees`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Split references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `split references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reserves** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reserves`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Adjustments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `adjustments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Seller statements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `seller statements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Payout approval/export** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payout approval/export`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reconciliation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reconciliation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

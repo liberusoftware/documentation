@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Accounting Consolidation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Group hierarchy:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Mappings:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Currency translation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Intercompany eliminations:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Ownership/minority interests:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Adjustments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Group close:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `accounting-consolidation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `group-hierarchy`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `mappings`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `currency-translation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `intercompany-eliminations`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `ownership-minority-interests`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `adjustments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `group-close`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,45 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `accounting-consolidation` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/accounting-consolidation.md) · [API plan](../api/accounting-consolidation.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Group hierarchy** | Expose a focused Livewire 4 component and namespaced Blade default view for `group hierarchy` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Mappings** | Expose a focused Livewire 4 component and namespaced Blade default view for `mappings` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Currency translation** | Expose a focused Livewire 4 component and namespaced Blade default view for `currency translation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Intercompany eliminations** | Expose a focused Livewire 4 component and namespaced Blade default view for `intercompany eliminations` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Ownership/minority interests** | Expose a focused Livewire 4 component and namespaced Blade default view for `ownership/minority interests` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Adjustments** | Expose a focused Livewire 4 component and namespaced Blade default view for `adjustments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Group close** | Expose a focused Livewire 4 component and namespaced Blade default view for `group close` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [ConsolidationLivewireServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation-livewire/src/ConsolidationLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ConsolidationQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Queries/ConsolidationQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AddConsolidationEntity.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/AddConsolidationEntity.php) | `public function handle(ConsolidationGroup $group, array $entity): ConsolidationGroup` |
+| [CreateConsolidationGroup.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/CreateConsolidationGroup.php) | `public function handle(array $attributes): ConsolidationGroup` |
+| [PrepareConsolidatedReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/PrepareConsolidatedReport.php) | `public function handle(ConsolidationGroup $group, array $report): ConsolidationGroup` |
+| [PublishConsolidatedReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/PublishConsolidatedReport.php) | `public function handle(ConsolidationGroup $group, array $translation = []): ConsolidationGroup` |
+| [RecordEliminations.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/RecordEliminations.php) | `public function handle(ConsolidationGroup $group, array $elimination): ConsolidationGroup` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ConsolidationGroup.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Models/ConsolidationGroup.php) | `team_id`, `group_ref`, `name`, `reporting_currency`, `status`, `entities`, `eliminations`, `translation`, `report` |
+<!-- layer-implementation-plan:end -->

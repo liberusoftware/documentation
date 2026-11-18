@@ -20,7 +20,7 @@ Use strict TypeScript types generated or checked against the API contract, CSRF/
 | [CMS](../../projects/cms/react/README.md) | 252 | [REACT](../../standards/REACT.md) |
 | [Control Panel](../../projects/control-panel/react/README.md) | 61 | [REACT](../../standards/REACT.md) |
 | [CRM](../../projects/crm/react/README.md) | 218 | [REACT](../../standards/REACT.md) |
-| [Ecommerce](../../projects/ecommerce/react/README.md) | 107 | [REACT](../../standards/REACT.md) |
+| [Ecommerce](../../projects/ecommerce/react/README.md) | 108 | [REACT](../../standards/REACT.md) |
 | [Genealogy](../../projects/genealogy/react/README.md) | 62 | [REACT](../../standards/REACT.md) |
 | [Liberu platform](../../projects/liberu/react/README.md) | 4 | [REACT](../../standards/REACT.md) |
 | [Maintenance](../../projects/maintenance/react/README.md) | 60 | [REACT](../../standards/REACT.md) |

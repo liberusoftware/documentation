@@ -18,7 +18,16 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Crm Forecasting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Forecast categories:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Rollups:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Manager adjustments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Commit/best-case/pipeline views:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Coverage:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Trend:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Scenario:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **History:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Accuracy:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Submission workflow:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +38,16 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `crm-forecasting`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `forecast-categories`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `rollups`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `manager-adjustments`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `commit-best-case-pipeline-views`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `coverage`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `trend`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `scenario`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `history`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `accuracy`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `submission-workflow`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +78,66 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-forecasting` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-crm-forecasting-vue-inertia`](https://github.com/liberusoftware/module-crm-forecasting-vue-inertia) (`@liberusoftware/module-crm-forecasting-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/crm-forecasting.md) · [Core plan](../core/crm-forecasting.md) · [API plan](../api/crm-forecasting.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Forecast categories** | Render `forecast categories` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Rollups** | Render `rollups` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Manager adjustments** | Render `manager adjustments` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Commit/best-case/pipeline views** | Render `commit/best-case/pipeline views` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Coverage** | Render `coverage` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Trend** | Render `trend` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Scenario** | Render `scenario` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **History** | Render `history` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Accuracy** | Render `accuracy` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Submission workflow** | Render `submission workflow` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ForecastingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Queries/ForecastingQuery.php) | `public function categories(int $teamId)`<br>`public function forecasts(int $teamId, string $period)`<br>`public function summary(int $teamId, string $period): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCategory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/CreateCategory.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ForecastCategory` |
+| [RecordForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/RecordForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): Forecast` |
+| [SubmitForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/SubmitForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, Forecast $forecast): ForecastSubmission` |
+| [ForecastingPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Services/ForecastingPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Forecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/Forecast.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ForecastAdjustment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastAdjustment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ForecastCategory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastCategory.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ForecastSubmission.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastSubmission.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ForecastingController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting-api/src/Http/Controllers/ForecastingController.php) | `public function __construct(private readonly ForecastingQuery $query)`<br>`public function categories(): JsonResponse`<br>`public function index(string $period): JsonResponse`<br>`public function storeCategory(CreateCategory $action): JsonResponse`<br>`public function store(RecordForecast $action): JsonResponse`<br>`public function submit(int $forecast, SubmitForecast $action): JsonResponse`<br>`public function adjust(int $forecast, AdjustForecast $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-forecasting-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/forecasting')->group(function (): void {
+Route::get('categories', [ForecastingController::class, 'categories']);
+Route::get('forecasts/{period}', [ForecastingController::class, 'index']);
+Route::post('categories', [ForecastingController::class, 'storeCategory']);
+Route::post('forecasts', [ForecastingController::class, 'store']);
+Route::post('forecasts/{forecast}/submit', [ForecastingController::class, 'submit']);
+Route::post('forecasts/{forecast}/adjustments', [ForecastingController::class, 'adjust']);
+```
+<!-- layer-implementation-plan:end -->

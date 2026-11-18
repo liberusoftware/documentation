@@ -18,7 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Real Estate Marketing:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Campaigns:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Boards:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Brochures:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Portals:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Website:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Social/email:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Attribution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Consent:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `real-estate-marketing`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `campaigns`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `boards`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `brochures`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `portals`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `website`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `social-email`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `consent`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,39 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `real-estate-marketing` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/real-estate-marketing.md) · [API plan](../api/real-estate-marketing.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Campaigns** | Expose a focused Livewire 4 component and namespaced Blade default view for `campaigns` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Boards** | Expose a focused Livewire 4 component and namespaced Blade default view for `boards` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Brochures** | Expose a focused Livewire 4 component and namespaced Blade default view for `brochures` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Portals** | Expose a focused Livewire 4 component and namespaced Blade default view for `portals` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Website** | Expose a focused Livewire 4 component and namespaced Blade default view for `website` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Social/email** | Expose a focused Livewire 4 component and namespaced Blade default view for `social/email` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Attribution** | Expose a focused Livewire 4 component and namespaced Blade default view for `attribution` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Consent** | Expose a focused Livewire 4 component and namespaced Blade default view for `consent` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [LatestNews.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing-livewire/src/Components/LatestNews.php) · [MarketingCampaignList.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing-livewire/src/Components/MarketingCampaignList.php) · [NewsArticleList.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing-livewire/src/Components/NewsArticleList.php) · [NewsDetail.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing-livewire/src/Components/NewsDetail.php) · [MarketingLivewireServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing-livewire/src/MarketingLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MarketingCampaignPolicy.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing/src/Policies/MarketingCampaignPolicy.php) | `public function viewAny(AuthUser $authUser): bool`<br>`public function view(AuthUser $authUser, MarketingCampaign $marketingCampaign): bool`<br>`public function create(AuthUser $authUser): bool`<br>`public function update(AuthUser $authUser, MarketingCampaign $marketingCampaign): bool`<br>`public function delete(AuthUser $authUser, MarketingCampaign $marketingCampaign): bool`<br>`public function deleteAny(AuthUser $authUser): bool`<br>`public function restore(AuthUser $authUser, MarketingCampaign $marketingCampaign): bool`<br>`public function forceDelete(AuthUser $authUser, MarketingCampaign $marketingCampaign): bool`<br>`public function forceDeleteAny(AuthUser $authUser): bool`<br>`public function restoreAny(AuthUser $authUser): bool`<br>`public function replicate(AuthUser $authUser, MarketingCampaign $marketingCampaign): bool`<br>`public function reorder(AuthUser $authUser): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MarketingCampaign.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing/src/Models/MarketingCampaign.php) | No literal fillable array detected; inspect the model and API schema. |
+| [NewsArticle.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-marketing/src/Models/NewsArticle.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

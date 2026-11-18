@@ -18,7 +18,10 @@ The Accounting Plaid module owns accounting plaid domain behavior. It is the aut
 
 ## 2. Full feature scope
 
-- **Accounting Plaid:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Link token integration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Incremental transaction sync:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Institution and balance access:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Webhook-compatible provider client:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +81,34 @@ The Accounting Plaid module owns accounting plaid domain behavior. It is the aut
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Link token integration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `link token integration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Incremental transaction sync** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `incremental transaction sync`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Institution and balance access** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `institution and balance access`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Webhook-compatible provider client** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `webhook-compatible provider client`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounting-plaid.md) | [Source map](../SOURCE-MAPPING.md#accounting-plaid) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounting-plaid.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounting-plaid.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-plaid-filament`](https://github.com/liberusoftware/module-accounting-plaid-filament) (`liberusoftware/accounting-plaid-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounting-plaid.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounting-plaid.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-plaid-react-inertia`](https://github.com/liberusoftware/module-accounting-plaid-react-inertia) (`@liberusoftware/module-accounting-plaid-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounting-plaid.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-plaid-vue-inertia`](https://github.com/liberusoftware/module-accounting-plaid-vue-inertia) (`@liberusoftware/module-accounting-plaid-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounting-plaid.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-plaid-nuxt`](https://github.com/liberusoftware/module-accounting-plaid-nuxt) (`@liberusoftware/module-accounting-plaid-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounting-plaid.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-plaid-nextjs`](https://github.com/liberusoftware/module-accounting-plaid-nextjs) (`@liberusoftware/module-accounting-plaid-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounting-plaid.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-plaid-react-native`](https://github.com/liberusoftware/module-accounting-plaid-react-native) (`@liberusoftware/module-accounting-plaid-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounting-plaid.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-plaid-flutter`](https://github.com/liberusoftware/module-accounting-plaid-flutter) (`module_accounting_plaid_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounting-plaid.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-plaid-dart-mobile`](https://github.com/liberusoftware/module-accounting-plaid-dart-mobile) (`module_accounting_plaid_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-plaid-dart-desktop`](https://github.com/liberusoftware/module-accounting-plaid-dart-desktop) (`module_accounting_plaid_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

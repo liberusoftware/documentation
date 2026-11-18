@@ -34,12 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `obligations/schedules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `obligations-schedules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `allocation-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `deferred/accrued-revenue`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `deferred-accrued-revenue`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `recognition-runs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `modifications`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `reconciliation-(optional)`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reconciliation-optional`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -52,3 +52,45 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-revenue-recognition` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-revenue-recognition-filament`](https://github.com/liberusoftware/module-accounting-revenue-recognition-filament) (`liberusoftware/accounting-revenue-recognition-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/revenue-recognition.md) · [API plan](../api/revenue-recognition.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Obligations/schedules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `obligations/schedules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Allocation references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `allocation references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deferred/accrued revenue** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deferred/accrued revenue`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Recognition runs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `recognition runs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Modifications** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `modifications`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reconciliation (optional)** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reconciliation (optional)`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ListRevenueSchedules.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition-filament/src/Resources/Pages/ListRevenueSchedules.php) · [RevenueScheduleResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition-filament/src/Resources/RevenueScheduleResource.php) · [RevenueRecognitionFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition-filament/src/RevenueRecognitionFilamentPlugin.php) · [RevenueRecognitionFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition-filament/src/RevenueRecognitionFilamentServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateRevenueSchedule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Actions/CreateRevenueSchedule.php) | `public function handle(array $attributes): RevenueSchedule` |
+| [ModifyRevenueSchedule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Actions/ModifyRevenueSchedule.php) | `public function handle(RevenueSchedule $schedule, array $attributes): RevenueModification` |
+| [RecognizeDueRevenue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Actions/RecognizeDueRevenue.php) | `public function handle(RevenueSchedule $schedule, string $asOfDate, ?int $teamId = null): RevenueRecognitionRun` |
+| [ReconcileRevenueRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Actions/ReconcileRevenueRun.php) | `public function handle(RevenueRecognitionRun $run, array $references = []): RevenueRecognitionRun` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [RevenueAllocationReference.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Models/RevenueAllocationReference.php) | `team_id`, `reference_type`, `reference_id`, `allocation`, `status`, `metadata` |
+| [RevenueModification.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Models/RevenueModification.php) | `schedule_id`, `effective_date`, `amount_delta`, `reason`, `status`, `metadata` |
+| [RevenueObligation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Models/RevenueObligation.php) | `team_id`, `source_type`, `source_id`, `description`, `currency`, `total_amount`, `start_date`, `periods`, `status`, `metadata` |
+| [RevenueRecognitionRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Models/RevenueRecognitionRun.php) | `team_id`, `as_of_date`, `status`, `processed_entries`, `failed_entries`, `errors`, `metadata`, `started_at`, `finished_at` |
+| [RevenueReconciliation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Models/RevenueReconciliation.php) | `run_id`, `reference_type`, `reference_id`, `expected_amount`, `recognized_amount`, `variance`, `status`, `notes`, `metadata` |
+| [RevenueSchedule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Models/RevenueSchedule.php) | `obligation_id`, `allocation_reference_id`, `total_amount`, `start_date`, `periods`, `deferred_account_ref`, `revenue_account_ref`, `status`, `funded`, `metadata` |
+| [RevenueScheduleEntry.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-revenue-recognition/src/Models/RevenueScheduleEntry.php) | `schedule_id`, `period_number`, `recognition_date`, `amount`, `status`, `recognized_at`, `ledger_reference`, `metadata` |
+<!-- layer-implementation-plan:end -->

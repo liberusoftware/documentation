@@ -18,7 +18,13 @@ The Accounting Forecasts module owns accounting forecasts domain behavior. It is
 
 ## 2. Full feature scope
 
-- **Accounting Forecasts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Driver/manual forecasts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Scenarios:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Rolling periods:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Actual replacement:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Assumptions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Approvals:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Variance:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Accounting Forecasts module owns accounting forecasts domain behavior. It is
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Driver/manual forecasts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `driver/manual forecasts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Scenarios** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `scenarios`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rolling periods** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rolling periods`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Actual replacement** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `actual replacement`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Assumptions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `assumptions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Approvals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approvals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Variance** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `variance`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounting-forecasts.md) | [Source map](../SOURCE-MAPPING.md#accounting-forecasts) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounting-forecasts.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounting-forecasts.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-forecasts-filament`](https://github.com/liberusoftware/module-accounting-forecasts-filament) (`liberusoftware/accounting-forecasts-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounting-forecasts.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounting-forecasts.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-forecasts-react-inertia`](https://github.com/liberusoftware/module-accounting-forecasts-react-inertia) (`@liberusoftware/module-accounting-forecasts-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounting-forecasts.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-forecasts-vue-inertia`](https://github.com/liberusoftware/module-accounting-forecasts-vue-inertia) (`@liberusoftware/module-accounting-forecasts-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounting-forecasts.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-forecasts-nuxt`](https://github.com/liberusoftware/module-accounting-forecasts-nuxt) (`@liberusoftware/module-accounting-forecasts-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounting-forecasts.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-forecasts-nextjs`](https://github.com/liberusoftware/module-accounting-forecasts-nextjs) (`@liberusoftware/module-accounting-forecasts-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounting-forecasts.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-forecasts-react-native`](https://github.com/liberusoftware/module-accounting-forecasts-react-native) (`@liberusoftware/module-accounting-forecasts-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounting-forecasts.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-forecasts-flutter`](https://github.com/liberusoftware/module-accounting-forecasts-flutter) (`module_accounting_forecasts_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounting-forecasts.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-forecasts-dart-mobile`](https://github.com/liberusoftware/module-accounting-forecasts-dart-mobile) (`module_accounting_forecasts_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-forecasts-dart-desktop`](https://github.com/liberusoftware/module-accounting-forecasts-dart-desktop) (`module_accounting_forecasts_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

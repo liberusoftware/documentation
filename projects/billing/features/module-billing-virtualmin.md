@@ -18,7 +18,11 @@ The Module Billing Virtualmin module owns module billing virtualmin domain behav
 
 ## 2. Full feature scope
 
-- **Module Billing Virtualmin:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Account provisioning:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Suspension and unsuspension:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Package changes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Addon management:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Termination:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +82,35 @@ The Module Billing Virtualmin module owns module billing virtualmin domain behav
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Account provisioning** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `account provisioning`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Suspension and unsuspension** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `suspension and unsuspension`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Package changes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `package changes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Addon management** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `addon management`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Termination** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `termination`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-billing-virtualmin.md) | [Source map](../SOURCE-MAPPING.md#module-billing-virtualmin) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-billing-virtualmin.md) | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-billing-virtualmin.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) · [`module-billing-virtualmin-filament`](https://github.com/liberusoftware/module-billing-virtualmin-filament) (`liberusoftware/billing-virtualmin-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-billing-virtualmin.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-billing-virtualmin.md) | [`project-billing-laravel-inertia-react`](https://github.com/liberusoftware/project-billing-laravel-inertia-react) · [`module-billing-virtualmin-react-inertia`](https://github.com/liberusoftware/module-billing-virtualmin-react-inertia) (`@liberusoftware/module-billing-virtualmin-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-billing-virtualmin.md) | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) · [`module-billing-virtualmin-vue-inertia`](https://github.com/liberusoftware/module-billing-virtualmin-vue-inertia) (`@liberusoftware/module-billing-virtualmin-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-billing-virtualmin.md) | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) · [`module-billing-virtualmin-nuxt`](https://github.com/liberusoftware/module-billing-virtualmin-nuxt) (`@liberusoftware/module-billing-virtualmin-nuxt`) | Standalone Vue SSR client consuming `project-billing-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-billing-virtualmin.md) | [`project-billing-next-react`](https://github.com/liberusoftware/project-billing-next-react) · [`module-billing-virtualmin-nextjs`](https://github.com/liberusoftware/module-billing-virtualmin-nextjs) (`@liberusoftware/module-billing-virtualmin-nextjs`) | App Router Server/Client components consuming `project-billing-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-billing-virtualmin.md) | [`project-billing-mobile-react`](https://github.com/liberusoftware/project-billing-mobile-react) · [`module-billing-virtualmin-react-native`](https://github.com/liberusoftware/module-billing-virtualmin-react-native) (`@liberusoftware/module-billing-virtualmin-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-billing-virtualmin.md) | [`project-billing-mobile-flutter`](https://github.com/liberusoftware/project-billing-mobile-flutter) · [`module-billing-virtualmin-flutter`](https://github.com/liberusoftware/module-billing-virtualmin-flutter) (`module_billing_virtualmin_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-billing-virtualmin.md) | [`project-billing-dart-mobile`](https://github.com/liberusoftware/project-billing-dart-mobile) · [`module-billing-virtualmin-dart-mobile`](https://github.com/liberusoftware/module-billing-virtualmin-dart-mobile) (`module_billing_virtualmin_dart_mobile`)<br>[`project-billing-dart-desktop`](https://github.com/liberusoftware/project-billing-dart-desktop) · [`module-billing-virtualmin-dart-desktop`](https://github.com/liberusoftware/module-billing-virtualmin-dart-desktop) (`module_billing_virtualmin_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

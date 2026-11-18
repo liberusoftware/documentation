@@ -18,7 +18,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm White Label:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Brand/domain/email/application settings:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Theme selection:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Custom client experience:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Provider abstraction:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Safe platform attribution policy:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-white-label`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `brand-domain-email-application-settings`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `theme-selection`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `custom-client-experience`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `provider-abstraction`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `safe-platform-attribution-policy`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,54 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-white-label` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-white-label-react-inertia`](https://github.com/liberusoftware/module-crm-white-label-react-inertia) (`@liberusoftware/module-crm-white-label-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-white-label.md) · [Core plan](../core/crm-white-label.md) · [API plan](../api/crm-white-label.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Brand/domain/email/application settings** | Render `brand/domain/email/application settings` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Theme selection** | Render `theme selection` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Custom client experience** | Render `custom client experience` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Provider abstraction** | Render `provider abstraction` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Safe platform attribution policy** | Render `safe platform attribution policy` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [WhiteLabelSettingsQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label/src/Queries/WhiteLabelSettingsQuery.php) | `public function forTeam(int $teamId): WhiteLabelSettings` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [UpdateWhiteLabelSettings.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label/src/Actions/UpdateWhiteLabelSettings.php) | `public function execute(int $teamId, int $actorId, array $attributes, ?int $expectedVersion = null): WhiteLabelSettings` |
+| [WhiteLabelAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label/src/Services/WhiteLabelAudit.php) | `public function record(int $teamId, ?int $actorId, string $event, array $changes): void` |
+| [WhiteLabelPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label/src/Services/WhiteLabelPolicy.php) | `public function canManage(int $teamId, int $actorId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WhiteLabelAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label/src/Models/WhiteLabelAudit.php) | `team_id`, `actor_id`, `event`, `changes`, `request_id` |
+| [WhiteLabelSettings.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label/src/Models/WhiteLabelSettings.php) | `team_id`, `brand_name`, `custom_domain`, `theme`, `email_settings`, `application_settings`, `client_experience`, `provider`, `show_platform_attribution`, `version` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [WhiteLabelController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label-api/src/Http/Controllers/WhiteLabelController.php) | `public function show(Request $request, WhiteLabelSettingsQuery $query): JsonResponse`<br>`public function update(Request $request, UpdateWhiteLabelSettings $update, WhiteLabelSettingsQuery $query, IdempotencyStore $idempotency): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-white-label-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-white-label-api/routes/api.php)
+
+```php
+Route::middleware(['auth:sanctum', 'throttle:api'])->prefix('api/v1/crm/white-label')->group(function (): void {
+Route::get('/', [WhiteLabelController::class, 'show'])->name('crm.white-label.show');
+Route::patch('/', [WhiteLabelController::class, 'update'])->name('crm.white-label.update');
+```
+<!-- layer-implementation-plan:end -->

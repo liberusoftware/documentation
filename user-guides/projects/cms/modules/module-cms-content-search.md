@@ -12,7 +12,7 @@
 
 The intended **Module Cms Content Search** workspace covers module cms content search domain behavior.
 
-The relevant capability areas are **Module Cms Content Search**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Authorized indexing**, **Facets**, **Spelling**, **Synonyms**, **Relevance**, **Autocomplete**, **Federated sources**, **Reindex**, **Search analytics**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

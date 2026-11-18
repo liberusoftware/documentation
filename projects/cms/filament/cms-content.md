@@ -18,7 +18,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Content:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Hierarchy:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Slugs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Routing:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Home/error pages:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Aliases:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Redirects:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Breadcrumbs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Templates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Previews:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +37,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-content`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `hierarchy`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `slugs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `routing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `home-error-pages`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `aliases`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `redirects`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `breadcrumbs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `templates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `previews`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,31 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-content` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-content-filament`](https://github.com/liberusoftware/module-cms-content-filament) (`liberusoftware/cms-content-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-content.md) · [API plan](../api/cms-content.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Hierarchy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `hierarchy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Slugs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `slugs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Routing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `routing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Home/error pages** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `home/error pages`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Aliases** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `aliases`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Redirects** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `redirects`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Breadcrumbs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `breadcrumbs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Templates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `templates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Previews** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `previews`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

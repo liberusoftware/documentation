@@ -12,7 +12,7 @@
 
 The intended **Accounting Revolut** workspace covers accounting revolut domain behavior.
 
-The relevant capability areas are **Accounting Revolut**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Account synchronization**, **Transaction synchronization**, **Single payments**, **Bulk payment drafts**, **Token refresh**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

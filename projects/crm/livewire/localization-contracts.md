@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Localization Contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Translation provider interface contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Locale and language-pair value objects:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Segment translation request and result DTOs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Fallback and quota error contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Catalog synchronization metadata:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `localization-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `translation-provider-interface-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `locale-and-language-pair-value-objects`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `segment-translation-request-and-result-dtos`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `fallback-and-quota-error-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `catalog-synchronization-metadata`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `localization-contracts` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/localization-contracts.md) · [API plan](../api/localization-contracts.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Translation provider interface contracts** | Expose a focused Livewire 4 component and namespaced Blade default view for `translation provider interface contracts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Locale and language-pair value objects** | Expose a focused Livewire 4 component and namespaced Blade default view for `locale and language-pair value objects` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Segment translation request and result DTOs** | Expose a focused Livewire 4 component and namespaced Blade default view for `segment translation request and result dtos` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Fallback and quota error contracts** | Expose a focused Livewire 4 component and namespaced Blade default view for `fallback and quota error contracts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Catalog synchronization metadata** | Expose a focused Livewire 4 component and namespaced Blade default view for `catalog synchronization metadata` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

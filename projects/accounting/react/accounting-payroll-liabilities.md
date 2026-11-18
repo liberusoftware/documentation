@@ -18,7 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Payroll Liabilities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Agency/payee balances:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Due dates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Payments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Allocations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Exceptions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-payroll-liabilities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `agency-payee-balances`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `due-dates`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `payments`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `allocations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `exceptions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `reconciliation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,58 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-payroll-liabilities` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-payroll-liabilities-react-inertia`](https://github.com/liberusoftware/module-accounting-payroll-liabilities-react-inertia) (`@liberusoftware/module-accounting-payroll-liabilities-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-payroll-liabilities.md) · [Core plan](../core/accounting-payroll-liabilities.md) · [API plan](../api/accounting-payroll-liabilities.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Agency/payee balances** | Render `agency/payee balances` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Due dates** | Render `due dates` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Payments** | Render `payments` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Allocations** | Render `allocations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Exceptions** | Render `exceptions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Reconciliation** | Render `reconciliation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [PayrollLiabilitySummary.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Queries/PayrollLiabilitySummary.php) | `public function forTeam(?int $teamId = null): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocatePayrollLiability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Actions/AllocatePayrollLiability.php) | `public function handle(PayrollLiability $liability, float $amount, string $allocationRef): PayrollLiability` |
+| [RecordPayrollLiability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Actions/RecordPayrollLiability.php) | `public function handle(array $attributes): PayrollLiability` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PayrollLiability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Models/PayrollLiability.php) | `team_id`, `agency_ref`, `payee_ref`, `liability_ref`, `currency`, `amount`, `paid_amount`, `due_on`, `status`, `payment_ref`, `allocation_ref`, `exception_code`, `exception_message`, `reconciliation_ref`, `reconciled_at`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [PayrollLiabilitiesController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities-api/src/Http/Controllers/PayrollLiabilitiesController.php) | `public function index(Request $request): AnonymousResourceCollection`<br>`public function store(Request $request, RecordPayrollLiability $action): JsonResponse`<br>`public function show(Request $request, PayrollLiability $payrollLiability): PayrollLiabilityResource`<br>`public function allocate(Request $request, PayrollLiability $payrollLiability, AllocatePayrollLiability $action): PayrollLiabilityResource`<br>`public function summary(Request $request, PayrollLiabilitySummary $query): array` |
+
+**Observed route declarations:**
+
+[modules/accounting-payroll-liabilities-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/payroll-liabilities')->group(function (): void {
+Route::middleware('ability:accounting.payroll-liabilities.read')->group(function (): void {
+Route::get('/', [PayrollLiabilitiesController::class, 'index']);
+Route::get('/summary', [PayrollLiabilitiesController::class, 'summary']);
+Route::get('/{payrollLiability}', [PayrollLiabilitiesController::class, 'show']);
+Route::middleware('ability:accounting.payroll-liabilities.write')->group(function (): void {
+Route::post('/', [PayrollLiabilitiesController::class, 'store']);
+Route::post('/{payrollLiability}/allocate', [PayrollLiabilitiesController::class, 'allocate']);
+```
+<!-- layer-implementation-plan:end -->

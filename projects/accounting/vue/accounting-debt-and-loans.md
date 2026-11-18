@@ -18,7 +18,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Accounting Debt And Loans:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Facilities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Drawdowns:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Repayments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Interest/fees:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Schedules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Covenants:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Current/non-current split:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `accounting-debt-and-loans`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `facilities`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `drawdowns`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `repayments`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `interest-fees`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `schedules`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `covenants`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `current-non-current-split`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `reconciliation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,63 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-debt-and-loans` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-accounting-debt-and-loans-vue-inertia`](https://github.com/liberusoftware/module-accounting-debt-and-loans-vue-inertia) (`@liberusoftware/module-accounting-debt-and-loans-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/accounting-debt-and-loans.md) · [Core plan](../core/accounting-debt-and-loans.md) · [API plan](../api/accounting-debt-and-loans.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Facilities** | Render `facilities` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Drawdowns** | Render `drawdowns` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Repayments** | Render `repayments` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Interest/fees** | Render `interest/fees` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Schedules** | Render `schedules` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Covenants** | Render `covenants` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Current/non-current split** | Render `current/non-current split` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Reconciliation** | Render `reconciliation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [DebtQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans/src/Queries/DebtQuery.php) | `public function facilities(int $teamId): Collection`<br>`public function position(int $teamId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateDebtFacility.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans/src/Actions/CreateDebtFacility.php) | `public function handle(array $attributes): DebtFacility` |
+| [ReconcileDebtMovement.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans/src/Actions/ReconcileDebtMovement.php) | `public function handle(DebtMovement $movement, string $journalReference): DebtMovement` |
+| [RecordDebtMovement.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans/src/Actions/RecordDebtMovement.php) | `public function handle(DebtFacility $facility, string\|DebtMovementKind $kind, array $attributes): DebtMovement` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [DebtCovenant.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans/src/Models/DebtCovenant.php) | `facility_id`, `team_id`, `covenant_ref`, `metric`, `threshold`, `operator`, `last_value`, `status`, `metadata` |
+| [DebtFacility.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans/src/Models/DebtFacility.php) | `team_id`, `facility_ref`, `lender_ref`, `currency`, `limit_amount`, `drawn_amount`, `interest_rate`, `start_date`, `maturity_date`, `status`, `metadata` |
+| [DebtMovement.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans/src/Models/DebtMovement.php) | `facility_id`, `team_id`, `kind`, `principal_amount`, `interest_amount`, `fee_amount`, `movement_date`, `due_date`, `status`, `journal_ref`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [DebtAndLoansController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans-api/src/Http/Controllers/DebtAndLoansController.php) | `public function index(Request $request): JsonResponse`<br>`public function position(DebtQuery $query): JsonResponse`<br>`public function store(Request $request, CreateDebtFacility $action): JsonResponse`<br>`public function movement(Request $request, string $facility, RecordDebtMovement $action): JsonResponse`<br>`public function reconcile(Request $request, string $movement, ReconcileDebtMovement $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-debt-and-loans-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-debt-and-loans-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/debt-and-loans')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.debt-and-loans.read')->group(function (): void {
+Route::get('/facilities', [DebtAndLoansController::class, 'index']);
+Route::get('/position', [DebtAndLoansController::class, 'position']);
+Route::middleware('ability:accounting.debt-and-loans.write')->group(function (): void {
+Route::post('/facilities', [DebtAndLoansController::class, 'store']);
+Route::post('/facilities/{facility}/movements', [DebtAndLoansController::class, 'movement']);
+Route::post('/movements/{movement}/reconcile', [DebtAndLoansController::class, 'reconcile']);
+```
+<!-- layer-implementation-plan:end -->

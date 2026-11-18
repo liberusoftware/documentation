@@ -38,12 +38,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 - `activity-data-imports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `factors`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `scopes/categories`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `scopes-categories`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `calculations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `evidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `estimates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `dashboards`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `export-(optional)`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `export-optional`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -56,3 +56,43 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-carbon-accounting` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-carbon-accounting-filament`](https://github.com/liberusoftware/module-accounting-carbon-accounting-filament) (`liberusoftware/accounting-carbon-accounting-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/carbon-accounting.md) · [API plan](../api/carbon-accounting.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Activity-data imports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `activity-data imports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Factors** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `factors`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Scopes/categories** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `scopes/categories`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Calculations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `calculations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Estimates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `estimates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Dashboards** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `dashboards`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Export (optional)** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `export (optional)`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [CarbonAccountingFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting-filament/src/CarbonAccountingFilamentServiceProvider.php) · [CarbonActivityResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting-filament/src/Resources/CarbonActivityResource.php) · [CreateCarbonActivity.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting-filament/src/Resources/Pages/CreateCarbonActivity.php) · [ListCarbonActivities.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting-filament/src/Resources/Pages/ListCarbonActivities.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CarbonActivityQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting/src/Queries/CarbonActivityQuery.php) | `public function paginate(int $teamId, ?string $scope = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordCarbonActivity.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting/src/Actions/RecordCarbonActivity.php) | `public function handle(array $attributes): CarbonActivity` |
+| [CarbonAccountingPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting-api/src/Policies/CarbonAccountingPolicy.php) | `public function viewAny(?object $user): bool`<br>`public function create(?object $user): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CarbonActivity.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-carbon-accounting/src/Models/CarbonActivity.php) | `team_id`, `activity_date`, `scope`, `category`, `description`, `quantity`, `unit`, `emission_factor`, `co2e`, `factor_source`, `evidence`, `is_estimate`, `metadata` |
+<!-- layer-implementation-plan:end -->

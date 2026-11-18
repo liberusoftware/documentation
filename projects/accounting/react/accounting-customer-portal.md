@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Customer Portal:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Estimates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Invoices:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Credits:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Statements:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Payment links:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Payment history:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Disputes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Documents:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Communication preferences:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-customer-portal`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `estimates`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `invoices`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `credits`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `statements`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `payment-links`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `payment-history`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `disputes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `documents`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `communication-preferences`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,59 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-customer-portal` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-customer-portal-react-inertia`](https://github.com/liberusoftware/module-accounting-customer-portal-react-inertia) (`@liberusoftware/module-accounting-customer-portal-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-customer-portal.md) · [Core plan](../core/accounting-customer-portal.md) · [API plan](../api/accounting-customer-portal.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Estimates** | Render `estimates` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Invoices** | Render `invoices` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Credits** | Render `credits` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Statements** | Render `statements` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Payment links** | Render `payment links` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Payment history** | Render `payment history` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Disputes** | Render `disputes` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Documents** | Render `documents` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Communication preferences** | Render `communication preferences` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CustomerPortalQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Queries/CustomerPortalQuery.php) | `public function forTeam(int $teamId): Collection`<br>`public function forCustomer(int $teamId, string $customerId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCustomerPortalRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Actions/CreateCustomerPortalRecord.php) | `public function handle(array $attributes): CustomerPortalRecord` |
+| [PublishCustomerPortalRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Actions/PublishCustomerPortalRecord.php) | `public function handle(CustomerPortalRecord $record): CustomerPortalRecord` |
+| [ResolveCustomerPortalDispute.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Actions/ResolveCustomerPortalDispute.php) | `public function handle(CustomerPortalRecord $record, array $resolution): CustomerPortalRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CustomerPortalRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Models/CustomerPortalRecord.php) | `team_id`, `customer_id`, `type`, `reference`, `status`, `currency`, `amount`, `payload`, `metadata`, `published_at` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CustomerPortalController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal-api/src/Http/Controllers/CustomerPortalController.php) | `public function index(CustomerPortalQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCustomerPortalRecord $action): JsonResponse`<br>`public function publish(Request $request, string $record, PublishCustomerPortalRecord $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-customer-portal-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/customer-portal')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.customer-portal.read')->get('/', [CustomerPortalController::class, 'index']);
+Route::middleware('ability:accounting.customer-portal.write')->group(function (): void {
+Route::post('/', [CustomerPortalController::class, 'store']);
+Route::post('/{record}/publish', [CustomerPortalController::class, 'publish']);
+```
+<!-- layer-implementation-plan:end -->

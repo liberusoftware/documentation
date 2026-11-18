@@ -18,7 +18,12 @@ The Integrations module owns integrations domain behavior. It is the authoritati
 
 ## 2. Full feature scope
 
-- **Integrations:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Provider credentials:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Capabilities:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **OAuth callbacks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Secret rotation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Connection tests:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Sync:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Integrations module owns integrations domain behavior. It is the authoritati
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Provider credentials** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider credentials`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Capabilities** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `capabilities`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **OAuth callbacks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `oauth callbacks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Secret rotation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `secret rotation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Connection tests** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `connection tests`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sync** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sync`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/integrations.md) | [Source map](../SOURCE-MAPPING.md#integrations) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/integrations.md) | [`project-social-network-laravel-api`](https://github.com/liberusoftware/project-social-network-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/integrations.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) · [`module-integrations-filament`](https://github.com/liberusoftware/module-integrations-filament) (`liberusoftware/integrations-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/integrations.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/integrations.md) | [`project-social-network-laravel-inertia-react`](https://github.com/liberusoftware/project-social-network-laravel-inertia-react) · [`module-integrations-react-inertia`](https://github.com/liberusoftware/module-integrations-react-inertia) (`@liberusoftware/module-integrations-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/integrations.md) | [`project-social-network-laravel-inertia-vue`](https://github.com/liberusoftware/project-social-network-laravel-inertia-vue) · [`module-integrations-vue-inertia`](https://github.com/liberusoftware/module-integrations-vue-inertia) (`@liberusoftware/module-integrations-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/integrations.md) | [`project-social-network-nuxt-vue`](https://github.com/liberusoftware/project-social-network-nuxt-vue) · [`module-integrations-nuxt`](https://github.com/liberusoftware/module-integrations-nuxt) (`@liberusoftware/module-integrations-nuxt`) | Standalone Vue SSR client consuming `project-social-network-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/integrations.md) | [`project-social-network-next-react`](https://github.com/liberusoftware/project-social-network-next-react) · [`module-integrations-nextjs`](https://github.com/liberusoftware/module-integrations-nextjs) (`@liberusoftware/module-integrations-nextjs`) | App Router Server/Client components consuming `project-social-network-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/integrations.md) | [`project-social-network-mobile-react`](https://github.com/liberusoftware/project-social-network-mobile-react) · [`module-integrations-react-native`](https://github.com/liberusoftware/module-integrations-react-native) (`@liberusoftware/module-integrations-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/integrations.md) | [`project-social-network-mobile-flutter`](https://github.com/liberusoftware/project-social-network-mobile-flutter) · [`module-integrations-flutter`](https://github.com/liberusoftware/module-integrations-flutter) (`module_integrations_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/integrations.md) | [`project-social-network-dart-mobile`](https://github.com/liberusoftware/project-social-network-dart-mobile) · [`module-integrations-dart-mobile`](https://github.com/liberusoftware/module-integrations-dart-mobile) (`module_integrations_dart_mobile`)<br>[`project-social-network-dart-desktop`](https://github.com/liberusoftware/project-social-network-dart-desktop) · [`module-integrations-dart-desktop`](https://github.com/liberusoftware/module-integrations-dart-desktop) (`module_integrations_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

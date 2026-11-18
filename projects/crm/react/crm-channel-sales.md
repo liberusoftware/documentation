@@ -18,7 +18,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm Channel Sales:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Partner opportunities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Shared pipelines:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Referrals:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reseller pricing references:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Quotes/orders handoff:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Commissions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Forecasts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Partner portal:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-channel-sales`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `partner-opportunities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `shared-pipelines`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `referrals`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `reseller-pricing-references`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `quotes-orders-handoff`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `commissions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `forecasts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `partner-portal`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,58 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-channel-sales` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-channel-sales-react-inertia`](https://github.com/liberusoftware/module-crm-channel-sales-react-inertia) (`@liberusoftware/module-crm-channel-sales-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-channel-sales.md) · [Core plan](../core/crm-channel-sales.md) · [API plan](../api/crm-channel-sales.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Partner opportunities** | Render `partner opportunities` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Shared pipelines** | Render `shared pipelines` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Referrals** | Render `referrals` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Reseller pricing references** | Render `reseller pricing references` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Quotes/orders handoff** | Render `quotes/orders handoff` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Commissions** | Render `commissions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Forecasts** | Render `forecasts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Partner portal** | Render `partner portal` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ChannelSalesQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Queries/ChannelSalesQuery.php) | `public function opportunities(int $teamId): Builder`<br>`public function forecast(int $teamId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AdvanceChannelOpportunity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Actions/AdvanceChannelOpportunity.php) | `public function execute(int $teamId, int $actorId, ChannelOpportunity $opportunity, string $stage, string $handoffStatus = 'pending'): ChannelEvent` |
+| [RegisterChannelOpportunity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Actions/RegisterChannelOpportunity.php) | `public function execute(int $teamId, int $ownerId, string $partnerKey, string $opportunityKey, float $amount, float $commissionRate, array $pricingReference = []): ChannelOpportunity` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ChannelEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Models/ChannelEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ChannelOpportunity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Models/ChannelOpportunity.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ChannelSalesController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales-api/src/Http/Controllers/ChannelSalesController.php) | `public function __construct(private readonly ChannelSalesQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(RegisterChannelOpportunity $a): JsonResponse`<br>`public function advance(ChannelOpportunity $opportunity, AdvanceChannelOpportunity $a): JsonResponse`<br>`public function forecast(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-channel-sales-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/channel-sales')->group(function (): void {
+Route::get('opportunities', [ChannelSalesController::class, 'index']);
+Route::post('opportunities', [ChannelSalesController::class, 'store']);
+Route::post('opportunities/{opportunity}/advance', [ChannelSalesController::class, 'advance']);
+Route::get('forecast', [ChannelSalesController::class, 'forecast']);
+```
+<!-- layer-implementation-plan:end -->

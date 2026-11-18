@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Cms Contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Content and media repository contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Block and rendering pipeline interfaces:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Publication state and revision DTOs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Menu and taxonomy query contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Headless delivery and webhook event interfaces:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-cms-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `content-and-media-repository-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `block-and-rendering-pipeline-interfaces`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `publication-state-and-revision-dtos`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `menu-and-taxonomy-query-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `headless-delivery-and-webhook-event-interfaces`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-cms-contracts` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-cms-contracts.md) · [API plan](../api/module-cms-contracts.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Content and media repository contracts** | Expose a focused Livewire 4 component and namespaced Blade default view for `content and media repository contracts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Block and rendering pipeline interfaces** | Expose a focused Livewire 4 component and namespaced Blade default view for `block and rendering pipeline interfaces` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Publication state and revision DTOs** | Expose a focused Livewire 4 component and namespaced Blade default view for `publication state and revision dtos` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Menu and taxonomy query contracts** | Expose a focused Livewire 4 component and namespaced Blade default view for `menu and taxonomy query contracts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Headless delivery and webhook event interfaces** | Expose a focused Livewire 4 component and namespaced Blade default view for `headless delivery and webhook event interfaces` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

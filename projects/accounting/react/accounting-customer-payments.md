@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Customer Payments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Receipts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Payment links:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Gateway/bank references:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Deposits:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Undeposited funds:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Allocations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Partial/overpayments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Refunds:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-customer-payments`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `receipts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `payment-links`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `gateway-bank-references`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `deposits`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `undeposited-funds`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `allocations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `partial-overpayments`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `refunds`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `reconciliation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,64 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-customer-payments` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-customer-payments-react-inertia`](https://github.com/liberusoftware/module-accounting-customer-payments-react-inertia) (`@liberusoftware/module-accounting-customer-payments-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-customer-payments.md) · [Core plan](../core/accounting-customer-payments.md) · [API plan](../api/accounting-customer-payments.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Receipts** | Render `receipts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Payment links** | Render `payment links` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Gateway/bank references** | Render `gateway/bank references` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Deposits** | Render `deposits` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Undeposited funds** | Render `undeposited funds` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Allocations** | Render `allocations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Partial/overpayments** | Render `partial/overpayments` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Refunds** | Render `refunds` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Reconciliation** | Render `reconciliation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CustomerPaymentQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Queries/CustomerPaymentQuery.php) | `public function forTeam(int $teamId): Collection`<br>`public function forCustomer(int $teamId, string $customerId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocateCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/AllocateCustomerPayment.php) | `public function handle(CustomerPayment $payment, string $documentRef, float $amount): CustomerPaymentAllocation` |
+| [ReconcileCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/ReconcileCustomerPayment.php) | `public function handle(CustomerPayment $payment, string $depositReference): CustomerPayment` |
+| [RecordCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/RecordCustomerPayment.php) | `public function handle(array $attributes): CustomerPayment` |
+| [RefundCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/RefundCustomerPayment.php) | `public function handle(CustomerPayment $payment, float $amount): CustomerPayment` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Models/CustomerPayment.php) | `team_id`, `customer_id`, `kind`, `reference`, `status`, `currency`, `amount`, `allocated_amount`, `refunded_amount`, `gateway_reference`, `deposit_reference`, `metadata` |
+| [CustomerPaymentAllocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Models/CustomerPaymentAllocation.php) | `payment_id`, `team_id`, `document_ref`, `amount` |
+| [Customer.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments-api/src/Models/Customer.php) | `customer_name`, `customer_last_name`, `customer_address`, `customer_email`, `customer_phone`, `customer_city`, `credit_hold`, `qbo_id`, `sage_id`, `xero_id`, `team_id` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CustomerPaymentsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments-api/src/Http/Controllers/CustomerPaymentsController.php) | `public function index(CustomerPaymentQuery $query): JsonResponse`<br>`public function store(Request $request, RecordCustomerPayment $action): JsonResponse`<br>`public function allocate(Request $request, string $payment, AllocateCustomerPayment $action): JsonResponse`<br>`public function reconcile(Request $request, string $payment, ReconcileCustomerPayment $action): JsonResponse`<br>`public function refund(Request $request, string $payment, RefundCustomerPayment $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-customer-payments-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/customer-payments')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.customer-payments.read')->get('/', [CustomerPaymentsController::class, 'index']);
+Route::middleware('ability:accounting.customer-payments.write')->group(function (): void {
+Route::post('/', [CustomerPaymentsController::class, 'store']);
+Route::post('/{payment}/allocations', [CustomerPaymentsController::class, 'allocate']);
+Route::post('/{payment}/reconcile', [CustomerPaymentsController::class, 'reconcile']);
+Route::post('/{payment}/refund', [CustomerPaymentsController::class, 'refund']);
+```
+<!-- layer-implementation-plan:end -->

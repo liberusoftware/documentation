@@ -23,3 +23,46 @@ This adapter presents Notifications for the React Native + Expo surface. It owns
 Test Notifications API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [React Native + Expo standard](../../../standards/REACT-NATIVE.md), [mobile architecture](../../../architecture/MOBILE.md), [React Native + Expo technology](../../../technologies/REACT-NATIVE.md), [core module](../core/notifications.md), and [API module](../api/notifications.md).
+
+<!-- layer-implementation-plan:start -->
+## Structured mobile feature plan, skeleton repository, and source evidence
+
+**Matching domain module:** `notifications`
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product React Native Expo host skeleton | [`project-social-network-mobile-react`](https://github.com/liberusoftware/project-social-network-mobile-react) | Native iOS/Android Expo Router application shell, SecureStore session provider, and EAS build config ([template](https://github.com/liberusoftware/project-boilerplate-mobile-react) · [wayfinder](../../wayfinders/mobile-react.md) · [runbook](../../../guides/presentation/REACT-NATIVE.md)) |
+| Shared product API backend | [`project-social-network-laravel-api`](https://github.com/liberusoftware/project-social-network-laravel-api) | Authoritative Laravel HTTP composition root ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/notifications.md)) |
+| Capability React Native module skeleton | [`module-notifications-react-native`](https://github.com/liberusoftware/module-notifications-react-native) (`@liberusoftware/module-notifications-react-native`) | Metro-compatible TypeScript mobile screens, hooks, and DTO validators ([foundation](https://github.com/liberusoftware/module-boilerplate-react-native) · [catalog](../../../modules/skeletons/mobile-react.md)) |
+
+### React Native + Expo feature and mobile screen matrix
+
+| Feature / aspect | Native iOS / Android screen, navigation & accessibility | Typed API client, SecureStore & offline/retry recovery |
+| --- | --- | --- |
+| **Preferences** | Progressive mobile list/detail/sheet flow for `preferences` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-social-network-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **In-app/email/push delivery** | Progressive mobile list/detail/sheet flow for `in-app/email/push delivery` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-social-network-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Grouping** | Progressive mobile list/detail/sheet flow for `grouping` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-social-network-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Digests** | Progressive mobile list/detail/sheet flow for `digests` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-social-network-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Quiet hours** | Progressive mobile list/detail/sheet flow for `quiet hours` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-social-network-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Read state** | Progressive mobile list/detail/sheet flow for `read state` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-social-network-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [NotificationsController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-notifications-api/src/Http/Controllers/NotificationsController.php) | `public function index(Request $request, GetProfile $get): JsonResponse`<br>`public function preferences(Request $request, GetProfile $get, UpdatePreferences $update): JsonResponse`<br>`public function unreadCount(Request $request, GetProfile $get, UnreadCount $count): JsonResponse`<br>`public function readAll(Request $request, GetProfile $get, MarkAllRead $read): JsonResponse`<br>`public function read(string $notification, Request $request, GetProfile $get, MarkRead $read): JsonResponse`<br>`public function dismiss(string $notification, Request $request, GetProfile $get, DismissNotification $dismiss): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/social-network-notifications-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-notifications-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/social-network/notifications')->middleware(['auth:sanctum', 'throttle:60,1'])->name('social-network.notifications.api.')->group(function (): void {
+Route::get('/', [NotificationsController::class, 'index'])->name('index');
+Route::get('/unread-count', [NotificationsController::class, 'unreadCount'])->name('unread-count');
+Route::post('/read-all', [NotificationsController::class, 'readAll'])->name('read-all');
+Route::patch('/preferences', [NotificationsController::class, 'preferences'])->name('preferences');
+Route::post('/{notification}/read', [NotificationsController::class, 'read'])->name('read');
+Route::post('/{notification}/dismiss', [NotificationsController::class, 'dismiss'])->name('dismiss');
+```
+<!-- layer-implementation-plan:end -->

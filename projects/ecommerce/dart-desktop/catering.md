@@ -1,8 +1,24 @@
 # Ecommerce: Catering — Dart desktop
 
+**Matching domain module:** `ecommerce-catering`<br>
+**Host skeleton:** [`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) ([wayfinder](../../wayfinders/dart-desktop.md) · [runbook](../../../guides/presentation/DART.md))<br>
+**Shared API backend:** [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md))
+
 ## Delivery boundary
 
 Use the desktop Flutter host with resizable event/menu workspaces, keyboard navigation, focus traversal and accessible tables/dialogs. Secure credentials using platform storage; protect exported quote files and printing with customer/staff projections. Refresh version on window resume and coordinate multi-window conversion to avoid duplicate requests.
+
+## Feature and desktop surface matrix
+
+| Feature / aspect | Dart desktop (`Linux` / `macOS` / `Windows`) implementation contract |
+| --- | --- |
+| **Meals and ingredient composition** | Resizable staff master-detail workspace for meals and ingredient quantities with keyboard navigation and unit validation. |
+| **Recipes and preparation yields** | Staff-only recipe/yield editor and prep-sheet print/export; customer projections and exports strictly omit recipes and ingredient costs. |
+| **Staff-managed catering packages** | Multi-column package builder and comparison view with keyboard shortcuts and dietary disclosure tags. |
+| **Event requirements and venue context** | Structured event intake workspace with explicit IANA timezone display, venue capacity notes, guest count validation, and service schedule. |
+| **Immutable menu revisions** | Side-by-side revision history diff and version-locked editing; prevent stale overwrites across multiple open desktop windows. |
+| **Reproducible quotation context** | Detailed quote review pane with currency, tax/pricing assumptions, expiry countdown, authorized PDF/print export, and atomic acceptance. |
+| **Availability confirmation and order conversion** | Dedicated operations queue showing separate booking availability, accepted quote, order reference, and payment state with idempotent retry/reconciliation. |
 
 ## Shared workflow and security
 

@@ -23,3 +23,60 @@ This adapter presents Accounting Coding Suggestions for the React Native + Expo 
 Test Accounting Coding Suggestions API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [React Native + Expo standard](../../../standards/REACT-NATIVE.md), [mobile architecture](../../../architecture/MOBILE.md), [React Native + Expo technology](../../../technologies/REACT-NATIVE.md), [core module](../core/accounting-coding-suggestions.md), and [API module](../api/accounting-coding-suggestions.md).
+
+<!-- layer-implementation-plan:start -->
+## Structured mobile feature plan, skeleton repository, and source evidence
+
+**Matching domain module:** `accounting-coding-suggestions`
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product React Native Expo host skeleton | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) | Native iOS/Android Expo Router application shell, SecureStore session provider, and EAS build config ([template](https://github.com/liberusoftware/project-boilerplate-mobile-react) · [wayfinder](../../wayfinders/mobile-react.md) · [runbook](../../../guides/presentation/REACT-NATIVE.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/accounting-coding-suggestions.md)) |
+| Capability React Native module skeleton | [`module-accounting-coding-suggestions-react-native`](https://github.com/liberusoftware/module-accounting-coding-suggestions-react-native) (`@liberusoftware/module-accounting-coding-suggestions-react-native`) | Metro-compatible TypeScript mobile screens, hooks, and DTO validators ([foundation](https://github.com/liberusoftware/module-boilerplate-react-native) · [catalog](../../../modules/skeletons/mobile-react.md)) |
+
+### React Native + Expo feature and mobile screen matrix
+
+| Feature / aspect | Native iOS / Android screen, navigation & accessibility | Typed API client, SecureStore & offline/retry recovery |
+| --- | --- | --- |
+| **Account/tax/dimension/payee suggestions** | Progressive mobile list/detail/sheet flow for `account/tax/dimension/payee suggestions` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-accounting-erp-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Confidence** | Progressive mobile list/detail/sheet flow for `confidence` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-accounting-erp-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Explanations** | Progressive mobile list/detail/sheet flow for `explanations` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-accounting-erp-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **User feedback** | Progressive mobile list/detail/sheet flow for `user feedback` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-accounting-erp-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Policy thresholds** | Progressive mobile list/detail/sheet flow for `policy thresholds` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-accounting-erp-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Review** | Progressive mobile list/detail/sheet flow for `review` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-accounting-erp-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CodingSuggestionQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Queries/CodingSuggestionQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ApplySuggestionFeedback.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ApplySuggestionFeedback.php) | `public function handle(CodingSuggestion $suggestion, array $feedback): CodingSuggestion` |
+| [CreateCodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/CreateCodingSuggestion.php) | `public function handle(array $attributes): CodingSuggestion` |
+| [ReviewCodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ReviewCodingSuggestion.php) | `public function handle(CodingSuggestion $suggestion, array $review): CodingSuggestion` |
+| [SetSuggestionPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/SetSuggestionPolicy.php) | `public function handle(CodingSuggestion $suggestion, array $policy): CodingSuggestion` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Models/CodingSuggestion.php) | `team_id`, `source_ref`, `target_type`, `target_ref`, `confidence`, `explanation`, `status`, `feedback`, `policy`, `review` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CodingSuggestionsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions-api/src/Http/Controllers/CodingSuggestionsController.php) | `public function index(CodingSuggestionQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCodingSuggestion $action): JsonResponse`<br>`public function feedback(Request $request, string $suggestion, ApplySuggestionFeedback $action): JsonResponse`<br>`public function review(Request $request, string $suggestion, ReviewCodingSuggestion $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-coding-suggestions-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/coding-suggestions')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.coding-suggestions.read')->get('/', [CodingSuggestionsController::class, 'index']);
+Route::middleware('ability:accounting.coding-suggestions.write')->group(function (): void {
+Route::post('/', [CodingSuggestionsController::class, 'store']);
+Route::post('/{suggestion}/feedback', [CodingSuggestionsController::class, 'feedback']);
+Route::post('/{suggestion}/review', [CodingSuggestionsController::class, 'review']);
+```
+<!-- layer-implementation-plan:end -->

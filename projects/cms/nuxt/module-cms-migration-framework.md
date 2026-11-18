@@ -18,7 +18,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Migration Framework:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Source adapters:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Inventories:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Mapping:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Dry run:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Transforms:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Identity/media/link resolution:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Batches:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Resume:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reconciliation:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +37,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `module-cms-migration-framework`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `source-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `inventories`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `mapping`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `dry-run`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `transforms`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `identity-media-link-resolution`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `batches`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `resume`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reconciliation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +66,38 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `module-cms-migration-framework` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/module-cms-migration-framework.md)) |
+| Capability Nuxt module skeleton | [`module-cms-migration-framework-nuxt`](https://github.com/liberusoftware/module-cms-migration-framework-nuxt) (`@liberusoftware/module-cms-migration-framework-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Source adapters** | Expose composable and Vue 3 component for `source adapters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Inventories** | Expose composable and Vue 3 component for `inventories` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Mapping** | Expose composable and Vue 3 component for `mapping` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Dry run** | Expose composable and Vue 3 component for `dry run` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Transforms** | Expose composable and Vue 3 component for `transforms` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Identity/media/link resolution** | Expose composable and Vue 3 component for `identity/media/link resolution` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Batches** | Expose composable and Vue 3 component for `batches` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Resume** | Expose composable and Vue 3 component for `resume` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Reconciliation** | Expose composable and Vue 3 component for `reconciliation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-migration-framework.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MigrationFrameworkService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-migration-framework/src/Services/MigrationFrameworkService.php) | `public function start(string $source, array $options = [], ?int $teamId = null): MigrationJob`<br>`public function add(MigrationJob $job, string $recordType, string $sourceId, array $payload = []): MigrationRecord`<br>`public function process(MigrationRecord $record, bool $success, ?string $failureReason = null): MigrationRecord`<br>`public function complete(MigrationJob $job): MigrationJob` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MigrationJob.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-migration-framework/src/Models/MigrationJob.php) | `public_id`, `source`, `status`, `total_records`, `processed_records`, `failed_records`, `options`, `failure_reason`, `started_at`, `completed_at`, `team_id` |
+| [MigrationRecord.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-migration-framework/src/Models/MigrationRecord.php) | `job_id`, `record_type`, `source_id`, `status`, `payload`, `failure_reason`, `processed_at`, `team_id` |
+<!-- layer-implementation-plan:end -->

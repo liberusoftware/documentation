@@ -18,7 +18,12 @@ The Crm Prospecting Agent module owns crm prospecting agent domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Crm Prospecting Agent:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Approved research:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Target selection:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Personalization:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Sequence preparation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Engagement monitoring:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Policy-based review/dispatch:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Crm Prospecting Agent module owns crm prospecting agent domain behavior. It 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Approved research** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approved research`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Target selection** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `target selection`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Personalization** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `personalization`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sequence preparation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sequence preparation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Engagement monitoring** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `engagement monitoring`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Policy-based review/dispatch** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `policy-based review/dispatch`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-prospecting-agent.md) | [Source map](../SOURCE-MAPPING.md#crm-prospecting-agent) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-prospecting-agent.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-prospecting-agent.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-prospecting-agent-filament`](https://github.com/liberusoftware/module-crm-prospecting-agent-filament) (`liberusoftware/crm-prospecting-agent-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-prospecting-agent.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-prospecting-agent.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-prospecting-agent-react-inertia`](https://github.com/liberusoftware/module-crm-prospecting-agent-react-inertia) (`@liberusoftware/module-crm-prospecting-agent-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-prospecting-agent.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-prospecting-agent-vue-inertia`](https://github.com/liberusoftware/module-crm-prospecting-agent-vue-inertia) (`@liberusoftware/module-crm-prospecting-agent-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-prospecting-agent.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-prospecting-agent-nuxt`](https://github.com/liberusoftware/module-crm-prospecting-agent-nuxt) (`@liberusoftware/module-crm-prospecting-agent-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-prospecting-agent.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-prospecting-agent-nextjs`](https://github.com/liberusoftware/module-crm-prospecting-agent-nextjs) (`@liberusoftware/module-crm-prospecting-agent-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-prospecting-agent.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-prospecting-agent-react-native`](https://github.com/liberusoftware/module-crm-prospecting-agent-react-native) (`@liberusoftware/module-crm-prospecting-agent-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-prospecting-agent.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-prospecting-agent-flutter`](https://github.com/liberusoftware/module-crm-prospecting-agent-flutter) (`module_crm_prospecting_agent_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-prospecting-agent.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-prospecting-agent-dart-mobile`](https://github.com/liberusoftware/module-crm-prospecting-agent-dart-mobile) (`module_crm_prospecting_agent_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-prospecting-agent-dart-desktop`](https://github.com/liberusoftware/module-crm-prospecting-agent-dart-desktop) (`module_crm_prospecting_agent_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

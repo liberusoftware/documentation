@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Billing Liberu Control Panel:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Account provisioning:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Suspension and unsuspension:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Package changes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Addon management:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Termination:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-billing-liberu-control-panel`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `account-provisioning`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `suspension-and-unsuspension`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `package-changes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `addon-management`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `termination`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-billing-liberu-control-panel` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-billing-liberu-control-panel-filament`](https://github.com/liberusoftware/module-billing-liberu-control-panel-filament) (`liberusoftware/billing-liberu-control-panel-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-billing-liberu-control-panel.md) · [API plan](../api/module-billing-liberu-control-panel.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Account provisioning** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `account provisioning`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Suspension and unsuspension** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `suspension and unsuspension`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Package changes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `package changes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Addon management** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `addon management`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Termination** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `termination`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

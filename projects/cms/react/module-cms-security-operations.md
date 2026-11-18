@@ -18,7 +18,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Security Operations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Update inventory:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Extension provenance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Content integrity:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Upload scanning:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Security headers integration:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Advisories:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Incident aids:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `module-cms-security-operations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `update-inventory`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `extension-provenance`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `content-integrity`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `upload-scanning`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `security-headers-integration`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `advisories`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `incident-aids`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-security-operations` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-cms-security-operations-react-inertia`](https://github.com/liberusoftware/module-cms-security-operations-react-inertia) (`@liberusoftware/module-cms-security-operations-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/module-cms-security-operations.md) · [Core plan](../core/module-cms-security-operations.md) · [API plan](../api/module-cms-security-operations.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Update inventory** | Render `update inventory` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Extension provenance** | Render `extension provenance` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Content integrity** | Render `content integrity` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Upload scanning** | Render `upload scanning` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Security headers integration** | Render `security headers integration` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Advisories** | Render `advisories` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Incident aids** | Render `incident aids` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [SecurityOperationsService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Services/SecurityOperationsService.php) | `public function inventory(array $packages, ?int $actorId = null): SecurityOperation`<br>`public function provenance(string $extension, string $version, string $source, ?int $actorId = null): SecurityOperation`<br>`public function integrity(string $subject, string $content, ?int $actorId = null): SecurityOperation`<br>`public function scan(UploadedFile $file, ?int $actorId = null): SecurityOperation`<br>`public function advisory(string $title, string $severity, array $details = [], ?int $actorId = null): SecurityOperation`<br>`public function incidentBundle(string $incident): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SecurityOperation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Models/SecurityOperation.php) | `kind`, `subject`, `status`, `evidence`, `content_hash`, `actor_id` |
+<!-- layer-implementation-plan:end -->

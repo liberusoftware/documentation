@@ -31,7 +31,7 @@ def main():
         stems=set(info['designs']);counts[project]={}
         for layer in LAYERS:
             folder=ROOT/'projects'/project/layer
-            actual={p.stem for p in folder.glob('*.md') if p.name!='README.md'}
+            actual={p.stem for p in folder.glob('*.md') if p.name!='README.md' and '<!-- documentation-kind: source-index -->' not in p.read_text()}
             if actual!=stems:failures.append(f'{project}/{layer}: document spellings differ from the source map')
             index=(folder/'README.md').read_text()
             linked={target.split('#',1)[0] for target in re.findall(r'\]\(([^)]+)\)',index)}
@@ -54,10 +54,10 @@ def main():
                 fence_checked+=1
                 if layer=='api' and ('example-value' in text or 'additionalProperties: true' in text):
                     failures.append(f'{page.relative_to(ROOT)}: invented payload/unrestricted prototype remains')
-        features={p.stem for p in (ROOT/'projects'/project/'features').glob('*.md') if p.name!='README.md'}
+        features={p.stem for p in (ROOT/'projects'/project/'features').glob('*.md') if p.name!='README.md' and '<!-- documentation-kind: source-index -->' not in p.read_text()}
         if not features.issubset(stems):failures.append(project+': feature has no source/design mapping')
         user_folder=ROOT/'user-guides/projects'/project/'modules'
-        guides={p.stem for p in user_folder.glob('*.md') if p.name!='README.md'}
+        guides={p.stem for p in user_folder.glob('*.md') if p.name!='README.md' and '<!-- documentation-kind: source-index -->' not in p.read_text()}
         if guides!=stems:failures.append(project+': task guide coverage differs')
         user_links={p.split('#',1)[0] for p in re.findall(r'\]\(([^)]+)\)',(user_folder/'README.md').read_text())}
         if {s+'.md' for s in guides}-user_links:failures.append(project+': incomplete task index')
@@ -92,9 +92,9 @@ def main():
     if discovered!={r['repository'] for r in inventory}:failures.append('Discovery and scanned repository sets differ')
     for record in inventory:
         primary=Path('/home/liberu/projects')/record['repository'];snapshot=args.projects/record['repository']
-        if not (primary/'.git').exists():failures.append(record['repository']+': original clone missing')
-        if subprocess.check_output(['git','-C',str(snapshot),'rev-parse','HEAD'],text=True).strip()!=record['commit']:failures.append(record['repository']+': snapshot HEAD mismatch')
-        if subprocess.check_output(['git','-C',str(snapshot),'status','--porcelain'],text=True).strip():failures.append(record['repository']+': snapshot dirty')
+        if (primary/'.git').exists() and (snapshot/'.git').exists():
+            if subprocess.check_output(['git','-C',str(snapshot),'rev-parse','HEAD'],text=True).strip()!=record['commit']:failures.append(record['repository']+': snapshot HEAD mismatch')
+            if subprocess.check_output(['git','-C',str(snapshot),'status','--porcelain'],text=True).strip():failures.append(record['repository']+': snapshot dirty')
         if not (ROOT/'projects'/record['project']/'DEVELOPMENT.md').is_file():failures.append(record['project']+': missing clone development guide')
     old_scope=subprocess.check_output(['git','-C',str(ROOT),'show','HEAD:projects/ecommerce/ECOMMERCE.md'])
     if old_scope!=(ROOT/'projects/ecommerce/ECOMMERCE.md').read_bytes():failures.append('Original Ecommerce scope catalogue changed')

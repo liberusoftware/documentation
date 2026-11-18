@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Identity Core:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Registration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Authentication:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Logout:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Password recovery:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Verification:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Identity linking:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Security events:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `identity-core`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `registration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `authentication`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `logout`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `password-recovery`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `verification`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `identity-linking`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `security-events`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,32 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `identity-core` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/identity-core.md) · [API plan](../api/identity-core.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Registration** | Expose a focused Livewire 4 component and namespaced Blade default view for `registration` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Authentication** | Expose a focused Livewire 4 component and namespaced Blade default view for `authentication` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Logout** | Expose a focused Livewire 4 component and namespaced Blade default view for `logout` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Password recovery** | Expose a focused Livewire 4 component and namespaced Blade default view for `password recovery` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Verification** | Expose a focused Livewire 4 component and namespaced Blade default view for `verification` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Identity linking** | Expose a focused Livewire 4 component and namespaced Blade default view for `identity linking` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Security events** | Expose a focused Livewire 4 component and namespaced Blade default view for `security events` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [InvitationValidator.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-core/src/Contracts/InvitationValidator.php) | `public function valid(string $email, ?string $token): bool` |
+| [RegistrationPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-core/src/Contracts/RegistrationPolicy.php) | `public function permitsSelfRegistration(): bool`<br>`public function requiresInvitation(): bool` |
+<!-- layer-implementation-plan:end -->

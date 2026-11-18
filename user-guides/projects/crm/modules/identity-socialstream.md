@@ -12,7 +12,7 @@
 
 The intended **Identity Socialstream** workspace covers identity socialstream domain behavior.
 
-The relevant capability areas are **Identity Socialstream**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Social provider redirects**, **Callbacks**, **Identity linking**, **Protected credentials**, **Account synchronization**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

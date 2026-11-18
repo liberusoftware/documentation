@@ -18,7 +18,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm Sales Workspace:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Prioritized seller feed:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Leads/deals inbox:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Overdue/risk indicators:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Next best action:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Daily agenda:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Quick updates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Contextual customer history:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-sales-workspace`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `prioritized-seller-feed`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `leads-deals-inbox`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `overdue-risk-indicators`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `next-best-action`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `daily-agenda`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `quick-updates`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `contextual-customer-history`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,59 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-sales-workspace` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-sales-workspace-react-inertia`](https://github.com/liberusoftware/module-crm-sales-workspace-react-inertia) (`@liberusoftware/module-crm-sales-workspace-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-sales-workspace.md) · [Core plan](../core/crm-sales-workspace.md) · [API plan](../api/crm-sales-workspace.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Prioritized seller feed** | Render `prioritized seller feed` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Leads/deals inbox** | Render `leads/deals inbox` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Overdue/risk indicators** | Render `overdue/risk indicators` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Next best action** | Render `next best action` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Daily agenda** | Render `daily agenda` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Quick updates** | Render `quick updates` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Contextual customer history** | Render `contextual customer history` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [WorkspaceQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Queries/WorkspaceQuery.php) | `public function feed(int $teamId)`<br>`public function overdue(int $teamId)`<br>`public function agenda(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateWorkspaceItem.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Actions/CreateWorkspaceItem.php) | `public function execute(int $teamId, int $actorId, array $data): WorkspaceItem` |
+| [QuickUpdate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Actions/QuickUpdate.php) | `public function execute(int $teamId, int $actorId, int $id, array $data): WorkspaceUpdate` |
+| [WorkspacePolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Services/WorkspacePolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkspaceItem.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Models/WorkspaceItem.php) | No literal fillable array detected; inspect the model and API schema. |
+| [WorkspaceUpdate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Models/WorkspaceUpdate.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [WorkspaceController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace-api/src/Http/Controllers/WorkspaceController.php) | `public function feed(Request $r, WorkspaceQuery $q)`<br>`public function overdue(Request $r, WorkspaceQuery $q)`<br>`public function agenda(Request $r, WorkspaceQuery $q)`<br>`public function store(Request $r, CreateWorkspaceItem $a)`<br>`public function update(Request $r, int $item, QuickUpdate $a)` |
+
+**Observed route declarations:**
+
+[modules/crm-sales-workspace-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/sales-workspace')->group(function (): void {
+Route::get('/feed', [WorkspaceController::class, 'feed']);
+Route::get('/overdue', [WorkspaceController::class, 'overdue']);
+Route::get('/agenda', [WorkspaceController::class, 'agenda']);
+Route::post('/items', [WorkspaceController::class, 'store']);
+Route::patch('/items/{item}', [WorkspaceController::class, 'update']);
+```
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Two Factor Authentication:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **TOTP enrollment:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Recovery codes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Enforcement:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Trusted devices:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Recovery:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Audit:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `two-factor-authentication`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `totp-enrollment`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `recovery-codes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `enforcement`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `trusted-devices`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `recovery`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `audit`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `two-factor-authentication` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/two-factor-authentication.md) · [API plan](../api/two-factor-authentication.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **TOTP enrollment** | Expose a focused Livewire 4 component and namespaced Blade default view for `totp enrollment` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Recovery codes** | Expose a focused Livewire 4 component and namespaced Blade default view for `recovery codes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Enforcement** | Expose a focused Livewire 4 component and namespaced Blade default view for `enforcement` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Trusted devices** | Expose a focused Livewire 4 component and namespaced Blade default view for `trusted devices` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Recovery** | Expose a focused Livewire 4 component and namespaced Blade default view for `recovery` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Audit** | Expose a focused Livewire 4 component and namespaced Blade default view for `audit` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TwoFactorRecovery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/two-factor-authentication/src/Contracts/TwoFactorRecovery.php) | `public function recover(Authenticatable $subject, Authenticatable $administrator, string $reason): void` |
+<!-- layer-implementation-plan:end -->

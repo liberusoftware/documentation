@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Accounting Accountant Workspace:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Client/entity portfolio:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Status:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Deadlines:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Alerts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Access:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Notes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Requests:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Recent changes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Drill-through:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `accounting-accountant-workspace`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `client-entity-portfolio`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `status`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `deadlines`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `alerts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `access`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `notes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `requests`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `recent-changes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `drill-through`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,44 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `accounting-accountant-workspace` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/accounting-accountant-workspace.md) · [API plan](../api/accounting-accountant-workspace.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Client/entity portfolio** | Expose a focused Livewire 4 component and namespaced Blade default view for `client/entity portfolio` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Status** | Expose a focused Livewire 4 component and namespaced Blade default view for `status` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Deadlines** | Expose a focused Livewire 4 component and namespaced Blade default view for `deadlines` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Alerts** | Expose a focused Livewire 4 component and namespaced Blade default view for `alerts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Access** | Expose a focused Livewire 4 component and namespaced Blade default view for `access` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Notes** | Expose a focused Livewire 4 component and namespaced Blade default view for `notes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Requests** | Expose a focused Livewire 4 component and namespaced Blade default view for `requests` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Recent changes** | Expose a focused Livewire 4 component and namespaced Blade default view for `recent changes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Drill-through** | Expose a focused Livewire 4 component and namespaced Blade default view for `drill-through` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Workspace.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-livewire/src/Livewire/Workspace.php) · [AccountantWorkspaceLivewireServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-livewire/src/AccountantWorkspaceLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [WorkspaceQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Queries/WorkspaceQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateWorkspaceItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Actions/CreateWorkspaceItem.php) | `public function handle(array $attributes): WorkspaceItem` |
+| [WorkspacePolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-api/src/Policies/WorkspacePolicy.php) | `public function viewAny(?object $user): bool`<br>`public function create(?object $user): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkspaceItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Models/WorkspaceItem.php) | `team_id`, `subject_type`, `subject_id`, `name`, `status`, `next_deadline`, `alerts`, `notes`, `requests`, `metadata` |
+<!-- layer-implementation-plan:end -->

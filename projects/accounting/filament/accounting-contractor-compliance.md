@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Contractor Compliance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Contractor records:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Status/evidence:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Withholding schemes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **CIS/1099-style classifications:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Deductions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Statements:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Regional exports:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-contractor-compliance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `contractor-records`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `status-evidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `withholding-schemes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cis-1099-style-classifications`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `deductions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `statements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `regional-exports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,45 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-contractor-compliance` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-contractor-compliance-filament`](https://github.com/liberusoftware/module-accounting-contractor-compliance-filament) (`liberusoftware/accounting-contractor-compliance-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-contractor-compliance.md) · [API plan](../api/accounting-contractor-compliance.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Contractor records** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `contractor records`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Status/evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `status/evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Withholding schemes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `withholding schemes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **CIS/1099-style classifications** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cis/1099-style classifications`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deductions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deductions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Statements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `statements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Regional exports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `regional exports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ContractorComplianceFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance-filament/src/ContractorComplianceFilamentPlugin.php) · [ContractorComplianceFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance-filament/src/ContractorComplianceFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ContractorQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance/src/Queries/ContractorQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ExportContractorCompliance.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance/src/Actions/ExportContractorCompliance.php) | `public function handle(Contractor $contractor, string $region): Contractor` |
+| [IssueContractorStatement.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance/src/Actions/IssueContractorStatement.php) | `public function handle(Contractor $contractor, array $statement): Contractor` |
+| [RecordContractorEvidence.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance/src/Actions/RecordContractorEvidence.php) | `public function handle(Contractor $contractor, array $evidence): Contractor` |
+| [RegisterContractor.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance/src/Actions/RegisterContractor.php) | `public function handle(array $attributes): Contractor` |
+| [UpdateContractorCompliance.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance/src/Actions/UpdateContractorCompliance.php) | `public function handle(Contractor $contractor, array $attributes): Contractor` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Contractor.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-contractor-compliance/src/Models/Contractor.php) | `team_id`, `contractor_ref`, `legal_name`, `classification`, `status`, `withholding_scheme`, `deductions`, `evidence`, `statement`, `regional_export` |
+<!-- layer-implementation-plan:end -->

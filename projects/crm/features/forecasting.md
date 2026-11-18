@@ -96,3 +96,40 @@ The Forecasting module owns Forecast categories, rollups, manager adjustments, c
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Forecast categories** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `forecast categories`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rollups** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rollups`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Manager adjustments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `manager adjustments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Commit/best-case/pipeline views** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `commit/best-case/pipeline views`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Coverage** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `coverage`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Trend** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `trend`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Scenario** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `scenario`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **History** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `history`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Accuracy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `accuracy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Submission workflow** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `submission workflow`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/forecasting.md) | [Source map](../SOURCE-MAPPING.md#forecasting) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/forecasting.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/forecasting.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-forecasting-filament`](https://github.com/liberusoftware/module-crm-forecasting-filament) (`liberusoftware/crm-forecasting-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/forecasting.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/forecasting.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-forecasting-react-inertia`](https://github.com/liberusoftware/module-crm-forecasting-react-inertia) (`@liberusoftware/module-crm-forecasting-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/forecasting.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-forecasting-vue-inertia`](https://github.com/liberusoftware/module-crm-forecasting-vue-inertia) (`@liberusoftware/module-crm-forecasting-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/forecasting.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-forecasting-nuxt`](https://github.com/liberusoftware/module-crm-forecasting-nuxt) (`@liberusoftware/module-crm-forecasting-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/forecasting.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-forecasting-nextjs`](https://github.com/liberusoftware/module-crm-forecasting-nextjs) (`@liberusoftware/module-crm-forecasting-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/forecasting.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-forecasting-react-native`](https://github.com/liberusoftware/module-crm-forecasting-react-native) (`@liberusoftware/module-crm-forecasting-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/forecasting.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-forecasting-flutter`](https://github.com/liberusoftware/module-crm-forecasting-flutter) (`module_crm_forecasting_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/forecasting.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-forecasting-dart-mobile`](https://github.com/liberusoftware/module-crm-forecasting-dart-mobile) (`module_crm_forecasting_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-forecasting-dart-desktop`](https://github.com/liberusoftware/module-crm-forecasting-dart-desktop) (`module_crm_forecasting_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

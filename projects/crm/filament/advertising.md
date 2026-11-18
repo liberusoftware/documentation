@@ -39,8 +39,8 @@ This optional Filament 5 presentation package presents exactly one independent d
 - `campaign-visibility`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `lead-ad-ingestion`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `crm-audiences`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `offline/server-conversions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `spend/performance-sync`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `offline-server-conversions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `spend-performance-sync`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `attribution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
@@ -54,3 +54,42 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-advertising` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-advertising-filament`](https://github.com/liberusoftware/module-crm-advertising-filament) (`liberusoftware/crm-advertising-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/advertising.md) · [API plan](../api/advertising.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Ad-account connections** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `ad-account connections`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Campaign visibility** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `campaign visibility`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Lead-ad ingestion** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `lead-ad ingestion`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **CRM audiences** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `crm audiences`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Offline/server conversions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `offline/server conversions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Spend/performance sync** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `spend/performance sync`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Attribution** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `attribution`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [AdvertisingFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-filament/src/AdvertisingFilamentPlugin.php) · [AdvertisingFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-filament/src/AdvertisingFilamentServiceProvider.php) · [AdvertisingRecordResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-filament/src/Resources/AdvertisingRecordResource.php) · [CreateAdvertisingRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-filament/src/Resources/Pages/CreateAdvertisingRecord.php) · [EditAdvertisingRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-filament/src/Resources/Pages/EditAdvertisingRecord.php) · [ListAdvertisingRecords.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-filament/src/Resources/Pages/ListAdvertisingRecords.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AdvertisingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Queries/AdvertisingQuery.php) | `public function records(int $teamId, ?string $kind = null): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TransitionRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Actions/TransitionRecord.php) | `public function execute(int $teamId, int $id, string $status): AdvertisingRecord` |
+| [UpsertRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Actions/UpsertRecord.php) | `public function execute(int $teamId, array $attributes, ?int $id = null): AdvertisingRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AdvertisingRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Models/AdvertisingRecord.php) | `team_id`, `kind`, `name`, `status`, `external_id`, `platform`, `payload`, `starts_at`, `ends_at`, `completed_at` |
+<!-- layer-implementation-plan:end -->

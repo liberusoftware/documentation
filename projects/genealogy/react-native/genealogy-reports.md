@@ -23,3 +23,44 @@ This adapter presents Genealogy Reports for the React Native + Expo surface. It 
 Test Genealogy Reports API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [React Native + Expo standard](../../../standards/REACT-NATIVE.md), [mobile architecture](../../../architecture/MOBILE.md), [React Native + Expo technology](../../../technologies/REACT-NATIVE.md), [core module](../core/genealogy-reports.md), and [API module](../api/genealogy-reports.md).
+
+<!-- layer-implementation-plan:start -->
+## Structured mobile feature plan, skeleton repository, and source evidence
+
+**Matching domain module:** `genealogy-reports`
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product React Native Expo host skeleton | [`project-genealogy-mobile-react`](https://github.com/liberusoftware/project-genealogy-mobile-react) | Native iOS/Android Expo Router application shell, SecureStore session provider, and EAS build config ([template](https://github.com/liberusoftware/project-boilerplate-mobile-react) · [wayfinder](../../wayfinders/mobile-react.md) · [runbook](../../../guides/presentation/REACT-NATIVE.md)) |
+| Shared product API backend | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Authoritative Laravel HTTP composition root ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/genealogy-reports.md)) |
+| Capability React Native module skeleton | [`module-genealogy-reports-react-native`](https://github.com/liberusoftware/module-genealogy-reports-react-native) (`@liberusoftware/module-genealogy-reports-react-native`) | Metro-compatible TypeScript mobile screens, hooks, and DTO validators ([foundation](https://github.com/liberusoftware/module-boilerplate-react-native) · [catalog](../../../modules/skeletons/mobile-react.md)) |
+
+### React Native + Expo feature and mobile screen matrix
+
+| Feature / aspect | Native iOS / Android screen, navigation & accessibility | Typed API client, SecureStore & offline/retry recovery |
+| --- | --- | --- |
+| **Family groups** | Progressive mobile list/detail/sheet flow for `family groups` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-genealogy-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Pedigrees** | Progressive mobile list/detail/sheet flow for `pedigrees` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-genealogy-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Descendants** | Progressive mobile list/detail/sheet flow for `descendants` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-genealogy-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Timelines** | Progressive mobile list/detail/sheet flow for `timelines` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-genealogy-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Research** | Progressive mobile list/detail/sheet flow for `research` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-genealogy-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Sources** | Progressive mobile list/detail/sheet flow for `sources` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-genealogy-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+| **Exportable charts** | Progressive mobile list/detail/sheet flow for `exportable charts` with safe areas, touch-target sizing, screen-reader labels, and validated deep links. | Call `project-genealogy-laravel-api` via injected session-scoped client; isolate local drafts by account/workspace, and reconcile timeouts with `Idempotency-Key` before retry. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [BuildGenealogyReport.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-reports/src/Queries/BuildGenealogyReport.php) | `public function execute(string $type, string $teamId, array $parameters = []): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateGenealogyReport.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-reports/src/Actions/CreateGenealogyReport.php) | `public function execute(array $attributes): GenealogyReport`<br>`public function validate(array $values): void` |
+| [DeleteGenealogyReport.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-reports/src/Actions/DeleteGenealogyReport.php) | `public function execute(GenealogyReport $report): void` |
+| [GenerateGenealogyReport.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-reports/src/Actions/GenerateGenealogyReport.php) | `public function __construct(private ?BuildGenealogyReport $builder = null)`<br>`public function execute(GenealogyReport $report, array $parameters = []): GenealogyReport` |
+| [UpdateGenealogyReport.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-reports/src/Actions/UpdateGenealogyReport.php) | `public function execute(GenealogyReport $report, array $attributes): GenealogyReport` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [GenealogyReport.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-reports/src/Models/GenealogyReport.php) | `team_id`, `name`, `type`, `status`, `metadata`, `generated_output`, `generated_at` |
+<!-- layer-implementation-plan:end -->

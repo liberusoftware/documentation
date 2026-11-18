@@ -12,7 +12,7 @@
 
 The intended **Module Billing Stripe** workspace covers module billing stripe domain behavior.
 
-The relevant capability areas are **Module Billing Stripe**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Consolidate into shared liberusoftware/payment-stripe**, **PaymentIntent and SetupIntent orchestration**, **Payment capture and idempotent refunds**, **Stripe-Signature webhook verification and normalization**, **Dispute defense and settlement reconciliation**, **Provider references and gateway driver bridge**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

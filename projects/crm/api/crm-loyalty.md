@@ -18,8 +18,16 @@ This optional API presentation package exposes approved HTTP operations for the 
 
 The domain capability includes:
 
-- Crm Loyalty domain entities, lifecycle, validation, permissions, and audit
-- Stable contracts, typed DTOs, and past-tense domain events
+- Programs
+- Tiers
+- Points ledger
+- Earning/redemption rules
+- Rewards
+- Expiry
+- Partner activity
+- Liabilities export
+- Fraud controls
+- Member statements
 
 Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
 
@@ -35,6 +43,33 @@ Installation does not expose every capability automatically. The host applicatio
 
 **Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
 
+### Product API backend and client integration
+
+This module API adapter is composed into [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api), the shared Laravel HTTP backend for independent web, mobile, and desktop clients ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [repository map](../../REPOSITORIES.md#laravel-applications)).
+
+| Consuming client surface | Host repository | Module adapter plan | Transport and auth contract |
+| --- | --- | --- | --- |
+| Next.js React | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) | [Next.js plan](../nextjs/crm-loyalty.md) | Server Component / Route Handler / BFF or Sanctum SPA with `no-store` private reads |
+| Nuxt 4 Vue | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | [Nuxt plan](../nuxt/crm-loyalty.md) | Nitro SSR / BFF or Sanctum SPA with actor/tenant-scoped `useFetch` keys |
+| React Native Expo | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) | [React Native plan](../react-native/crm-loyalty.md) | Typed client with Keychain/Keystore token storage, PKCE/Sanctum, and idempotent retries |
+| Flutter mobile | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) | [Flutter plan](../flutter/crm-loyalty.md) | Typed Dart DTOs and platform-secure credentials on iOS and Android |
+| Dart mobile & desktop | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) | [Flutter & Dart plan](../flutter/crm-loyalty.md) | Separate mobile and desktop native hosts consuming the same versioned `/api/v1` contract |
+
+### Feature-to-API capability and operation matrix
+
+| Feature / aspect | HTTP query and command intent | DTO allowlist, concurrency, and error contract |
+| --- | --- | --- |
+| **Programs** | Expose authorized query/read projection and explicit domain transition command for `programs` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Tiers** | Expose authorized query/read projection and explicit domain transition command for `tiers` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Points ledger** | Expose authorized query/read projection and explicit domain transition command for `points ledger` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Earning/redemption rules** | Expose authorized query/read projection and explicit domain transition command for `earning/redemption rules` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Rewards** | Expose authorized query/read projection and explicit domain transition command for `rewards` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Expiry** | Expose authorized query/read projection and explicit domain transition command for `expiry` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Partner activity** | Expose authorized query/read projection and explicit domain transition command for `partner activity` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Liabilities export** | Expose authorized query/read projection and explicit domain transition command for `liabilities export` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Fraud controls** | Expose authorized query/read projection and explicit domain transition command for `fraud controls` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Member statements** | Expose authorized query/read projection and explicit domain transition command for `member statements` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+
 | Boundary | Observed identity and implementation reference |
 | --- | --- |
 | Source package | [liberusoftware/module-crm-loyalty-api](../../../modules/source/liberusoftware--module-crm-loyalty-api.md) |
@@ -49,6 +84,30 @@ The signatures identify request handlers to review; their argument names are not
 | Controller source | Public handler signatures |
 | --- | --- |
 | [LoyaltyController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty-api/src/Http/Controllers/LoyaltyController.php) | `public function index(Request $r, LoyaltyQuery $q): JsonResponse`<br>`public function store(Request $r, CreateProgram $a): JsonResponse`<br>`public function enroll(Request $r, LoyaltyProgram $program, EnrollMember $a): JsonResponse`<br>`public function points(Request $r, LoyaltyMember $member, RecordPoints $a): JsonResponse`<br>`public function statement(Request $r, LoyaltyMember $member, LoyaltyQuery $q): JsonResponse` |
+
+### Observed domain queries, actions, and storage models
+
+API controllers delegate to these observed core domain entry points and serialize only allowlisted DTO fields rather than raw storage models.
+
+| Core query source | Observed signatures |
+| --- | --- |
+| [LoyaltyQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Queries/LoyaltyQuery.php) | `public function forTeam(int $teamId)`<br>`public function statement(int $teamId, int $memberId)` |
+
+| Core action / service source | Observed signatures |
+| --- | --- |
+| [CreateProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Actions/CreateProgram.php) | `public function __construct(private readonly LoyaltyPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): LoyaltyProgram` |
+| [EnrollMember.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Actions/EnrollMember.php) | `public function __construct(private readonly LoyaltyPolicy $policy)`<br>`public function execute(int $teamId, int $userId, LoyaltyProgram $program, array $input): LoyaltyMember` |
+| [RecordPoints.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Actions/RecordPoints.php) | `public function __construct(private readonly LoyaltyPolicy $policy)`<br>`public function execute(int $teamId, int $userId, LoyaltyMember $member, array $input): LoyaltyLedgerEntry` |
+| [SetFraudControl.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Actions/SetFraudControl.php) | `public function __construct(private readonly LoyaltyPolicy $policy)`<br>`public function execute(int $teamId, int $userId, LoyaltyMember $member, array $input): LoyaltyControl` |
+| [LoyaltyPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Services/LoyaltyPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Core storage model | Observed fillable fields (review for DTO allowlist) |
+| --- | --- |
+| [LoyaltyControl.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Models/LoyaltyControl.php) | No literal fillable array detected; inspect the model and API schema. |
+| [LoyaltyLedgerEntry.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Models/LoyaltyLedgerEntry.php) | No literal fillable array detected; inspect the model and API schema. |
+| [LoyaltyMember.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Models/LoyaltyMember.php) | No literal fillable array detected; inspect the model and API schema. |
+| [LoyaltyProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Models/LoyaltyProgram.php) | No literal fillable array detected; inspect the model and API schema. |
+| [LoyaltyRuleReward.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty/src/Models/LoyaltyRuleReward.php) | No literal fillable array detected; inspect the model and API schema. |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

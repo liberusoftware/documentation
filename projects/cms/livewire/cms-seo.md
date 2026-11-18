@@ -18,7 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms Seo:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Titles/descriptions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Canonical URLs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Robots:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Structured data:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Social cards:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Hreflang:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Index controls:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Content checks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms-seo`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `titles-descriptions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `canonical-urls`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `robots`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `structured-data`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `social-cards`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `hreflang`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `index-controls`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `content-checks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,34 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-seo` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms-seo.md) · [API plan](../api/cms-seo.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Titles/descriptions** | Expose a focused Livewire 4 component and namespaced Blade default view for `titles/descriptions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Canonical URLs** | Expose a focused Livewire 4 component and namespaced Blade default view for `canonical urls` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Robots** | Expose a focused Livewire 4 component and namespaced Blade default view for `robots` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Structured data** | Expose a focused Livewire 4 component and namespaced Blade default view for `structured data` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Social cards** | Expose a focused Livewire 4 component and namespaced Blade default view for `social cards` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Hreflang** | Expose a focused Livewire 4 component and namespaced Blade default view for `hreflang` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Index controls** | Expose a focused Livewire 4 component and namespaced Blade default view for `index controls` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Content checks** | Expose a focused Livewire 4 component and namespaced Blade default view for `content checks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [SeoCheck.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-seo-livewire/src/Livewire/SeoCheck.php) · [SeoLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-seo-livewire/src/SeoLivewireServiceProvider.php).
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SeoMetadata.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/src/Models/SeoMetadata.php) | `seoable_type`, `seoable_id`, `title`, `description`, `canonical_url`, `robots`, `structured_data`, `social_cards`, `hreflang`, `noindex`, `noarchive`, `team_id` |
+<!-- layer-implementation-plan:end -->

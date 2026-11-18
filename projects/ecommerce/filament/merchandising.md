@@ -37,9 +37,9 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `category/product-placement`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `category-product-placement`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `pins`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `boosts/buries`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `boosts-buries`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `badges`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `campaigns`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -58,3 +58,31 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-merchandising` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-merchandising-filament`](https://github.com/liberusoftware/module-ecommerce-merchandising-filament) (`liberusoftware/ecommerce-merchandising-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/merchandising.md) · [API plan](../api/merchandising.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Category/product placement** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `category/product placement`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Pins** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `pins`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Boosts/buries** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `boosts/buries`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Badges** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `badges`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Campaigns** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `campaigns`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Preview** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `preview`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Schedules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `schedules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Performance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `performance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

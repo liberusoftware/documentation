@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Maintenance Inspections:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Templates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Conditional checklists:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Readings:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Failures:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Signatures:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Certificates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Follow-up:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-maintenance-inspections`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `templates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `conditional-checklists`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `readings`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `failures`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `signatures`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `certificates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `follow-up`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,41 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-maintenance-inspections` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-maintenance-inspections-filament`](https://github.com/liberusoftware/module-maintenance-inspections-filament) (`liberusoftware/maintenance-inspections-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-maintenance-inspections.md) · [API plan](../api/module-maintenance-inspections.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Templates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `templates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Conditional checklists** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `conditional checklists`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Readings** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `readings`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Failures** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `failures`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Signatures** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `signatures`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Certificates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `certificates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Follow-up** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `follow-up`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [InspectionsFilamentPlugin.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections-filament/src/InspectionsFilamentPlugin.php) · [InspectionsFilamentServiceProvider.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections-filament/src/InspectionsFilamentServiceProvider.php) · [InspectionResource.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections-filament/src/Resources/InspectionResource.php) · [CreateInspection.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections-filament/src/Resources/InspectionResource/Pages/CreateInspection.php) · [EditInspection.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections-filament/src/Resources/InspectionResource/Pages/EditInspection.php) · [ListInspections.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections-filament/src/Resources/InspectionResource/Pages/ListInspections.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CompleteInspection.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections/src/Actions/CompleteInspection.php) | `public function handle(int $teamId, Inspection $inspection, string $outcome): Inspection` |
+| [CreateInspection.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections/src/Actions/CreateInspection.php) | `public function handle(int $teamId, array $attributes): Inspection` |
+| [DeleteInspection.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections/src/Actions/DeleteInspection.php) | `public function handle(int $teamId, Inspection $inspection): void` |
+| [UpdateInspection.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections/src/Actions/UpdateInspection.php) | `public function handle(int $teamId, Inspection $inspection, array $attributes): Inspection` |
+| [InspectionPolicy.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections/src/Policies/InspectionPolicy.php) | `public function viewAny(object $user): bool`<br>`public function view(object $user, Inspection $inspection): bool`<br>`public function create(object $user): bool`<br>`public function update(object $user, Inspection $inspection): bool`<br>`public function delete(object $user, Inspection $inspection): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Inspection.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-inspections/src/Models/Inspection.php) | `team_id`, `title`, `template_key`, `status`, `outcome`, `inspected_at`, `inspector_id`, `readings`, `failures`, `signature`, `certificate`, `follow_up` |
+<!-- layer-implementation-plan:end -->

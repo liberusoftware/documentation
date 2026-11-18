@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Real Estate Instructions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Agency agreements:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Ownership checks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Terms:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Disclosures:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Approvals:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Withdrawal:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `real-estate-instructions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `agency-agreements`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `ownership-checks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `terms`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `disclosures`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `approvals`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `withdrawal`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,36 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `real-estate-instructions` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/real-estate-instructions.md) · [API plan](../api/real-estate-instructions.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Agency agreements** | Expose a focused Livewire 4 component and namespaced Blade default view for `agency agreements` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Ownership checks** | Expose a focused Livewire 4 component and namespaced Blade default view for `ownership checks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Terms** | Expose a focused Livewire 4 component and namespaced Blade default view for `terms` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Disclosures** | Expose a focused Livewire 4 component and namespaced Blade default view for `disclosures` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Approvals** | Expose a focused Livewire 4 component and namespaced Blade default view for `approvals` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Withdrawal** | Expose a focused Livewire 4 component and namespaced Blade default view for `withdrawal` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [InstructionList.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-livewire/src/Components/InstructionList.php) · [InstructionsLivewireServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-livewire/src/InstructionsLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [InstructionPolicy.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions/src/Policies/InstructionPolicy.php) | `public function viewAny(AuthUser $authUser): bool`<br>`public function view(AuthUser $authUser, Instruction $instruction): bool`<br>`public function create(AuthUser $authUser): bool`<br>`public function update(AuthUser $authUser, Instruction $instruction): bool`<br>`public function delete(AuthUser $authUser, Instruction $instruction): bool`<br>`public function deleteAny(AuthUser $authUser): bool`<br>`public function restore(AuthUser $authUser, Instruction $instruction): bool`<br>`public function forceDelete(AuthUser $authUser, Instruction $instruction): bool`<br>`public function forceDeleteAny(AuthUser $authUser): bool`<br>`public function restoreAny(AuthUser $authUser): bool`<br>`public function replicate(AuthUser $authUser, Instruction $instruction): bool`<br>`public function reorder(AuthUser $authUser): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Instruction.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions/src/Models/Instruction.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

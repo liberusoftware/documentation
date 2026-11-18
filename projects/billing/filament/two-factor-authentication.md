@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Two Factor Authentication:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **TOTP enrollment:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Recovery codes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Enforcement:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Trusted devices:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Recovery:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Audit:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `two-factor-authentication`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `totp-enrollment`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `recovery-codes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `enforcement`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `trusted-devices`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `recovery`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `audit`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `two-factor-authentication` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-two-factor-authentication-filament`](https://github.com/liberusoftware/module-two-factor-authentication-filament) (`liberusoftware/two-factor-authentication-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/two-factor-authentication.md) · [API plan](../api/two-factor-authentication.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **TOTP enrollment** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `totp enrollment`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Recovery codes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `recovery codes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Enforcement** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `enforcement`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Trusted devices** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `trusted devices`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Recovery** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `recovery`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Audit** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `audit`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TwoFactorRecovery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/two-factor-authentication/src/Contracts/TwoFactorRecovery.php) | `public function recover(Authenticatable $subject, Authenticatable $administrator, string $reason): void` |
+<!-- layer-implementation-plan:end -->

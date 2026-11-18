@@ -60,3 +60,54 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-copilot` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/accounting-copilot.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-copilot-nuxt`](https://github.com/liberusoftware/module-accounting-copilot-nuxt) (`@liberusoftware/module-accounting-copilot-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Permission-bounded search** | Expose composable and Vue 3 component for `permission-bounded search` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-copilot.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Explanations** | Expose composable and Vue 3 component for `explanations` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-copilot.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Summaries** | Expose composable and Vue 3 component for `summaries` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-copilot.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Report narratives** | Expose composable and Vue 3 component for `report narratives` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-copilot.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Draft transactions** | Expose composable and Vue 3 component for `draft transactions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-copilot.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Explicit action confirmation** | Expose composable and Vue 3 component for `explicit action confirmation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-copilot.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CopilotRequestQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-copilot/src/Queries/CopilotRequestQuery.php) | `public function forTeam(int $teamId, ?string $kind = null): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ConfirmCopilotRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-copilot/src/Actions/ConfirmCopilotRequest.php) | `public function handle(CopilotRequest $request, string $confirmationKey): CopilotRequest` |
+| [CreateCopilotRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-copilot/src/Actions/CreateCopilotRequest.php) | `public function handle(array $attributes): CopilotRequest` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CopilotRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-copilot/src/Models/CopilotRequest.php) | `team_id`, `actor_id`, `kind`, `prompt`, `result`, `status`, `confirmation_key`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CopilotRequestController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-copilot-api/src/Http/Controllers/CopilotRequestController.php) | `public function index(Request $request, CopilotRequestQuery $query): mixed`<br>`public function store(Request $request, CreateCopilotRequest $action): mixed`<br>`public function confirm(Request $request, string $requestId, ConfirmCopilotRequest $action): mixed` |
+
+**Observed route declarations:**
+
+[modules/accounting-copilot-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-copilot-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/copilot')->middleware(['auth:sanctum', 'throttle:30,1'])->group(function (): void {
+Route::get('/requests', [CopilotRequestController::class, 'index'])->middleware('ability:accounting.copilot.read');
+Route::post('/requests', [CopilotRequestController::class, 'store'])->middleware('ability:accounting.copilot.write');
+Route::post('/requests/{request}/confirm', [CopilotRequestController::class, 'confirm'])->middleware('ability:accounting.copilot.write');
+```
+<!-- layer-implementation-plan:end -->

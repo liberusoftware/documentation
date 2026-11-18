@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Cms Content Calendar:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Editorial calendar:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Campaigns:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Deadlines:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Assignments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Conflicts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Drag/drop rescheduling:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Channel/site filters:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `cms-content-calendar`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `editorial-calendar`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `campaigns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `deadlines`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `assignments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `conflicts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `drag-drop-rescheduling`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `channel-site-filters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,36 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-content-calendar` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/cms-content-calendar.md)) |
+| Capability Nuxt module skeleton | [`module-cms-content-calendar-nuxt`](https://github.com/liberusoftware/module-cms-content-calendar-nuxt) (`@liberusoftware/module-cms-content-calendar-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Editorial calendar** | Expose composable and Vue 3 component for `editorial calendar` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-calendar.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Campaigns** | Expose composable and Vue 3 component for `campaigns` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-calendar.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Deadlines** | Expose composable and Vue 3 component for `deadlines` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-calendar.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Assignments** | Expose composable and Vue 3 component for `assignments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-calendar.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Conflicts** | Expose composable and Vue 3 component for `conflicts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-calendar.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Drag/drop rescheduling** | Expose composable and Vue 3 component for `drag/drop rescheduling` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-calendar.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Channel/site filters** | Expose composable and Vue 3 component for `channel/site filters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-calendar.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ContentCalendarService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-calendar/src/Services/ContentCalendarService.php) | `public function items(?int $teamId, ?string $channel = null, ?string $site = null, int $perPage = 25): LengthAwarePaginator`<br>`public function campaign(array $data, ?int $teamId = null): CalendarCampaign`<br>`public function schedule(array $data, ?int $teamId = null): CalendarItem`<br>`public function reschedule(CalendarItem $item, string $startsAt, ?string $deadlineAt = null): CalendarItem` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CalendarCampaign.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-calendar/src/Models/CalendarCampaign.php) | `team_id`, `name`, `slug`, `description`, `status` |
+| [CalendarItem.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-calendar/src/Models/CalendarItem.php) | `team_id`, `campaign_id`, `title`, `content_type`, `subject_key`, `channel`, `site`, `status`, `starts_at`, `deadline_at`, `assigned_to` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Two Factor Authentication:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **TOTP enrollment:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Recovery codes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Enforcement:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Trusted devices:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Recovery:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Audit:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `two-factor-authentication`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `totp-enrollment`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `recovery-codes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `enforcement`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `trusted-devices`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `recovery`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `audit`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,43 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `two-factor-authentication` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-real-estate-laravel-inertia-react`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-two-factor-authentication-react-inertia`](https://github.com/liberusoftware/module-two-factor-authentication-react-inertia) (`@liberusoftware/module-two-factor-authentication-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/two-factor-authentication.md) · [Core plan](../core/two-factor-authentication.md) · [API plan](../api/two-factor-authentication.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **TOTP enrollment** | Render `totp enrollment` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Recovery codes** | Render `recovery codes` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Enforcement** | Render `enforcement` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Trusted devices** | Render `trusted devices` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Recovery** | Render `recovery` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Audit** | Render `audit` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TwoFactorRecovery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/two-factor-authentication/src/Contracts/TwoFactorRecovery.php) | `public function recover(Authenticatable $subject, Authenticatable $administrator, string $reason): void` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [StatusController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/two-factor-authentication-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/two-factor-authentication-api/routes/api.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/two-factor-authentication-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/two-factor-authentication')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('two-factor-authentication-api.status');
+```
+<!-- layer-implementation-plan:end -->

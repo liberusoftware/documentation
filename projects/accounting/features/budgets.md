@@ -92,3 +92,38 @@ The Budgets module owns Annual/rolling budgets, accounts/dimensions/projects, im
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Annual/rolling budgets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `annual/rolling budgets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Accounts/dimensions/projects** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `accounts/dimensions/projects`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Imports** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `imports`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Versions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `versions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Approvals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approvals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Phasing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `phasing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Actual comparison** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `actual comparison`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Revisions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `revisions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/budgets.md) | [Source map](../SOURCE-MAPPING.md#budgets) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/budgets.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/budgets.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-budgets-filament`](https://github.com/liberusoftware/module-accounting-budgets-filament) (`liberusoftware/accounting-budgets-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/budgets.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/budgets.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-budgets-react-inertia`](https://github.com/liberusoftware/module-accounting-budgets-react-inertia) (`@liberusoftware/module-accounting-budgets-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/budgets.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-budgets-vue-inertia`](https://github.com/liberusoftware/module-accounting-budgets-vue-inertia) (`@liberusoftware/module-accounting-budgets-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/budgets.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-budgets-nuxt`](https://github.com/liberusoftware/module-accounting-budgets-nuxt) (`@liberusoftware/module-accounting-budgets-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/budgets.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-budgets-nextjs`](https://github.com/liberusoftware/module-accounting-budgets-nextjs) (`@liberusoftware/module-accounting-budgets-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/budgets.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-budgets-react-native`](https://github.com/liberusoftware/module-accounting-budgets-react-native) (`@liberusoftware/module-accounting-budgets-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/budgets.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-budgets-flutter`](https://github.com/liberusoftware/module-accounting-budgets-flutter) (`module_accounting_budgets_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/budgets.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-budgets-dart-mobile`](https://github.com/liberusoftware/module-accounting-budgets-dart-mobile) (`module_accounting_budgets_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-budgets-dart-desktop`](https://github.com/liberusoftware/module-accounting-budgets-dart-desktop) (`module_accounting_budgets_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

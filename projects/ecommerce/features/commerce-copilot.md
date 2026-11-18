@@ -1,7 +1,7 @@
 # Ecommerce: Copilot
 
 <!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. This retained spelling maps to `copilot`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
 ## Canonical independent module specification
@@ -86,3 +86,35 @@ The Copilot module owns Permission-bounded product/order/customer search, summar
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Permission-bounded product/order/customer search** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `permission-bounded product/order/customer search`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Summaries** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `summaries`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Catalog assistance** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `catalog assistance`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Safe operational actions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `safe operational actions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Confirmation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `confirmation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/commerce-copilot.md) | [Source map](../SOURCE-MAPPING.md#commerce-copilot) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/commerce-copilot.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/commerce-copilot.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-commerce-copilot-filament`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-filament) (`liberusoftware/ecommerce-commerce-copilot-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/commerce-copilot.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/commerce-copilot.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-commerce-copilot-react-inertia`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-react-inertia) (`@liberusoftware/module-ecommerce-commerce-copilot-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/commerce-copilot.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-commerce-copilot-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-vue-inertia) (`@liberusoftware/module-ecommerce-commerce-copilot-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/commerce-copilot.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-commerce-copilot-nuxt`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-nuxt) (`@liberusoftware/module-ecommerce-commerce-copilot-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/commerce-copilot.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-commerce-copilot-nextjs`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-nextjs) (`@liberusoftware/module-ecommerce-commerce-copilot-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/commerce-copilot.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-commerce-copilot-react-native`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-react-native) (`@liberusoftware/module-ecommerce-commerce-copilot-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/commerce-copilot.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-commerce-copilot-flutter`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-flutter) (`module_ecommerce_commerce_copilot_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/commerce-copilot.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-commerce-copilot-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-dart-mobile) (`module_ecommerce_commerce_copilot_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-commerce-copilot-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-commerce-copilot-dart-desktop) (`module_ecommerce_commerce_copilot_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

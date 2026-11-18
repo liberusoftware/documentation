@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Regions And Widgets:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Theme regions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Reusable widgets:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Placement:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Ordering:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Visibility by route/context/audience:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Schedules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Caching:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-regions-and-widgets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `theme-regions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reusable-widgets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `placement`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `ordering`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `visibility-by-route-context-audience`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `schedules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `caching`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,39 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-regions-and-widgets` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-regions-and-widgets-filament`](https://github.com/liberusoftware/module-cms-regions-and-widgets-filament) (`liberusoftware/cms-regions-and-widgets-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-regions-and-widgets.md) · [API plan](../api/cms-regions-and-widgets.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Theme regions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `theme regions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reusable widgets** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reusable widgets`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Placement** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `placement`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Ordering** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `ordering`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Visibility by route/context/audience** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `visibility by route/context/audience`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Schedules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `schedules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Caching** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `caching`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [RegionsAndWidgetsFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-regions-and-widgets-filament/src/RegionsAndWidgetsFilamentServiceProvider.php) · [ListRegions.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-regions-and-widgets-filament/src/Resources/Pages/ListRegions.php) · [RegionResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-regions-and-widgets-filament/src/Resources/RegionResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RegionWidgetService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Services/RegionWidgetService.php) | `public function region(string $key, ?int $teamId = null): Region`<br>`public function createRegion(string $key, string $label, ?string $theme = null, ?int $teamId = null): Region`<br>`public function createWidget(string $key, string $type, array $configuration = [], ?string $title = null, ?int $teamId = null): Widget`<br>`public function place(Region $region, Widget $widget, int $position = 0, array $visibility = [], ?string $startsAt = null, ?string $endsAt = null): WidgetPlacement`<br>`public function render(string $regionKey, array $context = [], ?int $teamId = null): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Region.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Models/Region.php) | `key`, `label`, `theme`, `team_id` |
+| [Widget.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Models/Widget.php) | `key`, `type`, `title`, `configuration`, `active`, `team_id` |
+| [WidgetPlacement.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Models/WidgetPlacement.php) | `region_id`, `widget_id`, `position`, `visibility`, `starts_at`, `ends_at`, `active` |
+<!-- layer-implementation-plan:end -->

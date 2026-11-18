@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms Themes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Theme manifests and parent inheritance:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Design tokens and typography:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Template and layout overrides:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Safe asset compilation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Preview and activation checks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms-themes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `theme-manifests-and-parent-inheritance`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `design-tokens-and-typography`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `template-and-layout-overrides`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `safe-asset-compilation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `preview-and-activation-checks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-themes` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms-themes.md) · [API plan](../api/cms-themes.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Theme manifests and parent inheritance** | Expose a focused Livewire 4 component and namespaced Blade default view for `theme manifests and parent inheritance` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Design tokens and typography** | Expose a focused Livewire 4 component and namespaced Blade default view for `design tokens and typography` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Template and layout overrides** | Expose a focused Livewire 4 component and namespaced Blade default view for `template and layout overrides` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Safe asset compilation** | Expose a focused Livewire 4 component and namespaced Blade default view for `safe asset compilation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Preview and activation checks** | Expose a focused Livewire 4 component and namespaced Blade default view for `preview and activation checks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

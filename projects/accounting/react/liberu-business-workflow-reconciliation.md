@@ -18,7 +18,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Liberu Business Workflow Reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Workflow run registry:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **State mapping:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reconciliation rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Recovery coordination:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Audit timeline:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `liberu-business-workflow-reconciliation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `workflow-run-registry`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `state-mapping`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `reconciliation-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `recovery-coordination`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `audit-timeline`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,33 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `liberu-business-workflow-reconciliation` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-module-liberu-business-workflow-reconciliation-3b42eab6-react-inertia`](https://github.com/liberusoftware/module-module-liberu-business-workflow-reconciliation-3b42eab6-react-inertia) (`@liberusoftware/module-module-liberu-business-workflow-reconciliation-3b42eab6-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/liberu-business-workflow-reconciliation.md) · [Core plan](../core/liberu-business-workflow-reconciliation.md) · [API plan](../api/liberu-business-workflow-reconciliation.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Workflow run registry** | Render `workflow run registry` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **State mapping** | Render `state mapping` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Reconciliation rules** | Render `reconciliation rules` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Recovery coordination** | Render `recovery coordination` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Audit timeline** | Render `audit timeline` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateReconciliationCase.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) | `public function execute(array $attributes): ReconciliationCase` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkflowRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/src/Models/WorkflowRun.php) | `team_id`, `correlation_id`, `workflow_key`, `contract_version`, `state`, `steps`, `last_error` |
+<!-- layer-implementation-plan:end -->

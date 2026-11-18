@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Search:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Authorized indexing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Search contracts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Filters:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Pagination:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reindexing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Provider adapters:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `search`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `authorized-indexing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `search-contracts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `filters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `pagination`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reindexing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `provider-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,46 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `search` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-maintenance-nuxt-vue`](https://github.com/liberusoftware/project-maintenance-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-maintenance-laravel-api`](https://github.com/liberusoftware/project-maintenance-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/search.md)) |
+| Capability Nuxt module skeleton | [`module-search-nuxt`](https://github.com/liberusoftware/module-search-nuxt) (`@liberusoftware/module-search-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Authorized indexing** | Expose composable and Vue 3 component for `authorized indexing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-maintenance-laravel-api`. |
+| **Search contracts** | Expose composable and Vue 3 component for `search contracts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-maintenance-laravel-api`. |
+| **Filters** | Expose composable and Vue 3 component for `filters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-maintenance-laravel-api`. |
+| **Pagination** | Expose composable and Vue 3 component for `pagination` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-maintenance-laravel-api`. |
+| **Reindexing** | Expose composable and Vue 3 component for `reindexing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-maintenance-laravel-api`. |
+| **Provider adapters** | Expose composable and Vue 3 component for `provider adapters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/search.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-maintenance-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [SearchIndexer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/search/src/Contracts/SearchIndexer.php) | `public function index(string $type, Model $record): void`<br>`public function remove(string $type, string\|int $id): void`<br>`public function flush(string $type): void` |
+| [LocalSearchIndexer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/search/src/Services/LocalSearchIndexer.php) | `public function index(string $type, Model $record): void`<br>`public function remove(string $type, string\|int $id): void`<br>`public function flush(string $type): void` |
+| [SearchService.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/search/src/Services/SearchService.php) | `public function __construct(private readonly SearcherRegistry $searchers)`<br>`public function searchUsers(array $filters): LengthAwarePaginator`<br>`public function searchAll(array $filters): array` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [SearchController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/search-api/src/Http/Controllers/SearchController.php) | `public function __construct(SearchService $searchService, SearcherRegistry $searchers)`<br>`public function users(Request $request): JsonResponse`<br>`public function all(Request $request): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/search-api/routes/api.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/search-api/routes/api.php)
+
+```php
+Route::prefix('api/search')->name('search.')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
+Route::get('/users', [SearchController::class, 'users'])->name('users');
+Route::get('/all', [SearchController::class, 'all'])->name('all');
+```
+<!-- layer-implementation-plan:end -->

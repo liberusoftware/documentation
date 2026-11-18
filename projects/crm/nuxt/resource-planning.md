@@ -40,7 +40,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - `capacity`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `allocation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `utilization`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `tentative/confirmed-bookings`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `tentative-confirmed-bookings`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `conflicts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `rates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `staffing-forecasts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -64,3 +64,69 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-resource-planning` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/resource-planning.md)) |
+| Capability Nuxt module skeleton | [`module-crm-resource-planning-nuxt`](https://github.com/liberusoftware/module-crm-resource-planning-nuxt) (`@liberusoftware/module-crm-resource-planning-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Skills** | Expose composable and Vue 3 component for `skills` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Capacity** | Expose composable and Vue 3 component for `capacity` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Allocation** | Expose composable and Vue 3 component for `allocation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Utilization** | Expose composable and Vue 3 component for `utilization` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Tentative/confirmed bookings** | Expose composable and Vue 3 component for `tentative/confirmed bookings` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Conflicts** | Expose composable and Vue 3 component for `conflicts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Rates** | Expose composable and Vue 3 component for `rates` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Staffing forecasts** | Expose composable and Vue 3 component for `staffing forecasts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/resource-planning.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ResourcePlanningQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Queries/ResourcePlanningQuery.php) | `public function skills(int $teamId)`<br>`public function capacity(int $teamId)`<br>`public function bookings(int $teamId)`<br>`public function forecasts(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateBooking.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Actions/CreateBooking.php) | `public function __construct(private readonly ResourcePlanningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ResourceBooking` |
+| [RecordForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Actions/RecordForecast.php) | `public function __construct(private readonly ResourcePlanningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ResourceForecast` |
+| [SetCapacity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Actions/SetCapacity.php) | `public function __construct(private readonly ResourcePlanningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ResourceCapacity` |
+| [SetRate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Actions/SetRate.php) | `public function __construct(private readonly ResourcePlanningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ResourceRate` |
+| [UpsertSkill.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Actions/UpsertSkill.php) | `public function __construct(private readonly ResourcePlanningPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ResourceSkill` |
+| [ResourcePlanningPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Services/ResourcePlanningPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ResourceBooking.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Models/ResourceBooking.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ResourceCapacity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Models/ResourceCapacity.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ResourceForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Models/ResourceForecast.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ResourceRate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Models/ResourceRate.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ResourceSkill.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning/src/Models/ResourceSkill.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ResourcePlanningController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/src/Http/Controllers/ResourcePlanningController.php) | `public function skills(Request $r, ResourcePlanningQuery $q)`<br>`public function skill(Request $r, UpsertSkill $a)`<br>`public function capacity(Request $r, ResourcePlanningQuery $q)`<br>`public function setCapacity(Request $r, SetCapacity $a)`<br>`public function bookings(Request $r, ResourcePlanningQuery $q)`<br>`public function booking(Request $r, CreateBooking $a)`<br>`public function rate(Request $r, SetRate $a)`<br>`public function forecast(Request $r, RecordForecast $a)` |
+
+**Observed route declarations:**
+
+[modules/crm-resource-planning-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/resource-planning')->group(function (): void {
+Route::get('/skills', [ResourcePlanningController::class, 'skills']);
+Route::post('/skills', [ResourcePlanningController::class, 'skill']);
+Route::get('/capacity', [ResourcePlanningController::class, 'capacity']);
+Route::post('/capacity', [ResourcePlanningController::class, 'setCapacity']);
+Route::get('/bookings', [ResourcePlanningController::class, 'bookings']);
+Route::post('/bookings', [ResourcePlanningController::class, 'booking']);
+Route::post('/rates', [ResourcePlanningController::class, 'rate']);
+Route::post('/forecasts', [ResourcePlanningController::class, 'forecast']);
+```
+<!-- layer-implementation-plan:end -->

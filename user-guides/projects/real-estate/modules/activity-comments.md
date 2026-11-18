@@ -12,7 +12,7 @@
 
 The intended **Activity Comments** workspace covers activity comments domain behavior.
 
-The relevant capability areas are **Activity Comments**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Activity timelines**, **Mentions**, **Subscriptions**, **Internal comments**, **Attachments**, **Visibility**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -18,7 +18,18 @@ The Crm Activities module owns crm activities domain behavior. It is the authori
 
 ## 2. Full feature scope
 
-- **Crm Activities:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Tasks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Calls:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Meetings:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Emails:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Deadlines:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recurrence:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Queues:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Bulk completion:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reminders:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Outcomes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Goals:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Activity reporting:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +89,42 @@ The Crm Activities module owns crm activities domain behavior. It is the authori
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Tasks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `tasks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Calls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `calls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Meetings** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `meetings`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Emails** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `emails`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Deadlines** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `deadlines`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recurrence** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recurrence`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Queues** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `queues`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Bulk completion** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `bulk completion`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reminders** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reminders`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Outcomes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `outcomes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Goals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `goals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Activity reporting** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `activity reporting`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-activities.md) | [Source map](../SOURCE-MAPPING.md#crm-activities) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-activities.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-activities.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-activities-filament`](https://github.com/liberusoftware/module-crm-activities-filament) (`liberusoftware/crm-activities-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-activities.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-activities.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-activities-react-inertia`](https://github.com/liberusoftware/module-crm-activities-react-inertia) (`@liberusoftware/module-crm-activities-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-activities.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-activities-vue-inertia`](https://github.com/liberusoftware/module-crm-activities-vue-inertia) (`@liberusoftware/module-crm-activities-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-activities.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-activities-nuxt`](https://github.com/liberusoftware/module-crm-activities-nuxt) (`@liberusoftware/module-crm-activities-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-activities.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-activities-nextjs`](https://github.com/liberusoftware/module-crm-activities-nextjs) (`@liberusoftware/module-crm-activities-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-activities.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-activities-react-native`](https://github.com/liberusoftware/module-crm-activities-react-native) (`@liberusoftware/module-crm-activities-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-activities.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-activities-flutter`](https://github.com/liberusoftware/module-crm-activities-flutter) (`module_crm_activities_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-activities.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-activities-dart-mobile`](https://github.com/liberusoftware/module-crm-activities-dart-mobile) (`module_crm_activities_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-activities-dart-desktop`](https://github.com/liberusoftware/module-crm-activities-dart-desktop) (`module_crm_activities_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

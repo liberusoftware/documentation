@@ -18,7 +18,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Conversation Analytics:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Topics:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Objections:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Competitors:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Talk ratios:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Questions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Outcomes:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Coaching moments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Quality scorecards:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Trend comparison:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +37,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-conversation-analytics`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `topics`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `objections`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `competitors`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `talk-ratios`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `questions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `outcomes`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `coaching-moments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `quality-scorecards`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `trend-comparison`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +66,58 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-conversation-analytics` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-conversation-analytics.md)) |
+| Capability Nuxt module skeleton | [`module-crm-conversation-analytics-nuxt`](https://github.com/liberusoftware/module-crm-conversation-analytics-nuxt) (`@liberusoftware/module-crm-conversation-analytics-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Topics** | Expose composable and Vue 3 component for `topics` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Objections** | Expose composable and Vue 3 component for `objections` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Competitors** | Expose composable and Vue 3 component for `competitors` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Talk ratios** | Expose composable and Vue 3 component for `talk ratios` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Questions** | Expose composable and Vue 3 component for `questions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Outcomes** | Expose composable and Vue 3 component for `outcomes` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Coaching moments** | Expose composable and Vue 3 component for `coaching moments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Quality scorecards** | Expose composable and Vue 3 component for `quality scorecards` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Trend comparison** | Expose composable and Vue 3 component for `trend comparison` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-conversation-analytics.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ConversationAnalyticsQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Queries/ConversationAnalyticsQuery.php) | `public function analyses(int $teamId): Builder`<br>`public function trends(int $teamId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordConversationAnalysis.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Actions/RecordConversationAnalysis.php) | `public function execute(int $teamId, int $analystId, string $conversationKey, array $input): ConversationAnalysis` |
+| [ScoreConversation.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Actions/ScoreConversation.php) | `public function execute(int $teamId, ConversationAnalysis $analysis, array $scores): ConversationAnalysis` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ConversationAnalysis.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Models/ConversationAnalysis.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ConversationAnalyticsController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics-api/src/Http/Controllers/ConversationAnalyticsController.php) | `public function __construct(private readonly ConversationAnalyticsQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(string $conversationKey, RecordConversationAnalysis $a): JsonResponse`<br>`public function score(ConversationAnalysis $analysis, ScoreConversation $a): JsonResponse`<br>`public function trends(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-conversation-analytics-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/conversation-analytics')->group(function (): void {
+Route::get('analyses', [ConversationAnalyticsController::class, 'index']);
+Route::post('analyses/{conversationKey}', [ConversationAnalyticsController::class, 'store']);
+Route::post('analyses/{analysis}/score', [ConversationAnalyticsController::class, 'score']);
+Route::get('trends', [ConversationAnalyticsController::class, 'trends']);
+```
+<!-- layer-implementation-plan:end -->

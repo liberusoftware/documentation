@@ -18,7 +18,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Accounting Dimensions And Tracking:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Classes/categories:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Locations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Departments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cost/profit centers:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Projects:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Tags:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Validation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Allocations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Dimensional balances:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `accounting-dimensions-and-tracking`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `classes-categories`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `locations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `departments`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `cost-profit-centers`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `projects`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `tags`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `validation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `allocations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `dimensional-balances`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,68 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-dimensions-and-tracking` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-accounting-dimensions-and-tracking-vue-inertia`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-vue-inertia) (`@liberusoftware/module-accounting-dimensions-and-tracking-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/accounting-dimensions-and-tracking.md) · [Core plan](../core/accounting-dimensions-and-tracking.md) · [API plan](../api/accounting-dimensions-and-tracking.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Classes/categories** | Render `classes/categories` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Locations** | Render `locations` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Departments** | Render `departments` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Cost/profit centers** | Render `cost/profit centers` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Projects** | Render `projects` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Tags** | Render `tags` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Validation** | Render `validation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Allocations** | Render `allocations` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Dimensional balances** | Render `dimensional balances` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [DimensionalBalances.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Queries/DimensionalBalances.php) | `public function handle(?string $key = null): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocateDimensions.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/AllocateDimensions.php) | `public function handle(string $key, string\|int\|float $amount, array $allocations, ?string $currency = null, ?string $actor = null): array` |
+| [SaveDimension.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimension.php) | `public function handle(array $attributes, ?Dimension $dimension = null): Dimension` |
+| [SaveDimensionValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimensionValue.php) | `public function handle(Dimension $dimension, array $attributes, ?DimensionValue $value = null): DimensionValue` |
+| [ValidateDimensions.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/ValidateDimensions.php) | `public function handle(array $values): array` |
+| [DimensionsPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking-api/src/Policies/DimensionsPolicy.php) | `public function viewAny(?Authenticatable $u): bool`<br>`public function view(?Authenticatable $u, Dimension $d): bool`<br>`public function create(?Authenticatable $u): bool`<br>`public function update(?Authenticatable $u, Dimension $d): bool`<br>`public function delete(?Authenticatable $u, Dimension $d): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Dimension.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/Dimension.php) | `code`, `name`, `kind`, `description`, `is_required`, `is_active`, `metadata` |
+| [DimensionAllocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionAllocation.php) | `allocation_key`, `amount`, `currency`, `percentage`, `dimensions`, `created_by` |
+| [DimensionValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionValue.php) | `dimension_id`, `code`, `name`, `parent_id`, `is_active`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [DimensionsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking-api/src/Http/Controllers/DimensionsController.php) | `public function index(Request $request)`<br>`public function show(string $dimension): DimensionResource`<br>`public function store(Request $request, SaveDimension $save)`<br>`public function update(Request $request, string $dimension, SaveDimension $save): DimensionResource`<br>`public function values(Request $request, string $dimension, SaveDimensionValue $save)`<br>`public function validateValues(Request $request, ValidateDimensions $validate)`<br>`public function allocate(Request $request, AllocateDimensions $allocate)`<br>`public function balances(Request $request, DimensionalBalances $balances)`<br>`public function destroy(string $dimension): Response` |
+
+**Observed route declarations:**
+
+[modules/accounting-dimensions-and-tracking-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking-api/routes/api.php)
+
+```php
+Route::middleware(['auth:sanctum', 'throttle:60,1'])->prefix('api/v1/accounting/dimensions-and-tracking')->group(function (): void {
+Route::get('/', [DimensionsController::class, 'index'])->middleware('ability:accounting.dimensions.read');
+Route::post('/', [DimensionsController::class, 'store'])->middleware('ability:accounting.dimensions.write');
+Route::get('/balances', [DimensionsController::class, 'balances'])->middleware('ability:accounting.dimensions.read');
+Route::post('/validate', [DimensionsController::class, 'validateValues'])->middleware('ability:accounting.dimensions.read');
+Route::post('/allocate', [DimensionsController::class, 'allocate'])->middleware('ability:accounting.dimensions.write');
+Route::get('/{dimension}', [DimensionsController::class, 'show'])->middleware('ability:accounting.dimensions.read');
+Route::patch('/{dimension}', [DimensionsController::class, 'update'])->middleware('ability:accounting.dimensions.write');
+Route::post('/{dimension}/values', [DimensionsController::class, 'values'])->middleware('ability:accounting.dimensions.write');
+Route::delete('/{dimension}', [DimensionsController::class, 'destroy'])->middleware('ability:accounting.dimensions.write');
+```
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Identity Core:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Registration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Authentication:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Logout:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Password recovery:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Verification:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Identity linking:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Security events:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `identity-core`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `registration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `authentication`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `logout`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `password-recovery`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `verification`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `identity-linking`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `security-events`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,41 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `identity-core` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/identity-core.md)) |
+| Capability Nuxt module skeleton | [`module-identity-core-nuxt`](https://github.com/liberusoftware/module-identity-core-nuxt) (`@liberusoftware/module-identity-core-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Registration** | Expose composable and Vue 3 component for `registration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/identity-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Authentication** | Expose composable and Vue 3 component for `authentication` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/identity-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Logout** | Expose composable and Vue 3 component for `logout` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/identity-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Password recovery** | Expose composable and Vue 3 component for `password recovery` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/identity-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Verification** | Expose composable and Vue 3 component for `verification` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/identity-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Identity linking** | Expose composable and Vue 3 component for `identity linking` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/identity-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Security events** | Expose composable and Vue 3 component for `security events` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/identity-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [InvitationValidator.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-core/src/Contracts/InvitationValidator.php) | `public function valid(string $email, ?string $token): bool` |
+| [RegistrationPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-core/src/Contracts/RegistrationPolicy.php) | `public function permitsSelfRegistration(): bool`<br>`public function requiresInvitation(): bool` |
+
+**Observed route declarations:**
+
+[modules/identity-core-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/identity-core')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('identity-core-api.status');
+```
+<!-- layer-implementation-plan:end -->

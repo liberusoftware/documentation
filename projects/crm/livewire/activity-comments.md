@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Activity Comments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Activity timelines:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Mentions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Subscriptions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Internal comments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Attachments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Visibility:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `activity-comments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `activity-timelines`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `mentions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `subscriptions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `internal-comments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `attachments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `visibility`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,32 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `activity-comments` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/activity-comments.md) · [API plan](../api/activity-comments.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Activity timelines** | Expose a focused Livewire 4 component and namespaced Blade default view for `activity timelines` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Mentions** | Expose a focused Livewire 4 component and namespaced Blade default view for `mentions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Subscriptions** | Expose a focused Livewire 4 component and namespaced Blade default view for `subscriptions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Internal comments** | Expose a focused Livewire 4 component and namespaced Blade default view for `internal comments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Attachments** | Expose a focused Livewire 4 component and namespaced Blade default view for `attachments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Visibility** | Expose a focused Livewire 4 component and namespaced Blade default view for `visibility` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/activity-comments-livewire/src/Livewire/Overview.php) · [ActivityCommentsLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/activity-comments-livewire/src/ActivityCommentsLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ActivityAuthorizer.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/activity-comments/src/Contracts/ActivityAuthorizer.php) | `public function allowed(string\|int $actorId, string $subjectType, string\|int $subjectId, string $operation): bool` |
+<!-- layer-implementation-plan:end -->

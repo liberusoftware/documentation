@@ -18,7 +18,11 @@ The Module Cms Menus module owns module cms menus domain behavior. It is the aut
 
 ## 2. Full feature scope
 
-- **Module Cms Menus:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Menu locations and trees:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Internal and external link targets:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Visibility and audience rules:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Breadcrumbs and active state:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Localized navigation structures:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +82,35 @@ The Module Cms Menus module owns module cms menus domain behavior. It is the aut
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Menu locations and trees** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `menu locations and trees`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Internal and external link targets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `internal and external link targets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Visibility and audience rules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `visibility and audience rules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Breadcrumbs and active state** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `breadcrumbs and active state`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Localized navigation structures** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `localized navigation structures`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-cms-menus.md) | [Source map](../SOURCE-MAPPING.md#module-cms-menus) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-cms-menus.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-cms-menus.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-menus-filament`](https://github.com/liberusoftware/module-cms-menus-filament) (`liberusoftware/cms-menus-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-cms-menus.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-cms-menus.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-menus-react-inertia`](https://github.com/liberusoftware/module-cms-menus-react-inertia) (`@liberusoftware/module-cms-menus-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-cms-menus.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-menus-vue-inertia`](https://github.com/liberusoftware/module-cms-menus-vue-inertia) (`@liberusoftware/module-cms-menus-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-cms-menus.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-menus-nuxt`](https://github.com/liberusoftware/module-cms-menus-nuxt) (`@liberusoftware/module-cms-menus-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-cms-menus.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-menus-nextjs`](https://github.com/liberusoftware/module-cms-menus-nextjs) (`@liberusoftware/module-cms-menus-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-cms-menus.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-menus-react-native`](https://github.com/liberusoftware/module-cms-menus-react-native) (`@liberusoftware/module-cms-menus-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-cms-menus.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-menus-flutter`](https://github.com/liberusoftware/module-cms-menus-flutter) (`module_cms_menus_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-cms-menus.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-menus-dart-mobile`](https://github.com/liberusoftware/module-cms-menus-dart-mobile) (`module_cms_menus_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-menus-dart-desktop`](https://github.com/liberusoftware/module-cms-menus-dart-desktop) (`module_cms_menus_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

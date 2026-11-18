@@ -35,10 +35,10 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `minimum/maximum/increment-quantities`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `minimum-maximum-increment-quantities`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `case-packs`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `order-thresholds`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `payment/shipping-methods`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `payment-shipping-methods`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `deposits`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `po-numbers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `approvals`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -62,3 +62,29 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-b2b-purchasing-rules` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/b2b-purchasing-rules.md)) |
+| Capability Nuxt module skeleton | [`module-ecommerce-b2b-purchasing-rules-nuxt`](https://github.com/liberusoftware/module-ecommerce-b2b-purchasing-rules-nuxt) (`@liberusoftware/module-ecommerce-b2b-purchasing-rules-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Minimum/maximum/increment quantities** | Expose composable and Vue 3 component for `minimum/maximum/increment quantities` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/b2b-purchasing-rules.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Case packs** | Expose composable and Vue 3 component for `case packs` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/b2b-purchasing-rules.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Order thresholds** | Expose composable and Vue 3 component for `order thresholds` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/b2b-purchasing-rules.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Payment/shipping methods** | Expose composable and Vue 3 component for `payment/shipping methods` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/b2b-purchasing-rules.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Deposits** | Expose composable and Vue 3 component for `deposits` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/b2b-purchasing-rules.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **PO numbers** | Expose composable and Vue 3 component for `po numbers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/b2b-purchasing-rules.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Approvals** | Expose composable and Vue 3 component for `approvals` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/b2b-purchasing-rules.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

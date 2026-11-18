@@ -18,7 +18,15 @@ The Crm Advocacy module owns crm advocacy domain behavior. It is the authoritati
 
 ## 2. Full feature scope
 
-- **Crm Advocacy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **References:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Testimonials:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reviews:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Case-study consent:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Speakers:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Advisory boards:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Nominations:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Requests:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recognition history:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Crm Advocacy module owns crm advocacy domain behavior. It is the authoritati
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **References** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `references`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Testimonials** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `testimonials`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reviews** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reviews`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Case-study consent** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `case-study consent`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Speakers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `speakers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Advisory boards** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `advisory boards`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Nominations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `nominations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Requests** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `requests`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recognition history** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recognition history`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-advocacy.md) | [Source map](../SOURCE-MAPPING.md#crm-advocacy) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-advocacy.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-advocacy.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-advocacy-filament`](https://github.com/liberusoftware/module-crm-advocacy-filament) (`liberusoftware/crm-advocacy-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-advocacy.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-advocacy.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-advocacy-react-inertia`](https://github.com/liberusoftware/module-crm-advocacy-react-inertia) (`@liberusoftware/module-crm-advocacy-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-advocacy.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-advocacy-vue-inertia`](https://github.com/liberusoftware/module-crm-advocacy-vue-inertia) (`@liberusoftware/module-crm-advocacy-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-advocacy.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-advocacy-nuxt`](https://github.com/liberusoftware/module-crm-advocacy-nuxt) (`@liberusoftware/module-crm-advocacy-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-advocacy.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-advocacy-nextjs`](https://github.com/liberusoftware/module-crm-advocacy-nextjs) (`@liberusoftware/module-crm-advocacy-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-advocacy.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-advocacy-react-native`](https://github.com/liberusoftware/module-crm-advocacy-react-native) (`@liberusoftware/module-crm-advocacy-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-advocacy.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-advocacy-flutter`](https://github.com/liberusoftware/module-crm-advocacy-flutter) (`module_crm_advocacy_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-advocacy.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-advocacy-dart-mobile`](https://github.com/liberusoftware/module-crm-advocacy-dart-mobile) (`module_crm_advocacy_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-advocacy-dart-desktop`](https://github.com/liberusoftware/module-crm-advocacy-dart-desktop) (`module_crm_advocacy_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

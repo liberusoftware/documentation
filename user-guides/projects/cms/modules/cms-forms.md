@@ -12,7 +12,7 @@
 
 The intended **Cms Forms** workspace covers cms forms domain behavior.
 
-The relevant capability areas are **Cms Forms**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Form schema builder**, **Multi-step and conditional fields**, **Spam and rate-limit protection**, **Consent and retention tracking**, **Submission inbox and exports**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

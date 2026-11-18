@@ -1,6 +1,26 @@
 # Liberu Music: Recording and Take Comping — Domain specifications
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#recording). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Status: proposed design.** These are requirements and design identifiers, not verified source packages, published artifacts or implemented features.
+
+**Domain module:** `module-music-recording`
+
+## 1. Purpose
+
+The Recording and Take Comping module owns Track arming, count-in, punch and loop recording, take lanes, comp segments and recoverable disk writes. It is the authoritative domain boundary for this capability across web, mobile, and desktop DAW surfaces.
+
+## 2. Full feature scope
+
+- **Track arming:** implement the complete domain rules, sample/musical-time invariants, authorization, revision state, and user/operator feedback required for track arming.
+- **Count-in:** implement the complete domain rules, sample/musical-time invariants, authorization, revision state, and user/operator feedback required for count-in.
+- **Punch:** implement the complete domain rules, sample/musical-time invariants, authorization, revision state, and user/operator feedback required for punch.
+- **Loop recording:** implement the complete domain rules, sample/musical-time invariants, authorization, revision state, and user/operator feedback required for loop recording.
+- **Take lanes:** implement the complete domain rules, sample/musical-time invariants, authorization, revision state, and user/operator feedback required for take lanes.
+- **Comp segments:** implement the complete domain rules, sample/musical-time invariants, authorization, revision state, and user/operator feedback required for comp segments.
+- **Recoverable disk writes:** implement the complete domain rules, sample/musical-time invariants, authorization, revision state, and user/operator feedback required for recoverable disk writes.
 
 ## Ownership and workflow
 
@@ -17,3 +37,37 @@ Track arming, count-in, punch and loop recording, take lanes, comp segments and 
 Capture sustained multitrack audio and recover complete blocks after a forced process exit. Include denied access, missing dependencies and recovery after interruption. Store musical positions, sample positions and frame positions with explicit units wherever used.
 
 See the [core plan](../core/recording.md), [API plan](../api/recording.md) and [surface support](../PRESENTATION.md).
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Track arming** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `track arming`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Count-in** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `count-in`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Punch** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `punch`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Loop recording** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `loop recording`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Take lanes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `take lanes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Comp segments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `comp segments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recoverable disk writes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recoverable disk writes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/recording.md) | [Source map](../SOURCE-MAPPING.md#recording) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/recording.md) | [`project-music-daw-laravel-api`](https://github.com/liberusoftware/project-music-daw-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/recording.md) | [`project-music-daw-laravel-filament`](https://github.com/liberusoftware/project-music-daw-laravel-filament) · [`module-music-recording-filament`](https://github.com/liberusoftware/module-music-recording-filament) (`liberusoftware/music-recording-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/recording.md) | [`project-music-daw-laravel-filament`](https://github.com/liberusoftware/project-music-daw-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/recording.md) | [`project-music-daw-laravel-inertia-react`](https://github.com/liberusoftware/project-music-daw-laravel-inertia-react) · [`module-music-recording-react-inertia`](https://github.com/liberusoftware/module-music-recording-react-inertia) (`@liberusoftware/module-music-recording-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/recording.md) | [`project-music-daw-laravel-inertia-vue`](https://github.com/liberusoftware/project-music-daw-laravel-inertia-vue) · [`module-music-recording-vue-inertia`](https://github.com/liberusoftware/module-music-recording-vue-inertia) (`@liberusoftware/module-music-recording-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/recording.md) | [`project-music-daw-nuxt-vue`](https://github.com/liberusoftware/project-music-daw-nuxt-vue) · [`module-music-recording-nuxt`](https://github.com/liberusoftware/module-music-recording-nuxt) (`@liberusoftware/module-music-recording-nuxt`) | Standalone Vue SSR client consuming `project-music-daw-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/recording.md) | [`project-music-daw-next-react`](https://github.com/liberusoftware/project-music-daw-next-react) · [`module-music-recording-nextjs`](https://github.com/liberusoftware/module-music-recording-nextjs) (`@liberusoftware/module-music-recording-nextjs`) | App Router Server/Client components consuming `project-music-daw-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/recording.md) | [`project-music-daw-mobile-react`](https://github.com/liberusoftware/project-music-daw-mobile-react) · [`module-music-recording-react-native`](https://github.com/liberusoftware/module-music-recording-react-native) (`@liberusoftware/module-music-recording-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/recording.md) | [`project-music-daw-mobile-flutter`](https://github.com/liberusoftware/project-music-daw-mobile-flutter) · [`module-music-recording-flutter`](https://github.com/liberusoftware/module-music-recording-flutter) (`module_music_recording_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/recording.md) | [`project-music-daw-dart-mobile`](https://github.com/liberusoftware/project-music-daw-dart-mobile) · [`module-music-recording-dart-mobile`](https://github.com/liberusoftware/module-music-recording-dart-mobile) (`module_music_recording_dart_mobile`)<br>[`project-music-daw-dart-desktop`](https://github.com/liberusoftware/project-music-daw-dart-desktop) · [`module-music-recording-dart-desktop`](https://github.com/liberusoftware/module-music-recording-dart-desktop) (`module_music_recording_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

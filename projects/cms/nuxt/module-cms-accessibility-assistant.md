@@ -18,7 +18,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Accessibility Assistant:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Authoring checks for headings:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Links:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Tables:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Alternatives:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Contrast metadata:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Language:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Captions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Exceptions:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +36,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `module-cms-accessibility-assistant`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `authoring-checks-for-headings`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `links`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `tables`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `alternatives`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `contrast-metadata`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `language`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `captions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `exceptions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +64,32 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `module-cms-accessibility-assistant` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/module-cms-accessibility-assistant.md)) |
+| Capability Nuxt module skeleton | [`module-cms-accessibility-assistant-nuxt`](https://github.com/liberusoftware/module-cms-accessibility-assistant-nuxt) (`@liberusoftware/module-cms-accessibility-assistant-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Authoring checks for headings** | Expose composable and Vue 3 component for `authoring checks for headings` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Links** | Expose composable and Vue 3 component for `links` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Tables** | Expose composable and Vue 3 component for `tables` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Alternatives** | Expose composable and Vue 3 component for `alternatives` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Contrast metadata** | Expose composable and Vue 3 component for `contrast metadata` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Language** | Expose composable and Vue 3 component for `language` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Captions** | Expose composable and Vue 3 component for `captions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Exceptions** | Expose composable and Vue 3 component for `exceptions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-accessibility-assistant.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AccessibilityAssistantService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-accessibility-assistant/src/Services/AccessibilityAssistantService.php) | `public function analyze(string $html, array $exceptions = []): array` |
+<!-- layer-implementation-plan:end -->

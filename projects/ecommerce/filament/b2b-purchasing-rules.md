@@ -35,10 +35,10 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `minimum/maximum/increment-quantities`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `minimum-maximum-increment-quantities`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `case-packs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `order-thresholds`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `payment/shipping-methods`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `payment-shipping-methods`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `deposits`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `po-numbers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `approvals`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -54,3 +54,29 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-b2b-purchasing-rules` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-b2b-purchasing-rules-filament`](https://github.com/liberusoftware/module-ecommerce-b2b-purchasing-rules-filament) (`liberusoftware/ecommerce-b2b-purchasing-rules-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/b2b-purchasing-rules.md) · [API plan](../api/b2b-purchasing-rules.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Minimum/maximum/increment quantities** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `minimum/maximum/increment quantities`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Case packs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `case packs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Order thresholds** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `order thresholds`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Payment/shipping methods** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payment/shipping methods`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deposits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deposits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **PO numbers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `po numbers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Approvals** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `approvals`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

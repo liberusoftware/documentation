@@ -12,7 +12,7 @@
 
 The intended **Social Network Profiles** workspace covers social network profiles domain behavior.
 
-The relevant capability areas are **Social Network Profiles**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Handles**, **Bios**, **Attributes**, **Avatars**, **Verification**, **Visibility**, **Blocking**, **Profile lifecycle**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

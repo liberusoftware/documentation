@@ -90,3 +90,37 @@ The Commerce module owns Premium membership, entitlements, store, regional prici
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Premium membership** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `premium membership`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Entitlements** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `entitlements`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Store** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `store`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Regional pricing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `regional pricing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Receipts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `receipts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Refunds** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `refunds`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Parental controls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `parental controls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/commerce.md) | [Source map](../SOURCE-MAPPING.md#commerce) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/commerce.md) | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/commerce.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) · [`module-browser-game-commerce-filament`](https://github.com/liberusoftware/module-browser-game-commerce-filament) (`liberusoftware/browser-game-commerce-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/commerce.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/commerce.md) | [`project-browser-game-laravel-inertia-react`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-react) · [`module-browser-game-commerce-react-inertia`](https://github.com/liberusoftware/module-browser-game-commerce-react-inertia) (`@liberusoftware/module-browser-game-commerce-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/commerce.md) | [`project-browser-game-laravel-inertia-vue`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue) · [`module-browser-game-commerce-vue-inertia`](https://github.com/liberusoftware/module-browser-game-commerce-vue-inertia) (`@liberusoftware/module-browser-game-commerce-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/commerce.md) | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) · [`module-browser-game-commerce-nuxt`](https://github.com/liberusoftware/module-browser-game-commerce-nuxt) (`@liberusoftware/module-browser-game-commerce-nuxt`) | Standalone Vue SSR client consuming `project-browser-game-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/commerce.md) | [`project-browser-game-next-react`](https://github.com/liberusoftware/project-browser-game-next-react) · [`module-browser-game-commerce-nextjs`](https://github.com/liberusoftware/module-browser-game-commerce-nextjs) (`@liberusoftware/module-browser-game-commerce-nextjs`) | App Router Server/Client components consuming `project-browser-game-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/commerce.md) | [`project-browser-game-mobile-react`](https://github.com/liberusoftware/project-browser-game-mobile-react) · [`module-browser-game-commerce-react-native`](https://github.com/liberusoftware/module-browser-game-commerce-react-native) (`@liberusoftware/module-browser-game-commerce-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/commerce.md) | [`project-browser-game-mobile-flutter`](https://github.com/liberusoftware/project-browser-game-mobile-flutter) · [`module-browser-game-commerce-flutter`](https://github.com/liberusoftware/module-browser-game-commerce-flutter) (`module_browser_game_commerce_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/commerce.md) | [`project-browser-game-dart-mobile`](https://github.com/liberusoftware/project-browser-game-dart-mobile) · [`module-browser-game-commerce-dart-mobile`](https://github.com/liberusoftware/module-browser-game-commerce-dart-mobile) (`module_browser_game_commerce_dart_mobile`)<br>[`project-browser-game-dart-desktop`](https://github.com/liberusoftware/project-browser-game-dart-desktop) · [`module-browser-game-commerce-dart-desktop`](https://github.com/liberusoftware/module-browser-game-commerce-dart-desktop) (`module_browser_game_commerce_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

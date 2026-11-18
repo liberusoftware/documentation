@@ -88,3 +88,36 @@ The Accounts module owns Admin/reseller/customer hierarchy, packages, quotas, de
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Admin/reseller/customer hierarchy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `admin/reseller/customer hierarchy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Packages** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `packages`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Quotas** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `quotas`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Delegation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `delegation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Branding** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `branding`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Suspension** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `suspension`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounts.md) | [Source map](../SOURCE-MAPPING.md#accounts) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounts.md) | [`project-control-panel-laravel-api`](https://github.com/liberusoftware/project-control-panel-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounts.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) · [`module-control-panel-accounts-filament`](https://github.com/liberusoftware/module-control-panel-accounts-filament) (`liberusoftware/control-panel-accounts-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounts.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounts.md) | [`project-control-panel-laravel-inertia-react`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-react) · [`module-control-panel-accounts-react-inertia`](https://github.com/liberusoftware/module-control-panel-accounts-react-inertia) (`@liberusoftware/module-control-panel-accounts-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounts.md) | [`project-control-panel-laravel-inertia-vue`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-vue) · [`module-control-panel-accounts-vue-inertia`](https://github.com/liberusoftware/module-control-panel-accounts-vue-inertia) (`@liberusoftware/module-control-panel-accounts-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounts.md) | [`project-control-panel-nuxt-vue`](https://github.com/liberusoftware/project-control-panel-nuxt-vue) · [`module-control-panel-accounts-nuxt`](https://github.com/liberusoftware/module-control-panel-accounts-nuxt) (`@liberusoftware/module-control-panel-accounts-nuxt`) | Standalone Vue SSR client consuming `project-control-panel-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounts.md) | [`project-control-panel-next-react`](https://github.com/liberusoftware/project-control-panel-next-react) · [`module-control-panel-accounts-nextjs`](https://github.com/liberusoftware/module-control-panel-accounts-nextjs) (`@liberusoftware/module-control-panel-accounts-nextjs`) | App Router Server/Client components consuming `project-control-panel-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounts.md) | [`project-control-panel-mobile-react`](https://github.com/liberusoftware/project-control-panel-mobile-react) · [`module-control-panel-accounts-react-native`](https://github.com/liberusoftware/module-control-panel-accounts-react-native) (`@liberusoftware/module-control-panel-accounts-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounts.md) | [`project-control-panel-mobile-flutter`](https://github.com/liberusoftware/project-control-panel-mobile-flutter) · [`module-control-panel-accounts-flutter`](https://github.com/liberusoftware/module-control-panel-accounts-flutter) (`module_control_panel_accounts_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounts.md) | [`project-control-panel-dart-mobile`](https://github.com/liberusoftware/project-control-panel-dart-mobile) · [`module-control-panel-accounts-dart-mobile`](https://github.com/liberusoftware/module-control-panel-accounts-dart-mobile) (`module_control_panel_accounts_dart_mobile`)<br>[`project-control-panel-dart-desktop`](https://github.com/liberusoftware/project-control-panel-dart-desktop) · [`module-control-panel-accounts-dart-desktop`](https://github.com/liberusoftware/module-control-panel-accounts-dart-desktop) (`module_control_panel_accounts_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

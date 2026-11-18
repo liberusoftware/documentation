@@ -40,3 +40,40 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Duplicates** | Model `duplicates` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Unusual amounts/accounts/timing** | Model `unusual amounts/accounts/timing` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Control breaches** | Model `control breaches` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Missing sequences** | Model `missing sequences` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Fraud indicators** | Model `fraud indicators` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Review queues** | Model `review queues` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_08_31_170000_create_accounting_anomalies_table.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/database/migrations/2026_08_31_170000_create_accounting_anomalies_table.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AnomalyQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Queries/AnomalyQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordAnomaly.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Actions/RecordAnomaly.php) | `public function handle(array $attributes): Anomaly` |
+| [SendToReview.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Actions/SendToReview.php) | `public function handle(Anomaly $anomaly): Anomaly` |
+| [AnomalyPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection-api/src/Policies/AnomalyPolicy.php) | `public function viewAny(?object $user): bool`<br>`public function update(?object $user, object $record): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Anomaly.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Models/Anomaly.php) | `team_id`, `kind`, `source_type`, `source_id`, `title`, `description`, `confidence`, `status`, `evidence`, `detected_at`, `resolved_at` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/accounting-anomaly-detection.md) · [Filament 5](../filament/accounting-anomaly-detection.md) · [Livewire 4](../livewire/accounting-anomaly-detection.md) · [React + Inertia](../react/accounting-anomaly-detection.md) · [Vue + Inertia](../vue/accounting-anomaly-detection.md) · [Nuxt 4](../nuxt/accounting-anomaly-detection.md) · [Next.js](../nextjs/accounting-anomaly-detection.md) · [React Native](../react-native/accounting-anomaly-detection.md) · [Flutter & Dart](../flutter/accounting-anomaly-detection.md)
+<!-- core-implementation-plan:end -->

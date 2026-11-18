@@ -18,7 +18,12 @@ The Accounting Multi Currency module owns accounting multi currency domain behav
 
 ## 2. Full feature scope
 
-- **Accounting Multi Currency:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Transaction/functional/reporting currencies:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Rates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Revaluation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Realized/unrealized gains:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Historical rates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reconciliation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Accounting Multi Currency module owns accounting multi currency domain behav
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Transaction/functional/reporting currencies** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `transaction/functional/reporting currencies`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Revaluation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `revaluation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Realized/unrealized gains** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `realized/unrealized gains`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Historical rates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `historical rates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reconciliation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reconciliation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounting-multi-currency.md) | [Source map](../SOURCE-MAPPING.md#accounting-multi-currency) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounting-multi-currency.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounting-multi-currency.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-multi-currency-filament`](https://github.com/liberusoftware/module-accounting-multi-currency-filament) (`liberusoftware/accounting-multi-currency-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounting-multi-currency.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounting-multi-currency.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-multi-currency-react-inertia`](https://github.com/liberusoftware/module-accounting-multi-currency-react-inertia) (`@liberusoftware/module-accounting-multi-currency-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounting-multi-currency.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-multi-currency-vue-inertia`](https://github.com/liberusoftware/module-accounting-multi-currency-vue-inertia) (`@liberusoftware/module-accounting-multi-currency-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounting-multi-currency.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-multi-currency-nuxt`](https://github.com/liberusoftware/module-accounting-multi-currency-nuxt) (`@liberusoftware/module-accounting-multi-currency-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounting-multi-currency.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-multi-currency-nextjs`](https://github.com/liberusoftware/module-accounting-multi-currency-nextjs) (`@liberusoftware/module-accounting-multi-currency-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounting-multi-currency.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-multi-currency-react-native`](https://github.com/liberusoftware/module-accounting-multi-currency-react-native) (`@liberusoftware/module-accounting-multi-currency-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounting-multi-currency.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-multi-currency-flutter`](https://github.com/liberusoftware/module-accounting-multi-currency-flutter) (`module_accounting_multi_currency_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounting-multi-currency.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-multi-currency-dart-mobile`](https://github.com/liberusoftware/module-accounting-multi-currency-dart-mobile) (`module_accounting_multi_currency_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-multi-currency-dart-desktop`](https://github.com/liberusoftware/module-accounting-multi-currency-dart-desktop) (`module_accounting_multi_currency_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

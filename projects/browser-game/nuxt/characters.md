@@ -37,7 +37,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 ### Capability mapping
 
 - `creation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `race/class/background`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `race-class-background`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `statistics`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `skills`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `experience`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -64,3 +64,61 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `browser-game-characters` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/characters.md)) |
+| Capability Nuxt module skeleton | [`module-browser-game-characters-nuxt`](https://github.com/liberusoftware/module-browser-game-characters-nuxt) (`@liberusoftware/module-browser-game-characters-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Creation** | Expose composable and Vue 3 component for `creation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Race/class/background** | Expose composable and Vue 3 component for `race/class/background` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Statistics** | Expose composable and Vue 3 component for `statistics` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Skills** | Expose composable and Vue 3 component for `skills` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Experience** | Expose composable and Vue 3 component for `experience` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Level** | Expose composable and Vue 3 component for `level` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Health** | Expose composable and Vue 3 component for `health` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Respec** | Expose composable and Vue 3 component for `respec` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/characters.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CharacterQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-characters/src/Queries/CharacterQuery.php) | `public function forPlayer(string $playerId, ?string $worldId = null): Builder`<br>`public function levelForExperience(int $experience): int` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CharacterPolicy.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-characters/src/Policies/CharacterPolicy.php) | `public function view(?string $actorId, ?string $teamId, GameCharacter $character): bool`<br>`public function manage(?string $actorId, ?string $teamId, GameCharacter $character): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [GameCharacter.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-characters/src/Models/GameCharacter.php) | `player_id`, `world_id`, `tenant_id`, `team_id`, `name`, `race`, `class`, `background`, `statistics`, `skills`, `experience`, `level`, `health`, `max_health`, `mana`, `max_mana`, `strength`, `defense`, `agility`, `intelligence`, `stat_points`, `available_skill_points`, `respec_count`, `last_operation_key`, `last_battle_at`, `last_action_at` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CharactersController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-characters-api/src/Http/Controllers/CharactersController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function update(Request $request, GameCharacter $character): JsonResponse`<br>`public function show(Request $request, GameCharacter $character): JsonResponse`<br>`public function respec(Request $request, GameCharacter $character): JsonResponse`<br>`public function spendStats(Request $request, GameCharacter $character): JsonResponse`<br>`public function skills(Request $request, GameCharacter $character): JsonResponse`<br>`public function experience(Request $request, GameCharacter $character): JsonResponse`<br>`public function vitals(Request $request, GameCharacter $character): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/browser-game-characters-api/routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-characters-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/browser-game/characters')->middleware(['api', 'auth:sanctum', 'throttle:api'])->group(function (): void {
+Route::get('/', [CharactersController::class, 'index'])->name('browser-game.characters.index');
+Route::post('/', [CharactersController::class, 'store'])->name('browser-game.characters.store');
+Route::get('/{character}', [CharactersController::class, 'show'])->name('browser-game.characters.show');
+Route::patch('/{character}', [CharactersController::class, 'update'])->name('browser-game.characters.update');
+Route::post('/{character}/respec', [CharactersController::class, 'respec'])->name('browser-game.characters.respec');
+Route::post('/{character}/stats', [CharactersController::class, 'spendStats'])->name('browser-game.characters.stats');
+Route::post('/{character}/skills', [CharactersController::class, 'skills'])->name('browser-game.characters.skills');
+Route::post('/{character}/experience', [CharactersController::class, 'experience'])->name('browser-game.characters.experience');
+Route::post('/{character}/vitals', [CharactersController::class, 'vitals'])->name('browser-game.characters.vitals');
+```
+<!-- layer-implementation-plan:end -->

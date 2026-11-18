@@ -18,7 +18,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Chat And Bots:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Web chat:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Bot/playbook builder:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Qualification:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Knowledge answers:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Meeting booking:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Live-agent handoff:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Office hours:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Transcripts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Channel identity:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +37,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-chat-and-bots`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `web-chat`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `bot-playbook-builder`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `qualification`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `knowledge-answers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `meeting-booking`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `live-agent-handoff`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `office-hours`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `transcripts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `channel-identity`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +66,60 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-chat-and-bots` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-chat-and-bots.md)) |
+| Capability Nuxt module skeleton | [`module-crm-chat-and-bots-nuxt`](https://github.com/liberusoftware/module-crm-chat-and-bots-nuxt) (`@liberusoftware/module-crm-chat-and-bots-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Web chat** | Expose composable and Vue 3 component for `web chat` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Bot/playbook builder** | Expose composable and Vue 3 component for `bot/playbook builder` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Qualification** | Expose composable and Vue 3 component for `qualification` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Knowledge answers** | Expose composable and Vue 3 component for `knowledge answers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Meeting booking** | Expose composable and Vue 3 component for `meeting booking` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Live-agent handoff** | Expose composable and Vue 3 component for `live-agent handoff` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Office hours** | Expose composable and Vue 3 component for `office hours` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Transcripts** | Expose composable and Vue 3 component for `transcripts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Channel identity** | Expose composable and Vue 3 component for `channel identity` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-chat-and-bots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ChatBotQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Queries/ChatBotQuery.php) | `public function bots(int $teamId): Builder`<br>`public function sessions(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateChatBot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/CreateChatBot.php) | `public function execute(int $teamId, int $ownerId, string $name, array $playbook, array $channels = []): ChatBot` |
+| [HandoffChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/HandoffChatSession.php) | `public function execute(int $teamId, ChatSession $session, string $assignee): ChatSession` |
+| [StartChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/StartChatSession.php) | `public function execute(int $teamId, ChatBot $bot, string $visitorKey, string $channel = 'web'): ChatSession` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ChatBot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Models/ChatBot.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Models/ChatSession.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ChatAndBotsController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-api/src/Http/Controllers/ChatAndBotsController.php) | `public function __construct(private readonly ChatBotQuery $query)`<br>`public function bots(Request $request): JsonResponse`<br>`public function store(Request $request, CreateChatBot $a): JsonResponse`<br>`public function session(Request $request, ChatBot $bot, StartChatSession $a): JsonResponse`<br>`public function handoff(Request $request, ChatSession $session, HandoffChatSession $a): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-chat-and-bots-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/chat-and-bots')->group(function (): void {
+Route::get('bots', [ChatAndBotsController::class, 'bots']);
+Route::post('bots', [ChatAndBotsController::class, 'store']);
+Route::post('bots/{bot}/sessions', [ChatAndBotsController::class, 'session']);
+Route::post('sessions/{session}/handoff', [ChatAndBotsController::class, 'handoff']);
+```
+<!-- layer-implementation-plan:end -->

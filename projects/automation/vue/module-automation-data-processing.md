@@ -18,7 +18,13 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Automation Data Processing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Classification:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Extraction:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Summarization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Translation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Enrichment:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Redaction:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Batch processing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-automation-data-processing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `classification`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `extraction`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `summarization`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `translation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `enrichment`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `redaction`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `batch-processing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,54 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-automation-data-processing` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-automation-laravel-inertia-vue`](https://github.com/liberusoftware/project-automation-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-automation-data-processing-vue-inertia`](https://github.com/liberusoftware/module-automation-data-processing-vue-inertia) (`@liberusoftware/module-automation-data-processing-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-automation-data-processing.md) · [Core plan](../core/module-automation-data-processing.md) · [API plan](../api/module-automation-data-processing.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Classification** | Render `classification` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Extraction** | Render `extraction` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Summarization** | Render `summarization` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Translation** | Render `translation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Enrichment** | Render `enrichment` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Redaction** | Render `redaction` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Batch processing** | Render `batch processing` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateDataProcessingResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing/src/Actions/CreateDataProcessingResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): DataProcessingResource` |
+| [TransitionDataProcessingResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing/src/Actions/TransitionDataProcessingResource.php) | `public function execute(DataProcessingResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): DataProcessingResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [DataProcessingResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing/src/Models/DataProcessingResource.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [DataProcessingResourceController.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing-api/src/Http/Controllers/DataProcessingResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateDataProcessingResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionDataProcessingResource $transition): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/module-automation-data-processing-api/routes/api.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/automation/data-processing')->group(function (): void {
+Route::get('/', [DataProcessingResourceController::class, 'index']);
+Route::post('/', [DataProcessingResourceController::class, 'store']);
+Route::get('/{id}', [DataProcessingResourceController::class, 'show']);
+Route::patch('/{id}', [DataProcessingResourceController::class, 'update']);
+Route::delete('/{id}', [DataProcessingResourceController::class, 'destroy']);
+Route::post('/{id}/transition', [DataProcessingResourceController::class, 'transition']);
+```
+<!-- layer-implementation-plan:end -->

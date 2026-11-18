@@ -8,6 +8,8 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | --- | --- | --- |
 | [Activity and Comments](../core/activity-and-comments.md) | [Next.js plan](activity-and-comments.md) | [Shared plan](activity-comments.md) |
 | [Activity Comments](../features/activity-comments.md) | [Next.js plan](activity-comments.md) | [This module](activity-comments.md) |
+| [Affiliate Contracts](../features/affiliate-contracts.md) | [Next.js plan](affiliate-contracts.md) | [This module](affiliate-contracts.md) |
+| [Affiliates and Partner Programs](../features/affiliates.md) | [Next.js plan](affiliates.md) | [This module](affiliates.md) |
 | [Analytics Core](../features/analytics-core.md) | [Next.js plan](analytics-core.md) | [This module](analytics-core.md) |
 | [Analytics Google](../features/analytics-google.md) | [Next.js plan](analytics-google.md) | [This module](analytics-google.md) |
 | [Analytics Meta](../features/analytics-meta.md) | [Next.js plan](analytics-meta.md) | [This module](analytics-meta.md) |
@@ -37,6 +39,16 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Observability](../features/observability.md) | [Next.js plan](observability.md) | [This module](observability.md) |
 | [Organizations and Teams](../core/organizations-and-teams.md) | [Next.js plan](organizations-and-teams.md) | [Shared plan](organizations-teams.md) |
 | [Organizations Teams](../features/organizations-teams.md) | [Next.js plan](organizations-teams.md) | [This module](organizations-teams.md) |
+| [Passkeys and WebAuthn](../features/passkeys.md) | [Next.js plan](passkeys.md) | [This module](passkeys.md) |
+| [Payment Adyen Adapter](../features/payment-adyen.md) | [Next.js plan](payment-adyen.md) | [This module](payment-adyen.md) |
+| [Payment Contracts](../features/payment-contracts.md) | [Next.js plan](payment-contracts.md) | [This module](payment-contracts.md) |
+| [Payment Core](../features/payment-core.md) | [Next.js plan](payment-core.md) | [This module](payment-core.md) |
+| [Payment GoCardless Adapter](../features/payment-gocardless.md) | [Next.js plan](payment-gocardless.md) | [This module](payment-gocardless.md) |
+| [Payment Mollie Adapter](../features/payment-mollie.md) | [Next.js plan](payment-mollie.md) | [This module](payment-mollie.md) |
+| [Payment Paddle Adapter](../features/payment-paddle.md) | [Next.js plan](payment-paddle.md) | [This module](payment-paddle.md) |
+| [Payment PayPal Adapter](../features/payment-paypal.md) | [Next.js plan](payment-paypal.md) | [This module](payment-paypal.md) |
+| [Payment Square Adapter](../features/payment-square.md) | [Next.js plan](payment-square.md) | [This module](payment-square.md) |
+| [Payment Stripe Adapter](../features/payment-stripe.md) | [Next.js plan](payment-stripe.md) | [This module](payment-stripe.md) |
 | [Profiles](../features/profiles.md) | [Next.js plan](profiles.md) | [This module](profiles.md) |
 | [Roles and Permissions](../core/roles-and-permissions.md) | [Next.js plan](roles-and-permissions.md) | [Shared plan](roles-permissions.md) |
 | [Roles Permissions](../features/roles-permissions.md) | [Next.js plan](roles-permissions.md) | [This module](roles-permissions.md) |

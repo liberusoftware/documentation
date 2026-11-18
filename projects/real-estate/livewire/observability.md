@@ -18,7 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Observability:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Structured logs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Correlation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Metrics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Traces:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Exception reporting:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Health checks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Redaction:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **SLO hooks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `observability`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `structured-logs`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `correlation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `metrics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `traces`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `exception-reporting`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `health-checks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `redaction`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `slo-hooks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,35 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `observability` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/observability.md) · [API plan](../api/observability.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Structured logs** | Expose a focused Livewire 4 component and namespaced Blade default view for `structured logs` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Correlation** | Expose a focused Livewire 4 component and namespaced Blade default view for `correlation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Metrics** | Expose a focused Livewire 4 component and namespaced Blade default view for `metrics` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Traces** | Expose a focused Livewire 4 component and namespaced Blade default view for `traces` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Exception reporting** | Expose a focused Livewire 4 component and namespaced Blade default view for `exception reporting` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Health checks** | Expose a focused Livewire 4 component and namespaced Blade default view for `health checks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Redaction** | Expose a focused Livewire 4 component and namespaced Blade default view for `redaction` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **SLO hooks** | Expose a focused Livewire 4 component and namespaced Blade default view for `slo hooks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/observability-livewire/src/Livewire/Overview.php) · [ObservabilityLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/observability-livewire/src/ObservabilityLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [Metrics.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/observability/src/Contracts/Metrics.php) | `public function increment(string $name, int $value = 1, array $labels = []): void`<br>`public function observe(string $name, float $value, array $labels = []): void` |
+| [ObservabilityActor.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/observability/src/Contracts/ObservabilityActor.php) | `public function isAdmin(): bool` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Accounting Credit Notes And Adjustments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Full/partial credits:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reasons:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Approval:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Invoice allocation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Refund/store-credit references:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Tax correction:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Audit:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `accounting-credit-notes-and-adjustments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `full-partial-credits`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reasons`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `approval`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `invoice-allocation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `refund-store-credit-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `tax-correction`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `audit`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,59 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-credit-notes-and-adjustments` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/accounting-credit-notes-and-adjustments.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-credit-notes-and-adjustments-nuxt`](https://github.com/liberusoftware/module-accounting-credit-notes-and-adjustments-nuxt) (`@liberusoftware/module-accounting-credit-notes-and-adjustments-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Full/partial credits** | Expose composable and Vue 3 component for `full/partial credits` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-credit-notes-and-adjustments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Reasons** | Expose composable and Vue 3 component for `reasons` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-credit-notes-and-adjustments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Approval** | Expose composable and Vue 3 component for `approval` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-credit-notes-and-adjustments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Invoice allocation** | Expose composable and Vue 3 component for `invoice allocation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-credit-notes-and-adjustments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Refund/store-credit references** | Expose composable and Vue 3 component for `refund/store-credit references` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-credit-notes-and-adjustments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Tax correction** | Expose composable and Vue 3 component for `tax correction` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-credit-notes-and-adjustments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Audit** | Expose composable and Vue 3 component for `audit` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-credit-notes-and-adjustments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CreditNoteQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments/src/Queries/CreditNoteQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocateCreditNote.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments/src/Actions/AllocateCreditNote.php) | `public function handle(CreditNote $note, string $invoiceRef, float $amount): CreditNoteAllocation` |
+| [ApproveCreditNote.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments/src/Actions/ApproveCreditNote.php) | `public function handle(CreditNote $note, int $actor): CreditNote` |
+| [CreateCreditNote.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments/src/Actions/CreateCreditNote.php) | `public function handle(array $attributes): CreditNote` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CreditNote.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments/src/Models/CreditNote.php) | `team_id`, `customer_id`, `credit_ref`, `status`, `reason`, `currency`, `amount`, `allocated_amount`, `tax_amount`, `refund_reference`, `store_credit_reference`, `approved_by`, `approved_at`, `evidence`, `metadata` |
+| [CreditNoteAllocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments/src/Models/CreditNoteAllocation.php) | `credit_note_id`, `team_id`, `invoice_ref`, `amount` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CreditNotesController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments-api/src/Http/Controllers/CreditNotesController.php) | `public function index(CreditNoteQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCreditNote $action): JsonResponse`<br>`public function approve(Request $request, string $note, ApproveCreditNote $action): JsonResponse`<br>`public function allocate(Request $request, string $note, AllocateCreditNote $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-credit-notes-and-adjustments-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-credit-notes-and-adjustments-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/credit-notes-and-adjustments')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.credit-notes-and-adjustments.read')->get('/', [CreditNotesController::class, 'index']);
+Route::middleware('ability:accounting.credit-notes-and-adjustments.write')->group(function (): void {
+Route::post('/', [CreditNotesController::class, 'store']);
+Route::post('/{note}/approve', [CreditNotesController::class, 'approve']);
+Route::post('/{note}/allocations', [CreditNotesController::class, 'allocate']);
+```
+<!-- layer-implementation-plan:end -->

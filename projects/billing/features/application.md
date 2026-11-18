@@ -18,7 +18,13 @@ The Application module owns application domain behavior. It is the authoritative
 
 ## 2. Full feature scope
 
-- **Application:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Environment validation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Application metadata:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Health/readiness:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Maintenance mode:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Identifiers:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Clocks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Shared service contracts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Application module owns application domain behavior. It is the authoritative
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Environment validation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `environment validation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Application metadata** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `application metadata`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Health/readiness** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `health/readiness`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Maintenance mode** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `maintenance mode`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Identifiers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `identifiers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Clocks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `clocks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Shared service contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `shared service contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/application.md) | [Source map](../SOURCE-MAPPING.md#application) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/application.md) | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/application.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) · [`module-application-filament`](https://github.com/liberusoftware/module-application-filament) (`liberusoftware/application-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/application.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/application.md) | [`project-billing-laravel-inertia-react`](https://github.com/liberusoftware/project-billing-laravel-inertia-react) · [`module-application-react-inertia`](https://github.com/liberusoftware/module-application-react-inertia) (`@liberusoftware/module-application-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/application.md) | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) · [`module-application-vue-inertia`](https://github.com/liberusoftware/module-application-vue-inertia) (`@liberusoftware/module-application-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/application.md) | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) · [`module-application-nuxt`](https://github.com/liberusoftware/module-application-nuxt) (`@liberusoftware/module-application-nuxt`) | Standalone Vue SSR client consuming `project-billing-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/application.md) | [`project-billing-next-react`](https://github.com/liberusoftware/project-billing-next-react) · [`module-application-nextjs`](https://github.com/liberusoftware/module-application-nextjs) (`@liberusoftware/module-application-nextjs`) | App Router Server/Client components consuming `project-billing-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/application.md) | [`project-billing-mobile-react`](https://github.com/liberusoftware/project-billing-mobile-react) · [`module-application-react-native`](https://github.com/liberusoftware/module-application-react-native) (`@liberusoftware/module-application-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/application.md) | [`project-billing-mobile-flutter`](https://github.com/liberusoftware/project-billing-mobile-flutter) · [`module-application-flutter`](https://github.com/liberusoftware/module-application-flutter) (`module_application_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/application.md) | [`project-billing-dart-mobile`](https://github.com/liberusoftware/project-billing-dart-mobile) · [`module-application-dart-mobile`](https://github.com/liberusoftware/module-application-dart-mobile) (`module_application_dart_mobile`)<br>[`project-billing-dart-desktop`](https://github.com/liberusoftware/project-billing-dart-desktop) · [`module-application-dart-desktop`](https://github.com/liberusoftware/module-application-dart-desktop) (`module_application_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

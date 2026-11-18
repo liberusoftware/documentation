@@ -18,7 +18,17 @@ The Crm Partner Relationship Management module owns crm partner relationship man
 
 ## 2. Full feature scope
 
-- **Crm Partner Relationship Management:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Partner accounts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Contacts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Tiers:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recruitment:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Onboarding:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Competencies:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Agreements:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Enablement:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Certification:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Plans:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Performance:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +88,41 @@ The Crm Partner Relationship Management module owns crm partner relationship man
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Partner accounts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `partner accounts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Contacts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `contacts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Tiers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `tiers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recruitment** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recruitment`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Onboarding** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `onboarding`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Competencies** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `competencies`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Agreements** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `agreements`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Enablement** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `enablement`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Certification** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `certification`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Plans** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `plans`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Performance** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `performance`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-partner-relationship-management.md) | [Source map](../SOURCE-MAPPING.md#crm-partner-relationship-management) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-partner-relationship-management.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-partner-relationship-management.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-partner-relationship-management-filament`](https://github.com/liberusoftware/module-crm-partner-relationship-management-filament) (`liberusoftware/crm-partner-relationship-management-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-partner-relationship-management.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-partner-relationship-management.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-partner-relationship-management-react-inertia`](https://github.com/liberusoftware/module-crm-partner-relationship-management-react-inertia) (`@liberusoftware/module-crm-partner-relationship-management-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-partner-relationship-management.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-partner-relationship-management-vue-inertia`](https://github.com/liberusoftware/module-crm-partner-relationship-management-vue-inertia) (`@liberusoftware/module-crm-partner-relationship-management-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-partner-relationship-management.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-partner-relationship-management-nuxt`](https://github.com/liberusoftware/module-crm-partner-relationship-management-nuxt) (`@liberusoftware/module-crm-partner-relationship-management-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-partner-relationship-management.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-partner-relationship-management-nextjs`](https://github.com/liberusoftware/module-crm-partner-relationship-management-nextjs) (`@liberusoftware/module-crm-partner-relationship-management-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-partner-relationship-management.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-partner-relationship-management-react-native`](https://github.com/liberusoftware/module-crm-partner-relationship-management-react-native) (`@liberusoftware/module-crm-partner-relationship-management-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-partner-relationship-management.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-partner-relationship-management-flutter`](https://github.com/liberusoftware/module-crm-partner-relationship-management-flutter) (`module_crm_partner_relationship_management_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-partner-relationship-management.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-partner-relationship-management-dart-mobile`](https://github.com/liberusoftware/module-crm-partner-relationship-management-dart-mobile) (`module_crm_partner_relationship_management_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-partner-relationship-management-dart-desktop`](https://github.com/liberusoftware/module-crm-partner-relationship-management-dart-desktop) (`module_crm_partner_relationship_management_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -90,3 +90,37 @@ The Agency Workspace module owns Agency/client hierarchy, sub-accounts, delegate
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Agency/client hierarchy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `agency/client hierarchy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sub-accounts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sub-accounts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Delegated administration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `delegated administration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Usage visibility** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `usage visibility`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Support access** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `support access`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Branding** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `branding`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Cross-account operations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `cross-account operations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/agency-workspace.md) | [Source map](../SOURCE-MAPPING.md#agency-workspace) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/agency-workspace.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/agency-workspace.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-agency-workspace-filament`](https://github.com/liberusoftware/module-crm-agency-workspace-filament) (`liberusoftware/crm-agency-workspace-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/agency-workspace.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/agency-workspace.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-agency-workspace-react-inertia`](https://github.com/liberusoftware/module-crm-agency-workspace-react-inertia) (`@liberusoftware/module-crm-agency-workspace-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/agency-workspace.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-agency-workspace-vue-inertia`](https://github.com/liberusoftware/module-crm-agency-workspace-vue-inertia) (`@liberusoftware/module-crm-agency-workspace-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/agency-workspace.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-agency-workspace-nuxt`](https://github.com/liberusoftware/module-crm-agency-workspace-nuxt) (`@liberusoftware/module-crm-agency-workspace-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/agency-workspace.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-agency-workspace-nextjs`](https://github.com/liberusoftware/module-crm-agency-workspace-nextjs) (`@liberusoftware/module-crm-agency-workspace-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/agency-workspace.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-agency-workspace-react-native`](https://github.com/liberusoftware/module-crm-agency-workspace-react-native) (`@liberusoftware/module-crm-agency-workspace-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/agency-workspace.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-agency-workspace-flutter`](https://github.com/liberusoftware/module-crm-agency-workspace-flutter) (`module_crm_agency_workspace_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/agency-workspace.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-agency-workspace-dart-mobile`](https://github.com/liberusoftware/module-crm-agency-workspace-dart-mobile) (`module_crm_agency_workspace_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-agency-workspace-dart-desktop`](https://github.com/liberusoftware/module-crm-agency-workspace-dart-desktop) (`module_crm_agency_workspace_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

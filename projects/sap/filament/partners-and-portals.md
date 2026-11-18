@@ -56,3 +56,30 @@ Show the selected entity, source/subject reference, current business state and s
 - Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
 
 Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-enterprise-sap-laravel-filament`](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-sap-partners-and-portals-filament`](https://github.com/liberusoftware/module-sap-partners-and-portals-filament) (`liberusoftware/sap-partners-and-portals-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/partners-and-portals.md) · [API plan](../api/partners-and-portals.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Suppliers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `suppliers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Resellers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `resellers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Partners** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `partners`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Customers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `customers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Employees** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `employees`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Delegated self-service** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `delegated self-service`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Documents** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `documents`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Collaboration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `collaboration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

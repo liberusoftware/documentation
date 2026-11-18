@@ -12,7 +12,7 @@
 
 The intended **Module Billing Paddle** workspace covers module billing paddle domain behavior.
 
-The relevant capability areas are **Module Billing Paddle**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Paddle Billing transactions and Merchant-of-Record checkout**, **Transaction capture and full/partial refund adjustments**, **Saved payment methods and subscription renewal bridge**, **Paddle-Signature webhook verification and normalization**, **Provider references, MoR tax/fee breakdown, and settlement reconciliation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -7,10 +7,11 @@
 ## Canonical independent module specification
 
 **Domain module:** `module-billing-module-billing-paddle`
+**Extends / implements contracts:** `liberusoftware/payment-contracts (PaymentGatewayAdapterContract, PaymentIntentServiceContract, PaymentCaptureAndRefundContract, SavedPaymentMethodVaultContract, MerchantWebhookVerifierContract, DisputeAndChargebackHandlerContract, PayoutAndSettlementReconcilerContract)`
 **Application:** Billing  
 **Capability group:** Module Billing Paddle  
 **Source scope:** [BILLING.md](../BILLING.md)  
-**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [PAYMENTS.md](../../../architecture/PAYMENTS.md)
 
 ## 1. Purpose
 
@@ -18,7 +19,11 @@ The Module Billing Paddle module owns module billing paddle domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Module Billing Paddle:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Paddle Billing transactions and Merchant-of-Record checkout:** Implement PaymentIntentServiceContract for Paddle Billing transactions, localized tax calculation, and Paddle.js client checkout tokens.
+- **Transaction capture and full/partial refund adjustments:** Implement PaymentCaptureAndRefundContract for Paddle transaction capture and credit/refund adjustment lifecycles.
+- **Saved payment methods and subscription renewal bridge:** Implement SavedPaymentMethodVaultContract for vaulted customer payment methods and recurring subscription billing synchronization.
+- **Paddle-Signature webhook verification and normalization:** Implement MerchantWebhookVerifierContract validating timestamped HMAC-SHA256 Paddle-Signature headers into normalized MerchantWebhookEventDto records.
+- **Provider references, MoR tax/fee breakdown, and settlement reconciliation:** Implement PayoutAndSettlementReconcilerContract and maintain backward-compatible GatewayDriver registration with module-billing-payments.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,35 @@ The Module Billing Paddle module owns module billing paddle domain behavior. It 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Paddle Billing transactions and Merchant-of-Record checkout** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `paddle billing transactions and merchant-of-record checkout`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Transaction capture and full/partial refund adjustments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `transaction capture and full/partial refund adjustments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Saved payment methods and subscription renewal bridge** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `saved payment methods and subscription renewal bridge`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Paddle-Signature webhook verification and normalization** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `paddle-signature webhook verification and normalization`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Provider references, MoR tax/fee breakdown, and settlement reconciliation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider references, mor tax/fee breakdown, and settlement reconciliation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-billing-paddle.md) | [Source map](../SOURCE-MAPPING.md#module-billing-paddle) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-billing-paddle.md) | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-billing-paddle.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) · [`module-billing-paddle-filament`](https://github.com/liberusoftware/module-billing-paddle-filament) (`liberusoftware/billing-paddle-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-billing-paddle.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-billing-paddle.md) | [`project-billing-laravel-inertia-react`](https://github.com/liberusoftware/project-billing-laravel-inertia-react) · [`module-billing-paddle-react-inertia`](https://github.com/liberusoftware/module-billing-paddle-react-inertia) (`@liberusoftware/module-billing-paddle-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-billing-paddle.md) | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) · [`module-billing-paddle-vue-inertia`](https://github.com/liberusoftware/module-billing-paddle-vue-inertia) (`@liberusoftware/module-billing-paddle-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-billing-paddle.md) | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) · [`module-billing-paddle-nuxt`](https://github.com/liberusoftware/module-billing-paddle-nuxt) (`@liberusoftware/module-billing-paddle-nuxt`) | Standalone Vue SSR client consuming `project-billing-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-billing-paddle.md) | [`project-billing-next-react`](https://github.com/liberusoftware/project-billing-next-react) · [`module-billing-paddle-nextjs`](https://github.com/liberusoftware/module-billing-paddle-nextjs) (`@liberusoftware/module-billing-paddle-nextjs`) | App Router Server/Client components consuming `project-billing-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-billing-paddle.md) | [`project-billing-mobile-react`](https://github.com/liberusoftware/project-billing-mobile-react) · [`module-billing-paddle-react-native`](https://github.com/liberusoftware/module-billing-paddle-react-native) (`@liberusoftware/module-billing-paddle-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-billing-paddle.md) | [`project-billing-mobile-flutter`](https://github.com/liberusoftware/project-billing-mobile-flutter) · [`module-billing-paddle-flutter`](https://github.com/liberusoftware/module-billing-paddle-flutter) (`module_billing_paddle_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-billing-paddle.md) | [`project-billing-dart-mobile`](https://github.com/liberusoftware/project-billing-dart-mobile) · [`module-billing-paddle-dart-mobile`](https://github.com/liberusoftware/module-billing-paddle-dart-mobile) (`module_billing_paddle_dart_mobile`)<br>[`project-billing-dart-desktop`](https://github.com/liberusoftware/project-billing-dart-desktop) · [`module-billing-paddle-dart-desktop`](https://github.com/liberusoftware/module-billing-paddle-dart-desktop) (`module_billing_paddle_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

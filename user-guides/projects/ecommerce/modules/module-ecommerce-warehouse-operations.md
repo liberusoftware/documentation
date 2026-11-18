@@ -12,7 +12,7 @@
 
 The intended **Module Ecommerce Warehouse Operations** workspace covers module ecommerce warehouse operations domain behavior.
 
-The relevant capability areas are **Module Ecommerce Warehouse Operations**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Waves/batches**, **Pick paths**, **Packing stations**, **Scans**, **Labels**, **Manifests**, **Exceptions**, **Warehouse-system adapters**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -18,7 +18,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Files Media:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Storage contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Uploads:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Validation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Scanning:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Metadata:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Access:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Transformations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Retention:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `files-media`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `storage-contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `uploads`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `validation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `scanning`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `metadata`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `access`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `transformations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `retention`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,43 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `files-media` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-files-media-react-inertia`](https://github.com/liberusoftware/module-files-media-react-inertia) (`@liberusoftware/module-files-media-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/files-media.md) · [Core plan](../core/files-media.md) · [API plan](../api/files-media.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Storage contracts** | Render `storage contracts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Uploads** | Render `uploads` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Validation** | Render `validation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Scanning** | Render `scanning` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Metadata** | Render `metadata` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Access** | Render `access` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Transformations** | Render `transformations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Retention** | Render `retention` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MalwareScanner.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MalwareScanner.php) | `public function clean(string $path): bool` |
+| [MediaAccess.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MediaAccess.php) | `public function authorized(string\|int\|null $actorId, string $mediaId, string $operation): bool` |
+| [MediaTransformer.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MediaTransformer.php) | `public function transform(string $source, string $operation, array $parameters = []): string` |
+
+**Observed route declarations:**
+
+[modules/files-media-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/files-media-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/files-media')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('files-media-api.status');
+```
+<!-- layer-implementation-plan:end -->

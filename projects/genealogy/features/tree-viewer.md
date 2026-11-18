@@ -88,3 +88,36 @@ The Tree Viewer module owns Pedigree, descendants, fan/chart views, navigation, 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Pedigree** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `pedigree`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Descendants** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `descendants`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Fan/chart views** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `fan/chart views`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Navigation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `navigation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Filters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `filters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Large-tree rendering** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `large-tree rendering`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/tree-viewer.md) | [Source map](../SOURCE-MAPPING.md#tree-viewer) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/tree-viewer.md) | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/tree-viewer.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) · [`module-genealogy-tree-viewer-filament`](https://github.com/liberusoftware/module-genealogy-tree-viewer-filament) (`liberusoftware/genealogy-tree-viewer-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/tree-viewer.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/tree-viewer.md) | [`project-genealogy-laravel-inertia-react`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-react) · [`module-genealogy-tree-viewer-react-inertia`](https://github.com/liberusoftware/module-genealogy-tree-viewer-react-inertia) (`@liberusoftware/module-genealogy-tree-viewer-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/tree-viewer.md) | [`project-genealogy-laravel-inertia-vue`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-vue) · [`module-genealogy-tree-viewer-vue-inertia`](https://github.com/liberusoftware/module-genealogy-tree-viewer-vue-inertia) (`@liberusoftware/module-genealogy-tree-viewer-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/tree-viewer.md) | [`project-genealogy-nuxt-vue`](https://github.com/liberusoftware/project-genealogy-nuxt-vue) · [`module-genealogy-tree-viewer-nuxt`](https://github.com/liberusoftware/module-genealogy-tree-viewer-nuxt) (`@liberusoftware/module-genealogy-tree-viewer-nuxt`) | Standalone Vue SSR client consuming `project-genealogy-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/tree-viewer.md) | [`project-genealogy-next-react`](https://github.com/liberusoftware/project-genealogy-next-react) · [`module-genealogy-tree-viewer-nextjs`](https://github.com/liberusoftware/module-genealogy-tree-viewer-nextjs) (`@liberusoftware/module-genealogy-tree-viewer-nextjs`) | App Router Server/Client components consuming `project-genealogy-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/tree-viewer.md) | [`project-genealogy-mobile-react`](https://github.com/liberusoftware/project-genealogy-mobile-react) · [`module-genealogy-tree-viewer-react-native`](https://github.com/liberusoftware/module-genealogy-tree-viewer-react-native) (`@liberusoftware/module-genealogy-tree-viewer-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/tree-viewer.md) | [`project-genealogy-mobile-flutter`](https://github.com/liberusoftware/project-genealogy-mobile-flutter) · [`module-genealogy-tree-viewer-flutter`](https://github.com/liberusoftware/module-genealogy-tree-viewer-flutter) (`module_genealogy_tree_viewer_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/tree-viewer.md) | [`project-genealogy-dart-mobile`](https://github.com/liberusoftware/project-genealogy-dart-mobile) · [`module-genealogy-tree-viewer-dart-mobile`](https://github.com/liberusoftware/module-genealogy-tree-viewer-dart-mobile) (`module_genealogy_tree_viewer_dart_mobile`)<br>[`project-genealogy-dart-desktop`](https://github.com/liberusoftware/project-genealogy-dart-desktop) · [`module-genealogy-tree-viewer-dart-desktop`](https://github.com/liberusoftware/module-genealogy-tree-viewer-dart-desktop) (`module_genealogy_tree_viewer_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

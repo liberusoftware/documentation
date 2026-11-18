@@ -18,7 +18,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Files Media:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Storage contracts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Uploads:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Validation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Scanning:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Metadata:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Access:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Transformations:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Retention:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +36,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `files-media`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `storage-contracts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `uploads`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `validation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `scanning`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `metadata`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `access`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `transformations`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `retention`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +64,47 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `files-media` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/files-media.md)) |
+| Capability Nuxt module skeleton | [`module-files-media-nuxt`](https://github.com/liberusoftware/module-files-media-nuxt) (`@liberusoftware/module-files-media-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Storage contracts** | Expose composable and Vue 3 component for `storage contracts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Uploads** | Expose composable and Vue 3 component for `uploads` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Validation** | Expose composable and Vue 3 component for `validation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Scanning** | Expose composable and Vue 3 component for `scanning` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Metadata** | Expose composable and Vue 3 component for `metadata` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Access** | Expose composable and Vue 3 component for `access` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Transformations** | Expose composable and Vue 3 component for `transformations` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Retention** | Expose composable and Vue 3 component for `retention` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/files-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MalwareScanner.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MalwareScanner.php) | `public function clean(string $path): bool` |
+| [MediaAccess.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MediaAccess.php) | `public function authorized(string\|int\|null $actorId, string $mediaId, string $operation): bool` |
+| [MediaTransformer.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MediaTransformer.php) | `public function transform(string $source, string $operation, array $parameters = []): string` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [StatusController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/files-media-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/files-media-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/files-media-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/files-media')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('files-media-api.status');
+```
+<!-- layer-implementation-plan:end -->

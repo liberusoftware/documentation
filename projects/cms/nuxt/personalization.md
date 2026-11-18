@@ -36,7 +36,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `audience/context-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `audience-context-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `variants`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `eligibility`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `priority`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -64,3 +64,39 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-personalization` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/personalization.md)) |
+| Capability Nuxt module skeleton | [`module-cms-personalization-nuxt`](https://github.com/liberusoftware/module-cms-personalization-nuxt) (`@liberusoftware/module-cms-personalization-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Audience/context rules** | Expose composable and Vue 3 component for `audience/context rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Variants** | Expose composable and Vue 3 component for `variants` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Eligibility** | Expose composable and Vue 3 component for `eligibility` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Priority** | Expose composable and Vue 3 component for `priority` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Fallback** | Expose composable and Vue 3 component for `fallback` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Consent** | Expose composable and Vue 3 component for `consent` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Holdouts** | Expose composable and Vue 3 component for `holdouts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Decision evidence** | Expose composable and Vue 3 component for `decision evidence` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/personalization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [DecisionEngine.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Services/DecisionEngine.php) | `public function decide(string $audienceKey, array $context = [], ?string $subjectKey = null, bool $consent = false): array` |
+| [PersonalizationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Services/PersonalizationService.php) | `public function createAudience(array $attributes, ?int $teamId = null): Audience`<br>`public function updateAudience(Audience $audience, array $attributes): Audience`<br>`public function saveVariant(Audience $audience, array $attributes, ?Variant $variant = null): Variant`<br>`public function deleteVariant(Variant $variant): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Audience.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Audience.php) | `name`, `key`, `rules`, `requires_consent`, `active`, `team_id` |
+| [Decision.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Decision.php) | `audience_key`, `variant_key`, `subject_key`, `context`, `reason`, `team_id` |
+| [Variant.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Variant.php) | `audience_id`, `key`, `payload`, `priority`, `holdout_percent`, `fallback`, `active`, `team_id` |
+<!-- layer-implementation-plan:end -->

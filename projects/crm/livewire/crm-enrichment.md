@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Crm Enrichment:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Company/contact firmographic:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Demographic:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Technographic:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Social:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Verification:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Change monitoring:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Confidence:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Field-level provenance:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Provider adapters:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `crm-enrichment`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `company-contact-firmographic`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `demographic`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `technographic`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `social`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `verification`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `change-monitoring`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `confidence`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `field-level-provenance`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `provider-adapters`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,49 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-enrichment` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/crm-enrichment.md) · [API plan](../api/crm-enrichment.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Company/contact firmographic** | Expose a focused Livewire 4 component and namespaced Blade default view for `company/contact firmographic` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Demographic** | Expose a focused Livewire 4 component and namespaced Blade default view for `demographic` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Technographic** | Expose a focused Livewire 4 component and namespaced Blade default view for `technographic` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Social** | Expose a focused Livewire 4 component and namespaced Blade default view for `social` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Verification** | Expose a focused Livewire 4 component and namespaced Blade default view for `verification` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Change monitoring** | Expose a focused Livewire 4 component and namespaced Blade default view for `change monitoring` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Confidence** | Expose a focused Livewire 4 component and namespaced Blade default view for `confidence` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Field-level provenance** | Expose a focused Livewire 4 component and namespaced Blade default view for `field-level provenance` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Provider adapters** | Expose a focused Livewire 4 component and namespaced Blade default view for `provider adapters` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [EnrichmentDashboard.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment-livewire/src/Livewire/EnrichmentDashboard.php) · [EnrichmentLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment-livewire/src/EnrichmentLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [EnrichmentQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Queries/EnrichmentQuery.php) | `public function profiles(int $teamId)`<br>`public function changes(int $teamId, int $profileId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordChange.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Actions/RecordChange.php) | `public function __construct(private readonly EnrichmentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, EnrichmentProfile $profile, array $input): EnrichmentChange` |
+| [RecordProvenance.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Actions/RecordProvenance.php) | `public function __construct(private readonly EnrichmentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, EnrichmentProfile $profile, array $input): EnrichmentField` |
+| [UpsertEnrichment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Actions/UpsertEnrichment.php) | `public function __construct(private readonly EnrichmentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): EnrichmentProfile` |
+| [VerifyProfile.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Actions/VerifyProfile.php) | `public function __construct(private readonly EnrichmentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, EnrichmentProfile $profile, bool $verified): EnrichmentProfile` |
+| [EnrichmentPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Services/EnrichmentPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [EnrichmentChange.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Models/EnrichmentChange.php) | No literal fillable array detected; inspect the model and API schema. |
+| [EnrichmentField.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Models/EnrichmentField.php) | No literal fillable array detected; inspect the model and API schema. |
+| [EnrichmentProfile.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-enrichment/src/Models/EnrichmentProfile.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

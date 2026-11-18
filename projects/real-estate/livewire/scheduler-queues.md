@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Scheduler Queues:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Queue conventions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Unique/idempotent jobs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Schedules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Locks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Retries:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Failures:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Graceful deployment:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `scheduler-queues`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `queue-conventions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `unique-idempotent-jobs`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `schedules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `locks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `retries`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `failures`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `graceful-deployment`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,29 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `scheduler-queues` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/scheduler-queues.md) · [API plan](../api/scheduler-queues.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Queue conventions** | Expose a focused Livewire 4 component and namespaced Blade default view for `queue conventions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Unique/idempotent jobs** | Expose a focused Livewire 4 component and namespaced Blade default view for `unique/idempotent jobs` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Schedules** | Expose a focused Livewire 4 component and namespaced Blade default view for `schedules` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Locks** | Expose a focused Livewire 4 component and namespaced Blade default view for `locks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Retries** | Expose a focused Livewire 4 component and namespaced Blade default view for `retries` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Failures** | Expose a focused Livewire 4 component and namespaced Blade default view for `failures` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Graceful deployment** | Expose a focused Livewire 4 component and namespaced Blade default view for `graceful deployment` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/scheduler-queues-livewire/src/Livewire/Overview.php) · [SchedulerQueuesLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/scheduler-queues-livewire/src/SchedulerQueuesLivewireServiceProvider.php).
+<!-- layer-implementation-plan:end -->

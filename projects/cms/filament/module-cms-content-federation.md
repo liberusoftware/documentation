@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Content Federation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Content APIs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Remote-source adapters:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Normalized references:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Cache/revalidation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Source health:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Failure fallbacks:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-content-federation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `content-apis`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `remote-source-adapters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `normalized-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cache-revalidation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `source-health`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `failure-fallbacks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-content-federation` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-content-federation-filament`](https://github.com/liberusoftware/module-cms-content-federation-filament) (`liberusoftware/cms-content-federation-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-content-federation.md) · [API plan](../api/module-cms-content-federation.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Content APIs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `content apis`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Remote-source adapters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `remote-source adapters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Normalized references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `normalized references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cache/revalidation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cache/revalidation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Source health** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `source health`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Failure fallbacks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `failure fallbacks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ContentFederationFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-federation-filament/src/ContentFederationFilamentServiceProvider.php) · [FederationSourceResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-federation-filament/src/Resources/FederationSourceResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RemoteSourceAdapter.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-federation/src/Contracts/RemoteSourceAdapter.php) | `public function fetch(string $externalType, string $externalKey, array $configuration = []): array` |
+| [ContentFederationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-federation/src/Services/ContentFederationService.php) | `public function sources(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function source(array $data, ?int $teamId = null): FederationSource`<br>`public function ingest(FederationSource $source, string $externalType, string $externalKey, array $payload, ?string $etag = null, ?int $cacheMinutes = null): FederationReference`<br>`public function fallback(FederationSource $source, string $externalType, string $externalKey): ?FederationReference`<br>`public function revalidate(FederationReference $reference): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [FederationReference.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-federation/src/Models/FederationReference.php) | `source_id`, `external_type`, `external_key`, `payload`, `etag`, `cached_until`, `last_fetched_at` |
+| [FederationSource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-federation/src/Models/FederationSource.php) | `team_id`, `name`, `adapter`, `endpoint`, `status`, `last_checked_at`, `last_succeeded_at`, `last_error` |
+<!-- layer-implementation-plan:end -->

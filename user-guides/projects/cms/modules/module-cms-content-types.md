@@ -12,7 +12,7 @@
 
 The intended **Cms Content Types** workspace covers cms content types domain behavior.
 
-The relevant capability areas are **Cms Content Types**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Content type definitions**, **Typed field groups and repeaters**, **Validation and reference rules**, **Schema versioning and migrations**, **API projection rules**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Automation Video:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Generation/editing jobs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Scripts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Captions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Audio:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Moderation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Provenance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Delivery:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-automation-video`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `generation-editing-jobs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `scripts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `captions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `audio`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `moderation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `provenance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `delivery`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-automation-video` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-automation-video-filament`](https://github.com/liberusoftware/module-automation-video-filament) (`liberusoftware/automation-video-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-automation-video.md) · [API plan](../api/module-automation-video.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Generation/editing jobs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `generation/editing jobs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Scripts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `scripts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Captions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `captions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Audio** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `audio`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Moderation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `moderation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Provenance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `provenance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Delivery** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `delivery`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [VideoResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video-filament/src/Resources/VideoResource.php) · [CreateVideo.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video-filament/src/Resources/VideoResource/Pages/CreateVideo.php) · [EditVideo.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video-filament/src/Resources/VideoResource/Pages/EditVideo.php) · [ListVideo.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video-filament/src/Resources/VideoResource/Pages/ListVideo.php) · [VideoFilamentPlugin.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video-filament/src/VideoFilamentPlugin.php) · [VideoFilamentServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video-filament/src/VideoFilamentServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateVideoResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video/src/Actions/CreateVideoResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): VideoResource` |
+| [TransitionVideoResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video/src/Actions/TransitionVideoResource.php) | `public function execute(VideoResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): VideoResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [VideoResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-video/src/Models/VideoResource.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,10 @@ The Genealogy Gamification module owns genealogy gamification domain behavior. I
 
 ## 2. Full feature scope
 
-- **Genealogy Gamification:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Genealogy gamification points:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Genealogy gamification achievements:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Genealogy gamification progress:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Genealogy gamification leaderboard:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +81,34 @@ The Genealogy Gamification module owns genealogy gamification domain behavior. I
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Genealogy gamification points** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `genealogy gamification points`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Genealogy gamification achievements** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `genealogy gamification achievements`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Genealogy gamification progress** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `genealogy gamification progress`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Genealogy gamification leaderboard** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `genealogy gamification leaderboard`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/genealogy-gamification.md) | [Source map](../SOURCE-MAPPING.md#genealogy-gamification) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/genealogy-gamification.md) | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/genealogy-gamification.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) · [`module-genealogy-gamification-filament`](https://github.com/liberusoftware/module-genealogy-gamification-filament) (`liberusoftware/genealogy-gamification-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/genealogy-gamification.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/genealogy-gamification.md) | [`project-genealogy-laravel-inertia-react`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-react) · [`module-genealogy-gamification-react-inertia`](https://github.com/liberusoftware/module-genealogy-gamification-react-inertia) (`@liberusoftware/module-genealogy-gamification-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/genealogy-gamification.md) | [`project-genealogy-laravel-inertia-vue`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-vue) · [`module-genealogy-gamification-vue-inertia`](https://github.com/liberusoftware/module-genealogy-gamification-vue-inertia) (`@liberusoftware/module-genealogy-gamification-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/genealogy-gamification.md) | [`project-genealogy-nuxt-vue`](https://github.com/liberusoftware/project-genealogy-nuxt-vue) · [`module-genealogy-gamification-nuxt`](https://github.com/liberusoftware/module-genealogy-gamification-nuxt) (`@liberusoftware/module-genealogy-gamification-nuxt`) | Standalone Vue SSR client consuming `project-genealogy-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/genealogy-gamification.md) | [`project-genealogy-next-react`](https://github.com/liberusoftware/project-genealogy-next-react) · [`module-genealogy-gamification-nextjs`](https://github.com/liberusoftware/module-genealogy-gamification-nextjs) (`@liberusoftware/module-genealogy-gamification-nextjs`) | App Router Server/Client components consuming `project-genealogy-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/genealogy-gamification.md) | [`project-genealogy-mobile-react`](https://github.com/liberusoftware/project-genealogy-mobile-react) · [`module-genealogy-gamification-react-native`](https://github.com/liberusoftware/module-genealogy-gamification-react-native) (`@liberusoftware/module-genealogy-gamification-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/genealogy-gamification.md) | [`project-genealogy-mobile-flutter`](https://github.com/liberusoftware/project-genealogy-mobile-flutter) · [`module-genealogy-gamification-flutter`](https://github.com/liberusoftware/module-genealogy-gamification-flutter) (`module_genealogy_gamification_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/genealogy-gamification.md) | [`project-genealogy-dart-mobile`](https://github.com/liberusoftware/project-genealogy-dart-mobile) · [`module-genealogy-gamification-dart-mobile`](https://github.com/liberusoftware/module-genealogy-gamification-dart-mobile) (`module_genealogy_gamification_dart_mobile`)<br>[`project-genealogy-dart-desktop`](https://github.com/liberusoftware/project-genealogy-dart-desktop) · [`module-genealogy-gamification-dart-desktop`](https://github.com/liberusoftware/module-genealogy-gamification-dart-desktop) (`module_genealogy_gamification_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -12,7 +12,7 @@
 
 The intended **Module Billing Enom** workspace covers module billing enom domain behavior.
 
-The relevant capability areas are **Module Billing Enom**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Registration**, **Transfers**, **Renewals**, **Pricing**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -18,7 +18,15 @@ The Module Cms Content Search module owns module cms content search domain behav
 
 ## 2. Full feature scope
 
-- **Module Cms Content Search:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Authorized indexing:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Facets:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Spelling:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Synonyms:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Relevance:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Autocomplete:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Federated sources:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reindex:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Search analytics:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Module Cms Content Search module owns module cms content search domain behav
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Authorized indexing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `authorized indexing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Facets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `facets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Spelling** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `spelling`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Synonyms** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `synonyms`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Relevance** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `relevance`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Autocomplete** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `autocomplete`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Federated sources** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `federated sources`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reindex** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reindex`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Search analytics** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `search analytics`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-cms-content-search.md) | [Source map](../SOURCE-MAPPING.md#module-cms-content-search) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-cms-content-search.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-cms-content-search.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-module-cms-content-search-filament`](https://github.com/liberusoftware/module-cms-module-cms-content-search-filament) (`liberusoftware/cms-module-cms-content-search-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-cms-content-search.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-cms-content-search.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-module-cms-content-search-react-inertia`](https://github.com/liberusoftware/module-cms-module-cms-content-search-react-inertia) (`@liberusoftware/module-cms-module-cms-content-search-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-cms-content-search.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-module-cms-content-search-vue-inertia`](https://github.com/liberusoftware/module-cms-module-cms-content-search-vue-inertia) (`@liberusoftware/module-cms-module-cms-content-search-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-cms-content-search.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-module-cms-content-search-nuxt`](https://github.com/liberusoftware/module-cms-module-cms-content-search-nuxt) (`@liberusoftware/module-cms-module-cms-content-search-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-cms-content-search.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-module-cms-content-search-nextjs`](https://github.com/liberusoftware/module-cms-module-cms-content-search-nextjs) (`@liberusoftware/module-cms-module-cms-content-search-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-cms-content-search.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-module-cms-content-search-react-native`](https://github.com/liberusoftware/module-cms-module-cms-content-search-react-native) (`@liberusoftware/module-cms-module-cms-content-search-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-cms-content-search.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-module-cms-content-search-flutter`](https://github.com/liberusoftware/module-cms-module-cms-content-search-flutter) (`module_cms_module_cms_content_search_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-cms-content-search.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-module-cms-content-search-dart-mobile`](https://github.com/liberusoftware/module-cms-module-cms-content-search-dart-mobile) (`module_cms_module_cms_content_search_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-module-cms-content-search-dart-desktop`](https://github.com/liberusoftware/module-cms-module-cms-content-search-dart-desktop) (`module_cms_module_cms_content_search_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

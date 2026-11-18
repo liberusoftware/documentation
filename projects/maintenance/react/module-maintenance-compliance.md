@@ -18,7 +18,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Module Maintenance Compliance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Requirements:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Permits:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Risk assessments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Incidents:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Corrective actions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Evidence:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Expiry:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `module-maintenance-compliance`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `requirements`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `permits`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `risk-assessments`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `incidents`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `corrective-actions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `evidence`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `expiry`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,55 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-maintenance-compliance` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-maintenance-laravel-inertia-react`](https://github.com/liberusoftware/project-maintenance-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-maintenance-compliance-react-inertia`](https://github.com/liberusoftware/module-maintenance-compliance-react-inertia) (`@liberusoftware/module-maintenance-compliance-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/module-maintenance-compliance.md) · [Core plan](../core/module-maintenance-compliance.md) · [API plan](../api/module-maintenance-compliance.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Requirements** | Render `requirements` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Permits** | Render `permits` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Risk assessments** | Render `risk assessments` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Incidents** | Render `incidents` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Corrective actions** | Render `corrective actions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Evidence** | Render `evidence` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Expiry** | Render `expiry` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Actions/CreateComplianceRecord.php) | `public function handle(int $teamId, array $attributes): ComplianceRecord` |
+| [DeleteComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Actions/DeleteComplianceRecord.php) | `public function handle(int $teamId, ComplianceRecord $record): void` |
+| [UpdateComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Actions/UpdateComplianceRecord.php) | `public function handle(int $teamId, ComplianceRecord $record, array $attributes): ComplianceRecord` |
+| [ComplianceRecordPolicy.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Policies/ComplianceRecordPolicy.php) | `public function viewAny(object $user): bool`<br>`public function view(object $user, ComplianceRecord $record): bool`<br>`public function create(object $user): bool`<br>`public function update(object $user, ComplianceRecord $record): bool`<br>`public function delete(object $user, ComplianceRecord $record): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Models/ComplianceRecord.php) | `kind`, `title`, `description`, `status`, `expires_at`, `metadata`, `team_id` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ComplianceRecordController.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-api/src/Http/Controllers/ComplianceRecordController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateComplianceRecord $create): JsonResponse`<br>`public function show(Request $request, ComplianceRecord $record): JsonResponse`<br>`public function update(Request $request, ComplianceRecord $record, UpdateComplianceRecord $update): JsonResponse`<br>`public function destroy(Request $request, ComplianceRecord $record, DeleteComplianceRecord $delete): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/module-maintenance-compliance-api/routes/api.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/maintenance/compliance')->group(function (): void {
+Route::get('/', [ComplianceRecordController::class, 'index']);
+Route::post('/', [ComplianceRecordController::class, 'store']);
+Route::get('/{record}', [ComplianceRecordController::class, 'show']);
+Route::patch('/{record}', [ComplianceRecordController::class, 'update']);
+Route::delete('/{record}', [ComplianceRecordController::class, 'destroy']);
+```
+<!-- layer-implementation-plan:end -->

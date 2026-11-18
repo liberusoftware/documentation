@@ -18,7 +18,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Crm Saas Packaging:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Plans:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Feature/module entitlements:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Limits:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Trials:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Signup provisioning:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Upgrade/downgrade:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Suspension:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Cancellation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Billing integration:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +37,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `crm-saas-packaging`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `plans`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `feature-module-entitlements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `limits`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `trials`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `signup-provisioning`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `upgrade-downgrade`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `suspension`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cancellation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `billing-integration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,49 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-saas-packaging` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-saas-packaging-filament`](https://github.com/liberusoftware/module-crm-saas-packaging-filament) (`liberusoftware/crm-saas-packaging-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/crm-saas-packaging.md) · [API plan](../api/crm-saas-packaging.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Plans** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `plans`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Feature/module entitlements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `feature/module entitlements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Limits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `limits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Trials** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `trials`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Signup provisioning** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `signup provisioning`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Upgrade/downgrade** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `upgrade/downgrade`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Suspension** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `suspension`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cancellation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cancellation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Billing integration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `billing integration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [SubscriptionResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-filament/src/Resources/SubscriptionResource.php) · [CreateSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-filament/src/Resources/SubscriptionResource/Pages/CreateSubscription.php) · [EditSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-filament/src/Resources/SubscriptionResource/Pages/EditSubscription.php) · [ListSubscriptions.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-filament/src/Resources/SubscriptionResource/Pages/ListSubscriptions.php) · [SaasPackagingFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-filament/src/SaasPackagingFilamentPlugin.php) · [SaasPackagingFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-filament/src/SaasPackagingFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [SaasQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Queries/SaasQuery.php) | `public function plans()`<br>`public function subscription(int $teamId): ?SaasSubscription`<br>`public function usage(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ChangeSubscriptionStatus.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/ChangeSubscriptionStatus.php) | `public function execute(int $teamId, int $actorId, string $status): SaasSubscription` |
+| [ProvisionSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/ProvisionSubscription.php) | `public function execute(int $teamId, int $actorId, array $data): SaasSubscription` |
+| [RecordUsage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/RecordUsage.php) | `public function execute(int $teamId, int $actorId, array $data): SaasUsage` |
+| [UpdateSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/UpdateSubscription.php) | `public function execute(int $teamId, int $actorId, array $data): SaasSubscription` |
+| [SaasPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Services/SaasPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SaasPlan.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Models/SaasPlan.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SaasSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Models/SaasSubscription.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SaasUsage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Models/SaasUsage.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

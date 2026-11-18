@@ -18,7 +18,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Real Estate Listings:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Channel content:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Pricing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Availability:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Publication rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Portal feeds:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `real-estate-listings`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `channel-content`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `pricing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `availability`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `publication-rules`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `portal-feeds`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `reconciliation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,52 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `real-estate-listings` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-real-estate-laravel-inertia-vue`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-real-estate-listings-vue-inertia`](https://github.com/liberusoftware/module-real-estate-listings-vue-inertia) (`@liberusoftware/module-real-estate-listings-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/real-estate-listings.md) · [Core plan](../core/real-estate-listings.md) · [API plan](../api/real-estate-listings.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Channel content** | Render `channel content` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Pricing** | Render `pricing` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Availability** | Render `availability` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Publication rules** | Render `publication rules` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Portal feeds** | Render `portal feeds` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Reconciliation** | Render `reconciliation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ListingPolicy.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-listings/src/Policies/ListingPolicy.php) | `public function viewAny(AuthUser $authUser): bool`<br>`public function view(AuthUser $authUser, Listing $listing): bool`<br>`public function create(AuthUser $authUser): bool`<br>`public function update(AuthUser $authUser, Listing $listing): bool`<br>`public function delete(AuthUser $authUser, Listing $listing): bool`<br>`public function deleteAny(AuthUser $authUser): bool`<br>`public function restore(AuthUser $authUser, Listing $listing): bool`<br>`public function forceDelete(AuthUser $authUser, Listing $listing): bool`<br>`public function forceDeleteAny(AuthUser $authUser): bool`<br>`public function restoreAny(AuthUser $authUser): bool`<br>`public function replicate(AuthUser $authUser, Listing $listing): bool`<br>`public function reorder(AuthUser $authUser): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Listing.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-listings/src/Models/Listing.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ListingController.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-listings-api/src/Http/Controllers/ListingController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateListing $create): JsonResponse`<br>`public function show(Request $request, Listing $listing): JsonResponse`<br>`public function update(Request $request, Listing $listing, UpdateListing $update): JsonResponse`<br>`public function destroy(Request $request, Listing $listing, DeleteListing $delete): Response`<br>`public function transition(Request $request, Listing $listing, string $status, TransitionListing $transition): JsonResponse`<br>`public function updateSection(Request $request, Listing $listing, string $section, UpdateListingSection $update): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/real-estate-listings-api/routes/api.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-listings-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/real-estate/listings')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [ListingController::class, 'index'])->name('real-estate.listings.index');
+Route::post('/', [ListingController::class, 'store'])->name('real-estate.listings.store');
+Route::post('/{listing}/transition/{status}', [ListingController::class, 'transition'])->name('real-estate.listings.transition');
+Route::patch('/{listing}/{section}', [ListingController::class, 'updateSection'])->whereIn('section', ['channel_content', 'publication_rules', 'portal_feeds', 'reconciliation'])->name('real-estate.listings.section');
+Route::get('/{listing}', [ListingController::class, 'show'])->name('real-estate.listings.show');
+Route::delete('/{listing}', [ListingController::class, 'destroy'])->name('real-estate.listings.destroy');
+```
+<!-- layer-implementation-plan:end -->

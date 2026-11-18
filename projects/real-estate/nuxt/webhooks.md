@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Webhooks:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Endpoint registration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Signing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Delivery attempts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Retries:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Replay:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Event filtering:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Logs:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `webhooks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `endpoint-registration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `signing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `delivery-attempts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `retries`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `replay`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `event-filtering`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `logs`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,40 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `webhooks` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-real-estate-nuxt-vue`](https://github.com/liberusoftware/project-real-estate-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-real-estate-laravel-api`](https://github.com/liberusoftware/project-real-estate-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/webhooks.md)) |
+| Capability Nuxt module skeleton | [`module-webhooks-nuxt`](https://github.com/liberusoftware/module-webhooks-nuxt) (`@liberusoftware/module-webhooks-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Endpoint registration** | Expose composable and Vue 3 component for `endpoint registration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/webhooks.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-real-estate-laravel-api`. |
+| **Signing** | Expose composable and Vue 3 component for `signing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/webhooks.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-real-estate-laravel-api`. |
+| **Delivery attempts** | Expose composable and Vue 3 component for `delivery attempts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/webhooks.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-real-estate-laravel-api`. |
+| **Retries** | Expose composable and Vue 3 component for `retries` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/webhooks.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-real-estate-laravel-api`. |
+| **Replay** | Expose composable and Vue 3 component for `replay` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/webhooks.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-real-estate-laravel-api`. |
+| **Event filtering** | Expose composable and Vue 3 component for `event filtering` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/webhooks.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-real-estate-laravel-api`. |
+| **Logs** | Expose composable and Vue 3 component for `logs` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/webhooks.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-real-estate-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [StatusController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/webhooks-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/webhooks-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/webhooks')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('webhooks-api.status');
+```
+<!-- layer-implementation-plan:end -->

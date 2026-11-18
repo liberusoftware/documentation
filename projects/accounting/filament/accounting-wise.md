@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Wise:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **OAuth authorization:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Profile and balance access:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Transfer synchronization:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Single payments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Bounded bulk payments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Token refresh:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-wise`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `oauth-authorization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `profile-and-balance-access`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `transfer-synchronization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `single-payments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `bounded-bulk-payments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `token-refresh`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-wise` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-wise-filament`](https://github.com/liberusoftware/module-accounting-wise-filament) (`liberusoftware/accounting-wise-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-wise.md) · [API plan](../api/accounting-wise.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **OAuth authorization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `oauth authorization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Profile and balance access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `profile and balance access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Transfer synchronization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `transfer synchronization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Single payments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `single payments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Bounded bulk payments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `bounded bulk payments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Token refresh** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `token refresh`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

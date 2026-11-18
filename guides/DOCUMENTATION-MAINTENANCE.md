@@ -55,6 +55,7 @@ python3 tools/build_enterprise_api_plans.py
 python3 tools/build_enterprise_layer_plans.py
 python3 tools/improve_api_source_contracts.py
 python3 tools/clarify_inertia_boundaries.py
+python3 tools/build_technology_module_plans.py
 python3 tools/enrich_user_module_guides.py
 python3 tools/sync_documentation_indexes.py
 python3 tools/build_shared_adoption_guides.py --projects /tmp/liberu-documentation-sources

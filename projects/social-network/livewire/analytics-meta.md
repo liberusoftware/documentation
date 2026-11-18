@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Analytics Meta:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Meta server-side event mapping:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Deduplication:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Consent:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Hashing:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Delivery:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Diagnostics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `analytics-meta`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `meta-server-side-event-mapping`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `deduplication`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `consent`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `hashing`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `delivery`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `diagnostics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `analytics-meta` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/analytics-meta.md) · [API plan](../api/analytics-meta.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Meta server-side event mapping** | Expose a focused Livewire 4 component and namespaced Blade default view for `meta server-side event mapping` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Deduplication** | Expose a focused Livewire 4 component and namespaced Blade default view for `deduplication` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Consent** | Expose a focused Livewire 4 component and namespaced Blade default view for `consent` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Hashing** | Expose a focused Livewire 4 component and namespaced Blade default view for `hashing` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Delivery** | Expose a focused Livewire 4 component and namespaced Blade default view for `delivery` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Diagnostics** | Expose a focused Livewire 4 component and namespaced Blade default view for `diagnostics` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MetaTransport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/analytics-meta/src/Contracts/MetaTransport.php) | `public function send(array $payload): array` |
+<!-- layer-implementation-plan:end -->

@@ -37,14 +37,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `customer/region/channel-market-definitions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `customer-region-channel-market-definitions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `domains`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `locale`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `currency`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `pricing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `availability`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `tax/duty`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `content/theme-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tax-duty`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `content-theme-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `fallback`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
@@ -58,3 +58,31 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-markets` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-markets-filament`](https://github.com/liberusoftware/module-ecommerce-markets-filament) (`liberusoftware/ecommerce-markets-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/markets.md) · [API plan](../api/markets.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Customer/region/channel market definitions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `customer/region/channel market definitions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Domains** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `domains`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Locale** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `locale`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Currency** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `currency`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Pricing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `pricing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Availability** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `availability`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tax/duty** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tax/duty`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Content/theme references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `content/theme references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Fallback** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `fallback`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

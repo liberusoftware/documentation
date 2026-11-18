@@ -46,86 +46,6 @@ This optional React 19.2 + Inertia 3 package presents exactly one new Liberu cro
 - CI passes contract, authorization, tenant isolation, accessibility, compatibility, and failure/recovery checks.
 - Release notes, migration guidance, runbook, and uninstall/disable behavior are complete.
 
-## Canonical one-to-one presentation implementation
-
-**Package:** `module-liberu-business-workflow-reconciliation-react-inertia`
-**Matching domain module:** `liberu-business-workflow-reconciliation`
-**Application:** Liberu Business Platform
-**Source feature:** [Business Workflow Reconciliation](../features/business-workflow-reconciliation.md)
-**Standard:** [REACT](../../../standards/REACT.md) · [Modules](../../../architecture/MODULES.md) · [API architecture](../../../architecture/API.md)
-
-## 1. Purpose and ownership
-
-This optional React 19.2 + Inertia 3 package presents exactly one new Liberu cross-product module. Provide typed React/Inertia pages, components, forms, and navigation for this module's cross-product workflows. It depends only on the module's public contracts and must not duplicate or replace behavior owned by Accounting, CRM, Billing, Control Panel, Ecommerce, Automation, Maintenance, SAP, CMS, or another existing project.
-
-## 2. Required surfaces
-
-- composition manifest and module capability visibility;
-- authorized workflow status, evidence, and failure/recovery states;
-- tenant/team/role-aware filtering and denial behavior;
-- localization, accessibility, audit context, and operational telemetry;
-- explicit loading, empty, stale, validation, unauthorized, forbidden, offline, and server-error states where applicable.
-
-## 3. Boundary rules
-
-- The matching domain module owns invariants, persistence, policies, actions, events, and recovery semantics.
-- Consume only documented module/API contracts; never access private tables, models, or another module's internal presentation package.
-- Preserve correlation IDs, idempotency, concurrency, audit, tenant context, and authorization outcomes.
-- Themes may style documented extension points but cannot change permissions, workflows, or source-of-truth ownership.
-
-## 4. Verification
-
-- Test allowed, denied, wrong-team/tenant, invalid, duplicate, stale/concurrent, timeout, partial-failure, replay, compensation, and recovery paths relevant to the adapter.
-- Test package registration, collision boundaries, contract compatibility, accessibility, localization/RTL, security, and production build/render behavior.
-- Prove that no existing project module or feature is reimplemented; this package exposes only the new Liberu cross-product capability.
-
-## 5. Definition of done
-
-- Package identity and dependency point one-to-one to the matching new domain module.
-- Public routes, props, events, resources, components, and extension points are documented and namespaced.
-- CI passes contract, authorization, tenant isolation, accessibility, compatibility, and failure/recovery checks.
-- Release notes, migration guidance, runbook, and uninstall/disable behavior are complete.
-
-## Canonical one-to-one presentation implementation
-
-**Package:** `module-liberu-business-workflow-reconciliation-react-inertia`  
-**Matching domain module:** `liberu-business-workflow-reconciliation`  
-**Application:** Liberu Business Platform  
-**Source feature:** [Business Workflow Reconciliation](../features/business-workflow-reconciliation.md)  
-**Standard:** [REACT](../../../standards/REACT.md) · [Modules](../../../architecture/MODULES.md) · [API architecture](../../../architecture/API.md)
-
-## 1. Purpose and ownership
-
-This optional React 19.2 + Inertia 3 package presents exactly one new Liberu cross-product module. Provide typed React/Inertia pages, components, forms, and navigation for this module's cross-product workflows. It depends only on the module's public contracts and must not duplicate or replace behavior owned by Accounting, CRM, Billing, Control Panel, Ecommerce, Automation, Maintenance, SAP, CMS, or another existing project.
-
-## 2. Required surfaces
-
-- composition manifest and module capability visibility;
-- authorized workflow status, evidence, and failure/recovery states;
-- tenant/team/role-aware filtering and denial behavior;
-- localization, accessibility, audit context, and operational telemetry;
-- explicit loading, empty, stale, validation, unauthorized, forbidden, offline, and server-error states where applicable.
-
-## 3. Boundary rules
-
-- The matching domain module owns invariants, persistence, policies, actions, events, and recovery semantics.
-- Consume only documented module/API contracts; never access private tables, models, or another module's internal presentation package.
-- Preserve correlation IDs, idempotency, concurrency, audit, tenant context, and authorization outcomes.
-- Themes may style documented extension points but cannot change permissions, workflows, or source-of-truth ownership.
-
-## 4. Verification
-
-- Test allowed, denied, wrong-team/tenant, invalid, duplicate, stale/concurrent, timeout, partial-failure, replay, compensation, and recovery paths relevant to the adapter.
-- Test package registration, collision boundaries, contract compatibility, accessibility, localization/RTL, security, and production build/render behavior.
-- Prove that no existing project module or feature is reimplemented; this package exposes only the new Liberu cross-product capability.
-
-## 5. Definition of done
-
-- Package identity and dependency point one-to-one to the matching new domain module.
-- Public routes, props, events, resources, components, and extension points are documented and namespaced.
-- CI passes contract, authorization, tenant isolation, accessibility, compatibility, and failure/recovery checks.
-- Release notes, migration guidance, runbook, and uninstall/disable behavior are complete.
-
 <!-- inertia-transport:start -->
 ### Inertia transport boundary
 
@@ -135,3 +55,27 @@ Independent API consumers and Next.js use their reviewed HTTP/session integratio
 
 See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](https://inertiajs.com/docs/v3/core-concepts/how-it-works) and [redirect behavior](https://inertiajs.com/docs/v3/the-basics/redirects).
 <!-- inertia-transport:end -->
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-liberu-official-laravel-inertia-react`](https://github.com/liberusoftware/project-liberu-official-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-react-inertia`](https://github.com/liberusoftware/module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-react-inertia) (`@liberusoftware/module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/business-workflow-reconciliation.md) · [Core plan](../core/business-workflow-reconciliation.md) · [API plan](../api/business-workflow-reconciliation.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Workflow run registry** | Render `workflow run registry` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **State mapping** | Render `state mapping` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Reconciliation rules** | Render `reconciliation rules` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Recovery coordination** | Render `recovery coordination` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Audit timeline** | Render `audit timeline` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

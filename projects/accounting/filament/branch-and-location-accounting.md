@@ -33,8 +33,8 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `branch/location-dimensions-or-books`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `local-sequences/tax`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `branch-location-dimensions-or-books`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `local-sequences-tax`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `allocations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `performance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `statutory-requirements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -50,3 +50,40 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-branch-and-location-accounting` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-branch-and-location-accounting-filament`](https://github.com/liberusoftware/module-accounting-branch-and-location-accounting-filament) (`liberusoftware/accounting-branch-and-location-accounting-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/branch-and-location-accounting.md) · [API plan](../api/branch-and-location-accounting.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Branch/location dimensions or books** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `branch/location dimensions or books`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Local sequences/tax** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `local sequences/tax`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Allocations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `allocations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Performance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `performance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Statutory requirements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `statutory requirements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [BranchLocationAccountingFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting-filament/src/BranchLocationAccountingFilamentPlugin.php) · [BranchLocationAccountingFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting-filament/src/BranchLocationAccountingFilamentServiceProvider.php) · [BranchResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting-filament/src/Resources/BranchResource.php) · [ListBranches.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting-filament/src/Resources/BranchResource/Pages/ListBranches.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [BranchQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Queries/BranchQuery.php) | `public function forTeam(int $teamId, ?string $status = null): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocateBranchValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Actions/AllocateBranchValue.php) | `public function handle(Branch $branch, float $amount): array` |
+| [CreateBranch.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Actions/CreateBranch.php) | `public function handle(array $attributes): Branch` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Branch.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Models/Branch.php) | `team_id`, `code`, `name`, `location`, `local_tax_code`, `sequence_prefix`, `allocation_rule`, `performance_target`, `statutory_reference`, `status`, `metadata` |
+<!-- layer-implementation-plan:end -->

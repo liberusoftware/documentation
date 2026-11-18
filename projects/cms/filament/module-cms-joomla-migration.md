@@ -18,7 +18,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Joomla Migration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Articles/categories:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Custom fields:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Contacts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Menus:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Modules/positions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Media:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Users/authors:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tags:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Languages:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Redirects:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +38,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-joomla-migration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `articles-categories`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `custom-fields`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `contacts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `menus`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `modules-positions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `media`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `users-authors`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tags`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `languages`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `redirects`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +60,36 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-joomla-migration` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-joomla-migration-filament`](https://github.com/liberusoftware/module-cms-joomla-migration-filament) (`liberusoftware/cms-joomla-migration-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-joomla-migration.md) · [API plan](../api/module-cms-joomla-migration.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Articles/categories** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `articles/categories`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Custom fields** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `custom fields`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Contacts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `contacts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Menus** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `menus`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Modules/positions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `modules/positions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Media** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `media`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Users/authors** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `users/authors`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tags** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tags`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Languages** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `languages`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Redirects** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `redirects`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [JoomlaMigrationFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-joomla-migration-filament/src/JoomlaMigrationFilamentServiceProvider.php) · [JoomlaMigrationResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-joomla-migration-filament/src/Resources/JoomlaMigrationResource.php) · [ListJoomlaMigrations.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-joomla-migration-filament/src/Resources/Pages/ListJoomlaMigrations.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [JoomlaMigrationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-joomla-migration/src/Services/JoomlaMigrationService.php) | `public function __construct(private MigrationFrameworkService $framework)`<br>`public function start(string $source, array $options = [], ?int $teamId = null): MigrationJob`<br>`public function add(MigrationJob $job, string $type, string $sourceId, array $payload = []): MigrationRecord`<br>`public function process(MigrationRecord $record, bool $success, ?string $reason = null): MigrationRecord`<br>`public function complete(MigrationJob $job): MigrationJob` |
+<!-- layer-implementation-plan:end -->

@@ -12,7 +12,7 @@
 
 The intended **Cms Content** workspace covers cms content domain behavior.
 
-The relevant capability areas are **Cms Content**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Hierarchy**, **Slugs**, **Routing**, **Home/error pages**, **Aliases**, **Redirects**, **Breadcrumbs**, **Templates**, **Previews**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

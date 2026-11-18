@@ -18,7 +18,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Digital Asset Management:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Rights:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Licenses:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Attribution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Consent/model releases:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Expiry:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Brand assets:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Renditions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Approvals:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Distribution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-cms-digital-asset-management`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `rights`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `licenses`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `attribution`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `consent-model-releases`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `expiry`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `brand-assets`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `renditions`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `approvals`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `distribution`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,37 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-digital-asset-management` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-digital-asset-management-vue-inertia`](https://github.com/liberusoftware/module-cms-digital-asset-management-vue-inertia) (`@liberusoftware/module-cms-digital-asset-management-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-cms-digital-asset-management.md) · [Core plan](../core/module-cms-digital-asset-management.md) · [API plan](../api/module-cms-digital-asset-management.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Rights** | Render `rights` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Licenses** | Render `licenses` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Attribution** | Render `attribution` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Consent/model releases** | Render `consent/model releases` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Expiry** | Render `expiry` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Brand assets** | Render `brand assets` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Renditions** | Render `renditions` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Approvals** | Render `approvals` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Distribution** | Render `distribution` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [DigitalAssetManagementService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-digital-asset-management/src/Services/DigitalAssetManagementService.php) | `public function assets(?int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function register(array $data, ?int $teamId = null): DigitalAsset`<br>`public function approve(DigitalAsset $asset): DigitalAsset`<br>`public function addRendition(DigitalAsset $asset, string $name, string $storageKey): DigitalAsset`<br>`public function distribute(DigitalAsset $asset, array $channels): DigitalAsset` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [DigitalAsset.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-digital-asset-management/src/Models/DigitalAsset.php) | `team_id`, `name`, `asset_type`, `storage_key`, `license`, `attribution`, `release_reference`, `expires_at`, `renditions`, `status`, `brand_asset`, `approved`, `approved_at`, `distribution` |
+<!-- layer-implementation-plan:end -->

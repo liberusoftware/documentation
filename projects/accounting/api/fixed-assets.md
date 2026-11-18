@@ -19,13 +19,13 @@ This optional API presentation package exposes approved HTTP operations for the 
 The domain capability includes:
 
 - Asset register
-- categories
-- acquisition
-- capitalization
-- components
-- locations/custodians
-- books
-- supporting documents
+- Categories
+- Acquisition
+- Capitalization
+- Components
+- Locations/custodians
+- Books
+- Supporting documents
 
 Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
 
@@ -40,6 +40,31 @@ Installation does not expose every capability automatically. The host applicatio
 ## 3. Endpoint examples
 
 **Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
+
+### Product API backend and client integration
+
+This module API adapter is composed into [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api), the shared Laravel HTTP backend for independent web, mobile, and desktop clients ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [repository map](../../REPOSITORIES.md#laravel-applications)).
+
+| Consuming client surface | Host repository | Module adapter plan | Transport and auth contract |
+| --- | --- | --- | --- |
+| Next.js React | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) | [Next.js plan](../nextjs/fixed-assets.md) | Server Component / Route Handler / BFF or Sanctum SPA with `no-store` private reads |
+| Nuxt 4 Vue | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | [Nuxt plan](../nuxt/fixed-assets.md) | Nitro SSR / BFF or Sanctum SPA with actor/tenant-scoped `useFetch` keys |
+| React Native Expo | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) | [React Native plan](../react-native/fixed-assets.md) | Typed client with Keychain/Keystore token storage, PKCE/Sanctum, and idempotent retries |
+| Flutter mobile | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) | [Flutter plan](../flutter/fixed-assets.md) | Typed Dart DTOs and platform-secure credentials on iOS and Android |
+| Dart mobile & desktop | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) | [Flutter & Dart plan](../flutter/fixed-assets.md) | Separate mobile and desktop native hosts consuming the same versioned `/api/v1` contract |
+
+### Feature-to-API capability and operation matrix
+
+| Feature / aspect | HTTP query and command intent | DTO allowlist, concurrency, and error contract |
+| --- | --- | --- |
+| **Asset register** | Expose authorized query/read projection and explicit domain transition command for `asset register` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Categories** | Expose authorized query/read projection and explicit domain transition command for `categories` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Acquisition** | Expose authorized query/read projection and explicit domain transition command for `acquisition` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Capitalization** | Expose authorized query/read projection and explicit domain transition command for `capitalization` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Components** | Expose authorized query/read projection and explicit domain transition command for `components` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Locations/custodians** | Expose authorized query/read projection and explicit domain transition command for `locations/custodians` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Books** | Expose authorized query/read projection and explicit domain transition command for `books` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
+| **Supporting documents** | Expose authorized query/read projection and explicit domain transition command for `supporting documents` delegating to the core module boundary. | Explicit `snake_case` resource/request DTOs; `Idempotency-Key` for retryable writes, `If-Match` for mutable state, and RFC 9457 Problem Details (`401`/`403`/`409`/`412`/`422`/`429`). |
 
 | Boundary | Observed identity and implementation reference |
 | --- | --- |
@@ -79,7 +104,41 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [FixedAssetsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/Http/Controllers/FixedAssetsController.php) | `public function index(Request $request): AnonymousResourceCollection`<br>`public function show(Request $request, Asset $asset): AssetResource`<br>`public function store(Request $request, AcquireAsset $action): AssetResource`<br>`public function category(Request $request, CreateCategory $action): JsonResponse`<br>`public function location(Request $request, CreateLocation $action): JsonResponse`<br>`public function custodian(Request $request, CreateCustodian $action): JsonResponse`<br>`public function update(Request $request, Asset $asset, UpdateAsset $action): AssetResource`<br>`public function delete(Request $request, Asset $asset, ArchiveAsset $action): JsonResponse`<br>`public function capitalize(Request $request, Asset $asset, CapitalizeAsset $action): AssetResource`<br>`public function dispose(Request $request, Asset $asset, DisposeAsset $action): AssetResource`<br>`public function document(Request $request, Asset $asset, AddAssetDocument $action): AssetResource`<br>`public function component(Request $request, Asset $asset, AddAssetComponent $action): AssetResource`<br>`public function assignLocation(Request $request, Asset $asset, AssignAssetLocation $action): AssetResource`<br>`public function assignCustodian(Request $request, Asset $asset, AssignAssetCustodian $action): AssetResource`<br>`public function summary(Request $request, Asset $asset): JsonResponse` |
+| [FixedAssetsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/Http/Controllers/FixedAssetsController.php) | `public function __construct(private readonly AssetQuery $query)`<br>`public function index(Request $request): AnonymousResourceCollection`<br>`public function show(Request $request, Asset $asset): AssetResource`<br>`public function store(Request $request, AcquireAsset $action): AssetResource`<br>`public function category(Request $request, CreateCategory $action): JsonResponse`<br>`public function location(Request $request, CreateLocation $action): JsonResponse`<br>`public function custodian(Request $request, CreateCustodian $action): JsonResponse`<br>`public function update(Request $request, Asset $asset, UpdateAsset $action): AssetResource`<br>`public function delete(Request $request, Asset $asset, ArchiveAsset $action): JsonResponse`<br>`public function capitalize(Request $request, Asset $asset, CapitalizeAsset $action): AssetResource`<br>`public function dispose(Request $request, Asset $asset, DisposeAsset $action): AssetResource`<br>`public function document(Request $request, Asset $asset, AddAssetDocument $action): AssetResource`<br>`public function component(Request $request, Asset $asset, AddAssetComponent $action): AssetResource`<br>`public function assignLocation(Request $request, Asset $asset, AssignAssetLocation $action): AssetResource`<br>`public function assignCustodian(Request $request, Asset $asset, AssignAssetCustodian $action): AssetResource`<br>`public function summary(Request $request, Asset $asset): JsonResponse` |
+
+### Observed domain queries, actions, and storage models
+
+API controllers delegate to these observed core domain entry points and serialize only allowlisted DTO fields rather than raw storage models.
+
+| Core query source | Observed signatures |
+| --- | --- |
+| [AssetQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Queries/AssetQuery.php) | `public function paginate(?int $teamId = null, ?AssetStatus $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function registerSummary(Asset $asset): array` |
+
+| Core action / service source | Observed signatures |
+| --- | --- |
+| [AcquireAsset.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/AcquireAsset.php) | `public function handle(AssetCategory $category, array $attributes): Asset` |
+| [AddAssetComponent.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/AddAssetComponent.php) | `public function handle(Asset $asset, array $attributes): AssetComponent` |
+| [AddAssetDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/AddAssetDocument.php) | `public function handle(Asset $asset, array $attributes): AssetDocument` |
+| [ArchiveAsset.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/ArchiveAsset.php) | `public function handle(Asset $asset): Asset` |
+| [AssignAssetCustodian.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/AssignAssetCustodian.php) | `public function handle(Asset $asset, AssetCustodian $custodian): Asset` |
+| [AssignAssetLocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/AssignAssetLocation.php) | `public function handle(Asset $asset, AssetLocation $location): Asset` |
+| [CapitalizeAsset.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/CapitalizeAsset.php) | `public function handle(Asset $asset, string $bookReference): Asset` |
+| [CreateCategory.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/CreateCategory.php) | `public function handle(array $attributes): AssetCategory` |
+| [CreateCustodian.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/CreateCustodian.php) | `public function handle(array $attributes): AssetCustodian` |
+| [CreateLocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/CreateLocation.php) | `public function handle(array $attributes): AssetLocation` |
+| [DisposeAsset.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/DisposeAsset.php) | `public function handle(Asset $asset, string $reason): Asset` |
+| [UpdateAsset.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Actions/UpdateAsset.php) | `public function handle(Asset $asset, array $attributes): Asset` |
+| [AssetPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Policies/AssetPolicy.php) | `public function view(mixed $user, Asset $asset): bool`<br>`public function create(mixed $user): bool`<br>`public function update(mixed $user, Asset $asset): bool`<br>`public function capitalize(mixed $user, Asset $asset): bool`<br>`public function dispose(mixed $user, Asset $asset): bool` |
+
+| Core storage model | Observed fillable fields (review for DTO allowlist) |
+| --- | --- |
+| [Asset.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Models/Asset.php) | `team_id`, `asset_ref`, `name`, `category_id`, `status`, `acquired_on`, `capitalized_on`, `cost`, `salvage_value`, `net_book_value`, `currency`, `location_id`, `custodian_id`, `location_ref`, `custodian_ref`, `metadata` |
+| [AssetBook.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Models/AssetBook.php) | `asset_id`, `book_ref`, `cost`, `accumulated_depreciation`, `net_book_value`, `last_depreciated_on`, `metadata` |
+| [AssetCategory.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Models/AssetCategory.php) | `team_id`, `category_ref`, `name`, `asset_account_ref`, `depreciation_account_ref`, `useful_life_months`, `depreciation_method`, `metadata` |
+| [AssetComponent.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Models/AssetComponent.php) | `asset_id`, `component_ref`, `name`, `cost`, `useful_life_months`, `metadata` |
+| [AssetCustodian.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Models/AssetCustodian.php) | `team_id`, `custodian_ref`, `name`, `email`, `metadata` |
+| [AssetDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Models/AssetDocument.php) | `asset_id`, `document_ref`, `kind`, `file_ref`, `description`, `checksum`, `attached_by`, `attached_at`, `metadata` |
+| [AssetLocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets/src/Models/AssetLocation.php) | `team_id`, `location_ref`, `name`, `metadata` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -87,7 +146,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/accounting-fixed-assets-api/openapi/v1/accounting-fixed-assets.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/openapi/v1/accounting-fixed-assets.yaml)
+- [openapi/v1/accounting-fixed-assets.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/openapi/v1/accounting-fixed-assets.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

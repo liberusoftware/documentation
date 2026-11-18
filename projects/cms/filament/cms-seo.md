@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Seo:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Titles/descriptions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Canonical URLs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Robots:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Structured data:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Social cards:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Hreflang:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Index controls:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Content checks:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-seo`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `titles-descriptions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `canonical-urls`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `robots`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `structured-data`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `social-cards`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `hreflang`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `index-controls`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `content-checks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,34 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-seo` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-seo-filament`](https://github.com/liberusoftware/module-cms-seo-filament) (`liberusoftware/cms-seo-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-seo.md) · [API plan](../api/cms-seo.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Titles/descriptions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `titles/descriptions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Canonical URLs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `canonical urls`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Robots** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `robots`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Structured data** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `structured data`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Social cards** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `social cards`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Hreflang** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `hreflang`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Index controls** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `index controls`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Content checks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `content checks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ListSeoMetadata.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-seo-filament/src/Resources/Pages/ListSeoMetadata.php) · [SeoMetadataResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-seo-filament/src/Resources/SeoMetadataResource.php) · [SeoFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-seo-filament/src/SeoFilamentServiceProvider.php).
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SeoMetadata.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/src/Models/SeoMetadata.php) | `seoable_type`, `seoable_id`, `title`, `description`, `canonical_url`, `robots`, `structured_data`, `social_cards`, `hreflang`, `noindex`, `noarchive`, `team_id` |
+<!-- layer-implementation-plan:end -->

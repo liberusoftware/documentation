@@ -18,7 +18,16 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Crm Cpq:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Guided configuration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Compatibility rules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Price books:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tiers:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Discounts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Approvals:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Margin guardrails:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Amendments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Renewals:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Authoritative pricing adapters:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +38,16 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `crm-cpq`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `guided-configuration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `compatibility-rules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `price-books`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tiers`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `discounts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `approvals`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `margin-guardrails`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `amendments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `renewals`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `authoritative-pricing-adapters`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +60,46 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-cpq` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/crm-cpq.md) · [API plan](../api/crm-cpq.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Guided configuration** | Expose a focused Livewire 4 component and namespaced Blade default view for `guided configuration` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Compatibility rules** | Expose a focused Livewire 4 component and namespaced Blade default view for `compatibility rules` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Price books** | Expose a focused Livewire 4 component and namespaced Blade default view for `price books` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tiers** | Expose a focused Livewire 4 component and namespaced Blade default view for `tiers` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Discounts** | Expose a focused Livewire 4 component and namespaced Blade default view for `discounts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Approvals** | Expose a focused Livewire 4 component and namespaced Blade default view for `approvals` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Margin guardrails** | Expose a focused Livewire 4 component and namespaced Blade default view for `margin guardrails` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Amendments** | Expose a focused Livewire 4 component and namespaced Blade default view for `amendments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Renewals** | Expose a focused Livewire 4 component and namespaced Blade default view for `renewals` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Authoritative pricing adapters** | Expose a focused Livewire 4 component and namespaced Blade default view for `authoritative pricing adapters` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [QuoteBuilder.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-livewire/src/Components/QuoteBuilder.php) · [CpqLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-livewire/src/CpqLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CpqQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Queries/CpqQuery.php) | `public function quotes(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PriceQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Actions/PriceQuote.php) | `public function execute(int $teamId, int $userId, array $input): CpqQuote` |
+| [SubmitQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Actions/SubmitQuote.php) | `public function execute(int $teamId, int $userId, CpqQuote $quote): CpqApproval` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CpqApproval.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Models/CpqApproval.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CpqQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Models/CpqQuote.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

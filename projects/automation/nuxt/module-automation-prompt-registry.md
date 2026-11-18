@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Module Automation Prompt Registry:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Versioned prompts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Variables:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Evaluation sets:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Brand/tenant overrides:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Approvals:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Rollback:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `module-automation-prompt-registry`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `versioned-prompts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `variables`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `evaluation-sets`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `brand-tenant-overrides`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `approvals`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `rollback`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,53 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `module-automation-prompt-registry` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/module-automation-prompt-registry.md)) |
+| Capability Nuxt module skeleton | [`module-automation-prompt-registry-nuxt`](https://github.com/liberusoftware/module-automation-prompt-registry-nuxt) (`@liberusoftware/module-automation-prompt-registry-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Versioned prompts** | Expose composable and Vue 3 component for `versioned prompts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-prompt-registry.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Variables** | Expose composable and Vue 3 component for `variables` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-prompt-registry.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Evaluation sets** | Expose composable and Vue 3 component for `evaluation sets` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-prompt-registry.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Brand/tenant overrides** | Expose composable and Vue 3 component for `brand/tenant overrides` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-prompt-registry.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Approvals** | Expose composable and Vue 3 component for `approvals` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-prompt-registry.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Rollback** | Expose composable and Vue 3 component for `rollback` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-prompt-registry.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreatePromptRegistryResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Actions/CreatePromptRegistryResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): PromptRegistryResource` |
+| [TransitionPromptRegistryResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Actions/TransitionPromptRegistryResource.php) | `public function execute(PromptRegistryResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): PromptRegistryResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PromptRegistryResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Models/PromptRegistryResource.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [PromptRegistryResourceController.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/src/Http/Controllers/PromptRegistryResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreatePromptRegistryResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionPromptRegistryResource $transition): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/module-automation-prompt-registry-api/routes/api.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/automation/prompt-registry')->group(function (): void {
+Route::get('/', [PromptRegistryResourceController::class, 'index']);
+Route::post('/', [PromptRegistryResourceController::class, 'store']);
+Route::get('/{id}', [PromptRegistryResourceController::class, 'show']);
+Route::patch('/{id}', [PromptRegistryResourceController::class, 'update']);
+Route::delete('/{id}', [PromptRegistryResourceController::class, 'destroy']);
+Route::post('/{id}/transition', [PromptRegistryResourceController::class, 'transition']);
+```
+<!-- layer-implementation-plan:end -->

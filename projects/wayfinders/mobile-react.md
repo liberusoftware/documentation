@@ -3,6 +3,8 @@
 This is the technology-specific implementation specification for `mobile-react` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-mobile-react
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-react-native
+- Capability skeleton catalog: [`modules/skeletons/mobile-react.md`](../../modules/skeletons/mobile-react.md)
 - Presentation layer directory in product docs: `react-native/`
 - Adapter identity pattern: `module-{capability}-react-native`
 - Consumes product `-laravel-api`: yes

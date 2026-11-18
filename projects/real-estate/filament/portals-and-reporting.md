@@ -54,3 +54,29 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `real-estate-portals-and-reporting` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-real-estate-portals-and-reporting-filament`](https://github.com/liberusoftware/module-real-estate-portals-and-reporting-filament) (`liberusoftware/real-estate-portals-and-reporting-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/portals-and-reporting.md) · [API plan](../api/portals-and-reporting.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Party self-service plus pipeline** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `party self-service plus pipeline`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Conversion** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `conversion`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Source** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `source`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Fee** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `fee`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Time-to-complete** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `time-to-complete`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Occupancy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `occupancy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Compliance metrics** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `compliance metrics`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ The Cms Content Governance module owns cms content governance domain behavior. I
 
 ## 2. Full feature scope
 
-- **Cms Content Governance:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Owners/stewards:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Policy labels:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Review cycles:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Retention:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Legal hold:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Sensitive-content classification:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Compliance evidence:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Cms Content Governance module owns cms content governance domain behavior. I
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Owners/stewards** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `owners/stewards`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Policy labels** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `policy labels`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Review cycles** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `review cycles`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Retention** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `retention`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Legal hold** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `legal hold`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sensitive-content classification** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sensitive-content classification`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Compliance evidence** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `compliance evidence`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cms-content-governance.md) | [Source map](../SOURCE-MAPPING.md#cms-content-governance) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cms-content-governance.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cms-content-governance.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-content-governance-filament`](https://github.com/liberusoftware/module-cms-content-governance-filament) (`liberusoftware/cms-content-governance-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cms-content-governance.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cms-content-governance.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-content-governance-react-inertia`](https://github.com/liberusoftware/module-cms-content-governance-react-inertia) (`@liberusoftware/module-cms-content-governance-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cms-content-governance.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-content-governance-vue-inertia`](https://github.com/liberusoftware/module-cms-content-governance-vue-inertia) (`@liberusoftware/module-cms-content-governance-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cms-content-governance.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-content-governance-nuxt`](https://github.com/liberusoftware/module-cms-content-governance-nuxt) (`@liberusoftware/module-cms-content-governance-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cms-content-governance.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-content-governance-nextjs`](https://github.com/liberusoftware/module-cms-content-governance-nextjs) (`@liberusoftware/module-cms-content-governance-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cms-content-governance.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-content-governance-react-native`](https://github.com/liberusoftware/module-cms-content-governance-react-native) (`@liberusoftware/module-cms-content-governance-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cms-content-governance.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-content-governance-flutter`](https://github.com/liberusoftware/module-cms-content-governance-flutter) (`module_cms_content_governance_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cms-content-governance.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-content-governance-dart-mobile`](https://github.com/liberusoftware/module-cms-content-governance-dart-mobile) (`module_cms_content_governance_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-content-governance-dart-desktop`](https://github.com/liberusoftware/module-cms-content-governance-dart-desktop) (`module_cms_content_governance_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

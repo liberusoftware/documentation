@@ -12,7 +12,7 @@
 
 The intended **Files Media** workspace covers files media domain behavior.
 
-The relevant capability areas are **Files Media**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Storage contracts**, **Uploads**, **Validation**, **Scanning**, **Metadata**, **Access**, **Transformations**, **Retention**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

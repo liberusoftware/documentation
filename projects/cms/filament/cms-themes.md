@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Themes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Theme manifests and parent inheritance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Design tokens and typography:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Template and layout overrides:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Safe asset compilation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Preview and activation checks:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-themes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `theme-manifests-and-parent-inheritance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `design-tokens-and-typography`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `template-and-layout-overrides`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `safe-asset-compilation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `preview-and-activation-checks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-themes` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-themes-filament`](https://github.com/liberusoftware/module-cms-themes-filament) (`liberusoftware/cms-themes-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-themes.md) · [API plan](../api/cms-themes.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Theme manifests and parent inheritance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `theme manifests and parent inheritance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Design tokens and typography** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `design tokens and typography`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Template and layout overrides** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `template and layout overrides`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Safe asset compilation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `safe asset compilation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Preview and activation checks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `preview and activation checks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ThemeManagement.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-themes/src/Filament/Pages/ThemeManagement.php).
+<!-- layer-implementation-plan:end -->

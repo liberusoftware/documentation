@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Billing Virtualmin:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Account provisioning:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Suspension and unsuspension:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Package changes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Addon management:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Termination:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-billing-virtualmin`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `account-provisioning`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `suspension-and-unsuspension`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `package-changes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `addon-management`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `termination`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-billing-virtualmin` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-billing-virtualmin.md) · [API plan](../api/module-billing-virtualmin.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Account provisioning** | Expose a focused Livewire 4 component and namespaced Blade default view for `account provisioning` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Suspension and unsuspension** | Expose a focused Livewire 4 component and namespaced Blade default view for `suspension and unsuspension` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Package changes** | Expose a focused Livewire 4 component and namespaced Blade default view for `package changes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Addon management** | Expose a focused Livewire 4 component and namespaced Blade default view for `addon management` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Termination** | Expose a focused Livewire 4 component and namespaced Blade default view for `termination` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

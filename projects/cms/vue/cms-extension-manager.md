@@ -18,7 +18,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Cms Extension Manager:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Install/enable/disable/update/uninstall:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Dependencies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Compatibility:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Permissions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Configuration:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Migrations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Health:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Rollback:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `cms-extension-manager`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `install-enable-disable-update-uninstall`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `dependencies`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `compatibility`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `permissions`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `configuration`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `migrations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `health`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `rollback`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,32 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `cms-extension-manager` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-extension-manager-vue-inertia`](https://github.com/liberusoftware/module-cms-extension-manager-vue-inertia) (`@liberusoftware/module-cms-extension-manager-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/cms-extension-manager.md) · [Core plan](../core/cms-extension-manager.md) · [API plan](../api/cms-extension-manager.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Install/enable/disable/update/uninstall** | Render `install/enable/disable/update/uninstall` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Dependencies** | Render `dependencies` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Compatibility** | Render `compatibility` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Permissions** | Render `permissions` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Configuration** | Render `configuration` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Migrations** | Render `migrations` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Health** | Render `health` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Rollback** | Render `rollback` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ExtensionManagerService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-extension-manager/src/Services/ExtensionManagerService.php) | `public function __construct(private ModuleRegistryInterface $registry, private ModuleManagerInterface $manager)`<br>`public function all(): array`<br>`public function enable(string $key): void`<br>`public function disable(string $key): void` |
+<!-- layer-implementation-plan:end -->

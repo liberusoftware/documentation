@@ -7,10 +7,11 @@
 ## Canonical independent module specification
 
 **Domain module:** `module-crm-affiliate-management`
+**Extends / implements contracts:** `liberusoftware/affiliate-contracts (AffiliateProgramContract, AffiliatePartnerEnrollmentContract, ReferralAttributionContract, ConversionRecorderContract, CommissionCalculatorContract, FraudAndSelfReferralPolicyContract, PayoutSettlementContract)`
 **Application:** CRM  
 **Capability group:** Community, learning, loyalty, and growth modules  
 **Source scope:** [CRM.md](../CRM.md)  
-**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [AFFILIATES.md](../../../architecture/AFFILIATES.md)
 
 ## 1. Purpose
 
@@ -18,17 +19,14 @@ The Affiliate Management module owns Affiliates, applications, links, campaigns,
 
 ## 2. Full feature scope
 
-- **Affiliates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Applications:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Links:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Campaigns:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Clicks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Conversions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Commission rules:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Payout approvals/exports:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Disputes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Assets:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Portal:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Affiliates and partner profiles:** Manage affiliate partners, tiers, tax/KYC readiness, and custom commission agreements extending liberusoftware/affiliate-contracts.
+- **Applications and onboarding approval:** Review, approve, or decline affiliate applications via AffiliatePartnerEnrollmentContract.
+- **Links, promo codes, and campaigns:** Issue signed tracking links, campaign parameters, and creative assets via ReferralAttributionContract.
+- **Clicks and first-party touch attribution:** Record consent-aware click touches and resolve first-touch, last-touch, or coupon attribution across leads, deals, orders, and subscriptions.
+- **Conversions and cross-product clawback ledger:** Ingest qualified conversions and refund/chargeback reversals from Billing and Ecommerce via ConversionRecorderContract.
+- **Commission rules and tiered calculation:** Calculate flat, percentage, tiered, and recurring commissions via CommissionCalculatorContract.
+- **Payout approvals/exports via PayoutSettlementContract:** Approve matured commissions after the hold window and export or settle payout batches via Payment Core or Accounting.
+- **Disputes, fraud controls, assets, and partner portal:** Enforce FraudAndSelfReferralPolicyContract, resolve commission disputes, distribute marketing assets, and expose partner portal read models.
 
 ## 3. Ownership and boundaries
 
@@ -98,3 +96,38 @@ The Affiliate Management module owns Affiliates, applications, links, campaigns,
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Affiliates and partner profiles** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `affiliates and partner profiles`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Applications and onboarding approval** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `applications and onboarding approval`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Links, promo codes, and campaigns** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `links, promo codes, and campaigns`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Clicks and first-party touch attribution** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `clicks and first-party touch attribution`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Conversions and cross-product clawback ledger** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `conversions and cross-product clawback ledger`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Commission rules and tiered calculation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `commission rules and tiered calculation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Payout approvals/exports via PayoutSettlementContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `payout approvals/exports via payoutsettlementcontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Disputes, fraud controls, assets, and partner portal** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `disputes, fraud controls, assets, and partner portal`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/affiliate-management.md) | [Source map](../SOURCE-MAPPING.md#affiliate-management) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/affiliate-management.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/affiliate-management.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-affiliate-management-filament`](https://github.com/liberusoftware/module-crm-affiliate-management-filament) (`liberusoftware/crm-affiliate-management-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/affiliate-management.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/affiliate-management.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-affiliate-management-react-inertia`](https://github.com/liberusoftware/module-crm-affiliate-management-react-inertia) (`@liberusoftware/module-crm-affiliate-management-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/affiliate-management.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-affiliate-management-vue-inertia`](https://github.com/liberusoftware/module-crm-affiliate-management-vue-inertia) (`@liberusoftware/module-crm-affiliate-management-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/affiliate-management.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-affiliate-management-nuxt`](https://github.com/liberusoftware/module-crm-affiliate-management-nuxt) (`@liberusoftware/module-crm-affiliate-management-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/affiliate-management.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-affiliate-management-nextjs`](https://github.com/liberusoftware/module-crm-affiliate-management-nextjs) (`@liberusoftware/module-crm-affiliate-management-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/affiliate-management.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-affiliate-management-react-native`](https://github.com/liberusoftware/module-crm-affiliate-management-react-native) (`@liberusoftware/module-crm-affiliate-management-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/affiliate-management.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-affiliate-management-flutter`](https://github.com/liberusoftware/module-crm-affiliate-management-flutter) (`module_crm_affiliate_management_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/affiliate-management.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-affiliate-management-dart-mobile`](https://github.com/liberusoftware/module-crm-affiliate-management-dart-mobile) (`module_crm_affiliate_management_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-affiliate-management-dart-desktop`](https://github.com/liberusoftware/module-crm-affiliate-management-dart-desktop) (`module_crm_affiliate_management_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms Hello:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Starter module manifest verification:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Service provider and route registration check:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Sample authorized query and action boundary:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Theme default view resolution smoke check:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Package testbench verification:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms-hello`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `starter-module-manifest-verification`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `service-provider-and-route-registration-check`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `sample-authorized-query-and-action-boundary`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `theme-default-view-resolution-smoke-check`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `package-testbench-verification`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,36 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-hello` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms-hello.md) · [API plan](../api/cms-hello.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Starter module manifest verification** | Expose a focused Livewire 4 component and namespaced Blade default view for `starter module manifest verification` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Service provider and route registration check** | Expose a focused Livewire 4 component and namespaced Blade default view for `service provider and route registration check` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Sample authorized query and action boundary** | Expose a focused Livewire 4 component and namespaced Blade default view for `sample authorized query and action boundary` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Theme default view resolution smoke check** | Expose a focused Livewire 4 component and namespaced Blade default view for `theme default view resolution smoke check` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Package testbench verification** | Expose a focused Livewire 4 component and namespaced Blade default view for `package testbench verification` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [GreetingList.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-hello-livewire/src/Livewire/GreetingList.php) · [HelloLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-hello-livewire/src/HelloLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [GreeterInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Contracts/GreeterInterface.php) | `public function greet(string $name): string` |
+| [Greeter.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Services/Greeter.php) | `public function __construct(private string $template)`<br>`public function greet(string $name): string` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Greeting.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Models/Greeting.php) | `name`, `message` |
+<!-- layer-implementation-plan:end -->

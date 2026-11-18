@@ -12,7 +12,7 @@
 
 The intended **Cms Widgets** workspace covers cms widgets domain behavior.
 
-The relevant capability areas are **Cms Widgets**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Reusable widget areas**, **Dynamic query and callout widgets**, **Placement and visibility rules**, **Cache tags and invalidation**, **Theme-safe widget templates**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

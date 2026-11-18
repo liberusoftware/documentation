@@ -1,5 +1,9 @@
 # Liberu Music: Collaboration and Review — API
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#collaboration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Status: proposed design.** These are requirements and design identifiers, not verified source packages, published artifacts or implemented features.
 
 **Design identifier:** `module-music-collaboration-api`. Depends on the [core contract](../core/collaboration.md).
@@ -15,3 +19,18 @@ Project updates use ordered revision events with reconnect cursors; consumers re
 ## Contract verification
 
 Test wrong-tenant assets, revoked shares and concurrent edits after offline work. Test revoked access, wrong workspace, stale revisions, duplicate requests and interrupted event streams. Revalidate this invariant in the authoritative owner: concurrent musical edits preserve both revisions; sharing never grants access to unrelated assets. Follow [API architecture](../../../architecture/API.md).
+
+<!-- layer-implementation-plan:start -->
+## Product API backend and feature-to-operation plan
+
+This API contract is composed into [`project-music-daw-laravel-api`](https://github.com/liberusoftware/project-music-daw-laravel-api) ([Laravel API backends](../../../guides/LARAVEL-API-BACKENDS.md)) to serve [`project-music-daw-next-react`](https://github.com/liberusoftware/project-music-daw-next-react), [`project-music-daw-nuxt-vue`](https://github.com/liberusoftware/project-music-daw-nuxt-vue), [`project-music-daw-mobile-react`](https://github.com/liberusoftware/project-music-daw-mobile-react), [`project-music-daw-mobile-flutter`](https://github.com/liberusoftware/project-music-daw-mobile-flutter), [`project-music-daw-dart-mobile`](https://github.com/liberusoftware/project-music-daw-dart-mobile), and [`project-music-daw-dart-desktop`](https://github.com/liberusoftware/project-music-daw-dart-desktop).
+
+| Feature / aspect | HTTP query and command contract | DTO projection, concurrency & error semantics |
+| --- | --- | --- |
+| **Project membership integration** | Expose workspace-scoped read query and explicit command endpoint for `project membership integration` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Revision sharing** | Expose workspace-scoped read query and explicit command endpoint for `revision sharing` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Comments** | Expose workspace-scoped read query and explicit command endpoint for `comments` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Review markers** | Expose workspace-scoped read query and explicit command endpoint for `review markers` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Locks** | Expose workspace-scoped read query and explicit command endpoint for `locks` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Conflict branches** | Expose workspace-scoped read query and explicit command endpoint for `conflict branches` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+<!-- layer-implementation-plan:end -->

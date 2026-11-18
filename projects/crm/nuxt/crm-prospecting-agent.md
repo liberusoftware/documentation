@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Prospecting Agent:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Approved research:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Target selection:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Personalization:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Sequence preparation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Engagement monitoring:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Policy-based review/dispatch:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-prospecting-agent`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `approved-research`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `target-selection`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `personalization`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `sequence-preparation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `engagement-monitoring`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `policy-based-review-dispatch`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,67 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-prospecting-agent` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-prospecting-agent.md)) |
+| Capability Nuxt module skeleton | [`module-crm-prospecting-agent-nuxt`](https://github.com/liberusoftware/module-crm-prospecting-agent-nuxt) (`@liberusoftware/module-crm-prospecting-agent-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Approved research** | Expose composable and Vue 3 component for `approved research` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-prospecting-agent.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Target selection** | Expose composable and Vue 3 component for `target selection` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-prospecting-agent.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Personalization** | Expose composable and Vue 3 component for `personalization` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-prospecting-agent.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Sequence preparation** | Expose composable and Vue 3 component for `sequence preparation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-prospecting-agent.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Engagement monitoring** | Expose composable and Vue 3 component for `engagement monitoring` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-prospecting-agent.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Policy-based review/dispatch** | Expose composable and Vue 3 component for `policy-based review/dispatch` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-prospecting-agent.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ProspectingAgentQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Queries/ProspectingAgentQuery.php) | `public function runs(int $teamId)`<br>`public function targets(int $teamId)`<br>`public function sequences(int $teamId)`<br>`public function engagements(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ApproveAgentRun.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Actions/ApproveAgentRun.php) | `public function __construct(private readonly ProspectingAgentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $runId): AgentRun` |
+| [CreateAgentRun.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Actions/CreateAgentRun.php) | `public function __construct(private readonly ProspectingAgentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): AgentRun` |
+| [DispatchSequence.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Actions/DispatchSequence.php) | `public function __construct(private readonly ProspectingAgentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $sequenceId): AgentSequence` |
+| [PrepareSequence.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Actions/PrepareSequence.php) | `public function __construct(private readonly ProspectingAgentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): AgentSequence` |
+| [RecordEngagement.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Actions/RecordEngagement.php) | `public function __construct(private readonly ProspectingAgentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): AgentEngagement` |
+| [SelectTarget.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Actions/SelectTarget.php) | `public function __construct(private readonly ProspectingAgentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): AgentTarget` |
+| [UpdateAgentRun.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Actions/UpdateAgentRun.php) | `public function __construct(private readonly ProspectingAgentPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $runId, array $input): AgentRun` |
+| [ProspectingAgentPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Services/ProspectingAgentPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AgentEngagement.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Models/AgentEngagement.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AgentRun.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Models/AgentRun.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AgentSequence.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Models/AgentSequence.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AgentTarget.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent/src/Models/AgentTarget.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ProspectingAgentController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent-api/src/Http/Controllers/ProspectingAgentController.php) | `public function runs(Request $r, ProspectingAgentQuery $q)`<br>`public function run(Request $r, CreateAgentRun $a)`<br>`public function approve(Request $r, int $run, ApproveAgentRun $a)`<br>`public function target(Request $r, SelectTarget $a)`<br>`public function sequence(Request $r, PrepareSequence $a)`<br>`public function dispatch(Request $r, int $sequence, DispatchSequence $a)`<br>`public function engagement(Request $r, RecordEngagement $a)` |
+
+**Observed route declarations:**
+
+[modules/crm-prospecting-agent-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-prospecting-agent-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/prospecting-agent')->group(function (): void {
+Route::get('/runs', [ProspectingAgentController::class, 'runs']);
+Route::post('/runs', [ProspectingAgentController::class, 'run']);
+Route::post('/runs/{run}/approve', [ProspectingAgentController::class, 'approve']);
+Route::post('/targets', [ProspectingAgentController::class, 'target']);
+Route::post('/sequences', [ProspectingAgentController::class, 'sequence']);
+Route::post('/sequences/{sequence}/dispatch', [ProspectingAgentController::class, 'dispatch']);
+Route::post('/engagements', [ProspectingAgentController::class, 'engagement']);
+```
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Profiles:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Names:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Avatars:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Contact preferences:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Locale/timezone:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Completion:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Controlled profile updates:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `profiles`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `names`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `avatars`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `contact-preferences`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `locale-timezone`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `completion`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `controlled-profile-updates`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `profiles` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/profiles.md) · [API plan](../api/profiles.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Names** | Expose a focused Livewire 4 component and namespaced Blade default view for `names` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Avatars** | Expose a focused Livewire 4 component and namespaced Blade default view for `avatars` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Contact preferences** | Expose a focused Livewire 4 component and namespaced Blade default view for `contact preferences` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Locale/timezone** | Expose a focused Livewire 4 component and namespaced Blade default view for `locale/timezone` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Completion** | Expose a focused Livewire 4 component and namespaced Blade default view for `completion` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Controlled profile updates** | Expose a focused Livewire 4 component and namespaced Blade default view for `controlled profile updates` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [UpdateProfile.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/profiles/src/Actions/UpdateProfile.php) | `public function handle(Model $profile, ProfileUpdate $update): Model` |
+<!-- layer-implementation-plan:end -->

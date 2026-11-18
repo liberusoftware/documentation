@@ -40,3 +40,41 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Social provider redirects** | Model `social provider redirects` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Callbacks** | Model `callbacks` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Identity linking** | Model `identity linking` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Protected credentials** | Model `protected credentials` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Account synchronization** | Model `account synchronization` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_06_29_123954_make_password_nullable_on_users_table.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/database/migrations/2026_06_29_123954_make_password_nullable_on_users_table.php) · [2026_06_29_123955_create_connected_accounts_table.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/database/migrations/2026_06_29_123955_create_connected_accounts_table.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateConnectedAccount.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Actions/CreateConnectedAccount.php) | `public function create(mixed $user, string $provider, ProviderUser $providerUser): ConnectedAccount` |
+| [CreateUserFromProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Actions/CreateUserFromProvider.php) | `public function __construct(CreatesConnectedAccounts $createsConnectedAccounts)`<br>`public function create(string $provider, ProviderUserContract $providerUser): User` |
+| [GenerateRedirectForProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Actions/GenerateRedirectForProvider.php) | `public function generate(string $provider): RedirectResponse` |
+| [HandleInvalidState.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Actions/HandleInvalidState.php) | `public function handle(InvalidStateException $exception): Response` |
+| [ResolveSocialiteUser.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Actions/ResolveSocialiteUser.php) | `public function resolve(string $provider): User` |
+| [SetUserPassword.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Actions/SetUserPassword.php) | `public function set(mixed $user, array $input): void` |
+| [UpdateConnectedAccount.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Actions/UpdateConnectedAccount.php) | `public function update(mixed $user, ConnectedAccount $connectedAccount, string $provider, User $providerUser): ConnectedAccount`<br>`public function updateRefreshToken(ConnectedAccount $connectedAccount): ConnectedAccount` |
+| [ConnectedAccountOwner.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Contracts/ConnectedAccountOwner.php) | `public function ownsConnectedAccount($account)` |
+| [ConnectedAccountPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/identity-socialstream/src/Policies/ConnectedAccountPolicy.php) | `public function viewAny(ConnectedAccountOwner $user): bool`<br>`public function view(ConnectedAccountOwner $user, ConnectedAccount $connectedAccount): bool`<br>`public function create(ConnectedAccountOwner $user): bool`<br>`public function update(ConnectedAccountOwner $user, ConnectedAccount $connectedAccount): bool`<br>`public function delete(ConnectedAccountOwner $user, ConnectedAccount $connectedAccount): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ConnectedAccount.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Models/ConnectedAccount.php) | `provider`, `provider_id`, `name`, `nickname`, `email`, `avatar_path`, `token`, `secret`, `refresh_token`, `expires_at` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/identity-socialstream.md) · [Filament 5](../filament/identity-socialstream.md) · [Livewire 4](../livewire/identity-socialstream.md) · [React + Inertia](../react/identity-socialstream.md) · [Vue + Inertia](../vue/identity-socialstream.md) · [Nuxt 4](../nuxt/identity-socialstream.md) · [Next.js](../nextjs/identity-socialstream.md) · [React Native](../react-native/identity-socialstream.md) · [Flutter & Dart](../flutter/identity-socialstream.md)
+<!-- core-implementation-plan:end -->

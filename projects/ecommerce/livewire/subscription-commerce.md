@@ -36,13 +36,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `storefront-plans/options`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `storefront-plans-options`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `signup`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `trial`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `prepaid-terms`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `add-ons`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `customer-changes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `cancellation/retention`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cancellation-retention`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `billing-handoff`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
@@ -56,3 +56,30 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `ecommerce-subscription-commerce` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/subscription-commerce.md) · [API plan](../api/subscription-commerce.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Storefront plans/options** | Expose a focused Livewire 4 component and namespaced Blade default view for `storefront plans/options` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Signup** | Expose a focused Livewire 4 component and namespaced Blade default view for `signup` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Trial** | Expose a focused Livewire 4 component and namespaced Blade default view for `trial` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Prepaid terms** | Expose a focused Livewire 4 component and namespaced Blade default view for `prepaid terms` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Add-ons** | Expose a focused Livewire 4 component and namespaced Blade default view for `add-ons` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Customer changes** | Expose a focused Livewire 4 component and namespaced Blade default view for `customer changes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cancellation/retention** | Expose a focused Livewire 4 component and namespaced Blade default view for `cancellation/retention` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Billing handoff** | Expose a focused Livewire 4 component and namespaced Blade default view for `billing handoff` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

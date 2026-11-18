@@ -1,5 +1,9 @@
 # Ecommerce: Catering core
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#catering). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Status and ownership
 
 Design specification implementing [documentation issue #26](https://github.com/liberusoftware/documentation/issues/26); this page does not assert a released package or approved dependency contract. Proposed repository: `liberusoftware/module-ecommerce-catering`; Composer: `liberusoftware/ecommerce-catering`; module: `ecommerce-catering`; namespace: `Liberu\Ecommerce\Catering\`. Schema and implementation wait for the boundary decisions below. The host is the composition root and commits installed modules in `/modules` and themes in `/themes`.
@@ -53,3 +57,27 @@ Monitor pending conversion age, retries, stale revisions, availability rejection
 ## Boundary decisions required before schema work
 
 Record owner approval for: (1) immediate versus optional Quotes/Bookings integration, (2) which quote fields/line snapshots live in Negotiated Quotes versus Catering, (3) the authoritative availability/accepted-quote confirmation transition that permits order creation, (4) currency/tax/pricing inputs and retention obligations. Until resolved, implementation issues are planning work and must not prescribe schema or claim these choices are approved.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Meals and ingredient composition** | Model `meals and ingredient composition` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Recipes and preparation yields** | Model `recipes and preparation yields` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Staff-managed catering packages** | Model `staff-managed catering packages` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Event requirements and venue context** | Model `event requirements and venue context` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Immutable menu revisions** | Model `immutable menu revisions` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Reproducible quotation context** | Model `reproducible quotation context` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Availability confirmation and order conversion** | Model `availability confirmation and order conversion` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/catering.md) · [Filament 5](../filament/catering.md) · [Livewire 4](../livewire/catering.md) · [React + Inertia](../react/catering.md) · [Vue + Inertia](../vue/catering.md) · [Nuxt 4](../nuxt/catering.md) · [Next.js](../nextjs/catering.md) · [React Native](../react-native/catering.md) · [Flutter & Dart](../flutter/catering.md)
+<!-- core-implementation-plan:end -->

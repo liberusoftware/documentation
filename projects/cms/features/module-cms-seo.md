@@ -18,7 +18,14 @@ The Module Cms Seo module owns module cms seo domain behavior. It is the authori
 
 ## 2. Full feature scope
 
-- **Module Cms Seo:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Titles/descriptions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Canonical URLs:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Robots:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Structured data:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Social cards:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Hreflang:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Index controls:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Content checks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,38 @@ The Module Cms Seo module owns module cms seo domain behavior. It is the authori
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Titles/descriptions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `titles/descriptions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Canonical URLs** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `canonical urls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Robots** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `robots`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Structured data** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `structured data`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Social cards** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `social cards`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Hreflang** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `hreflang`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Index controls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `index controls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Content checks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `content checks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-cms-seo.md) | [Source map](../SOURCE-MAPPING.md#module-cms-seo) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-cms-seo.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-cms-seo.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-seo-filament`](https://github.com/liberusoftware/module-cms-seo-filament) (`liberusoftware/cms-seo-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-cms-seo.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-cms-seo.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-seo-react-inertia`](https://github.com/liberusoftware/module-cms-seo-react-inertia) (`@liberusoftware/module-cms-seo-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-cms-seo.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-seo-vue-inertia`](https://github.com/liberusoftware/module-cms-seo-vue-inertia) (`@liberusoftware/module-cms-seo-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-cms-seo.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-seo-nuxt`](https://github.com/liberusoftware/module-cms-seo-nuxt) (`@liberusoftware/module-cms-seo-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-cms-seo.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-seo-nextjs`](https://github.com/liberusoftware/module-cms-seo-nextjs) (`@liberusoftware/module-cms-seo-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-cms-seo.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-seo-react-native`](https://github.com/liberusoftware/module-cms-seo-react-native) (`@liberusoftware/module-cms-seo-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-cms-seo.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-seo-flutter`](https://github.com/liberusoftware/module-cms-seo-flutter) (`module_cms_seo_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-cms-seo.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-seo-dart-mobile`](https://github.com/liberusoftware/module-cms-seo-dart-mobile) (`module_cms_seo_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-seo-dart-desktop`](https://github.com/liberusoftware/module-cms-seo-dart-desktop) (`module_cms_seo_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

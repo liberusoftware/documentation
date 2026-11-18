@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm Conversion Optimization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **A/B and multivariate tests:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Traffic allocation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Goals:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Statistical policy:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Popups:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Banners:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **CTAs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Personalization rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Experiment reporting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-conversion-optimization`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `a-b-and-multivariate-tests`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `traffic-allocation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `goals`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `statistical-policy`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `popups`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `banners`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `ctas`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `personalization-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `experiment-reporting`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,61 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-conversion-optimization` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-conversion-optimization-react-inertia`](https://github.com/liberusoftware/module-crm-conversion-optimization-react-inertia) (`@liberusoftware/module-crm-conversion-optimization-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-conversion-optimization.md) · [Core plan](../core/crm-conversion-optimization.md) · [API plan](../api/crm-conversion-optimization.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **A/B and multivariate tests** | Render `a/b and multivariate tests` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Traffic allocation** | Render `traffic allocation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Goals** | Render `goals` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Statistical policy** | Render `statistical policy` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Popups** | Render `popups` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Banners** | Render `banners` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **CTAs** | Render `ctas` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Personalization rules** | Render `personalization rules` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Experiment reporting** | Render `experiment reporting` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ConversionReportQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Queries/ConversionReportQuery.php) | `public function experiments(int $teamId): Builder`<br>`public function report(int $teamId, ConversionExperiment $experiment): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ActivateExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Actions/ActivateExperiment.php) | `public function execute(int $teamId, int $userId, ConversionExperiment $experiment): ConversionExperiment` |
+| [CreateConversionExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Actions/CreateConversionExperiment.php) | `public function execute(int $teamId, int $userId, array $input): ConversionExperiment` |
+| [RecordConversion.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Actions/RecordConversion.php) | `public function execute(int $teamId, ConversionExperiment $experiment, string $subjectKey, string $variant, string $event, float $value = 1): ConversionObservation` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ConversionExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Models/ConversionExperiment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ConversionObservation.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Models/ConversionObservation.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ConversionOptimizationController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization-api/src/Http/Controllers/ConversionOptimizationController.php) | `public function __construct(private readonly ConversionReportQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(CreateConversionExperiment $a): JsonResponse`<br>`public function activate(ConversionExperiment $e, ActivateExperiment $a): JsonResponse`<br>`public function convert(ConversionExperiment $e, RecordConversion $a): JsonResponse`<br>`public function report(ConversionExperiment $e): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-conversion-optimization-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/conversion-optimization')->group(function (): void {
+Route::get('experiments', [ConversionOptimizationController::class, 'index']);
+Route::post('experiments', [ConversionOptimizationController::class, 'store']);
+Route::post('experiments/{experiment}/activate', [ConversionOptimizationController::class, 'activate']);
+Route::post('experiments/{experiment}/conversions', [ConversionOptimizationController::class, 'convert']);
+Route::get('experiments/{experiment}/report', [ConversionOptimizationController::class, 'report']);
+```
+<!-- layer-implementation-plan:end -->

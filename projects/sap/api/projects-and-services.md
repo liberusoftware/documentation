@@ -12,6 +12,8 @@ Reuse CRM project/resource planning, Maintenance labor/time, Billing project cha
 
 The primary enterprise workflow record is a **billable milestone**. A façade can coordinate owning product APIs and an enterprise read model, while the original product retains write authority for its records. `module-sap-projects-and-services-api` is a design identifier; it does not establish a published Composer package or another authoritative business implementation.
 
+When deployed for independent web, mobile, and desktop clients, this contract is composed into [`project-enterprise-sap-laravel-api`](https://github.com/liberusoftware/project-enterprise-sap-laravel-api) ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md)) to serve [`project-enterprise-sap-next-react`](https://github.com/liberusoftware/project-enterprise-sap-next-react), [`project-enterprise-sap-nuxt-vue`](https://github.com/liberusoftware/project-enterprise-sap-nuxt-vue), [`project-enterprise-sap-mobile-react`](https://github.com/liberusoftware/project-enterprise-sap-mobile-react), [`project-enterprise-sap-mobile-flutter`](https://github.com/liberusoftware/project-enterprise-sap-mobile-flutter), [`project-enterprise-sap-dart-mobile`](https://github.com/liberusoftware/project-enterprise-sap-dart-mobile), and [`project-enterprise-sap-dart-desktop`](https://github.com/liberusoftware/project-enterprise-sap-dart-desktop).
+
 Read the [detailed domain design](../design/projects-and-services.md), [composition guide](../COMPOSITION.md), and [API architecture](../../../architecture/API.md) for the surrounding boundaries.
 
 ## 2. Contract design

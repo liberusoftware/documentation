@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Manager:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Manifest discovery:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Dependency resolution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Enablement:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Lifecycle:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Compatibility:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Registry caching:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Diagnostics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-manager`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `manifest-discovery`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `dependency-resolution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `enablement`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `lifecycle`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `compatibility`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `registry-caching`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `diagnostics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,29 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-manager` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-manager.md) · [API plan](../api/module-manager.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Manifest discovery** | Expose a focused Livewire 4 component and namespaced Blade default view for `manifest discovery` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Dependency resolution** | Expose a focused Livewire 4 component and namespaced Blade default view for `dependency resolution` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Enablement** | Expose a focused Livewire 4 component and namespaced Blade default view for `enablement` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Lifecycle** | Expose a focused Livewire 4 component and namespaced Blade default view for `lifecycle` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Compatibility** | Expose a focused Livewire 4 component and namespaced Blade default view for `compatibility` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Registry caching** | Expose a focused Livewire 4 component and namespaced Blade default view for `registry caching` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Diagnostics** | Expose a focused Livewire 4 component and namespaced Blade default view for `diagnostics` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

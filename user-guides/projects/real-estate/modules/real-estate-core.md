@@ -12,7 +12,7 @@
 
 The intended **Core** workspace covers core domain behavior.
 
-The relevant capability areas are **Core**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Agencies**, **Branches**, **Teams**, **Territories**, **Terminology**, **Statuses**, **Numbering**, **Audit**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

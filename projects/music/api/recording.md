@@ -1,5 +1,9 @@
 # Liberu Music: Recording and Take Comping — API
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#recording). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Status: proposed design.** These are requirements and design identifiers, not verified source packages, published artifacts or implemented features.
 
 **Design identifier:** `module-music-recording-api`. Depends on the [core contract](../core/recording.md).
@@ -15,3 +19,19 @@ Project updates use ordered revision events with reconnect cursors; consumers re
 ## Contract verification
 
 Capture sustained multitrack audio and recover complete blocks after a forced process exit. Test revoked access, wrong workspace, stale revisions, duplicate requests and interrupted event streams. Revalidate this invariant in the authoritative owner: original takes remain immutable; a comp stores references rather than overwriting recordings. Follow [API architecture](../../../architecture/API.md).
+
+<!-- layer-implementation-plan:start -->
+## Product API backend and feature-to-operation plan
+
+This API contract is composed into [`project-music-daw-laravel-api`](https://github.com/liberusoftware/project-music-daw-laravel-api) ([Laravel API backends](../../../guides/LARAVEL-API-BACKENDS.md)) to serve [`project-music-daw-next-react`](https://github.com/liberusoftware/project-music-daw-next-react), [`project-music-daw-nuxt-vue`](https://github.com/liberusoftware/project-music-daw-nuxt-vue), [`project-music-daw-mobile-react`](https://github.com/liberusoftware/project-music-daw-mobile-react), [`project-music-daw-mobile-flutter`](https://github.com/liberusoftware/project-music-daw-mobile-flutter), [`project-music-daw-dart-mobile`](https://github.com/liberusoftware/project-music-daw-dart-mobile), and [`project-music-daw-dart-desktop`](https://github.com/liberusoftware/project-music-daw-dart-desktop).
+
+| Feature / aspect | HTTP query and command contract | DTO projection, concurrency & error semantics |
+| --- | --- | --- |
+| **Track arming** | Expose workspace-scoped read query and explicit command endpoint for `track arming` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Count-in** | Expose workspace-scoped read query and explicit command endpoint for `count-in` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Punch** | Expose workspace-scoped read query and explicit command endpoint for `punch` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Loop recording** | Expose workspace-scoped read query and explicit command endpoint for `loop recording` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Take lanes** | Expose workspace-scoped read query and explicit command endpoint for `take lanes` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Comp segments** | Expose workspace-scoped read query and explicit command endpoint for `comp segments` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+| **Recoverable disk writes** | Expose workspace-scoped read query and explicit command endpoint for `recoverable disk writes` delegating to the core domain owner. | Audience-safe `snake_case` DTO allowlist; `Idempotency-Key` and revision preconditions (`If-Match`) for mutations; RFC 9457 Problem Details errors. |
+<!-- layer-implementation-plan:end -->

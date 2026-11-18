@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Audit Support:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Read-only auditor access:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Samples:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Evidence requests:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Immutable exports:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Source drill-through:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Access logs:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-audit-support`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `read-only-auditor-access`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `samples`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `evidence-requests`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `immutable-exports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `source-drill-through`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `access-logs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,42 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-audit-support` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-audit-support-filament`](https://github.com/liberusoftware/module-accounting-audit-support-filament) (`liberusoftware/accounting-audit-support-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-audit-support.md) · [API plan](../api/accounting-audit-support.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Read-only auditor access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `read-only auditor access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Samples** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `samples`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Evidence requests** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `evidence requests`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Immutable exports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `immutable exports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Source drill-through** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `source drill-through`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Access logs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `access logs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [AuditSupportFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support-filament/src/AuditSupportFilamentServiceProvider.php) · [AuditRequestResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support-filament/src/Resources/AuditRequestResource.php) · [CreateAuditRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support-filament/src/Resources/Pages/CreateAuditRequest.php) · [ListAuditRequests.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support-filament/src/Resources/Pages/ListAuditRequests.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AuditRequestQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Queries/AuditRequestQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateAuditRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Actions/CreateAuditRequest.php) | `public function handle(array $attributes): AuditRequest` |
+| [SubmitAuditRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Actions/SubmitAuditRequest.php) | `public function handle(AuditRequest $request): AuditRequest` |
+| [AuditSupportPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support-api/src/Policies/AuditSupportPolicy.php) | `public function viewAny(?object $user): bool`<br>`public function create(?object $user): bool`<br>`public function update(?object $user, object $record): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AuditRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Models/AuditRequest.php) | `team_id`, `reference`, `title`, `description`, `owner_id`, `status`, `due_at`, `evidence`, `submitted_at`, `closed_at` |
+<!-- layer-implementation-plan:end -->

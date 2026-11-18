@@ -12,7 +12,7 @@
 
 The intended **Cms Posts** workspace covers cms posts domain behavior.
 
-The relevant capability areas are **Cms Posts**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Articles and editorial posts**, **Authors and contributor attribution**, **Series and category assignments**, **Scheduled publication and feeds**, **Reading metadata and SEO**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

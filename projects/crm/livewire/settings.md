@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Settings:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Typed application/organization/team/user settings:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Precedence:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Validation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Secrets:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Audit:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Cache invalidation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `settings`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `typed-application-organization-team-user-settings`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `precedence`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `validation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `secrets`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `audit`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cache-invalidation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,33 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `settings` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/settings.md) · [API plan](../api/settings.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Typed application/organization/team/user settings** | Expose a focused Livewire 4 component and namespaced Blade default view for `typed application/organization/team/user settings` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Precedence** | Expose a focused Livewire 4 component and namespaced Blade default view for `precedence` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Validation** | Expose a focused Livewire 4 component and namespaced Blade default view for `validation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Secrets** | Expose a focused Livewire 4 component and namespaced Blade default view for `secrets` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Audit** | Expose a focused Livewire 4 component and namespaced Blade default view for `audit` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cache invalidation** | Expose a focused Livewire 4 component and namespaced Blade default view for `cache invalidation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/settings-livewire/src/Livewire/Overview.php) · [SettingsLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/settings-livewire/src/SettingsLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [SettingDefinition.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/settings/src/Contracts/SettingDefinition.php) | `public function key(): string`<br>`public function validate(mixed $value): bool`<br>`public function secret(): bool` |
+| [ScopedSettings.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/settings/src/Services/ScopedSettings.php) | `public function put(SettingDefinition $definition, string $scopeType, string $scopeId, mixed $value): void`<br>`public function resolve(string $key, array $scopes, mixed $fallback = null): mixed` |
+<!-- layer-implementation-plan:end -->

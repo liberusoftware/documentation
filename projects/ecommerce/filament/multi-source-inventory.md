@@ -34,11 +34,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `sources/warehouses/stores/drop-shippers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sources-warehouses-stores-drop-shippers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `stocks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `channel-assignment`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `aggregated-salable-quantity`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `priority/distance-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `priority-distance-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `source-health`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
@@ -52,3 +52,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-multi-source-inventory` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-multi-source-inventory-filament`](https://github.com/liberusoftware/module-ecommerce-multi-source-inventory-filament) (`liberusoftware/ecommerce-multi-source-inventory-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/multi-source-inventory.md) · [API plan](../api/multi-source-inventory.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Sources/warehouses/stores/drop shippers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sources/warehouses/stores/drop shippers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Stocks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `stocks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Channel assignment** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `channel assignment`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Aggregated salable quantity** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `aggregated salable quantity`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Priority/distance rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `priority/distance rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Source health** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `source health`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

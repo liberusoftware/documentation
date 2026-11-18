@@ -33,9 +33,9 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `content/configuration-change-history`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `content-configuration-change-history`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `publication-evidence`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `privileged-reads/actions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `privileged-reads-actions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `exports`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `tamper-aware-retention`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
@@ -50,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-audit-and-history` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/audit-and-history.md) · [API plan](../api/audit-and-history.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Content/configuration change history** | Expose a focused Livewire 4 component and namespaced Blade default view for `content/configuration change history` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Publication evidence** | Expose a focused Livewire 4 component and namespaced Blade default view for `publication evidence` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Privileged reads/actions** | Expose a focused Livewire 4 component and namespaced Blade default view for `privileged reads/actions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Exports** | Expose a focused Livewire 4 component and namespaced Blade default view for `exports` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tamper-aware retention** | Expose a focused Livewire 4 component and namespaced Blade default view for `tamper-aware retention` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

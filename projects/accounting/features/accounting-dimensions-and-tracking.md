@@ -18,7 +18,15 @@ The Accounting Dimensions And Tracking module owns accounting dimensions and tra
 
 ## 2. Full feature scope
 
-- **Accounting Dimensions And Tracking:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Classes/categories:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Locations:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Departments:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Cost/profit centers:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Projects:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Tags:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Validation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Allocations:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Dimensional balances:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Accounting Dimensions And Tracking module owns accounting dimensions and tra
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Classes/categories** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `classes/categories`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Locations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `locations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Departments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `departments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Cost/profit centers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `cost/profit centers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Projects** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `projects`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Tags** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `tags`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Validation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `validation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Allocations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `allocations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Dimensional balances** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `dimensional balances`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounting-dimensions-and-tracking.md) | [Source map](../SOURCE-MAPPING.md#accounting-dimensions-and-tracking) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-dimensions-and-tracking-filament`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-filament) (`liberusoftware/accounting-dimensions-and-tracking-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-dimensions-and-tracking-react-inertia`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-react-inertia) (`@liberusoftware/module-accounting-dimensions-and-tracking-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-dimensions-and-tracking-vue-inertia`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-vue-inertia) (`@liberusoftware/module-accounting-dimensions-and-tracking-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-dimensions-and-tracking-nuxt`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-nuxt) (`@liberusoftware/module-accounting-dimensions-and-tracking-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-dimensions-and-tracking-nextjs`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-nextjs) (`@liberusoftware/module-accounting-dimensions-and-tracking-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-dimensions-and-tracking-react-native`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-react-native) (`@liberusoftware/module-accounting-dimensions-and-tracking-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-dimensions-and-tracking-flutter`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-flutter) (`module_accounting_dimensions_and_tracking_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounting-dimensions-and-tracking.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-dimensions-and-tracking-dart-mobile`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-dart-mobile) (`module_accounting_dimensions_and_tracking_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-dimensions-and-tracking-dart-desktop`](https://github.com/liberusoftware/module-accounting-dimensions-and-tracking-dart-desktop) (`module_accounting_dimensions_and_tracking_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

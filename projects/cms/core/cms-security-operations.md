@@ -40,3 +40,35 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Update inventory** | Model `update inventory` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Extension provenance** | Model `extension provenance` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Content integrity** | Model `content integrity` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Upload scanning** | Model `upload scanning` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Security headers integration** | Model `security headers integration` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Advisories** | Model `advisories` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Incident aids** | Model `incident aids` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_08_24_130000_create_cms_security_operations_table.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/database/migrations/2026_08_24_130000_create_cms_security_operations_table.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [SecurityOperationsService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Services/SecurityOperationsService.php) | `public function inventory(array $packages, ?int $actorId = null): SecurityOperation`<br>`public function provenance(string $extension, string $version, string $source, ?int $actorId = null): SecurityOperation`<br>`public function integrity(string $subject, string $content, ?int $actorId = null): SecurityOperation`<br>`public function scan(UploadedFile $file, ?int $actorId = null): SecurityOperation`<br>`public function advisory(string $title, string $severity, array $details = [], ?int $actorId = null): SecurityOperation`<br>`public function incidentBundle(string $incident): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SecurityOperation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Models/SecurityOperation.php) | `kind`, `subject`, `status`, `evidence`, `content_hash`, `actor_id` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/cms-security-operations.md) · [Filament 5](../filament/cms-security-operations.md) · [Livewire 4](../livewire/cms-security-operations.md) · [React + Inertia](../react/cms-security-operations.md) · [Vue + Inertia](../vue/cms-security-operations.md) · [Nuxt 4](../nuxt/cms-security-operations.md) · [Next.js](../nextjs/cms-security-operations.md) · [React Native](../react-native/cms-security-operations.md) · [Flutter & Dart](../flutter/cms-security-operations.md)
+<!-- core-implementation-plan:end -->

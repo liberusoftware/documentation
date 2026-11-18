@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Real Estate Portals Reporting:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Party self-service plus pipeline:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Conversion:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Source:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Fee:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Time-to-complete:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Occupancy:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Compliance metrics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `real-estate-portals-reporting`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `party-self-service-plus-pipeline`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `conversion`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `source`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `fee`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `time-to-complete`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `occupancy`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `compliance-metrics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,39 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `real-estate-portals-reporting` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/real-estate-portals-reporting.md) · [API plan](../api/real-estate-portals-reporting.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Party self-service plus pipeline** | Expose a focused Livewire 4 component and namespaced Blade default view for `party self-service plus pipeline` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Conversion** | Expose a focused Livewire 4 component and namespaced Blade default view for `conversion` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Source** | Expose a focused Livewire 4 component and namespaced Blade default view for `source` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Fee** | Expose a focused Livewire 4 component and namespaced Blade default view for `fee` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Time-to-complete** | Expose a focused Livewire 4 component and namespaced Blade default view for `time-to-complete` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Occupancy** | Expose a focused Livewire 4 component and namespaced Blade default view for `occupancy` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Compliance metrics** | Expose a focused Livewire 4 component and namespaced Blade default view for `compliance metrics` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [PortalReportList.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-portals-reporting-livewire/src/Components/PortalReportList.php) · [PortalsReportingLivewireServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-portals-reporting-livewire/src/PortalsReportingLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PortalReportPolicy.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-portals-reporting/src/Policies/PortalReportPolicy.php) | `public function viewAny(AuthUser $authUser): bool`<br>`public function view(AuthUser $authUser, PortalReport $portalReport): bool`<br>`public function create(AuthUser $authUser): bool`<br>`public function update(AuthUser $authUser, PortalReport $portalReport): bool`<br>`public function delete(AuthUser $authUser, PortalReport $portalReport): bool`<br>`public function deleteAny(AuthUser $authUser): bool`<br>`public function restore(AuthUser $authUser, PortalReport $portalReport): bool`<br>`public function forceDelete(AuthUser $authUser, PortalReport $portalReport): bool`<br>`public function forceDeleteAny(AuthUser $authUser): bool`<br>`public function restoreAny(AuthUser $authUser): bool`<br>`public function replicate(AuthUser $authUser, PortalReport $portalReport): bool`<br>`public function reorder(AuthUser $authUser): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [DashboardLayout.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-portals-reporting/src/Models/DashboardLayout.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PortalReport.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-portals-reporting/src/Models/PortalReport.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SavedReport.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-portals-reporting/src/Models/SavedReport.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

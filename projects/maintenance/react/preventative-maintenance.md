@@ -73,61 +73,56 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
 
-## Canonical one-to-one React/Inertia implementation
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
 
-**Package:** `module-maintenance-preventative-maintenance-react-inertia`
-**Matching domain module:** `maintenance-preventative-maintenance`
-**Application:** Maintenance
-**Source feature:** [Preventative Maintenance](../features/preventative-maintenance.md)
-**Architecture:** [REACT.md](../../../standards/REACT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/preventative-maintenance.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-maintenance-laravel-inertia-react`](https://github.com/liberusoftware/project-maintenance-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-maintenance-preventative-maintenance-react-inertia`](https://github.com/liberusoftware/module-maintenance-preventative-maintenance-react-inertia) (`@liberusoftware/module-maintenance-preventative-maintenance-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/preventative-maintenance.md) · [Core plan](../core/preventative-maintenance.md) · [API plan](../api/preventative-maintenance.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
 
-## 1. Purpose and ownership
+### React 19.2 + Inertia 3 feature and component matrix
 
-This optional React 19.2 + Inertia 3 presentation package adapts the matching domain contract through Laravel-owned Inertia routes. It contributes reusable Inertia pages, React components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public application/API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Plans** | Render `plans` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Triggers** | Render `triggers` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Frequencies** | Render `frequencies` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Meter rules** | Render `meter rules` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Forecasts** | Render `forecasts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Generation** | Render `generation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Optimization** | Render `optimization` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
 
-## 2. Module-specific surfaces
+### Observed domain and transport source evidence
 
-- **Plans:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Triggers:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Frequencies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Meter rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Forecasts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Generation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Optimization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CompleteMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/CompleteMaintenancePlan.php) | `public function handle(int $teamId, MaintenancePlan $plan, ?CarbonInterface $completedAt = null): MaintenancePlan` |
+| [CreateMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/CreateMaintenancePlan.php) | `public function handle(int $teamId, array $attributes): MaintenancePlan` |
+| [DeleteMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/DeleteMaintenancePlan.php) | `public function handle(int $teamId, MaintenancePlan $plan): void` |
+| [UpdateMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/UpdateMaintenancePlan.php) | `public function handle(int $teamId, MaintenancePlan $plan, array $attributes): MaintenancePlan` |
+| [MaintenancePlanPolicy.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Policies/MaintenancePlanPolicy.php) | `public function viewAny(object $user): bool`<br>`public function view(object $user, MaintenancePlan $plan): bool`<br>`public function create(object $user): bool`<br>`public function update(object $user, MaintenancePlan $plan): bool`<br>`public function delete(object $user, MaintenancePlan $plan): bool` |
 
-## 3. React 19.2 + Inertia 3 implementation
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Models/MaintenancePlan.php) | `team_id`, `name`, `code`, `description`, `equipment_id`, `assigned_to`, `checklist_id`, `instructions`, `estimated_duration`, `frequency_unit`, `frequency_value`, `next_due_at`, `last_completed_at`, `is_active`, `rules` |
 
-- Register a stable `module-maintenance-preventative-maintenance-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [MaintenancePlanController.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-api/src/Http/Controllers/MaintenancePlanController.php) | `public function index(Request $r): JsonResponse`<br>`public function complete(Request $r, MaintenancePlan $maintenancePlan, CompleteMaintenancePlan $complete): JsonResponse`<br>`public function store(Request $r, CreateMaintenancePlan $create): JsonResponse`<br>`public function show(Request $r, MaintenancePlan $maintenancePlan): JsonResponse`<br>`public function update(Request $r, MaintenancePlan $maintenancePlan, UpdateMaintenancePlan $update): JsonResponse`<br>`public function destroy(Request $r, MaintenancePlan $maintenancePlan, DeleteMaintenancePlan $delete): JsonResponse` |
 
-### Capability mapping
+**Observed route declarations:**
 
-- `plans`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `triggers`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `frequencies`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `meter-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `forecasts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `generation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `optimization`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+[modules/module-maintenance-preventative-maintenance-api/routes/api.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-api/routes/api.php)
 
-## 4. API contract and Inertia consumption
-
-- Reuse the matching public application/API contracts. For HTTP consumption, use its documented schemas, routes, authentication, permissions, tenant context, errors and operation semantics; Inertia visits still require an Inertia response.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
-
-## 5. Security and verification
-
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, React Testing Library, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
-
-## 6. Definition of done
-
-- Package identity, public exports, API dependency, and module dependency match `maintenance-preventative-maintenance` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/maintenance/preventative-maintenance')->group(function (): void {
+Route::get('/', [MaintenancePlanController::class, 'index']);
+Route::post('/', [MaintenancePlanController::class, 'store']);
+Route::get('/{maintenancePlan}', [MaintenancePlanController::class, 'show']);
+Route::patch('/{maintenancePlan}', [MaintenancePlanController::class, 'update']);
+Route::post('/{maintenancePlan}/complete', [MaintenancePlanController::class, 'complete']);
+Route::delete('/{maintenancePlan}', [MaintenancePlanController::class, 'destroy']);
+```
+<!-- layer-implementation-plan:end -->

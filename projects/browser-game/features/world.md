@@ -94,3 +94,39 @@ The World module owns Regions, locations, maps, travel, encounters, NPCs, resour
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Regions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `regions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Locations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `locations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Maps** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `maps`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Travel** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `travel`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Encounters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `encounters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **NPCs** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `npcs`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Resources** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `resources`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Weather** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `weather`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Unlocks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `unlocks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/world.md) | [Source map](../SOURCE-MAPPING.md#world) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/world.md) | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/world.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) · [`module-browser-game-world-filament`](https://github.com/liberusoftware/module-browser-game-world-filament) (`liberusoftware/browser-game-world-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/world.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/world.md) | [`project-browser-game-laravel-inertia-react`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-react) · [`module-browser-game-world-react-inertia`](https://github.com/liberusoftware/module-browser-game-world-react-inertia) (`@liberusoftware/module-browser-game-world-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/world.md) | [`project-browser-game-laravel-inertia-vue`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue) · [`module-browser-game-world-vue-inertia`](https://github.com/liberusoftware/module-browser-game-world-vue-inertia) (`@liberusoftware/module-browser-game-world-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/world.md) | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) · [`module-browser-game-world-nuxt`](https://github.com/liberusoftware/module-browser-game-world-nuxt) (`@liberusoftware/module-browser-game-world-nuxt`) | Standalone Vue SSR client consuming `project-browser-game-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/world.md) | [`project-browser-game-next-react`](https://github.com/liberusoftware/project-browser-game-next-react) · [`module-browser-game-world-nextjs`](https://github.com/liberusoftware/module-browser-game-world-nextjs) (`@liberusoftware/module-browser-game-world-nextjs`) | App Router Server/Client components consuming `project-browser-game-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/world.md) | [`project-browser-game-mobile-react`](https://github.com/liberusoftware/project-browser-game-mobile-react) · [`module-browser-game-world-react-native`](https://github.com/liberusoftware/module-browser-game-world-react-native) (`@liberusoftware/module-browser-game-world-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/world.md) | [`project-browser-game-mobile-flutter`](https://github.com/liberusoftware/project-browser-game-mobile-flutter) · [`module-browser-game-world-flutter`](https://github.com/liberusoftware/module-browser-game-world-flutter) (`module_browser_game_world_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/world.md) | [`project-browser-game-dart-mobile`](https://github.com/liberusoftware/project-browser-game-dart-mobile) · [`module-browser-game-world-dart-mobile`](https://github.com/liberusoftware/module-browser-game-world-dart-mobile) (`module_browser_game_world_dart_mobile`)<br>[`project-browser-game-dart-desktop`](https://github.com/liberusoftware/project-browser-game-dart-desktop) · [`module-browser-game-world-dart-desktop`](https://github.com/liberusoftware/module-browser-game-world-dart-desktop) (`module_browser_game_world_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -12,7 +12,7 @@
 
 The intended **Real Estate Zoopla** workspace covers real estate zoopla domain behavior.
 
-The relevant capability areas are **Real Estate Zoopla**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Zoopla sync state**, **Provider payload boundary**, **Retry and error state**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -40,3 +40,30 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Liberu revenue and care orchestration** | Model `liberu revenue and care orchestration` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Liberu revenue and care orchestration lifecycle** | Model `liberu revenue and care orchestration lifecycle` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_08_24_010000_create_liberu_care_plans_table.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/database/migrations/2026_08_24_010000_create_liberu_care_plans_table.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) | `public function execute(array $attributes): CarePlan` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Models/CarePlan.php) | `name`, `status`, `metadata` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/module-liberu-revenue-and-care-orchestration.md) · [Filament 5](../filament/module-liberu-revenue-and-care-orchestration.md) · [Livewire 4](../livewire/module-liberu-revenue-and-care-orchestration.md) · [React + Inertia](../react/module-liberu-revenue-and-care-orchestration.md) · [Vue + Inertia](../vue/module-liberu-revenue-and-care-orchestration.md) · [Nuxt 4](../nuxt/module-liberu-revenue-and-care-orchestration.md) · [Next.js](../nextjs/module-liberu-revenue-and-care-orchestration.md) · [React Native](../react-native/module-liberu-revenue-and-care-orchestration.md) · [Flutter & Dart](../flutter/module-liberu-revenue-and-care-orchestration.md)
+<!-- core-implementation-plan:end -->

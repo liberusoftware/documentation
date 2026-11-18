@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-crm-referrals`.
+**Adapter group:** `liberusoftware/module-crm-referrals`.<br>
+**Matching domain module:** `referrals`
 
 **Proposed design identifier:** `module-crm-referrals-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/referrals.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/referrals.md)) |
+| Capability Next.js module skeleton | [module-crm-referrals-nextjs](https://github.com/liberusoftware/module-crm-referrals-nextjs) (`@liberusoftware/module-crm-referrals-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 This plan is the shared documentation home for **2 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
 
@@ -21,17 +28,15 @@ This plan is the shared documentation home for **2 existing design spellings/con
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Referral programs | A focused authorized view or workflow section for referral programs; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Links/codes | A focused authorized view or workflow section for links/codes; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Advocates | A focused authorized view or workflow section for advocates; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Prospects | A focused authorized view or workflow section for prospects; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Qualification | A focused authorized view or workflow section for qualification; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Rewards | A focused authorized view or workflow section for rewards; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Fraud/duplicate controls | A focused authorized view or workflow section for fraud/duplicate controls; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Status | A focused authorized view or workflow section for status; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Attribution | A focused authorized view or workflow section for attribution; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Referral programs extending AffiliateProgramContract** | Server Component loads authorized `referral programs extending affiliateprogramcontract` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Links/codes via ReferralAttributionContract** | Server Component loads authorized `links/codes via referralattributioncontract` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Advocates and referred prospects** | Server Component loads authorized `advocates and referred prospects` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Qualification via ConversionRecorderContract** | Server Component loads authorized `qualification via conversionrecordercontract` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Rewards via RewardFulfillmentContract** | Server Component loads authorized `rewards via rewardfulfillmentcontract` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract** | Server Component loads authorized `fraud/duplicate controls via fraudandselfreferralpolicycontract` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Status and multi-touch attribution** | Server Component loads authorized `status and multi-touch attribution` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 
@@ -47,11 +52,11 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateProgram.php) | `public function execute(int $teamId, int $userId, array $input): ReferralProgram` |
-| [CreateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateReferral.php) | `public function execute(int $teamId, int $userId, array $input): Referral` |
-| [IssueReward.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/IssueReward.php) | `public function execute(int $teamId, int $userId, array $input): ReferralReward` |
-| [QualifyReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/QualifyReferral.php) | `public function execute(int $teamId, int $userId, int $referralId, string $status): Referral` |
-| [UpdateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/UpdateReferral.php) | `public function execute(int $teamId, int $userId, int $referralId, array $input): Referral` |
+| [CreateProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateProgram.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ReferralProgram` |
+| [CreateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): Referral` |
+| [IssueReward.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/IssueReward.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ReferralReward` |
+| [QualifyReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/QualifyReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $referralId, string $status): Referral` |
+| [UpdateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/UpdateReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $referralId, array $input): Referral` |
 | [ReferralPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Services/ReferralPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.

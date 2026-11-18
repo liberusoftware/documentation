@@ -1,5 +1,28 @@
 # Implement Vue and React with Laravel and Inertia
 
+## Liberu boilerplate and skeleton repositories
+
+Every product has dedicated Laravel 13 + Inertia 3 application skeleton repositories and matching reusable capability module skeletons on GitHub:
+
+- **Application templates:** [`project-boilerplate-laravel-inertia-vue`](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) and [`project-boilerplate-laravel-inertia-react`](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) (product skeletons: `project-{product}-laravel-inertia-vue` and `project-{product}-laravel-inertia-react` in [REPOSITORIES.md](../../projects/REPOSITORIES.md#laravel-applications)).
+- **Reusable module foundations:** [`module-boilerplate-vue-inertia`](https://github.com/liberusoftware/module-boilerplate-vue-inertia) and [`module-boilerplate-react-inertia`](https://github.com/liberusoftware/module-boilerplate-react-inertia).
+- **Capability module skeleton catalogs:** [Vue + Inertia (`laravel-inertia-vue.md`)](../../modules/skeletons/laravel-inertia-vue.md) (`@liberusoftware/module-{capability}-vue-inertia`) and [React + Inertia (`laravel-inertia-react.md`)](../../modules/skeletons/laravel-inertia-react.md) (`@liberusoftware/module-{capability}-react-inertia`).
+- **Wayfinder specifications:** [laravel-inertia-vue.md](../../projects/wayfinders/laravel-inertia-vue.md) and [laravel-inertia-react.md](../../projects/wayfinders/laravel-inertia-react.md).
+
+To clone and initialize an existing product Inertia skeleton repository:
+
+```bash
+git clone https://github.com/liberusoftware/project-crm-laravel-inertia-react.git
+cd project-crm-laravel-inertia-react
+composer run setup
+php artisan migrate
+composer run test
+npm run typecheck
+npm run build
+```
+
+The skeleton `composer.json` ships `composer run setup` (`composer install`, `.env` initialization, `key:generate`, `npm ci`, `npm run build`), `composer run dev`, and `composer run test`. Keep installed `/modules` and `/themes` committed in the host repository alongside `composer.lock` and `package-lock.json`.
+
 Follow the [foundation steps](README.md) first. Choose either Vue or React for this host. Both use Laravel routes and sessions with Inertia 3; Nuxt and Next.js have separate API-consuming shells. These examples deliberately use manual page resolution and client rendering, which the official [Vue adapter source](https://github.com/inertiajs/inertia/blob/3.x/packages/vue3/src/createInertiaApp.ts) and [React adapter source](https://github.com/inertiajs/inertia/blob/3.x/packages/react/src/createInertiaApp.ts) support. SSR is a separate configuration step below.
 
 ## 1. Prepare the Laravel skeleton

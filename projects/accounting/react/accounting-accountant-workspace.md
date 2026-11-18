@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Accountant Workspace:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Client/entity portfolio:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Status:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Deadlines:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Alerts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Access:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Notes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Requests:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Recent changes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Drill-through:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-accountant-workspace`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `client-entity-portfolio`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `status`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `deadlines`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `alerts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `access`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `notes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `requests`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `recent-changes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `drill-through`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,56 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-accountant-workspace` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-accountant-workspace-react-inertia`](https://github.com/liberusoftware/module-accounting-accountant-workspace-react-inertia) (`@liberusoftware/module-accounting-accountant-workspace-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-accountant-workspace.md) · [Core plan](../core/accounting-accountant-workspace.md) · [API plan](../api/accounting-accountant-workspace.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Client/entity portfolio** | Render `client/entity portfolio` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Status** | Render `status` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Deadlines** | Render `deadlines` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Alerts** | Render `alerts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Access** | Render `access` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Notes** | Render `notes` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Requests** | Render `requests` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Recent changes** | Render `recent changes` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Drill-through** | Render `drill-through` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [WorkspaceQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Queries/WorkspaceQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateWorkspaceItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Actions/CreateWorkspaceItem.php) | `public function handle(array $attributes): WorkspaceItem` |
+| [WorkspacePolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-api/src/Policies/WorkspacePolicy.php) | `public function viewAny(?object $user): bool`<br>`public function create(?object $user): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkspaceItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Models/WorkspaceItem.php) | `team_id`, `subject_type`, `subject_id`, `name`, `status`, `next_deadline`, `alerts`, `notes`, `requests`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [WorkspaceController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-api/src/Http/Controllers/WorkspaceController.php) | `public function index(Request $request, WorkspaceQuery $query): mixed`<br>`public function store(Request $request, CreateWorkspaceItem $action): WorkspaceItemResource` |
+
+**Observed route declarations:**
+
+[modules/accounting-accountant-workspace-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/accountant-workspace')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::get('/', [WorkspaceController::class, 'index'])->middleware('ability:accounting.accountant-workspace.read');
+Route::post('/', [WorkspaceController::class, 'store'])->middleware('ability:accounting.accountant-workspace.write');
+```
+<!-- layer-implementation-plan:end -->

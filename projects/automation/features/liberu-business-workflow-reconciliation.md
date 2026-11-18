@@ -18,7 +18,11 @@ The Liberu Business Workflow Reconciliation module owns liberu business workflow
 
 ## 2. Full feature scope
 
-- **Liberu Business Workflow Reconciliation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Workflow run registry:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **State mapping:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reconciliation rules:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recovery coordination:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Audit timeline:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +82,35 @@ The Liberu Business Workflow Reconciliation module owns liberu business workflow
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Workflow run registry** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `workflow run registry`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **State mapping** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `state mapping`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reconciliation rules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reconciliation rules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recovery coordination** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recovery coordination`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Audit timeline** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `audit timeline`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/liberu-business-workflow-reconciliation.md) | [Source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/liberu-business-workflow-reconciliation.md) | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/liberu-business-workflow-reconciliation.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) · [`module-liberu-business-workflow-reconciliation-a2a7004b-filament`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-filament) (`liberusoftware/liberu-business-workflow-reconciliation-a2a7004b-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/liberu-business-workflow-reconciliation.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/liberu-business-workflow-reconciliation.md) | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) · [`module-liberu-business-workflow-reconciliation-a2a7004b-react-inertia`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-react-inertia) (`@liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/liberu-business-workflow-reconciliation.md) | [`project-automation-laravel-inertia-vue`](https://github.com/liberusoftware/project-automation-laravel-inertia-vue) · [`module-liberu-business-workflow-reconciliation-a2a7004b-vue-inertia`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-vue-inertia) (`@liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/liberu-business-workflow-reconciliation.md) | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) · [`module-liberu-business-workflow-reconciliation-a2a7004b-nuxt`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-nuxt) (`@liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-nuxt`) | Standalone Vue SSR client consuming `project-automation-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/liberu-business-workflow-reconciliation.md) | [`project-automation-next-react`](https://github.com/liberusoftware/project-automation-next-react) · [`module-liberu-business-workflow-reconciliation-a2a7004b-nextjs`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-nextjs) (`@liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-nextjs`) | App Router Server/Client components consuming `project-automation-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/liberu-business-workflow-reconciliation.md) | [`project-automation-mobile-react`](https://github.com/liberusoftware/project-automation-mobile-react) · [`module-liberu-business-workflow-reconciliation-a2a7004b-react-native`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-react-native) (`@liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/liberu-business-workflow-reconciliation.md) | [`project-automation-mobile-flutter`](https://github.com/liberusoftware/project-automation-mobile-flutter) · [`module-liberu-business-workflow-reconciliation-a2a7004b-flutter`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-flutter) (`module_liberu_business_workflow_reconciliation_a2a7004b_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/liberu-business-workflow-reconciliation.md) | [`project-automation-dart-mobile`](https://github.com/liberusoftware/project-automation-dart-mobile) · [`module-liberu-business-workflow-reconciliation-a2a7004b-dart-mobile`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-dart-mobile) (`module_liberu_business_workflow_reconciliation_a2a7004b_dart_mobile`)<br>[`project-automation-dart-desktop`](https://github.com/liberusoftware/project-automation-dart-desktop) · [`module-liberu-business-workflow-reconciliation-a2a7004b-dart-desktop`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-dart-desktop) (`module_liberu_business_workflow_reconciliation_a2a7004b_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

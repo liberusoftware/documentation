@@ -18,7 +18,14 @@ The Cms Blocks module owns cms blocks domain behavior. It is the authoritative b
 
 ## 2. Full feature scope
 
-- **Cms Blocks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Typed content blocks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Nesting rules:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Patterns:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reusable/global blocks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Locking:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Transforms:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Previews:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Revision-safe data:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,38 @@ The Cms Blocks module owns cms blocks domain behavior. It is the authoritative b
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Typed content blocks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `typed content blocks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Nesting rules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `nesting rules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Patterns** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `patterns`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reusable/global blocks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reusable/global blocks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Locking** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `locking`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Transforms** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `transforms`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Previews** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `previews`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Revision-safe data** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `revision-safe data`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cms-blocks.md) | [Source map](../SOURCE-MAPPING.md#cms-blocks) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cms-blocks.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cms-blocks.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-blocks-filament`](https://github.com/liberusoftware/module-cms-blocks-filament) (`liberusoftware/cms-blocks-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cms-blocks.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cms-blocks.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-blocks-react-inertia`](https://github.com/liberusoftware/module-cms-blocks-react-inertia) (`@liberusoftware/module-cms-blocks-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cms-blocks.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-blocks-vue-inertia`](https://github.com/liberusoftware/module-cms-blocks-vue-inertia) (`@liberusoftware/module-cms-blocks-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cms-blocks.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-blocks-nuxt`](https://github.com/liberusoftware/module-cms-blocks-nuxt) (`@liberusoftware/module-cms-blocks-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cms-blocks.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-blocks-nextjs`](https://github.com/liberusoftware/module-cms-blocks-nextjs) (`@liberusoftware/module-cms-blocks-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cms-blocks.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-blocks-react-native`](https://github.com/liberusoftware/module-cms-blocks-react-native) (`@liberusoftware/module-cms-blocks-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cms-blocks.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-blocks-flutter`](https://github.com/liberusoftware/module-cms-blocks-flutter) (`module_cms_blocks_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cms-blocks.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-blocks-dart-mobile`](https://github.com/liberusoftware/module-cms-blocks-dart-mobile) (`module_cms_blocks_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-blocks-dart-desktop`](https://github.com/liberusoftware/module-cms-blocks-dart-desktop) (`module_cms_blocks_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

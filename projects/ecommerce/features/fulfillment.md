@@ -92,3 +92,38 @@ The Fulfillment module owns Allocation, pick/pack/ship, partial shipments, digit
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Allocation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `allocation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Pick/pack/ship** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `pick/pack/ship`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Partial shipments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `partial shipments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Digital/service fulfillment** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `digital/service fulfillment`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Substitutions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `substitutions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Proof** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `proof`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Status** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `status`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Customer notification** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `customer notification`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/fulfillment.md) | [Source map](../SOURCE-MAPPING.md#fulfillment) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/fulfillment.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/fulfillment.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-fulfillment-filament`](https://github.com/liberusoftware/module-ecommerce-fulfillment-filament) (`liberusoftware/ecommerce-fulfillment-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/fulfillment.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/fulfillment.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-fulfillment-react-inertia`](https://github.com/liberusoftware/module-ecommerce-fulfillment-react-inertia) (`@liberusoftware/module-ecommerce-fulfillment-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/fulfillment.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-fulfillment-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-fulfillment-vue-inertia) (`@liberusoftware/module-ecommerce-fulfillment-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/fulfillment.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-fulfillment-nuxt`](https://github.com/liberusoftware/module-ecommerce-fulfillment-nuxt) (`@liberusoftware/module-ecommerce-fulfillment-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/fulfillment.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-fulfillment-nextjs`](https://github.com/liberusoftware/module-ecommerce-fulfillment-nextjs) (`@liberusoftware/module-ecommerce-fulfillment-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/fulfillment.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-fulfillment-react-native`](https://github.com/liberusoftware/module-ecommerce-fulfillment-react-native) (`@liberusoftware/module-ecommerce-fulfillment-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/fulfillment.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-fulfillment-flutter`](https://github.com/liberusoftware/module-ecommerce-fulfillment-flutter) (`module_ecommerce_fulfillment_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/fulfillment.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-fulfillment-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-fulfillment-dart-mobile) (`module_ecommerce_fulfillment_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-fulfillment-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-fulfillment-dart-desktop) (`module_ecommerce_fulfillment_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

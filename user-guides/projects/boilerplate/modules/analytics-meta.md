@@ -12,7 +12,7 @@
 
 The intended **Analytics Meta** workspace covers analytics meta domain behavior.
 
-The relevant capability areas are **Analytics Meta**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Meta server-side event mapping**, **Deduplication**, **Consent**, **Hashing**, **Delivery**, **Diagnostics**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

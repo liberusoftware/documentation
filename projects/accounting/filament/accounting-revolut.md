@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Revolut:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Account synchronization:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Transaction synchronization:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Single payments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Bulk payment drafts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Token refresh:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-revolut`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `account-synchronization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `transaction-synchronization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `single-payments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `bulk-payment-drafts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `token-refresh`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-revolut` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-revolut-filament`](https://github.com/liberusoftware/module-accounting-revolut-filament) (`liberusoftware/accounting-revolut-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-revolut.md) · [API plan](../api/accounting-revolut.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Account synchronization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `account synchronization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Transaction synchronization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `transaction synchronization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Single payments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `single payments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Bulk payment drafts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `bulk payment drafts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Token refresh** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `token refresh`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

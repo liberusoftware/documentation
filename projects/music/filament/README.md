@@ -1,32 +1,36 @@
 # Liberu Music: Filament
 
+<!-- catalogue-status:start -->
+This index preserves **22 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 **Status: proposed design.** These are requirements and design identifiers, not verified source packages, published artifacts or implemented features.
 
 Operator resources for projects, content, permissions, compatibility and job recovery. Filament does not execute the low-latency DAW timeline.
 
 See [product scope](../MUSIC.md), [architecture](../ARCHITECTURE.md), [surface support](../PRESENTATION.md) and [foundation adoption](../FOUNDATION.md). All 22 capabilities have a plan here; a plan does not imply equal feature support on every surface.
 
-| Module | Responsibility |
-| --- | --- |
-| [Projects and Sessions](projects.md) | Project documents, tracks, folders, templates, revision history, autosave and portable session manifests |
-| [Audio Engine and Transport](audio-engine.md) | Native audio graph, sample clock, play/stop/seek, buffers, latency compensation and offline graph rendering |
-| [Audio Devices and Monitoring](audio-devices.md) | Device discovery, input/output channel mapping, sample rates, buffer sizes and direct/software monitoring |
-| [Recording and Take Comping](recording.md) | Track arming, count-in, punch and loop recording, take lanes, comp segments and recoverable disk writes |
-| [Arrangement and Audio Editing](arrangement.md) | Timeline clips, fades, splits, slip edits, crossfades, markers, warp anchors and nondestructive pitch/time changes |
-| [Clip Launcher and Scenes](clip-launcher.md) | Quantized clip launch, scenes, follow actions and recording performances into the arrangement |
-| [MIDI and Expressive Editing](midi-sequencing.md) | Piano roll, drum editor, step entry, controller lanes, note expression, MPE and MIDI import/export |
-| [Tempo, Meter and Groove](tempo-groove.md) | Tempo maps, meter changes, groove templates, swing, metronome and musical/sample-time conversion |
-| [Instruments and Samplers](instruments.md) | Built-in synth, drum machine, sampler, multisamples, voice allocation and portable instrument presets |
-| [Audio Effects and Amp Processing](effects.md) | EQ, dynamics, delay, reverb, modulation effects and independently designed amp/cabinet processing |
-| [Plugin Hosting and Isolation](plugin-hosting.md) | Plugin discovery, scanning, process isolation, state snapshots, compatibility and missing-plugin recovery |
-| [Mixer and Routing](mixer-routing.md) | Channels, buses, sends, sidechains, pan, gain, groups, solo/mute and routing snapshots |
-| [Automation and Modulation](automation-modulation.md) | Parameter automation lanes, read/write/touch/latch modes, envelopes, LFOs and modulation mappings |
-| [Composition, Chords and Score](composition-score.md) | Chord tracks, scales, voicings, articulation maps and notation views with printable parts |
-| [Media Library and Content](media-library.md) | Content-addressed audio assets, waveform peaks, metadata, tags, search, packs and rights provenance |
-| [Presets, Racks and Templates](presets.md) | Versioned instrument/effect presets, device racks, macros and reusable session templates |
-| [Controllers and Hardware Integration](controllers.md) | MIDI port mapping, controller learn, control surfaces, feedback and external clock synchronization |
-| [Collaboration and Review](collaboration.md) | Project membership integration, revision sharing, comments, review markers, locks and conflict branches |
-| [Offline Storage and Synchronization](sync-offline.md) | Local journals, pinned assets, resumable transfer, revision reconciliation and storage quotas |
-| [Export, Mastering and Delivery](export-mastering.md) | Offline bounce, stems, freeze/flatten, dithering, loudness/true-peak analysis and delivery manifests |
-| [Video and Timecode](video-timecode.md) | Reference video, frame-rate-aware timeline display, timecode offsets and audio-to-picture synchronization |
-| [Live Performance and Setlists](live-performance.md) | Setlists, cue preparation, preloaded projects, scene transitions and performance recovery |
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Arrangement and Audio Editing — Filament](arrangement.md) | [Target/source map](../SOURCE-MAPPING.md#arrangement) | [core](../core/arrangement.md) · [api](../api/arrangement.md) · [nextjs](../nextjs/arrangement.md) |
+| [Audio Devices and Monitoring — Filament](audio-devices.md) | [Target/source map](../SOURCE-MAPPING.md#audio-devices) | [core](../core/audio-devices.md) · [api](../api/audio-devices.md) · [nextjs](../nextjs/audio-devices.md) |
+| [Audio Engine and Transport — Filament](audio-engine.md) | [Target/source map](../SOURCE-MAPPING.md#audio-engine) | [core](../core/audio-engine.md) · [api](../api/audio-engine.md) · [nextjs](../nextjs/audio-engine.md) |
+| [Automation and Modulation — Filament](automation-modulation.md) | [Target/source map](../SOURCE-MAPPING.md#automation-modulation) | [core](../core/automation-modulation.md) · [api](../api/automation-modulation.md) · [nextjs](../nextjs/automation-modulation.md) |
+| [Clip Launcher and Scenes — Filament](clip-launcher.md) | [Target/source map](../SOURCE-MAPPING.md#clip-launcher) | [core](../core/clip-launcher.md) · [api](../api/clip-launcher.md) · [nextjs](../nextjs/clip-launcher.md) |
+| [Collaboration and Review — Filament](collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#collaboration) | [core](../core/collaboration.md) · [api](../api/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Composition, Chords and Score — Filament](composition-score.md) | [Target/source map](../SOURCE-MAPPING.md#composition-score) | [core](../core/composition-score.md) · [api](../api/composition-score.md) · [nextjs](../nextjs/composition-score.md) |
+| [Controllers and Hardware Integration — Filament](controllers.md) | [Target/source map](../SOURCE-MAPPING.md#controllers) | [core](../core/controllers.md) · [api](../api/controllers.md) · [nextjs](../nextjs/controllers.md) |
+| [Audio Effects and Amp Processing — Filament](effects.md) | [Target/source map](../SOURCE-MAPPING.md#effects) | [core](../core/effects.md) · [api](../api/effects.md) · [nextjs](../nextjs/effects.md) |
+| [Export, Mastering and Delivery — Filament](export-mastering.md) | [Target/source map](../SOURCE-MAPPING.md#export-mastering) | [core](../core/export-mastering.md) · [api](../api/export-mastering.md) · [nextjs](../nextjs/export-mastering.md) |
+| [Instruments and Samplers — Filament](instruments.md) | [Target/source map](../SOURCE-MAPPING.md#instruments) | [core](../core/instruments.md) · [api](../api/instruments.md) · [nextjs](../nextjs/instruments.md) |
+| [Live Performance and Setlists — Filament](live-performance.md) | [Target/source map](../SOURCE-MAPPING.md#live-performance) | [core](../core/live-performance.md) · [api](../api/live-performance.md) · [nextjs](../nextjs/live-performance.md) |
+| [Media Library and Content — Filament](media-library.md) | [Target/source map](../SOURCE-MAPPING.md#media-library) | [core](../core/media-library.md) · [api](../api/media-library.md) · [nextjs](../nextjs/media-library.md) |
+| [MIDI and Expressive Editing — Filament](midi-sequencing.md) | [Target/source map](../SOURCE-MAPPING.md#midi-sequencing) | [core](../core/midi-sequencing.md) · [api](../api/midi-sequencing.md) · [nextjs](../nextjs/midi-sequencing.md) |
+| [Mixer and Routing — Filament](mixer-routing.md) | [Target/source map](../SOURCE-MAPPING.md#mixer-routing) | [core](../core/mixer-routing.md) · [api](../api/mixer-routing.md) · [nextjs](../nextjs/mixer-routing.md) |
+| [Plugin Hosting and Isolation — Filament](plugin-hosting.md) | [Target/source map](../SOURCE-MAPPING.md#plugin-hosting) | [core](../core/plugin-hosting.md) · [api](../api/plugin-hosting.md) · [nextjs](../nextjs/plugin-hosting.md) |
+| [Presets, Racks and Templates — Filament](presets.md) | [Target/source map](../SOURCE-MAPPING.md#presets) | [core](../core/presets.md) · [api](../api/presets.md) · [nextjs](../nextjs/presets.md) |
+| [Projects and Sessions — Filament](projects.md) | [Target/source map](../SOURCE-MAPPING.md#projects) | [core](../core/projects.md) · [api](../api/projects.md) · [nextjs](../nextjs/projects.md) |
+| [Recording and Take Comping — Filament](recording.md) | [Target/source map](../SOURCE-MAPPING.md#recording) | [core](../core/recording.md) · [api](../api/recording.md) · [nextjs](../nextjs/recording.md) |
+| [Offline Storage and Synchronization — Filament](sync-offline.md) | [Target/source map](../SOURCE-MAPPING.md#sync-offline) | [core](../core/sync-offline.md) · [api](../api/sync-offline.md) · [nextjs](../nextjs/sync-offline.md) |
+| [Tempo, Meter and Groove — Filament](tempo-groove.md) | [Target/source map](../SOURCE-MAPPING.md#tempo-groove) | [core](../core/tempo-groove.md) · [api](../api/tempo-groove.md) · [nextjs](../nextjs/tempo-groove.md) |
+| [Video and Timecode — Filament](video-timecode.md) | [Target/source map](../SOURCE-MAPPING.md#video-timecode) | [core](../core/video-timecode.md) · [api](../api/video-timecode.md) · [nextjs](../nextjs/video-timecode.md) |

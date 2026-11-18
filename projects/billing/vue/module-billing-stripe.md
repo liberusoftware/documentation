@@ -18,7 +18,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Billing Stripe:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Consolidate into shared liberusoftware/payment-stripe:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **PaymentIntent and SetupIntent orchestration:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Payment capture and idempotent refunds:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Stripe-Signature webhook verification and normalization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Dispute defense and settlement reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Provider references and gateway driver bridge:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-billing-stripe`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `consolidate-into-shared-liberusoftware-payment-stripe`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `paymentintent-and-setupintent-orchestration`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `payment-capture-and-idempotent-refunds`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `stripe-signature-webhook-verification-and-normalization`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `dispute-defense-and-settlement-reconciliation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `provider-references-and-gateway-driver-bridge`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,28 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-billing-stripe` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-billing-stripe-vue-inertia`](https://github.com/liberusoftware/module-billing-stripe-vue-inertia) (`@liberusoftware/module-billing-stripe-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-billing-stripe.md) · [Core plan](../core/module-billing-stripe.md) · [API plan](../api/module-billing-stripe.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Consolidate into shared liberusoftware/payment-stripe** | Render `consolidate into shared liberusoftware/payment-stripe` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **PaymentIntent and SetupIntent orchestration** | Render `paymentintent and setupintent orchestration` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Payment capture and idempotent refunds** | Render `payment capture and idempotent refunds` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Stripe-Signature webhook verification and normalization** | Render `stripe-signature webhook verification and normalization` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Dispute defense and settlement reconciliation** | Render `dispute defense and settlement reconciliation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Provider references and gateway driver bridge** | Render `provider references and gateway driver bridge` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Search:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Permission-aware global search:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Saved views:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Filters:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Related-record search:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Recents:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Suggestions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Index reconciliation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `search`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `permission-aware-global-search`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `saved-views`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `filters`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `related-record-search`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `recents`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `suggestions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `index-reconciliation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,35 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `search` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/search.md) · [API plan](../api/search.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Permission-aware global search** | Expose a focused Livewire 4 component and namespaced Blade default view for `permission-aware global search` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Saved views** | Expose a focused Livewire 4 component and namespaced Blade default view for `saved views` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Filters** | Expose a focused Livewire 4 component and namespaced Blade default view for `filters` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Related-record search** | Expose a focused Livewire 4 component and namespaced Blade default view for `related-record search` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Recents** | Expose a focused Livewire 4 component and namespaced Blade default view for `recents` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Suggestions** | Expose a focused Livewire 4 component and namespaced Blade default view for `suggestions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Index reconciliation** | Expose a focused Livewire 4 component and namespaced Blade default view for `index reconciliation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/search-livewire/src/Livewire/Overview.php) · [SearchLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/search-livewire/src/SearchLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [SearchIndexer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/search/src/Contracts/SearchIndexer.php) | `public function index(string $type, Model $record): void`<br>`public function remove(string $type, string\|int $id): void`<br>`public function flush(string $type): void` |
+| [LocalSearchIndexer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/search/src/Services/LocalSearchIndexer.php) | `public function index(string $type, Model $record): void`<br>`public function remove(string $type, string\|int $id): void`<br>`public function flush(string $type): void` |
+| [SearchService.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/search/src/Services/SearchService.php) | `public function __construct(private readonly SearcherRegistry $searchers)`<br>`public function searchUsers(array $filters): LengthAwarePaginator`<br>`public function searchAll(array $filters): array` |
+<!-- layer-implementation-plan:end -->

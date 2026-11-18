@@ -37,7 +37,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `spam/rate-controls`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `spam-rate-controls`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `consent`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `submissions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `encryption`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -58,3 +58,31 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-form-operations` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-form-operations-filament`](https://github.com/liberusoftware/module-cms-form-operations-filament) (`liberusoftware/cms-form-operations-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/form-operations.md) · [API plan](../api/form-operations.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Spam/rate controls** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `spam/rate controls`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Consent** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `consent`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Submissions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `submissions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Encryption** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `encryption`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retention** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retention`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Notifications** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `notifications`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Exports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `exports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Workflow actions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `workflow actions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **CRM adapters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `crm adapters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

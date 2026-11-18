@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Analytics Core:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Provider-neutral events:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Identity/consent context:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Destinations:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Routing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Deduplication:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Delivery audit:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `analytics-core`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `provider-neutral-events`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `identity-consent-context`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `destinations`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `routing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `deduplication`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `delivery-audit`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,39 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `analytics-core` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/analytics-core.md)) |
+| Capability Nuxt module skeleton | [`module-analytics-core-nuxt`](https://github.com/liberusoftware/module-analytics-core-nuxt) (`@liberusoftware/module-analytics-core-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Provider-neutral events** | Expose composable and Vue 3 component for `provider-neutral events` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/analytics-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Identity/consent context** | Expose composable and Vue 3 component for `identity/consent context` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/analytics-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Destinations** | Expose composable and Vue 3 component for `destinations` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/analytics-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Routing** | Expose composable and Vue 3 component for `routing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/analytics-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Deduplication** | Expose composable and Vue 3 component for `deduplication` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/analytics-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Delivery audit** | Expose composable and Vue 3 component for `delivery audit` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/analytics-core.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [StatusController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/analytics-core-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/analytics-core-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/analytics-core-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/analytics-core')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('analytics-core-api.status');
+```
+<!-- layer-implementation-plan:end -->

@@ -40,3 +40,34 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Starter module manifest verification** | Model `starter module manifest verification` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Service provider and route registration check** | Model `service provider and route registration check` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Sample authorized query and action boundary** | Model `sample authorized query and action boundary` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Theme default view resolution smoke check** | Model `theme default view resolution smoke check` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Package testbench verification** | Model `package testbench verification` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_01_01_000100_create_hello_greetings_table.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/database/migrations/2026_01_01_000100_create_hello_greetings_table.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [GreeterInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Contracts/GreeterInterface.php) | `public function greet(string $name): string` |
+| [Greeter.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Services/Greeter.php) | `public function __construct(private string $template)`<br>`public function greet(string $name): string` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Greeting.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Models/Greeting.php) | `name`, `message` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/module-cms-hello.md) · [Filament 5](../filament/module-cms-hello.md) · [Livewire 4](../livewire/module-cms-hello.md) · [React + Inertia](../react/module-cms-hello.md) · [Vue + Inertia](../vue/module-cms-hello.md) · [Nuxt 4](../nuxt/module-cms-hello.md) · [Next.js](../nextjs/module-cms-hello.md) · [React Native](../react-native/module-cms-hello.md) · [Flutter & Dart](../flutter/module-cms-hello.md)
+<!-- core-implementation-plan:end -->

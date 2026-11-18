@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Cms Rich Text Editor:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Semantic rich text:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Links:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tables:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Embeds:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Code:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Paste cleanup:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Accessibility hints:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Formats:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Sanitization:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-cms-rich-text-editor`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `semantic-rich-text`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `links`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tables`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `embeds`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `code`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `paste-cleanup`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `accessibility-hints`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `formats`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `sanitization`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,35 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-cms-rich-text-editor` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-cms-rich-text-editor.md) · [API plan](../api/module-cms-rich-text-editor.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Semantic rich text** | Expose a focused Livewire 4 component and namespaced Blade default view for `semantic rich text` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Links** | Expose a focused Livewire 4 component and namespaced Blade default view for `links` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tables** | Expose a focused Livewire 4 component and namespaced Blade default view for `tables` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Embeds** | Expose a focused Livewire 4 component and namespaced Blade default view for `embeds` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Code** | Expose a focused Livewire 4 component and namespaced Blade default view for `code` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Paste cleanup** | Expose a focused Livewire 4 component and namespaced Blade default view for `paste cleanup` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Accessibility hints** | Expose a focused Livewire 4 component and namespaced Blade default view for `accessibility hints` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Formats** | Expose a focused Livewire 4 component and namespaced Blade default view for `formats` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Sanitization** | Expose a focused Livewire 4 component and namespaced Blade default view for `sanitization` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Editor.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-rich-text-editor-livewire/src/Livewire/Editor.php) · [RichTextEditorLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-rich-text-editor-livewire/src/RichTextEditorLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RichTextService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-rich-text-editor/src/Services/RichTextService.php) | `public function __construct(private HtmlSanitizer $sanitizer)`<br>`public function sanitize(?string $html): string`<br>`public function cleanPaste(string $html): string`<br>`public function prepare(string $html, string $format = 'html'): array`<br>`public function accessibilityHints(string $html): array`<br>`public function embed(string $url, ?string $title = null): string` |
+<!-- layer-implementation-plan:end -->

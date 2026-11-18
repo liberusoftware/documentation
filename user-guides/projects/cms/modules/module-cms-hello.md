@@ -12,7 +12,7 @@
 
 The intended **Cms Hello** workspace covers cms hello domain behavior.
 
-The relevant capability areas are **Cms Hello**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Starter module manifest verification**, **Service provider and route registration check**, **Sample authorized query and action boundary**, **Theme default view resolution smoke check**, **Package testbench verification**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

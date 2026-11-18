@@ -18,7 +18,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Cms:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Sites and locales:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Content lifecycle primitives:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Routing and slug resolution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Editorial policy hooks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Domain events and audit context:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `cms`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `sites-and-locales`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `content-lifecycle-primitives`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `routing-and-slug-resolution`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `editorial-policy-hooks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `domain-events-and-audit-context`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,30 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `cms` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-cms-vue-inertia`](https://github.com/liberusoftware/module-cms-cms-vue-inertia) (`@liberusoftware/module-cms-cms-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/cms.md) · [Core plan](../core/cms.md) · [API plan](../api/cms.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Sites and locales** | Render `sites and locales` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Content lifecycle primitives** | Render `content lifecycle primitives` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Routing and slug resolution** | Render `routing and slug resolution` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Editorial policy hooks** | Render `editorial policy hooks` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Domain events and audit context** | Render `domain events and audit context` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [OpenApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/OpenApiController.php) | `public function __construct(private OpenApiGenerator $generator)`<br>`public function __invoke(): JsonResponse` |
+| [PreviewController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/PreviewController.php) | `public function __construct( private PreviewRegistryInterface $registry, private TenantContextInterface $tenant, )`<br>`public function __invoke(Request $request, string $type, int $id): JsonResource` |
+<!-- layer-implementation-plan:end -->

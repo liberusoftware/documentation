@@ -90,3 +90,37 @@ The Matching module owns Applicant requirements, affordability, preferences, sco
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Applicant requirements** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `applicant requirements`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Affordability** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `affordability`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Preferences** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `preferences`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Scoring** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `scoring`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Alerts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `alerts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Feedback** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `feedback`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Exclusions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `exclusions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/matching.md) | [Source map](../SOURCE-MAPPING.md#matching) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/matching.md) | [`project-real-estate-laravel-api`](https://github.com/liberusoftware/project-real-estate-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/matching.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) · [`module-real-estate-matching-filament`](https://github.com/liberusoftware/module-real-estate-matching-filament) (`liberusoftware/real-estate-matching-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/matching.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/matching.md) | [`project-real-estate-laravel-inertia-react`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-react) · [`module-real-estate-matching-react-inertia`](https://github.com/liberusoftware/module-real-estate-matching-react-inertia) (`@liberusoftware/module-real-estate-matching-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/matching.md) | [`project-real-estate-laravel-inertia-vue`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-vue) · [`module-real-estate-matching-vue-inertia`](https://github.com/liberusoftware/module-real-estate-matching-vue-inertia) (`@liberusoftware/module-real-estate-matching-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/matching.md) | [`project-real-estate-nuxt-vue`](https://github.com/liberusoftware/project-real-estate-nuxt-vue) · [`module-real-estate-matching-nuxt`](https://github.com/liberusoftware/module-real-estate-matching-nuxt) (`@liberusoftware/module-real-estate-matching-nuxt`) | Standalone Vue SSR client consuming `project-real-estate-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/matching.md) | [`project-real-estate-next-react`](https://github.com/liberusoftware/project-real-estate-next-react) · [`module-real-estate-matching-nextjs`](https://github.com/liberusoftware/module-real-estate-matching-nextjs) (`@liberusoftware/module-real-estate-matching-nextjs`) | App Router Server/Client components consuming `project-real-estate-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/matching.md) | [`project-real-estate-mobile-react`](https://github.com/liberusoftware/project-real-estate-mobile-react) · [`module-real-estate-matching-react-native`](https://github.com/liberusoftware/module-real-estate-matching-react-native) (`@liberusoftware/module-real-estate-matching-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/matching.md) | [`project-real-estate-mobile-flutter`](https://github.com/liberusoftware/project-real-estate-mobile-flutter) · [`module-real-estate-matching-flutter`](https://github.com/liberusoftware/module-real-estate-matching-flutter) (`module_real_estate_matching_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/matching.md) | [`project-real-estate-dart-mobile`](https://github.com/liberusoftware/project-real-estate-dart-mobile) · [`module-real-estate-matching-dart-mobile`](https://github.com/liberusoftware/module-real-estate-matching-dart-mobile) (`module_real_estate_matching_dart_mobile`)<br>[`project-real-estate-dart-desktop`](https://github.com/liberusoftware/project-real-estate-dart-desktop) · [`module-real-estate-matching-dart-desktop`](https://github.com/liberusoftware/module-real-estate-matching-dart-desktop) (`module_real_estate_matching_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

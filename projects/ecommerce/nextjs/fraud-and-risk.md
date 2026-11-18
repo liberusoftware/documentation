@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `planned:ecommerce:fraud-and-risk`.
+**Adapter group:** `planned:ecommerce:fraud-and-risk`.<br>
+**Matching domain module:** `fraud-and-risk`
 
 **Proposed design identifier:** `module-ecommerce-fraud-and-risk-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/fraud-and-risk.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/fraud-and-risk.md)) |
+| Capability Next.js module skeleton | [module-ecommerce-fraud-and-risk-nextjs](https://github.com/liberusoftware/module-ecommerce-fraud-and-risk-nextjs) (`@liberusoftware/module-ecommerce-fraud-and-risk-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 No dedicated API package name match is established among the mapped consumers of this core identity. Review routes in the core/application tree and define an authorized HTTP contract before implementing browser mutations; PHP actions are not directly callable by JavaScript.
 
@@ -18,17 +25,17 @@ Ecommerce implementation also lives outside `modules/`. Preserve this scope and 
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Rules | A focused authorized view or workflow section for rules; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Velocity | A focused authorized view or workflow section for velocity; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Identity/device/provider signals | A focused authorized view or workflow section for identity/device/provider signals; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Review queues | A focused authorized view or workflow section for review queues; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Holds | A focused authorized view or workflow section for holds; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Decisions | A focused authorized view or workflow section for decisions; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Evidence | A focused authorized view or workflow section for evidence; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Chargeback feedback | A focused authorized view or workflow section for chargeback feedback; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Provider adapters | A focused authorized view or workflow section for provider adapters; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Rules** | Server Component loads authorized `rules` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Velocity** | Server Component loads authorized `velocity` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Identity/device/provider signals** | Server Component loads authorized `identity/device/provider signals` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Review queues** | Server Component loads authorized `review queues` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Holds** | Server Component loads authorized `holds` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Decisions** | Server Component loads authorized `decisions` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Evidence** | Server Component loads authorized `evidence` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Chargeback feedback** | Server Component loads authorized `chargeback feedback` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Provider adapters** | Server Component loads authorized `provider adapters` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-ecommerce-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 

@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Sites and locales:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Content lifecycle primitives:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Routing and slug resolution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Editorial policy hooks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Domain events and audit context:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `sites-and-locales`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `content-lifecycle-primitives`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `routing-and-slug-resolution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `editorial-policy-hooks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `domain-events-and-audit-context`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,25 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms.md) · [API plan](../api/cms.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Sites and locales** | Expose a focused Livewire 4 component and namespaced Blade default view for `sites and locales` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Content lifecycle primitives** | Expose a focused Livewire 4 component and namespaced Blade default view for `content lifecycle primitives` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Routing and slug resolution** | Expose a focused Livewire 4 component and namespaced Blade default view for `routing and slug resolution` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Editorial policy hooks** | Expose a focused Livewire 4 component and namespaced Blade default view for `editorial policy hooks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Domain events and audit context** | Expose a focused Livewire 4 component and namespaced Blade default view for `domain events and audit context` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+<!-- layer-implementation-plan:end -->

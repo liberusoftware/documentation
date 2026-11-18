@@ -18,6 +18,7 @@ New to an application? Begin with [getting started](../GETTING-STARTED.md). For 
 | [Liberu Genealogy](genealogy/README.md) | Family history | [Modules](genealogy/modules/README.md) |
 | [Liberu Business Platform](liberu/README.md) | Cross-product platform | [Modules](liberu/modules/README.md) |
 | [Liberu Maintenance](maintenance/README.md) | Assets and field work | [Modules](maintenance/modules/README.md) |
+| [Liberu Music DAW](music/README.md) | Audio production and performance | [Modules](music/modules/README.md) |
 | [Liberu Real Estate](real-estate/README.md) | Property | [Modules](real-estate/modules/README.md) |
 | [Liberu Enterprise Resource Planning](sap/README.md) | Enterprise operations | [Modules](sap/modules/README.md) |
 | [Liberu Social Network](social-network/README.md) | Community | [Modules](social-network/modules/README.md) |

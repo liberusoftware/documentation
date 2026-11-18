@@ -12,7 +12,7 @@
 
 The intended **Cms Admin** workspace covers cms admin domain behavior.
 
-The relevant capability areas are **Cms Admin**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Editorial workspaces**, **Role-aware navigation**, **Saved views and filters**, **Bulk editorial actions**, **Activity and status widgets**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

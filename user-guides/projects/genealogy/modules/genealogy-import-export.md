@@ -12,7 +12,7 @@
 
 The intended **Genealogy Import Export** workspace covers genealogy import export domain behavior.
 
-The relevant capability areas are **Genealogy Import Export**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **GEDCOM and GRAMPS mapping**, **Validation**, **Dry run**, **Duplicate detection**, **Reports**, **Round trip**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -29,7 +29,7 @@ These counts describe documents, not released packages. Consult the [source inve
 | [cms](../../projects/cms/flutter/README.md) | 252 |
 | [control-panel](../../projects/control-panel/flutter/README.md) | 61 |
 | [crm](../../projects/crm/flutter/README.md) | 218 |
-| [ecommerce](../../projects/ecommerce/flutter/README.md) | 107 |
+| [ecommerce](../../projects/ecommerce/flutter/README.md) | 108 |
 | [genealogy](../../projects/genealogy/flutter/README.md) | 62 |
 | [liberu](../../projects/liberu/flutter/README.md) | 4 |
 | [maintenance](../../projects/maintenance/flutter/README.md) | 60 |

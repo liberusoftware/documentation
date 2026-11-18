@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms Related Content:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Manual/rule/search-driven relationships:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Similarity:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Recency:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Taxonomy:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Exclusions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Explainability:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Fallback:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms-related-content`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `manual-rule-search-driven-relationships`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `similarity`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `recency`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `taxonomy`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `exclusions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `explainability`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `fallback`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,37 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-related-content` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms-related-content.md) · [API plan](../api/cms-related-content.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Manual/rule/search-driven relationships** | Expose a focused Livewire 4 component and namespaced Blade default view for `manual/rule/search-driven relationships` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Similarity** | Expose a focused Livewire 4 component and namespaced Blade default view for `similarity` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Recency** | Expose a focused Livewire 4 component and namespaced Blade default view for `recency` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Taxonomy** | Expose a focused Livewire 4 component and namespaced Blade default view for `taxonomy` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Exclusions** | Expose a focused Livewire 4 component and namespaced Blade default view for `exclusions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Explainability** | Expose a focused Livewire 4 component and namespaced Blade default view for `explainability` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Fallback** | Expose a focused Livewire 4 component and namespaced Blade default view for `fallback` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [RelatedContentList.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-related-content-livewire/src/Livewire/RelatedContentList.php) · [RelatedContentLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-related-content-livewire/src/RelatedContentLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RelatedContentService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-related-content/src/Services/RelatedContentService.php) | `public function relate(string $sourceType, int $sourceId, string $targetType, int $targetId, string $mode = 'manual', float $score = 1, array $taxonomy = [], ?int $teamId = null): RelatedContent`<br>`public function exclude(string $sourceType, int $sourceId, string $targetType, int $targetId, ?int $teamId = null): RelatedContent`<br>`public function remove(string $sourceType, int $sourceId, string $targetType, int $targetId, ?int $teamId = null): int`<br>`public function related(string $sourceType, int $sourceId, int $limit = 10, array $taxonomy = [], ?int $teamId = null): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [RelatedContent.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-related-content/src/Models/RelatedContent.php) | `source_type`, `source_id`, `target_type`, `target_id`, `mode`, `score`, `explanation`, `taxonomy`, `excluded`, `team_id` |
+<!-- layer-implementation-plan:end -->

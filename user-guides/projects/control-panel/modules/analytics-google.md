@@ -12,7 +12,7 @@
 
 The intended **Analytics Google** workspace covers analytics google domain behavior.
 
-The relevant capability areas are **Analytics Google**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Google Analytics event mapping**, **Property/stream configuration**, **Consent-aware delivery**, **Diagnostics**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

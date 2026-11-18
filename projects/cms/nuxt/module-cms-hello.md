@@ -18,7 +18,11 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Hello:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Starter module manifest verification:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Service provider and route registration check:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Sample authorized query and action boundary:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Theme default view resolution smoke check:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Package testbench verification:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +33,11 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `module-cms-hello`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `starter-module-manifest-verification`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `service-provider-and-route-registration-check`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `sample-authorized-query-and-action-boundary`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `theme-default-view-resolution-smoke-check`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `package-testbench-verification`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +58,47 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `module-cms-hello` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/module-cms-hello.md)) |
+| Capability Nuxt module skeleton | [`module-cms-hello-nuxt`](https://github.com/liberusoftware/module-cms-hello-nuxt) (`@liberusoftware/module-cms-hello-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Starter module manifest verification** | Expose composable and Vue 3 component for `starter module manifest verification` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-hello.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Service provider and route registration check** | Expose composable and Vue 3 component for `service provider and route registration check` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-hello.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Sample authorized query and action boundary** | Expose composable and Vue 3 component for `sample authorized query and action boundary` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-hello.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Theme default view resolution smoke check** | Expose composable and Vue 3 component for `theme default view resolution smoke check` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-hello.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Package testbench verification** | Expose composable and Vue 3 component for `package testbench verification` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-hello.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [GreeterInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Contracts/GreeterInterface.php) | `public function greet(string $name): string` |
+| [Greeter.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Services/Greeter.php) | `public function __construct(private string $template)`<br>`public function greet(string $name): string` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Greeting.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Models/Greeting.php) | `name`, `message` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [GreetingApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Http/Controllers/GreetingApiController.php) | `public function index(): AnonymousResourceCollection` |
+| [HelloController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Http/Controllers/HelloController.php) | `public function __construct( private GreeterInterface $greeter, private EventBusInterface $events, )`<br>`public function __invoke(string $name = 'world'): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/cms-hello/routes/api.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/routes/api.php)
+
+```php
+Route::get('api/v1/hello/{name?}', HelloController::class)->name('cms.hello.greet');
+```
+<!-- layer-implementation-plan:end -->

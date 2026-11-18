@@ -18,7 +18,19 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm Template Snapshots:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Versioned bundles of fields:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Pipelines:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Workflows:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Forms:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Funnels:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Calendars:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Templates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Dashboards:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Settings with preview:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Protected sharing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Install:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Update:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Rollback:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +41,19 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-template-snapshots`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `versioned-bundles-of-fields`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `pipelines`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `workflows`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `forms`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `funnels`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `calendars`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `templates`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `dashboards`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `settings-with-preview`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `protected-sharing`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `install`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `update`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `rollback`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +84,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-template-snapshots` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-crm-template-snapshots-react-inertia`](https://github.com/liberusoftware/module-crm-crm-template-snapshots-react-inertia) (`@liberusoftware/module-crm-crm-template-snapshots-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-template-snapshots.md) · [Core plan](../core/crm-template-snapshots.md) · [API plan](../api/crm-template-snapshots.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Versioned bundles of fields** | Render `versioned bundles of fields` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Pipelines** | Render `pipelines` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Workflows** | Render `workflows` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Forms** | Render `forms` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Funnels** | Render `funnels` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Calendars** | Render `calendars` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Templates** | Render `templates` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Dashboards** | Render `dashboards` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Settings with preview** | Render `settings with preview` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Protected sharing** | Render `protected sharing` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Install** | Render `install` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Update** | Render `update` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Rollback** | Render `rollback` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

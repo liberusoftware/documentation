@@ -18,7 +18,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Revisions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Immutable revisions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Autosave:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Compare:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Restore:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Branching:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Attribution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Retention:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Published-versus-working copies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-cms-revisions`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `immutable-revisions`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `autosave`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `compare`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `restore`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `branching`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `attribution`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `retention`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `published-versus-working-copies`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,32 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-revisions` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-revisions-vue-inertia`](https://github.com/liberusoftware/module-cms-revisions-vue-inertia) (`@liberusoftware/module-cms-revisions-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-cms-revisions.md) · [Core plan](../core/module-cms-revisions.md) · [API plan](../api/module-cms-revisions.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Immutable revisions** | Render `immutable revisions` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Autosave** | Render `autosave` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Compare** | Render `compare` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Restore** | Render `restore` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Branching** | Render `branching` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Attribution** | Render `attribution` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Retention** | Render `retention` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Published-versus-working copies** | Render `published-versus-working copies` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RevisionService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-revisions/src/Services/RevisionService.php) | `public function create(string $type, int $id, array $snapshot, ?int $userId = null, string $branch = 'main', bool $autosave = false, array $metadata = []): Revision`<br>`public function autosave(string $type, int $id, array $snapshot, ?int $userId = null, string $branch = 'main'): Revision`<br>`public function compare(Revision $from, Revision $to): array`<br>`public function restore(Revision $revision, ?int $userId = null, string $branch = 'main'): Revision`<br>`public function branch(Revision $revision, string $branch, ?int $userId = null): Revision`<br>`public function publish(Revision $revision): Revision`<br>`public function prune(string $type, int $id, int $retain = 20, string $branch = 'main'): int` |
+<!-- layer-implementation-plan:end -->

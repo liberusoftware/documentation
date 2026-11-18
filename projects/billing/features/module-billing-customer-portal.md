@@ -18,7 +18,15 @@ The Module Billing Customer Portal module owns module billing customer portal do
 
 ## 2. Full feature scope
 
-- **Module Billing Customer Portal:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Profile:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Orders:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Services:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Usage:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Invoices:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Payments:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Tickets:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Changes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Cancellation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Module Billing Customer Portal module owns module billing customer portal do
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Profile** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `profile`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Orders** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `orders`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Services** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `services`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Usage** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `usage`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Invoices** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `invoices`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Payments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `payments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Tickets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `tickets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Changes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `changes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Cancellation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `cancellation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-billing-customer-portal.md) | [Source map](../SOURCE-MAPPING.md#module-billing-customer-portal) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-billing-customer-portal.md) | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-billing-customer-portal.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) · [`module-billing-customer-portal-filament`](https://github.com/liberusoftware/module-billing-customer-portal-filament) (`liberusoftware/billing-customer-portal-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-billing-customer-portal.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-billing-customer-portal.md) | [`project-billing-laravel-inertia-react`](https://github.com/liberusoftware/project-billing-laravel-inertia-react) · [`module-billing-customer-portal-react-inertia`](https://github.com/liberusoftware/module-billing-customer-portal-react-inertia) (`@liberusoftware/module-billing-customer-portal-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-billing-customer-portal.md) | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) · [`module-billing-customer-portal-vue-inertia`](https://github.com/liberusoftware/module-billing-customer-portal-vue-inertia) (`@liberusoftware/module-billing-customer-portal-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-billing-customer-portal.md) | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) · [`module-billing-customer-portal-nuxt`](https://github.com/liberusoftware/module-billing-customer-portal-nuxt) (`@liberusoftware/module-billing-customer-portal-nuxt`) | Standalone Vue SSR client consuming `project-billing-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-billing-customer-portal.md) | [`project-billing-next-react`](https://github.com/liberusoftware/project-billing-next-react) · [`module-billing-customer-portal-nextjs`](https://github.com/liberusoftware/module-billing-customer-portal-nextjs) (`@liberusoftware/module-billing-customer-portal-nextjs`) | App Router Server/Client components consuming `project-billing-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-billing-customer-portal.md) | [`project-billing-mobile-react`](https://github.com/liberusoftware/project-billing-mobile-react) · [`module-billing-customer-portal-react-native`](https://github.com/liberusoftware/module-billing-customer-portal-react-native) (`@liberusoftware/module-billing-customer-portal-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-billing-customer-portal.md) | [`project-billing-mobile-flutter`](https://github.com/liberusoftware/project-billing-mobile-flutter) · [`module-billing-customer-portal-flutter`](https://github.com/liberusoftware/module-billing-customer-portal-flutter) (`module_billing_customer_portal_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-billing-customer-portal.md) | [`project-billing-dart-mobile`](https://github.com/liberusoftware/project-billing-dart-mobile) · [`module-billing-customer-portal-dart-mobile`](https://github.com/liberusoftware/module-billing-customer-portal-dart-mobile) (`module_billing_customer_portal_dart_mobile`)<br>[`project-billing-dart-desktop`](https://github.com/liberusoftware/project-billing-dart-desktop) · [`module-billing-customer-portal-dart-desktop`](https://github.com/liberusoftware/module-billing-customer-portal-dart-desktop) (`module_billing_customer_portal_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

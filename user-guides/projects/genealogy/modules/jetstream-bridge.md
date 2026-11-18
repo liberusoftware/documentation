@@ -12,7 +12,7 @@
 
 The intended **Jetstream Bridge** workspace covers jetstream bridge domain behavior.
 
-The relevant capability areas are **Jetstream Bridge**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Jetstream-compatible profile**, **Security**, **Team**, **Token**, **Session**, **Account-deletion action contracts**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

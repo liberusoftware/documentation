@@ -18,17 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Affiliates:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Applications:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Links:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Campaigns:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Clicks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Conversions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Commission rules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Payout approvals/exports:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Disputes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Assets:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Portal:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Affiliates and partner profiles:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Applications and onboarding approval:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Links, promo codes, and campaigns:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Clicks and first-party touch attribution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Conversions and cross-product clawback ledger:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Commission rules and tiered calculation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Payout approvals/exports via PayoutSettlementContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Disputes, fraud controls, assets, and partner portal:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -39,17 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `affiliates`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `applications`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `links`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `campaigns`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `clicks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `conversions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `commission-rules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `payout-approvals/exports`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `disputes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `assets`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `portal`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `affiliates-and-partner-profiles`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `applications-and-onboarding-approval`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `links-promo-codes-and-campaigns`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `clicks-and-first-party-touch-attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `conversions-and-cross-product-clawback-ledger`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `commission-rules-and-tiered-calculation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `payout-approvals-exports-via-payoutsettlementcontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `disputes-fraud-controls-assets-and-partner-portal`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -62,3 +56,49 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-affiliate-management` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/affiliate-management.md) · [API plan](../api/affiliate-management.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Affiliates and partner profiles** | Expose a focused Livewire 4 component and namespaced Blade default view for `affiliates and partner profiles` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Applications and onboarding approval** | Expose a focused Livewire 4 component and namespaced Blade default view for `applications and onboarding approval` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Links, promo codes, and campaigns** | Expose a focused Livewire 4 component and namespaced Blade default view for `links, promo codes, and campaigns` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Clicks and first-party touch attribution** | Expose a focused Livewire 4 component and namespaced Blade default view for `clicks and first-party touch attribution` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Conversions and cross-product clawback ledger** | Expose a focused Livewire 4 component and namespaced Blade default view for `conversions and cross-product clawback ledger` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Commission rules and tiered calculation** | Expose a focused Livewire 4 component and namespaced Blade default view for `commission rules and tiered calculation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Payout approvals/exports via PayoutSettlementContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `payout approvals/exports via payoutsettlementcontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Disputes, fraud controls, assets, and partner portal** | Expose a focused Livewire 4 component and namespaced Blade default view for `disputes, fraud controls, assets, and partner portal` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [AffiliateManagementLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-livewire/src/AffiliateManagementLivewireServiceProvider.php) · [AffiliateBrowser.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-livewire/src/Components/AffiliateBrowser.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AffiliateQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Queries/AffiliateQuery.php) | `public function affiliates(int $teamId): Builder`<br>`public function events(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ApplyAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApplyAffiliate.php) | `public function execute(int $teamId, array $input): Affiliate` |
+| [ApproveAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliate.php) | `public function execute(int $teamId, Affiliate $affiliate): Affiliate` |
+| [ApproveAffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliatePayout.php) | `public function execute(int $teamId, int $actorId, AffiliatePayout $payout): AffiliatePayout` |
+| [CreateAffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/CreateAffiliateLink.php) | `public function execute(int $teamId, Affiliate $affiliate, array $input): AffiliateLink` |
+| [RecordAffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/RecordAffiliateEvent.php) | `public function execute(int $teamId, AffiliateLink $link, array $input): AffiliateEvent` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Affiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/Affiliate.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateLink.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliatePayout.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sites and locales:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Content lifecycle primitives:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Routing and slug resolution:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Editorial policy hooks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Domain events and audit context:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sites-and-locales`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `content-lifecycle-primitives`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `routing-and-slug-resolution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `editorial-policy-hooks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `domain-events-and-audit-context`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-cms-filament`](https://github.com/liberusoftware/module-cms-cms-filament) (`liberusoftware/cms-cms-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms.md) · [API plan](../api/cms.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Sites and locales** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sites and locales`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Content lifecycle primitives** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `content lifecycle primitives`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Routing and slug resolution** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `routing and slug resolution`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Editorial policy hooks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `editorial policy hooks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Domain events and audit context** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `domain events and audit context`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ApiTokenResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Filament/ApiTokenResource.php) · [ListApiTokens.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Filament/Pages/ListApiTokens.php).
+<!-- layer-implementation-plan:end -->

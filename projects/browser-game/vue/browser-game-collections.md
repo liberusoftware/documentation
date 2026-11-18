@@ -18,7 +18,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Browser Game Collections:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Achievements:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Titles:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reputation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Pets:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Mounts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Housing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cosmetics:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Collection progress:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `browser-game-collections`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `achievements`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `titles`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `reputation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `pets`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `mounts`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `housing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `cosmetics`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `collection-progress`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,57 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `browser-game-collections` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-browser-game-laravel-inertia-vue`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-browser-game-collections-vue-inertia`](https://github.com/liberusoftware/module-browser-game-collections-vue-inertia) (`@liberusoftware/module-browser-game-collections-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/browser-game-collections.md) · [Core plan](../core/browser-game-collections.md) · [API plan](../api/browser-game-collections.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Achievements** | Render `achievements` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Titles** | Render `titles` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Reputation** | Render `reputation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Pets** | Render `pets` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Mounts** | Render `mounts` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Housing** | Render `housing` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Cosmetics** | Render `cosmetics` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Collection progress** | Render `collection progress` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CollectionsQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-collections/src/Queries/CollectionsQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder`<br>`public function availableAchievements(?string $tenantId, ?string $teamId): Builder`<br>`public function forActor(string $actorId, ?string $tenantId, ?string $teamId): Builder`<br>`public function unlockedForActor(string $actorId, ?string $tenantId, ?string $teamId): Builder` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CollectionEntry.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-collections/src/Models/CollectionEntry.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CollectionProgress.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-collections/src/Models/CollectionProgress.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CollectionsRecord.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-collections/src/Models/CollectionsRecord.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CollectionsController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-collections-api/src/Http/Controllers/CollectionsController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function achievements(Request $request): JsonResponse`<br>`public function unlockedAchievements(Request $request): JsonResponse`<br>`public function show(Request $request, CollectionsRecord $collections): JsonResponse`<br>`public function progress(Request $request): JsonResponse`<br>`public function record(Request $request, CollectionsRecord $collections): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/browser-game-collections-api/routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-collections-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/browser-game/collections')->middleware(['api', 'auth:sanctum', 'throttle:api'])->group(function (): void {
+Route::get('/', [CollectionsController::class, 'index'])->name('browser-game.collections.index');
+Route::post('/', [CollectionsController::class, 'store'])->name('browser-game.collections.store');
+Route::get('/achievements', [CollectionsController::class, 'achievements'])->name('browser-game.collections.achievements');
+Route::get('/achievements/unlocked', [CollectionsController::class, 'unlockedAchievements'])->name('browser-game.collections.achievements.unlocked');
+Route::get('/progress', [CollectionsController::class, 'progress'])->name('browser-game.collections.progress.index');
+Route::post('/{collections}/progress', [CollectionsController::class, 'record'])->name('browser-game.collections.progress');
+Route::get('/{collections}', [CollectionsController::class, 'show'])->name('browser-game.collections.show');
+```
+<!-- layer-implementation-plan:end -->

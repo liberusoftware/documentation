@@ -18,7 +18,13 @@ The Crm Customer Data Platform module owns crm customer data platform domain beh
 
 ## 2. Full feature scope
 
-- **Crm Customer Data Platform:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Source profiles:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Identity resolution:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Unified profiles:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Audience activation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Event ingestion:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Consent-aware calculated attributes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Profile lineage:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Crm Customer Data Platform module owns crm customer data platform domain beh
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Source profiles** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `source profiles`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Identity resolution** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `identity resolution`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Unified profiles** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `unified profiles`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Audience activation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `audience activation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Event ingestion** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `event ingestion`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Consent-aware calculated attributes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `consent-aware calculated attributes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Profile lineage** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `profile lineage`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-customer-data-platform.md) | [Source map](../SOURCE-MAPPING.md#crm-customer-data-platform) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-customer-data-platform.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-customer-data-platform.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-customer-data-platform-filament`](https://github.com/liberusoftware/module-crm-customer-data-platform-filament) (`liberusoftware/crm-customer-data-platform-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-customer-data-platform.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-customer-data-platform.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-customer-data-platform-react-inertia`](https://github.com/liberusoftware/module-crm-customer-data-platform-react-inertia) (`@liberusoftware/module-crm-customer-data-platform-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-customer-data-platform.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-customer-data-platform-vue-inertia`](https://github.com/liberusoftware/module-crm-customer-data-platform-vue-inertia) (`@liberusoftware/module-crm-customer-data-platform-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-customer-data-platform.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-customer-data-platform-nuxt`](https://github.com/liberusoftware/module-crm-customer-data-platform-nuxt) (`@liberusoftware/module-crm-customer-data-platform-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-customer-data-platform.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-customer-data-platform-nextjs`](https://github.com/liberusoftware/module-crm-customer-data-platform-nextjs) (`@liberusoftware/module-crm-customer-data-platform-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-customer-data-platform.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-customer-data-platform-react-native`](https://github.com/liberusoftware/module-crm-customer-data-platform-react-native) (`@liberusoftware/module-crm-customer-data-platform-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-customer-data-platform.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-customer-data-platform-flutter`](https://github.com/liberusoftware/module-crm-customer-data-platform-flutter) (`module_crm_customer_data_platform_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-customer-data-platform.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-customer-data-platform-dart-mobile`](https://github.com/liberusoftware/module-crm-customer-data-platform-dart-mobile) (`module_crm_customer_data_platform_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-customer-data-platform-dart-desktop`](https://github.com/liberusoftware/module-crm-customer-data-platform-dart-desktop) (`module_crm_customer_data_platform_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

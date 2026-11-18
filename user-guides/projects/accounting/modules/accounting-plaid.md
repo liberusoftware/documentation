@@ -12,7 +12,7 @@
 
 The intended **Accounting Plaid** workspace covers accounting plaid domain behavior.
 
-The relevant capability areas are **Accounting Plaid**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Link token integration**, **Incremental transaction sync**, **Institution and balance access**, **Webhook-compatible provider client**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -3,8 +3,10 @@
 This is the technology-specific implementation specification for `dart-mobile` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-dart-mobile
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-dart-mobile
+- Capability skeleton catalog: [`modules/skeletons/dart-mobile.md`](../../modules/skeletons/dart-mobile.md)
 - Presentation layer directory in product docs: `flutter/`
-- Adapter identity pattern: `module-{capability}-flutter`
+- Adapter identity pattern: `module-{capability}-dart-mobile`
 - Consumes product `-laravel-api`: yes
 
 ## Delivery boundary

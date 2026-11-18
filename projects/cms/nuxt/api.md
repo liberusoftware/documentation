@@ -18,7 +18,11 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Api:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Published content delivery endpoints:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Preview tokens and draft access:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Sparse fields and includes:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Cache tags and ETag revalidation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Scoped API rate limits:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +33,11 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `api`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `published-content-delivery-endpoints`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `preview-tokens-and-draft-access`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `sparse-fields-and-includes`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `cache-tags-and-etag-revalidation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `scoped-api-rate-limits`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +58,30 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `api` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/api.md)) |
+| Capability Nuxt module skeleton | [`module-cms-api-nuxt`](https://github.com/liberusoftware/module-cms-api-nuxt) (`@liberusoftware/module-cms-api-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Published content delivery endpoints** | Expose composable and Vue 3 component for `published content delivery endpoints` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/api.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Preview tokens and draft access** | Expose composable and Vue 3 component for `preview tokens and draft access` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/api.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Sparse fields and includes** | Expose composable and Vue 3 component for `sparse fields and includes` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/api.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Cache tags and ETag revalidation** | Expose composable and Vue 3 component for `cache tags and etag revalidation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/api.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Scoped API rate limits** | Expose composable and Vue 3 component for `scoped api rate limits` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/api.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [OpenApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/OpenApiController.php) | `public function __construct(private OpenApiGenerator $generator)`<br>`public function __invoke(): JsonResponse` |
+| [PreviewController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/PreviewController.php) | `public function __construct( private PreviewRegistryInterface $registry, private TenantContextInterface $tenant, )`<br>`public function __invoke(Request $request, string $type, int $id): JsonResource` |
+<!-- layer-implementation-plan:end -->

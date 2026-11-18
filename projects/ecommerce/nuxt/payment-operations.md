@@ -18,12 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Capture/refund queues:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Disputes/chargebacks:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Manual review:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Provider webhooks:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Settlement reconciliation:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Exception handling:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Capture/refund queues over payment-contracts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Disputes/chargebacks via DisputeAndChargebackHandlerContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Manual review and fraud-hold release:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Verified provider webhooks via MerchantWebhookVerifierContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Settlement reconciliation via PayoutAndSettlementReconcilerContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Exception handling and operator replay:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -34,12 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `capture/refund-queues`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `disputes/chargebacks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `manual-review`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `provider-webhooks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `settlement-reconciliation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `exception-handling`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `capture-refund-queues-over-payment-contracts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `disputes-chargebacks-via-disputeandchargebackhandlercontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `manual-review-and-fraud-hold-release`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `verified-provider-webhooks-via-merchantwebhookverifiercontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `settlement-reconciliation-via-payoutandsettlementreconcilercontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `exception-handling-and-operator-replay`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -60,3 +60,28 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-payment-operations` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/payment-operations.md)) |
+| Capability Nuxt module skeleton | [`module-ecommerce-payment-operations-nuxt`](https://github.com/liberusoftware/module-ecommerce-payment-operations-nuxt) (`@liberusoftware/module-ecommerce-payment-operations-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Capture/refund queues over payment-contracts** | Expose composable and Vue 3 component for `capture/refund queues over payment-contracts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/payment-operations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Disputes/chargebacks via DisputeAndChargebackHandlerContract** | Expose composable and Vue 3 component for `disputes/chargebacks via disputeandchargebackhandlercontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/payment-operations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Manual review and fraud-hold release** | Expose composable and Vue 3 component for `manual review and fraud-hold release` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/payment-operations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Verified provider webhooks via MerchantWebhookVerifierContract** | Expose composable and Vue 3 component for `verified provider webhooks via merchantwebhookverifiercontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/payment-operations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Settlement reconciliation via PayoutAndSettlementReconcilerContract** | Expose composable and Vue 3 component for `settlement reconciliation via payoutandsettlementreconcilercontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/payment-operations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Exception handling and operator replay** | Expose composable and Vue 3 component for `exception handling and operator replay` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/payment-operations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

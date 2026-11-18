@@ -22,6 +22,7 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Catalog Import and Export](../features/catalog-import-and-export.md) | [Next.js plan](catalog-import-and-export.md) | [This module](catalog-import-and-export.md) |
 | [Catalog Staging](../features/catalog-staging.md) | [Next.js plan](catalog-staging.md) | [This module](catalog-staging.md) |
 | [Categories and Navigation](../features/categories-and-navigation.md) | [Next.js plan](categories-and-navigation.md) | [This module](categories-and-navigation.md) |
+| [Catering](../features/catering.md) | [Next.js plan](catering.md) | [This module](catering.md) |
 | [Checkout](../features/checkout.md) | [Next.js plan](checkout.md) | [This module](checkout.md) |
 | [Checkout Extensibility](../features/checkout-extensibility.md) | [Next.js plan](checkout-extensibility.md) | [This module](checkout-extensibility.md) |
 | [Automation Pack](../features/commerce-automation-pack.md) | [Next.js plan](commerce-automation-pack.md) | [This module](commerce-automation-pack.md) |
@@ -115,5 +116,3 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Warranty and Claims](../features/warranty-and-claims.md) | [Next.js plan](warranty-and-claims.md) | [This module](warranty-and-claims.md) |
 
 See the [Next.js standard](../../../standards/NEXTJS.md), [source map](../SOURCE-MAPPING.md), [npm guide](../../../guides/NPM.md) and [adapter ownership registry](../../../modules/nextjs/OWNERSHIP.md).
-
-- [Catering](catering.md) — event/menu and quotation workflow with privacy and concurrency requirements.

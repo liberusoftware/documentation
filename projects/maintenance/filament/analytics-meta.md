@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Analytics Meta:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Meta server-side event mapping:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Deduplication:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Consent:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Hashing:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Delivery:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Diagnostics:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `analytics-meta`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `meta-server-side-event-mapping`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `deduplication`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `consent`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `hashing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `delivery`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `diagnostics`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `analytics-meta` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-analytics-meta-filament`](https://github.com/liberusoftware/module-analytics-meta-filament) (`liberusoftware/analytics-meta-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/analytics-meta.md) · [API plan](../api/analytics-meta.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Meta server-side event mapping** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `meta server-side event mapping`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deduplication** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deduplication`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Consent** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `consent`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Hashing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `hashing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Delivery** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `delivery`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Diagnostics** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `diagnostics`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MetaTransport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/analytics-meta/src/Contracts/MetaTransport.php) | `public function send(array $payload): array` |
+<!-- layer-implementation-plan:end -->

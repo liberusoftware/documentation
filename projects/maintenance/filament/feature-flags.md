@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Feature Flags:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Typed flags:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Environment/tenant/user targeting:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Rollout:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Telemetry:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Ownership:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Cleanup:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `feature-flags`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `typed-flags`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `environment-tenant-user-targeting`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `rollout`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `telemetry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `ownership`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cleanup`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `feature-flags` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-feature-flags-filament`](https://github.com/liberusoftware/module-feature-flags-filament) (`liberusoftware/feature-flags-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/feature-flags.md) · [API plan](../api/feature-flags.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Typed flags** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `typed flags`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Environment/tenant/user targeting** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `environment/tenant/user targeting`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Rollout** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `rollout`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Telemetry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `telemetry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Ownership** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `ownership`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cleanup** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cleanup`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -92,3 +92,38 @@ The Segmentation module owns Static/dynamic audiences, nested conditions, behavi
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Static/dynamic audiences** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `static/dynamic audiences`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Nested conditions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `nested conditions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Behavioral events** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `behavioral events`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Calculated attributes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `calculated attributes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Exclusions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `exclusions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Estimated counts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `estimated counts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Refresh** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `refresh`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Lineage** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `lineage`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/segmentation.md) | [Source map](../SOURCE-MAPPING.md#segmentation) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/segmentation.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/segmentation.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-segmentation-filament`](https://github.com/liberusoftware/module-crm-segmentation-filament) (`liberusoftware/crm-segmentation-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/segmentation.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/segmentation.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-segmentation-react-inertia`](https://github.com/liberusoftware/module-crm-segmentation-react-inertia) (`@liberusoftware/module-crm-segmentation-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/segmentation.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-segmentation-vue-inertia`](https://github.com/liberusoftware/module-crm-segmentation-vue-inertia) (`@liberusoftware/module-crm-segmentation-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/segmentation.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-segmentation-nuxt`](https://github.com/liberusoftware/module-crm-segmentation-nuxt) (`@liberusoftware/module-crm-segmentation-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/segmentation.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-segmentation-nextjs`](https://github.com/liberusoftware/module-crm-segmentation-nextjs) (`@liberusoftware/module-crm-segmentation-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/segmentation.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-segmentation-react-native`](https://github.com/liberusoftware/module-crm-segmentation-react-native) (`@liberusoftware/module-crm-segmentation-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/segmentation.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-segmentation-flutter`](https://github.com/liberusoftware/module-crm-segmentation-flutter) (`module_crm_segmentation_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/segmentation.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-segmentation-dart-mobile`](https://github.com/liberusoftware/module-crm-segmentation-dart-mobile) (`module_crm_segmentation_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-segmentation-dart-desktop`](https://github.com/liberusoftware/module-crm-segmentation-dart-desktop) (`module_crm_segmentation_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

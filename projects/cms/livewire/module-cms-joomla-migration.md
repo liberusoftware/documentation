@@ -18,7 +18,16 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Cms Joomla Migration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Articles/categories:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Custom fields:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Contacts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Menus:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Modules/positions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Media:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Users/authors:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tags:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Languages:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Redirects:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +38,16 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-cms-joomla-migration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `articles-categories`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `custom-fields`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `contacts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `menus`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `modules-positions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `media`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `users-authors`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tags`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `languages`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `redirects`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +60,36 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-cms-joomla-migration` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-cms-joomla-migration.md) · [API plan](../api/module-cms-joomla-migration.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Articles/categories** | Expose a focused Livewire 4 component and namespaced Blade default view for `articles/categories` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Custom fields** | Expose a focused Livewire 4 component and namespaced Blade default view for `custom fields` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Contacts** | Expose a focused Livewire 4 component and namespaced Blade default view for `contacts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Menus** | Expose a focused Livewire 4 component and namespaced Blade default view for `menus` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Modules/positions** | Expose a focused Livewire 4 component and namespaced Blade default view for `modules/positions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Media** | Expose a focused Livewire 4 component and namespaced Blade default view for `media` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Users/authors** | Expose a focused Livewire 4 component and namespaced Blade default view for `users/authors` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tags** | Expose a focused Livewire 4 component and namespaced Blade default view for `tags` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Languages** | Expose a focused Livewire 4 component and namespaced Blade default view for `languages` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Redirects** | Expose a focused Livewire 4 component and namespaced Blade default view for `redirects` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [JoomlaMigrationList.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-joomla-migration-livewire/src/Livewire/JoomlaMigrationList.php) · [JoomlaMigrationLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-joomla-migration-livewire/src/JoomlaMigrationLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [JoomlaMigrationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-joomla-migration/src/Services/JoomlaMigrationService.php) | `public function __construct(private MigrationFrameworkService $framework)`<br>`public function start(string $source, array $options = [], ?int $teamId = null): MigrationJob`<br>`public function add(MigrationJob $job, string $type, string $sourceId, array $payload = []): MigrationRecord`<br>`public function process(MigrationRecord $record, bool $success, ?string $reason = null): MigrationRecord`<br>`public function complete(MigrationJob $job): MigrationJob` |
+<!-- layer-implementation-plan:end -->

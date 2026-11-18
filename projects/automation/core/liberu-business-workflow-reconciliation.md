@@ -40,3 +40,34 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Workflow run registry** | Model `workflow run registry` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **State mapping** | Model `state mapping` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Reconciliation rules** | Model `reconciliation rules` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Recovery coordination** | Model `recovery coordination` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Audit timeline** | Model `audit timeline` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_08_24_010000_create_liberu_reconciliation_cases_table.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/database/migrations/2026_08_24_010000_create_liberu_reconciliation_cases_table.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) | `public function execute(array $attributes): ReconciliationCase` |
+| [TransitionReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/TransitionReconciliationCase.php) | `public function execute(ReconciliationCase $record, LifecycleStatus $to): ReconciliationCase` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Models/ReconciliationCase.php) | `tenant_id`, `idempotency_key`, `name`, `status`, `metadata` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/liberu-business-workflow-reconciliation.md) · [Filament 5](../filament/liberu-business-workflow-reconciliation.md) · [Livewire 4](../livewire/liberu-business-workflow-reconciliation.md) · [React + Inertia](../react/liberu-business-workflow-reconciliation.md) · [Vue + Inertia](../vue/liberu-business-workflow-reconciliation.md) · [Nuxt 4](../nuxt/liberu-business-workflow-reconciliation.md) · [Next.js](../nextjs/liberu-business-workflow-reconciliation.md) · [React Native](../react-native/liberu-business-workflow-reconciliation.md) · [Flutter & Dart](../flutter/liberu-business-workflow-reconciliation.md)
+<!-- core-implementation-plan:end -->

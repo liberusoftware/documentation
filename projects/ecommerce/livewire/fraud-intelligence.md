@@ -35,7 +35,7 @@ This optional Livewire 4 presentation package provides interactive server-driven
 ### Capability mapping
 
 - `risk-features`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `model/provider-scores`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `model-provider-scores`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `decision-explanations`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `drift`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `review-quality`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
@@ -52,3 +52,28 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `ecommerce-fraud-intelligence` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/fraud-intelligence.md) · [API plan](../api/fraud-intelligence.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Risk features** | Expose a focused Livewire 4 component and namespaced Blade default view for `risk features` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Model/provider scores** | Expose a focused Livewire 4 component and namespaced Blade default view for `model/provider scores` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Decision explanations** | Expose a focused Livewire 4 component and namespaced Blade default view for `decision explanations` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Drift** | Expose a focused Livewire 4 component and namespaced Blade default view for `drift` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Review quality** | Expose a focused Livewire 4 component and namespaced Blade default view for `review quality` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Chargeback feedback** | Expose a focused Livewire 4 component and namespaced Blade default view for `chargeback feedback` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Api:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Published content delivery endpoints:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Preview tokens and draft access:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sparse fields and includes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Cache tags and ETag revalidation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Scoped API rate limits:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `api`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `published-content-delivery-endpoints`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `preview-tokens-and-draft-access`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sparse-fields-and-includes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cache-tags-and-etag-revalidation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `scoped-api-rate-limits`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `api` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-api-filament`](https://github.com/liberusoftware/module-cms-api-filament) (`liberusoftware/cms-api-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/api.md) · [API plan](../api/api.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Published content delivery endpoints** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `published content delivery endpoints`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Preview tokens and draft access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `preview tokens and draft access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sparse fields and includes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sparse fields and includes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cache tags and ETag revalidation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cache tags and etag revalidation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Scoped API rate limits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `scoped api rate limits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ApiTokenResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Filament/ApiTokenResource.php) · [ListApiTokens.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Filament/Pages/ListApiTokens.php).
+<!-- layer-implementation-plan:end -->

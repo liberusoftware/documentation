@@ -12,7 +12,7 @@
 
 The intended **Module Billing Liberu Control Panel** workspace covers module billing liberu control panel domain behavior.
 
-The relevant capability areas are **Module Billing Liberu Control Panel**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Account provisioning**, **Suspension and unsuspension**, **Package changes**, **Addon management**, **Termination**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

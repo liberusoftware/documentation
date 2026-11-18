@@ -18,7 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Analytics Core:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Provider-neutral events:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Identity/consent context:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Destinations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Routing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Deduplication:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Delivery audit:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `analytics-core`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `provider-neutral-events`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `identity-consent-context`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `destinations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `routing`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `deduplication`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `delivery-audit`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `analytics-core` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-genealogy-laravel-inertia-react`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-analytics-core-react-inertia`](https://github.com/liberusoftware/module-analytics-core-react-inertia) (`@liberusoftware/module-analytics-core-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/analytics-core.md) · [Core plan](../core/analytics-core.md) · [API plan](../api/analytics-core.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Provider-neutral events** | Render `provider-neutral events` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Identity/consent context** | Render `identity/consent context` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Destinations** | Render `destinations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Routing** | Render `routing` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Deduplication** | Render `deduplication` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Delivery audit** | Render `delivery audit` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+**Observed route declarations:**
+
+[modules/analytics-core-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/analytics-core-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/analytics-core')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('analytics-core-api.status');
+```
+<!-- layer-implementation-plan:end -->

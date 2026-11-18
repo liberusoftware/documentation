@@ -18,7 +18,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Genealogy People:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Names:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Identities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Attributes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Life events:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Living/deceased status:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Merge candidates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `genealogy-people`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `names`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `identities`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `attributes`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `life-events`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `living-deceased-status`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `merge-candidates`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,48 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `genealogy-people` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-genealogy-laravel-inertia-vue`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-genealogy-people-vue-inertia`](https://github.com/liberusoftware/module-genealogy-people-vue-inertia) (`@liberusoftware/module-genealogy-people-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/genealogy-people.md) · [Core plan](../core/genealogy-people.md) · [API plan](../api/genealogy-people.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Names** | Render `names` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Identities** | Render `identities` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Attributes** | Render `attributes` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Life events** | Render `life events` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Living/deceased status** | Render `living/deceased status` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Merge candidates** | Render `merge candidates` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateMergeCandidate.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/CreateMergeCandidate.php) | `public function execute(array $attributes): MergeCandidate` |
+| [CreatePerson.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/CreatePerson.php) | `public function execute(array $attributes): Person` |
+| [CreatePersonAssociation.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/CreatePersonAssociation.php) | `public function execute(array $attributes): PersonAssociation` |
+| [CreatePersonIdentity.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/CreatePersonIdentity.php) | `public function execute(array $attributes): PersonIdentity` |
+| [CreatePersonLifeEvent.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/CreatePersonLifeEvent.php) | `public function execute(array $attributes): PersonLifeEvent` |
+| [CreatePersonName.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/CreatePersonName.php) | `public function execute(array $attributes): PersonName` |
+| [DeletePerson.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/DeletePerson.php) | `public function execute(Person $person): void` |
+| [DeletePersonAssociation.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/DeletePersonAssociation.php) | `public function execute(PersonAssociation $association): void` |
+| [DeletePersonSupportingRecord.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/DeletePersonSupportingRecord.php) | `public function execute(Model $record): void` |
+| [MergePersons.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Actions/MergePersons.php) | `public function execute(Person $primary, Person $duplicate): Person` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MergeCandidate.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Models/MergeCandidate.php) | `team_id`, `person_id`, `candidate_person_id`, `status`, `score`, `reason`, `metadata`, `reviewed_at` |
+| [Person.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Models/Person.php) | `team_id`, `given_name`, `family_name`, `display_name`, `sex`, `aliases`, `attributes`, `birth_date`, `death_date`, `birth_place`, `death_place`, `is_public`, `metadata` |
+| [PersonAssociation.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Models/PersonAssociation.php) | `team_id`, `person_id`, `associated_person_id`, `associated_external_id`, `relationship`, `description`, `metadata` |
+| [PersonIdentity.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Models/PersonIdentity.php) | `team_id`, `person_id`, `type`, `value`, `label`, `is_verified`, `metadata` |
+| [PersonLifeEvent.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Models/PersonLifeEvent.php) | `team_id`, `person_id`, `type`, `date`, `place`, `description`, `metadata` |
+| [PersonName.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-people/src/Models/PersonName.php) | `team_id`, `person_id`, `type`, `given_name`, `family_name`, `prefix`, `suffix`, `is_preferred`, `metadata` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Usage Wallet And Rebilling:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Provider usage imports:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Wallets/credits:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Threshold reloads:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Cost/markup rules:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Client charges:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Exceptions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reconciliation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Billing/Accounting handoff:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +36,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-usage-wallet-and-rebilling`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `provider-usage-imports`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `wallets-credits`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `threshold-reloads`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `cost-markup-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `client-charges`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `exceptions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reconciliation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `billing-accounting-handoff`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +64,66 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-usage-wallet-and-rebilling` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-usage-wallet-and-rebilling.md)) |
+| Capability Nuxt module skeleton | [`module-crm-usage-wallet-and-rebilling-nuxt`](https://github.com/liberusoftware/module-crm-usage-wallet-and-rebilling-nuxt) (`@liberusoftware/module-crm-usage-wallet-and-rebilling-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Provider usage imports** | Expose composable and Vue 3 component for `provider usage imports` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Wallets/credits** | Expose composable and Vue 3 component for `wallets/credits` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Threshold reloads** | Expose composable and Vue 3 component for `threshold reloads` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Cost/markup rules** | Expose composable and Vue 3 component for `cost/markup rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Client charges** | Expose composable and Vue 3 component for `client charges` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Exceptions** | Expose composable and Vue 3 component for `exceptions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Reconciliation** | Expose composable and Vue 3 component for `reconciliation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Billing/Accounting handoff** | Expose composable and Vue 3 component for `billing/accounting handoff` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-usage-wallet-and-rebilling.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [UsageWalletQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Queries/UsageWalletQuery.php) | `public function wallet(int $teamId): ?UsageWallet`<br>`public function imports(int $teamId)`<br>`public function charges(int $teamId)`<br>`public function summary(int $teamId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCharge.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Actions/CreateCharge.php) | `public function execute(int $teamId, int $actorId, array $data): UsageCharge` |
+| [ImportProviderUsage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Actions/ImportProviderUsage.php) | `public function execute(int $teamId, int $actorId, array $data): UsageImport` |
+| [ResolveUsageException.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Actions/ResolveUsageException.php) | `public function execute(int $teamId, int $actorId, int $exceptionId): void` |
+| [UpsertWallet.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Actions/UpsertWallet.php) | `public function execute(int $teamId, int $actorId, array $data): UsageWallet` |
+| [UsageAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Services/UsageAudit.php) | `public function record(int $teamId, ?int $actorId, string $event, array $details = []): void` |
+| [UsagePolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Services/UsagePolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [UsageAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Models/UsageAudit.php) | `team_id`, `actor_id`, `event`, `details`, `request_id` |
+| [UsageCharge.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Models/UsageCharge.php) | `team_id`, `usage_import_id`, `wallet_id`, `client_reference`, `cost`, `charge`, `currency`, `status` |
+| [UsageImport.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Models/UsageImport.php) | `team_id`, `provider`, `external_id`, `amount`, `currency`, `status`, `failure_reason`, `payload` |
+| [UsageWallet.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling/src/Models/UsageWallet.php) | `team_id`, `currency`, `balance`, `threshold`, `reload_amount`, `status`, `version` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [UsageWalletController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling-api/src/Http/Controllers/UsageWalletController.php) | `public function summary(Request $r, UsageWalletQuery $q): JsonResponse`<br>`public function imports(Request $r, UsageWalletQuery $q): JsonResponse`<br>`public function charges(Request $r, UsageWalletQuery $q): JsonResponse`<br>`public function import(Request $r, ImportProviderUsage $a): JsonResponse`<br>`public function charge(Request $r, CreateCharge $a): JsonResponse`<br>`public function wallet(Request $r, UpsertWallet $a): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-usage-wallet-and-rebilling-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-usage-wallet-and-rebilling-api/routes/api.php)
+
+```php
+Route::middleware(['auth:sanctum', 'throttle:api'])->prefix('api/v1/crm/usage-wallet-and-rebilling')->group(function () {
+Route::get('/summary', [UsageWalletController::class, 'summary']);
+Route::get('/imports', [UsageWalletController::class, 'imports']);
+Route::post('/imports', [UsageWalletController::class, 'import']);
+Route::get('/charges', [UsageWalletController::class, 'charges']);
+Route::post('/charges', [UsageWalletController::class, 'charge']);
+Route::put('/wallet', [UsageWalletController::class, 'wallet']);
+```
+<!-- layer-implementation-plan:end -->

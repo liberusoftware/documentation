@@ -66,3 +66,31 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-retail-locations` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/retail-locations.md)) |
+| Capability Nuxt module skeleton | [`module-ecommerce-retail-locations-nuxt`](https://github.com/liberusoftware/module-ecommerce-retail-locations-nuxt) (`@liberusoftware/module-ecommerce-retail-locations-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Store hierarchy** | Expose composable and Vue 3 component for `store hierarchy` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Hours** | Expose composable and Vue 3 component for `hours` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Market** | Expose composable and Vue 3 component for `market` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Stock source** | Expose composable and Vue 3 component for `stock source` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Pickup** | Expose composable and Vue 3 component for `pickup` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Registers** | Expose composable and Vue 3 component for `registers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Staff assignments** | Expose composable and Vue 3 component for `staff assignments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Fulfillment** | Expose composable and Vue 3 component for `fulfillment` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Location reporting** | Expose composable and Vue 3 component for `location reporting` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/retail-locations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

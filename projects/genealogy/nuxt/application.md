@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Application:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Environment validation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Application metadata:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Health/readiness:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Maintenance mode:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Identifiers:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Clocks:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Shared service contracts:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `application`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `environment-validation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `application-metadata`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `health-readiness`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `maintenance-mode`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `identifiers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `clocks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `shared-service-contracts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,44 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `application` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-genealogy-nuxt-vue`](https://github.com/liberusoftware/project-genealogy-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/application.md)) |
+| Capability Nuxt module skeleton | [`module-application-nuxt`](https://github.com/liberusoftware/module-application-nuxt) (`@liberusoftware/module-application-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Environment validation** | Expose composable and Vue 3 component for `environment validation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/application.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-genealogy-laravel-api`. |
+| **Application metadata** | Expose composable and Vue 3 component for `application metadata` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/application.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-genealogy-laravel-api`. |
+| **Health/readiness** | Expose composable and Vue 3 component for `health/readiness` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/application.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-genealogy-laravel-api`. |
+| **Maintenance mode** | Expose composable and Vue 3 component for `maintenance mode` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/application.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-genealogy-laravel-api`. |
+| **Identifiers** | Expose composable and Vue 3 component for `identifiers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/application.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-genealogy-laravel-api`. |
+| **Clocks** | Expose composable and Vue 3 component for `clocks` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/application.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-genealogy-laravel-api`. |
+| **Shared service contracts** | Expose composable and Vue 3 component for `shared service contracts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/application.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-genealogy-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [Clock.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/src/Contracts/Clock.php) | `public function now(): \DateTimeImmutable` |
+| [IdentifierFactory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/src/Contracts/IdentifierFactory.php) | `public function make(): string` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ReadinessController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/src/Http/Controllers/ReadinessController.php) | `public function __invoke(ReadinessRegistry $registry): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/application/routes/health.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/application/routes/health.php)
+
+```php
+Route::get('/ready', ReadinessController::class)->name('application.ready');
+```
+<!-- layer-implementation-plan:end -->

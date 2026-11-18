@@ -3,8 +3,10 @@
 This is the technology-specific implementation specification for `dart-desktop` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-dart-desktop
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-dart-desktop
+- Capability skeleton catalog: [`modules/skeletons/dart-desktop.md`](../../modules/skeletons/dart-desktop.md)
 - Presentation layer directory in product docs: `flutter/`
-- Adapter identity pattern: `module-{capability}-flutter`
+- Adapter identity pattern: `module-{capability}-dart-desktop`
 - Consumes product `-laravel-api`: yes
 
 ## Delivery boundary

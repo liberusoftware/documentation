@@ -18,7 +18,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Cms Metadata:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Arbitrary governed metadata:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Definitions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Inheritance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Validation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Provenance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Indexing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **API exposure:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `cms-metadata`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `arbitrary-governed-metadata`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `definitions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `inheritance`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `validation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `provenance`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `indexing`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `api-exposure`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `cms-metadata` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-cms-metadata-react-inertia`](https://github.com/liberusoftware/module-cms-metadata-react-inertia) (`@liberusoftware/module-cms-metadata-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/cms-metadata.md) · [Core plan](../core/cms-metadata.md) · [API plan](../api/cms-metadata.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Arbitrary governed metadata** | Render `arbitrary governed metadata` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Definitions** | Render `definitions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Inheritance** | Render `inheritance` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Validation** | Render `validation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Provenance** | Render `provenance` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Indexing** | Render `indexing` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **API exposure** | Render `api exposure` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MetadataService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Services/MetadataService.php) | `public function all(string $subjectType, int\|string $subjectId): array`<br>`public function get(string $subjectType, int\|string $subjectId, string $key, mixed $default = null): mixed`<br>`public function set(string $subjectType, int\|string $subjectId, string $key, mixed $value, ?int $teamId = null): MetadataEntry`<br>`public function remove(string $subjectType, int\|string $subjectId, string $key): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MetadataEntry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Models/MetadataEntry.php) | `subject_type`, `subject_id`, `key`, `value`, `value_type`, `team_id` |
+<!-- layer-implementation-plan:end -->

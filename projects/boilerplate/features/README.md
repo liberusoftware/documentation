@@ -1,7 +1,7 @@
 # Boilerplate Feature Specifications
 
 <!-- catalogue-status:start -->
-This index preserves **31 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
@@ -9,6 +9,8 @@ Each file defines one independent module. Modules remain independently installab
 | Module document | Source/target reference | Related plans |
 | --- | --- | --- |
 | [Activity Comments](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Affiliate Contracts](affiliate-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#affiliate-contracts) | [core](../core/affiliate-contracts.md) · [api](../api/affiliate-contracts.md) · [nextjs](../nextjs/affiliate-contracts.md) |
+| [Affiliates and Partner Programs](affiliates.md) | [Target/source map](../SOURCE-MAPPING.md#affiliates) | [core](../core/affiliates.md) · [api](../api/affiliates.md) · [nextjs](../nextjs/affiliates.md) |
 | [Analytics Core](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
@@ -30,6 +32,16 @@ Each file defines one independent module. Modules remain independently installab
 | [Notifications](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
 | [Observability](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
 | [Organizations Teams](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Passkeys and WebAuthn](passkeys.md) | [Target/source map](../SOURCE-MAPPING.md#passkeys) | [core](../core/passkeys.md) · [api](../api/passkeys.md) · [nextjs](../nextjs/passkeys.md) |
+| [Payment Adyen Adapter](payment-adyen.md) | [Target/source map](../SOURCE-MAPPING.md#payment-adyen) | [core](../core/payment-adyen.md) · [api](../api/payment-adyen.md) · [nextjs](../nextjs/payment-adyen.md) |
+| [Payment Contracts](payment-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#payment-contracts) | [core](../core/payment-contracts.md) · [api](../api/payment-contracts.md) · [nextjs](../nextjs/payment-contracts.md) |
+| [Payment Core](payment-core.md) | [Target/source map](../SOURCE-MAPPING.md#payment-core) | [core](../core/payment-core.md) · [api](../api/payment-core.md) · [nextjs](../nextjs/payment-core.md) |
+| [Payment GoCardless Adapter](payment-gocardless.md) | [Target/source map](../SOURCE-MAPPING.md#payment-gocardless) | [core](../core/payment-gocardless.md) · [api](../api/payment-gocardless.md) · [nextjs](../nextjs/payment-gocardless.md) |
+| [Payment Mollie Adapter](payment-mollie.md) | [Target/source map](../SOURCE-MAPPING.md#payment-mollie) | [core](../core/payment-mollie.md) · [api](../api/payment-mollie.md) · [nextjs](../nextjs/payment-mollie.md) |
+| [Payment Paddle Adapter](payment-paddle.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paddle) | [core](../core/payment-paddle.md) · [api](../api/payment-paddle.md) · [nextjs](../nextjs/payment-paddle.md) |
+| [Payment PayPal Adapter](payment-paypal.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paypal) | [core](../core/payment-paypal.md) · [api](../api/payment-paypal.md) · [nextjs](../nextjs/payment-paypal.md) |
+| [Payment Square Adapter](payment-square.md) | [Target/source map](../SOURCE-MAPPING.md#payment-square) | [core](../core/payment-square.md) · [api](../api/payment-square.md) · [nextjs](../nextjs/payment-square.md) |
+| [Payment Stripe Adapter](payment-stripe.md) | [Target/source map](../SOURCE-MAPPING.md#payment-stripe) | [core](../core/payment-stripe.md) · [api](../api/payment-stripe.md) · [nextjs](../nextjs/payment-stripe.md) |
 | [Profiles](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
 | [Roles Permissions](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
 | [Scheduler Queues](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |

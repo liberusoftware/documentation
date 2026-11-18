@@ -18,11 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Shared payment-core integration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Tender selection:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Shared payment-contracts and payment-core integration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tender selection and dynamic capability routing:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 - **Authorize/capture/void/refund references:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Payment status projection:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Reconciliation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Saved payment method vault and 3DS/SCA continuation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Payment status projection and settlement reconciliation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -33,11 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `shared-payment-core-integration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `tender-selection`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `authorize/capture/void/refund-references`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `payment-status-projection`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `reconciliation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `shared-payment-contracts-and-payment-core-integration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tender-selection-and-dynamic-capability-routing`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `authorize-capture-void-refund-references`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `saved-payment-method-vault-and-3ds-sca-continuation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `payment-status-projection-and-settlement-reconciliation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -50,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `ecommerce-payments` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/payments.md) · [API plan](../api/payments.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Shared payment-contracts and payment-core integration** | Expose a focused Livewire 4 component and namespaced Blade default view for `shared payment-contracts and payment-core integration` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tender selection and dynamic capability routing** | Expose a focused Livewire 4 component and namespaced Blade default view for `tender selection and dynamic capability routing` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Authorize/capture/void/refund references** | Expose a focused Livewire 4 component and namespaced Blade default view for `authorize/capture/void/refund references` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Saved payment method vault and 3DS/SCA continuation** | Expose a focused Livewire 4 component and namespaced Blade default view for `saved payment method vault and 3ds/sca continuation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Payment status projection and settlement reconciliation** | Expose a focused Livewire 4 component and namespaced Blade default view for `payment status projection and settlement reconciliation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

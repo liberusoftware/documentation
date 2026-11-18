@@ -18,7 +18,12 @@ The Sessions Devices module owns sessions devices domain behavior. It is the aut
 
 ## 2. Full feature scope
 
-- **Sessions Devices:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Active sessions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Device metadata:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Revocation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Timeout policy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Suspicious access:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Retention:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Sessions Devices module owns sessions devices domain behavior. It is the aut
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Active sessions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `active sessions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Device metadata** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `device metadata`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Revocation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `revocation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Timeout policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `timeout policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Suspicious access** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `suspicious access`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Retention** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `retention`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/sessions-devices.md) | [Source map](../SOURCE-MAPPING.md#sessions-devices) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/sessions-devices.md) | [`project-maintenance-laravel-api`](https://github.com/liberusoftware/project-maintenance-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/sessions-devices.md) | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) · [`module-sessions-devices-filament`](https://github.com/liberusoftware/module-sessions-devices-filament) (`liberusoftware/sessions-devices-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/sessions-devices.md) | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/sessions-devices.md) | [`project-maintenance-laravel-inertia-react`](https://github.com/liberusoftware/project-maintenance-laravel-inertia-react) · [`module-sessions-devices-react-inertia`](https://github.com/liberusoftware/module-sessions-devices-react-inertia) (`@liberusoftware/module-sessions-devices-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/sessions-devices.md) | [`project-maintenance-laravel-inertia-vue`](https://github.com/liberusoftware/project-maintenance-laravel-inertia-vue) · [`module-sessions-devices-vue-inertia`](https://github.com/liberusoftware/module-sessions-devices-vue-inertia) (`@liberusoftware/module-sessions-devices-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/sessions-devices.md) | [`project-maintenance-nuxt-vue`](https://github.com/liberusoftware/project-maintenance-nuxt-vue) · [`module-sessions-devices-nuxt`](https://github.com/liberusoftware/module-sessions-devices-nuxt) (`@liberusoftware/module-sessions-devices-nuxt`) | Standalone Vue SSR client consuming `project-maintenance-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/sessions-devices.md) | [`project-maintenance-next-react`](https://github.com/liberusoftware/project-maintenance-next-react) · [`module-sessions-devices-nextjs`](https://github.com/liberusoftware/module-sessions-devices-nextjs) (`@liberusoftware/module-sessions-devices-nextjs`) | App Router Server/Client components consuming `project-maintenance-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/sessions-devices.md) | [`project-maintenance-mobile-react`](https://github.com/liberusoftware/project-maintenance-mobile-react) · [`module-sessions-devices-react-native`](https://github.com/liberusoftware/module-sessions-devices-react-native) (`@liberusoftware/module-sessions-devices-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/sessions-devices.md) | [`project-maintenance-mobile-flutter`](https://github.com/liberusoftware/project-maintenance-mobile-flutter) · [`module-sessions-devices-flutter`](https://github.com/liberusoftware/module-sessions-devices-flutter) (`module_sessions_devices_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/sessions-devices.md) | [`project-maintenance-dart-mobile`](https://github.com/liberusoftware/project-maintenance-dart-mobile) · [`module-sessions-devices-dart-mobile`](https://github.com/liberusoftware/module-sessions-devices-dart-mobile) (`module_sessions_devices_dart_mobile`)<br>[`project-maintenance-dart-desktop`](https://github.com/liberusoftware/project-maintenance-dart-desktop) · [`module-sessions-devices-dart-desktop`](https://github.com/liberusoftware/module-sessions-devices-dart-desktop) (`module_sessions_devices_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

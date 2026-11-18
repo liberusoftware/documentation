@@ -37,7 +37,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 - `high-volume-statement-coding`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `bulk-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `tax/dimensions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `tax-dimensions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `payee-creation-policy`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `review`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `posting`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -62,3 +62,59 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-cash-coding` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/cash-coding.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-cash-coding-nuxt`](https://github.com/liberusoftware/module-accounting-cash-coding-nuxt) (`@liberusoftware/module-accounting-cash-coding-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **High-volume statement coding** | Expose composable and Vue 3 component for `high-volume statement coding` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-coding.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Bulk rules** | Expose composable and Vue 3 component for `bulk rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-coding.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Tax/dimensions** | Expose composable and Vue 3 component for `tax/dimensions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-coding.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Payee creation policy** | Expose composable and Vue 3 component for `payee creation policy` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-coding.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Review** | Expose composable and Vue 3 component for `review` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-coding.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Posting** | Expose composable and Vue 3 component for `posting` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-coding.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Undo constraints** | Expose composable and Vue 3 component for `undo constraints` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-coding.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CashCodingQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-coding/src/Queries/CashCodingQuery.php) | `public function forTeam(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCashCodingBatch.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-coding/src/Actions/CreateCashCodingBatch.php) | `public function handle(array $attributes): CashCodingBatch` |
+| [TransitionCashCodingBatch.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-coding/src/Actions/TransitionCashCodingBatch.php) | `public function review(CashCodingBatch $batch, ?int $actor = null): CashCodingBatch`<br>`public function post(CashCodingBatch $batch, ?int $actor = null): CashCodingBatch`<br>`public function undo(CashCodingBatch $batch, string $reason): CashCodingBatch` |
+| [CashCodingPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-coding-api/src/Policies/CashCodingPolicy.php) | `public function viewAny($user): bool`<br>`public function view($user, CashCodingBatch $batch): bool`<br>`public function create($user): bool`<br>`public function update($user, CashCodingBatch $batch): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CashCodingBatch.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-coding/src/Models/CashCodingBatch.php) | `team_id`, `reference`, `status`, `lines`, `payee_creation_policy`, `total_amount`, `currency`, `created_by`, `reviewed_by`, `posted_by`, `undo_reason`, `posted_at`, `undone_at`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CashCodingController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-coding-api/src/Http/Controllers/CashCodingController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, CreateCashCodingBatch $action): CashCodingResource`<br>`public function show(string $batch): CashCodingResource`<br>`public function review(string $batch, TransitionCashCodingBatch $action): CashCodingResource`<br>`public function post(string $batch, TransitionCashCodingBatch $action): CashCodingResource`<br>`public function undo(Request $request, string $batch, TransitionCashCodingBatch $action): CashCodingResource` |
+
+**Observed route declarations:**
+
+[modules/accounting-cash-coding-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-coding-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/cash-coding')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::get('/', [CashCodingController::class, 'index'])->middleware('ability:accounting.cash-coding.read');
+Route::post('/', [CashCodingController::class, 'store'])->middleware('ability:accounting.cash-coding.write');
+Route::get('/{batch}', [CashCodingController::class, 'show'])->middleware('ability:accounting.cash-coding.read');
+Route::post('/{batch}/review', [CashCodingController::class, 'review'])->middleware('ability:accounting.cash-coding.write');
+Route::post('/{batch}/post', [CashCodingController::class, 'post'])->middleware('ability:accounting.cash-coding.write');
+Route::post('/{batch}/undo', [CashCodingController::class, 'undo'])->middleware('ability:accounting.cash-coding.write');
+```
+<!-- layer-implementation-plan:end -->

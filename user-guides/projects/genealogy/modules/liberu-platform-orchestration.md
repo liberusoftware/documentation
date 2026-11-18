@@ -12,7 +12,7 @@
 
 The intended **Liberu Platform Orchestration** workspace covers liberu platform orchestration domain behavior.
 
-The relevant capability areas are **Liberu Platform Orchestration**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Composition manifest**, **Capability graph**, **Lifecycle coordination**, **Release gates**, **Ownership registry**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

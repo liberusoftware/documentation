@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Liberu Executive Insights:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Metric registry:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Cross-product projections:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Evidence drill-through:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Decision snapshots:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Data-quality operations:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `liberu-executive-insights`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `metric-registry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cross-product-projections`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `evidence-drill-through`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `decision-snapshots`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `data-quality-operations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,35 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `liberu-executive-insights` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-module-liberu-executive-insights-5279400e-filament`](https://github.com/liberusoftware/module-module-liberu-executive-insights-5279400e-filament) (`liberusoftware/module-liberu-executive-insights-5279400e-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/liberu-executive-insights.md) · [API plan](../api/liberu-executive-insights.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Metric registry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `metric registry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cross-product projections** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cross-product projections`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Evidence drill-through** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `evidence drill-through`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Decision snapshots** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `decision snapshots`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Data-quality operations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `data-quality operations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ExecutiveInsightsFilamentServiceProvider.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-executive-insights-filament/src/ExecutiveInsightsFilamentServiceProvider.php) · [InsightSnapshotResource.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-executive-insights-filament/src/Resources/InsightSnapshotResource.php) · [CreateInsightSnapshot.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-executive-insights-filament/src/Resources/InsightSnapshotResource/Pages/CreateInsightSnapshot.php) · [EditInsightSnapshot.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-executive-insights-filament/src/Resources/InsightSnapshotResource/Pages/EditInsightSnapshot.php) · [ListInsightSnapshots.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-executive-insights-filament/src/Resources/InsightSnapshotResource/Pages/ListInsightSnapshots.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RegisterMetric.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-executive-insights/src/Actions/RegisterMetric.php) | `public function __construct(private readonly Dispatcher $events)`<br>`public function handle(array $attributes): MetricDefinition` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MetricDefinition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-executive-insights/src/Models/MetricDefinition.php) | `team_id`, `key`, `name`, `formula`, `version`, `dimensions`, `currency`, `timezone`, `freshness_seconds`, `is_active` |
+<!-- layer-implementation-plan:end -->

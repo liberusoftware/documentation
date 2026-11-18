@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Localization Mymemory:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **MyMemory provider configuration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Segment translation requests:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Language-pair and locale validation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Translation response caching:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Rate limit and quota fallback handling:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Translation provenance and review diagnostics:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `localization-mymemory`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `mymemory-provider-configuration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `segment-translation-requests`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `language-pair-and-locale-validation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `translation-response-caching`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `rate-limit-and-quota-fallback-handling`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `translation-provenance-and-review-diagnostics`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,28 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `localization-mymemory` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/localization-mymemory.md)) |
+| Capability Nuxt module skeleton | [`module-localization-mymemory-nuxt`](https://github.com/liberusoftware/module-localization-mymemory-nuxt) (`@liberusoftware/module-localization-mymemory-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **MyMemory provider configuration** | Expose composable and Vue 3 component for `mymemory provider configuration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/localization-mymemory.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Segment translation requests** | Expose composable and Vue 3 component for `segment translation requests` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/localization-mymemory.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Language-pair and locale validation** | Expose composable and Vue 3 component for `language-pair and locale validation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/localization-mymemory.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Translation response caching** | Expose composable and Vue 3 component for `translation response caching` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/localization-mymemory.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Rate limit and quota fallback handling** | Expose composable and Vue 3 component for `rate limit and quota fallback handling` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/localization-mymemory.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Translation provenance and review diagnostics** | Expose composable and Vue 3 component for `translation provenance and review diagnostics` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/localization-mymemory.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

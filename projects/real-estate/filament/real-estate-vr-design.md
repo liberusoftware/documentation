@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Real Estate Vr Design:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Design styles:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Furniture placement:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Room layouts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Materials and lighting:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Public templates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Thumbnail uploads:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **VR exports:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `real-estate-vr-design`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `design-styles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `furniture-placement`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `room-layouts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `materials-and-lighting`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `public-templates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `thumbnail-uploads`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `vr-exports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,31 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `real-estate-vr-design` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-real-estate-vr-design-filament`](https://github.com/liberusoftware/module-real-estate-vr-design-filament) (`liberusoftware/real-estate-vr-design-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/real-estate-vr-design.md) · [API plan](../api/real-estate-vr-design.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Design styles** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `design styles`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Furniture placement** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `furniture placement`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Room layouts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `room layouts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Materials and lighting** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `materials and lighting`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Public templates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `public templates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Thumbnail uploads** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `thumbnail uploads`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **VR exports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `vr exports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [VrDesign.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-vr-design/src/Models/VrDesign.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

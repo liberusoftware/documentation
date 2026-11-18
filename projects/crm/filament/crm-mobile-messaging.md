@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Crm Mobile Messaging:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Consent-aware SMS/MMS/WhatsApp/push campaigns:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Templates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Short links:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Keywords:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Opt-in/out:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Quiet hours:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sender governance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Delivery/reply handling:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `crm-mobile-messaging`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `consent-aware-sms-mms-whatsapp-push-campaigns`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `templates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `short-links`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `keywords`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `opt-in-out`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `quiet-hours`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sender-governance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `delivery-reply-handling`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,48 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-mobile-messaging` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-mobile-messaging-filament`](https://github.com/liberusoftware/module-crm-mobile-messaging-filament) (`liberusoftware/crm-mobile-messaging-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/crm-mobile-messaging.md) · [API plan](../api/crm-mobile-messaging.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Consent-aware SMS/MMS/WhatsApp/push campaigns** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `consent-aware sms/mms/whatsapp/push campaigns`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Templates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `templates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Short links** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `short links`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Keywords** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `keywords`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Opt-in/out** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `opt-in/out`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Quiet hours** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `quiet hours`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sender governance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sender governance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Delivery/reply handling** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `delivery/reply handling`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [MobileMessagingFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging-filament/src/MobileMessagingFilamentServiceProvider.php) · [MessagingCampaignResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging-filament/src/Resources/MessagingCampaignResource.php) · [CreateMessagingCampaign.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging-filament/src/Resources/Pages/CreateMessagingCampaign.php) · [EditMessagingCampaign.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging-filament/src/Resources/Pages/EditMessagingCampaign.php) · [ListMessagingCampaigns.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging-filament/src/Resources/Pages/ListMessagingCampaigns.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CampaignQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Queries/CampaignQuery.php) | `public function forTeam(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCampaign.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Actions/CreateCampaign.php) | `public function __construct(private readonly MobileMessagingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): MessagingCampaign` |
+| [RecordMessage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Actions/RecordMessage.php) | `public function __construct(private readonly MobileMessagingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, MessagingCampaign $campaign, array $input): MessagingMessage` |
+| [UpsertContactConsent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Actions/UpsertContactConsent.php) | `public function __construct(private readonly MobileMessagingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): MessagingContact` |
+| [MobileMessagingPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Services/MobileMessagingPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MessagingCampaign.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Models/MessagingCampaign.php) | No literal fillable array detected; inspect the model and API schema. |
+| [MessagingContact.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Models/MessagingContact.php) | No literal fillable array detected; inspect the model and API schema. |
+| [MessagingMessage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Models/MessagingMessage.php) | No literal fillable array detected; inspect the model and API schema. |
+| [MessagingTemplate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-mobile-messaging/src/Models/MessagingTemplate.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

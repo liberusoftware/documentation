@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Cms Cache And Performance:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Page/render/query/object cache contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Cache tags:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Warming:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Invalidation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Asset optimization hooks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Diagnostics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-cms-cache-and-performance`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `page-render-query-object-cache-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cache-tags`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `warming`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `invalidation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `asset-optimization-hooks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `diagnostics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,37 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-cms-cache-and-performance` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-cms-cache-and-performance.md) · [API plan](../api/module-cms-cache-and-performance.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Page/render/query/object cache contracts** | Expose a focused Livewire 4 component and namespaced Blade default view for `page/render/query/object cache contracts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cache tags** | Expose a focused Livewire 4 component and namespaced Blade default view for `cache tags` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Warming** | Expose a focused Livewire 4 component and namespaced Blade default view for `warming` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Invalidation** | Expose a focused Livewire 4 component and namespaced Blade default view for `invalidation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Asset optimization hooks** | Expose a focused Livewire 4 component and namespaced Blade default view for `asset optimization hooks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Diagnostics** | Expose a focused Livewire 4 component and namespaced Blade default view for `diagnostics` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [CacheDiagnostics.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-cache-and-performance-livewire/src/Livewire/CacheDiagnostics.php) · [CacheAndPerformanceLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-cache-and-performance-livewire/src/CacheAndPerformanceLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CacheAndPerformanceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Services/CacheAndPerformanceService.php) | `public function remember(?int $teamId, string $key, string $type, int $ttl, callable $resolver, array $tags = [], array $metadata = []): array`<br>`public function invalidate(?int $teamId, array $tags = [], array $keys = [], string $idempotencyKey = ''): CacheInvalidation`<br>`public function diagnostics(?int $teamId): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CacheEntry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheEntry.php) | `team_id`, `cache_key`, `cache_type`, `tags`, `status`, `ttl_seconds`, `size_bytes`, `hits`, `misses`, `warmed_at`, `last_invalidated_at`, `metadata` |
+| [CacheInvalidation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheInvalidation.php) | `team_id`, `idempotency_key`, `tags`, `cache_keys`, `status`, `invalidated_count`, `failure_reason`, `completed_at` |
+<!-- layer-implementation-plan:end -->

@@ -35,13 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `immediate/scheduled-publishing`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `immediate-scheduled-publishing`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `embargo`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `expiry`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `unpublish/archive`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `unpublish-archive`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `recurring-review`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `atomic-release`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `cache/index-events`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cache-index-events`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -54,3 +54,38 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-publishing` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/publishing.md) · [API plan](../api/publishing.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Immediate/scheduled publishing** | Expose a focused Livewire 4 component and namespaced Blade default view for `immediate/scheduled publishing` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Embargo** | Expose a focused Livewire 4 component and namespaced Blade default view for `embargo` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Expiry** | Expose a focused Livewire 4 component and namespaced Blade default view for `expiry` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Unpublish/archive** | Expose a focused Livewire 4 component and namespaced Blade default view for `unpublish/archive` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Recurring review** | Expose a focused Livewire 4 component and namespaced Blade default view for `recurring review` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Atomic release** | Expose a focused Livewire 4 component and namespaced Blade default view for `atomic release` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cache/index events** | Expose a focused Livewire 4 component and namespaced Blade default view for `cache/index events` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [ReleaseMonitor.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-publishing-livewire/src/Livewire/ReleaseMonitor.php) · [PublishingLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-publishing-livewire/src/PublishingLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PublishingService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Services/PublishingService.php) | `public function create(array $attributes): PublicationRelease`<br>`public function schedule(PublicationRelease $release): PublicationRelease`<br>`public function publish(PublicationRelease $release): PublicationRelease`<br>`public function unpublish(PublicationRelease $release): PublicationRelease`<br>`public function archive(PublicationRelease $release): PublicationRelease`<br>`public function processDue(): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PublicationRelease.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Models/PublicationRelease.php) | `key`, `state`, `publish_at`, `embargo_until`, `expires_at`, `review_at`, `recurrence`, `targets`, `cache_tags`, `team_id` |
+| [PublicationReleaseEvent.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Models/PublicationReleaseEvent.php) | `release_id`, `event`, `payload`, `occurred_at` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,11 @@ The Cms Contracts module owns cms contracts domain behavior. It is the authorita
 
 ## 2. Full feature scope
 
-- **Cms Contracts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Content and media repository contracts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Block and rendering pipeline interfaces:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Publication state and revision DTOs:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Menu and taxonomy query contracts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Headless delivery and webhook event interfaces:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +82,35 @@ The Cms Contracts module owns cms contracts domain behavior. It is the authorita
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Content and media repository contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `content and media repository contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Block and rendering pipeline interfaces** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `block and rendering pipeline interfaces`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Publication state and revision DTOs** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `publication state and revision dtos`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Menu and taxonomy query contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `menu and taxonomy query contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Headless delivery and webhook event interfaces** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `headless delivery and webhook event interfaces`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cms-contracts.md) | [Source map](../SOURCE-MAPPING.md#cms-contracts) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cms-contracts.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cms-contracts.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-contracts-filament`](https://github.com/liberusoftware/module-cms-contracts-filament) (`liberusoftware/cms-contracts-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cms-contracts.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cms-contracts.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-contracts-react-inertia`](https://github.com/liberusoftware/module-cms-contracts-react-inertia) (`@liberusoftware/module-cms-contracts-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cms-contracts.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-contracts-vue-inertia`](https://github.com/liberusoftware/module-cms-contracts-vue-inertia) (`@liberusoftware/module-cms-contracts-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cms-contracts.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-contracts-nuxt`](https://github.com/liberusoftware/module-cms-contracts-nuxt) (`@liberusoftware/module-cms-contracts-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cms-contracts.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-contracts-nextjs`](https://github.com/liberusoftware/module-cms-contracts-nextjs) (`@liberusoftware/module-cms-contracts-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cms-contracts.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-contracts-react-native`](https://github.com/liberusoftware/module-cms-contracts-react-native) (`@liberusoftware/module-cms-contracts-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cms-contracts.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-contracts-flutter`](https://github.com/liberusoftware/module-cms-contracts-flutter) (`module_cms_contracts_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cms-contracts.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-contracts-dart-mobile`](https://github.com/liberusoftware/module-cms-contracts-dart-mobile) (`module_cms_contracts_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-contracts-dart-desktop`](https://github.com/liberusoftware/module-cms-contracts-dart-desktop) (`module_cms_contracts_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

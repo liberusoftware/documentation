@@ -1,5 +1,9 @@
 # Liberu Music: Plugin Hosting and Isolation — Core
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#plugin-hosting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Status: proposed design.** These are requirements and design identifiers, not verified source packages, published artifacts or implemented features.
 
 **Design identifier:** `module-music-plugin-hosting`. See [domain specification](../features/plugin-hosting.md).
@@ -19,3 +23,26 @@ Laravel persists metadata and coordinates jobs. Audio device, DSP and sample sch
 ## Verification
 
 Crash a scanner/worker and reopen a session with the plugin absent. Verify policy, revision conflict, idempotent command replay and cross-module contract compatibility. See [core architecture](../../../architecture/MODULES.md).
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Plugin discovery** | Model `plugin discovery` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Scanning** | Model `scanning` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Process isolation** | Model `process isolation` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **State snapshots** | Model `state snapshots` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Compatibility** | Model `compatibility` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Missing-plugin recovery** | Model `missing-plugin recovery` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/plugin-hosting.md) · [Filament 5](../filament/plugin-hosting.md) · [Livewire 4](../livewire/plugin-hosting.md) · [React + Inertia](../react/plugin-hosting.md) · [Vue + Inertia](../vue/plugin-hosting.md) · [Nuxt 4](../nuxt/plugin-hosting.md) · [Next.js](../nextjs/plugin-hosting.md) · [React Native](../react-native/plugin-hosting.md) · [Flutter & Dart](../flutter/plugin-hosting.md)
+<!-- core-implementation-plan:end -->

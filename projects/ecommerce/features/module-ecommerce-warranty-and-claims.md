@@ -18,7 +18,14 @@ The Module Ecommerce Warranty And Claims module owns module ecommerce warranty a
 
 ## 2. Full feature scope
 
-- **Module Ecommerce Warranty And Claims:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Warranty terms:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Registration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Claims:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Evidence:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Troubleshooting:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Repair/replace/refund decisions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Providers:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **History:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,38 @@ The Module Ecommerce Warranty And Claims module owns module ecommerce warranty a
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Warranty terms** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `warranty terms`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Registration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `registration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Claims** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `claims`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Evidence** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `evidence`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Troubleshooting** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `troubleshooting`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Repair/replace/refund decisions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `repair/replace/refund decisions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Providers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `providers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **History** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `history`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-ecommerce-warranty-and-claims.md) | [Source map](../SOURCE-MAPPING.md#module-ecommerce-warranty-and-claims) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-module-ecommerce-warranty-and-claims-filament`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-filament) (`liberusoftware/ecommerce-module-ecommerce-warranty-and-claims-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-module-ecommerce-warranty-and-claims-react-inertia`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-react-inertia) (`@liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-module-ecommerce-warranty-and-claims-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-vue-inertia) (`@liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-module-ecommerce-warranty-and-claims-nuxt`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-nuxt) (`@liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-module-ecommerce-warranty-and-claims-nextjs`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-nextjs) (`@liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-module-ecommerce-warranty-and-claims-react-native`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-react-native) (`@liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-module-ecommerce-warranty-and-claims-flutter`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-flutter) (`module_ecommerce_module_ecommerce_warranty_and_claims_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-ecommerce-warranty-and-claims.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-module-ecommerce-warranty-and-claims-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-dart-mobile) (`module_ecommerce_module_ecommerce_warranty_and_claims_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-module-ecommerce-warranty-and-claims-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warranty-and-claims-dart-desktop) (`module_ecommerce_module_ecommerce_warranty_and_claims_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

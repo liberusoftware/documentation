@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Module Automation Data Processing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Classification:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Extraction:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Summarization:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Translation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Enrichment:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Redaction:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Batch processing:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `module-automation-data-processing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `classification`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `extraction`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `summarization`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `translation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `enrichment`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `redaction`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `batch-processing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,54 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `module-automation-data-processing` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/module-automation-data-processing.md)) |
+| Capability Nuxt module skeleton | [`module-automation-data-processing-nuxt`](https://github.com/liberusoftware/module-automation-data-processing-nuxt) (`@liberusoftware/module-automation-data-processing-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Classification** | Expose composable and Vue 3 component for `classification` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-data-processing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Extraction** | Expose composable and Vue 3 component for `extraction` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-data-processing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Summarization** | Expose composable and Vue 3 component for `summarization` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-data-processing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Translation** | Expose composable and Vue 3 component for `translation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-data-processing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Enrichment** | Expose composable and Vue 3 component for `enrichment` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-data-processing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Redaction** | Expose composable and Vue 3 component for `redaction` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-data-processing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Batch processing** | Expose composable and Vue 3 component for `batch processing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-automation-data-processing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateDataProcessingResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing/src/Actions/CreateDataProcessingResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): DataProcessingResource` |
+| [TransitionDataProcessingResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing/src/Actions/TransitionDataProcessingResource.php) | `public function execute(DataProcessingResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): DataProcessingResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [DataProcessingResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing/src/Models/DataProcessingResource.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [DataProcessingResourceController.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing-api/src/Http/Controllers/DataProcessingResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateDataProcessingResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionDataProcessingResource $transition): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/module-automation-data-processing-api/routes/api.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-data-processing-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/automation/data-processing')->group(function (): void {
+Route::get('/', [DataProcessingResourceController::class, 'index']);
+Route::post('/', [DataProcessingResourceController::class, 'store']);
+Route::get('/{id}', [DataProcessingResourceController::class, 'show']);
+Route::patch('/{id}', [DataProcessingResourceController::class, 'update']);
+Route::delete('/{id}', [DataProcessingResourceController::class, 'destroy']);
+Route::post('/{id}/transition', [DataProcessingResourceController::class, 'transition']);
+```
+<!-- layer-implementation-plan:end -->

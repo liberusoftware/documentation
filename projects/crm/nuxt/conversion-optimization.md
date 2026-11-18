@@ -37,7 +37,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `a/b-and-multivariate-tests`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `a-b-and-multivariate-tests`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `traffic-allocation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `goals`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `statistical-policy`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -66,3 +66,61 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-conversion-optimization` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/conversion-optimization.md)) |
+| Capability Nuxt module skeleton | [`module-crm-conversion-optimization-nuxt`](https://github.com/liberusoftware/module-crm-conversion-optimization-nuxt) (`@liberusoftware/module-crm-conversion-optimization-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **A/B and multivariate tests** | Expose composable and Vue 3 component for `a/b and multivariate tests` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Traffic allocation** | Expose composable and Vue 3 component for `traffic allocation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Goals** | Expose composable and Vue 3 component for `goals` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Statistical policy** | Expose composable and Vue 3 component for `statistical policy` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Popups** | Expose composable and Vue 3 component for `popups` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Banners** | Expose composable and Vue 3 component for `banners` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **CTAs** | Expose composable and Vue 3 component for `ctas` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Personalization rules** | Expose composable and Vue 3 component for `personalization rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Experiment reporting** | Expose composable and Vue 3 component for `experiment reporting` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/conversion-optimization.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ConversionReportQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Queries/ConversionReportQuery.php) | `public function experiments(int $teamId): Builder`<br>`public function report(int $teamId, ConversionExperiment $experiment): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ActivateExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Actions/ActivateExperiment.php) | `public function execute(int $teamId, int $userId, ConversionExperiment $experiment): ConversionExperiment` |
+| [CreateConversionExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Actions/CreateConversionExperiment.php) | `public function execute(int $teamId, int $userId, array $input): ConversionExperiment` |
+| [RecordConversion.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Actions/RecordConversion.php) | `public function execute(int $teamId, ConversionExperiment $experiment, string $subjectKey, string $variant, string $event, float $value = 1): ConversionObservation` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ConversionExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Models/ConversionExperiment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ConversionObservation.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization/src/Models/ConversionObservation.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ConversionOptimizationController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization-api/src/Http/Controllers/ConversionOptimizationController.php) | `public function __construct(private readonly ConversionReportQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(CreateConversionExperiment $a): JsonResponse`<br>`public function activate(ConversionExperiment $e, ActivateExperiment $a): JsonResponse`<br>`public function convert(ConversionExperiment $e, RecordConversion $a): JsonResponse`<br>`public function report(ConversionExperiment $e): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-conversion-optimization-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversion-optimization-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/conversion-optimization')->group(function (): void {
+Route::get('experiments', [ConversionOptimizationController::class, 'index']);
+Route::post('experiments', [ConversionOptimizationController::class, 'store']);
+Route::post('experiments/{experiment}/activate', [ConversionOptimizationController::class, 'activate']);
+Route::post('experiments/{experiment}/conversions', [ConversionOptimizationController::class, 'convert']);
+Route::get('experiments/{experiment}/report', [ConversionOptimizationController::class, 'report']);
+```
+<!-- layer-implementation-plan:end -->

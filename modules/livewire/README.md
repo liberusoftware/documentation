@@ -20,7 +20,7 @@ Keep browser-facing state minimal and non-sensitive, translate core events into 
 | [CMS](../../projects/cms/livewire/README.md) | 252 | [LIVEWIRE](../../standards/LIVEWIRE.md) |
 | [Control Panel](../../projects/control-panel/livewire/README.md) | 61 | [LIVEWIRE](../../standards/LIVEWIRE.md) |
 | [CRM](../../projects/crm/livewire/README.md) | 218 | [LIVEWIRE](../../standards/LIVEWIRE.md) |
-| [Ecommerce](../../projects/ecommerce/livewire/README.md) | 107 | [LIVEWIRE](../../standards/LIVEWIRE.md) |
+| [Ecommerce](../../projects/ecommerce/livewire/README.md) | 108 | [LIVEWIRE](../../standards/LIVEWIRE.md) |
 | [Genealogy](../../projects/genealogy/livewire/README.md) | 62 | [LIVEWIRE](../../standards/LIVEWIRE.md) |
 | [Liberu platform](../../projects/liberu/livewire/README.md) | 4 | [LIVEWIRE](../../standards/LIVEWIRE.md) |
 | [Maintenance](../../projects/maintenance/livewire/README.md) | 60 | [LIVEWIRE](../../standards/LIVEWIRE.md) |

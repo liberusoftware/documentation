@@ -4,16 +4,29 @@ Start with the [project repository catalog](../../projects/REPOSITORIES.md) for 
 
 Use these implementation runbooks after choosing a capability and its canonical core owner. They describe new skeletons and adapter implementations, not packages that are already published. Confirm actual package names, callable contracts and availability in the [source inventory](../../architecture/SOURCE-INVENTORY.md), the project's `DEVELOPMENT.md` and `SOURCE-MAPPING.md`, and [source references](../../modules/source/README.md). All `example` names, DTOs and routes below are teaching examples to replace with reviewed contracts.
 
-| Surface | Skeleton and implementation | Package and release |
-| --- | --- | --- |
-| Vue + Inertia | [Laravel host and Vue pages](INERTIA.md) | [Vue library build](PACKAGES.md#3-vue-library) and [npm release](PACKAGES.md#6-publish-the-reviewed-tarball) |
-| React + Inertia | [Laravel host and React pages](INERTIA.md) | [React library build](PACKAGES.md#2-react-library) and npm release |
-| Nuxt (Vue) | [Nuxt application and adapter](NUXT.md) | Vue library or explicit Nuxt layer, then npm release |
-| Next.js (React) | [Next.js application and adapter](NEXTJS.md) | React library with server/client exports, then npm release |
-| React Native, including Expo | [Device application and adapter](REACT-NATIVE.md) | [Metro-compatible npm library](REACT-NATIVE.md#7-build-a-reusable-mobile-package), signed iOS/Android builds |
-| Flutter | [Device application and Dart package](FLUTTER.md) | Dart/pub release, signed iOS/Android builds |
-| Dart desktop | [Separate native desktop application](DART.md) | Dart/pub modules; Linux, macOS and Windows native builds |
-| Dart mobile | [Separate native mobile application](DART.md) | Dart/pub modules; signed iOS/Android builds |
+| Surface | Host skeleton pattern | Module foundation & skeleton catalog | Skeleton and implementation | Package and release |
+| --- | --- | --- | --- | --- |
+| Vue + Inertia | `project-{product}-laravel-inertia-vue` | [`module-boilerplate-vue-inertia`](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../modules/skeletons/laravel-inertia-vue.md) | [Laravel host and Vue pages](INERTIA.md) | [Vue library build](PACKAGES.md#3-vue-library) and [npm release](PACKAGES.md#6-publish-the-reviewed-tarball) |
+| React + Inertia | `project-{product}-laravel-inertia-react` | [`module-boilerplate-react-inertia`](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../modules/skeletons/laravel-inertia-react.md) | [Laravel host and React pages](INERTIA.md) | [React library build](PACKAGES.md#2-react-library) and npm release |
+| Nuxt (Vue) | `project-{product}-nuxt-vue` | [`module-boilerplate-nuxt`](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../modules/skeletons/nuxt-vue.md) | [Nuxt application and adapter](NUXT.md) | Vue library or explicit Nuxt layer, then npm release |
+| Next.js (React) | `project-{product}-next-react` | [`module-boilerplate-nextjs`](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../modules/skeletons/next-react.md) | [Next.js application and adapter](NEXTJS.md) | React library with server/client exports, then npm release |
+| React Native, including Expo | `project-{product}-mobile-react` | [`module-boilerplate-react-native`](https://github.com/liberusoftware/module-boilerplate-react-native) · [catalog](../../modules/skeletons/mobile-react.md) | [Device application and adapter](REACT-NATIVE.md) | [Metro-compatible npm library](REACT-NATIVE.md#7-build-a-reusable-mobile-package), signed iOS/Android builds |
+| Flutter | `project-{product}-mobile-flutter` | [`module-boilerplate-flutter`](https://github.com/liberusoftware/module-boilerplate-flutter) · [catalog](../../modules/skeletons/mobile-flutter.md) | [Device application and Dart package](FLUTTER.md) | Dart/pub release, signed iOS/Android builds |
+| Dart desktop | `project-{product}-dart-desktop` | [`module-boilerplate-dart-desktop`](https://github.com/liberusoftware/module-boilerplate-dart-desktop) · [catalog](../../modules/skeletons/dart-desktop.md) | [Separate native desktop application](DART.md) | Dart/pub modules (`module_*_dart_desktop`); Linux, macOS and Windows native builds |
+| Dart mobile | `project-{product}-dart-mobile` | [`module-boilerplate-dart-mobile`](https://github.com/liberusoftware/module-boilerplate-dart-mobile) · [catalog](../../modules/skeletons/dart-mobile.md) | [Separate native mobile application](DART.md) | Dart/pub modules (`module_*_dart_mobile`); signed iOS/Android builds |
+
+## Working with the GitHub skeleton repositories
+
+The organization provides **128 application host skeletons** (`project-{product}-{suffix}`, cataloged in [REPOSITORIES.md](../../projects/REPOSITORIES.md)), **16 shared product API backends** (`project-{product}-laravel-api`, documented in [LARAVEL-API-BACKENDS.md](../LARAVEL-API-BACKENDS.md)), and **5,679 capability module skeleton repositories** (`module-{capability}-{suffix}`, cataloged in [modules/skeletons/README.md](../../modules/skeletons/README.md)).
+
+1. **Application host skeletons (`project-{product}-{suffix}`):** Provide the framework shell, pinned toolchain (`.node-version`, `.flutter-version`, `composer.json`, `package.json`, `pubspec.yaml`), lockfiles, and an open GitHub wayfinder issue ([IMPLEMENTATION-ISSUES.md](../../projects/IMPLEMENTATION-ISSUES.md)) containing the technology-specific implementation method, technical specification ([wayfinders/](../../projects/wayfinders/README.md)), and capability checklist.
+2. **Capability module skeletons (`module-{capability}-{suffix}`):** Derived from the matching `module-boilerplate-*` template, each repository records its capability key and foundation commit in `module-skeleton.json`. They provide package structure, exports, and typecheck/build scripts—not completed business UI or certified registry releases.
+3. **Skeleton-to-feature implementation workflow:**
+   - Open the host's wayfinder issue and select a capability from the checklist.
+   - Read the capability's `features/{module}.md`, `core/{module}.md`, `api/{module}.md`, and `{layer}/{module}.md` specifications, including its structured feature/aspect matrix and observed source evidence.
+   - Ensure the core domain actions/queries and `project-{product}-laravel-api` endpoints (or Laravel Inertia controller routes) are implemented and tested first.
+   - Implement each feature/aspect in the matching `module-{capability}-{suffix}` skeleton repository, preserving `module-skeleton.json` provenance and replacing placeholder exports with tested components, hooks/composables, or widgets.
+   - Verify the packed module in a clean consumer and compose it into the `project-{product}-{suffix}` host skeleton with end-to-end journey, authorization, tenancy, accessibility, and recovery tests before checking the wayfinder item.
 
 For a concrete source-backed capability, compare the [CRM sales-pipeline walkthrough](../../projects/crm/guides/SALES-PIPELINES.md) with the matching core/API/presentation plans. Use its recorded source contracts as evidence, while keeping any new frontend implementation explicitly planned until built and verified.
 

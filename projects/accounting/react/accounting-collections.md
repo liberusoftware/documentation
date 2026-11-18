@@ -18,7 +18,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Collections:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reminder schedules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Statement runs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Promise-to-pay:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Disputes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Late fees/interest policy:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Collection stages:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Write-offs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Agency adapters:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-collections`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `reminder-schedules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `statement-runs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `promise-to-pay`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `disputes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `late-fees-interest-policy`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `collection-stages`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `write-offs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `agency-adapters`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,63 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-collections` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-collections-react-inertia`](https://github.com/liberusoftware/module-accounting-collections-react-inertia) (`@liberusoftware/module-accounting-collections-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-collections.md) · [Core plan](../core/accounting-collections.md) · [API plan](../api/accounting-collections.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Reminder schedules** | Render `reminder schedules` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Statement runs** | Render `statement runs` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Promise-to-pay** | Render `promise-to-pay` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Disputes** | Render `disputes` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Late fees/interest policy** | Render `late fees/interest policy` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Collection stages** | Render `collection stages` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Write-offs** | Render `write-offs` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Agency adapters** | Render `agency adapters` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CollectionCaseQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections/src/Queries/CollectionCaseQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCollectionCase.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections/src/Actions/CreateCollectionCase.php) | `public function handle(array $attributes): CollectionCase` |
+| [PrepareCollectionStatement.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections/src/Actions/PrepareCollectionStatement.php) | `public function handle(CollectionCase $case, array $statement): CollectionCase` |
+| [RecordCollectionActivity.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections/src/Actions/RecordCollectionActivity.php) | `public function reminder(CollectionCase $case, array $reminder): CollectionCase`<br>`public function promise(CollectionCase $case, array $promise): CollectionCase`<br>`public function dispute(CollectionCase $case, array $dispute): CollectionCase` |
+| [SendToCollectionAgency.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections/src/Actions/SendToCollectionAgency.php) | `public function handle(CollectionCase $case, string $agency): CollectionCase` |
+| [WriteOffCollectionCase.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections/src/Actions/WriteOffCollectionCase.php) | `public function handle(CollectionCase $case, array $writeOff): CollectionCase` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CollectionCase.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections/src/Models/CollectionCase.php) | `team_id`, `case_ref`, `customer_ref`, `balance`, `stage`, `interest_rate`, `reminders`, `statement_run`, `promise_to_pay`, `disputes`, `write_off`, `agency` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CollectionsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections-api/src/Http/Controllers/CollectionsController.php) | `public function index(CollectionCaseQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCollectionCase $action): JsonResponse`<br>`public function reminder(Request $request, string $case, RecordCollectionActivity $action): JsonResponse`<br>`public function promise(Request $request, string $case, RecordCollectionActivity $action): JsonResponse`<br>`public function dispute(Request $request, string $case, RecordCollectionActivity $action): JsonResponse`<br>`public function writeOff(Request $request, string $case, WriteOffCollectionCase $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-collections-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-collections-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/collections')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.collections.read')->get('/', [CollectionsController::class, 'index']);
+Route::middleware('ability:accounting.collections.write')->group(function (): void {
+Route::post('/', [CollectionsController::class, 'store']);
+Route::post('/{case}/reminders', [CollectionsController::class, 'reminder']);
+Route::post('/{case}/promises', [CollectionsController::class, 'promise']);
+Route::post('/{case}/disputes', [CollectionsController::class, 'dispute']);
+Route::post('/{case}/write-off', [CollectionsController::class, 'writeOff']);
+```
+<!-- layer-implementation-plan:end -->

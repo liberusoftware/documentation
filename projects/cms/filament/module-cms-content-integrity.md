@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Content Integrity:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Broken links/embeds/media:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Orphan detection:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Schema validation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Duplicate content:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Scheduled scans:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Repair queues:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Reports:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-content-integrity`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `broken-links-embeds-media`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `orphan-detection`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `schema-validation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `duplicate-content`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `scheduled-scans`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `repair-queues`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-content-integrity` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-content-integrity-filament`](https://github.com/liberusoftware/module-cms-content-integrity-filament) (`liberusoftware/cms-content-integrity-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-content-integrity.md) · [API plan](../api/module-cms-content-integrity.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Broken links/embeds/media** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `broken links/embeds/media`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Orphan detection** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `orphan detection`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Schema validation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `schema validation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Duplicate content** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `duplicate content`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Scheduled scans** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `scheduled scans`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Repair queues** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `repair queues`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ContentIntegrityFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-integrity-filament/src/ContentIntegrityFilamentServiceProvider.php) · [IntegrityFindingResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-integrity-filament/src/Resources/IntegrityFindingResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ContentIntegrityService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Services/ContentIntegrityService.php) | `public function findings(?int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function startScan(?int $teamId, string $scope = 'all'): IntegrityScan`<br>`public function finding(IntegrityScan $scan, array $data): IntegrityFinding`<br>`public function completeScan(IntegrityScan $scan): IntegrityScan`<br>`public function resolve(IntegrityFinding $finding): IntegrityFinding` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [IntegrityFinding.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Models/IntegrityFinding.php) | `scan_id`, `team_id`, `subject_type`, `subject_key`, `kind`, `severity`, `message`, `context`, `status`, `resolved_at` |
+| [IntegrityScan.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Models/IntegrityScan.php) | `team_id`, `scope`, `status`, `finding_count`, `started_at`, `completed_at` |
+<!-- layer-implementation-plan:end -->

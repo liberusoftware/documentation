@@ -18,7 +18,17 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Events And Webinars:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Physical/virtual events:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Registration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Capacity:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Tickets/attendance:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Sessions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Speakers:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reminders:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Check-in:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Recording links:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Follow-up:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Provider adapters:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +39,17 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-events-and-webinars`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `physical-virtual-events`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `registration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `capacity`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `tickets-attendance`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `sessions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `speakers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reminders`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `check-in`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `recording-links`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `follow-up`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `provider-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +70,68 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-events-and-webinars` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-events-and-webinars.md)) |
+| Capability Nuxt module skeleton | [`module-crm-events-and-webinars-nuxt`](https://github.com/liberusoftware/module-crm-events-and-webinars-nuxt) (`@liberusoftware/module-crm-events-and-webinars-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Physical/virtual events** | Expose composable and Vue 3 component for `physical/virtual events` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Registration** | Expose composable and Vue 3 component for `registration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Capacity** | Expose composable and Vue 3 component for `capacity` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Tickets/attendance** | Expose composable and Vue 3 component for `tickets/attendance` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Sessions** | Expose composable and Vue 3 component for `sessions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Speakers** | Expose composable and Vue 3 component for `speakers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Reminders** | Expose composable and Vue 3 component for `reminders` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Check-in** | Expose composable and Vue 3 component for `check-in` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Recording links** | Expose composable and Vue 3 component for `recording links` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Follow-up** | Expose composable and Vue 3 component for `follow-up` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Provider adapters** | Expose composable and Vue 3 component for `provider adapters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-events-and-webinars.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [EventQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Queries/EventQuery.php) | `public function events(int $teamId)`<br>`public function sessions(int $teamId, int $eventId)`<br>`public function attendance(int $teamId, int $eventId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CheckInAttendee.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Actions/CheckInAttendee.php) | `public function execute(int $teamId, EventRegistration $registration): EventRegistration` |
+| [CreateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Actions/CreateEvent.php) | `public function __construct(private readonly EventPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): CrmEvent` |
+| [RecordEventFollowUp.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Actions/RecordEventFollowUp.php) | `public function __construct(private readonly EventPolicy $policy)`<br>`public function execute(int $teamId, int $userId, CrmEvent $event, array $input): EventFollowUp` |
+| [RegisterAttendee.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Actions/RegisterAttendee.php) | `public function execute(int $teamId, CrmEvent $event, array $input): EventRegistration` |
+| [EventPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Services/EventPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CrmEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Models/CrmEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [EventFollowUp.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Models/EventFollowUp.php) | No literal fillable array detected; inspect the model and API schema. |
+| [EventRegistration.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Models/EventRegistration.php) | No literal fillable array detected; inspect the model and API schema. |
+| [EventSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars/src/Models/EventSession.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [EventsController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars-api/src/Http/Controllers/EventsController.php) | `public function __construct(private readonly EventQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(CreateEvent $action): JsonResponse`<br>`public function register(CrmEvent $event, RegisterAttendee $action): JsonResponse`<br>`public function checkIn(EventRegistration $registration, CheckInAttendee $action): JsonResponse`<br>`public function attendance(CrmEvent $event): JsonResponse`<br>`public function followUp(CrmEvent $event, RecordEventFollowUp $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-events-and-webinars-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-events-and-webinars-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/events-and-webinars')->group(function (): void {
+Route::get('/', [EventsController::class, 'index']);
+Route::post('/', [EventsController::class, 'store']);
+Route::post('{event}/registrations', [EventsController::class, 'register']);
+Route::post('registrations/{registration}/check-in', [EventsController::class, 'checkIn']);
+Route::get('{event}/attendance', [EventsController::class, 'attendance']);
+Route::post('{event}/follow-ups', [EventsController::class, 'followUp']);
+```
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Webhooks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Endpoint registration:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Signing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Delivery attempts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Retries:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Replay:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Event filtering:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `webhooks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `endpoint-registration`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `signing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `delivery-attempts`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `retries`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `replay`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `event-filtering`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `logs`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,47 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `webhooks` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-webhooks-vue-inertia`](https://github.com/liberusoftware/module-webhooks-vue-inertia) (`@liberusoftware/module-webhooks-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/webhooks.md) · [Core plan](../core/webhooks.md) · [API plan](../api/webhooks.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Endpoint registration** | Render `endpoint registration` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Signing** | Render `signing` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Delivery attempts** | Render `delivery attempts` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Retries** | Render `retries` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Replay** | Render `replay` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Event filtering** | Render `event filtering` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Logs** | Render `logs` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+**Observed route declarations:**
+
+[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/webhooks-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/webhooks')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('webhooks-api.status');
+```
+
+[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/webhooks-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/webhooks')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::get('/', [WebhooksController::class, 'index']);
+Route::post('/', [WebhooksController::class, 'store']);
+Route::post('/{endpoint}/rotate-secret', [WebhooksController::class, 'rotate']);
+Route::get('/{endpoint}/deliveries', [WebhooksController::class, 'deliveries']);
+Route::post('/{endpoint}/deliveries/{delivery}/replay', [WebhooksController::class, 'replay']);
+```
+<!-- layer-implementation-plan:end -->

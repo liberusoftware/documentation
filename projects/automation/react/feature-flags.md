@@ -18,7 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Feature Flags:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Typed flags:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Environment/tenant/user targeting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Rollout:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Telemetry:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Ownership:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cleanup:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `feature-flags`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `typed-flags`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `environment-tenant-user-targeting`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `rollout`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `telemetry`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `ownership`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `cleanup`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `feature-flags` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-feature-flags-react-inertia`](https://github.com/liberusoftware/module-feature-flags-react-inertia) (`@liberusoftware/module-feature-flags-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/feature-flags.md) · [Core plan](../core/feature-flags.md) · [API plan](../api/feature-flags.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Typed flags** | Render `typed flags` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Environment/tenant/user targeting** | Render `environment/tenant/user targeting` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Rollout** | Render `rollout` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Telemetry** | Render `telemetry` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Ownership** | Render `ownership` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Cleanup** | Render `cleanup` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+**Observed route declarations:**
+
+[modules/feature-flags-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/feature-flags-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/feature-flags')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('feature-flags-api.status');
+```
+<!-- layer-implementation-plan:end -->

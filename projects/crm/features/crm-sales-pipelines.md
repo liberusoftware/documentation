@@ -18,7 +18,18 @@ The Crm Sales Pipelines module owns crm sales pipelines domain behavior. It is t
 
 ## 2. Full feature scope
 
-- **Crm Sales Pipelines:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Multiple pipelines:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Stages:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Opportunities:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Products:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Values:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Probabilities:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Close dates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Competitors:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Dependencies:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Stage history:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Rotting:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Loss reasons:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,5 +89,44 @@ The Crm Sales Pipelines module owns crm sales pipelines domain behavior. It is t
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Multiple pipelines** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `multiple pipelines`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Stages** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `stages`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Opportunities** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `opportunities`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Products** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `products`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Values** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `values`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Probabilities** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `probabilities`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Close dates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `close dates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Competitors** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `competitors`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Dependencies** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `dependencies`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Stage history** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `stage history`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rotting** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rotting`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Loss reasons** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `loss reasons`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-sales-pipelines.md) | [Source map](../SOURCE-MAPPING.md#crm-sales-pipelines) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-sales-pipelines.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-sales-pipelines.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-sales-pipelines-filament`](https://github.com/liberusoftware/module-crm-sales-pipelines-filament) (`liberusoftware/crm-sales-pipelines-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-sales-pipelines.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-sales-pipelines.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-sales-pipelines-react-inertia`](https://github.com/liberusoftware/module-crm-sales-pipelines-react-inertia) (`@liberusoftware/module-crm-sales-pipelines-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-sales-pipelines.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-sales-pipelines-vue-inertia`](https://github.com/liberusoftware/module-crm-sales-pipelines-vue-inertia) (`@liberusoftware/module-crm-sales-pipelines-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-sales-pipelines.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-sales-pipelines-nuxt`](https://github.com/liberusoftware/module-crm-sales-pipelines-nuxt) (`@liberusoftware/module-crm-sales-pipelines-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-sales-pipelines.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-sales-pipelines-nextjs`](https://github.com/liberusoftware/module-crm-sales-pipelines-nextjs) (`@liberusoftware/module-crm-sales-pipelines-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-sales-pipelines.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-sales-pipelines-react-native`](https://github.com/liberusoftware/module-crm-sales-pipelines-react-native) (`@liberusoftware/module-crm-sales-pipelines-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-sales-pipelines.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-sales-pipelines-flutter`](https://github.com/liberusoftware/module-crm-sales-pipelines-flutter) (`module_crm_sales_pipelines_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-sales-pipelines.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-sales-pipelines-dart-mobile`](https://github.com/liberusoftware/module-crm-sales-pipelines-dart-mobile) (`module_crm_sales_pipelines_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-sales-pipelines-dart-desktop`](https://github.com/liberusoftware/module-crm-sales-pipelines-dart-desktop) (`module_crm_sales_pipelines_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->
 
 Read the [source-backed sales-pipeline walkthrough](../guides/SALES-PIPELINES.md) for actual actions, routes, permissions, UI behavior and differences from the target design.

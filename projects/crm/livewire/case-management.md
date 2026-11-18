@@ -39,14 +39,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `tickets/cases`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tickets-cases`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `types`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `pipelines`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `statuses`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `priorities`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `ownership`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `parent/child-cases`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `related-assets/orders`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `parent-child-cases`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `related-assets-orders`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `entitlements`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `escalation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `audit`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
@@ -62,3 +62,47 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-case-management` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/case-management.md) · [API plan](../api/case-management.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Tickets/cases** | Expose a focused Livewire 4 component and namespaced Blade default view for `tickets/cases` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Types** | Expose a focused Livewire 4 component and namespaced Blade default view for `types` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Pipelines** | Expose a focused Livewire 4 component and namespaced Blade default view for `pipelines` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Statuses** | Expose a focused Livewire 4 component and namespaced Blade default view for `statuses` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Priorities** | Expose a focused Livewire 4 component and namespaced Blade default view for `priorities` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Ownership** | Expose a focused Livewire 4 component and namespaced Blade default view for `ownership` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Parent/child cases** | Expose a focused Livewire 4 component and namespaced Blade default view for `parent/child cases` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Related assets/orders** | Expose a focused Livewire 4 component and namespaced Blade default view for `related assets/orders` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Entitlements** | Expose a focused Livewire 4 component and namespaced Blade default view for `entitlements` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Escalation** | Expose a focused Livewire 4 component and namespaced Blade default view for `escalation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Audit** | Expose a focused Livewire 4 component and namespaced Blade default view for `audit` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [CaseManagementLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management-livewire/src/CaseManagementLivewireServiceProvider.php) · [CaseBrowser.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management-livewire/src/Components/CaseBrowser.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CaseQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management/src/Queries/CaseQuery.php) | `public function cases(int $teamId): Builder`<br>`public function queue(int $teamId, string $status = 'open'): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [OpenCase.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management/src/Actions/OpenCase.php) | `public function execute(int $teamId, int $ownerId, array $input): CaseRecord` |
+| [TransitionCase.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management/src/Actions/TransitionCase.php) | `public function execute(int $teamId, int $actorId, CaseRecord $case, string $status, ?int $ownerId = null): CaseRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CaseAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management/src/Models/CaseAudit.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CaseRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management/src/Models/CaseRecord.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

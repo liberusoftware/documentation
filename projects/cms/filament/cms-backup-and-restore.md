@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Backup And Restore:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Content/configuration/database/file backup contracts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Schedules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Encryption:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retention:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Verification:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Restore preview:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Evidence:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-backup-and-restore`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `content-configuration-database-file-backup-contracts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `schedules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `encryption`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retention`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `verification`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `restore-preview`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `evidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-backup-and-restore` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-backup-and-restore-filament`](https://github.com/liberusoftware/module-cms-backup-and-restore-filament) (`liberusoftware/cms-backup-and-restore-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-backup-and-restore.md) · [API plan](../api/cms-backup-and-restore.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Content/configuration/database/file backup contracts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `content/configuration/database/file backup contracts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Schedules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `schedules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Encryption** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `encryption`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retention** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retention`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Verification** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `verification`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Restore preview** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `restore preview`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [BackupAndRestoreFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-backup-and-restore-filament/src/BackupAndRestoreFilamentServiceProvider.php) · [BackupArtifactResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-backup-and-restore-filament/src/Resources/BackupArtifactResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [BackupAndRestoreService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Services/BackupAndRestoreService.php) | `public function createArtifact(?int $teamId, array $data): BackupArtifact`<br>`public function verify(BackupArtifact $artifact): BackupArtifact`<br>`public function restorePreview(BackupArtifact $artifact): array`<br>`public function schedule(?int $teamId, array $data): BackupSchedule` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [BackupArtifact.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Models/BackupArtifact.php) | `team_id`, `name`, `artifact_type`, `status`, `disk`, `path`, `size`, `checksum`, `encrypted`, `metadata`, `verified_at`, `expires_at` |
+| [BackupSchedule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Models/BackupSchedule.php) | `team_id`, `name`, `frequency`, `artifact_types`, `retention_days`, `enabled`, `next_run_at`, `last_run_at` |
+<!-- layer-implementation-plan:end -->

@@ -18,15 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Referral programs:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Links/codes:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Advocates:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Prospects:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Qualification:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Rewards:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Fraud/duplicate controls:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Status:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Attribution:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Referral programs extending AffiliateProgramContract:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Links/codes via ReferralAttributionContract:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Advocates and referred prospects:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Qualification via ConversionRecorderContract:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Rewards via RewardFulfillmentContract:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Status and multi-touch attribution:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -37,15 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `referral-programs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `links/codes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `advocates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `prospects`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `qualification`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `rewards`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `fraud/duplicate-controls`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `status`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `attribution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `referral-programs-extending-affiliateprogramcontract`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `links-codes-via-referralattributioncontract`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `advocates-and-referred-prospects`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `qualification-via-conversionrecordercontract`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `rewards-via-rewardfulfillmentcontract`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `fraud-duplicate-controls-via-fraudandselfreferralpolicycontract`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `status-and-multi-touch-attribution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -58,3 +54,48 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-referrals` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-referrals-filament`](https://github.com/liberusoftware/module-crm-referrals-filament) (`liberusoftware/crm-referrals-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/referrals.md) · [API plan](../api/referrals.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Referral programs extending AffiliateProgramContract** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `referral programs extending affiliateprogramcontract`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Links/codes via ReferralAttributionContract** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `links/codes via referralattributioncontract`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Advocates and referred prospects** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `advocates and referred prospects`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Qualification via ConversionRecorderContract** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `qualification via conversionrecordercontract`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Rewards via RewardFulfillmentContract** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `rewards via rewardfulfillmentcontract`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `fraud/duplicate controls via fraudandselfreferralpolicycontract`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Status and multi-touch attribution** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `status and multi-touch attribution`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ReferralsFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-filament/src/ReferralsFilamentPlugin.php) · [ReferralsFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-filament/src/ReferralsFilamentServiceProvider.php) · [ReferralResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-filament/src/Resources/ReferralResource.php) · [CreateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-filament/src/Resources/ReferralResource/Pages/CreateReferral.php) · [EditReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-filament/src/Resources/ReferralResource/Pages/EditReferral.php) · [ListReferrals.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-filament/src/Resources/ReferralResource/Pages/ListReferrals.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ReferralQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Queries/ReferralQuery.php) | `public function programs(int $teamId)`<br>`public function referrals(int $teamId)`<br>`public function rewards(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateProgram.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ReferralProgram` |
+| [CreateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): Referral` |
+| [IssueReward.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/IssueReward.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ReferralReward` |
+| [QualifyReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/QualifyReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $referralId, string $status): Referral` |
+| [UpdateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/UpdateReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $referralId, array $input): Referral` |
+| [ReferralPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Services/ReferralPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Referral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Models/Referral.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ReferralProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Models/ReferralProgram.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ReferralReward.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Models/ReferralReward.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

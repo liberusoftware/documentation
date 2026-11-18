@@ -18,7 +18,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Channel Sales:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Partner opportunities:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Shared pipelines:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Referrals:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reseller pricing references:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Quotes/orders handoff:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Commissions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Forecasts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Partner portal:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +36,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-channel-sales`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `partner-opportunities`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `shared-pipelines`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `referrals`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reseller-pricing-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `quotes-orders-handoff`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `commissions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `forecasts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `partner-portal`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +64,58 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-channel-sales` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-channel-sales.md)) |
+| Capability Nuxt module skeleton | [`module-crm-channel-sales-nuxt`](https://github.com/liberusoftware/module-crm-channel-sales-nuxt) (`@liberusoftware/module-crm-channel-sales-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Partner opportunities** | Expose composable and Vue 3 component for `partner opportunities` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Shared pipelines** | Expose composable and Vue 3 component for `shared pipelines` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Referrals** | Expose composable and Vue 3 component for `referrals` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Reseller pricing references** | Expose composable and Vue 3 component for `reseller pricing references` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Quotes/orders handoff** | Expose composable and Vue 3 component for `quotes/orders handoff` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Commissions** | Expose composable and Vue 3 component for `commissions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Forecasts** | Expose composable and Vue 3 component for `forecasts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Partner portal** | Expose composable and Vue 3 component for `partner portal` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-channel-sales.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ChannelSalesQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Queries/ChannelSalesQuery.php) | `public function opportunities(int $teamId): Builder`<br>`public function forecast(int $teamId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AdvanceChannelOpportunity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Actions/AdvanceChannelOpportunity.php) | `public function execute(int $teamId, int $actorId, ChannelOpportunity $opportunity, string $stage, string $handoffStatus = 'pending'): ChannelEvent` |
+| [RegisterChannelOpportunity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Actions/RegisterChannelOpportunity.php) | `public function execute(int $teamId, int $ownerId, string $partnerKey, string $opportunityKey, float $amount, float $commissionRate, array $pricingReference = []): ChannelOpportunity` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ChannelEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Models/ChannelEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ChannelOpportunity.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales/src/Models/ChannelOpportunity.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ChannelSalesController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales-api/src/Http/Controllers/ChannelSalesController.php) | `public function __construct(private readonly ChannelSalesQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(RegisterChannelOpportunity $a): JsonResponse`<br>`public function advance(ChannelOpportunity $opportunity, AdvanceChannelOpportunity $a): JsonResponse`<br>`public function forecast(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-channel-sales-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-channel-sales-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/channel-sales')->group(function (): void {
+Route::get('opportunities', [ChannelSalesController::class, 'index']);
+Route::post('opportunities', [ChannelSalesController::class, 'store']);
+Route::post('opportunities/{opportunity}/advance', [ChannelSalesController::class, 'advance']);
+Route::get('forecast', [ChannelSalesController::class, 'forecast']);
+```
+<!-- layer-implementation-plan:end -->

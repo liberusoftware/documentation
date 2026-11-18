@@ -18,7 +18,14 @@ The Browser Game Economy module owns browser game economy domain behavior. It is
 
 ## 2. Full feature scope
 
-- **Browser Game Economy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Currencies:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Faucets/sinks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Vendors:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Pricing:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Trading:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Auction house:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Fees:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Anti-abuse controls:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,38 @@ The Browser Game Economy module owns browser game economy domain behavior. It is
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Currencies** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `currencies`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Faucets/sinks** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `faucets/sinks`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Vendors** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `vendors`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Pricing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `pricing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Trading** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `trading`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Auction house** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `auction house`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Fees** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `fees`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Anti-abuse controls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `anti-abuse controls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/browser-game-economy.md) | [Source map](../SOURCE-MAPPING.md#browser-game-economy) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/browser-game-economy.md) | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/browser-game-economy.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) · [`module-browser-game-economy-filament`](https://github.com/liberusoftware/module-browser-game-economy-filament) (`liberusoftware/browser-game-economy-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/browser-game-economy.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/browser-game-economy.md) | [`project-browser-game-laravel-inertia-react`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-react) · [`module-browser-game-economy-react-inertia`](https://github.com/liberusoftware/module-browser-game-economy-react-inertia) (`@liberusoftware/module-browser-game-economy-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/browser-game-economy.md) | [`project-browser-game-laravel-inertia-vue`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue) · [`module-browser-game-economy-vue-inertia`](https://github.com/liberusoftware/module-browser-game-economy-vue-inertia) (`@liberusoftware/module-browser-game-economy-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/browser-game-economy.md) | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) · [`module-browser-game-economy-nuxt`](https://github.com/liberusoftware/module-browser-game-economy-nuxt) (`@liberusoftware/module-browser-game-economy-nuxt`) | Standalone Vue SSR client consuming `project-browser-game-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/browser-game-economy.md) | [`project-browser-game-next-react`](https://github.com/liberusoftware/project-browser-game-next-react) · [`module-browser-game-economy-nextjs`](https://github.com/liberusoftware/module-browser-game-economy-nextjs) (`@liberusoftware/module-browser-game-economy-nextjs`) | App Router Server/Client components consuming `project-browser-game-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/browser-game-economy.md) | [`project-browser-game-mobile-react`](https://github.com/liberusoftware/project-browser-game-mobile-react) · [`module-browser-game-economy-react-native`](https://github.com/liberusoftware/module-browser-game-economy-react-native) (`@liberusoftware/module-browser-game-economy-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/browser-game-economy.md) | [`project-browser-game-mobile-flutter`](https://github.com/liberusoftware/project-browser-game-mobile-flutter) · [`module-browser-game-economy-flutter`](https://github.com/liberusoftware/module-browser-game-economy-flutter) (`module_browser_game_economy_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/browser-game-economy.md) | [`project-browser-game-dart-mobile`](https://github.com/liberusoftware/project-browser-game-dart-mobile) · [`module-browser-game-economy-dart-mobile`](https://github.com/liberusoftware/module-browser-game-economy-dart-mobile) (`module_browser_game_economy_dart_mobile`)<br>[`project-browser-game-dart-desktop`](https://github.com/liberusoftware/project-browser-game-dart-desktop) · [`module-browser-game-economy-dart-desktop`](https://github.com/liberusoftware/module-browser-game-economy-dart-desktop) (`module_browser_game_economy_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

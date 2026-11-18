@@ -60,7 +60,7 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Ecommerc
 | [Marketplace Channels Core Module](marketplace-channels.md) | [Target/source map](../SOURCE-MAPPING.md#marketplace-channels) | [api](../api/marketplace-channels.md) · [nextjs](../nextjs/marketplace-channels.md) |
 | [Marketplace Orders Core Module](marketplace-orders.md) | [Target/source map](../SOURCE-MAPPING.md#marketplace-orders) | [api](../api/marketplace-orders.md) · [nextjs](../nextjs/marketplace-orders.md) |
 | [Markets Core Module](markets.md) | [Target/source map](../SOURCE-MAPPING.md#markets) | [api](../api/markets.md) · [nextjs](../nextjs/markets.md) |
-| [Membership Core Module](membership-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#membership-commerce) | [api](../api/membership-commerce.md) · [nextjs](../nextjs/membership-commerce.md) |
+| [Membership Commerce Core Module](membership-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#membership-commerce) | [api](../api/membership-commerce.md) · [nextjs](../nextjs/membership-commerce.md) |
 | [Merchandising Intelligence Core Module](merchandising-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#merchandising-intelligence) | [api](../api/merchandising-intelligence.md) · [nextjs](../nextjs/merchandising-intelligence.md) |
 | [Merchandising Core Module](merchandising.md) | [Target/source map](../SOURCE-MAPPING.md#merchandising) | [api](../api/merchandising.md) · [nextjs](../nextjs/merchandising.md) |
 | [Migration Framework Core Module](migration-framework.md) | [Target/source map](../SOURCE-MAPPING.md#migration-framework) | [api](../api/migration-framework.md) · [nextjs](../nextjs/migration-framework.md) |
@@ -108,11 +108,11 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Ecommerc
 | [Seller Marketplace Core Module](seller-marketplace.md) | [Target/source map](../SOURCE-MAPPING.md#seller-marketplace) | [api](../api/seller-marketplace.md) · [nextjs](../nextjs/seller-marketplace.md) |
 | [Shared Catalogs Core Module](shared-catalogs.md) | [Target/source map](../SOURCE-MAPPING.md#shared-catalogs) | [api](../api/shared-catalogs.md) · [nextjs](../nextjs/shared-catalogs.md) |
 | [Shipping Core Module](shipping.md) | [Target/source map](../SOURCE-MAPPING.md#shipping) | [api](../api/shipping.md) · [nextjs](../nextjs/shipping.md) |
-| [Social Core Module](social-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#social-commerce) | [api](../api/social-commerce.md) · [nextjs](../nextjs/social-commerce.md) |
+| [Social Commerce Core Module](social-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#social-commerce) | [api](../api/social-commerce.md) · [nextjs](../nextjs/social-commerce.md) |
 | [Store Templates Core Module](store-templates.md) | [Target/source map](../SOURCE-MAPPING.md#store-templates) | [api](../api/store-templates.md) · [nextjs](../nextjs/store-templates.md) |
-| [Subscription Core Module](subscription-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#subscription-commerce) | [api](../api/subscription-commerce.md) · [nextjs](../nextjs/subscription-commerce.md) |
+| [Subscription Commerce Core Module](subscription-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#subscription-commerce) | [api](../api/subscription-commerce.md) · [nextjs](../nextjs/subscription-commerce.md) |
 | [Tax Core Module](tax.md) | [Target/source map](../SOURCE-MAPPING.md#tax) | [api](../api/tax.md) · [nextjs](../nextjs/tax.md) |
 | [Transfers And Replenishment Core Module](transfers-and-replenishment.md) | [Target/source map](../SOURCE-MAPPING.md#transfers-and-replenishment) | [api](../api/transfers-and-replenishment.md) · [nextjs](../nextjs/transfers-and-replenishment.md) |
-| [Unified Core Module](unified-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#unified-commerce) | [api](../api/unified-commerce.md) · [nextjs](../nextjs/unified-commerce.md) |
+| [Unified Commerce Core Module](unified-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#unified-commerce) | [api](../api/unified-commerce.md) · [nextjs](../nextjs/unified-commerce.md) |
 | [Warehouse Operations Core Module](warehouse-operations.md) | [Target/source map](../SOURCE-MAPPING.md#warehouse-operations) | [api](../api/warehouse-operations.md) · [nextjs](../nextjs/warehouse-operations.md) |
 | [Warranty And Claims Core Module](warranty-and-claims.md) | [Target/source map](../SOURCE-MAPPING.md#warranty-and-claims) | [api](../api/warranty-and-claims.md) · [nextjs](../nextjs/warranty-and-claims.md) |

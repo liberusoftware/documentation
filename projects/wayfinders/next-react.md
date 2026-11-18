@@ -3,6 +3,8 @@
 This is the technology-specific implementation specification for `next-react` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-next-react
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-nextjs
+- Capability skeleton catalog: [`modules/skeletons/next-react.md`](../../modules/skeletons/next-react.md)
 - Presentation layer directory in product docs: `nextjs/`
 - Adapter identity pattern: `module-{capability}-nextjs`
 - Consumes product `-laravel-api`: yes

@@ -10,7 +10,9 @@
 
 ## Module-specific scope
 
-Use this guide for the **Platform Orchestration** capability and its authorized workflow.
+The intended **Platform Orchestration** workspace covers platform Orchestration coordinates application manifests, enabled/installed/entitled states, cross-product capability declarations, workflow ownership, release gates, and safe composition. It does not own product records, package internals, authorization policy, or business workflows already owned by another project.
+
+The relevant capability areas are **Composition manifest**, **Capability graph**, **Lifecycle coordination**, **Release gates**, **Ownership registry**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

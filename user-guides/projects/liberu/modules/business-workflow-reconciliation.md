@@ -10,7 +10,9 @@
 
 ## Module-specific scope
 
-Use this guide for the **Business Workflow Reconciliation** capability and its authorized workflow.
+The intended **Business Workflow Reconciliation** workspace covers business Workflow Reconciliation tracks the shared state of composed workflows such as hosting order-to-provisioning, lead-to-revenue, procure-to-pay, and incident-to-resolution. Owning products remain authoritative for each local state and action.
+
+The relevant capability areas are **Workflow run registry**, **State mapping**, **Reconciliation rules**, **Recovery coordination**, **Audit timeline**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -18,7 +18,11 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Liberu Business Workflow Reconciliation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Workflow run registry:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **State mapping:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reconciliation rules:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Recovery coordination:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Audit timeline:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +33,11 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `liberu-business-workflow-reconciliation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `workflow-run-registry`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `state-mapping`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reconciliation-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `recovery-coordination`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `audit-timeline`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +58,34 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `liberu-business-workflow-reconciliation` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/liberu-business-workflow-reconciliation.md)) |
+| Capability Nuxt module skeleton | [`module-liberu-business-workflow-reconciliation-a2a7004b-nuxt`](https://github.com/liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-nuxt) (`@liberusoftware/module-liberu-business-workflow-reconciliation-a2a7004b-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Workflow run registry** | Expose composable and Vue 3 component for `workflow run registry` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/liberu-business-workflow-reconciliation.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **State mapping** | Expose composable and Vue 3 component for `state mapping` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/liberu-business-workflow-reconciliation.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Reconciliation rules** | Expose composable and Vue 3 component for `reconciliation rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/liberu-business-workflow-reconciliation.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Recovery coordination** | Expose composable and Vue 3 component for `recovery coordination` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/liberu-business-workflow-reconciliation.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Audit timeline** | Expose composable and Vue 3 component for `audit timeline` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/liberu-business-workflow-reconciliation.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) | `public function execute(array $attributes): ReconciliationCase` |
+| [TransitionReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/TransitionReconciliationCase.php) | `public function execute(ReconciliationCase $record, LifecycleStatus $to): ReconciliationCase` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Models/ReconciliationCase.php) | `tenant_id`, `idempotency_key`, `name`, `status`, `metadata` |
+<!-- layer-implementation-plan:end -->

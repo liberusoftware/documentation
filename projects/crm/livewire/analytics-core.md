@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Analytics Core:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Provider-neutral events:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Identity/consent context:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Destinations:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Routing:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Deduplication:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Delivery audit:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `analytics-core`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `provider-neutral-events`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `identity-consent-context`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `destinations`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `routing`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `deduplication`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `delivery-audit`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,28 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `analytics-core` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/analytics-core.md) · [API plan](../api/analytics-core.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Provider-neutral events** | Expose a focused Livewire 4 component and namespaced Blade default view for `provider-neutral events` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Identity/consent context** | Expose a focused Livewire 4 component and namespaced Blade default view for `identity/consent context` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Destinations** | Expose a focused Livewire 4 component and namespaced Blade default view for `destinations` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Routing** | Expose a focused Livewire 4 component and namespaced Blade default view for `routing` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Deduplication** | Expose a focused Livewire 4 component and namespaced Blade default view for `deduplication` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Delivery audit** | Expose a focused Livewire 4 component and namespaced Blade default view for `delivery audit` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/analytics-core-livewire/src/Livewire/Overview.php) · [AnalyticsCoreLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/analytics-core-livewire/src/AnalyticsCoreLivewireServiceProvider.php).
+<!-- layer-implementation-plan:end -->

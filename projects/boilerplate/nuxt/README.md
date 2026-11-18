@@ -1,7 +1,7 @@
 # Boilerplate Nuxt Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **55 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
@@ -10,6 +10,8 @@ Each file defines the optional Nuxt 4 presentation package for exactly one match
 | --- | --- | --- |
 | [Activity and Comments Nuxt presentation packages](activity-and-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-and-comments) | [core](../core/activity-and-comments.md) · [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
 | [Activity Comments Nuxt](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Affiliate Contracts Nuxt](affiliate-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#affiliate-contracts) | [core](../core/affiliate-contracts.md) · [api](../api/affiliate-contracts.md) · [nextjs](../nextjs/affiliate-contracts.md) |
+| [Affiliates and Partner Programs Nuxt](affiliates.md) | [Target/source map](../SOURCE-MAPPING.md#affiliates) | [core](../core/affiliates.md) · [api](../api/affiliates.md) · [nextjs](../nextjs/affiliates.md) |
 | [Analytics Core Nuxt presentation packages](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google Nuxt](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta Nuxt](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
@@ -39,6 +41,16 @@ Each file defines the optional Nuxt 4 presentation package for exactly one match
 | [Observability Nuxt presentation packages](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
 | [Organizations and Teams Nuxt presentation packages](organizations-and-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-and-teams) | [core](../core/organizations-and-teams.md) · [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
 | [Organizations Teams Nuxt](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Passkeys and WebAuthn Nuxt](passkeys.md) | [Target/source map](../SOURCE-MAPPING.md#passkeys) | [core](../core/passkeys.md) · [api](../api/passkeys.md) · [nextjs](../nextjs/passkeys.md) |
+| [Payment Adyen Adapter Nuxt](payment-adyen.md) | [Target/source map](../SOURCE-MAPPING.md#payment-adyen) | [core](../core/payment-adyen.md) · [api](../api/payment-adyen.md) · [nextjs](../nextjs/payment-adyen.md) |
+| [Payment Contracts Nuxt](payment-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#payment-contracts) | [core](../core/payment-contracts.md) · [api](../api/payment-contracts.md) · [nextjs](../nextjs/payment-contracts.md) |
+| [Payment Core Nuxt](payment-core.md) | [Target/source map](../SOURCE-MAPPING.md#payment-core) | [core](../core/payment-core.md) · [api](../api/payment-core.md) · [nextjs](../nextjs/payment-core.md) |
+| [Payment GoCardless Adapter Nuxt](payment-gocardless.md) | [Target/source map](../SOURCE-MAPPING.md#payment-gocardless) | [core](../core/payment-gocardless.md) · [api](../api/payment-gocardless.md) · [nextjs](../nextjs/payment-gocardless.md) |
+| [Payment Mollie Adapter Nuxt](payment-mollie.md) | [Target/source map](../SOURCE-MAPPING.md#payment-mollie) | [core](../core/payment-mollie.md) · [api](../api/payment-mollie.md) · [nextjs](../nextjs/payment-mollie.md) |
+| [Payment Paddle Adapter Nuxt](payment-paddle.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paddle) | [core](../core/payment-paddle.md) · [api](../api/payment-paddle.md) · [nextjs](../nextjs/payment-paddle.md) |
+| [Payment PayPal Adapter Nuxt](payment-paypal.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paypal) | [core](../core/payment-paypal.md) · [api](../api/payment-paypal.md) · [nextjs](../nextjs/payment-paypal.md) |
+| [Payment Square Adapter Nuxt](payment-square.md) | [Target/source map](../SOURCE-MAPPING.md#payment-square) | [core](../core/payment-square.md) · [api](../api/payment-square.md) · [nextjs](../nextjs/payment-square.md) |
+| [Payment Stripe Adapter Nuxt](payment-stripe.md) | [Target/source map](../SOURCE-MAPPING.md#payment-stripe) | [core](../core/payment-stripe.md) · [api](../api/payment-stripe.md) · [nextjs](../nextjs/payment-stripe.md) |
 | [Profiles Nuxt presentation packages](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
 | [Roles and Permissions Nuxt presentation packages](roles-and-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-and-permissions) | [core](../core/roles-and-permissions.md) · [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
 | [Roles Permissions Nuxt](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |

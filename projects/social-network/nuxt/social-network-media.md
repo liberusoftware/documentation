@@ -18,7 +18,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Social Network Media:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Images:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Video:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Audio:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Files:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Processing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Alt text:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Captions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Rights:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Delivery:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +37,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `social-network-media`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `images`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `video`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `audio`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `files`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `processing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `alt-text`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `captions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `rights`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `delivery`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +66,68 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `social-network-media` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-social-network-nuxt-vue`](https://github.com/liberusoftware/project-social-network-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-social-network-laravel-api`](https://github.com/liberusoftware/project-social-network-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/social-network-media.md)) |
+| Capability Nuxt module skeleton | [`module-social-network-media-nuxt`](https://github.com/liberusoftware/module-social-network-media-nuxt) (`@liberusoftware/module-social-network-media-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Images** | Expose composable and Vue 3 component for `images` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Video** | Expose composable and Vue 3 component for `video` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Audio** | Expose composable and Vue 3 component for `audio` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Files** | Expose composable and Vue 3 component for `files` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Processing** | Expose composable and Vue 3 component for `processing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Alt text** | Expose composable and Vue 3 component for `alt text` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Captions** | Expose composable and Vue 3 component for `captions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Rights** | Expose composable and Vue 3 component for `rights` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Delivery** | Expose composable and Vue 3 component for `delivery` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/social-network-media.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateAlbum.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Actions/CreateAlbum.php) | `public function handle(Profile $owner, array $attributes): Album` |
+| [DeleteAlbum.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Actions/DeleteAlbum.php) | `public function handle(Profile $owner, Album $album): void` |
+| [DeleteMediaAsset.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Actions/DeleteMediaAsset.php) | `public function handle(Profile $owner, MediaAsset $asset): void` |
+| [MarkMediaReady.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Actions/MarkMediaReady.php) | `public function handle(Profile $owner, MediaAsset $asset): MediaAsset` |
+| [RegisterMediaAsset.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Actions/RegisterMediaAsset.php) | `public function __construct(private MediaAuthorizer $authorizer, private Dispatcher $events)`<br>`public function handle(Profile $owner, array $attributes): MediaAsset` |
+| [UpdateAlbum.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Actions/UpdateAlbum.php) | `public function handle(Profile $owner, Album $album, array $attributes): Album` |
+| [UpdateMediaAsset.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Actions/UpdateMediaAsset.php) | `public function __construct(private MediaAuthorizer $authorizer)`<br>`public function handle(Profile $owner, MediaAsset $asset, array $attributes): MediaAsset` |
+| [MediaAuthorizer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Contracts/MediaAuthorizer.php) | `public function upload(Profile $owner): void`<br>`public function update(Profile $owner): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Album.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Models/Album.php) | `id`, `owner_profile_id`, `name`, `description`, `privacy`, `cover_path` |
+| [MediaAsset.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media/src/Models/MediaAsset.php) | `id`, `owner_profile_id`, `album_id`, `type`, `state`, `disk`, `path`, `mime_type`, `size`, `checksum`, `alt_text`, `captions`, `rights`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [MediaController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/src/Http/Controllers/MediaController.php) | `public function store(Request $request, GetProfile $get, RegisterMediaAsset $register): JsonResponse`<br>`public function index(Request $request, GetProfile $get): JsonResponse`<br>`public function show(string $asset, Request $request, GetProfile $get): JsonResponse`<br>`public function update(string $asset, Request $request, GetProfile $get, UpdateMediaAsset $update): JsonResponse`<br>`public function ready(string $asset, Request $request, GetProfile $get, MarkMediaReady $ready): JsonResponse`<br>`public function destroy(string $asset, Request $request, GetProfile $get, DeleteMediaAsset $delete): JsonResponse`<br>`public function albums(Request $request, GetProfile $get): JsonResponse`<br>`public function storeAlbum(Request $request, GetProfile $get, CreateAlbum $create): JsonResponse`<br>`public function showAlbum(string $album, Request $request, GetProfile $get): JsonResponse`<br>`public function updateAlbum(string $album, Request $request, GetProfile $get, UpdateAlbum $update): JsonResponse`<br>`public function destroyAlbum(string $album, Request $request, GetProfile $get, DeleteAlbum $delete): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/social-network-media-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/social-network/media')->middleware(['auth:sanctum', 'throttle:30,1'])->name('social-network.media.api.')->group(function (): void {
+Route::get('/', [MediaController::class, 'index'])->name('index');
+Route::get('/albums', [MediaController::class, 'albums'])->name('albums.index');
+Route::post('/albums', [MediaController::class, 'storeAlbum'])->name('albums.store');
+Route::get('/albums/{album}', [MediaController::class, 'showAlbum'])->name('albums.show');
+Route::patch('/albums/{album}', [MediaController::class, 'updateAlbum'])->name('albums.update');
+Route::delete('/albums/{album}', [MediaController::class, 'destroyAlbum'])->name('albums.destroy');
+Route::post('/', [MediaController::class, 'store'])->name('store');
+Route::post('/{asset}/ready', [MediaController::class, 'ready'])->name('ready');
+Route::get('/{asset}', [MediaController::class, 'show'])->name('show');
+Route::patch('/{asset}', [MediaController::class, 'update'])->name('update');
+Route::delete('/{asset}', [MediaController::class, 'destroy'])->name('destroy');
+```
+<!-- layer-implementation-plan:end -->

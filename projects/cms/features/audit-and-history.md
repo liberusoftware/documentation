@@ -86,3 +86,35 @@ The Audit and History module owns Content/configuration change history, publicat
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Content/configuration change history** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `content/configuration change history`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Publication evidence** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `publication evidence`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Privileged reads/actions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `privileged reads/actions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Exports** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `exports`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Tamper-aware retention** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `tamper-aware retention`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/audit-and-history.md) | [Source map](../SOURCE-MAPPING.md#audit-and-history) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/audit-and-history.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/audit-and-history.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-audit-and-history-filament`](https://github.com/liberusoftware/module-cms-audit-and-history-filament) (`liberusoftware/cms-audit-and-history-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/audit-and-history.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/audit-and-history.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-audit-and-history-react-inertia`](https://github.com/liberusoftware/module-cms-audit-and-history-react-inertia) (`@liberusoftware/module-cms-audit-and-history-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/audit-and-history.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-audit-and-history-vue-inertia`](https://github.com/liberusoftware/module-cms-audit-and-history-vue-inertia) (`@liberusoftware/module-cms-audit-and-history-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/audit-and-history.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-audit-and-history-nuxt`](https://github.com/liberusoftware/module-cms-audit-and-history-nuxt) (`@liberusoftware/module-cms-audit-and-history-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/audit-and-history.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-audit-and-history-nextjs`](https://github.com/liberusoftware/module-cms-audit-and-history-nextjs) (`@liberusoftware/module-cms-audit-and-history-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/audit-and-history.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-audit-and-history-react-native`](https://github.com/liberusoftware/module-cms-audit-and-history-react-native) (`@liberusoftware/module-cms-audit-and-history-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/audit-and-history.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-audit-and-history-flutter`](https://github.com/liberusoftware/module-cms-audit-and-history-flutter) (`module_cms_audit_and_history_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/audit-and-history.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-audit-and-history-dart-mobile`](https://github.com/liberusoftware/module-cms-audit-and-history-dart-mobile) (`module_cms_audit_and_history_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-audit-and-history-dart-desktop`](https://github.com/liberusoftware/module-cms-audit-and-history-dart-desktop) (`module_cms_audit_and_history_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

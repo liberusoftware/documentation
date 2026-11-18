@@ -12,7 +12,7 @@
 
 The intended **Social Network Notifications** workspace covers social network notifications domain behavior.
 
-The relevant capability areas are **Social Network Notifications**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Preferences**, **In-app/email/push delivery**, **Grouping**, **Digests**, **Quiet hours**, **Read state**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

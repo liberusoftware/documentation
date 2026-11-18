@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm Account Planning:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Account hierarchies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Stakeholders:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Influence maps:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Whitespace:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Account plans:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Objectives:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Risks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Mutual action plans:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Account-based coordination:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-account-planning`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `account-hierarchies`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `stakeholders`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `influence-maps`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `whitespace`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `account-plans`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `objectives`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `risks`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `mutual-action-plans`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `account-based-coordination`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,60 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-account-planning` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-account-planning-react-inertia`](https://github.com/liberusoftware/module-crm-account-planning-react-inertia) (`@liberusoftware/module-crm-account-planning-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-account-planning.md) · [Core plan](../core/crm-account-planning.md) · [API plan](../api/crm-account-planning.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Account hierarchies** | Render `account hierarchies` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Stakeholders** | Render `stakeholders` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Influence maps** | Render `influence maps` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Whitespace** | Render `whitespace` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Account plans** | Render `account plans` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Objectives** | Render `objectives` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Risks** | Render `risks` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Mutual action plans** | Render `mutual action plans` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Account-based coordination** | Render `account-based coordination` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AccountPlanningQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning/src/Queries/AccountPlanningQuery.php) | `public function records(int $teamId, ?string $kind = null): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TransitionRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning/src/Actions/TransitionRecord.php) | `public function execute(int $teamId, int $id, string $status): AccountPlanningRecord` |
+| [UpsertRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning/src/Actions/UpsertRecord.php) | `public function execute(int $teamId, array $attributes, ?int $id = null): AccountPlanningRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AccountPlanningRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning/src/Models/AccountPlanningRecord.php) | `team_id`, `kind`, `name`, `status`, `account_id`, `owner_id`, `payload`, `starts_at`, `ends_at`, `completed_at` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [AccountPlanningController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/src/Http/Controllers/AccountPlanningController.php) | `public function __construct(private readonly AccountPlanningQuery $query)`<br>`public function index(Request $request): JsonResponse`<br>`public function show(int $record): AccountPlanningResource`<br>`public function store(Request $request, UpsertRecord $upsert): JsonResponse`<br>`public function update(Request $request, int $record, UpsertRecord $upsert): JsonResponse`<br>`public function transition(Request $request, int $record, TransitionRecord $transition): JsonResponse`<br>`public function destroy(int $record, TransitionRecord $transition): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-account-planning-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/account-planning')->group(function (): void {
+Route::get('records', [AccountPlanningController::class, 'index']);
+Route::post('records', [AccountPlanningController::class, 'store']);
+Route::get('records/{record}', [AccountPlanningController::class, 'show']);
+Route::patch('records/{record}', [AccountPlanningController::class, 'update']);
+Route::post('records/{record}/transition', [AccountPlanningController::class, 'transition']);
+Route::delete('records/{record}', [AccountPlanningController::class, 'destroy']);
+```
+<!-- layer-implementation-plan:end -->

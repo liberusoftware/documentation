@@ -36,8 +36,8 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 ### Capability mapping
 
 - `prioritized-seller-feed`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `leads/deals-inbox`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `overdue/risk-indicators`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `leads-deals-inbox`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `overdue-risk-indicators`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `next-best-action`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `daily-agenda`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `quick-updates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -62,3 +62,59 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-sales-workspace` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/sales-workspace.md)) |
+| Capability Nuxt module skeleton | [`module-crm-sales-workspace-nuxt`](https://github.com/liberusoftware/module-crm-sales-workspace-nuxt) (`@liberusoftware/module-crm-sales-workspace-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Prioritized seller feed** | Expose composable and Vue 3 component for `prioritized seller feed` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/sales-workspace.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Leads/deals inbox** | Expose composable and Vue 3 component for `leads/deals inbox` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/sales-workspace.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Overdue/risk indicators** | Expose composable and Vue 3 component for `overdue/risk indicators` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/sales-workspace.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Next best action** | Expose composable and Vue 3 component for `next best action` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/sales-workspace.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Daily agenda** | Expose composable and Vue 3 component for `daily agenda` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/sales-workspace.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Quick updates** | Expose composable and Vue 3 component for `quick updates` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/sales-workspace.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Contextual customer history** | Expose composable and Vue 3 component for `contextual customer history` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/sales-workspace.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [WorkspaceQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Queries/WorkspaceQuery.php) | `public function feed(int $teamId)`<br>`public function overdue(int $teamId)`<br>`public function agenda(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateWorkspaceItem.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Actions/CreateWorkspaceItem.php) | `public function execute(int $teamId, int $actorId, array $data): WorkspaceItem` |
+| [QuickUpdate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Actions/QuickUpdate.php) | `public function execute(int $teamId, int $actorId, int $id, array $data): WorkspaceUpdate` |
+| [WorkspacePolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Services/WorkspacePolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkspaceItem.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Models/WorkspaceItem.php) | No literal fillable array detected; inspect the model and API schema. |
+| [WorkspaceUpdate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace/src/Models/WorkspaceUpdate.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [WorkspaceController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace-api/src/Http/Controllers/WorkspaceController.php) | `public function feed(Request $r, WorkspaceQuery $q)`<br>`public function overdue(Request $r, WorkspaceQuery $q)`<br>`public function agenda(Request $r, WorkspaceQuery $q)`<br>`public function store(Request $r, CreateWorkspaceItem $a)`<br>`public function update(Request $r, int $item, QuickUpdate $a)` |
+
+**Observed route declarations:**
+
+[modules/crm-sales-workspace-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-sales-workspace-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/sales-workspace')->group(function (): void {
+Route::get('/feed', [WorkspaceController::class, 'feed']);
+Route::get('/overdue', [WorkspaceController::class, 'overdue']);
+Route::get('/agenda', [WorkspaceController::class, 'agenda']);
+Route::post('/items', [WorkspaceController::class, 'store']);
+Route::patch('/items/{item}', [WorkspaceController::class, 'update']);
+```
+<!-- layer-implementation-plan:end -->

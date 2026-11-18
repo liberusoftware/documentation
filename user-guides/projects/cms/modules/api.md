@@ -12,7 +12,7 @@
 
 The intended **Api** workspace covers api domain behavior.
 
-The relevant capability areas are **Api**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Published content delivery endpoints**, **Preview tokens and draft access**, **Sparse fields and includes**, **Cache tags and ETag revalidation**, **Scoped API rate limits**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

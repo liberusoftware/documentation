@@ -37,7 +37,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 ### Capability mapping
 
 - `entitlements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `secure-downloads/streams`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `secure-downloads-streams`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `limits`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `expiry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `license-key-adapters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -56,3 +56,30 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-digital-fulfillment` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-digital-fulfillment-filament`](https://github.com/liberusoftware/module-ecommerce-digital-fulfillment-filament) (`liberusoftware/ecommerce-digital-fulfillment-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/digital-fulfillment.md) · [API plan](../api/digital-fulfillment.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Entitlements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `entitlements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Secure downloads/streams** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `secure downloads/streams`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Limits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `limits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Expiry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `expiry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **License-key adapters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `license-key adapters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Version access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `version access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Revocation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `revocation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

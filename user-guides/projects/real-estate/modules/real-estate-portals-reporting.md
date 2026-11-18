@@ -12,7 +12,7 @@
 
 The intended **Real Estate Portals Reporting** workspace covers real estate portals reporting domain behavior.
 
-The relevant capability areas are **Real Estate Portals Reporting**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Party self-service plus pipeline**, **Conversion**, **Source**, **Fee**, **Time-to-complete**, **Occupancy**, **Compliance metrics**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

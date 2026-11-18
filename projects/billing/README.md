@@ -6,16 +6,16 @@
 
 ## Module indexes
 
-- [Core domain modules](core/README.md) — 81 specification documents
-- [API modules](api/README.md) — 81 specification documents
-- [Feature specifications](features/README.md) — 81 specification documents
-- [Filament modules](filament/README.md) — 81 specification documents
-- [Livewire modules](livewire/README.md) — 81 specification documents
-- [React modules](react/README.md) — 81 specification documents
-- [Vue modules](vue/README.md) — 81 specification documents
-- [Nuxt modules](nuxt/README.md) — 81 specification documents
-- [Flutter modules](flutter/README.md) — 81 specification documents
-- [React Native modules](react-native/README.md) — 81 specification documents
+- [Core domain modules](core/README.md) — 82 specification documents
+- [API modules](api/README.md) — 82 specification documents
+- [Feature specifications](features/README.md) — 82 specification documents
+- [Filament modules](filament/README.md) — 82 specification documents
+- [Livewire modules](livewire/README.md) — 82 specification documents
+- [React modules](react/README.md) — 82 specification documents
+- [Vue modules](vue/README.md) — 82 specification documents
+- [Nuxt modules](nuxt/README.md) — 82 specification documents
+- [Flutter modules](flutter/README.md) — 82 specification documents
+- [React Native modules](react-native/README.md) — 82 specification documents
 
 ## Source and additional presentation options
 

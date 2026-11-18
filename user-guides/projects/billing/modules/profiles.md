@@ -12,7 +12,7 @@
 
 The intended **Profiles** workspace covers profiles domain behavior.
 
-The relevant capability areas are **Profiles**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Names**, **Avatars**, **Contact preferences**, **Locale/timezone**, **Completion**, **Controlled profile updates**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

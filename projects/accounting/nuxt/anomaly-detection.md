@@ -35,7 +35,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 ### Capability mapping
 
 - `duplicates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `unusual-amounts/accounts/timing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `unusual-amounts-accounts-timing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `control-breaches`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `missing-sequences`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `fraud-indicators`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -60,3 +60,54 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-anomaly-detection` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/anomaly-detection.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-anomaly-detection-nuxt`](https://github.com/liberusoftware/module-accounting-anomaly-detection-nuxt) (`@liberusoftware/module-accounting-anomaly-detection-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Duplicates** | Expose composable and Vue 3 component for `duplicates` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/anomaly-detection.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Unusual amounts/accounts/timing** | Expose composable and Vue 3 component for `unusual amounts/accounts/timing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/anomaly-detection.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Control breaches** | Expose composable and Vue 3 component for `control breaches` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/anomaly-detection.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Missing sequences** | Expose composable and Vue 3 component for `missing sequences` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/anomaly-detection.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Fraud indicators** | Expose composable and Vue 3 component for `fraud indicators` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/anomaly-detection.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Review queues** | Expose composable and Vue 3 component for `review queues` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/anomaly-detection.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AnomalyQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Queries/AnomalyQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordAnomaly.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Actions/RecordAnomaly.php) | `public function handle(array $attributes): Anomaly` |
+| [SendToReview.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Actions/SendToReview.php) | `public function handle(Anomaly $anomaly): Anomaly` |
+| [AnomalyPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection-api/src/Policies/AnomalyPolicy.php) | `public function viewAny(?object $user): bool`<br>`public function update(?object $user, object $record): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Anomaly.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection/src/Models/Anomaly.php) | `team_id`, `kind`, `source_type`, `source_id`, `title`, `description`, `confidence`, `status`, `evidence`, `detected_at`, `resolved_at` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [AnomalyController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection-api/src/Http/Controllers/AnomalyController.php) | `public function index(Request $request, AnomalyQuery $query): mixed`<br>`public function sendToReview(Request $request, SendToReview $action): AnomalyResource` |
+
+**Observed route declarations:**
+
+[modules/accounting-anomaly-detection-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-anomaly-detection-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/anomalies')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::get('/', [AnomalyController::class, 'index'])->middleware('ability:accounting.anomaly-detection.read');
+Route::post('/{anomaly}/send-to-review', [AnomalyController::class, 'sendToReview'])->middleware('ability:accounting.anomaly-detection.write');
+```
+<!-- layer-implementation-plan:end -->

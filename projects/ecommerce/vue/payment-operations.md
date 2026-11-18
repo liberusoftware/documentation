@@ -18,12 +18,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Capture/refund queues:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Disputes/chargebacks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Manual review:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Provider webhooks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Settlement reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Exception handling:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Capture/refund queues over payment-contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Disputes/chargebacks via DisputeAndChargebackHandlerContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Manual review and fraud-hold release:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Verified provider webhooks via MerchantWebhookVerifierContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Settlement reconciliation via PayoutAndSettlementReconcilerContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Exception handling and operator replay:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -34,12 +34,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `capture-refund-queues`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `disputes-chargebacks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `manual-review`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `provider-webhooks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `settlement-reconciliation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `exception-handling`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `capture-refund-queues-over-payment-contracts`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `disputes-chargebacks-via-disputeandchargebackhandlercontract`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `manual-review-and-fraud-hold-release`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `verified-provider-webhooks-via-merchantwebhookverifiercontract`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `settlement-reconciliation-via-payoutandsettlementreconcilercontract`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `exception-handling-and-operator-replay`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -70,3 +70,28 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-payment-operations` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-ecommerce-payment-operations-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-payment-operations-vue-inertia) (`@liberusoftware/module-ecommerce-payment-operations-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/payment-operations.md) · [Core plan](../core/payment-operations.md) · [API plan](../api/payment-operations.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Capture/refund queues over payment-contracts** | Render `capture/refund queues over payment-contracts` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Disputes/chargebacks via DisputeAndChargebackHandlerContract** | Render `disputes/chargebacks via disputeandchargebackhandlercontract` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Manual review and fraud-hold release** | Render `manual review and fraud-hold release` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Verified provider webhooks via MerchantWebhookVerifierContract** | Render `verified provider webhooks via merchantwebhookverifiercontract` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Settlement reconciliation via PayoutAndSettlementReconcilerContract** | Render `settlement reconciliation via payoutandsettlementreconcilercontract` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Exception handling and operator replay** | Render `exception handling and operator replay` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

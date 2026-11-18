@@ -90,3 +90,37 @@ The Files module owns Home directories, permissions, SFTP, file operations, quot
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Home directories** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `home directories`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Permissions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `permissions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **SFTP** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sftp`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **File operations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `file operations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Quotas** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `quotas`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Scanning** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `scanning`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Retention** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `retention`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/files.md) | [Source map](../SOURCE-MAPPING.md#files) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/files.md) | [`project-control-panel-laravel-api`](https://github.com/liberusoftware/project-control-panel-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/files.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) · [`module-control-panel-files-filament`](https://github.com/liberusoftware/module-control-panel-files-filament) (`liberusoftware/control-panel-files-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/files.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/files.md) | [`project-control-panel-laravel-inertia-react`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-react) · [`module-control-panel-files-react-inertia`](https://github.com/liberusoftware/module-control-panel-files-react-inertia) (`@liberusoftware/module-control-panel-files-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/files.md) | [`project-control-panel-laravel-inertia-vue`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-vue) · [`module-control-panel-files-vue-inertia`](https://github.com/liberusoftware/module-control-panel-files-vue-inertia) (`@liberusoftware/module-control-panel-files-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/files.md) | [`project-control-panel-nuxt-vue`](https://github.com/liberusoftware/project-control-panel-nuxt-vue) · [`module-control-panel-files-nuxt`](https://github.com/liberusoftware/module-control-panel-files-nuxt) (`@liberusoftware/module-control-panel-files-nuxt`) | Standalone Vue SSR client consuming `project-control-panel-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/files.md) | [`project-control-panel-next-react`](https://github.com/liberusoftware/project-control-panel-next-react) · [`module-control-panel-files-nextjs`](https://github.com/liberusoftware/module-control-panel-files-nextjs) (`@liberusoftware/module-control-panel-files-nextjs`) | App Router Server/Client components consuming `project-control-panel-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/files.md) | [`project-control-panel-mobile-react`](https://github.com/liberusoftware/project-control-panel-mobile-react) · [`module-control-panel-files-react-native`](https://github.com/liberusoftware/module-control-panel-files-react-native) (`@liberusoftware/module-control-panel-files-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/files.md) | [`project-control-panel-mobile-flutter`](https://github.com/liberusoftware/project-control-panel-mobile-flutter) · [`module-control-panel-files-flutter`](https://github.com/liberusoftware/module-control-panel-files-flutter) (`module_control_panel_files_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/files.md) | [`project-control-panel-dart-mobile`](https://github.com/liberusoftware/project-control-panel-dart-mobile) · [`module-control-panel-files-dart-mobile`](https://github.com/liberusoftware/module-control-panel-files-dart-mobile) (`module_control_panel_files_dart_mobile`)<br>[`project-control-panel-dart-desktop`](https://github.com/liberusoftware/project-control-panel-dart-desktop) · [`module-control-panel-files-dart-desktop`](https://github.com/liberusoftware/module-control-panel-files-dart-desktop) (`module_control_panel_files_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

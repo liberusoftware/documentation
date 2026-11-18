@@ -18,7 +18,13 @@ The Api Access module owns api access domain behavior. It is the authoritative b
 
 ## 2. Full feature scope
 
-- **Api Access:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Tokens:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Service identities:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Scopes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Rate limits:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Versioning:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Idempotency:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Revocation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Api Access module owns api access domain behavior. It is the authoritative b
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Tokens** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `tokens`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Service identities** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `service identities`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Scopes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `scopes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rate limits** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rate limits`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Versioning** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `versioning`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Idempotency** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `idempotency`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Revocation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `revocation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/api-access.md) | [Source map](../SOURCE-MAPPING.md#api-access) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/api-access.md) | [`project-control-panel-laravel-api`](https://github.com/liberusoftware/project-control-panel-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/api-access.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) · [`module-api-access-filament`](https://github.com/liberusoftware/module-api-access-filament) (`liberusoftware/api-access-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/api-access.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/api-access.md) | [`project-control-panel-laravel-inertia-react`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-react) · [`module-api-access-react-inertia`](https://github.com/liberusoftware/module-api-access-react-inertia) (`@liberusoftware/module-api-access-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/api-access.md) | [`project-control-panel-laravel-inertia-vue`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-vue) · [`module-api-access-vue-inertia`](https://github.com/liberusoftware/module-api-access-vue-inertia) (`@liberusoftware/module-api-access-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/api-access.md) | [`project-control-panel-nuxt-vue`](https://github.com/liberusoftware/project-control-panel-nuxt-vue) · [`module-api-access-nuxt`](https://github.com/liberusoftware/module-api-access-nuxt) (`@liberusoftware/module-api-access-nuxt`) | Standalone Vue SSR client consuming `project-control-panel-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/api-access.md) | [`project-control-panel-next-react`](https://github.com/liberusoftware/project-control-panel-next-react) · [`module-api-access-nextjs`](https://github.com/liberusoftware/module-api-access-nextjs) (`@liberusoftware/module-api-access-nextjs`) | App Router Server/Client components consuming `project-control-panel-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/api-access.md) | [`project-control-panel-mobile-react`](https://github.com/liberusoftware/project-control-panel-mobile-react) · [`module-api-access-react-native`](https://github.com/liberusoftware/module-api-access-react-native) (`@liberusoftware/module-api-access-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/api-access.md) | [`project-control-panel-mobile-flutter`](https://github.com/liberusoftware/project-control-panel-mobile-flutter) · [`module-api-access-flutter`](https://github.com/liberusoftware/module-api-access-flutter) (`module_api_access_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/api-access.md) | [`project-control-panel-dart-mobile`](https://github.com/liberusoftware/project-control-panel-dart-mobile) · [`module-api-access-dart-mobile`](https://github.com/liberusoftware/module-api-access-dart-mobile) (`module_api_access_dart_mobile`)<br>[`project-control-panel-dart-desktop`](https://github.com/liberusoftware/project-control-panel-dart-desktop) · [`module-api-access-dart-desktop`](https://github.com/liberusoftware/module-api-access-dart-desktop) (`module_api_access_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

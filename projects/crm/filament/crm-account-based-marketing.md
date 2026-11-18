@@ -18,7 +18,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Crm Account Based Marketing:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Target accounts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tiers:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Buying committees:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Intent:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Engagement rollups:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Account audiences:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Plays:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Coverage:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Pipeline influence:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Measurement:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +38,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `crm-account-based-marketing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `target-accounts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tiers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `buying-committees`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `intent`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `engagement-rollups`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `account-audiences`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `plays`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `coverage`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `pipeline-influence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `measurement`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +60,45 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-account-based-marketing` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-account-based-marketing-filament`](https://github.com/liberusoftware/module-crm-account-based-marketing-filament) (`liberusoftware/crm-account-based-marketing-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/crm-account-based-marketing.md) · [API plan](../api/crm-account-based-marketing.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Target accounts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `target accounts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tiers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tiers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Buying committees** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `buying committees`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Intent** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `intent`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Engagement rollups** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `engagement rollups`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Account audiences** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `account audiences`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Plays** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `plays`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Coverage** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `coverage`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Pipeline influence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `pipeline influence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Measurement** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `measurement`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [AccountBasedMarketingFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing-filament/src/AccountBasedMarketingFilamentPlugin.php) · [AccountBasedMarketingFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing-filament/src/AccountBasedMarketingFilamentServiceProvider.php) · [AccountBasedMarketingRecordResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing-filament/src/Resources/AccountBasedMarketingRecordResource.php) · [CreateAccountBasedMarketingRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing-filament/src/Resources/AccountBasedMarketingRecordResource/Pages/CreateAccountBasedMarketingRecord.php) · [EditAccountBasedMarketingRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing-filament/src/Resources/AccountBasedMarketingRecordResource/Pages/EditAccountBasedMarketingRecord.php) · [ListAccountBasedMarketingRecords.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing-filament/src/Resources/AccountBasedMarketingRecordResource/Pages/ListAccountBasedMarketingRecords.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AccountBasedMarketingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing/src/Queries/AccountBasedMarketingQuery.php) | `public function records(int $teamId, ?string $kind = null): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TransitionRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing/src/Actions/TransitionRecord.php) | `public function execute(int $teamId, int $id, string $status): AccountBasedMarketingRecord` |
+| [UpsertRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing/src/Actions/UpsertRecord.php) | `public function execute(int $teamId, array $attributes, ?int $id = null): AccountBasedMarketingRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AccountBasedMarketingRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-based-marketing/src/Models/AccountBasedMarketingRecord.php) | `team_id`, `kind`, `name`, `status`, `account_id`, `owner_id`, `payload`, `starts_at`, `ends_at`, `completed_at` |
+<!-- layer-implementation-plan:end -->

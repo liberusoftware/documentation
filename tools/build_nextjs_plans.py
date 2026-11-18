@@ -9,9 +9,11 @@ import re
 import subprocess
 
 from build_source_reference import methods, safe, source_url
+from build_technology_module_plans import parse_source_evidence
 
 ROOT=Path(__file__).resolve().parents[1]
 MARKER='<!-- nextjs-plan:generated -->'
+PROJECT_SLUGS={'accounting':'accounting-erp','sap':'enterprise-sap','liberu':'liberu-official','music':'music-daw'}
 
 
 def relative_link(origin,destination,label):
@@ -27,30 +29,40 @@ def scope_file(project,stem):
 
 def title_for(project,stem):
     title=scope_file(project,stem).read_text().splitlines()[0].removeprefix('# ')
-    return title.split(': ',1)[-1].removesuffix(' domain packages')
+    return title.split(': ',1)[-1].removesuffix(' domain packages').removesuffix(' — Domain specifications')
 
 
 def scope_labels(project,stem):
     content=scope_file(project,stem).read_text()
-    section=re.search(r'## 2\. Full feature scope\n(.*?)(?=\n## |\Z)',content,re.S)
-    return re.findall(r'^- \*\*([^*]+):\*\*',section.group(1),re.M) if section else []
+    section=re.search(r'## (?:2\. Full feature scope|New capabilities|Business capabilities)\n(.*?)(?=\n## |\Z)',content,re.S)
+    if section:
+        labels=re.findall(r'^- \*\*([^*]+):\*\*',section.group(1),re.M)
+        if labels:return labels
+    cap=re.search(r'\*\*Capability:\*\*\s*(.+)',content)
+    if cap:
+        raw=re.sub(r'\s+and\s+',', ',cap.group(1).strip().rstrip('.'))
+        return [p.strip().removeprefix('and ').strip().capitalize() for p in raw.split(',') if p.strip()]
+    return []
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--projects',type=Path,default=Path('/home/liberu/projects'))
+    parser.add_argument('--projects',type=Path,default=Path('/tmp/liberu-documentation-sources'))
     args=parser.parse_args()
     mapping=json.loads((ROOT/'architecture/source-design-mapping.json').read_text())['projects']
     snapshot=json.loads((ROOT/'architecture/source-inventory.json').read_text())['repositories']
     references=json.loads((ROOT/'architecture/source-reference-index.json').read_text())['packages']
+    skeletons_raw=json.loads((ROOT/'architecture/module-skeleton-repositories.json').read_text())['repositories']
+    skeleton_lookup={(r['capabilityKey'],r['presentation']):r for r in skeletons_raw}
     records={r['project']:r for r in snapshot}
     tracked={}
     for record in snapshot:
         repo=args.projects/record['repository']
-        actual=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip()
-        dirty=subprocess.check_output(['git','-C',str(repo),'status','--porcelain'],text=True).strip()
-        if actual!=record['commit'] or dirty:raise SystemExit(f'{repo}: differs from pinned clean source')
-        tracked[record['project']]=subprocess.check_output(['git','-C',str(repo),'ls-files'],text=True).splitlines()
+        if (repo/'.git').exists():
+            actual=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip()
+            dirty=subprocess.check_output(['git','-C',str(repo),'status','--porcelain'],text=True).strip()
+            if actual!=record['commit'] or dirty:raise SystemExit(f'{repo}: differs from pinned clean source')
+            tracked[record['project']]=subprocess.check_output(['git','-C',str(repo),'ls-files'],text=True).splitlines()
     groups=defaultdict(list)
     for project,info in mapping.items():
         for stem,design in info['designs'].items():
@@ -88,47 +100,30 @@ def main():
             preserved+=1
         else:
             labels=scope_labels(project,stem)
-            source_locations=[]
-            for origin_project,choice in [(project,c) for c in core]+list(api_sources.values()):
-                record=records.get(origin_project)
-                if not record:continue
-                prefix=f'modules/{choice["directory"]}/'
-                files=[p for p in tracked[origin_project] if p.startswith(prefix)]
-                source_locations.append((record,choice,prefix,files))
-            commands=[];queries=[];models=[];routes=[];declared=[]
-            for record,choice,prefix,files in source_locations:
-                repo=args.projects/record['repository']
-                manifest_path=repo/prefix/'module.json'
-                if manifest_path.exists():
-                    manifest=json.loads(manifest_path.read_text())
-                    declared.extend(str(v) for v in manifest.get('features',[]) if isinstance(v,str))
-                for file in files:
-                    local=file.removeprefix(prefix)
-                    path=repo/file
-                    if not path.is_file():continue
-                    if local.startswith(('src/Actions/','src/Queries/','src/Services/')) and file.endswith('.php'):
-                        sigs=[signature for signature,_ in methods(path.read_text()) if not re.search(r'function __construct\(',signature)]
-                        if sigs:
-                            entry=(record,file,sigs)
-                            if local.startswith('src/Queries/'):queries.append(entry)
-                            else:commands.append(entry)
-                    elif local.startswith('src/Models/') and file.endswith('.php'):
-                        match=re.search(r'\$fillable\s*=\s*\[(.*?)\]',path.read_text(),re.S)
-                        fields=re.findall(r"['\"]([a-zA-Z_]\w*)['\"]",match.group(1)) if match else []
-                        models.append((record,file,fields))
-                    elif local.startswith('routes/') and file.endswith('.php'):
-                        declarations=[]
-                        for line in path.read_text().splitlines():
-                            clean=line.strip()
-                            if re.search(r'Route::(?:get|post|put|patch|delete|apiResource|resource|middleware|prefix)\(',clean):declarations.append(clean)
-                        routes.append((record,file,declarations))
+            ev=parse_source_evidence(mapping,project,stem,home)
+            queries=ev['queries']
+            commands=ev['commands']
+            models=ev['models']
+            routes_block=ev['routes_block']
+            declared=ev['declared']
             labels=labels or list(dict.fromkeys(declared)) or [title]
+            slug=PROJECT_SLUGS.get(project,project)
+            cap_key=f'liberusoftware/music-{stem}' if project=='music' else key
+            skel=skeleton_lookup.get((cap_key,'next-react'))
+            skel_repo_cell=(f'[{skel["repository"]}](https://github.com/liberusoftware/{skel["repository"]}) (`{skel["intendedPackageIdentity"]}`)' if skel and skel.get('state') in ('published','verified-existing') else f'`{name}` (pending repository provisioning)')
+            domain_mod=design.get('design_alias') or stem
             lines=[f'# {title}: Next.js presentation plan','',MARKER,'',
-                   '**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.','',
-                   f'**Adapter group:** `{key}`.','',
+                   '**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.','',
+                   f'**Adapter group:** `{key}`.<br>',
+                   f'**Matching domain module:** `{domain_mod}`','',
                    ('**Package naming:** deferred because prefixed and unprefixed source identities would produce the same proposed adapter name. Resolve source ownership/compatibility before assigning a publishable identity.' if key in collision_keys else f'**Proposed design identifier:** `{name}`. Confirm the actual npm scope/name, exports and peer versions before publishing.'),'',
-                   '## Scope and ownership','',
-                   'The '+relative_link(home,scope_file(project,stem),'domain specification')+' owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.','']
+                   '## Scope, skeleton repositories, and backend ownership','',
+                   'The '+relative_link(home,scope_file(project,stem),'domain specification')+' owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.','',
+                   '| Delivery boundary | Repository / specification | Role in implementation |',
+                   '| --- | --- | --- |',
+                   f'| Product Next.js host skeleton | [`project-{slug}-next-react`](https://github.com/liberusoftware/project-{slug}-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |',
+                   f'| Shared product API backend | [`project-{slug}-laravel-api`](https://github.com/liberusoftware/project-{slug}-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/{stem}.md)) |',
+                   f'| Capability Next.js module skeleton | {skel_repo_cell} | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |','']
             if len(pairs)>1:
                 lines += [f'This plan is the shared documentation home for **{len(pairs)} existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.','']
             if core or api:
@@ -149,33 +144,29 @@ def main():
             lines+=['## Module surfaces and component contracts','']
             if headless:
                 lines+=['This is a contract/integration capability. It does not require a standalone end-user CRUD page by default. Expose only a necessary configuration/diagnostic surface in a consuming workflow; keep its DTOs and integration contracts reusable.','']
-            lines+=['| Capability in the domain scope | Next.js composition target |','| --- | --- |']
+            lines+=['| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |','| --- | --- | --- |']
             for label in labels:
-                lines.append(f'| {safe(label)} | A focused authorized view or workflow section for {safe(label.lower())}; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |')
+                lines.append(f'| **{safe(label)}** | Server Component loads authorized `{safe(label.lower())}` read model; Client Component (`\'use client\'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-{slug}-laravel-api` DTOs with `cache: \'no-store\'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |')
             lines+=['','Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.','',
                     '## Query and command integration','']
             if queries:
                 lines+=['These are observed PHP query entry points, not assumed HTTP endpoints. Use an owning API adapter to authorize and serialize their results.','', '| Source query | Signatures |','| --- | --- |']
-                for record,file,sigs in queries:lines.append(f'| [{Path(file).name}]({source_url(record,file)}) | '+'<br>'.join(f'`{safe(s)}`' for s in sigs)+' |')
+                for link_md,sigs_raw in queries:lines.append(f'| {link_md} | {sigs_raw} |')
                 lines+=['']
             if commands:
                 lines+=['Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.','', '| Source action/service | Signatures |','| --- | --- |']
-                for record,file,sigs in commands:lines.append(f'| [{Path(file).name}]({source_url(record,file)}) | '+'<br>'.join(f'`{safe(s)}`' for s in sigs)+' |')
+                for link_md,sigs_raw in commands:lines.append(f'| {link_md} | {sigs_raw} |')
                 lines+=['']
             if not commands and not queries:
                 lines+=['No concrete action/query signatures were established in the indexed source roots for this design. Use its source reference and owning application routes/contracts to resolve the integration, rather than inventing create/update/delete operations from the module name.','']
             lines+=['The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.','']
             if models:
                 lines+=['### Record-field review','', 'These are observed storage models and fillable field names, not a browser DTO schema. Review sensitivity, computed values and owner policy; use an explicit API allowlist rather than exposing every model field.','', '| Source model | Observed fillable fields |','| --- | --- |']
-                for record,file,fields in models:
-                    lines.append(f'| [{Path(file).name}]({source_url(record,file)}) | '+(', '.join(f'`{safe(f)}`' for f in fields) if fields else 'No literal fillable array detected; inspect the model and API schema.')+' |')
+                for link_md,fields_txt in models:
+                    lines.append(f'| {link_md} | {fields_txt} |')
                 lines+=['']
-            if routes:
-                lines+=['### Route source evidence','', 'The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.','']
-                for record,file,declarations in routes:
-                    lines+= [f'[{file}]({source_url(record,file)})','']
-                    if declarations:
-                        lines+=['```php',*declarations,'```','']
+            if routes_block:
+                lines+=['### Route source evidence','', 'The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.','',routes_block,'']
             lines+=['## Server/client and React reuse','',
                     'Keep API credentials and session forwarding in server-only exports. A Server Component may load authorized serializable data and compose a Client Component for interaction. Put ordinary event callbacks inside the client boundary; server-to-client props must follow the framework serialization/action rules.','',
                     'Share framework-independent React cards, tables, labels, formatting and field primitives with Inertia. Keep `next/link`, Next.js navigation, server actions and cache invalidation in this adapter, and Inertia visits, page props and redirects in its wrapper. Reuse domain/API DTOs without importing PHP models or another application\'s private frontend state.','',

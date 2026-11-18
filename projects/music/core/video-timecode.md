@@ -1,5 +1,9 @@
 # Liberu Music: Video and Timecode — Core
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#video-timecode). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Status: proposed design.** These are requirements and design identifiers, not verified source packages, published artifacts or implemented features.
 
 **Design identifier:** `module-music-video-timecode`. See [domain specification](../features/video-timecode.md).
@@ -19,3 +23,24 @@ Laravel persists metadata and coordinates jobs. Audio device, DSP and sample sch
 ## Verification
 
 Verify supported frame-rate conversions, long-session drift and missing video recovery. Verify policy, revision conflict, idempotent command replay and cross-module contract compatibility. See [core architecture](../../../architecture/MODULES.md).
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Reference video** | Model `reference video` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Frame-rate-aware timeline display** | Model `frame-rate-aware timeline display` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Timecode offsets** | Model `timecode offsets` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Audio-to-picture synchronization** | Model `audio-to-picture synchronization` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/video-timecode.md) · [Filament 5](../filament/video-timecode.md) · [Livewire 4](../livewire/video-timecode.md) · [React + Inertia](../react/video-timecode.md) · [Vue + Inertia](../vue/video-timecode.md) · [Nuxt 4](../nuxt/video-timecode.md) · [Next.js](../nextjs/video-timecode.md) · [React Native](../react-native/video-timecode.md) · [Flutter & Dart](../flutter/video-timecode.md)
+<!-- core-implementation-plan:end -->

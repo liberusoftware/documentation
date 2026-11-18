@@ -18,7 +18,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Cms Contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Content and media repository contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Block and rendering pipeline interfaces:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Publication state and revision DTOs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Menu and taxonomy query contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Headless delivery and webhook event interfaces:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `cms-contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `content-and-media-repository-contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `block-and-rendering-pipeline-interfaces`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `publication-state-and-revision-dtos`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `menu-and-taxonomy-query-contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `headless-delivery-and-webhook-event-interfaces`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,27 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `cms-contracts` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-cms-contracts-react-inertia`](https://github.com/liberusoftware/module-cms-contracts-react-inertia) (`@liberusoftware/module-cms-contracts-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/cms-contracts.md) · [Core plan](../core/cms-contracts.md) · [API plan](../api/cms-contracts.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Content and media repository contracts** | Render `content and media repository contracts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Block and rendering pipeline interfaces** | Render `block and rendering pipeline interfaces` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Publication state and revision DTOs** | Render `publication state and revision dtos` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Menu and taxonomy query contracts** | Render `menu and taxonomy query contracts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Headless delivery and webhook event interfaces** | Render `headless delivery and webhook event interfaces` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ The Cms Views And Query Builder module owns cms views and query builder domain b
 
 ## 2. Full feature scope
 
-- **Cms Views And Query Builder:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Permission-safe listings from content/fields/relationships with filters:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Sorting:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Grouping:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Exposed filters:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Pagination:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Feeds:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Displays:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Cms Views And Query Builder module owns cms views and query builder domain b
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Permission-safe listings from content/fields/relationships with filters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `permission-safe listings from content/fields/relationships with filters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sorting** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sorting`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Grouping** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `grouping`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Exposed filters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `exposed filters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Pagination** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `pagination`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Feeds** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `feeds`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Displays** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `displays`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cms-views-and-query-builder.md) | [Source map](../SOURCE-MAPPING.md#cms-views-and-query-builder) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cms-views-and-query-builder.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cms-views-and-query-builder.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-views-and-query-builder-filament`](https://github.com/liberusoftware/module-cms-views-and-query-builder-filament) (`liberusoftware/cms-views-and-query-builder-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cms-views-and-query-builder.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cms-views-and-query-builder.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-views-and-query-builder-react-inertia`](https://github.com/liberusoftware/module-cms-views-and-query-builder-react-inertia) (`@liberusoftware/module-cms-views-and-query-builder-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cms-views-and-query-builder.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-views-and-query-builder-vue-inertia`](https://github.com/liberusoftware/module-cms-views-and-query-builder-vue-inertia) (`@liberusoftware/module-cms-views-and-query-builder-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cms-views-and-query-builder.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-views-and-query-builder-nuxt`](https://github.com/liberusoftware/module-cms-views-and-query-builder-nuxt) (`@liberusoftware/module-cms-views-and-query-builder-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cms-views-and-query-builder.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-views-and-query-builder-nextjs`](https://github.com/liberusoftware/module-cms-views-and-query-builder-nextjs) (`@liberusoftware/module-cms-views-and-query-builder-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cms-views-and-query-builder.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-views-and-query-builder-react-native`](https://github.com/liberusoftware/module-cms-views-and-query-builder-react-native) (`@liberusoftware/module-cms-views-and-query-builder-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cms-views-and-query-builder.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-views-and-query-builder-flutter`](https://github.com/liberusoftware/module-cms-views-and-query-builder-flutter) (`module_cms_views_and_query_builder_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cms-views-and-query-builder.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-views-and-query-builder-dart-mobile`](https://github.com/liberusoftware/module-cms-views-and-query-builder-dart-mobile) (`module_cms_views_and_query_builder_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-views-and-query-builder-dart-desktop`](https://github.com/liberusoftware/module-cms-views-and-query-builder-dart-desktop) (`module_cms_views_and_query_builder_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

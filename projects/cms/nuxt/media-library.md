@@ -37,7 +37,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `files/media-entities`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `files-media-entities`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `folders`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `tags`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `collections`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -66,3 +66,31 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-media-library` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/media-library.md)) |
+| Capability Nuxt module skeleton | [`module-cms-media-library-nuxt`](https://github.com/liberusoftware/module-cms-media-library-nuxt) (`@liberusoftware/module-cms-media-library-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Files/media entities** | Expose composable and Vue 3 component for `files/media entities` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Folders** | Expose composable and Vue 3 component for `folders` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Tags** | Expose composable and Vue 3 component for `tags` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Collections** | Expose composable and Vue 3 component for `collections` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Metadata** | Expose composable and Vue 3 component for `metadata` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Usage references** | Expose composable and Vue 3 component for `usage references` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Search** | Expose composable and Vue 3 component for `search` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Bulk operations** | Expose composable and Vue 3 component for `bulk operations` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Replacement** | Expose composable and Vue 3 component for `replacement` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/media-library.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

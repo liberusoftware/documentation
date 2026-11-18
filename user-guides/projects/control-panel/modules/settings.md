@@ -12,7 +12,7 @@
 
 The intended **Settings** workspace covers settings domain behavior.
 
-The relevant capability areas are **Settings**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Typed application/organization/team/user settings**, **Precedence**, **Validation**, **Secrets**, **Audit**, **Cache invalidation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

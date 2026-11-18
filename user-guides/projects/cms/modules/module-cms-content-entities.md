@@ -12,7 +12,7 @@
 
 The intended **Module Cms Content Entities** workspace covers module cms content entities domain behavior.
 
-The relevant capability areas are **Module Cms Content Entities**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Typed entities**, **Bundles/content types**, **Lifecycle**, **Authorship**, **Status**, **Cloning**, **Relationships**, **Canonical identifiers**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

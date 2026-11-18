@@ -18,7 +18,10 @@ The Analytics Google module owns analytics google domain behavior. It is the aut
 
 ## 2. Full feature scope
 
-- **Analytics Google:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Google Analytics event mapping:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Property/stream configuration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Consent-aware delivery:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Diagnostics:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +81,34 @@ The Analytics Google module owns analytics google domain behavior. It is the aut
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Google Analytics event mapping** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `google analytics event mapping`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Property/stream configuration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `property/stream configuration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Consent-aware delivery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `consent-aware delivery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Diagnostics** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `diagnostics`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/analytics-google.md) | [Source map](../SOURCE-MAPPING.md#analytics-google) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/analytics-google.md) | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/analytics-google.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) · [`module-analytics-google-filament`](https://github.com/liberusoftware/module-analytics-google-filament) (`liberusoftware/analytics-google-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/analytics-google.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/analytics-google.md) | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) · [`module-analytics-google-react-inertia`](https://github.com/liberusoftware/module-analytics-google-react-inertia) (`@liberusoftware/module-analytics-google-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/analytics-google.md) | [`project-automation-laravel-inertia-vue`](https://github.com/liberusoftware/project-automation-laravel-inertia-vue) · [`module-analytics-google-vue-inertia`](https://github.com/liberusoftware/module-analytics-google-vue-inertia) (`@liberusoftware/module-analytics-google-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/analytics-google.md) | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) · [`module-analytics-google-nuxt`](https://github.com/liberusoftware/module-analytics-google-nuxt) (`@liberusoftware/module-analytics-google-nuxt`) | Standalone Vue SSR client consuming `project-automation-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/analytics-google.md) | [`project-automation-next-react`](https://github.com/liberusoftware/project-automation-next-react) · [`module-analytics-google-nextjs`](https://github.com/liberusoftware/module-analytics-google-nextjs) (`@liberusoftware/module-analytics-google-nextjs`) | App Router Server/Client components consuming `project-automation-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/analytics-google.md) | [`project-automation-mobile-react`](https://github.com/liberusoftware/project-automation-mobile-react) · [`module-analytics-google-react-native`](https://github.com/liberusoftware/module-analytics-google-react-native) (`@liberusoftware/module-analytics-google-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/analytics-google.md) | [`project-automation-mobile-flutter`](https://github.com/liberusoftware/project-automation-mobile-flutter) · [`module-analytics-google-flutter`](https://github.com/liberusoftware/module-analytics-google-flutter) (`module_analytics_google_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/analytics-google.md) | [`project-automation-dart-mobile`](https://github.com/liberusoftware/project-automation-dart-mobile) · [`module-analytics-google-dart-mobile`](https://github.com/liberusoftware/module-analytics-google-dart-mobile) (`module_analytics_google_dart_mobile`)<br>[`project-automation-dart-desktop`](https://github.com/liberusoftware/project-automation-dart-desktop) · [`module-analytics-google-dart-desktop`](https://github.com/liberusoftware/module-analytics-google-dart-desktop) (`module_analytics_google_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

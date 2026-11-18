@@ -12,7 +12,7 @@
 
 The intended **Cms Media** workspace covers cms media domain behavior.
 
-The relevant capability areas are **Cms Media**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Files/media entities**, **Folders**, **Tags**, **Collections**, **Metadata**, **Usage references**, **Search**, **Bulk operations**, **Replacement**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

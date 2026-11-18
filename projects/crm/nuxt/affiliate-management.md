@@ -18,17 +18,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Affiliates:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Applications:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Links:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Campaigns:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Clicks:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Conversions:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Commission rules:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Payout approvals/exports:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Disputes:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Assets:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Portal:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Affiliates and partner profiles:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Applications and onboarding approval:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Links, promo codes, and campaigns:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Clicks and first-party touch attribution:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Conversions and cross-product clawback ledger:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Commission rules and tiered calculation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Payout approvals/exports via PayoutSettlementContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Disputes, fraud controls, assets, and partner portal:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -39,17 +36,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `affiliates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `applications`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `links`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `campaigns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `clicks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `conversions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `commission-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `payout-approvals/exports`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `disputes`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `assets`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `portal`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `affiliates-and-partner-profiles`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `applications-and-onboarding-approval`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `links-promo-codes-and-campaigns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `clicks-and-first-party-touch-attribution`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `conversions-and-cross-product-clawback-ledger`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `commission-rules-and-tiered-calculation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `payout-approvals-exports-via-payoutsettlementcontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `disputes-fraud-controls-assets-and-partner-portal`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -70,3 +64,65 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-affiliate-management` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/affiliate-management.md)) |
+| Capability Nuxt module skeleton | [`module-crm-affiliate-management-nuxt`](https://github.com/liberusoftware/module-crm-affiliate-management-nuxt) (`@liberusoftware/module-crm-affiliate-management-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Affiliates and partner profiles** | Expose composable and Vue 3 component for `affiliates and partner profiles` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Applications and onboarding approval** | Expose composable and Vue 3 component for `applications and onboarding approval` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Links, promo codes, and campaigns** | Expose composable and Vue 3 component for `links, promo codes, and campaigns` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Clicks and first-party touch attribution** | Expose composable and Vue 3 component for `clicks and first-party touch attribution` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Conversions and cross-product clawback ledger** | Expose composable and Vue 3 component for `conversions and cross-product clawback ledger` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Commission rules and tiered calculation** | Expose composable and Vue 3 component for `commission rules and tiered calculation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Payout approvals/exports via PayoutSettlementContract** | Expose composable and Vue 3 component for `payout approvals/exports via payoutsettlementcontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Disputes, fraud controls, assets, and partner portal** | Expose composable and Vue 3 component for `disputes, fraud controls, assets, and partner portal` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/affiliate-management.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AffiliateQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Queries/AffiliateQuery.php) | `public function affiliates(int $teamId): Builder`<br>`public function events(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ApplyAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApplyAffiliate.php) | `public function execute(int $teamId, array $input): Affiliate` |
+| [ApproveAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliate.php) | `public function execute(int $teamId, Affiliate $affiliate): Affiliate` |
+| [ApproveAffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliatePayout.php) | `public function execute(int $teamId, int $actorId, AffiliatePayout $payout): AffiliatePayout` |
+| [CreateAffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/CreateAffiliateLink.php) | `public function execute(int $teamId, Affiliate $affiliate, array $input): AffiliateLink` |
+| [RecordAffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/RecordAffiliateEvent.php) | `public function execute(int $teamId, AffiliateLink $link, array $input): AffiliateEvent` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Affiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/Affiliate.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateLink.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliatePayout.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [AffiliateController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-api/src/Http/Controllers/AffiliateController.php) | `public function __construct(private readonly AffiliateQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(ApplyAffiliate $action): JsonResponse`<br>`public function approve(Affiliate $affiliate, ApproveAffiliate $action): JsonResponse`<br>`public function link(Affiliate $affiliate, CreateAffiliateLink $action): JsonResponse`<br>`public function event(AffiliateLink $link, RecordAffiliateEvent $action): JsonResponse`<br>`public function events(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-affiliate-management-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/affiliate-management')->group(function (): void {
+Route::get('affiliates', [AffiliateController::class, 'index']);
+Route::post('affiliates', [AffiliateController::class, 'store']);
+Route::post('affiliates/{affiliate}/approve', [AffiliateController::class, 'approve']);
+Route::post('affiliates/{affiliate}/links', [AffiliateController::class, 'link']);
+Route::post('links/{link}/events', [AffiliateController::class, 'event']);
+Route::get('events', [AffiliateController::class, 'events']);
+```
+<!-- layer-implementation-plan:end -->

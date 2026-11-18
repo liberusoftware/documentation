@@ -18,7 +18,19 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm Contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Parties:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Terms:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Clauses:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Obligations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Versions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Negotiation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Approvals:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Signatures:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Amendments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Renewals:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Notices:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Repository links:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Compliance dates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +41,19 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `parties`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `terms`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `clauses`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `obligations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `versions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `negotiation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `approvals`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `signatures`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `amendments`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `renewals`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `notices`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `repository-links`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `compliance-dates`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +84,63 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-contracts` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-contracts-react-inertia`](https://github.com/liberusoftware/module-crm-contracts-react-inertia) (`@liberusoftware/module-crm-contracts-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-contracts.md) · [Core plan](../core/crm-contracts.md) · [API plan](../api/crm-contracts.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Parties** | Render `parties` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Terms** | Render `terms` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Clauses** | Render `clauses` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Obligations** | Render `obligations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Versions** | Render `versions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Negotiation** | Render `negotiation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Approvals** | Render `approvals` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Signatures** | Render `signatures` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Amendments** | Render `amendments` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Renewals** | Render `renewals` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Notices** | Render `notices` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Repository links** | Render `repository links` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Compliance dates** | Render `compliance dates` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ContractQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-contracts/src/Queries/ContractQuery.php) | `public function contracts(int $teamId): Builder`<br>`public function complianceDates(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateContract.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-contracts/src/Actions/CreateContract.php) | `public function execute(int $teamId, int $userId, array $input): Contract` |
+| [TransitionContract.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-contracts/src/Actions/TransitionContract.php) | `public function execute(int $teamId, int $userId, Contract $contract, string $type, string $status = 'completed', array $payload = []): ContractEvent` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Contract.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-contracts/src/Models/Contract.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ContractEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-contracts/src/Models/ContractEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ContractsController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-contracts-api/src/Http/Controllers/ContractsController.php) | `public function __construct(private readonly ContractQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(CreateContract $a): JsonResponse`<br>`public function transition(Contract $contract, string $type, TransitionContract $a): JsonResponse`<br>`public function compliance(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-contracts-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-contracts-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/contracts')->group(function (): void {
+Route::get('/', [ContractsController::class, 'index']);
+Route::post('/', [ContractsController::class, 'store']);
+Route::post('{contract}/{type}', [ContractsController::class, 'transition']);
+Route::get('compliance', [ContractsController::class, 'compliance']);
+```
+<!-- layer-implementation-plan:end -->

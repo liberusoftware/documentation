@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Notifications:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Templates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Channels:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Preferences:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Inbox:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Delivery status:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retries:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Quiet hours:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Localization:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-notifications`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `templates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `channels`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `preferences`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `inbox`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `delivery-status`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retries`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `quiet-hours`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `localization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-notifications` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-notifications-filament`](https://github.com/liberusoftware/module-cms-notifications-filament) (`liberusoftware/cms-notifications-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-notifications.md) · [API plan](../api/cms-notifications.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Templates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `templates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Channels** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `channels`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Preferences** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `preferences`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Inbox** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `inbox`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Delivery status** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `delivery status`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retries** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retries`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Quiet hours** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `quiet hours`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Localization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `localization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [NotificationLogResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Filament/NotificationLogResource.php) · [ListNotificationLogs.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Filament/Pages/ListNotificationLogs.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [NotificationChannelInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Contracts/NotificationChannelInterface.php) | `public function key(): string`<br>`public function send(NotificationMessage $message): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [NotificationLog.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Models/NotificationLog.php) | `event`, `channel`, `recipient`, `team_id`, `context`, `status` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Integrations:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Provider credentials:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Capabilities:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **OAuth callbacks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Secret rotation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Connection tests:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sync:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `integrations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `provider-credentials`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `capabilities`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `oauth-callbacks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `secret-rotation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `connection-tests`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sync`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `integrations` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-integrations-filament`](https://github.com/liberusoftware/module-integrations-filament) (`liberusoftware/integrations-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/integrations.md) · [API plan](../api/integrations.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Provider credentials** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `provider credentials`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Capabilities** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `capabilities`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **OAuth callbacks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `oauth callbacks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Secret rotation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `secret rotation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Connection tests** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `connection tests`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sync** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sync`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [IntegrationAdapter.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/integrations/src/Contracts/IntegrationAdapter.php) | `public function name(): string`<br>`public function capabilities(): array`<br>`public function test(array $credentials): bool` |
+<!-- layer-implementation-plan:end -->

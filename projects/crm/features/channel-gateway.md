@@ -96,3 +96,40 @@ The Channel Gateway module owns Provider-neutral email, SMS/MMS, WhatsApp, web c
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Provider-neutral email** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider-neutral email`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **SMS/MMS** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sms/mms`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **WhatsApp** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `whatsapp`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Web chat** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `web chat`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Social messaging** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `social messaging`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Push contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `push contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Routing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `routing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Templates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `templates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Health** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `health`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Provider selection** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider selection`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/channel-gateway.md) | [Source map](../SOURCE-MAPPING.md#channel-gateway) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/channel-gateway.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/channel-gateway.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-channel-gateway-filament`](https://github.com/liberusoftware/module-crm-channel-gateway-filament) (`liberusoftware/crm-channel-gateway-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/channel-gateway.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/channel-gateway.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-channel-gateway-react-inertia`](https://github.com/liberusoftware/module-crm-channel-gateway-react-inertia) (`@liberusoftware/module-crm-channel-gateway-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/channel-gateway.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-channel-gateway-vue-inertia`](https://github.com/liberusoftware/module-crm-channel-gateway-vue-inertia) (`@liberusoftware/module-crm-channel-gateway-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/channel-gateway.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-channel-gateway-nuxt`](https://github.com/liberusoftware/module-crm-channel-gateway-nuxt) (`@liberusoftware/module-crm-channel-gateway-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/channel-gateway.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-channel-gateway-nextjs`](https://github.com/liberusoftware/module-crm-channel-gateway-nextjs) (`@liberusoftware/module-crm-channel-gateway-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/channel-gateway.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-channel-gateway-react-native`](https://github.com/liberusoftware/module-crm-channel-gateway-react-native) (`@liberusoftware/module-crm-channel-gateway-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/channel-gateway.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-channel-gateway-flutter`](https://github.com/liberusoftware/module-crm-channel-gateway-flutter) (`module_crm_channel_gateway_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/channel-gateway.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-channel-gateway-dart-mobile`](https://github.com/liberusoftware/module-crm-channel-gateway-dart-mobile) (`module_crm_channel_gateway_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-channel-gateway-dart-desktop`](https://github.com/liberusoftware/module-crm-channel-gateway-dart-desktop) (`module_crm_channel_gateway_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

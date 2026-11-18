@@ -12,7 +12,7 @@
 
 The intended **Cms Observability** workspace covers cms observability domain behavior.
 
-The relevant capability areas are **Cms Observability**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Structured logs**, **Correlation**, **Metrics**, **Traces**, **Exception reporting**, **Health checks**, **Redaction**, **SLO hooks**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

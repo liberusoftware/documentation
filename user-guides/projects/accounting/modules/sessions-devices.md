@@ -12,7 +12,7 @@
 
 The intended **Sessions Devices** workspace covers sessions devices domain behavior.
 
-The relevant capability areas are **Sessions Devices**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Active sessions**, **Device metadata**, **Revocation**, **Timeout policy**, **Suspicious access**, **Retention**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

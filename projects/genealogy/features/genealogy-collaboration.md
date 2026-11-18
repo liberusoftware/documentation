@@ -18,7 +18,13 @@ The Genealogy Collaboration module owns genealogy collaboration domain behavior.
 
 ## 2. Full feature scope
 
-- **Genealogy Collaboration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Invitations:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Roles:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Branch/change proposals:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Review:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Discussions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Watch lists:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Attribution:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Genealogy Collaboration module owns genealogy collaboration domain behavior.
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Invitations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `invitations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Roles** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `roles`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Branch/change proposals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `branch/change proposals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Review** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `review`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Discussions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `discussions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Watch lists** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `watch lists`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Attribution** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `attribution`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/genealogy-collaboration.md) | [Source map](../SOURCE-MAPPING.md#genealogy-collaboration) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/genealogy-collaboration.md) | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/genealogy-collaboration.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) · [`module-genealogy-collaboration-filament`](https://github.com/liberusoftware/module-genealogy-collaboration-filament) (`liberusoftware/genealogy-collaboration-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/genealogy-collaboration.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/genealogy-collaboration.md) | [`project-genealogy-laravel-inertia-react`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-react) · [`module-genealogy-collaboration-react-inertia`](https://github.com/liberusoftware/module-genealogy-collaboration-react-inertia) (`@liberusoftware/module-genealogy-collaboration-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/genealogy-collaboration.md) | [`project-genealogy-laravel-inertia-vue`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-vue) · [`module-genealogy-collaboration-vue-inertia`](https://github.com/liberusoftware/module-genealogy-collaboration-vue-inertia) (`@liberusoftware/module-genealogy-collaboration-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/genealogy-collaboration.md) | [`project-genealogy-nuxt-vue`](https://github.com/liberusoftware/project-genealogy-nuxt-vue) · [`module-genealogy-collaboration-nuxt`](https://github.com/liberusoftware/module-genealogy-collaboration-nuxt) (`@liberusoftware/module-genealogy-collaboration-nuxt`) | Standalone Vue SSR client consuming `project-genealogy-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/genealogy-collaboration.md) | [`project-genealogy-next-react`](https://github.com/liberusoftware/project-genealogy-next-react) · [`module-genealogy-collaboration-nextjs`](https://github.com/liberusoftware/module-genealogy-collaboration-nextjs) (`@liberusoftware/module-genealogy-collaboration-nextjs`) | App Router Server/Client components consuming `project-genealogy-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/genealogy-collaboration.md) | [`project-genealogy-mobile-react`](https://github.com/liberusoftware/project-genealogy-mobile-react) · [`module-genealogy-collaboration-react-native`](https://github.com/liberusoftware/module-genealogy-collaboration-react-native) (`@liberusoftware/module-genealogy-collaboration-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/genealogy-collaboration.md) | [`project-genealogy-mobile-flutter`](https://github.com/liberusoftware/project-genealogy-mobile-flutter) · [`module-genealogy-collaboration-flutter`](https://github.com/liberusoftware/module-genealogy-collaboration-flutter) (`module_genealogy_collaboration_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/genealogy-collaboration.md) | [`project-genealogy-dart-mobile`](https://github.com/liberusoftware/project-genealogy-dart-mobile) · [`module-genealogy-collaboration-dart-mobile`](https://github.com/liberusoftware/module-genealogy-collaboration-dart-mobile) (`module_genealogy_collaboration_dart_mobile`)<br>[`project-genealogy-dart-desktop`](https://github.com/liberusoftware/project-genealogy-dart-desktop) · [`module-genealogy-collaboration-dart-desktop`](https://github.com/liberusoftware/module-genealogy-collaboration-dart-desktop) (`module_genealogy_collaboration_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

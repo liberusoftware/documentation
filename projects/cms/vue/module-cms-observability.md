@@ -18,7 +18,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Observability:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Structured logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Correlation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Metrics:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Traces:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Exception reporting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Health checks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Redaction:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **SLO hooks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-cms-observability`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `structured-logs`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `correlation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `metrics`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `traces`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `exception-reporting`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `health-checks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `redaction`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `slo-hooks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,40 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-observability` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-observability-vue-inertia`](https://github.com/liberusoftware/module-cms-observability-vue-inertia) (`@liberusoftware/module-cms-observability-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-cms-observability.md) · [Core plan](../core/module-cms-observability.md) · [API plan](../api/module-cms-observability.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Structured logs** | Render `structured logs` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Correlation** | Render `correlation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Metrics** | Render `metrics` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Traces** | Render `traces` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Exception reporting** | Render `exception reporting` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Health checks** | Render `health checks` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Redaction** | Render `redaction` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **SLO hooks** | Render `slo hooks` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ReadinessController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-observability/src/Http/Controllers/ReadinessController.php) | `public function __construct(private HealthCheckRegistryInterface $registry)`<br>`public function __invoke(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/cms-observability/routes/web.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-observability/routes/web.php)
+
+```php
+Route::get('/health/ready', ReadinessController::class)
+```
+<!-- layer-implementation-plan:end -->

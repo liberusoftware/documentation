@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Plan, publish or sync resumable project technology wayfinders (never Filament issues)."""
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path
 import re
@@ -13,6 +14,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from wayfinder_technologies import BASE, LAYERS, link, write_wayfinder_docs  # noqa: E402
 
 PROJECTS = {'accounting-erp': 'accounting', 'enterprise-sap': 'sap', 'liberu-official': 'liberu', 'music-daw': 'music'}
+MAPPING = json.loads((ROOT/'architecture/source-design-mapping.json').read_text())['projects']
+SKELETON_LOOKUP = {
+    (r['capabilityKey'], r['presentation']): r
+    for r in json.loads((ROOT/'architecture/module-skeleton-repositories.json').read_text())['repositories']
+}
 
 
 def gh(*args):
@@ -34,11 +40,11 @@ def targets():
             raise ValueError(f'Unmapped technology: {name}')
 
 
-def module_rows(project, layer):
-    mapping = json.loads((ROOT/'architecture/source-design-mapping.json').read_text())['projects'].get(project, {}).get('designs', {})
+def module_rows(project, layer, suffix):
+    mapping = MAPPING.get(project, {}).get('designs', {})
     groups = {}
     for page in sorted((ROOT/'projects'/project/'features').glob('*.md')):
-        if page.name == 'README.md':
+        if page.name == 'README.md' or '<!-- documentation-kind: source-index -->' in page.read_text():
             continue
         observed = mapping.get(page.stem, {}).get('layers', {}).get('core', [])
         # Collapse only exact observed identity matches; never infer equivalent domains.
@@ -47,12 +53,16 @@ def module_rows(project, layer):
     rows = []
     for pages in groups.values():
         page = pages[0]
-        title = page.read_text().splitlines()[0].removeprefix('# ').split(': ', 1)[-1]
+        title = page.read_text().splitlines()[0].removeprefix('# ').split(': ', 1)[-1].removesuffix(' — Domain specifications')
         target = ROOT/'projects'/project/layer/page.name
         if not target.exists():
             target = page
+        observed = mapping.get(page.stem, {}).get('layers', {}).get('core', [])
+        cap_key = observed[0]['identity'] if len(observed) == 1 else (f'liberusoftware/music-{page.stem}' if project == 'music' else f'planned:{project}:{page.stem}')
+        skel = SKELETON_LOOKUP.get((cap_key, suffix))
+        skel_note = f' · `{skel["repository"]}`' if skel else ''
         aliases = f'; aliases: {", ".join(p.stem for p in pages[1:])}' if len(pages)>1 else ''
-        rows.append(f'- [ ] [{title}]({BASE}{target.relative_to(ROOT)})'+aliases)
+        rows.append(f'- [ ] [{title}]({BASE}{target.relative_to(ROOT)}){skel_note}'+aliases)
     return '\n'.join(rows)
 
 
@@ -82,7 +92,9 @@ Deliver the {project} product through {label}, using independently owned domain 
 - [Technology repository map]({link('projects/REPOSITORIES.md')}), [module boundaries]({link('architecture/MODULES.md')}), [API ownership]({link('architecture/API.md')}), [testing]({link('standards/TESTING.md')}), [implementation evidence]({link('standards/IMPLEMENTATION-EVIDENCE.md')}).
 - [Implementation and issue-splitting guide]({link('projects/IMPLEMENTATION-WAYFINDERS.md')}).
 - **Full technical specification for this technology:** [wayfinders/{suffix}.md]({link(f'projects/wayfinders/{suffix}.md')}).
-- Boilerplate template: {profile['boilerplate']}
+- **Capability skeleton catalog for this layer:** [{profile['skeleton_catalog']}]({link(profile['skeleton_catalog'])}).
+- Application Boilerplate template: {profile['boilerplate']}
+- Reusable module foundation template: {profile['module_foundation']}
 
 ### Technology standards
 {standards}
@@ -109,18 +121,19 @@ Follow this technology-specific method for every capability slice. Details and e
 
 {spec}
 
-## Sequencing
+## Phased implementation plan
 
-1. Audit the skeleton and current source/aliases; mark existing evidence and unresolved boundaries before writing code.
-2. Approve ownership/dependency decisions; reuse or deliver core and API contracts with independent tests before the consuming UI.
-3. Execute the implementation method above for one complete user journey, including policy checks, revisions, errors, empty/loading states, accessibility and recovery.
-4. Prove host composition, upgrade behavior, observability and release compatibility; link evidence per capability below.
+1. **Phase 1 — Skeleton & Source Audit:** Audit this host skeleton, the matching capability module skeletons (`{profile['adapter_pattern']}`), and `SOURCE-MAPPING.md`; record existing source evidence and unresolved boundary decisions before writing code.
+2. **Phase 2 — Backend, Auth & Tenant Wiring:** Approve ownership/dependency decisions; wire session/authentication, workspace/tenant resolution, and core/API contracts (`project-{slug}-laravel-api` or Laravel Inertia routes) with independent contract tests.
+3. **Phase 3 — Capability Vertical Slices:** Execute the implementation method above capability-by-capability using the structured feature/aspect matrix in each linked presentation plan (`{layer}/*.md`), implementing all features/aspects inside the capability module skeleton and composing it in this host.
+4. **Phase 4 — UX States, Accessibility & Recovery:** Verify loading, empty, denied (403), validation (422), stale/conflict (409/412), rate-limit (429), pending operation (202), accessibility, localization, and offline/retry reconciliation.
+5. **Phase 5 — Verification & Release Gates:** Prove host composition, clean locked installs, coverage floors, upgrade/rollback safety, and release compatibility; link evidence per capability below.
 
 ## Capability checklist
 
-Each checkbox links the matching presentation plan (or feature plan if none exists) and represents a capability delivery slice for this technology. Read the same filename under core/ and api/ for the domain and HTTP contract; consult SOURCE-MAPPING.md for aliases. Split a child issue when ownership, dependencies and acceptance are actionable; link it here and retain the domain/API/presentation references. Resolve exact source aliases once rather than creating duplicate packages. A checked box requires passing evidence, not merely generated files.
+Each checkbox links the matching presentation plan (which includes the structured feature/aspect matrix, skeleton repository link, API backend integration, and observed source evidence) and names the capability module skeleton repository (`module-...`). Read the same filename under `features/`, `core/`, and `api/` for the domain and HTTP contract; consult `SOURCE-MAPPING.md` for aliases. Split a child issue when ownership, dependencies and acceptance are actionable; link it here and retain the domain/API/presentation references. Resolve exact source aliases once rather than creating duplicate packages. A checked box requires passing evidence, not merely generated files.
 
-{module_rows(project, layer)}
+{module_rows(project, layer, suffix)}
 
 ## Acceptance criteria for every selected slice
 
@@ -216,55 +229,67 @@ Planning may proceed; schema and implementation are blocked until the core owner
 '''
 
 
+def process_target(item, apply=False, sync=False):
+    repo, project, slug, suffix, layer, label, profile = item
+    assert not repo.endswith('-laravel-filament')
+    title = f'Wayfinder: {project} implementation for {label}'
+    entry = {'repository': f'liberusoftware/{repo}', 'project': project, 'technology': suffix, 'title': title}
+    content = body(project, slug, suffix, layer, label, profile)
+    if apply:
+        match, issues = find_issue(entry['repository'], title)
+        if match:
+            entry['url'] = match['url']
+            entry['number'] = match['number']
+            if sync:
+                edit_issue_body(entry['repository'], match['number'], content)
+                print(f"synced {entry['url']}", flush=True)
+            else:
+                print(f"reuse {entry['url']}", flush=True)
+        else:
+            entry['url'] = create_issue(entry['repository'], title, content)
+            print(f"created {entry['url']}", flush=True)
+        if project == 'ecommerce':
+            child_title = f'Catering: implement {label} workflow after boundary approval'
+            child_matches = [i for i in issues if i['title'] == child_title]
+            if len(child_matches) > 1:
+                raise ValueError(f'Duplicate Catering issues: {repo}')
+            child_content = catering_body(label, profile['boundary'], entry['url'], suffix, layer)
+            if child_matches:
+                entry['cateringIssue'] = child_matches[0]['url']
+                if sync:
+                    edit_issue_body(entry['repository'], child_matches[0]['number'], child_content)
+            else:
+                entry['cateringIssue'] = create_issue(entry['repository'], child_title, child_content)
+    return entry
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true', help='Create missing issues in GitHub; default is local planning only')
     parser.add_argument('--sync', action='store_true', help='Update bodies of existing wayfinder (and Catering) issues to the current template')
+    parser.add_argument('--workers', type=int, default=8, help='Parallel workers for GitHub issue sync')
     parser.add_argument('--output', type=Path, help='Optional plan/register path; dry runs do not overwrite the published register')
     args = parser.parse_args()
     if args.sync and not args.apply:
         parser.error('--sync requires --apply')
 
     write_wayfinder_docs(ROOT)
-    result = []
     output = args.output or (ROOT/'projects/implementation-wayfinders.json' if args.apply else None)
-    for repo, project, slug, suffix, layer, label, profile in targets():
-        assert not repo.endswith('-laravel-filament')
-        title = f'Wayfinder: {project} implementation for {label}'
-        entry = {'repository': f'liberusoftware/{repo}', 'project': project, 'technology': suffix, 'title': title}
-        content = body(project, slug, suffix, layer, label, profile)
-        if args.apply:
-            match, issues = find_issue(entry['repository'], title)
-            if match:
-                entry['url'] = match['url']
-                entry['number'] = match['number']
-                if args.sync:
-                    edit_issue_body(entry['repository'], match['number'], content)
-                    print(f"synced {entry['url']}", flush=True)
-                else:
-                    print(f"reuse {entry['url']}", flush=True)
-            else:
-                entry['url'] = create_issue(entry['repository'], title, content)
-                print(f"created {entry['url']}", flush=True)
-            if project == 'ecommerce':
-                child_title = f'Catering: implement {label} workflow after boundary approval'
-                child_matches = [i for i in issues if i['title'] == child_title]
-                if len(child_matches) > 1:
-                    raise ValueError(f'Duplicate Catering issues: {repo}')
-                child_content = catering_body(label, profile['boundary'], entry['url'], suffix, layer)
-                if child_matches:
-                    entry['cateringIssue'] = child_matches[0]['url']
-                    if args.sync:
-                        edit_issue_body(entry['repository'], child_matches[0]['number'], child_content)
-                else:
-                    entry['cateringIssue'] = create_issue(entry['repository'], child_title, child_content)
-        result.append(entry)
-        if output:
-            serializable = [{k: v for k, v in item.items() if k != 'number'} for item in result]
-            output.write_text(json.dumps({'status': 'in_progress' if args.apply else 'planned', 'excludedSuffix': '-laravel-filament', 'wayfinders': serializable}, indent=2)+'\n')
-    if args.apply:
+    all_targets = list(targets())
+    if args.apply and args.workers > 1:
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            result = list(pool.map(lambda t: process_target(t, args.apply, args.sync), all_targets))
+    else:
+        result = []
+        for t in all_targets:
+            result.append(process_target(t, args.apply, args.sync))
+            if output:
+                serializable = [{k: v for k, v in item.items() if k != 'number'} for item in result]
+                output.write_text(json.dumps({'status': 'in_progress' if args.apply else 'planned', 'excludedSuffix': '-laravel-filament', 'wayfinders': serializable}, indent=2)+'\n')
+    if output:
         serializable = [{k: v for k, v in item.items() if k != 'number'} for item in result]
-        output.write_text(json.dumps({'status': 'published', 'excludedSuffix': '-laravel-filament', 'wayfinders': serializable}, indent=2)+'\n')
+        output.write_text(json.dumps({'status': 'published' if args.apply else 'planned', 'excludedSuffix': '-laravel-filament', 'wayfinders': serializable}, indent=2)+'\n')
+    if args.apply:
         write_issue_index(result)
     print(f'{len(result)} wayfinders; Filament repositories excluded.')
 

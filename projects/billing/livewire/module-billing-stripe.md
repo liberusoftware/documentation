@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Billing Stripe:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Consolidate into shared liberusoftware/payment-stripe:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **PaymentIntent and SetupIntent orchestration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Payment capture and idempotent refunds:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Stripe-Signature webhook verification and normalization:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Dispute defense and settlement reconciliation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Provider references and gateway driver bridge:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-billing-stripe`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `consolidate-into-shared-liberusoftware-payment-stripe`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `paymentintent-and-setupintent-orchestration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `payment-capture-and-idempotent-refunds`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `stripe-signature-webhook-verification-and-normalization`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `dispute-defense-and-settlement-reconciliation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `provider-references-and-gateway-driver-bridge`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,28 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-billing-stripe` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-billing-stripe.md) · [API plan](../api/module-billing-stripe.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Consolidate into shared liberusoftware/payment-stripe** | Expose a focused Livewire 4 component and namespaced Blade default view for `consolidate into shared liberusoftware/payment-stripe` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **PaymentIntent and SetupIntent orchestration** | Expose a focused Livewire 4 component and namespaced Blade default view for `paymentintent and setupintent orchestration` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Payment capture and idempotent refunds** | Expose a focused Livewire 4 component and namespaced Blade default view for `payment capture and idempotent refunds` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Stripe-Signature webhook verification and normalization** | Expose a focused Livewire 4 component and namespaced Blade default view for `stripe-signature webhook verification and normalization` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Dispute defense and settlement reconciliation** | Expose a focused Livewire 4 component and namespaced Blade default view for `dispute defense and settlement reconciliation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Provider references and gateway driver bridge** | Expose a focused Livewire 4 component and namespaced Blade default view for `provider references and gateway driver bridge` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

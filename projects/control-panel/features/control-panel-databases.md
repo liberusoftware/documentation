@@ -18,7 +18,14 @@ The Control Panel Databases module owns control panel databases domain behavior.
 
 ## 2. Full feature scope
 
-- **Control Panel Databases:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Engines:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Databases:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Users:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Privileges:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Backups:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Upgrades:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Health:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Remote access:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,38 @@ The Control Panel Databases module owns control panel databases domain behavior.
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Engines** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `engines`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Databases** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `databases`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Users** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `users`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Privileges** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `privileges`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Backups** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `backups`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Upgrades** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `upgrades`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Health** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `health`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Remote access** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `remote access`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/control-panel-databases.md) | [Source map](../SOURCE-MAPPING.md#control-panel-databases) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/control-panel-databases.md) | [`project-control-panel-laravel-api`](https://github.com/liberusoftware/project-control-panel-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/control-panel-databases.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) · [`module-control-panel-databases-filament`](https://github.com/liberusoftware/module-control-panel-databases-filament) (`liberusoftware/control-panel-databases-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/control-panel-databases.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/control-panel-databases.md) | [`project-control-panel-laravel-inertia-react`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-react) · [`module-control-panel-databases-react-inertia`](https://github.com/liberusoftware/module-control-panel-databases-react-inertia) (`@liberusoftware/module-control-panel-databases-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/control-panel-databases.md) | [`project-control-panel-laravel-inertia-vue`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-vue) · [`module-control-panel-databases-vue-inertia`](https://github.com/liberusoftware/module-control-panel-databases-vue-inertia) (`@liberusoftware/module-control-panel-databases-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/control-panel-databases.md) | [`project-control-panel-nuxt-vue`](https://github.com/liberusoftware/project-control-panel-nuxt-vue) · [`module-control-panel-databases-nuxt`](https://github.com/liberusoftware/module-control-panel-databases-nuxt) (`@liberusoftware/module-control-panel-databases-nuxt`) | Standalone Vue SSR client consuming `project-control-panel-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/control-panel-databases.md) | [`project-control-panel-next-react`](https://github.com/liberusoftware/project-control-panel-next-react) · [`module-control-panel-databases-nextjs`](https://github.com/liberusoftware/module-control-panel-databases-nextjs) (`@liberusoftware/module-control-panel-databases-nextjs`) | App Router Server/Client components consuming `project-control-panel-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/control-panel-databases.md) | [`project-control-panel-mobile-react`](https://github.com/liberusoftware/project-control-panel-mobile-react) · [`module-control-panel-databases-react-native`](https://github.com/liberusoftware/module-control-panel-databases-react-native) (`@liberusoftware/module-control-panel-databases-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/control-panel-databases.md) | [`project-control-panel-mobile-flutter`](https://github.com/liberusoftware/project-control-panel-mobile-flutter) · [`module-control-panel-databases-flutter`](https://github.com/liberusoftware/module-control-panel-databases-flutter) (`module_control_panel_databases_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/control-panel-databases.md) | [`project-control-panel-dart-mobile`](https://github.com/liberusoftware/project-control-panel-dart-mobile) · [`module-control-panel-databases-dart-mobile`](https://github.com/liberusoftware/module-control-panel-databases-dart-mobile) (`module_control_panel_databases_dart_mobile`)<br>[`project-control-panel-dart-desktop`](https://github.com/liberusoftware/project-control-panel-dart-desktop) · [`module-control-panel-databases-dart-desktop`](https://github.com/liberusoftware/module-control-panel-databases-dart-desktop) (`module_control_panel_databases_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

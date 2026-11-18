@@ -40,3 +40,38 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Candidate generation** | Model `candidate generation` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Ranking** | Model `ranking` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Chronological mode** | Model `chronological mode` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Filters** | Model `filters` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Pagination** | Model `pagination` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Explanations** | Model `explanations` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Controls** | Model `controls` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_08_24_050000_create_social_feed_entries_table.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/database/migrations/2026_08_24_050000_create_social_feed_entries_table.php) · [2026_08_24_050100_create_social_feed_controls_table.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/database/migrations/2026_08_24_050100_create_social_feed_controls_table.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AddFeedEntry.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/AddFeedEntry.php) | `public function __construct(private Dispatcher $events, private FeedAuthorizer $authorizer)`<br>`public function handle(Profile $viewer, string $itemType, string $itemId, float $rank = 0): FeedEntry` |
+| [GetFeed.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/GetFeed.php) | `public function __construct(private FeedAuthorizer $authorizer)`<br>`public function handle(Profile $viewer, int $limit = 20, ?string $after = null): Collection` |
+| [UpdateFeedControls.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/UpdateFeedControls.php) | `public function __construct(private FeedAuthorizer $authorizer)`<br>`public function handle(Profile $profile, array $data): array` |
+| [FeedAuthorizer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Contracts/FeedAuthorizer.php) | `public function view(Profile $viewer): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [FeedEntry.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Models/FeedEntry.php) | `id`, `viewer_profile_id`, `item_type`, `item_id`, `rank`, `visible_at` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/social-network-feed.md) · [Filament 5](../filament/social-network-feed.md) · [Livewire 4](../livewire/social-network-feed.md) · [React + Inertia](../react/social-network-feed.md) · [Vue + Inertia](../vue/social-network-feed.md) · [Nuxt 4](../nuxt/social-network-feed.md) · [Next.js](../nextjs/social-network-feed.md) · [React Native](../react-native/social-network-feed.md) · [Flutter & Dart](../flutter/social-network-feed.md)
+<!-- core-implementation-plan:end -->

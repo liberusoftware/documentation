@@ -12,7 +12,7 @@
 
 The intended **Cms Contracts** workspace covers cms contracts domain behavior.
 
-The relevant capability areas are **Cms Contracts**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Content and media repository contracts**, **Block and rendering pipeline interfaces**, **Publication state and revision DTOs**, **Menu and taxonomy query contracts**, **Headless delivery and webhook event interfaces**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 This is a supporting contract/integration capability. A consuming workspace may use it without exposing an independent end-user page; configuration and diagnostics are offered only where the application needs them.
 

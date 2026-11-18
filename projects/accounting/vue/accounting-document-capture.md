@@ -18,7 +18,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Accounting Document Capture:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Mobile/web/email upload:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **OCR/extraction adapters:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Supplier matching:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Line/tax capture:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Confidence:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Duplicate checks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Review:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Source retention:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `accounting-document-capture`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `mobile-web-email-upload`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `ocr-extraction-adapters`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `supplier-matching`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `line-tax-capture`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `confidence`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `duplicate-checks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `review`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `source-retention`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,67 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-document-capture` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-accounting-document-capture-vue-inertia`](https://github.com/liberusoftware/module-accounting-document-capture-vue-inertia) (`@liberusoftware/module-accounting-document-capture-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/accounting-document-capture.md) · [Core plan](../core/accounting-document-capture.md) · [API plan](../api/accounting-document-capture.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Mobile/web/email upload** | Render `mobile/web/email upload` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **OCR/extraction adapters** | Render `ocr/extraction adapters` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Supplier matching** | Render `supplier matching` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Line/tax capture** | Render `line/tax capture` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Confidence** | Render `confidence` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Duplicate checks** | Render `duplicate checks` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Review** | Render `review` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Source retention** | Render `source retention` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CaptureQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Queries/CaptureQuery.php) | `public function paginate(?int $teamId = null, ?CaptureStatus $status = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ArchiveDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Actions/ArchiveDocument.php) | `public function handle(CapturedDocument $d, ?string $actor = null): CapturedDocument` |
+| [ExtractDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Actions/ExtractDocument.php) | `public function handle(CapturedDocument $d, array $extracted, float $confidence, string $adapter, ?string $actor = null): CapturedDocument` |
+| [MarkDuplicateDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Actions/MarkDuplicateDocument.php) | `public function handle(CapturedDocument $d, CapturedDocument $original, ?string $actor = null): CapturedDocument` |
+| [ReviewDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Actions/ReviewDocument.php) | `public function handle(CapturedDocument $d, bool $approved, ?string $reason = null, ?string $actor = null): CapturedDocument` |
+| [UploadDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Actions/UploadDocument.php) | `public function handle(array $a): CapturedDocument` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CaptureEvent.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Models/CaptureEvent.php) | `document_id`, `event`, `actor_ref`, `adapter_ref`, `message`, `metadata` |
+| [CapturedDocument.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture/src/Models/CapturedDocument.php) | `team_id`, `source_channel`, `file_ref`, `checksum`, `mime_type`, `status`, `supplier_ref`, `document_ref`, `extracted_data`, `confidence`, `duplicate_of`, `retention_until`, `reviewed_by`, `reviewed_at`, `rejection_reason`, `metadata` |
+| [Document.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture-api/src/Models/Document.php) | `documentable_type`, `documentable_id`, `name`, `disk`, `retention_until`, `team_id` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [DocumentCaptureController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture-api/src/Http/Controllers/DocumentCaptureController.php) | `public function __construct(private readonly CaptureQuery $query)`<br>`public function index(Request $r): mixed`<br>`public function store(Request $r, UploadDocument $a): CapturedDocumentResource`<br>`public function show(CapturedDocument $d): CapturedDocumentResource`<br>`public function extract(Request $r, CapturedDocument $d, ExtractDocument $a): CapturedDocumentResource`<br>`public function review(Request $r, CapturedDocument $d, ReviewDocument $a): CapturedDocumentResource`<br>`public function duplicate(Request $r, CapturedDocument $d, MarkDuplicateDocument $a): CapturedDocumentResource`<br>`public function archive(Request $r, CapturedDocument $d, ArchiveDocument $a): CapturedDocumentResource` |
+
+**Observed route declarations:**
+
+[modules/accounting-document-capture-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-document-capture-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/document-capture')->group(function (): void {
+Route::middleware('ability:accounting.document-capture.read')->group(function (): void {
+Route::get('/', [DocumentCaptureController::class, 'index']);
+Route::get('/{d}', [DocumentCaptureController::class, 'show']);
+Route::middleware('ability:accounting.document-capture.write')->group(function (): void {
+Route::post('/', [DocumentCaptureController::class, 'store']);
+Route::post('/{d}/extract', [DocumentCaptureController::class, 'extract']);
+Route::post('/{d}/review', [DocumentCaptureController::class, 'review']);
+Route::post('/{d}/duplicate', [DocumentCaptureController::class, 'duplicate']);
+Route::post('/{d}/archive', [DocumentCaptureController::class, 'archive']);
+```
+<!-- layer-implementation-plan:end -->

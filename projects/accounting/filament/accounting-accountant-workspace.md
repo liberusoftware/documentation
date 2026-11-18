@@ -18,7 +18,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Accountant Workspace:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Client/entity portfolio:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Status:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Deadlines:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Alerts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Access:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Notes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Requests:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Recent changes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Drill-through:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +37,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-accountant-workspace`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `client-entity-portfolio`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `status`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `deadlines`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `alerts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `access`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `notes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `requests`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `recent-changes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `drill-through`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,44 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-accountant-workspace` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-accountant-workspace-filament`](https://github.com/liberusoftware/module-accounting-accountant-workspace-filament) (`liberusoftware/accounting-accountant-workspace-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-accountant-workspace.md) · [API plan](../api/accounting-accountant-workspace.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Client/entity portfolio** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `client/entity portfolio`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Status** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `status`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deadlines** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deadlines`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Alerts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `alerts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Notes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `notes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Requests** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `requests`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Recent changes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `recent changes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Drill-through** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `drill-through`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [AccountantWorkspaceFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-filament/src/AccountantWorkspaceFilamentServiceProvider.php) · [CreateWorkspaceItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-filament/src/Resources/Pages/CreateWorkspaceItem.php) · [ListWorkspaceItems.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-filament/src/Resources/Pages/ListWorkspaceItems.php) · [WorkspaceItemResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-filament/src/Resources/WorkspaceItemResource.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [WorkspaceQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Queries/WorkspaceQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateWorkspaceItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Actions/CreateWorkspaceItem.php) | `public function handle(array $attributes): WorkspaceItem` |
+| [WorkspacePolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace-api/src/Policies/WorkspacePolicy.php) | `public function viewAny(?object $user): bool`<br>`public function create(?object $user): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkspaceItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-accountant-workspace/src/Models/WorkspaceItem.php) | `team_id`, `subject_type`, `subject_id`, `name`, `status`, `next_deadline`, `alerts`, `notes`, `requests`, `metadata` |
+<!-- layer-implementation-plan:end -->

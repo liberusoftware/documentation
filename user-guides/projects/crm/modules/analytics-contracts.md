@@ -12,7 +12,7 @@
 
 The intended **Analytics Contracts** workspace covers analytics contracts domain behavior.
 
-The relevant capability areas are **Analytics Contracts**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Destination adapter interface contracts**, **Versioned analytics event envelope DTOs**, **Actor and consent context value objects**, **Delivery status and retry result contracts**, **Redaction and field-minimization rules**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 This is a supporting contract/integration capability. A consuming workspace may use it without exposing an independent end-user page; configuration and diagnostics are offered only where the application needs them.
 

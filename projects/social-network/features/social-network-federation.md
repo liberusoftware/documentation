@@ -18,7 +18,13 @@ The Social Network Federation module owns social network federation domain behav
 
 ## 2. Full feature scope
 
-- **Social Network Federation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **ActivityPub identities:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Inbox/outbox:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Signatures:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Delivery:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Mapping:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Moderation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reconciliation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Social Network Federation module owns social network federation domain behav
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **ActivityPub identities** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `activitypub identities`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Inbox/outbox** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `inbox/outbox`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Signatures** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `signatures`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Delivery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `delivery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Mapping** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `mapping`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Moderation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `moderation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reconciliation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reconciliation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/social-network-federation.md) | [Source map](../SOURCE-MAPPING.md#social-network-federation) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/social-network-federation.md) | [`project-social-network-laravel-api`](https://github.com/liberusoftware/project-social-network-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/social-network-federation.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) · [`module-social-network-federation-filament`](https://github.com/liberusoftware/module-social-network-federation-filament) (`liberusoftware/social-network-federation-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/social-network-federation.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/social-network-federation.md) | [`project-social-network-laravel-inertia-react`](https://github.com/liberusoftware/project-social-network-laravel-inertia-react) · [`module-social-network-federation-react-inertia`](https://github.com/liberusoftware/module-social-network-federation-react-inertia) (`@liberusoftware/module-social-network-federation-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/social-network-federation.md) | [`project-social-network-laravel-inertia-vue`](https://github.com/liberusoftware/project-social-network-laravel-inertia-vue) · [`module-social-network-federation-vue-inertia`](https://github.com/liberusoftware/module-social-network-federation-vue-inertia) (`@liberusoftware/module-social-network-federation-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/social-network-federation.md) | [`project-social-network-nuxt-vue`](https://github.com/liberusoftware/project-social-network-nuxt-vue) · [`module-social-network-federation-nuxt`](https://github.com/liberusoftware/module-social-network-federation-nuxt) (`@liberusoftware/module-social-network-federation-nuxt`) | Standalone Vue SSR client consuming `project-social-network-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/social-network-federation.md) | [`project-social-network-next-react`](https://github.com/liberusoftware/project-social-network-next-react) · [`module-social-network-federation-nextjs`](https://github.com/liberusoftware/module-social-network-federation-nextjs) (`@liberusoftware/module-social-network-federation-nextjs`) | App Router Server/Client components consuming `project-social-network-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/social-network-federation.md) | [`project-social-network-mobile-react`](https://github.com/liberusoftware/project-social-network-mobile-react) · [`module-social-network-federation-react-native`](https://github.com/liberusoftware/module-social-network-federation-react-native) (`@liberusoftware/module-social-network-federation-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/social-network-federation.md) | [`project-social-network-mobile-flutter`](https://github.com/liberusoftware/project-social-network-mobile-flutter) · [`module-social-network-federation-flutter`](https://github.com/liberusoftware/module-social-network-federation-flutter) (`module_social_network_federation_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/social-network-federation.md) | [`project-social-network-dart-mobile`](https://github.com/liberusoftware/project-social-network-dart-mobile) · [`module-social-network-federation-dart-mobile`](https://github.com/liberusoftware/module-social-network-federation-dart-mobile) (`module_social_network_federation_dart_mobile`)<br>[`project-social-network-dart-desktop`](https://github.com/liberusoftware/project-social-network-dart-desktop) · [`module-social-network-federation-dart-desktop`](https://github.com/liberusoftware/module-social-network-federation-dart-desktop) (`module_social_network_federation_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

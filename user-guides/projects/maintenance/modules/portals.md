@@ -12,7 +12,7 @@
 
 The intended **Portals** workspace covers customer requests/approvals/status and engineer schedule/work/offline capture.
 
-The relevant capability areas are **Customer requests/approvals/status and engineer schedule/work/offline capture**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Customer requests**, **Approvals**, **Status**, **Engineer schedule/work/offline capture**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

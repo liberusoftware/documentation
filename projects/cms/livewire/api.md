@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Api:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Published content delivery endpoints:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Preview tokens and draft access:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Sparse fields and includes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Cache tags and ETag revalidation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Scoped API rate limits:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `api`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `published-content-delivery-endpoints`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `preview-tokens-and-draft-access`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `sparse-fields-and-includes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cache-tags-and-etag-revalidation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `scoped-api-rate-limits`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,25 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `api` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/api.md) · [API plan](../api/api.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Published content delivery endpoints** | Expose a focused Livewire 4 component and namespaced Blade default view for `published content delivery endpoints` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Preview tokens and draft access** | Expose a focused Livewire 4 component and namespaced Blade default view for `preview tokens and draft access` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Sparse fields and includes** | Expose a focused Livewire 4 component and namespaced Blade default view for `sparse fields and includes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cache tags and ETag revalidation** | Expose a focused Livewire 4 component and namespaced Blade default view for `cache tags and etag revalidation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Scoped API rate limits** | Expose a focused Livewire 4 component and namespaced Blade default view for `scoped api rate limits` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+<!-- layer-implementation-plan:end -->

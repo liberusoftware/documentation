@@ -12,7 +12,7 @@
 
 The intended **Liberu Revenue And Care Orchestration** workspace covers liberu revenue and care orchestration domain behavior.
 
-The relevant capability areas are **Liberu Revenue And Care Orchestration**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Liberu revenue and care orchestration**, **Liberu revenue and care orchestration lifecycle**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

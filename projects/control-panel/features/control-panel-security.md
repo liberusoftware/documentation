@@ -18,7 +18,13 @@ The Control Panel Security module owns control panel security domain behavior. I
 
 ## 2. Full feature scope
 
-- **Control Panel Security:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Hardening:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Patching:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **MFA/RBAC:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Secrets:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Malware:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Intrusion controls:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Vulnerability and compliance status:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Control Panel Security module owns control panel security domain behavior. I
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Hardening** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `hardening`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Patching** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `patching`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **MFA/RBAC** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `mfa/rbac`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Secrets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `secrets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Malware** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `malware`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Intrusion controls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `intrusion controls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Vulnerability and compliance status** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `vulnerability and compliance status`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/control-panel-security.md) | [Source map](../SOURCE-MAPPING.md#control-panel-security) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/control-panel-security.md) | [`project-control-panel-laravel-api`](https://github.com/liberusoftware/project-control-panel-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/control-panel-security.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) · [`module-control-panel-security-filament`](https://github.com/liberusoftware/module-control-panel-security-filament) (`liberusoftware/control-panel-security-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/control-panel-security.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/control-panel-security.md) | [`project-control-panel-laravel-inertia-react`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-react) · [`module-control-panel-security-react-inertia`](https://github.com/liberusoftware/module-control-panel-security-react-inertia) (`@liberusoftware/module-control-panel-security-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/control-panel-security.md) | [`project-control-panel-laravel-inertia-vue`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-vue) · [`module-control-panel-security-vue-inertia`](https://github.com/liberusoftware/module-control-panel-security-vue-inertia) (`@liberusoftware/module-control-panel-security-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/control-panel-security.md) | [`project-control-panel-nuxt-vue`](https://github.com/liberusoftware/project-control-panel-nuxt-vue) · [`module-control-panel-security-nuxt`](https://github.com/liberusoftware/module-control-panel-security-nuxt) (`@liberusoftware/module-control-panel-security-nuxt`) | Standalone Vue SSR client consuming `project-control-panel-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/control-panel-security.md) | [`project-control-panel-next-react`](https://github.com/liberusoftware/project-control-panel-next-react) · [`module-control-panel-security-nextjs`](https://github.com/liberusoftware/module-control-panel-security-nextjs) (`@liberusoftware/module-control-panel-security-nextjs`) | App Router Server/Client components consuming `project-control-panel-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/control-panel-security.md) | [`project-control-panel-mobile-react`](https://github.com/liberusoftware/project-control-panel-mobile-react) · [`module-control-panel-security-react-native`](https://github.com/liberusoftware/module-control-panel-security-react-native) (`@liberusoftware/module-control-panel-security-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/control-panel-security.md) | [`project-control-panel-mobile-flutter`](https://github.com/liberusoftware/project-control-panel-mobile-flutter) · [`module-control-panel-security-flutter`](https://github.com/liberusoftware/module-control-panel-security-flutter) (`module_control_panel_security_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/control-panel-security.md) | [`project-control-panel-dart-mobile`](https://github.com/liberusoftware/project-control-panel-dart-mobile) · [`module-control-panel-security-dart-mobile`](https://github.com/liberusoftware/module-control-panel-security-dart-mobile) (`module_control_panel_security_dart_mobile`)<br>[`project-control-panel-dart-desktop`](https://github.com/liberusoftware/project-control-panel-dart-desktop) · [`module-control-panel-security-dart-desktop`](https://github.com/liberusoftware/module-control-panel-security-dart-desktop) (`module_control_panel_security_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

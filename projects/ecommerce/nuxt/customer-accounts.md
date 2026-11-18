@@ -35,10 +35,10 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `registration/guest-conversion`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `registration-guest-conversion`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `order-history`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `returns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `saved-carts/lists`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `saved-carts-lists`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `payment-method-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `preferences`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `privacy-requests`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -62,3 +62,29 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-customer-accounts` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/customer-accounts.md)) |
+| Capability Nuxt module skeleton | [`module-ecommerce-customer-accounts-nuxt`](https://github.com/liberusoftware/module-ecommerce-customer-accounts-nuxt) (`@liberusoftware/module-ecommerce-customer-accounts-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Registration/guest conversion** | Expose composable and Vue 3 component for `registration/guest conversion` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-accounts.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Order history** | Expose composable and Vue 3 component for `order history` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-accounts.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Returns** | Expose composable and Vue 3 component for `returns` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-accounts.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Saved carts/lists** | Expose composable and Vue 3 component for `saved carts/lists` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-accounts.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Payment-method references** | Expose composable and Vue 3 component for `payment-method references` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-accounts.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Preferences** | Expose composable and Vue 3 component for `preferences` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-accounts.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Privacy requests** | Expose composable and Vue 3 component for `privacy requests` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-accounts.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

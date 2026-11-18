@@ -18,7 +18,17 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Close Management:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Checklist:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Owners:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Dependencies:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Due dates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Evidence:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Reconciliations:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Adjustments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Review:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Certification:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Lock:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Reopen:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +39,17 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-close-management`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `checklist`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `owners`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `dependencies`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `due-dates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `evidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reconciliations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `adjustments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `review`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `certification`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `lock`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reopen`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +62,50 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-close-management` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-close-management-filament`](https://github.com/liberusoftware/module-accounting-close-management-filament) (`liberusoftware/accounting-close-management-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-close-management.md) · [API plan](../api/accounting-close-management.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Checklist** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `checklist`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Owners** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `owners`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Dependencies** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `dependencies`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Due dates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `due dates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reconciliations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reconciliations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Adjustments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `adjustments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Review** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `review`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Certification** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `certification`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Lock** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `lock`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reopen** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reopen`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [CloseManagementFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management-filament/src/CloseManagementFilamentPlugin.php) · [CloseManagementFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management-filament/src/CloseManagementFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CloseCycleQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Queries/CloseCycleQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CertifyCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/CertifyCloseCycle.php) | `public function handle(CloseCycle $cycle, array $certification): CloseCycle` |
+| [CreateCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/CreateCloseCycle.php) | `public function handle(array $attributes): CloseCycle` |
+| [LockCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/LockCloseCycle.php) | `public function handle(CloseCycle $cycle): CloseCycle` |
+| [RecordCloseEvidence.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/RecordCloseEvidence.php) | `public function handle(CloseCycle $cycle, array $evidence): CloseCycle` |
+| [ReopenCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/ReopenCloseCycle.php) | `public function handle(CloseCycle $cycle, string $reason): CloseCycle` |
+| [UpdateCloseChecklist.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/UpdateCloseChecklist.php) | `public function handle(CloseCycle $cycle, array $checklist): CloseCycle` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Models/CloseCycle.php) | `team_id`, `cycle_ref`, `period`, `due_date`, `status`, `checklist`, `owners`, `dependencies`, `evidence`, `reconciliations`, `adjustments`, `review`, `certification` |
+<!-- layer-implementation-plan:end -->

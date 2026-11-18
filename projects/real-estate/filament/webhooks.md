@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Webhooks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Endpoint registration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Signing:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Delivery attempts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retries:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Replay:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Event filtering:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Logs:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `webhooks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `endpoint-registration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `signing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `delivery-attempts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retries`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `replay`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `event-filtering`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `logs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,29 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `webhooks` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-webhooks-filament`](https://github.com/liberusoftware/module-webhooks-filament) (`liberusoftware/webhooks-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/webhooks.md) · [API plan](../api/webhooks.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Endpoint registration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `endpoint registration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Signing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `signing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Delivery attempts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `delivery attempts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retries** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retries`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Replay** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `replay`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Event filtering** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `event filtering`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Logs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `logs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/webhooks-filament/src/Pages/Overview.php) · [WebhooksFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/webhooks-filament/src/WebhooksFilamentPlugin.php) · [WebhooksFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/webhooks-filament/src/WebhooksFilamentServiceProvider.php).
+<!-- layer-implementation-plan:end -->

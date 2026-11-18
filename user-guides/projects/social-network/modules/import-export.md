@@ -12,7 +12,7 @@
 
 The intended **Import Export** workspace covers import export domain behavior.
 
-The relevant capability areas are **Import Export**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Schemas**, **Mapping**, **Dry runs**, **Validation**, **Queued execution**, **Progress**, **Errors**, **Authorization**, **Retention**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -92,3 +92,38 @@ The POS Devices module owns Device enrollment, capabilities, health, updates, of
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Device enrollment** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `device enrollment`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Capabilities** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `capabilities`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Health** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `health`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Updates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `updates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Offline keys** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `offline keys`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Assignment** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `assignment`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Revocation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `revocation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Provider adapters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider adapters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/pos-devices.md) | [Source map](../SOURCE-MAPPING.md#pos-devices) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/pos-devices.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/pos-devices.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-pos-devices-filament`](https://github.com/liberusoftware/module-ecommerce-pos-devices-filament) (`liberusoftware/ecommerce-pos-devices-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/pos-devices.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/pos-devices.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-pos-devices-react-inertia`](https://github.com/liberusoftware/module-ecommerce-pos-devices-react-inertia) (`@liberusoftware/module-ecommerce-pos-devices-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/pos-devices.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-pos-devices-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-pos-devices-vue-inertia) (`@liberusoftware/module-ecommerce-pos-devices-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/pos-devices.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-pos-devices-nuxt`](https://github.com/liberusoftware/module-ecommerce-pos-devices-nuxt) (`@liberusoftware/module-ecommerce-pos-devices-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/pos-devices.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-pos-devices-nextjs`](https://github.com/liberusoftware/module-ecommerce-pos-devices-nextjs) (`@liberusoftware/module-ecommerce-pos-devices-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/pos-devices.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-pos-devices-react-native`](https://github.com/liberusoftware/module-ecommerce-pos-devices-react-native) (`@liberusoftware/module-ecommerce-pos-devices-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/pos-devices.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-pos-devices-flutter`](https://github.com/liberusoftware/module-ecommerce-pos-devices-flutter) (`module_ecommerce_pos_devices_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/pos-devices.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-pos-devices-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-pos-devices-dart-mobile) (`module_ecommerce_pos_devices_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-pos-devices-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-pos-devices-dart-desktop) (`module_ecommerce_pos_devices_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

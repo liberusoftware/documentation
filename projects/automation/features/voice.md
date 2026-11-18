@@ -88,3 +88,36 @@ The Voice module owns Speech-to-text, text-to-speech, streaming sessions, interr
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Speech-to-text** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `speech-to-text`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Text-to-speech** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `text-to-speech`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Streaming sessions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `streaming sessions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Interruption** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `interruption`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Transcripts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `transcripts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Consent controls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `consent controls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/voice.md) | [Source map](../SOURCE-MAPPING.md#voice) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/voice.md) | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/voice.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) · [`module-automation-voice-filament`](https://github.com/liberusoftware/module-automation-voice-filament) (`liberusoftware/automation-voice-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/voice.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/voice.md) | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) · [`module-automation-voice-react-inertia`](https://github.com/liberusoftware/module-automation-voice-react-inertia) (`@liberusoftware/module-automation-voice-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/voice.md) | [`project-automation-laravel-inertia-vue`](https://github.com/liberusoftware/project-automation-laravel-inertia-vue) · [`module-automation-voice-vue-inertia`](https://github.com/liberusoftware/module-automation-voice-vue-inertia) (`@liberusoftware/module-automation-voice-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/voice.md) | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) · [`module-automation-voice-nuxt`](https://github.com/liberusoftware/module-automation-voice-nuxt) (`@liberusoftware/module-automation-voice-nuxt`) | Standalone Vue SSR client consuming `project-automation-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/voice.md) | [`project-automation-next-react`](https://github.com/liberusoftware/project-automation-next-react) · [`module-automation-voice-nextjs`](https://github.com/liberusoftware/module-automation-voice-nextjs) (`@liberusoftware/module-automation-voice-nextjs`) | App Router Server/Client components consuming `project-automation-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/voice.md) | [`project-automation-mobile-react`](https://github.com/liberusoftware/project-automation-mobile-react) · [`module-automation-voice-react-native`](https://github.com/liberusoftware/module-automation-voice-react-native) (`@liberusoftware/module-automation-voice-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/voice.md) | [`project-automation-mobile-flutter`](https://github.com/liberusoftware/project-automation-mobile-flutter) · [`module-automation-voice-flutter`](https://github.com/liberusoftware/module-automation-voice-flutter) (`module_automation_voice_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/voice.md) | [`project-automation-dart-mobile`](https://github.com/liberusoftware/project-automation-dart-mobile) · [`module-automation-voice-dart-mobile`](https://github.com/liberusoftware/module-automation-voice-dart-mobile) (`module_automation_voice_dart_mobile`)<br>[`project-automation-dart-desktop`](https://github.com/liberusoftware/project-automation-dart-desktop) · [`module-automation-voice-dart-desktop`](https://github.com/liberusoftware/module-automation-voice-dart-desktop) (`module_automation_voice_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

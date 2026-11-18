@@ -18,7 +18,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Cache And Performance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Page/render/query/object cache contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cache tags:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Warming:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Invalidation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Asset optimization hooks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Diagnostics:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-cms-cache-and-performance`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `page-render-query-object-cache-contracts`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `cache-tags`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `warming`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `invalidation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `asset-optimization-hooks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `diagnostics`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-cache-and-performance` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-cache-and-performance-vue-inertia`](https://github.com/liberusoftware/module-cms-cache-and-performance-vue-inertia) (`@liberusoftware/module-cms-cache-and-performance-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-cms-cache-and-performance.md) · [Core plan](../core/module-cms-cache-and-performance.md) · [API plan](../api/module-cms-cache-and-performance.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Page/render/query/object cache contracts** | Render `page/render/query/object cache contracts` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Cache tags** | Render `cache tags` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Warming** | Render `warming` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Invalidation** | Render `invalidation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Asset optimization hooks** | Render `asset optimization hooks` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Diagnostics** | Render `diagnostics` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CacheAndPerformanceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Services/CacheAndPerformanceService.php) | `public function remember(?int $teamId, string $key, string $type, int $ttl, callable $resolver, array $tags = [], array $metadata = []): array`<br>`public function invalidate(?int $teamId, array $tags = [], array $keys = [], string $idempotencyKey = ''): CacheInvalidation`<br>`public function diagnostics(?int $teamId): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CacheEntry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheEntry.php) | `team_id`, `cache_key`, `cache_type`, `tags`, `status`, `ttl_seconds`, `size_bytes`, `hits`, `misses`, `warmed_at`, `last_invalidated_at`, `metadata` |
+| [CacheInvalidation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheInvalidation.php) | `team_id`, `idempotency_key`, `tags`, `cache_keys`, `status`, `invalidated_count`, `failure_reason`, `completed_at` |
+<!-- layer-implementation-plan:end -->

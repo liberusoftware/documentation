@@ -12,7 +12,7 @@
 
 The intended **Module Billing Core** workspace covers module billing core domain behavior.
 
-The relevant capability areas are **Module Billing Core**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Accounts**, **Contacts**, **Currencies**, **Tax profiles**, **Sequences**, **Terms**, **Billing settings**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

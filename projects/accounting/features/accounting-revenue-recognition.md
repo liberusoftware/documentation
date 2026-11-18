@@ -18,7 +18,12 @@ The Accounting Revenue Recognition module owns accounting revenue recognition do
 
 ## 2. Full feature scope
 
-- **Accounting Revenue Recognition:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Obligations/schedules:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Allocation references:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Deferred/accrued revenue:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recognition runs:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Modifications:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reconciliation (optional):** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Accounting Revenue Recognition module owns accounting revenue recognition do
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Obligations/schedules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `obligations/schedules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Allocation references** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `allocation references`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Deferred/accrued revenue** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `deferred/accrued revenue`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recognition runs** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recognition runs`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Modifications** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `modifications`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reconciliation (optional)** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reconciliation (optional)`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounting-revenue-recognition.md) | [Source map](../SOURCE-MAPPING.md#accounting-revenue-recognition) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounting-revenue-recognition.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounting-revenue-recognition.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-revenue-recognition-filament`](https://github.com/liberusoftware/module-accounting-revenue-recognition-filament) (`liberusoftware/accounting-revenue-recognition-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounting-revenue-recognition.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounting-revenue-recognition.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-revenue-recognition-react-inertia`](https://github.com/liberusoftware/module-accounting-revenue-recognition-react-inertia) (`@liberusoftware/module-accounting-revenue-recognition-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounting-revenue-recognition.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-revenue-recognition-vue-inertia`](https://github.com/liberusoftware/module-accounting-revenue-recognition-vue-inertia) (`@liberusoftware/module-accounting-revenue-recognition-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounting-revenue-recognition.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-revenue-recognition-nuxt`](https://github.com/liberusoftware/module-accounting-revenue-recognition-nuxt) (`@liberusoftware/module-accounting-revenue-recognition-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounting-revenue-recognition.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-revenue-recognition-nextjs`](https://github.com/liberusoftware/module-accounting-revenue-recognition-nextjs) (`@liberusoftware/module-accounting-revenue-recognition-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounting-revenue-recognition.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-revenue-recognition-react-native`](https://github.com/liberusoftware/module-accounting-revenue-recognition-react-native) (`@liberusoftware/module-accounting-revenue-recognition-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounting-revenue-recognition.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-revenue-recognition-flutter`](https://github.com/liberusoftware/module-accounting-revenue-recognition-flutter) (`module_accounting_revenue_recognition_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounting-revenue-recognition.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-revenue-recognition-dart-mobile`](https://github.com/liberusoftware/module-accounting-revenue-recognition-dart-mobile) (`module_accounting_revenue_recognition_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-revenue-recognition-dart-desktop`](https://github.com/liberusoftware/module-accounting-revenue-recognition-dart-desktop) (`module_accounting_revenue_recognition_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

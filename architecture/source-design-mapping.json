@@ -12704,6 +12704,21 @@
             "nextjs": []
           }
         },
+        "referrals": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
         "reporting": {
           "design_alias": null,
           "layers": {
@@ -13056,6 +13071,36 @@
                 "reference": "modules/source/liberusoftware--activity-comments.md"
               }
             ],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "affiliate-contracts": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "affiliates": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
             "api": [],
             "filament": [],
             "livewire": [],
@@ -13709,6 +13754,156 @@
                 "reference": "modules/source/liberusoftware--organizations-teams-filament.md"
               }
             ],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "passkeys": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-adyen": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-contracts": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-core": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-gocardless": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-mollie": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-paddle": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-paypal": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-square": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "payment-stripe": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
             "livewire": [],
             "react": [],
             "vue": [],
@@ -35039,6 +35234,21 @@
             "nextjs": []
           }
         },
+        "catering": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
         "checkout": {
           "design_alias": null,
           "layers": {
@@ -35070,7 +35280,7 @@
           }
         },
         "commerce-automation-pack": {
-          "design_alias": null,
+          "design_alias": "automation-pack",
           "layers": {
             "core": [],
             "api": [],
@@ -35085,7 +35295,7 @@
           }
         },
         "commerce-copilot": {
-          "design_alias": null,
+          "design_alias": "copilot",
           "layers": {
             "core": [],
             "api": [],
@@ -35100,7 +35310,7 @@
           }
         },
         "commerce-core": {
-          "design_alias": null,
+          "design_alias": "core",
           "layers": {
             "core": [],
             "api": [],
@@ -35115,7 +35325,7 @@
           }
         },
         "commerce-customers": {
-          "design_alias": null,
+          "design_alias": "customers",
           "layers": {
             "core": [],
             "api": [],
@@ -35130,7 +35340,7 @@
           }
         },
         "commerce-extensions": {
-          "design_alias": null,
+          "design_alias": "extensions",
           "layers": {
             "core": [],
             "api": [],
@@ -35145,7 +35355,7 @@
           }
         },
         "commerce-functions": {
-          "design_alias": null,
+          "design_alias": "functions",
           "layers": {
             "core": [],
             "api": [],
@@ -40224,6 +40434,342 @@
                 "reference": "modules/source/liberusoftware--module-maintenance-work-orders-livewire.md"
               }
             ],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        }
+      },
+      "unmapped_observed_packages": []
+    },
+    "music": {
+      "repository": null,
+      "designs": {
+        "arrangement": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "audio-devices": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "audio-engine": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "automation-modulation": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "clip-launcher": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "collaboration": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "composition-score": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "controllers": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "effects": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "export-mastering": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "instruments": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "live-performance": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "media-library": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "midi-sequencing": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "mixer-routing": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "plugin-hosting": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "presets": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "projects": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "recording": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "sync-offline": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "tempo-groove": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
+            "react": [],
+            "vue": [],
+            "nuxt": [],
+            "react-native": [],
+            "flutter": [],
+            "nextjs": []
+          }
+        },
+        "video-timecode": {
+          "design_alias": null,
+          "layers": {
+            "core": [],
+            "api": [],
+            "filament": [],
+            "livewire": [],
             "react": [],
             "vue": [],
             "nuxt": [],

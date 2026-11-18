@@ -2,6 +2,17 @@
 
 This runbook builds reusable libraries for the [presentation layers](README.md). Application production builds are deployed; library artifacts are published. Examples use the unregistered placeholder scope `@example` and capability `example`; substitute your owned scope, real module identity and tested peer ranges. For independent repositories put the package manifest at the release root; in a workspace run the same commands from the selected package directory.
 
+## 0. Evolving a published capability module skeleton (`module-{capability}-*`)
+
+The [capability repository catalog](../../modules/skeletons/README.md) indexes **5,679 module repositories** across all 9 presentation layers (`laravel-filament`, `laravel-inertia-vue`, `laravel-inertia-react`, `nuxt-vue`, `next-react`, `mobile-react`, `mobile-flutter`, `dart-desktop`, `dart-mobile`). New skeletons are generated from the matching `module-boilerplate-*` template and include `module-skeleton.json` recording `capabilityKey`, `presentation`, `intendedPackageIdentity`, and `foundationCommit`.
+
+When implementing a capability inside its skeleton repository:
+
+1. **Preserve provenance:** Keep `module-skeleton.json` accurate and verify the canonical capability plan linked in `projects/{product}/{layer}/{module}.md` before adding dependencies or exports.
+2. **Implement the full feature/aspect matrix:** Replace the template placeholder component/widget with the concrete views, forms, hooks/composables, and typed DTO mappers required for each feature/aspect of the module, delegating all business rules and authorization to the core/API owner.
+3. **Keep package boundaries clean:** Never import host application aliases (`@/auth`, `App\`), embed environment secrets, or register silent global routes. Inject session/transport adapters through explicit props, providers, or composables.
+4. **Promote from skeleton to release:** Only after unit/component tests, typechecks, `npm pack` (or `flutter pub publish --dry-run` / `composer validate`), clean-consumer installation, and a vertical journey in `project-{product}-{suffix}` pass should the package version advance from its initial skeleton baseline to a supported release tag.
+
 ## 1. Create the package contract
 
 Start an empty package directory with `npm init`, then set a meaningful `name`, version, description, repository URL, license and supported runtime/framework versions. Add a README, LICENSE, CHANGELOG and an `src/index.ts` public entry. Use TypeScript strict mode. Decide explicitly whether consumers receive built ESM, source for Metro, a Nuxt layer, CSS, or native code. Never point `exports` at application output such as `.next`, `.output` or `public/build`.

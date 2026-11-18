@@ -18,7 +18,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Routing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Rule:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Territory:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Skill:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Language:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Availability:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Workload:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Value:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **SLA:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Round-robin assignment with fallback and acceptance timers:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +37,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-routing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `rule`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `territory`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `skill`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `language`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `availability`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `workload`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `value`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `sla`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `round-robin-assignment-with-fallback-and-acceptance-timers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +66,66 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-routing` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-routing.md)) |
+| Capability Nuxt module skeleton | [`module-crm-routing-nuxt`](https://github.com/liberusoftware/module-crm-routing-nuxt) (`@liberusoftware/module-crm-routing-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Rule** | Expose composable and Vue 3 component for `rule` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Territory** | Expose composable and Vue 3 component for `territory` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Skill** | Expose composable and Vue 3 component for `skill` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Language** | Expose composable and Vue 3 component for `language` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Availability** | Expose composable and Vue 3 component for `availability` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Workload** | Expose composable and Vue 3 component for `workload` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Value** | Expose composable and Vue 3 component for `value` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **SLA** | Expose composable and Vue 3 component for `sla` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Round-robin assignment with fallback and acceptance timers** | Expose composable and Vue 3 component for `round-robin assignment with fallback and acceptance timers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-routing.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [RoutingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Queries/RoutingQuery.php) | `public function rules(int $teamId)`<br>`public function agents(int $teamId)`<br>`public function assignments(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AcceptAssignment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/AcceptAssignment.php) | `public function execute(int $teamId, int $actorId, int $id, string $status): RoutingAssignment` |
+| [AssignSubject.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/AssignSubject.php) | `public function execute(int $teamId, int $actorId, array $data): RoutingAssignment` |
+| [CreateRoutingRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/CreateRoutingRule.php) | `public function execute(int $teamId, int $actorId, array $data): RoutingRule` |
+| [UpsertRoutingAgent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Actions/UpsertRoutingAgent.php) | `public function execute(int $teamId, int $actorId, array $data): RoutingAgent` |
+| [RoutingPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Services/RoutingPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [RoutingAgent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Models/RoutingAgent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [RoutingAssignment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Models/RoutingAssignment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [RoutingRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing/src/Models/RoutingRule.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [RoutingController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing-api/src/Http/Controllers/RoutingController.php) | `public function rules(Request $r, RoutingQuery $q)`<br>`public function rule(Request $r, CreateRoutingRule $a)`<br>`public function agent(Request $r, UpsertRoutingAgent $a)`<br>`public function agents(Request $r, RoutingQuery $q)`<br>`public function assignments(Request $r, RoutingQuery $q)`<br>`public function assign(Request $r, AssignSubject $a)`<br>`public function status(Request $r, int $assignment, string $status, AcceptAssignment $a)` |
+
+**Observed route declarations:**
+
+[modules/crm-routing-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-routing-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/routing')->group(function (): void {
+Route::get('/rules', [RoutingController::class, 'rules']);
+Route::post('/rules', [RoutingController::class, 'rule']);
+Route::get('/agents', [RoutingController::class, 'agents']);
+Route::post('/agents', [RoutingController::class, 'agent']);
+Route::get('/assignments', [RoutingController::class, 'assignments']);
+Route::post('/assignments', [RoutingController::class, 'assign']);
+Route::post('/assignments/{assignment}/{status}', [RoutingController::class, 'status'])->whereIn('status', ['accepted', 'rejected', 'expired']);
+```
+<!-- layer-implementation-plan:end -->

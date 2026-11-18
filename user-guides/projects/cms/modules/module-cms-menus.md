@@ -12,7 +12,7 @@
 
 The intended **Cms Menus** workspace covers cms menus domain behavior.
 
-The relevant capability areas are **Cms Menus**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Menu locations and trees**, **Internal and external link targets**, **Visibility and audience rules**, **Breadcrumbs and active state**, **Localized navigation structures**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

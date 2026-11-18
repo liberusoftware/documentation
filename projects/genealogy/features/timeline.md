@@ -84,3 +84,34 @@ The Timeline module owns Personal/family timelines, historical context, conflict
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Personal/family timelines** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `personal/family timelines`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Historical context** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `historical context`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Conflicts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `conflicts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Chronological navigation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `chronological navigation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/timeline.md) | [Source map](../SOURCE-MAPPING.md#timeline) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/timeline.md) | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/timeline.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) · [`module-genealogy-timeline-filament`](https://github.com/liberusoftware/module-genealogy-timeline-filament) (`liberusoftware/genealogy-timeline-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/timeline.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/timeline.md) | [`project-genealogy-laravel-inertia-react`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-react) · [`module-genealogy-timeline-react-inertia`](https://github.com/liberusoftware/module-genealogy-timeline-react-inertia) (`@liberusoftware/module-genealogy-timeline-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/timeline.md) | [`project-genealogy-laravel-inertia-vue`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-vue) · [`module-genealogy-timeline-vue-inertia`](https://github.com/liberusoftware/module-genealogy-timeline-vue-inertia) (`@liberusoftware/module-genealogy-timeline-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/timeline.md) | [`project-genealogy-nuxt-vue`](https://github.com/liberusoftware/project-genealogy-nuxt-vue) · [`module-genealogy-timeline-nuxt`](https://github.com/liberusoftware/module-genealogy-timeline-nuxt) (`@liberusoftware/module-genealogy-timeline-nuxt`) | Standalone Vue SSR client consuming `project-genealogy-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/timeline.md) | [`project-genealogy-next-react`](https://github.com/liberusoftware/project-genealogy-next-react) · [`module-genealogy-timeline-nextjs`](https://github.com/liberusoftware/module-genealogy-timeline-nextjs) (`@liberusoftware/module-genealogy-timeline-nextjs`) | App Router Server/Client components consuming `project-genealogy-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/timeline.md) | [`project-genealogy-mobile-react`](https://github.com/liberusoftware/project-genealogy-mobile-react) · [`module-genealogy-timeline-react-native`](https://github.com/liberusoftware/module-genealogy-timeline-react-native) (`@liberusoftware/module-genealogy-timeline-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/timeline.md) | [`project-genealogy-mobile-flutter`](https://github.com/liberusoftware/project-genealogy-mobile-flutter) · [`module-genealogy-timeline-flutter`](https://github.com/liberusoftware/module-genealogy-timeline-flutter) (`module_genealogy_timeline_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/timeline.md) | [`project-genealogy-dart-mobile`](https://github.com/liberusoftware/project-genealogy-dart-mobile) · [`module-genealogy-timeline-dart-mobile`](https://github.com/liberusoftware/module-genealogy-timeline-dart-mobile) (`module_genealogy_timeline_dart_mobile`)<br>[`project-genealogy-dart-desktop`](https://github.com/liberusoftware/project-genealogy-dart-desktop) · [`module-genealogy-timeline-dart-desktop`](https://github.com/liberusoftware/module-genealogy-timeline-dart-desktop) (`module_genealogy_timeline_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

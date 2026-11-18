@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Liberu Business Workflow Reconciliation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Workflow run registry:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **State mapping:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Reconciliation rules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Recovery coordination:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Audit timeline:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-liberu-business-workflow-reconciliation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `workflow-run-registry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `state-mapping`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reconciliation-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `recovery-coordination`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `audit-timeline`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,35 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-liberu-business-workflow-reconciliation` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-module-liberu-business-workflow-reconciliation-3b42eab6-filament`](https://github.com/liberusoftware/module-module-liberu-business-workflow-reconciliation-3b42eab6-filament) (`liberusoftware/module-liberu-business-workflow-reconciliation-3b42eab6-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-liberu-business-workflow-reconciliation.md) · [API plan](../api/module-liberu-business-workflow-reconciliation.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Workflow run registry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `workflow run registry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **State mapping** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `state mapping`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reconciliation rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reconciliation rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Recovery coordination** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `recovery coordination`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Audit timeline** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `audit timeline`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [BusinessWorkflowReconciliationFilamentServiceProvider.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation-filament/src/BusinessWorkflowReconciliationFilamentServiceProvider.php) · [ReconciliationCaseResource.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation-filament/src/Resources/ReconciliationCaseResource.php) · [CreateReconciliationCase.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation-filament/src/Resources/ReconciliationCaseResource/Pages/CreateReconciliationCase.php) · [EditReconciliationCase.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation-filament/src/Resources/ReconciliationCaseResource/Pages/EditReconciliationCase.php) · [ListReconciliationCases.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation-filament/src/Resources/ReconciliationCaseResource/Pages/ListReconciliationCases.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateReconciliationCase.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) | `public function execute(array $attributes): ReconciliationCase` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkflowRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/src/Models/WorkflowRun.php) | `team_id`, `correlation_id`, `workflow_key`, `contract_version`, `state`, `steps`, `last_error` |
+<!-- layer-implementation-plan:end -->

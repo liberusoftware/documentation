@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Browser Game Quests:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Storylines:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Objectives:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Prerequisites:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Branching:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Dialogue:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Rewards:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Repeatability:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Progress:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `browser-game-quests`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `storylines`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `objectives`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `prerequisites`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `branching`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `dialogue`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `rewards`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `repeatability`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `progress`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,39 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `browser-game-quests` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-browser-game-quests-filament`](https://github.com/liberusoftware/module-browser-game-quests-filament) (`liberusoftware/browser-game-quests-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/browser-game-quests.md) · [API plan](../api/browser-game-quests.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Storylines** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `storylines`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Objectives** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `objectives`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Prerequisites** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `prerequisites`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Branching** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `branching`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Dialogue** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `dialogue`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Rewards** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `rewards`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Repeatability** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `repeatability`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Progress** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `progress`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [QuestsFilamentPlugin.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-filament/src/QuestsFilamentPlugin.php) · [QuestsFilamentServiceProvider.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-filament/src/QuestsFilamentServiceProvider.php) · [QuestResource.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-filament/src/Resources/QuestResource.php) · [CreateQuest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-filament/src/Resources/QuestResource/Pages/CreateQuest.php) · [EditQuest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-filament/src/Resources/QuestResource/Pages/EditQuest.php) · [ListQuests.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-filament/src/Resources/QuestResource/Pages/ListQuests.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [QuestQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests/src/Queries/QuestQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder`<br>`public function availableFor(string $actorId, ?string $tenantId, ?string $teamId): Builder`<br>`public function activeFor(string $actorId, ?string $tenantId, ?string $teamId): Builder`<br>`public function completedFor(string $actorId, ?string $tenantId, ?string $teamId): Builder` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Quest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests/src/Models/Quest.php) | No literal fillable array detected; inspect the model and API schema. |
+| [QuestProgress.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests/src/Models/QuestProgress.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

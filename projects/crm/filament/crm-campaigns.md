@@ -18,7 +18,20 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Crm Campaigns:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Campaign hierarchy:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Briefs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Objectives:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Budget:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Assets:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Channels:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Audience:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Owners:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Calendar:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tasks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Costs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Responses:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Influence:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **ROI:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +42,20 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `crm-campaigns`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `campaign-hierarchy`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `briefs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `objectives`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `budget`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `assets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `channels`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `audience`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `owners`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `calendar`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tasks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `costs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `responses`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `influence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `roi`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +68,50 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-campaigns` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-campaigns-filament`](https://github.com/liberusoftware/module-crm-campaigns-filament) (`liberusoftware/crm-campaigns-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/crm-campaigns.md) · [API plan](../api/crm-campaigns.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Campaign hierarchy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `campaign hierarchy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Briefs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `briefs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Objectives** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `objectives`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Budget** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `budget`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Assets** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `assets`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Channels** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `channels`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Audience** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `audience`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Owners** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `owners`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Calendar** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `calendar`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tasks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tasks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Costs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `costs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Responses** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `responses`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Influence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `influence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **ROI** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `roi`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [CampaignsFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns-filament/src/CampaignsFilamentPlugin.php) · [CampaignsFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns-filament/src/CampaignsFilamentServiceProvider.php) · [CampaignResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns-filament/src/Resources/CampaignResource.php) · [CreateCampaignPage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns-filament/src/Resources/CampaignResource/Pages/CreateCampaignPage.php) · [ListCampaigns.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns-filament/src/Resources/CampaignResource/Pages/ListCampaigns.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CampaignQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns/src/Queries/CampaignQuery.php) | `public function campaigns(int $teamId): Builder`<br>`public function roi(int $teamId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCampaign.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns/src/Actions/CreateCampaign.php) | `public function execute(int $teamId, int $ownerId, array $input): Campaign` |
+| [RecordCampaignEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns/src/Actions/RecordCampaignEvent.php) | `public function execute(int $teamId, int $actorId, Campaign $campaign, string $type, float $value = 0, array $payload = []): CampaignEvent` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Campaign.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns/src/Models/Campaign.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CampaignEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-campaigns/src/Models/CampaignEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ The Jetstream Bridge module owns jetstream bridge domain behavior. It is the aut
 
 ## 2. Full feature scope
 
-- **Jetstream Bridge:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Jetstream-compatible profile:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Security:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Team:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Token:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Session:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Account-deletion action contracts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Jetstream Bridge module owns jetstream bridge domain behavior. It is the aut
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Jetstream-compatible profile** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `jetstream-compatible profile`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Security** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `security`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Team** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `team`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Token** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `token`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Session** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `session`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Account-deletion action contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `account-deletion action contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/jetstream-bridge.md) | [Source map](../SOURCE-MAPPING.md#jetstream-bridge) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/jetstream-bridge.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/jetstream-bridge.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-jetstream-bridge-filament`](https://github.com/liberusoftware/module-jetstream-bridge-filament) (`liberusoftware/jetstream-bridge-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/jetstream-bridge.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/jetstream-bridge.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-jetstream-bridge-react-inertia`](https://github.com/liberusoftware/module-jetstream-bridge-react-inertia) (`@liberusoftware/module-jetstream-bridge-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/jetstream-bridge.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-jetstream-bridge-vue-inertia`](https://github.com/liberusoftware/module-jetstream-bridge-vue-inertia) (`@liberusoftware/module-jetstream-bridge-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/jetstream-bridge.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-jetstream-bridge-nuxt`](https://github.com/liberusoftware/module-jetstream-bridge-nuxt) (`@liberusoftware/module-jetstream-bridge-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/jetstream-bridge.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-jetstream-bridge-nextjs`](https://github.com/liberusoftware/module-jetstream-bridge-nextjs) (`@liberusoftware/module-jetstream-bridge-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/jetstream-bridge.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-jetstream-bridge-react-native`](https://github.com/liberusoftware/module-jetstream-bridge-react-native) (`@liberusoftware/module-jetstream-bridge-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/jetstream-bridge.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-jetstream-bridge-flutter`](https://github.com/liberusoftware/module-jetstream-bridge-flutter) (`module_jetstream_bridge_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/jetstream-bridge.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-jetstream-bridge-dart-mobile`](https://github.com/liberusoftware/module-jetstream-bridge-dart-mobile) (`module_jetstream_bridge_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-jetstream-bridge-dart-desktop`](https://github.com/liberusoftware/module-jetstream-bridge-dart-desktop) (`module_jetstream_bridge_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

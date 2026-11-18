@@ -3,6 +3,8 @@
 This is the technology-specific implementation specification for `nuxt-vue` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-nuxt-vue
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-nuxt
+- Capability skeleton catalog: [`modules/skeletons/nuxt-vue.md`](../../modules/skeletons/nuxt-vue.md)
 - Presentation layer directory in product docs: `nuxt/`
 - Adapter identity pattern: `module-{capability}-nuxt`
 - Consumes product `-laravel-api`: yes

@@ -12,7 +12,7 @@
 
 The intended **Module Billing Cpanel** workspace covers module billing cpanel domain behavior.
 
-The relevant capability areas are **Module Billing Cpanel**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Account provisioning**, **Suspension and unsuspension**, **Package changes**, **Addon management**, **Termination**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

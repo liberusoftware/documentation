@@ -18,7 +18,13 @@ The Accounting Contractor Compliance module owns accounting contractor complianc
 
 ## 2. Full feature scope
 
-- **Accounting Contractor Compliance:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Contractor records:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Status/evidence:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Withholding schemes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **CIS/1099-style classifications:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Deductions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Statements:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Regional exports:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Accounting Contractor Compliance module owns accounting contractor complianc
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Contractor records** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `contractor records`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Status/evidence** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `status/evidence`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Withholding schemes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `withholding schemes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **CIS/1099-style classifications** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `cis/1099-style classifications`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Deductions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `deductions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Statements** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `statements`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Regional exports** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `regional exports`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/accounting-contractor-compliance.md) | [Source map](../SOURCE-MAPPING.md#accounting-contractor-compliance) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/accounting-contractor-compliance.md) | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/accounting-contractor-compliance.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) · [`module-accounting-contractor-compliance-filament`](https://github.com/liberusoftware/module-accounting-contractor-compliance-filament) (`liberusoftware/accounting-contractor-compliance-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/accounting-contractor-compliance.md) | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/accounting-contractor-compliance.md) | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) · [`module-accounting-contractor-compliance-react-inertia`](https://github.com/liberusoftware/module-accounting-contractor-compliance-react-inertia) (`@liberusoftware/module-accounting-contractor-compliance-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/accounting-contractor-compliance.md) | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) · [`module-accounting-contractor-compliance-vue-inertia`](https://github.com/liberusoftware/module-accounting-contractor-compliance-vue-inertia) (`@liberusoftware/module-accounting-contractor-compliance-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/accounting-contractor-compliance.md) | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) · [`module-accounting-contractor-compliance-nuxt`](https://github.com/liberusoftware/module-accounting-contractor-compliance-nuxt) (`@liberusoftware/module-accounting-contractor-compliance-nuxt`) | Standalone Vue SSR client consuming `project-accounting-erp-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/accounting-contractor-compliance.md) | [`project-accounting-erp-next-react`](https://github.com/liberusoftware/project-accounting-erp-next-react) · [`module-accounting-contractor-compliance-nextjs`](https://github.com/liberusoftware/module-accounting-contractor-compliance-nextjs) (`@liberusoftware/module-accounting-contractor-compliance-nextjs`) | App Router Server/Client components consuming `project-accounting-erp-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/accounting-contractor-compliance.md) | [`project-accounting-erp-mobile-react`](https://github.com/liberusoftware/project-accounting-erp-mobile-react) · [`module-accounting-contractor-compliance-react-native`](https://github.com/liberusoftware/module-accounting-contractor-compliance-react-native) (`@liberusoftware/module-accounting-contractor-compliance-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/accounting-contractor-compliance.md) | [`project-accounting-erp-mobile-flutter`](https://github.com/liberusoftware/project-accounting-erp-mobile-flutter) · [`module-accounting-contractor-compliance-flutter`](https://github.com/liberusoftware/module-accounting-contractor-compliance-flutter) (`module_accounting_contractor_compliance_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/accounting-contractor-compliance.md) | [`project-accounting-erp-dart-mobile`](https://github.com/liberusoftware/project-accounting-erp-dart-mobile) · [`module-accounting-contractor-compliance-dart-mobile`](https://github.com/liberusoftware/module-accounting-contractor-compliance-dart-mobile) (`module_accounting_contractor_compliance_dart_mobile`)<br>[`project-accounting-erp-dart-desktop`](https://github.com/liberusoftware/project-accounting-erp-dart-desktop) · [`module-accounting-contractor-compliance-dart-desktop`](https://github.com/liberusoftware/module-accounting-contractor-compliance-dart-desktop) (`module_accounting_contractor_compliance_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

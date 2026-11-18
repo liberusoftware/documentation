@@ -18,7 +18,17 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Quickbooks Online Migration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Chart:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Classes/locations:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Contacts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Items:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Invoices/bills/credits/payments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Journals:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Bank data:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Projects:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tax:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Attachments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Source IDs:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +39,17 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-quickbooks-online-migration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `chart`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `classes-locations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `contacts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `items`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `invoices-bills-credits-payments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `journals`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `bank-data`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `projects`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tax`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `attachments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `source-ids`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +62,45 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-quickbooks-online-migration` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-quickbooks-online-migration-filament`](https://github.com/liberusoftware/module-accounting-quickbooks-online-migration-filament) (`liberusoftware/accounting-quickbooks-online-migration-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-quickbooks-online-migration.md) · [API plan](../api/accounting-quickbooks-online-migration.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Chart** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `chart`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Classes/locations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `classes/locations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Contacts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `contacts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Items** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `items`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Invoices/bills/credits/payments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `invoices/bills/credits/payments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Journals** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `journals`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Bank data** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `bank data`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Projects** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `projects`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tax** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tax`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Attachments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `attachments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Source IDs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `source ids`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [QuickBooksOnlineMigrationFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-quickbooks-online-migration-filament/src/QuickBooksOnlineMigrationFilamentServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateMigrationRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-quickbooks-online-migration/src/Actions/CreateMigrationRun.php) | `public function handle(?int $connectionId, array $metadata = []): QboMigrationRun` |
+| [ImportMigrationRecords.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-quickbooks-online-migration/src/Actions/ImportMigrationRecords.php) | `public function handle(QboMigrationRun $run, array $records): QboMigrationRun` |
+| [ReconcileMigration.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-quickbooks-online-migration/src/Actions/ReconcileMigration.php) | `public function handle(QboMigrationRun $run): QboMigrationRun` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [QboMigrationConnection.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-quickbooks-online-migration/src/Models/QboMigrationConnection.php) | `team_id`, `realm_id`, `access_token`, `refresh_token`, `token_expires_at`, `status`, `last_synced_at` |
+| [QboMigrationRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-quickbooks-online-migration/src/Models/QboMigrationRecord.php) | `run_id`, `entity_type`, `source_id`, `status`, `payload`, `payload_hash`, `error_message`, `metadata` |
+| [QboMigrationRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-quickbooks-online-migration/src/Models/QboMigrationRun.php) | `connection_id`, `status`, `total_records`, `imported_records`, `failed_records`, `errors`, `metadata`, `started_at`, `finished_at` |
+<!-- layer-implementation-plan:end -->

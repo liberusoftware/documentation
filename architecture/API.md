@@ -427,15 +427,24 @@ API resource classes map domain DTOs/read models to the wire contract. They must
 
 ## 20. Application and project APIs
 
-Each `project-{product}-laravel-api` repository is being introduced as that product’s independently deployable HTTP backend for Next.js, Nuxt, Flutter, React Native and Dart clients. It is an application composition root: reusable `module-*-api` adapters retain their one-domain ownership. See the [backend/client guide](../guides/LARAVEL-API-BACKENDS.md) and [repository map](../projects/REPOSITORIES.md#laravel-applications).
+Each `project-{product}-laravel-api` repository is being introduced as that product’s independently deployable HTTP backend for Next.js (`-next-react`), Nuxt (`-nuxt-vue`), React Native (`-mobile-react`), Flutter (`-mobile-flutter`), Dart mobile (`-dart-mobile`), and Dart desktop (`-dart-desktop`) clients. It is an application composition root: reusable `module-*-api` adapters retain their one-domain ownership. See the [backend/client guide](../guides/LARAVEL-API-BACKENDS.md) and [repository map](../projects/REPOSITORIES.md#laravel-applications).
+
+| Client surface | Host repository pattern | Module adapter pattern | Authentication & transport contract |
+| --- | --- | --- | --- |
+| Next.js React | `project-{product}-next-react` | `module-{capability}-nextjs` | Server-only `API_BASE_URL` (BFF cookie session or Sanctum SPA); `cache: 'no-store'` default for private reads |
+| Nuxt 4 Vue | `project-{product}-nuxt-vue` | `module-{capability}-nuxt` | Nitro `runtimeConfig.apiBase` (BFF or Sanctum SPA); actor/tenant-scoped `useFetch` keys and `$fetch` commands |
+| React Native Expo | `project-{product}-mobile-react` | `module-{capability}-react-native` | `EXPO_PUBLIC_API_BASE_URL`; OAuth 2 PKCE or Sanctum token in Keychain/Keystore (`expo-secure-store`); idempotent retries |
+| Flutter mobile | `project-{product}-mobile-flutter` | `module-{capability}-flutter` | `--dart-define=API_BASE_URL`; typed Dart DTOs, platform-secure credentials, and account-isolated offline drafts |
+| Dart mobile | `project-{product}-dart-mobile` | `module-{capability}-dart-mobile` | Independent mobile host/release consuming the same versioned `/api/v1` contract |
+| Dart desktop | `project-{product}-dart-desktop` | `module-{capability}-dart-desktop` | Independent Linux/macOS/Windows desktop host with multi-window concurrency and authorized print/export |
 
 A repository-based application composes module APIs through a deliberate API manifest.
 
-1. Select enabled API packages and supported versions.
+1. Select enabled API packages and supported versions, keeping `/modules` committed alongside `composer.lock`.
 2. Resolve path, schema, operation-ID, scope, permission, and event collisions in CI.
 3. Expose only product-relevant operations; hide module administration/private endpoints.
 4. Apply the application's organization/site/brand, entitlement, and rate-limit policy.
-5. Publish one aggregated OpenAPI document and developer portal.
+5. Publish one aggregated OpenAPI 3.1 document and developer portal.
 6. Run cross-module workflow and backward-compatibility tests.
 7. Version the application contract independently from internal package versions.
 

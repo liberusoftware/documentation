@@ -39,7 +39,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 - `shops`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `tagged-products`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `checkout-handoff`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `lead/order-events`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `lead-order-events`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `policy-status`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `channel-adapters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
@@ -54,3 +54,29 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-social-commerce` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-social-commerce-filament`](https://github.com/liberusoftware/module-ecommerce-social-commerce-filament) (`liberusoftware/ecommerce-social-commerce-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/social-commerce.md) · [API plan](../api/social-commerce.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Product feeds** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `product feeds`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Shops** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `shops`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tagged products** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tagged products`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Checkout handoff** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `checkout handoff`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Lead/order events** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `lead/order events`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Policy status** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `policy status`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Channel adapters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `channel adapters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

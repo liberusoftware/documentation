@@ -12,7 +12,7 @@
 
 The intended **Api Access** workspace covers api access domain behavior.
 
-The relevant capability areas are **Api Access**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Tokens**, **Service identities**, **Scopes**, **Rate limits**, **Versioning**, **Idempotency**, **Revocation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

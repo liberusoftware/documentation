@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Maintenance Preventative Maintenance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Plans:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Triggers:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Frequencies:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Meter rules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Forecasts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Generation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Optimization:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-maintenance-preventative-maintenance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `plans`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `triggers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `frequencies`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `meter-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `forecasts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `generation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `optimization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,41 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-maintenance-preventative-maintenance` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-maintenance-preventative-maintenance-filament`](https://github.com/liberusoftware/module-maintenance-preventative-maintenance-filament) (`liberusoftware/maintenance-preventative-maintenance-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-maintenance-preventative-maintenance.md) · [API plan](../api/module-maintenance-preventative-maintenance.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Plans** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `plans`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Triggers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `triggers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Frequencies** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `frequencies`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Meter rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `meter rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Forecasts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `forecasts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Generation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `generation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Optimization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `optimization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [PreventativeMaintenanceFilamentPlugin.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-filament/src/PreventativeMaintenanceFilamentPlugin.php) · [PreventativeMaintenanceFilamentServiceProvider.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-filament/src/PreventativeMaintenanceFilamentServiceProvider.php) · [MaintenancePlanResource.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-filament/src/Resources/MaintenancePlanResource.php) · [CreateMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-filament/src/Resources/MaintenancePlanResource/Pages/CreateMaintenancePlan.php) · [EditMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-filament/src/Resources/MaintenancePlanResource/Pages/EditMaintenancePlan.php) · [ListMaintenancePlans.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance-filament/src/Resources/MaintenancePlanResource/Pages/ListMaintenancePlans.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CompleteMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/CompleteMaintenancePlan.php) | `public function handle(int $teamId, MaintenancePlan $plan, ?CarbonInterface $completedAt = null): MaintenancePlan` |
+| [CreateMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/CreateMaintenancePlan.php) | `public function handle(int $teamId, array $attributes): MaintenancePlan` |
+| [DeleteMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/DeleteMaintenancePlan.php) | `public function handle(int $teamId, MaintenancePlan $plan): void` |
+| [UpdateMaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Actions/UpdateMaintenancePlan.php) | `public function handle(int $teamId, MaintenancePlan $plan, array $attributes): MaintenancePlan` |
+| [MaintenancePlanPolicy.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Policies/MaintenancePlanPolicy.php) | `public function viewAny(object $user): bool`<br>`public function view(object $user, MaintenancePlan $plan): bool`<br>`public function create(object $user): bool`<br>`public function update(object $user, MaintenancePlan $plan): bool`<br>`public function delete(object $user, MaintenancePlan $plan): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MaintenancePlan.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-preventative-maintenance/src/Models/MaintenancePlan.php) | `team_id`, `name`, `code`, `description`, `equipment_id`, `assigned_to`, `checklist_id`, `instructions`, `estimated_duration`, `frequency_unit`, `frequency_value`, `next_due_at`, `last_completed_at`, `is_active`, `rules` |
+<!-- layer-implementation-plan:end -->

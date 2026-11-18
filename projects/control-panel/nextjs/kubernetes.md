@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-control-panel-kubernetes`.
+**Adapter group:** `liberusoftware/module-control-panel-kubernetes`.<br>
+**Matching domain module:** `kubernetes`
 
 **Proposed design identifier:** `module-control-panel-kubernetes-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/kubernetes.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-control-panel-next-react`](https://github.com/liberusoftware/project-control-panel-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-control-panel-laravel-api`](https://github.com/liberusoftware/project-control-panel-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/kubernetes.md)) |
+| Capability Next.js module skeleton | [module-control-panel-kubernetes-nextjs](https://github.com/liberusoftware/module-control-panel-kubernetes-nextjs) (`@liberusoftware/module-control-panel-kubernetes-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 This plan is the shared documentation home for **2 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
 
@@ -21,19 +28,19 @@ This plan is the shared documentation home for **2 existing design spellings/con
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Clusters | A focused authorized view or workflow section for clusters; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Nodes | A focused authorized view or workflow section for nodes; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Namespaces | A focused authorized view or workflow section for namespaces; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| RBAC | A focused authorized view or workflow section for rbac; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Workloads | A focused authorized view or workflow section for workloads; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Ingress | A focused authorized view or workflow section for ingress; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Helm | A focused authorized view or workflow section for helm; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Storage | A focused authorized view or workflow section for storage; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Autoscaling | A focused authorized view or workflow section for autoscaling; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Upgrades | A focused authorized view or workflow section for upgrades; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Multi-cluster views | A focused authorized view or workflow section for multi-cluster views; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Clusters** | Server Component loads authorized `clusters` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Nodes** | Server Component loads authorized `nodes` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Namespaces** | Server Component loads authorized `namespaces` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **RBAC** | Server Component loads authorized `rbac` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Workloads** | Server Component loads authorized `workloads` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Ingress** | Server Component loads authorized `ingress` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Helm** | Server Component loads authorized `helm` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Storage** | Server Component loads authorized `storage` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Autoscaling** | Server Component loads authorized `autoscaling` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Upgrades** | Server Component loads authorized `upgrades` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Multi-cluster views** | Server Component loads authorized `multi-cluster views` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-control-panel-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 

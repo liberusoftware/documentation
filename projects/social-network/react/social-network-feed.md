@@ -18,7 +18,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Social Network Feed:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Candidate generation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Ranking:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Chronological mode:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Filters:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Pagination:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Explanations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Controls:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `social-network-feed`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `candidate-generation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `ranking`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `chronological-mode`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `filters`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `pagination`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `explanations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `controls`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,52 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `social-network-feed` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-social-network-laravel-inertia-react`](https://github.com/liberusoftware/project-social-network-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-social-network-feed-react-inertia`](https://github.com/liberusoftware/module-social-network-feed-react-inertia) (`@liberusoftware/module-social-network-feed-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/social-network-feed.md) · [Core plan](../core/social-network-feed.md) · [API plan](../api/social-network-feed.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Candidate generation** | Render `candidate generation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Ranking** | Render `ranking` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Chronological mode** | Render `chronological mode` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Filters** | Render `filters` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Pagination** | Render `pagination` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Explanations** | Render `explanations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Controls** | Render `controls` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AddFeedEntry.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/AddFeedEntry.php) | `public function __construct(private Dispatcher $events, private FeedAuthorizer $authorizer)`<br>`public function handle(Profile $viewer, string $itemType, string $itemId, float $rank = 0): FeedEntry` |
+| [GetFeed.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/GetFeed.php) | `public function __construct(private FeedAuthorizer $authorizer)`<br>`public function handle(Profile $viewer, int $limit = 20, ?string $after = null): Collection` |
+| [UpdateFeedControls.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/UpdateFeedControls.php) | `public function __construct(private FeedAuthorizer $authorizer)`<br>`public function handle(Profile $profile, array $data): array` |
+| [FeedAuthorizer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Contracts/FeedAuthorizer.php) | `public function view(Profile $viewer): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [FeedEntry.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Models/FeedEntry.php) | `id`, `viewer_profile_id`, `item_type`, `item_id`, `rank`, `visible_at` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [FeedController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed-api/src/Http/Controllers/FeedController.php) | `public function index(Request $request, GetProfile $get, GetFeed $feed): JsonResponse`<br>`public function controls(Request $request, GetProfile $get, UpdateFeedControls $update): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/social-network-feed-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/social-network/feed')->middleware(['auth:sanctum', 'throttle:60,1'])->name('social-network.feed.api.')->group(function (): void {
+Route::get('/', [FeedController::class, 'index'])->name('index');
+Route::patch('/controls', [FeedController::class, 'controls'])->name('controls');
+```
+<!-- layer-implementation-plan:end -->

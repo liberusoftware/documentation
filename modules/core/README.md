@@ -50,7 +50,7 @@ Testing covers pure domain rules, actions, policies, validation, persistence, te
 | [CMS](../../projects/cms/core/README.md) | 252 | [MODULES](../../architecture/MODULES.md) |
 | [Control Panel](../../projects/control-panel/core/README.md) | 61 | [MODULES](../../architecture/MODULES.md) |
 | [CRM](../../projects/crm/core/README.md) | 218 | [MODULES](../../architecture/MODULES.md) |
-| [Ecommerce](../../projects/ecommerce/core/README.md) | 107 | [MODULES](../../architecture/MODULES.md) |
+| [Ecommerce](../../projects/ecommerce/core/README.md) | 108 | [MODULES](../../architecture/MODULES.md) |
 | [Genealogy](../../projects/genealogy/core/README.md) | 62 | [MODULES](../../architecture/MODULES.md) |
 | [Liberu platform](../../projects/liberu/core/README.md) | 4 | [MODULES](../../architecture/MODULES.md) |
 | [Maintenance](../../projects/maintenance/core/README.md) | 60 | [MODULES](../../architecture/MODULES.md) |

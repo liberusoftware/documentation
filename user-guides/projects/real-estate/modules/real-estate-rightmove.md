@@ -12,7 +12,7 @@
 
 The intended **Real Estate Rightmove** workspace covers real estate rightmove domain behavior.
 
-The relevant capability areas are **Real Estate Rightmove**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Rightmove sync state**, **Provider payload boundary**, **Retry and error state**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

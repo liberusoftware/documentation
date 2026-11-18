@@ -18,7 +18,10 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Analytics Google:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Google Analytics event mapping:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Property/stream configuration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Consent-aware delivery:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Diagnostics:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +32,10 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `analytics-google`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `google-analytics-event-mapping`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `property-stream-configuration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `consent-aware-delivery`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `diagnostics`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +48,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `analytics-google` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-analytics-google-filament`](https://github.com/liberusoftware/module-analytics-google-filament) (`liberusoftware/analytics-google-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/analytics-google.md) · [API plan](../api/analytics-google.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Google Analytics event mapping** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `google analytics event mapping`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Property/stream configuration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `property/stream configuration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Consent-aware delivery** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `consent-aware delivery`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Diagnostics** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `diagnostics`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [GoogleTransport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/analytics-google/src/Contracts/GoogleTransport.php) | `public function send(array $payload): array` |
+<!-- layer-implementation-plan:end -->

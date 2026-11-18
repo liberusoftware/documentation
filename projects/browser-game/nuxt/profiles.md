@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Profiles:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Names:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Avatars:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Contact preferences:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Locale/timezone:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Completion:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Controlled profile updates:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `profiles`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `names`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `avatars`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `contact-preferences`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `locale-timezone`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `completion`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `controlled-profile-updates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,52 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `profiles` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/profiles.md)) |
+| Capability Nuxt module skeleton | [`module-profiles-nuxt`](https://github.com/liberusoftware/module-profiles-nuxt) (`@liberusoftware/module-profiles-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Names** | Expose composable and Vue 3 component for `names` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/profiles.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Avatars** | Expose composable and Vue 3 component for `avatars` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/profiles.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Contact preferences** | Expose composable and Vue 3 component for `contact preferences` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/profiles.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Locale/timezone** | Expose composable and Vue 3 component for `locale/timezone` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/profiles.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Completion** | Expose composable and Vue 3 component for `completion` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/profiles.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+| **Controlled profile updates** | Expose composable and Vue 3 component for `controlled profile updates` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/profiles.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-browser-game-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [UpdateProfile.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/profiles/src/Actions/UpdateProfile.php) | `public function handle(Model $profile, ProfileUpdate $update): Model` |
+
+**Observed route declarations:**
+
+[modules/profiles-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/profiles')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('profiles-api.status');
+```
+
+[modules/social-network-profiles-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-profiles-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/social-network/profiles')->middleware(['auth:sanctum', 'throttle:60,1'])->name('social-network.profiles.api.')->group(function (): void {
+Route::get('/me', [ProfilesController::class, 'me'])->name('me');
+Route::patch('/me', [ProfilesController::class, 'update'])->name('update');
+Route::post('/me/blocks/{profile}', [ProfilesController::class, 'block'])->name('block');
+Route::delete('/me/blocks/{profile}', [ProfilesController::class, 'unblock'])->name('unblock');
+Route::patch('/me/lifecycle', [ProfilesController::class, 'lifecycle'])->name('lifecycle');
+Route::patch('/{profile}/verification', [ProfilesController::class, 'verification'])->name('verification');
+Route::get('/{profile}', [ProfilesController::class, 'show'])->name('show');
+```
+<!-- layer-implementation-plan:end -->

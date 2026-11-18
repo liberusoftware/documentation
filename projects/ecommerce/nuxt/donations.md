@@ -35,13 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `funds/campaigns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `one-time/recurring-gifts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `suggested/custom-amount`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `funds-campaigns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `one-time-recurring-gifts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `suggested-custom-amount`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `donor-preferences`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `receipts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `anonymity`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `crm/accounting-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `crm-accounting-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -62,3 +62,29 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-donations` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/donations.md)) |
+| Capability Nuxt module skeleton | [`module-ecommerce-donations-nuxt`](https://github.com/liberusoftware/module-ecommerce-donations-nuxt) (`@liberusoftware/module-ecommerce-donations-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Funds/campaigns** | Expose composable and Vue 3 component for `funds/campaigns` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/donations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **One-time/recurring gifts** | Expose composable and Vue 3 component for `one-time/recurring gifts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/donations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Suggested/custom amount** | Expose composable and Vue 3 component for `suggested/custom amount` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/donations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Donor preferences** | Expose composable and Vue 3 component for `donor preferences` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/donations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Receipts** | Expose composable and Vue 3 component for `receipts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/donations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Anonymity** | Expose composable and Vue 3 component for `anonymity` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/donations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **CRM/accounting references** | Expose composable and Vue 3 component for `crm/accounting references` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/donations.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

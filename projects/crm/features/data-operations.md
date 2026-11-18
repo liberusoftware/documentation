@@ -94,3 +94,39 @@ The Data Operations module owns Imports/exports, field mapping, normalization, e
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Imports/exports** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `imports/exports`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Field mapping** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `field mapping`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Normalization** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `normalization`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Enrichment orchestration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `enrichment orchestration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Duplicate detection/merge** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `duplicate detection/merge`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Formatting** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `formatting`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Quality rules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `quality rules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Schedules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `schedules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Exception queues** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `exception queues`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/data-operations.md) | [Source map](../SOURCE-MAPPING.md#data-operations) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/data-operations.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/data-operations.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-data-operations-filament`](https://github.com/liberusoftware/module-crm-data-operations-filament) (`liberusoftware/crm-data-operations-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/data-operations.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/data-operations.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-data-operations-react-inertia`](https://github.com/liberusoftware/module-crm-data-operations-react-inertia) (`@liberusoftware/module-crm-data-operations-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/data-operations.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-data-operations-vue-inertia`](https://github.com/liberusoftware/module-crm-data-operations-vue-inertia) (`@liberusoftware/module-crm-data-operations-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/data-operations.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-data-operations-nuxt`](https://github.com/liberusoftware/module-crm-data-operations-nuxt) (`@liberusoftware/module-crm-data-operations-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/data-operations.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-data-operations-nextjs`](https://github.com/liberusoftware/module-crm-data-operations-nextjs) (`@liberusoftware/module-crm-data-operations-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/data-operations.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-data-operations-react-native`](https://github.com/liberusoftware/module-crm-data-operations-react-native) (`@liberusoftware/module-crm-data-operations-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/data-operations.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-data-operations-flutter`](https://github.com/liberusoftware/module-crm-data-operations-flutter) (`module_crm_data_operations_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/data-operations.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-data-operations-dart-mobile`](https://github.com/liberusoftware/module-crm-data-operations-dart-mobile) (`module_crm_data_operations_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-data-operations-dart-desktop`](https://github.com/liberusoftware/module-crm-data-operations-dart-desktop) (`module_crm_data_operations_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

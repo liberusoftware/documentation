@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Real Estate Vr Design:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Design styles:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Furniture placement:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Room layouts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Materials and lighting:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Public templates:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Thumbnail uploads:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **VR exports:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `real-estate-vr-design`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `design-styles`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `furniture-placement`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `room-layouts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `materials-and-lighting`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `public-templates`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `thumbnail-uploads`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `vr-exports`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,33 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `real-estate-vr-design` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/real-estate-vr-design.md) · [API plan](../api/real-estate-vr-design.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Design styles** | Expose a focused Livewire 4 component and namespaced Blade default view for `design styles` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Furniture placement** | Expose a focused Livewire 4 component and namespaced Blade default view for `furniture placement` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Room layouts** | Expose a focused Livewire 4 component and namespaced Blade default view for `room layouts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Materials and lighting** | Expose a focused Livewire 4 component and namespaced Blade default view for `materials and lighting` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Public templates** | Expose a focused Livewire 4 component and namespaced Blade default view for `public templates` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Thumbnail uploads** | Expose a focused Livewire 4 component and namespaced Blade default view for `thumbnail uploads` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **VR exports** | Expose a focused Livewire 4 component and namespaced Blade default view for `vr exports` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [DesignStudio.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-vr-design-livewire/src/Components/DesignStudio.php) · [VrDesignLivewireServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-vr-design-livewire/src/VrDesignLivewireServiceProvider.php).
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [VrDesign.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-vr-design/src/Models/VrDesign.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

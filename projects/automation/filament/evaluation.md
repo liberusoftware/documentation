@@ -35,7 +35,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 - `quality-suites`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `regression-comparison`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `latency/cost-metrics`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `latency-cost-metrics`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `safety-checks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `release-gates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
@@ -50,3 +50,36 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `automation-evaluation` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-automation-evaluation-filament`](https://github.com/liberusoftware/module-automation-evaluation-filament) (`liberusoftware/automation-evaluation-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/evaluation.md) · [API plan](../api/evaluation.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Quality suites** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `quality suites`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Regression comparison** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `regression comparison`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Latency/cost metrics** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `latency/cost metrics`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Safety checks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `safety checks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Release gates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `release gates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [EvaluationFilamentPlugin.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/EvaluationFilamentPlugin.php) · [EvaluationFilamentServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/EvaluationFilamentServiceProvider.php) · [EvaluationResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource.php) · [CreateEvaluation.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/CreateEvaluation.php) · [EditEvaluation.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/EditEvaluation.php) · [ListEvaluation.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/ListEvaluation.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateEvaluationResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation/src/Actions/CreateEvaluationResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): EvaluationResource` |
+| [TransitionEvaluationResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation/src/Actions/TransitionEvaluationResource.php) | `public function execute(EvaluationResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): EvaluationResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [EvaluationResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation/src/Models/EvaluationResource.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Cms Regions And Widgets:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Theme regions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reusable widgets:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Placement:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Ordering:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Visibility by route/context/audience:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Schedules:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Caching:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `cms-regions-and-widgets`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `theme-regions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reusable-widgets`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `placement`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `ordering`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `visibility-by-route-context-audience`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `schedules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `caching`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,37 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-regions-and-widgets` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/cms-regions-and-widgets.md)) |
+| Capability Nuxt module skeleton | [`module-cms-regions-and-widgets-nuxt`](https://github.com/liberusoftware/module-cms-regions-and-widgets-nuxt) (`@liberusoftware/module-cms-regions-and-widgets-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Theme regions** | Expose composable and Vue 3 component for `theme regions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-regions-and-widgets.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Reusable widgets** | Expose composable and Vue 3 component for `reusable widgets` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-regions-and-widgets.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Placement** | Expose composable and Vue 3 component for `placement` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-regions-and-widgets.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Ordering** | Expose composable and Vue 3 component for `ordering` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-regions-and-widgets.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Visibility by route/context/audience** | Expose composable and Vue 3 component for `visibility by route/context/audience` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-regions-and-widgets.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Schedules** | Expose composable and Vue 3 component for `schedules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-regions-and-widgets.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Caching** | Expose composable and Vue 3 component for `caching` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-regions-and-widgets.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RegionWidgetService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Services/RegionWidgetService.php) | `public function region(string $key, ?int $teamId = null): Region`<br>`public function createRegion(string $key, string $label, ?string $theme = null, ?int $teamId = null): Region`<br>`public function createWidget(string $key, string $type, array $configuration = [], ?string $title = null, ?int $teamId = null): Widget`<br>`public function place(Region $region, Widget $widget, int $position = 0, array $visibility = [], ?string $startsAt = null, ?string $endsAt = null): WidgetPlacement`<br>`public function render(string $regionKey, array $context = [], ?int $teamId = null): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Region.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Models/Region.php) | `key`, `label`, `theme`, `team_id` |
+| [Widget.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Models/Widget.php) | `key`, `type`, `title`, `configuration`, `active`, `team_id` |
+| [WidgetPlacement.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-regions-and-widgets/src/Models/WidgetPlacement.php) | `region_id`, `widget_id`, `position`, `visibility`, `starts_at`, `ends_at`, `active` |
+<!-- layer-implementation-plan:end -->

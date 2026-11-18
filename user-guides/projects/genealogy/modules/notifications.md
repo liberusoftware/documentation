@@ -12,7 +12,7 @@
 
 The intended **Notifications** workspace covers notifications domain behavior.
 
-The relevant capability areas are **Notifications**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Templates**, **Channels**, **Preferences**, **Inbox**, **Delivery status**, **Retries**, **Quiet hours**, **Localization**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

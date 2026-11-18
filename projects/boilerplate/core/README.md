@@ -1,7 +1,7 @@
 # Boilerplate Core Modules
 
 <!-- catalogue-status:start -->
-This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **55 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Boilerplate domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
@@ -10,6 +10,8 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Boilerpl
 | --- | --- | --- |
 | [Activity and Comments domain packages](activity-and-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
 | [Activity Comments Core Module](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Affiliate Contracts Core Module](affiliate-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#affiliate-contracts) | [api](../api/affiliate-contracts.md) · [nextjs](../nextjs/affiliate-contracts.md) |
+| [Affiliates and Partner Programs Core Module](affiliates.md) | [Target/source map](../SOURCE-MAPPING.md#affiliates) | [api](../api/affiliates.md) · [nextjs](../nextjs/affiliates.md) |
 | [Analytics Core domain packages](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google Core Module](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta Core Module](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
@@ -39,6 +41,16 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Boilerpl
 | [Observability domain packages](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
 | [Organizations and Teams domain packages](organizations-and-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
 | [Organizations Teams Core Module](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Passkeys and WebAuthn Core Module](passkeys.md) | [Target/source map](../SOURCE-MAPPING.md#passkeys) | [api](../api/passkeys.md) · [nextjs](../nextjs/passkeys.md) |
+| [Payment Adyen Adapter Core Module](payment-adyen.md) | [Target/source map](../SOURCE-MAPPING.md#payment-adyen) | [api](../api/payment-adyen.md) · [nextjs](../nextjs/payment-adyen.md) |
+| [Payment Contracts Core Module](payment-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#payment-contracts) | [api](../api/payment-contracts.md) · [nextjs](../nextjs/payment-contracts.md) |
+| [Payment Core Core Module](payment-core.md) | [Target/source map](../SOURCE-MAPPING.md#payment-core) | [api](../api/payment-core.md) · [nextjs](../nextjs/payment-core.md) |
+| [Payment GoCardless Adapter Core Module](payment-gocardless.md) | [Target/source map](../SOURCE-MAPPING.md#payment-gocardless) | [api](../api/payment-gocardless.md) · [nextjs](../nextjs/payment-gocardless.md) |
+| [Payment Mollie Adapter Core Module](payment-mollie.md) | [Target/source map](../SOURCE-MAPPING.md#payment-mollie) | [api](../api/payment-mollie.md) · [nextjs](../nextjs/payment-mollie.md) |
+| [Payment Paddle Adapter Core Module](payment-paddle.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paddle) | [api](../api/payment-paddle.md) · [nextjs](../nextjs/payment-paddle.md) |
+| [Payment PayPal Adapter Core Module](payment-paypal.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paypal) | [api](../api/payment-paypal.md) · [nextjs](../nextjs/payment-paypal.md) |
+| [Payment Square Adapter Core Module](payment-square.md) | [Target/source map](../SOURCE-MAPPING.md#payment-square) | [api](../api/payment-square.md) · [nextjs](../nextjs/payment-square.md) |
+| [Payment Stripe Adapter Core Module](payment-stripe.md) | [Target/source map](../SOURCE-MAPPING.md#payment-stripe) | [api](../api/payment-stripe.md) · [nextjs](../nextjs/payment-stripe.md) |
 | [Profiles domain packages](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
 | [Roles and Permissions domain packages](roles-and-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
 | [Roles Permissions Core Module](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |

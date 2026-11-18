@@ -18,15 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Receipts:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Payment links:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Gateway/bank references:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Deposits:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Undeposited funds:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Allocations:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Partial/overpayments:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Refunds:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Reconciliation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Receipts and online payment links via payment-contracts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Gateway/bank references and provider provenance:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Deposits and undeposited funds clearing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Allocations and partial/overpayments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Refunds and chargeback adjustments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reconciliation with merchant settlements:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -37,15 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `receipts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `payment-links`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `gateway/bank-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `deposits`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `undeposited-funds`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `allocations`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `partial/overpayments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `refunds`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `reconciliation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `receipts-and-online-payment-links-via-payment-contracts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `gateway-bank-references-and-provider-provenance`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `deposits-and-undeposited-funds-clearing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `allocations-and-partial-overpayments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `refunds-and-chargeback-adjustments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reconciliation-with-merchant-settlements`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -66,3 +60,61 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-customer-payments` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/customer-payments.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-customer-payments-nuxt`](https://github.com/liberusoftware/module-accounting-customer-payments-nuxt) (`@liberusoftware/module-accounting-customer-payments-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Receipts and online payment links via payment-contracts** | Expose composable and Vue 3 component for `receipts and online payment links via payment-contracts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-payments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Gateway/bank references and provider provenance** | Expose composable and Vue 3 component for `gateway/bank references and provider provenance` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-payments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Deposits and undeposited funds clearing** | Expose composable and Vue 3 component for `deposits and undeposited funds clearing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-payments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Allocations and partial/overpayments** | Expose composable and Vue 3 component for `allocations and partial/overpayments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-payments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Refunds and chargeback adjustments** | Expose composable and Vue 3 component for `refunds and chargeback adjustments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-payments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Reconciliation with merchant settlements** | Expose composable and Vue 3 component for `reconciliation with merchant settlements` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-payments.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CustomerPaymentQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Queries/CustomerPaymentQuery.php) | `public function forTeam(int $teamId): Collection`<br>`public function forCustomer(int $teamId, string $customerId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocateCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/AllocateCustomerPayment.php) | `public function handle(CustomerPayment $payment, string $documentRef, float $amount): CustomerPaymentAllocation` |
+| [ReconcileCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/ReconcileCustomerPayment.php) | `public function handle(CustomerPayment $payment, string $depositReference): CustomerPayment` |
+| [RecordCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/RecordCustomerPayment.php) | `public function handle(array $attributes): CustomerPayment` |
+| [RefundCustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Actions/RefundCustomerPayment.php) | `public function handle(CustomerPayment $payment, float $amount): CustomerPayment` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CustomerPayment.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Models/CustomerPayment.php) | `team_id`, `customer_id`, `kind`, `reference`, `status`, `currency`, `amount`, `allocated_amount`, `refunded_amount`, `gateway_reference`, `deposit_reference`, `metadata` |
+| [CustomerPaymentAllocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments/src/Models/CustomerPaymentAllocation.php) | `payment_id`, `team_id`, `document_ref`, `amount` |
+| [Customer.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments-api/src/Models/Customer.php) | `customer_name`, `customer_last_name`, `customer_address`, `customer_email`, `customer_phone`, `customer_city`, `credit_hold`, `qbo_id`, `sage_id`, `xero_id`, `team_id` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CustomerPaymentsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments-api/src/Http/Controllers/CustomerPaymentsController.php) | `public function index(CustomerPaymentQuery $query): JsonResponse`<br>`public function store(Request $request, RecordCustomerPayment $action): JsonResponse`<br>`public function allocate(Request $request, string $payment, AllocateCustomerPayment $action): JsonResponse`<br>`public function reconcile(Request $request, string $payment, ReconcileCustomerPayment $action): JsonResponse`<br>`public function refund(Request $request, string $payment, RefundCustomerPayment $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-customer-payments-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-payments-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/customer-payments')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.customer-payments.read')->get('/', [CustomerPaymentsController::class, 'index']);
+Route::middleware('ability:accounting.customer-payments.write')->group(function (): void {
+Route::post('/', [CustomerPaymentsController::class, 'store']);
+Route::post('/{payment}/allocations', [CustomerPaymentsController::class, 'allocate']);
+Route::post('/{payment}/reconcile', [CustomerPaymentsController::class, 'reconcile']);
+Route::post('/{payment}/refund', [CustomerPaymentsController::class, 'refund']);
+```
+<!-- layer-implementation-plan:end -->

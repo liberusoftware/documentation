@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Menus:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Menu locations and trees:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Internal and external link targets:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Visibility and audience rules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Breadcrumbs and active state:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Localized navigation structures:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-menus`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `menu-locations-and-trees`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `internal-and-external-link-targets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `visibility-and-audience-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `breadcrumbs-and-active-state`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `localized-navigation-structures`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,37 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-menus` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-menus-filament`](https://github.com/liberusoftware/module-cms-menus-filament) (`liberusoftware/cms-menus-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-menus.md) · [API plan](../api/module-cms-menus.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Menu locations and trees** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `menu locations and trees`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Internal and external link targets** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `internal and external link targets`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Visibility and audience rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `visibility and audience rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Breadcrumbs and active state** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `breadcrumbs and active state`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Localized navigation structures** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `localized navigation structures`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [MenuItemResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Filament/MenuItemResource.php) · [MenuResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Filament/MenuResource.php) · [ListMenuItems.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Filament/Pages/ListMenuItems.php) · [ListMenus.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Filament/Pages/ListMenus.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MenuRepositoryInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Contracts/MenuRepositoryInterface.php) | `public function find(int $id): ?Menu`<br>`public function forLocation(string $location, string $variant = 'default'): ?Menu` |
+| [MenuService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Services/MenuService.php) | `public function createMenu(array $attributes): Menu`<br>`public function updateMenu(Menu $menu, array $attributes): Menu`<br>`public function saveItem(Menu $menu, array $attributes, ?MenuItem $item = null): MenuItem`<br>`public function deleteItem(MenuItem $item): void` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Menu.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Models/Menu.php) | `name`, `location`, `variant`, `settings`, `team_id` |
+| [MenuItem.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-menus/src/Models/MenuItem.php) | `menu_id`, `parent_id`, `label`, `url`, `link_type`, `content_id`, `system_route`, `sort`, `permission`, `visibility`, `active`, `team_id` |
+<!-- layer-implementation-plan:end -->

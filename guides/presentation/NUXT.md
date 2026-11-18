@@ -1,5 +1,26 @@
 # Implement the Nuxt presentation layer with Vue
 
+## Liberu boilerplate, skeleton repositories, and API backend
+
+Start from the provisioned Nuxt 4 + Vue 3 application and capability module skeletons on GitHub rather than rerunning a framework generator over an existing repository:
+
+- **Application template:** [`project-boilerplate-nuxt-vue`](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) (product skeletons: `project-{product}-nuxt-vue` in [REPOSITORIES.md](../../projects/REPOSITORIES.md#independent-web-applications)).
+- **Shared product API backend:** `project-{product}-laravel-api` ([Laravel API backends](../LARAVEL-API-BACKENDS.md)), which composes the product's domain modules and `module-*-api` adapters.
+- **Reusable module foundation & catalog:** [`module-boilerplate-nuxt`](https://github.com/liberusoftware/module-boilerplate-nuxt) and the [631 Nuxt capability skeleton repositories](../../modules/skeletons/nuxt-vue.md) (`@liberusoftware/module-{capability}-nuxt`, tracked via `module-skeleton.json`).
+- **Wayfinder specification:** [nuxt-vue.md](../../projects/wayfinders/nuxt-vue.md).
+
+```bash
+git clone https://github.com/liberusoftware/project-crm-nuxt-vue.git
+cd project-crm-nuxt-vue
+cp .env.example .env
+npm ci
+npm run typecheck
+npm run build
+npm run dev
+```
+
+Use the Node.js release pinned in `.node-version` and set `NUXT_API_BASE` to the deployed `project-{product}-laravel-api` origin. The skeleton provides build and architecture structure, not implemented business workflows; follow the product's `projects/{product}/nuxt/{module}.md` feature matrix and wayfinder checklist when implementing each slice.
+
 Nuxt 4 is an independently deployed Vue 3 application consuming reviewed Laravel APIs. Complete the [foundation and contract steps](README.md) first. This walkthrough uses an explicitly **public** read contract for a first render, then describes protected integration. `/api/v1/example-records` and its response shape are illustrative; implement or substitute a reviewed API before running the request.
 
 ## 1. Create a private skeleton

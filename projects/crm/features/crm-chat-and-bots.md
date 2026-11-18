@@ -18,7 +18,15 @@ The Crm Chat And Bots module owns crm chat and bots domain behavior. It is the a
 
 ## 2. Full feature scope
 
-- **Crm Chat And Bots:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Web chat:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Bot/playbook builder:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Qualification:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Knowledge answers:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Meeting booking:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Live-agent handoff:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Office hours:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Transcripts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Channel identity:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Crm Chat And Bots module owns crm chat and bots domain behavior. It is the a
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Web chat** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `web chat`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Bot/playbook builder** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `bot/playbook builder`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Qualification** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `qualification`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Knowledge answers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `knowledge answers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Meeting booking** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `meeting booking`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Live-agent handoff** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `live-agent handoff`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Office hours** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `office hours`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Transcripts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `transcripts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Channel identity** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `channel identity`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-chat-and-bots.md) | [Source map](../SOURCE-MAPPING.md#crm-chat-and-bots) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-chat-and-bots.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-chat-and-bots.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-chat-and-bots-filament`](https://github.com/liberusoftware/module-crm-chat-and-bots-filament) (`liberusoftware/crm-chat-and-bots-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-chat-and-bots.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-chat-and-bots.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-chat-and-bots-react-inertia`](https://github.com/liberusoftware/module-crm-chat-and-bots-react-inertia) (`@liberusoftware/module-crm-chat-and-bots-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-chat-and-bots.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-chat-and-bots-vue-inertia`](https://github.com/liberusoftware/module-crm-chat-and-bots-vue-inertia) (`@liberusoftware/module-crm-chat-and-bots-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-chat-and-bots.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-chat-and-bots-nuxt`](https://github.com/liberusoftware/module-crm-chat-and-bots-nuxt) (`@liberusoftware/module-crm-chat-and-bots-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-chat-and-bots.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-chat-and-bots-nextjs`](https://github.com/liberusoftware/module-crm-chat-and-bots-nextjs) (`@liberusoftware/module-crm-chat-and-bots-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-chat-and-bots.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-chat-and-bots-react-native`](https://github.com/liberusoftware/module-crm-chat-and-bots-react-native) (`@liberusoftware/module-crm-chat-and-bots-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-chat-and-bots.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-chat-and-bots-flutter`](https://github.com/liberusoftware/module-crm-chat-and-bots-flutter) (`module_crm_chat_and_bots_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-chat-and-bots.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-chat-and-bots-dart-mobile`](https://github.com/liberusoftware/module-crm-chat-and-bots-dart-mobile) (`module_crm_chat_and_bots_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-chat-and-bots-dart-desktop`](https://github.com/liberusoftware/module-crm-chat-and-bots-dart-desktop) (`module_crm_chat_and_bots_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

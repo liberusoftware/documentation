@@ -8,7 +8,9 @@ The [source comparison](SHARED-MODULE-COMPARISON.md) identifies 133 repeated phy
 
 | Capability family | Documentation owner | Consumer rule |
 | --- | --- | --- |
-| Identity, teams, policy, audit, settings, files, localization, generic queues and observability | [Boilerplate foundation](../projects/boilerplate/BOILERPLATE.md) | Reuse foundation contracts; product applications configure them and supply product policy |
+| Identity, teams, policy, audit, settings, files, localization, generic queues, passkeys, and observability | [Boilerplate foundation](../projects/boilerplate/BOILERPLATE.md) · [Passkeys](PASSKEYS.md) | Reuse foundation contracts; product applications configure them and supply product policy |
+| Shared merchant payments (`payment-contracts`, `payment-core`, `payment-{provider}`) | [Unified Payments](PAYMENTS.md) · [Boilerplate foundation](../projects/boilerplate/BOILERPLATE.md) | One shared contract module, one orchestration core, and one module per gateway (`payment-stripe`, `payment-paypal`, `payment-paddle`, `payment-adyen`, `payment-mollie`, `payment-square`, `payment-gocardless`); products never reimplement gateways |
+| Affiliate management and referrals (`affiliate-contracts`, `affiliates`) | [Affiliates & Referrals](AFFILIATES.md) · [Boilerplate foundation](../projects/boilerplate/BOILERPLATE.md) | Extend `liberusoftware/affiliate-contracts` in CRM, Billing, Ecommerce, and Accounting rather than duplicating attribution/commission engines |
 | Customer relationship records, sales pipeline, engagement, service relationships | [CRM](../projects/crm/CRM.md) | Other products retain their operational customer references; integrate through published DTOs/events |
 | Subscription billing, commercial invoicing and recurring usage | [Billing](../projects/billing/BILLING.md) | Commerce and enterprise workspaces reference Billing records without duplicating the recurring ledger |
 | Ledger postings, periods, reconciliation, financial statements and consolidation | [Accounting](../projects/accounting/ACCOUNTING.md) | Operational products submit posting requests and reconcile returned references |

@@ -34,8 +34,8 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `local-catalog/price/stock-subset`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `offline-orders/payments-policy`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `local-catalog-price-stock-subset`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `offline-orders-payments-policy`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `sequence-ids`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `synchronization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `conflict-resolution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -52,3 +52,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-offline-pos` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-offline-pos-filament`](https://github.com/liberusoftware/module-ecommerce-offline-pos-filament) (`liberusoftware/ecommerce-offline-pos-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/offline-pos.md) · [API plan](../api/offline-pos.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Local catalog/price/stock subset** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `local catalog/price/stock subset`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Offline orders/payments policy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `offline orders/payments policy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sequence IDs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sequence ids`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Synchronization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `synchronization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Conflict resolution** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `conflict resolution`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Risk limits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `risk limits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

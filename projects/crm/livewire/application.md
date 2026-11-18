@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Application:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Environment validation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Application metadata:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Health/readiness:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Maintenance mode:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Identifiers:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Clocks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Shared service contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `application`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `environment-validation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `application-metadata`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `health-readiness`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `maintenance-mode`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `identifiers`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `clocks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `shared-service-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,34 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `application` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/application.md) · [API plan](../api/application.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Environment validation** | Expose a focused Livewire 4 component and namespaced Blade default view for `environment validation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Application metadata** | Expose a focused Livewire 4 component and namespaced Blade default view for `application metadata` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Health/readiness** | Expose a focused Livewire 4 component and namespaced Blade default view for `health/readiness` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Maintenance mode** | Expose a focused Livewire 4 component and namespaced Blade default view for `maintenance mode` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Identifiers** | Expose a focused Livewire 4 component and namespaced Blade default view for `identifiers` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Clocks** | Expose a focused Livewire 4 component and namespaced Blade default view for `clocks` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Shared service contracts** | Expose a focused Livewire 4 component and namespaced Blade default view for `shared service contracts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application-livewire/src/Livewire/Overview.php) · [ApplicationLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application-livewire/src/ApplicationLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [Clock.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/src/Contracts/Clock.php) | `public function now(): \DateTimeImmutable` |
+| [IdentifierFactory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/src/Contracts/IdentifierFactory.php) | `public function make(): string` |
+<!-- layer-implementation-plan:end -->

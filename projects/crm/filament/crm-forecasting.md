@@ -18,7 +18,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Crm Forecasting:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Forecast categories:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Rollups:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Manager adjustments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Commit/best-case/pipeline views:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Coverage:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Trend:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Scenario:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **History:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Accuracy:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Submission workflow:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +38,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `crm-forecasting`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `forecast-categories`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `rollups`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `manager-adjustments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `commit-best-case-pipeline-views`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `coverage`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `trend`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `scenario`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `history`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `accuracy`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `submission-workflow`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +60,50 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-forecasting` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-forecasting-filament`](https://github.com/liberusoftware/module-crm-forecasting-filament) (`liberusoftware/crm-forecasting-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/crm-forecasting.md) · [API plan](../api/crm-forecasting.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Forecast categories** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `forecast categories`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Rollups** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `rollups`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Manager adjustments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `manager adjustments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Commit/best-case/pipeline views** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `commit/best-case/pipeline views`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Coverage** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `coverage`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Trend** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `trend`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Scenario** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `scenario`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **History** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `history`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Accuracy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `accuracy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Submission workflow** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `submission workflow`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ForecastingFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting-filament/src/ForecastingFilamentServiceProvider.php) · [ForecastResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting-filament/src/Resources/ForecastResource.php) · [CreateForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting-filament/src/Resources/Pages/CreateForecast.php) · [EditForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting-filament/src/Resources/Pages/EditForecast.php) · [ListForecasts.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting-filament/src/Resources/Pages/ListForecasts.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ForecastingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Queries/ForecastingQuery.php) | `public function categories(int $teamId)`<br>`public function forecasts(int $teamId, string $period)`<br>`public function summary(int $teamId, string $period): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCategory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/CreateCategory.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ForecastCategory` |
+| [RecordForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/RecordForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): Forecast` |
+| [SubmitForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/SubmitForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, Forecast $forecast): ForecastSubmission` |
+| [ForecastingPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Services/ForecastingPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Forecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/Forecast.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ForecastAdjustment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastAdjustment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ForecastCategory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastCategory.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ForecastSubmission.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastSubmission.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

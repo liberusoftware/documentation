@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Display Modes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Named view/form modes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Field formatters:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Per-type display configuration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Responsive variants:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **API projections:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-display-modes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `named-view-form-modes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `field-formatters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `per-type-display-configuration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `responsive-variants`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `api-projections`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,35 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-display-modes` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-display-modes-filament`](https://github.com/liberusoftware/module-cms-display-modes-filament) (`liberusoftware/cms-display-modes-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-display-modes.md) · [API plan](../api/module-cms-display-modes.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Named view/form modes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `named view/form modes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Field formatters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `field formatters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Per-type display configuration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `per-type display configuration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Responsive variants** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `responsive variants`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **API projections** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `api projections`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [DisplayModesFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-display-modes-filament/src/DisplayModesFilamentServiceProvider.php) · [DisplayModeResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-display-modes-filament/src/Resources/DisplayModeResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [DisplayModesService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-display-modes/src/Services/DisplayModesService.php) | `public function modes(?int $teamId, ?string $contentType = null, int $perPage = 25): LengthAwarePaginator`<br>`public function create(array $data, ?int $teamId = null): DisplayMode`<br>`public function select(string $contentType, ?int $teamId, string $slug = 'default', ?string $variant = null): ?DisplayMode` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [DisplayMode.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-display-modes/src/Models/DisplayMode.php) | `team_id`, `name`, `slug`, `content_type`, `mode_type`, `formatters`, `configuration`, `responsive_variants`, `projection`, `active` |
+<!-- layer-implementation-plan:end -->

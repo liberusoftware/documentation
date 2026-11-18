@@ -18,7 +18,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Saas Packaging:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Plans:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Feature/module entitlements:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Limits:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Trials:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Signup provisioning:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Upgrade/downgrade:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Suspension:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Cancellation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Billing integration:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +37,15 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-saas-packaging`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `plans`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `feature-module-entitlements`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `limits`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `trials`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `signup-provisioning`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `upgrade-downgrade`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `suspension`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `cancellation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `billing-integration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +66,65 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-saas-packaging` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-saas-packaging.md)) |
+| Capability Nuxt module skeleton | [`module-crm-saas-packaging-nuxt`](https://github.com/liberusoftware/module-crm-saas-packaging-nuxt) (`@liberusoftware/module-crm-saas-packaging-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Plans** | Expose composable and Vue 3 component for `plans` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Feature/module entitlements** | Expose composable and Vue 3 component for `feature/module entitlements` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Limits** | Expose composable and Vue 3 component for `limits` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Trials** | Expose composable and Vue 3 component for `trials` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Signup provisioning** | Expose composable and Vue 3 component for `signup provisioning` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Upgrade/downgrade** | Expose composable and Vue 3 component for `upgrade/downgrade` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Suspension** | Expose composable and Vue 3 component for `suspension` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Cancellation** | Expose composable and Vue 3 component for `cancellation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Billing integration** | Expose composable and Vue 3 component for `billing integration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-saas-packaging.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [SaasQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Queries/SaasQuery.php) | `public function plans()`<br>`public function subscription(int $teamId): ?SaasSubscription`<br>`public function usage(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ChangeSubscriptionStatus.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/ChangeSubscriptionStatus.php) | `public function execute(int $teamId, int $actorId, string $status): SaasSubscription` |
+| [ProvisionSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/ProvisionSubscription.php) | `public function execute(int $teamId, int $actorId, array $data): SaasSubscription` |
+| [RecordUsage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/RecordUsage.php) | `public function execute(int $teamId, int $actorId, array $data): SaasUsage` |
+| [UpdateSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Actions/UpdateSubscription.php) | `public function execute(int $teamId, int $actorId, array $data): SaasSubscription` |
+| [SaasPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Services/SaasPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SaasPlan.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Models/SaasPlan.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SaasSubscription.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Models/SaasSubscription.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SaasUsage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging/src/Models/SaasUsage.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [SaasController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-api/src/Http/Controllers/SaasController.php) | `public function plans(SaasQuery $q)`<br>`public function subscription(Request $r, SaasQuery $q)`<br>`public function provision(Request $r, ProvisionSubscription $a)`<br>`public function status(Request $r, string $status, ChangeSubscriptionStatus $a)`<br>`public function usage(Request $r, SaasQuery $q)`<br>`public function recordUsage(Request $r, RecordUsage $a)` |
+
+**Observed route declarations:**
+
+[modules/crm-saas-packaging-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-saas-packaging-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/saas-packaging')->group(function (): void {
+Route::get('/plans', [SaasController::class, 'plans']);
+Route::get('/subscription', [SaasController::class, 'subscription']);
+Route::post('/subscription', [SaasController::class, 'provision']);
+Route::post('/subscription/{status}', [SaasController::class, 'status'])->whereIn('status', ['active', 'suspended', 'cancelled']);
+Route::get('/usage', [SaasController::class, 'usage']);
+Route::post('/usage', [SaasController::class, 'recordUsage']);
+```
+<!-- layer-implementation-plan:end -->

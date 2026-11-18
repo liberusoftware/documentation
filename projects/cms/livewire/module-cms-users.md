@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Module Cms Users:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Editorial roles and permissions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Section and site-scoped access:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Author profiles:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Approval authority:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Audit of permission changes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `module-cms-users`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `editorial-roles-and-permissions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `section-and-site-scoped-access`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `author-profiles`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `approval-authority`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `audit-of-permission-changes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `module-cms-users` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/module-cms-users.md) · [API plan](../api/module-cms-users.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Editorial roles and permissions** | Expose a focused Livewire 4 component and namespaced Blade default view for `editorial roles and permissions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Section and site-scoped access** | Expose a focused Livewire 4 component and namespaced Blade default view for `section and site-scoped access` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Author profiles** | Expose a focused Livewire 4 component and namespaced Blade default view for `author profiles` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Approval authority** | Expose a focused Livewire 4 component and namespaced Blade default view for `approval authority` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Audit of permission changes** | Expose a focused Livewire 4 component and namespaced Blade default view for `audit of permission changes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,12 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Capture/refund queues:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Disputes/chargebacks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Manual review:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Provider webhooks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Settlement reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Exception handling:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Capture/refund queues over payment-contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Disputes/chargebacks via DisputeAndChargebackHandlerContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Manual review and fraud-hold release:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Verified provider webhooks via MerchantWebhookVerifierContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Settlement reconciliation via PayoutAndSettlementReconcilerContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Exception handling and operator replay:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -34,12 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `capture-refund-queues`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `disputes-chargebacks`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `manual-review`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `provider-webhooks`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `settlement-reconciliation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `exception-handling`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `capture-refund-queues-over-payment-contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `disputes-chargebacks-via-disputeandchargebackhandlercontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `manual-review-and-fraud-hold-release`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `verified-provider-webhooks-via-merchantwebhookverifiercontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `settlement-reconciliation-via-payoutandsettlementreconcilercontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `exception-handling-and-operator-replay`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -70,3 +70,28 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-payment-operations` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-ecommerce-payment-operations-react-inertia`](https://github.com/liberusoftware/module-ecommerce-payment-operations-react-inertia) (`@liberusoftware/module-ecommerce-payment-operations-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/payment-operations.md) · [Core plan](../core/payment-operations.md) · [API plan](../api/payment-operations.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Capture/refund queues over payment-contracts** | Render `capture/refund queues over payment-contracts` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Disputes/chargebacks via DisputeAndChargebackHandlerContract** | Render `disputes/chargebacks via disputeandchargebackhandlercontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Manual review and fraud-hold release** | Render `manual review and fraud-hold release` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Verified provider webhooks via MerchantWebhookVerifierContract** | Render `verified provider webhooks via merchantwebhookverifiercontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Settlement reconciliation via PayoutAndSettlementReconcilerContract** | Render `settlement reconciliation via payoutandsettlementreconcilercontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Exception handling and operator replay** | Render `exception handling and operator replay` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

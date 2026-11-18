@@ -18,15 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Referral programs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Links/codes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Advocates:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Prospects:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Qualification:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Rewards:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Fraud/duplicate controls:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Status:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Attribution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Referral programs extending AffiliateProgramContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Links/codes via ReferralAttributionContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Advocates and referred prospects:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Qualification via ConversionRecorderContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Rewards via RewardFulfillmentContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Status and multi-touch attribution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -37,15 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `referral-programs`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `links/codes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `advocates`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `prospects`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `qualification`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `rewards`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `fraud/duplicate-controls`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `status`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `referral-programs-extending-affiliateprogramcontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `links-codes-via-referralattributioncontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `advocates-and-referred-prospects`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `qualification-via-conversionrecordercontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `rewards-via-rewardfulfillmentcontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `fraud-duplicate-controls-via-fraudandselfreferralpolicycontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `status-and-multi-touch-attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -58,3 +54,48 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-referrals` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/referrals.md) · [API plan](../api/referrals.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Referral programs extending AffiliateProgramContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `referral programs extending affiliateprogramcontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Links/codes via ReferralAttributionContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `links/codes via referralattributioncontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Advocates and referred prospects** | Expose a focused Livewire 4 component and namespaced Blade default view for `advocates and referred prospects` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Qualification via ConversionRecorderContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `qualification via conversionrecordercontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Rewards via RewardFulfillmentContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `rewards via rewardfulfillmentcontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `fraud/duplicate controls via fraudandselfreferralpolicycontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Status and multi-touch attribution** | Expose a focused Livewire 4 component and namespaced Blade default view for `status and multi-touch attribution` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [ReferralsDashboard.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-livewire/src/Components/ReferralsDashboard.php) · [ReferralsLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals-livewire/src/ReferralsLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ReferralQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Queries/ReferralQuery.php) | `public function programs(int $teamId)`<br>`public function referrals(int $teamId)`<br>`public function rewards(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateProgram.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ReferralProgram` |
+| [CreateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/CreateReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): Referral` |
+| [IssueReward.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/IssueReward.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ReferralReward` |
+| [QualifyReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/QualifyReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $referralId, string $status): Referral` |
+| [UpdateReferral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Actions/UpdateReferral.php) | `public function __construct(private readonly ReferralPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $referralId, array $input): Referral` |
+| [ReferralPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Services/ReferralPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Referral.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Models/Referral.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ReferralProgram.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Models/ReferralProgram.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ReferralReward.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-referrals/src/Models/ReferralReward.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

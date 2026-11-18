@@ -18,7 +18,16 @@ The Crm Forms And Surveys module owns crm forms and surveys domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Crm Forms And Surveys:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Drag-and-drop schemas:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Conditional fields:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Progressive profiling:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Validation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Spam controls:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Consent:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Hidden attribution:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Embedding:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Submissions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Follow-up:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +87,40 @@ The Crm Forms And Surveys module owns crm forms and surveys domain behavior. It 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Drag-and-drop schemas** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `drag-and-drop schemas`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Conditional fields** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `conditional fields`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Progressive profiling** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `progressive profiling`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Validation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `validation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Spam controls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `spam controls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Consent** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `consent`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Hidden attribution** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `hidden attribution`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Embedding** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `embedding`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Submissions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `submissions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Follow-up** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `follow-up`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-forms-and-surveys.md) | [Source map](../SOURCE-MAPPING.md#crm-forms-and-surveys) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-forms-and-surveys.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-forms-and-surveys.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-forms-and-surveys-filament`](https://github.com/liberusoftware/module-crm-forms-and-surveys-filament) (`liberusoftware/crm-forms-and-surveys-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-forms-and-surveys.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-forms-and-surveys.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-forms-and-surveys-react-inertia`](https://github.com/liberusoftware/module-crm-forms-and-surveys-react-inertia) (`@liberusoftware/module-crm-forms-and-surveys-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-forms-and-surveys.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-forms-and-surveys-vue-inertia`](https://github.com/liberusoftware/module-crm-forms-and-surveys-vue-inertia) (`@liberusoftware/module-crm-forms-and-surveys-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-forms-and-surveys.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-forms-and-surveys-nuxt`](https://github.com/liberusoftware/module-crm-forms-and-surveys-nuxt) (`@liberusoftware/module-crm-forms-and-surveys-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-forms-and-surveys.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-forms-and-surveys-nextjs`](https://github.com/liberusoftware/module-crm-forms-and-surveys-nextjs) (`@liberusoftware/module-crm-forms-and-surveys-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-forms-and-surveys.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-forms-and-surveys-react-native`](https://github.com/liberusoftware/module-crm-forms-and-surveys-react-native) (`@liberusoftware/module-crm-forms-and-surveys-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-forms-and-surveys.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-forms-and-surveys-flutter`](https://github.com/liberusoftware/module-crm-forms-and-surveys-flutter) (`module_crm_forms_and_surveys_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-forms-and-surveys.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-forms-and-surveys-dart-mobile`](https://github.com/liberusoftware/module-crm-forms-and-surveys-dart-mobile) (`module_crm_forms_and_surveys_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-forms-and-surveys-dart-desktop`](https://github.com/liberusoftware/module-crm-forms-and-surveys-dart-desktop) (`module_crm_forms_and_surveys_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

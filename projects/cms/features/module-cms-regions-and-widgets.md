@@ -18,7 +18,13 @@ The Module Cms Regions And Widgets module owns module cms regions and widgets do
 
 ## 2. Full feature scope
 
-- **Module Cms Regions And Widgets:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Theme regions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reusable widgets:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Placement:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Ordering:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Visibility by route/context/audience:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Schedules:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Caching:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Module Cms Regions And Widgets module owns module cms regions and widgets do
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Theme regions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `theme regions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reusable widgets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reusable widgets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Placement** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `placement`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Ordering** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `ordering`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Visibility by route/context/audience** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `visibility by route/context/audience`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Schedules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `schedules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Caching** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `caching`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-cms-regions-and-widgets.md) | [Source map](../SOURCE-MAPPING.md#module-cms-regions-and-widgets) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-cms-regions-and-widgets.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-cms-regions-and-widgets.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-regions-and-widgets-filament`](https://github.com/liberusoftware/module-cms-regions-and-widgets-filament) (`liberusoftware/cms-regions-and-widgets-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-cms-regions-and-widgets.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-cms-regions-and-widgets.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-regions-and-widgets-react-inertia`](https://github.com/liberusoftware/module-cms-regions-and-widgets-react-inertia) (`@liberusoftware/module-cms-regions-and-widgets-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-cms-regions-and-widgets.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-regions-and-widgets-vue-inertia`](https://github.com/liberusoftware/module-cms-regions-and-widgets-vue-inertia) (`@liberusoftware/module-cms-regions-and-widgets-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-cms-regions-and-widgets.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-regions-and-widgets-nuxt`](https://github.com/liberusoftware/module-cms-regions-and-widgets-nuxt) (`@liberusoftware/module-cms-regions-and-widgets-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-cms-regions-and-widgets.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-regions-and-widgets-nextjs`](https://github.com/liberusoftware/module-cms-regions-and-widgets-nextjs) (`@liberusoftware/module-cms-regions-and-widgets-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-cms-regions-and-widgets.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-regions-and-widgets-react-native`](https://github.com/liberusoftware/module-cms-regions-and-widgets-react-native) (`@liberusoftware/module-cms-regions-and-widgets-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-cms-regions-and-widgets.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-regions-and-widgets-flutter`](https://github.com/liberusoftware/module-cms-regions-and-widgets-flutter) (`module_cms_regions_and_widgets_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-cms-regions-and-widgets.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-regions-and-widgets-dart-mobile`](https://github.com/liberusoftware/module-cms-regions-and-widgets-dart-mobile) (`module_cms_regions_and_widgets_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-regions-and-widgets-dart-desktop`](https://github.com/liberusoftware/module-cms-regions-and-widgets-dart-desktop) (`module_cms_regions_and_widgets_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

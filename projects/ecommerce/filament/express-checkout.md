@@ -33,9 +33,9 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `wallet/provider-accelerated-checkout`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `wallet-provider-accelerated-checkout`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `known-customer-context`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `shipping/payment-callbacks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `shipping-payment-callbacks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `totals-validation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `fallback`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
@@ -50,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-express-checkout` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-express-checkout-filament`](https://github.com/liberusoftware/module-ecommerce-express-checkout-filament) (`liberusoftware/ecommerce-express-checkout-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/express-checkout.md) · [API plan](../api/express-checkout.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Wallet/provider accelerated checkout** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `wallet/provider accelerated checkout`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Known-customer context** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `known-customer context`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Shipping/payment callbacks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `shipping/payment callbacks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Totals validation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `totals validation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Fallback** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `fallback`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

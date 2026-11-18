@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Audit:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Actor:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tenant:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Request context:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Material changes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Privileged actions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retention:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tamper evidence:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `audit`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `actor`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tenant`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `request-context`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `material-changes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `privileged-actions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retention`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tamper-evidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,33 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `audit` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-audit-filament`](https://github.com/liberusoftware/module-audit-filament) (`liberusoftware/audit-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/audit.md) · [API plan](../api/audit.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Actor** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `actor`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tenant** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tenant`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Request context** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `request context`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Material changes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `material changes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Privileged actions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `privileged actions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retention** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retention`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tamper evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tamper evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [AuditFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/audit-filament/src/AuditFilamentPlugin.php) · [AuditFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/audit-filament/src/AuditFilamentServiceProvider.php) · [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/audit-filament/src/Pages/Overview.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AuditRecorder.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/audit/src/Contracts/AuditRecorder.php) | `public function record(string $event, string $subjectType, string\|int\|null $subjectId, array $before, array $after, AuditContext $context): void` |
+<!-- layer-implementation-plan:end -->

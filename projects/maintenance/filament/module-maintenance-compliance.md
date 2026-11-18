@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Maintenance Compliance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Requirements:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Permits:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Risk assessments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Incidents:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Corrective actions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Evidence:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Expiry:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-maintenance-compliance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `requirements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `permits`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `risk-assessments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `incidents`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `corrective-actions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `evidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `expiry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,40 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-maintenance-compliance` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-maintenance-compliance-filament`](https://github.com/liberusoftware/module-maintenance-compliance-filament) (`liberusoftware/maintenance-compliance-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-maintenance-compliance.md) · [API plan](../api/module-maintenance-compliance.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Requirements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `requirements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Permits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `permits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Risk assessments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `risk assessments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Incidents** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `incidents`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Corrective actions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `corrective actions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Expiry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `expiry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ComplianceFilamentPlugin.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/ComplianceFilamentPlugin.php) · [ComplianceFilamentServiceProvider.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/ComplianceFilamentServiceProvider.php) · [ComplianceResource.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource.php) · [CreateCompliance.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/CreateCompliance.php) · [EditCompliance.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/EditCompliance.php) · [ListCompliance.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/ListCompliance.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Actions/CreateComplianceRecord.php) | `public function handle(int $teamId, array $attributes): ComplianceRecord` |
+| [DeleteComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Actions/DeleteComplianceRecord.php) | `public function handle(int $teamId, ComplianceRecord $record): void` |
+| [UpdateComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Actions/UpdateComplianceRecord.php) | `public function handle(int $teamId, ComplianceRecord $record, array $attributes): ComplianceRecord` |
+| [ComplianceRecordPolicy.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Policies/ComplianceRecordPolicy.php) | `public function viewAny(object $user): bool`<br>`public function view(object $user, ComplianceRecord $record): bool`<br>`public function create(object $user): bool`<br>`public function update(object $user, ComplianceRecord $record): bool`<br>`public function delete(object $user, ComplianceRecord $record): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ComplianceRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance/src/Models/ComplianceRecord.php) | `kind`, `title`, `description`, `status`, `expires_at`, `metadata`, `team_id` |
+<!-- layer-implementation-plan:end -->

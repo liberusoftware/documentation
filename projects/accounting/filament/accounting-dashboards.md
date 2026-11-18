@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Dashboards:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Role-specific KPIs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Widgets:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Periods:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Dimensions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Targets:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Drill-through:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Refresh status:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sharing:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-dashboards`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `role-specific-kpis`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `widgets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `periods`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `dimensions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `targets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `drill-through`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `refresh-status`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sharing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,46 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-dashboards` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-dashboards-filament`](https://github.com/liberusoftware/module-accounting-dashboards-filament) (`liberusoftware/accounting-dashboards-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-dashboards.md) · [API plan](../api/accounting-dashboards.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Role-specific KPIs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `role-specific kpis`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Widgets** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `widgets`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Periods** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `periods`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Dimensions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `dimensions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Targets** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `targets`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Drill-through** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `drill-through`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Refresh status** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `refresh status`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sharing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sharing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [DashboardsFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards-filament/src/DashboardsFilamentPlugin.php) · [DashboardsFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards-filament/src/DashboardsFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [DashboardQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards/src/Queries/DashboardQuery.php) | `public function forTeam(int $teamId): Collection`<br>`public function findForTeam(int $teamId, int\|string $id): Dashboard` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateDashboard.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards/src/Actions/CreateDashboard.php) | `public function handle(array $attributes): Dashboard` |
+| [ShareDashboard.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards/src/Actions/ShareDashboard.php) | `public function handle(Dashboard $dashboard, array $attributes): DashboardShare` |
+| [UpsertKpi.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards/src/Actions/UpsertKpi.php) | `public function handle(Dashboard $dashboard, array $attributes): DashboardKpi` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Dashboard.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards/src/Models/Dashboard.php) | `team_id`, `dashboard_ref`, `name`, `role`, `period`, `dimensions`, `metadata` |
+| [DashboardKpi.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards/src/Models/DashboardKpi.php) | `dashboard_id`, `team_id`, `kpi_ref`, `label`, `value`, `target`, `unit`, `refreshed_at`, `drill_through` |
+| [DashboardShare.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dashboards/src/Models/DashboardShare.php) | `dashboard_id`, `team_id`, `shared_with_user_id`, `shared_with_role`, `token`, `expires_at` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Publishing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Immediate/scheduled publishing:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Embargo:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Expiry:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Unpublish/archive:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Recurring review:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Atomic release:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cache/index events:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +35,13 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-cms-publishing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `immediate-scheduled-publishing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `embargo`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `expiry`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `unpublish-archive`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `recurring-review`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `atomic-release`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `cache-index-events`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +72,36 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-publishing` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-publishing-vue-inertia`](https://github.com/liberusoftware/module-cms-publishing-vue-inertia) (`@liberusoftware/module-cms-publishing-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-cms-publishing.md) · [Core plan](../core/module-cms-publishing.md) · [API plan](../api/module-cms-publishing.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Immediate/scheduled publishing** | Render `immediate/scheduled publishing` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Embargo** | Render `embargo` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Expiry** | Render `expiry` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Unpublish/archive** | Render `unpublish/archive` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Recurring review** | Render `recurring review` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Atomic release** | Render `atomic release` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Cache/index events** | Render `cache/index events` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PublishingService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Services/PublishingService.php) | `public function create(array $attributes): PublicationRelease`<br>`public function schedule(PublicationRelease $release): PublicationRelease`<br>`public function publish(PublicationRelease $release): PublicationRelease`<br>`public function unpublish(PublicationRelease $release): PublicationRelease`<br>`public function archive(PublicationRelease $release): PublicationRelease`<br>`public function processDue(): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PublicationRelease.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Models/PublicationRelease.php) | `key`, `state`, `publish_at`, `embargo_until`, `expires_at`, `review_at`, `recurrence`, `targets`, `cache_tags`, `team_id` |
+| [PublicationReleaseEvent.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Models/PublicationReleaseEvent.php) | `release_id`, `event`, `payload`, `occurred_at` |
+<!-- layer-implementation-plan:end -->

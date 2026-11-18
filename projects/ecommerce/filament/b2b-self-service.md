@@ -37,8 +37,8 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `company/location-switching`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `users/roles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `company-location-switching`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `users-roles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `shared-addresses`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `catalogs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `quotes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -58,3 +58,31 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-b2b-self-service` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-b2b-self-service-filament`](https://github.com/liberusoftware/module-ecommerce-b2b-self-service-filament) (`liberusoftware/ecommerce-b2b-self-service-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/b2b-self-service.md) · [API plan](../api/b2b-self-service.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Company/location switching** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `company/location switching`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Users/roles** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `users/roles`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Shared addresses** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `shared addresses`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Catalogs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `catalogs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Quotes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `quotes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Orders** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `orders`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Invoices references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `invoices references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Returns** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `returns`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reordering** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reordering`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

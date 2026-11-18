@@ -18,7 +18,15 @@ The Crm Dialer And Outreach module owns crm dialer and outreach domain behavior.
 
 ## 2. Full feature scope
 
-- **Crm Dialer And Outreach:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Power/preview/progressive dialing:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Prioritized lists:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Scripts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Local-time policy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Retries:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Voicemail drop:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Answer detection adapters:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Outcomes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Compliance controls:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Crm Dialer And Outreach module owns crm dialer and outreach domain behavior.
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Power/preview/progressive dialing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `power/preview/progressive dialing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Prioritized lists** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `prioritized lists`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Scripts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `scripts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Local-time policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `local-time policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Retries** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `retries`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Voicemail drop** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `voicemail drop`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Answer detection adapters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `answer detection adapters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Outcomes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `outcomes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Compliance controls** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `compliance controls`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-dialer-and-outreach.md) | [Source map](../SOURCE-MAPPING.md#crm-dialer-and-outreach) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-dialer-and-outreach.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-dialer-and-outreach.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-dialer-and-outreach-filament`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-filament) (`liberusoftware/crm-dialer-and-outreach-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-dialer-and-outreach.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-dialer-and-outreach.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-dialer-and-outreach-react-inertia`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-react-inertia) (`@liberusoftware/module-crm-dialer-and-outreach-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-dialer-and-outreach.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-dialer-and-outreach-vue-inertia`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-vue-inertia) (`@liberusoftware/module-crm-dialer-and-outreach-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-dialer-and-outreach.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-dialer-and-outreach-nuxt`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-nuxt) (`@liberusoftware/module-crm-dialer-and-outreach-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-dialer-and-outreach.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-dialer-and-outreach-nextjs`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-nextjs) (`@liberusoftware/module-crm-dialer-and-outreach-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-dialer-and-outreach.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-dialer-and-outreach-react-native`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-react-native) (`@liberusoftware/module-crm-dialer-and-outreach-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-dialer-and-outreach.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-dialer-and-outreach-flutter`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-flutter) (`module_crm_dialer_and_outreach_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-dialer-and-outreach.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-dialer-and-outreach-dart-mobile`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-dart-mobile) (`module_crm_dialer_and_outreach_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-dialer-and-outreach-dart-desktop`](https://github.com/liberusoftware/module-crm-dialer-and-outreach-dart-desktop) (`module_crm_dialer_and_outreach_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

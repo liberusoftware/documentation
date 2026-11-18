@@ -18,7 +18,9 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Real Estate Onthemarket:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **OnTheMarket sync state:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Provider payload boundary:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retry and error state:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +31,9 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `real-estate-onthemarket`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `onthemarket-sync-state`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `provider-payload-boundary`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retry-and-error-state`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +46,33 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `real-estate-onthemarket` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-real-estate-onthemarket-filament`](https://github.com/liberusoftware/module-real-estate-onthemarket-filament) (`liberusoftware/real-estate-onthemarket-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/real-estate-onthemarket.md) · [API plan](../api/real-estate-onthemarket.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **OnTheMarket sync state** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `onthemarket sync state`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Provider payload boundary** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `provider payload boundary`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retry and error state** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retry and error state`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [OnTheMarketFilamentPlugin.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-filament/src/OnTheMarketFilamentPlugin.php) · [OnTheMarketFilamentServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-filament/src/OnTheMarketFilamentServiceProvider.php) · [OnTheMarketSyncResource.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-filament/src/Resources/OnTheMarketSyncResource.php) · [CreateOnTheMarketSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-filament/src/Resources/OnTheMarketSyncResource/Pages/CreateOnTheMarketSync.php) · [EditOnTheMarketSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-filament/src/Resources/OnTheMarketSyncResource/Pages/EditOnTheMarketSync.php) · [ListOnTheMarketSyncs.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-filament/src/Resources/OnTheMarketSyncResource/Pages/ListOnTheMarketSyncs.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [OnTheMarketTransport.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket/src/Contracts/OnTheMarketTransport.php) | `public function sendProperty(string $reference, array $payload, array $credentials): array`<br>`public function removeProperty(string $reference, array $credentials): array`<br>`public function branchPropertyList(array $credentials): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [OnTheMarketSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket/src/Models/OnTheMarketSync.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

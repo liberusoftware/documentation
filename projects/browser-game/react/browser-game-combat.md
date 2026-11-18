@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Browser Game Combat:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Turn/action rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Abilities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Effects:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cooldowns:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Enemies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Bosses:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Loot:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Simulation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `browser-game-combat`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `turn-action-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `abilities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `effects`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `cooldowns`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `enemies`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `bosses`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `loot`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `logs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `simulation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,61 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `browser-game-combat` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-browser-game-laravel-inertia-react`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-browser-game-combat-react-inertia`](https://github.com/liberusoftware/module-browser-game-combat-react-inertia) (`@liberusoftware/module-browser-game-combat-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/browser-game-combat.md) · [Core plan](../core/browser-game-combat.md) · [API plan](../api/browser-game-combat.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Turn/action rules** | Render `turn/action rules` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Abilities** | Render `abilities` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Effects** | Render `effects` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Cooldowns** | Render `cooldowns` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Enemies** | Render `enemies` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Bosses** | Render `bosses` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Loot** | Render `loot` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Logs** | Render `logs` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Simulation** | Render `simulation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CombatQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Queries/CombatQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CombatPolicy.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Policies/CombatPolicy.php) | `public function view(mixed $user, CombatBattle $battle): bool`<br>`public function act(mixed $user, CombatBattle $battle): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CombatAction.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Models/CombatAction.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CombatBattle.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Models/CombatBattle.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CombatDefinition.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Models/CombatDefinition.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CombatController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat-api/src/Http/Controllers/CombatController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, CombatBattle $battle): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function action(Request $request, CombatBattle $battle): JsonResponse`<br>`public function definition(Request $request): JsonResponse`<br>`public function simulate(Request $request): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/browser-game-combat-api/routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/browser-game/combat')->middleware(['api', 'auth:sanctum', 'throttle:api'])->group(function (): void {
+Route::get('/', [CombatController::class, 'index'])->name('browser-game.combat.index');
+Route::get('/{battle}', [CombatController::class, 'show'])->name('browser-game.combat.show');
+Route::post('/', [CombatController::class, 'store'])->name('browser-game.combat.store');
+Route::post('/{battle}/actions', [CombatController::class, 'action'])->name('browser-game.combat.action');
+Route::post('/definitions', [CombatController::class, 'definition'])->name('browser-game.combat.definition');
+Route::post('/simulate', [CombatController::class, 'simulate'])->name('browser-game.combat.simulate');
+```
+<!-- layer-implementation-plan:end -->

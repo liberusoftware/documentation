@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Cms Content Templates:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Starter content:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Presets:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Default fields/blocks/layouts:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Template locking:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Versioning:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Controlled rollout:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `cms-content-templates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `starter-content`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `presets`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `default-fields-blocks-layouts`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `template-locking`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `versioning`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `controlled-rollout`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,34 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `cms-content-templates` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/cms-content-templates.md)) |
+| Capability Nuxt module skeleton | [`module-cms-content-templates-nuxt`](https://github.com/liberusoftware/module-cms-content-templates-nuxt) (`@liberusoftware/module-cms-content-templates-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Starter content** | Expose composable and Vue 3 component for `starter content` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-templates.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Presets** | Expose composable and Vue 3 component for `presets` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-templates.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Default fields/blocks/layouts** | Expose composable and Vue 3 component for `default fields/blocks/layouts` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-templates.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Template locking** | Expose composable and Vue 3 component for `template locking` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-templates.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Versioning** | Expose composable and Vue 3 component for `versioning` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-templates.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Controlled rollout** | Expose composable and Vue 3 component for `controlled rollout` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cms-content-templates.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ContentTemplatesService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-templates/src/Services/ContentTemplatesService.php) | `public function templates(?int $teamId, ?string $contentType = null, int $perPage = 25): LengthAwarePaginator`<br>`public function create(array $data, ?int $teamId = null): ContentTemplate`<br>`public function publish(ContentTemplate $template): ContentTemplate`<br>`public function lock(ContentTemplate $template): ContentTemplate`<br>`public function select(string $contentType, ?int $teamId, int $bucket = 0): ?ContentTemplate` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ContentTemplate.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-templates/src/Models/ContentTemplate.php) | `team_id`, `name`, `slug`, `content_type`, `version`, `schema`, `defaults`, `locked`, `published`, `rollout_percent` |
+<!-- layer-implementation-plan:end -->

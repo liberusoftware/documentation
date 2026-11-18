@@ -18,7 +18,9 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Real Estate Zoopla:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Zoopla sync state:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Provider payload boundary:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retry and error state:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +31,9 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `real-estate-zoopla`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `zoopla-sync-state`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `provider-payload-boundary`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retry-and-error-state`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +46,33 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `real-estate-zoopla` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-real-estate-zoopla-filament`](https://github.com/liberusoftware/module-real-estate-zoopla-filament) (`liberusoftware/real-estate-zoopla-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/real-estate-zoopla.md) · [API plan](../api/real-estate-zoopla.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Zoopla sync state** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `zoopla sync state`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Provider payload boundary** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `provider payload boundary`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retry and error state** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retry and error state`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ZooplaSyncResource.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-filament/src/Resources/ZooplaSyncResource.php) · [CreateZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-filament/src/Resources/ZooplaSyncResource/Pages/CreateZooplaSync.php) · [EditZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-filament/src/Resources/ZooplaSyncResource/Pages/EditZooplaSync.php) · [ListZooplaSyncs.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-filament/src/Resources/ZooplaSyncResource/Pages/ListZooplaSyncs.php) · [ZooplaFilamentPlugin.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-filament/src/ZooplaFilamentPlugin.php) · [ZooplaFilamentServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-filament/src/ZooplaFilamentServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ZooplaTransport.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Contracts/ZooplaTransport.php) | `public function sendProperty(string $reference, array $payload, array $credentials): array`<br>`public function removeProperty(string $reference, array $credentials): array`<br>`public function branchPropertyList(array $credentials): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Models/ZooplaSync.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

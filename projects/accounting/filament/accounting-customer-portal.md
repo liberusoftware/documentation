@@ -18,7 +18,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Customer Portal:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Estimates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Invoices:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Credits:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Statements:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Payment links:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Payment history:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Disputes:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Documents:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Communication preferences:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +37,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-customer-portal`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `estimates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `invoices`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `credits`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `statements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `payment-links`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `payment-history`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `disputes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `documents`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `communication-preferences`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,45 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-customer-portal` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-customer-portal-filament`](https://github.com/liberusoftware/module-accounting-customer-portal-filament) (`liberusoftware/accounting-customer-portal-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-customer-portal.md) · [API plan](../api/accounting-customer-portal.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Estimates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `estimates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Invoices** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `invoices`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Credits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `credits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Statements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `statements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Payment links** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payment links`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Payment history** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payment history`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Disputes** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `disputes`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Documents** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `documents`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Communication preferences** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `communication preferences`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [CustomerPortalFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal-filament/src/CustomerPortalFilamentPlugin.php) · [CustomerPortalFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal-filament/src/CustomerPortalFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CustomerPortalQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Queries/CustomerPortalQuery.php) | `public function forTeam(int $teamId): Collection`<br>`public function forCustomer(int $teamId, string $customerId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCustomerPortalRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Actions/CreateCustomerPortalRecord.php) | `public function handle(array $attributes): CustomerPortalRecord` |
+| [PublishCustomerPortalRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Actions/PublishCustomerPortalRecord.php) | `public function handle(CustomerPortalRecord $record): CustomerPortalRecord` |
+| [ResolveCustomerPortalDispute.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Actions/ResolveCustomerPortalDispute.php) | `public function handle(CustomerPortalRecord $record, array $resolution): CustomerPortalRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CustomerPortalRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-customer-portal/src/Models/CustomerPortalRecord.php) | `team_id`, `customer_id`, `type`, `reference`, `status`, `currency`, `amount`, `payload`, `metadata`, `published_at` |
+<!-- layer-implementation-plan:end -->

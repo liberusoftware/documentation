@@ -1,5 +1,25 @@
 # Implement Flutter mobile presentation and Dart packages
 
+## Liberu boilerplate, skeleton repositories, and API backend
+
+Start from the provisioned Flutter mobile application and capability module skeletons on GitHub (for the separate `-dart-mobile` and `-dart-desktop` hosts and `module_*_dart_mobile` / `module_*_dart_desktop` packages, see [DART.md](DART.md)):
+
+- **Application template:** [`project-boilerplate-mobile-flutter`](https://github.com/liberusoftware/project-boilerplate-mobile-flutter) (product skeletons: `project-{product}-mobile-flutter` in [REPOSITORIES.md](../../projects/REPOSITORIES.md#mobile-and-desktop-applications)).
+- **Shared product API backend:** `project-{product}-laravel-api` ([Laravel API backends](../LARAVEL-API-BACKENDS.md)), configured via `--dart-define=API_BASE_URL=...`.
+- **Reusable module foundation & catalog:** [`module-boilerplate-flutter`](https://github.com/liberusoftware/module-boilerplate-flutter) and the [631 Flutter capability skeleton repositories](../../modules/skeletons/mobile-flutter.md) (`module_{capability}_flutter`, tracked via `module-skeleton.json`).
+- **Wayfinder specification:** [mobile-flutter.md](../../projects/wayfinders/mobile-flutter.md).
+
+```bash
+git clone https://github.com/liberusoftware/project-crm-mobile-flutter.git
+cd project-crm-mobile-flutter
+flutter pub get
+flutter analyze
+flutter test
+flutter run -d <device-id> --dart-define=API_BASE_URL=https://api.example.com
+```
+
+Use the Flutter SDK pinned in `.flutter-version` or `.fvmrc`. Follow the module feature matrix in `projects/{product}/flutter/{module}.md` and the repository wayfinder issue when implementing each capability slice.
+
 Flutter is an independent iOS/Android API client using Dart and native device integration. Follow the [foundation/API selection](README.md), [mobile architecture](../../architecture/MOBILE.md) and [Flutter standard](../../standards/FLUTTER.md). Reuse reviewed API schemas, behavior and semantic tokens; implement native mobile layouts instead of copying desktop components. Flutter packages use Dart/pub, while installed apps use signed platform artifacts.
 
 ## 1. Create and pin the mobile skeleton

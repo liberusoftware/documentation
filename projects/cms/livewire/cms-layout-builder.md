@@ -18,7 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms Layout Builder:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Regions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Grids:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Sections:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Drag/drop composition:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Type defaults:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Per-record overrides:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Responsive settings:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Permissions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms-layout-builder`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `regions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `grids`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `sections`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `drag-drop-composition`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `type-defaults`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `per-record-overrides`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `responsive-settings`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `permissions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,38 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-layout-builder` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms-layout-builder.md) · [API plan](../api/cms-layout-builder.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Regions** | Expose a focused Livewire 4 component and namespaced Blade default view for `regions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Grids** | Expose a focused Livewire 4 component and namespaced Blade default view for `grids` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Sections** | Expose a focused Livewire 4 component and namespaced Blade default view for `sections` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Drag/drop composition** | Expose a focused Livewire 4 component and namespaced Blade default view for `drag/drop composition` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Type defaults** | Expose a focused Livewire 4 component and namespaced Blade default view for `type defaults` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Per-record overrides** | Expose a focused Livewire 4 component and namespaced Blade default view for `per-record overrides` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Responsive settings** | Expose a focused Livewire 4 component and namespaced Blade default view for `responsive settings` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Permissions** | Expose a focused Livewire 4 component and namespaced Blade default view for `permissions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [LayoutBrowser.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-layout-builder-livewire/src/Livewire/LayoutBrowser.php) · [LayoutBuilderLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-layout-builder-livewire/src/LayoutBuilderLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [LayoutBuilderService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-layout-builder/src/Services/LayoutBuilderService.php) | `public function create(array $attributes): Layout`<br>`public function update(Layout $layout, array $attributes): Layout`<br>`public function publish(Layout $layout): Layout`<br>`public function resolve(string $targetType, int\|string $targetId, ?string $slug = null): ?Layout` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Layout.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-layout-builder/src/Models/Layout.php) | `name`, `slug`, `target_type`, `target_id`, `definition`, `status`, `published_at`, `user_id`, `team_id` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Content Calendar:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Editorial calendar:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Campaigns:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Deadlines:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Assignments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Conflicts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Drag/drop rescheduling:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Channel/site filters:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-content-calendar`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `editorial-calendar`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `campaigns`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `deadlines`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `assignments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `conflicts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `drag-drop-rescheduling`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `channel-site-filters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-content-calendar` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-content-calendar-filament`](https://github.com/liberusoftware/module-cms-content-calendar-filament) (`liberusoftware/cms-content-calendar-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-content-calendar.md) · [API plan](../api/module-cms-content-calendar.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Editorial calendar** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `editorial calendar`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Campaigns** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `campaigns`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deadlines** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deadlines`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Assignments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `assignments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Conflicts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `conflicts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Drag/drop rescheduling** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `drag/drop rescheduling`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Channel/site filters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `channel/site filters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ContentCalendarFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-calendar-filament/src/ContentCalendarFilamentServiceProvider.php) · [CalendarItemResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-calendar-filament/src/Resources/CalendarItemResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ContentCalendarService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-calendar/src/Services/ContentCalendarService.php) | `public function items(?int $teamId, ?string $channel = null, ?string $site = null, int $perPage = 25): LengthAwarePaginator`<br>`public function campaign(array $data, ?int $teamId = null): CalendarCampaign`<br>`public function schedule(array $data, ?int $teamId = null): CalendarItem`<br>`public function reschedule(CalendarItem $item, string $startsAt, ?string $deadlineAt = null): CalendarItem` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CalendarCampaign.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-calendar/src/Models/CalendarCampaign.php) | `team_id`, `name`, `slug`, `description`, `status` |
+| [CalendarItem.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-calendar/src/Models/CalendarItem.php) | `team_id`, `campaign_id`, `title`, `content_type`, `subject_key`, `channel`, `site`, `status`, `starts_at`, `deadline_at`, `assigned_to` |
+<!-- layer-implementation-plan:end -->

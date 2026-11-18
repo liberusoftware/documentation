@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Profiles:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Names:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Avatars:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Contact preferences:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Locale/timezone:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Completion:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Controlled profile updates:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `profiles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `names`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `avatars`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `contact-preferences`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `locale-timezone`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `completion`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `controlled-profile-updates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `profiles` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-profiles-filament`](https://github.com/liberusoftware/module-profiles-filament) (`liberusoftware/profiles-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/profiles.md) · [API plan](../api/profiles.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Names** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `names`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Avatars** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `avatars`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Contact preferences** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `contact preferences`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Locale/timezone** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `locale/timezone`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Completion** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `completion`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Controlled profile updates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `controlled profile updates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [UpdateProfile.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/profiles/src/Actions/UpdateProfile.php) | `public function handle(Model $profile, ProfileUpdate $update): Model` |
+<!-- layer-implementation-plan:end -->

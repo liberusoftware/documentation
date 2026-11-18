@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Browser Game Combat:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Turn/action rules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Abilities:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Effects:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Cooldowns:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Enemies:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Bosses:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Loot:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Logs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Simulation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `browser-game-combat`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `turn-action-rules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `abilities`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `effects`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cooldowns`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `enemies`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `bosses`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `loot`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `logs`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `simulation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,45 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `browser-game-combat` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/browser-game-combat.md) · [API plan](../api/browser-game-combat.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Turn/action rules** | Expose a focused Livewire 4 component and namespaced Blade default view for `turn/action rules` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Abilities** | Expose a focused Livewire 4 component and namespaced Blade default view for `abilities` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Effects** | Expose a focused Livewire 4 component and namespaced Blade default view for `effects` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cooldowns** | Expose a focused Livewire 4 component and namespaced Blade default view for `cooldowns` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Enemies** | Expose a focused Livewire 4 component and namespaced Blade default view for `enemies` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Bosses** | Expose a focused Livewire 4 component and namespaced Blade default view for `bosses` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Loot** | Expose a focused Livewire 4 component and namespaced Blade default view for `loot` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Logs** | Expose a focused Livewire 4 component and namespaced Blade default view for `logs` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Simulation** | Expose a focused Livewire 4 component and namespaced Blade default view for `simulation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [CombatPanel.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat-livewire/src/Livewire/CombatPanel.php) · [CombatLivewireServiceProvider.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat-livewire/src/CombatLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CombatQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Queries/CombatQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CombatPolicy.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Policies/CombatPolicy.php) | `public function view(mixed $user, CombatBattle $battle): bool`<br>`public function act(mixed $user, CombatBattle $battle): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CombatAction.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Models/CombatAction.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CombatBattle.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Models/CombatBattle.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CombatDefinition.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-combat/src/Models/CombatDefinition.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

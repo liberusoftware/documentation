@@ -18,7 +18,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Content Entities:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Typed entities:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Bundles/content types:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Lifecycle:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Authorship:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Status:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Cloning:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Relationships:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Canonical identifiers:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +36,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `module-cms-content-entities`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `typed-entities`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `bundles-content-types`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `lifecycle`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `authorship`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `status`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `cloning`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `relationships`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `canonical-identifiers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +64,32 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `module-cms-content-entities` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/module-cms-content-entities.md)) |
+| Capability Nuxt module skeleton | [`module-cms-module-cms-content-entities-nuxt`](https://github.com/liberusoftware/module-cms-module-cms-content-entities-nuxt) (`@liberusoftware/module-cms-module-cms-content-entities-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Typed entities** | Expose composable and Vue 3 component for `typed entities` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Bundles/content types** | Expose composable and Vue 3 component for `bundles/content types` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Lifecycle** | Expose composable and Vue 3 component for `lifecycle` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Authorship** | Expose composable and Vue 3 component for `authorship` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Status** | Expose composable and Vue 3 component for `status` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Cloning** | Expose composable and Vue 3 component for `cloning` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Relationships** | Expose composable and Vue 3 component for `relationships` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+| **Canonical identifiers** | Expose composable and Vue 3 component for `canonical identifiers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-cms-content-entities.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-cms-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ContentEntitiesController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-entities-api/src/Http/Controllers/ContentEntitiesController.php) | `public function __construct( private PublishedEntityQuery $entities, private ContentEntryRepositoryInterface $entries, private ContentEntryMutationService $mutations, )`<br>`public function index(string $type): AnonymousResourceCollection`<br>`public function show(string $type, string $slug): ContentEntryResource`<br>`public function cloneEntity(Request $request, string $type, int $id): JsonResponse` |
+<!-- layer-implementation-plan:end -->

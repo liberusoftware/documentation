@@ -12,7 +12,7 @@
 
 The intended **Scheduler Queues** workspace covers scheduler queues domain behavior.
 
-The relevant capability areas are **Scheduler Queues**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Queue conventions**, **Unique/idempotent jobs**, **Schedules**, **Locks**, **Retries**, **Failures**, **Graceful deployment**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

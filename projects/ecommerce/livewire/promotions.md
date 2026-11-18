@@ -41,8 +41,8 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - `automatic-discounts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `buy-x-get-y`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `bundles`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `free-shipping/gifts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `customer/product-eligibility`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `free-shipping-gifts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `customer-product-eligibility`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `limits`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 - `fraud-controls`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
@@ -58,3 +58,31 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `ecommerce-promotions` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/promotions.md) · [API plan](../api/promotions.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Codes** | Expose a focused Livewire 4 component and namespaced Blade default view for `codes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Automatic discounts** | Expose a focused Livewire 4 component and namespaced Blade default view for `automatic discounts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Buy-X-get-Y** | Expose a focused Livewire 4 component and namespaced Blade default view for `buy-x-get-y` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Bundles** | Expose a focused Livewire 4 component and namespaced Blade default view for `bundles` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Free shipping/gifts** | Expose a focused Livewire 4 component and namespaced Blade default view for `free shipping/gifts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Customer/product eligibility** | Expose a focused Livewire 4 component and namespaced Blade default view for `customer/product eligibility` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Limits** | Expose a focused Livewire 4 component and namespaced Blade default view for `limits` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Attribution** | Expose a focused Livewire 4 component and namespaced Blade default view for `attribution` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Fraud controls** | Expose a focused Livewire 4 component and namespaced Blade default view for `fraud controls` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Scheduler Queues:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Queue conventions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Unique/idempotent jobs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Schedules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Locks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retries:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Failures:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Graceful deployment:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `scheduler-queues`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `queue-conventions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `unique-idempotent-jobs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `schedules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `locks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retries`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `failures`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `graceful-deployment`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,29 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `scheduler-queues` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-scheduler-queues-filament`](https://github.com/liberusoftware/module-scheduler-queues-filament) (`liberusoftware/scheduler-queues-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/scheduler-queues.md) · [API plan](../api/scheduler-queues.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Queue conventions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `queue conventions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Unique/idempotent jobs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `unique/idempotent jobs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Schedules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `schedules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Locks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `locks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retries** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retries`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Failures** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `failures`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Graceful deployment** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `graceful deployment`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

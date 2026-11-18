@@ -12,7 +12,7 @@
 
 The intended **Application** workspace covers application domain behavior.
 
-The relevant capability areas are **Application**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Environment validation**, **Application metadata**, **Health/readiness**, **Maintenance mode**, **Identifiers**, **Clocks**, **Shared service contracts**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

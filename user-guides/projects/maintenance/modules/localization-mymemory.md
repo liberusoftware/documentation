@@ -12,7 +12,7 @@
 
 The intended **Localization Mymemory** workspace covers localization mymemory domain behavior.
 
-The relevant capability areas are **Localization Mymemory**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **MyMemory provider configuration**, **Segment translation requests**, **Language-pair and locale validation**, **Translation response caching**, **Rate limit and quota fallback handling**, **Translation provenance and review diagnostics**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

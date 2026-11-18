@@ -12,7 +12,7 @@
 
 The intended **Real Estate Vr Design** workspace covers real estate vr design domain behavior.
 
-The relevant capability areas are **Real Estate Vr Design**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Design styles**, **Furniture placement**, **Room layouts**, **Materials and lighting**, **Public templates**, **Thumbnail uploads**, **VR exports**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

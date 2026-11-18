@@ -38,12 +38,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 ### Capability mapping
 
 - `customer-portal`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `case-submission/status`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `case-submission-status`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `knowledge-search`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `community-links`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `appointments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `documents`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `invoices/orders-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `invoices-orders-references`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `profile`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `preferences`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
@@ -66,3 +66,65 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-customer-self-service` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/customer-self-service.md)) |
+| Capability Nuxt module skeleton | [`module-crm-customer-self-service-nuxt`](https://github.com/liberusoftware/module-crm-customer-self-service-nuxt) (`@liberusoftware/module-crm-customer-self-service-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Customer portal** | Expose composable and Vue 3 component for `customer portal` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Case submission/status** | Expose composable and Vue 3 component for `case submission/status` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Knowledge search** | Expose composable and Vue 3 component for `knowledge search` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Community links** | Expose composable and Vue 3 component for `community links` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Appointments** | Expose composable and Vue 3 component for `appointments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Documents** | Expose composable and Vue 3 component for `documents` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Invoices/orders references** | Expose composable and Vue 3 component for `invoices/orders references` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Profile** | Expose composable and Vue 3 component for `profile` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Preferences** | Expose composable and Vue 3 component for `preferences` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/customer-self-service.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [SelfServiceQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Queries/SelfServiceQuery.php) | `public function profile(int $teamId, int $userId): ?SelfServiceProfile`<br>`public function cases(int $teamId, int $profileId)`<br>`public function search(int $teamId, string $term)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [SubmitSelfServiceCase.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Actions/SubmitSelfServiceCase.php) | `public function __construct(private readonly SelfServicePolicy $policy)`<br>`public function execute(int $teamId, int $userId, SelfServiceProfile $profile, array $input): SelfServiceCase` |
+| [UpdateSelfServicePreferences.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Actions/UpdateSelfServicePreferences.php) | `public function __construct(private readonly SelfServicePolicy $policy)`<br>`public function execute(int $teamId, int $userId, SelfServiceProfile $profile, array $input): SelfServiceProfile` |
+| [UpsertSelfServiceProfile.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Actions/UpsertSelfServiceProfile.php) | `public function __construct(private readonly SelfServicePolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): SelfServiceProfile` |
+| [SelfServicePolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Services/SelfServicePolicy.php) | `public function canAccess(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SelfServiceCase.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Models/SelfServiceCase.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SelfServiceProfile.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Models/SelfServiceProfile.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SelfServiceReference.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Models/SelfServiceReference.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SelfServiceResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service/src/Models/SelfServiceResource.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [SelfServiceController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service-api/src/Http/Controllers/SelfServiceController.php) | `public function __construct(private readonly SelfServiceQuery $query)`<br>`public function profile(): JsonResponse`<br>`public function storeProfile(UpsertSelfServiceProfile $action): JsonResponse`<br>`public function preferences(UpdateSelfServicePreferences $action): JsonResponse`<br>`public function cases(): JsonResponse`<br>`public function submitCase(SubmitSelfServiceCase $action): JsonResponse`<br>`public function knowledge(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-customer-self-service-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-self-service-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/customer-self-service')->group(function (): void {
+Route::get('profile', [SelfServiceController::class, 'profile']);
+Route::put('profile', [SelfServiceController::class, 'storeProfile']);
+Route::put('profile/preferences', [SelfServiceController::class, 'preferences']);
+Route::get('cases', [SelfServiceController::class, 'cases']);
+Route::post('cases', [SelfServiceController::class, 'submitCase']);
+Route::get('knowledge', [SelfServiceController::class, 'knowledge']);
+```
+<!-- layer-implementation-plan:end -->

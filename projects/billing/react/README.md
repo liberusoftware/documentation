@@ -1,7 +1,7 @@
 # Billing React + Inertia Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **81 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **82 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
@@ -78,6 +78,7 @@ Each file defines the optional React 19.2 + Inertia 3 presentation package for e
 | [Pricing React + Inertia](pricing.md) | [Target/source map](../SOURCE-MAPPING.md#pricing) | [core](../core/pricing.md) · [api](../api/pricing.md) · [nextjs](../nextjs/pricing.md) |
 | [Profiles React + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
 | [Provisioning React + Inertia](provisioning.md) | [Target/source map](../SOURCE-MAPPING.md#provisioning) | [core](../core/provisioning.md) · [api](../api/provisioning.md) · [nextjs](../nextjs/provisioning.md) |
+| [Referrals and Advocate Rewards React + Inertia](referrals.md) | [Target/source map](../SOURCE-MAPPING.md#referrals) | [core](../core/referrals.md) · [api](../api/referrals.md) · [nextjs](../nextjs/referrals.md) |
 | [Reporting React + Inertia](reporting.md) | [Target/source map](../SOURCE-MAPPING.md#reporting) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
 | [Roles Permissions React + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
 | [Scheduler Queues React + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |

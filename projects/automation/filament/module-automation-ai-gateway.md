@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Automation Ai Gateway:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Provider contracts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Model catalog:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Routing:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Fallback:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Structured output:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tool policy:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Usage metering:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-automation-ai-gateway`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `provider-contracts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `model-catalog`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `routing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `fallback`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `structured-output`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tool-policy`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `usage-metering`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-automation-ai-gateway` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-automation-ai-gateway-filament`](https://github.com/liberusoftware/module-automation-ai-gateway-filament) (`liberusoftware/automation-ai-gateway-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-automation-ai-gateway.md) · [API plan](../api/module-automation-ai-gateway.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Provider contracts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `provider contracts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Model catalog** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `model catalog`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Routing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `routing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Fallback** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `fallback`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Structured output** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `structured output`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tool policy** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tool policy`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Usage metering** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `usage metering`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [AiGatewayFilamentPlugin.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway-filament/src/AiGatewayFilamentPlugin.php) · [AiGatewayFilamentServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway-filament/src/AiGatewayFilamentServiceProvider.php) · [AiGatewayResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway-filament/src/Resources/AiGatewayResource.php) · [CreateAiGateway.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway-filament/src/Resources/AiGatewayResource/Pages/CreateAiGateway.php) · [EditAiGateway.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway-filament/src/Resources/AiGatewayResource/Pages/EditAiGateway.php) · [ListAiGateway.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway-filament/src/Resources/AiGatewayResource/Pages/ListAiGateway.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateAiGatewayResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway/src/Actions/CreateAiGatewayResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): AiGatewayResource` |
+| [TransitionAiGatewayResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway/src/Actions/TransitionAiGatewayResource.php) | `public function execute(AiGatewayResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): AiGatewayResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AiGatewayResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-ai-gateway/src/Models/AiGatewayResource.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

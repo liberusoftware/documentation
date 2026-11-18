@@ -92,3 +92,38 @@ The Layout Builder module owns Regions, grids, sections, drag/drop composition, 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Regions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `regions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Grids** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `grids`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sections** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sections`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Drag/drop composition** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `drag/drop composition`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Type defaults** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `type defaults`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Per-record overrides** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `per-record overrides`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Responsive settings** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `responsive settings`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Permissions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `permissions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/layout-builder.md) | [Source map](../SOURCE-MAPPING.md#layout-builder) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/layout-builder.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/layout-builder.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-layout-builder-filament`](https://github.com/liberusoftware/module-cms-layout-builder-filament) (`liberusoftware/cms-layout-builder-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/layout-builder.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/layout-builder.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-layout-builder-react-inertia`](https://github.com/liberusoftware/module-cms-layout-builder-react-inertia) (`@liberusoftware/module-cms-layout-builder-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/layout-builder.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-layout-builder-vue-inertia`](https://github.com/liberusoftware/module-cms-layout-builder-vue-inertia) (`@liberusoftware/module-cms-layout-builder-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/layout-builder.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-layout-builder-nuxt`](https://github.com/liberusoftware/module-cms-layout-builder-nuxt) (`@liberusoftware/module-cms-layout-builder-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/layout-builder.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-layout-builder-nextjs`](https://github.com/liberusoftware/module-cms-layout-builder-nextjs) (`@liberusoftware/module-cms-layout-builder-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/layout-builder.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-layout-builder-react-native`](https://github.com/liberusoftware/module-cms-layout-builder-react-native) (`@liberusoftware/module-cms-layout-builder-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/layout-builder.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-layout-builder-flutter`](https://github.com/liberusoftware/module-cms-layout-builder-flutter) (`module_cms_layout_builder_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/layout-builder.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-layout-builder-dart-mobile`](https://github.com/liberusoftware/module-cms-layout-builder-dart-mobile) (`module_cms_layout_builder_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-layout-builder-dart-desktop`](https://github.com/liberusoftware/module-cms-layout-builder-dart-desktop) (`module_cms_layout_builder_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

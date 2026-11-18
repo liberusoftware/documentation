@@ -90,3 +90,37 @@ The Relationships module owns Parent, partner, household, adoption, guardianship
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Parent** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `parent`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Partner** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `partner`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Household** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `household`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Adoption** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `adoption`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Guardianship** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `guardianship`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Uncertain links** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `uncertain links`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Graph validation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `graph validation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/relationships.md) | [Source map](../SOURCE-MAPPING.md#relationships) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/relationships.md) | [`project-genealogy-laravel-api`](https://github.com/liberusoftware/project-genealogy-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/relationships.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) · [`module-genealogy-relationships-filament`](https://github.com/liberusoftware/module-genealogy-relationships-filament) (`liberusoftware/genealogy-relationships-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/relationships.md) | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/relationships.md) | [`project-genealogy-laravel-inertia-react`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-react) · [`module-genealogy-relationships-react-inertia`](https://github.com/liberusoftware/module-genealogy-relationships-react-inertia) (`@liberusoftware/module-genealogy-relationships-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/relationships.md) | [`project-genealogy-laravel-inertia-vue`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-vue) · [`module-genealogy-relationships-vue-inertia`](https://github.com/liberusoftware/module-genealogy-relationships-vue-inertia) (`@liberusoftware/module-genealogy-relationships-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/relationships.md) | [`project-genealogy-nuxt-vue`](https://github.com/liberusoftware/project-genealogy-nuxt-vue) · [`module-genealogy-relationships-nuxt`](https://github.com/liberusoftware/module-genealogy-relationships-nuxt) (`@liberusoftware/module-genealogy-relationships-nuxt`) | Standalone Vue SSR client consuming `project-genealogy-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/relationships.md) | [`project-genealogy-next-react`](https://github.com/liberusoftware/project-genealogy-next-react) · [`module-genealogy-relationships-nextjs`](https://github.com/liberusoftware/module-genealogy-relationships-nextjs) (`@liberusoftware/module-genealogy-relationships-nextjs`) | App Router Server/Client components consuming `project-genealogy-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/relationships.md) | [`project-genealogy-mobile-react`](https://github.com/liberusoftware/project-genealogy-mobile-react) · [`module-genealogy-relationships-react-native`](https://github.com/liberusoftware/module-genealogy-relationships-react-native) (`@liberusoftware/module-genealogy-relationships-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/relationships.md) | [`project-genealogy-mobile-flutter`](https://github.com/liberusoftware/project-genealogy-mobile-flutter) · [`module-genealogy-relationships-flutter`](https://github.com/liberusoftware/module-genealogy-relationships-flutter) (`module_genealogy_relationships_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/relationships.md) | [`project-genealogy-dart-mobile`](https://github.com/liberusoftware/project-genealogy-dart-mobile) · [`module-genealogy-relationships-dart-mobile`](https://github.com/liberusoftware/module-genealogy-relationships-dart-mobile) (`module_genealogy_relationships_dart_mobile`)<br>[`project-genealogy-dart-desktop`](https://github.com/liberusoftware/project-genealogy-dart-desktop) · [`module-genealogy-relationships-dart-desktop`](https://github.com/liberusoftware/module-genealogy-relationships-dart-desktop) (`module_genealogy_relationships_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

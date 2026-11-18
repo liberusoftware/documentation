@@ -14,6 +14,10 @@ npm run dev
 
 Use the Node version in `.node-version`. Run `npm run lint`, `npm run typecheck` and `npm run build` before extending it. The shell does not implement authentication or a product API; follow the contract and tenant boundaries below when adding those workflows.
 
+- **Product host skeletons:** `project-{product}-next-react` in [REPOSITORIES.md](../../projects/REPOSITORIES.md#independent-web-applications) and wayfinder specification [next-react.md](../../projects/wayfinders/next-react.md).
+- **Shared product API backend:** `project-{product}-laravel-api` ([Laravel API backends](../LARAVEL-API-BACKENDS.md)), configured via server-only `API_BASE_URL`.
+- **Reusable module foundation & catalog:** [`module-boilerplate-nextjs`](https://github.com/liberusoftware/module-boilerplate-nextjs) and the [631 Next.js capability skeleton repositories](../../modules/skeletons/next-react.md) (`@liberusoftware/module-{capability}-nextjs`, with provenance recorded in `module-skeleton.json`).
+
 
 Next.js is a separate React application consuming reviewed Laravel APIs. Start with the [foundation and contract guide](README.md). Laravel remains the domain owner; Next.js owns routes, server/client composition, session integration and deployment. Do not add Inertia to this shell. Example endpoints/types below must be replaced with the actual reviewed API.
 

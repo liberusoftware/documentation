@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Content Governance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Owners/stewards:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Policy labels:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Review cycles:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retention:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Legal hold:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sensitive-content classification:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Compliance evidence:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-content-governance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `owners-stewards`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `policy-labels`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `review-cycles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retention`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `legal-hold`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sensitive-content-classification`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `compliance-evidence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,37 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-content-governance` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-content-governance-filament`](https://github.com/liberusoftware/module-cms-content-governance-filament) (`liberusoftware/cms-content-governance-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-content-governance.md) · [API plan](../api/module-cms-content-governance.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Owners/stewards** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `owners/stewards`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Policy labels** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `policy labels`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Review cycles** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `review cycles`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retention** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retention`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Legal hold** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `legal hold`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sensitive-content classification** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sensitive-content classification`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Compliance evidence** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `compliance evidence`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ContentGovernanceFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-governance-filament/src/ContentGovernanceFilamentServiceProvider.php) · [GovernanceRecordResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-governance-filament/src/Resources/GovernanceRecordResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ContentGovernanceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-governance/src/Services/ContentGovernanceService.php) | `public function records(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function record(string $subjectType, string $subjectKey, array $data = [], ?int $teamId = null): GovernanceRecord`<br>`public function placeLegalHold(GovernanceRecord $record, string $reason): GovernanceRecord`<br>`public function releaseLegalHold(GovernanceRecord $record): GovernanceRecord`<br>`public function addEvidence(GovernanceRecord $record, array $evidence): GovernanceRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [GovernanceRecord.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-governance/src/Models/GovernanceRecord.php) | `team_id`, `subject_type`, `subject_key`, `owner_id`, `steward_id`, `policy_labels`, `classification`, `review_due_at`, `retention_until`, `legal_hold`, `legal_hold_at`, `legal_hold_reason`, `evidence` |
+<!-- layer-implementation-plan:end -->

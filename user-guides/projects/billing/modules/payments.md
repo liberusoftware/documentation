@@ -12,7 +12,7 @@
 
 The intended **Payments** workspace covers methods, mandates, gateway drivers, capture, allocation, refunds, disputes, and reconciliation.
 
-The relevant capability areas are **Methods**, **Mandates**, **Gateway drivers**, **Capture**, **Allocation**, **Refunds**, **Disputes**, **Reconciliation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Unified payment-contracts and payment-core integration**, **Methods and vaulted payment instruments**, **Mandates and Direct Debit lifecycles**, **Gateway drivers and capability discovery**, **Capture, partial invoice payments, and allocation**, **Refunds and credit reversals**, **Disputes and chargeback evidence**, **Reconciliation and settlement batches**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -12,7 +12,7 @@
 
 The intended **Cms Search** workspace covers cms search domain behavior.
 
-The relevant capability areas are **Cms Search**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Authorized indexing**, **Search contracts**, **Filters**, **Pagination**, **Reindexing**, **Provider adapters**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

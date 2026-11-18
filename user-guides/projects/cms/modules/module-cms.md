@@ -12,7 +12,7 @@
 
 The intended **Module Cms** workspace covers module cms domain behavior.
 
-The relevant capability areas are **Module Cms**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Sites and locales**, **Content lifecycle primitives**, **Routing and slug resolution**, **Editorial policy hooks**, **Domain events and audit context**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

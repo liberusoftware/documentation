@@ -12,7 +12,7 @@
 
 The intended **Liberu Business Workflow Reconciliation** workspace covers liberu business workflow reconciliation domain behavior.
 
-The relevant capability areas are **Liberu Business Workflow Reconciliation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Workflow run registry**, **State mapping**, **Reconciliation rules**, **Recovery coordination**, **Audit timeline**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

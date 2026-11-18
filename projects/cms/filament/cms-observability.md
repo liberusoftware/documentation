@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Observability:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Structured logs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Correlation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Metrics:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Traces:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Exception reporting:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Health checks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Redaction:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **SLO hooks:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-observability`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `structured-logs`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `correlation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `metrics`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `traces`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `exception-reporting`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `health-checks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `redaction`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `slo-hooks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-observability` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-observability-filament`](https://github.com/liberusoftware/module-cms-observability-filament) (`liberusoftware/cms-observability-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-observability.md) · [API plan](../api/cms-observability.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Structured logs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `structured logs`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Correlation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `correlation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Metrics** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `metrics`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Traces** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `traces`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Exception reporting** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `exception reporting`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Health checks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `health checks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Redaction** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `redaction`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **SLO hooks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `slo hooks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+<!-- layer-implementation-plan:end -->

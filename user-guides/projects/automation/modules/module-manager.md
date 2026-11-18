@@ -12,7 +12,7 @@
 
 The intended **Module Manager** workspace covers module manager domain behavior.
 
-The relevant capability areas are **Module Manager**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Manifest discovery**, **Dependency resolution**, **Enablement**, **Lifecycle**, **Compatibility**, **Registry caching**, **Diagnostics**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

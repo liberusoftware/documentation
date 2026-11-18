@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Sessions Devices:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Active sessions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Device metadata:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Revocation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Timeout policy:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Suspicious access:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Retention:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `sessions-devices`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `active-sessions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `device-metadata`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `revocation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `timeout-policy`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `suspicious-access`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `retention`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,30 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `sessions-devices` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/sessions-devices.md) · [API plan](../api/sessions-devices.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Active sessions** | Expose a focused Livewire 4 component and namespaced Blade default view for `active sessions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Device metadata** | Expose a focused Livewire 4 component and namespaced Blade default view for `device metadata` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Revocation** | Expose a focused Livewire 4 component and namespaced Blade default view for `revocation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Timeout policy** | Expose a focused Livewire 4 component and namespaced Blade default view for `timeout policy` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Suspicious access** | Expose a focused Livewire 4 component and namespaced Blade default view for `suspicious access` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Retention** | Expose a focused Livewire 4 component and namespaced Blade default view for `retention` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [SessionReader.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/sessions-devices/src/Queries/SessionReader.php) | `public function forActor(string\|int $actorId, ?string $currentId = null): Collection`<br>`public function revoke(string\|int $actorId, string $sessionId, ?string $currentId = null): bool`<br>`public function revokeOthers(string\|int $actorId, string $currentId): int` |
+<!-- layer-implementation-plan:end -->

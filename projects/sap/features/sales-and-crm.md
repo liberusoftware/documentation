@@ -96,3 +96,39 @@ The Sales and CRM module owns Accounts, leads, opportunities, quotes, contracts,
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Accounts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `accounts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Leads** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `leads`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Opportunities** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `opportunities`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Quotes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `quotes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Orders** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `orders`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Customer success** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `customer success`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Communications** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `communications`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Forecasts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `forecasts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/sales-and-crm.md) | [Source map](../SOURCE-MAPPING.md#sales-and-crm) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/sales-and-crm.md) | [`project-enterprise-sap-laravel-api`](https://github.com/liberusoftware/project-enterprise-sap-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/sales-and-crm.md) | [`project-enterprise-sap-laravel-filament`](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament) · [`module-sap-sales-and-crm-filament`](https://github.com/liberusoftware/module-sap-sales-and-crm-filament) (`liberusoftware/sap-sales-and-crm-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/sales-and-crm.md) | [`project-enterprise-sap-laravel-filament`](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/sales-and-crm.md) | [`project-enterprise-sap-laravel-inertia-react`](https://github.com/liberusoftware/project-enterprise-sap-laravel-inertia-react) · [`module-sap-sales-and-crm-react-inertia`](https://github.com/liberusoftware/module-sap-sales-and-crm-react-inertia) (`@liberusoftware/module-sap-sales-and-crm-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/sales-and-crm.md) | [`project-enterprise-sap-laravel-inertia-vue`](https://github.com/liberusoftware/project-enterprise-sap-laravel-inertia-vue) · [`module-sap-sales-and-crm-vue-inertia`](https://github.com/liberusoftware/module-sap-sales-and-crm-vue-inertia) (`@liberusoftware/module-sap-sales-and-crm-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/sales-and-crm.md) | [`project-enterprise-sap-nuxt-vue`](https://github.com/liberusoftware/project-enterprise-sap-nuxt-vue) · [`module-sap-sales-and-crm-nuxt`](https://github.com/liberusoftware/module-sap-sales-and-crm-nuxt) (`@liberusoftware/module-sap-sales-and-crm-nuxt`) | Standalone Vue SSR client consuming `project-enterprise-sap-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/sales-and-crm.md) | [`project-enterprise-sap-next-react`](https://github.com/liberusoftware/project-enterprise-sap-next-react) · [`module-sap-sales-and-crm-nextjs`](https://github.com/liberusoftware/module-sap-sales-and-crm-nextjs) (`@liberusoftware/module-sap-sales-and-crm-nextjs`) | App Router Server/Client components consuming `project-enterprise-sap-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/sales-and-crm.md) | [`project-enterprise-sap-mobile-react`](https://github.com/liberusoftware/project-enterprise-sap-mobile-react) · [`module-sap-sales-and-crm-react-native`](https://github.com/liberusoftware/module-sap-sales-and-crm-react-native) (`@liberusoftware/module-sap-sales-and-crm-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/sales-and-crm.md) | [`project-enterprise-sap-mobile-flutter`](https://github.com/liberusoftware/project-enterprise-sap-mobile-flutter) · [`module-sap-sales-and-crm-flutter`](https://github.com/liberusoftware/module-sap-sales-and-crm-flutter) (`module_sap_sales_and_crm_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/sales-and-crm.md) | [`project-enterprise-sap-dart-mobile`](https://github.com/liberusoftware/project-enterprise-sap-dart-mobile) · [`module-sap-sales-and-crm-dart-mobile`](https://github.com/liberusoftware/module-sap-sales-and-crm-dart-mobile) (`module_sap_sales_and_crm_dart_mobile`)<br>[`project-enterprise-sap-dart-desktop`](https://github.com/liberusoftware/project-enterprise-sap-dart-desktop) · [`module-sap-sales-and-crm-dart-desktop`](https://github.com/liberusoftware/module-sap-sales-and-crm-dart-desktop) (`module_sap_sales_and_crm_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

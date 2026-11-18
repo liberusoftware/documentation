@@ -94,3 +94,39 @@ The Sales Engagement module owns Sequences/cadences, multi-channel steps, templa
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Sequences/cadences** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sequences/cadences`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Multi-channel steps** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `multi-channel steps`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Templates/snippets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `templates/snippets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Task queues** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `task queues`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Enrollment/re-entry** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `enrollment/re-entry`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Throttles** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `throttles`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Timezone windows** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `timezone windows`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reply/meeting stop rules** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reply/meeting stop rules`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Experiments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `experiments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/sales-engagement.md) | [Source map](../SOURCE-MAPPING.md#sales-engagement) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/sales-engagement.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/sales-engagement.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-sales-engagement-filament`](https://github.com/liberusoftware/module-crm-sales-engagement-filament) (`liberusoftware/crm-sales-engagement-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/sales-engagement.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/sales-engagement.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-sales-engagement-react-inertia`](https://github.com/liberusoftware/module-crm-sales-engagement-react-inertia) (`@liberusoftware/module-crm-sales-engagement-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/sales-engagement.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-sales-engagement-vue-inertia`](https://github.com/liberusoftware/module-crm-sales-engagement-vue-inertia) (`@liberusoftware/module-crm-sales-engagement-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/sales-engagement.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-sales-engagement-nuxt`](https://github.com/liberusoftware/module-crm-sales-engagement-nuxt) (`@liberusoftware/module-crm-sales-engagement-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/sales-engagement.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-sales-engagement-nextjs`](https://github.com/liberusoftware/module-crm-sales-engagement-nextjs) (`@liberusoftware/module-crm-sales-engagement-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/sales-engagement.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-sales-engagement-react-native`](https://github.com/liberusoftware/module-crm-sales-engagement-react-native) (`@liberusoftware/module-crm-sales-engagement-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/sales-engagement.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-sales-engagement-flutter`](https://github.com/liberusoftware/module-crm-sales-engagement-flutter) (`module_crm_sales_engagement_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/sales-engagement.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-sales-engagement-dart-mobile`](https://github.com/liberusoftware/module-crm-sales-engagement-dart-mobile) (`module_crm_sales_engagement_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-sales-engagement-dart-desktop`](https://github.com/liberusoftware/module-crm-sales-engagement-dart-desktop) (`module_crm_sales_engagement_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

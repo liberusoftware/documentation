@@ -18,7 +18,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Browser Game Social:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Friends:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Parties:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Chat:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Mail:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Guilds:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Alliances:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Permissions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Activity:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reporting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `browser-game-social`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `friends`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `parties`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `chat`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `mail`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `guilds`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `alliances`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `permissions`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `activity`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `reporting`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,63 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `browser-game-social` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-browser-game-laravel-inertia-vue`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-browser-game-social-vue-inertia`](https://github.com/liberusoftware/module-browser-game-social-vue-inertia) (`@liberusoftware/module-browser-game-social-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/browser-game-social.md) · [Core plan](../core/browser-game-social.md) · [API plan](../api/browser-game-social.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Friends** | Render `friends` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Parties** | Render `parties` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Chat** | Render `chat` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Mail** | Render `mail` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Guilds** | Render `guilds` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Alliances** | Render `alliances` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Permissions** | Render `permissions` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Activity** | Render `activity` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Reporting** | Render `reporting` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [SocialQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Queries/SocialQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SocialActivity.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Models/SocialActivity.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SocialMembership.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Models/SocialMembership.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SocialRecord.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Models/SocialRecord.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [SocialController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-api/src/Http/Controllers/SocialController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function friendRequest(Request $request): JsonResponse`<br>`public function respondToFriendRequest(Request $request, SocialRecord $social): JsonResponse`<br>`public function createGroup(Request $request, string $kind): JsonResponse`<br>`public function mail(Request $request): JsonResponse`<br>`public function member(Request $request, SocialRecord $social): JsonResponse`<br>`public function message(Request $request, SocialRecord $social): JsonResponse`<br>`public function report(Request $request): JsonResponse`<br>`public function permissions(Request $request, SocialRecord $social): JsonResponse`<br>`public function activity(Request $request): JsonResponse`<br>`public function show(Request $request, SocialRecord $social): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/browser-game-social-api/routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/browser-game/social')->middleware(['api', 'auth:sanctum', 'throttle:api'])->group(function (): void {
+Route::get('/', [SocialController::class, 'index'])->name('browser-game.social.index');
+Route::post('/', [SocialController::class, 'store'])->name('browser-game.social.store');
+Route::post('/friends', [SocialController::class, 'friendRequest'])->name('browser-game.social.friends.create');
+Route::post('/groups/{kind}', [SocialController::class, 'createGroup'])->whereIn('kind', ['party', 'chat', 'guild', 'alliance'])->name('browser-game.social.groups.create');
+Route::post('/mail', [SocialController::class, 'mail'])->name('browser-game.social.mail.create');
+Route::get('/activity', [SocialController::class, 'activity'])->name('browser-game.social.activity');
+Route::post('/{social}/members', [SocialController::class, 'member'])->name('browser-game.social.member');
+Route::patch('/{social}/permissions', [SocialController::class, 'permissions'])->name('browser-game.social.permissions');
+Route::patch('/{social}/friend-response', [SocialController::class, 'respondToFriendRequest'])->name('browser-game.social.friends.respond');
+Route::post('/{social}/messages', [SocialController::class, 'message'])->name('browser-game.social.message');
+Route::post('/reports', [SocialController::class, 'report'])->name('browser-game.social.report');
+Route::get('/{social}', [SocialController::class, 'show'])->name('browser-game.social.show');
+```
+<!-- layer-implementation-plan:end -->

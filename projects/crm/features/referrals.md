@@ -7,10 +7,11 @@
 ## Canonical independent module specification
 
 **Domain module:** `module-crm-referrals`
+**Extends / implements contracts:** `liberusoftware/affiliate-contracts (AffiliateProgramContract, ReferralAttributionContract, ConversionRecorderContract, FraudAndSelfReferralPolicyContract, RewardFulfillmentContract)`
 **Application:** CRM  
 **Capability group:** Community, learning, loyalty, and growth modules  
 **Source scope:** [CRM.md](../CRM.md)  
-**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [AFFILIATES.md](../../../architecture/AFFILIATES.md)
 
 ## 1. Purpose
 
@@ -18,15 +19,13 @@ The Referrals module owns Referral programs, links/codes, advocates, prospects, 
 
 ## 2. Full feature scope
 
-- **Referral programs:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Links/codes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Advocates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Prospects:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Qualification:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Rewards:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Fraud/duplicate controls:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Status:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Attribution:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Referral programs extending AffiliateProgramContract:** Define advocate referral programs, eligibility rules, attribution windows, and reward structures via liberusoftware/affiliate-contracts.
+- **Links/codes via ReferralAttributionContract:** Generate trackable referral links, QR codes, and shareable promo codes for advocates.
+- **Advocates and referred prospects:** Link advocate contacts to referred leads, opportunities, and customers with full timeline lineage.
+- **Qualification via ConversionRecorderContract:** Qualify referrals when prospects reach target deal stages, paid invoices, or completed orders.
+- **Rewards via RewardFulfillmentContract:** Fulfill advocate and prospect rewards (credits, gift cards, discounts, or commission payouts) after hold windows mature.
+- **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract:** Prevent self-referrals, duplicate lead gaming, and disallowed domain/payment collisions.
+- **Status and multi-touch attribution:** Track referral lifecycle status and reconcile attribution with CRM Campaigns and Billing/Ecommerce revenue.
 
 ## 3. Ownership and boundaries
 
@@ -94,3 +93,37 @@ The Referrals module owns Referral programs, links/codes, advocates, prospects, 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Referral programs extending AffiliateProgramContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `referral programs extending affiliateprogramcontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Links/codes via ReferralAttributionContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `links/codes via referralattributioncontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Advocates and referred prospects** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `advocates and referred prospects`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Qualification via ConversionRecorderContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `qualification via conversionrecordercontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rewards via RewardFulfillmentContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rewards via rewardfulfillmentcontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Fraud/duplicate controls via FraudAndSelfReferralPolicyContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `fraud/duplicate controls via fraudandselfreferralpolicycontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Status and multi-touch attribution** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `status and multi-touch attribution`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/referrals.md) | [Source map](../SOURCE-MAPPING.md#referrals) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/referrals.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/referrals.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-referrals-filament`](https://github.com/liberusoftware/module-crm-referrals-filament) (`liberusoftware/crm-referrals-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/referrals.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/referrals.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-referrals-react-inertia`](https://github.com/liberusoftware/module-crm-referrals-react-inertia) (`@liberusoftware/module-crm-referrals-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/referrals.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-referrals-vue-inertia`](https://github.com/liberusoftware/module-crm-referrals-vue-inertia) (`@liberusoftware/module-crm-referrals-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/referrals.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-referrals-nuxt`](https://github.com/liberusoftware/module-crm-referrals-nuxt) (`@liberusoftware/module-crm-referrals-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/referrals.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-referrals-nextjs`](https://github.com/liberusoftware/module-crm-referrals-nextjs) (`@liberusoftware/module-crm-referrals-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/referrals.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-referrals-react-native`](https://github.com/liberusoftware/module-crm-referrals-react-native) (`@liberusoftware/module-crm-referrals-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/referrals.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-referrals-flutter`](https://github.com/liberusoftware/module-crm-referrals-flutter) (`module_crm_referrals_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/referrals.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-referrals-dart-mobile`](https://github.com/liberusoftware/module-crm-referrals-dart-mobile) (`module_crm_referrals_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-referrals-dart-desktop`](https://github.com/liberusoftware/module-crm-referrals-dart-desktop) (`module_crm_referrals_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

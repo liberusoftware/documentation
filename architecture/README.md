@@ -9,7 +9,9 @@ This folder records Liberu’s ecosystem architecture: ownership, package bounda
 - [API](API.md) — public contracts, authentication, tenancy, errors, and versioning.
 - [Repositories](REPOSITORIES.md) — repository ownership and README expectations.
 - [Tenancy](TENANCY.md) · [Teams](TEAMS.md) · [Policy](POLICY.md) — context and authorization boundaries.
-- [Settings](SETTINGS.md) · [Jetstream](JETSTREAM.md) · [Socialstream](SOCIALSTREAM.md) — shared application capabilities.
+- [Settings](SETTINGS.md) · [Jetstream](JETSTREAM.md) · [Socialstream](SOCIALSTREAM.md) · [Passkeys and WebAuthn](PASSKEYS.md) — shared application capabilities.
+- [Affiliate Management and Referral Contracts](AFFILIATES.md) — extensible affiliate programs, referral attribution, commission calculation, and cross-repository conversion contracts (`liberusoftware/affiliate-contracts` and `liberusoftware/affiliate-core`).
+- [Unified Merchant Payment Architecture](PAYMENTS.md) — contract-based payment orchestration (`liberusoftware/payment-contracts` and `liberusoftware/payment-core`) and replaceable merchant gateway adapters (`payment-stripe`, `payment-paypal`, `payment-paddle`, `payment-adyen`, `payment-mollie`, `payment-square`, `payment-gocardless`).
 - [Security](SECURITY.md) · [Installation](../INSTALL.md) — security policy and environment setup.
 - [Mobile](MOBILE.md) — mobile application boundaries, offline behavior, device security, and release architecture.
 

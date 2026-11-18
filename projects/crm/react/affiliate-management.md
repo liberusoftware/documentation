@@ -18,17 +18,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Affiliates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Applications:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Links:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Campaigns:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Clicks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Conversions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Commission rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Payout approvals/exports:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Disputes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Assets:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Portal:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Affiliates and partner profiles:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Applications and onboarding approval:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Links, promo codes, and campaigns:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Clicks and first-party touch attribution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Conversions and cross-product clawback ledger:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Commission rules and tiered calculation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Payout approvals/exports via PayoutSettlementContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Disputes, fraud controls, assets, and partner portal:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -39,17 +36,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `affiliates`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `applications`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `links`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `campaigns`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `clicks`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `conversions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `commission-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `payout-approvals-exports`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `disputes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `assets`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `portal`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `affiliates-and-partner-profiles`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `applications-and-onboarding-approval`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `links-promo-codes-and-campaigns`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `clicks-and-first-party-touch-attribution`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `conversions-and-cross-product-clawback-ledger`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `commission-rules-and-tiered-calculation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `payout-approvals-exports-via-payoutsettlementcontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `disputes-fraud-controls-assets-and-partner-portal`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -80,3 +74,65 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-affiliate-management` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-affiliate-management-react-inertia`](https://github.com/liberusoftware/module-crm-affiliate-management-react-inertia) (`@liberusoftware/module-crm-affiliate-management-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/affiliate-management.md) · [Core plan](../core/affiliate-management.md) · [API plan](../api/affiliate-management.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Affiliates and partner profiles** | Render `affiliates and partner profiles` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Applications and onboarding approval** | Render `applications and onboarding approval` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Links, promo codes, and campaigns** | Render `links, promo codes, and campaigns` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Clicks and first-party touch attribution** | Render `clicks and first-party touch attribution` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Conversions and cross-product clawback ledger** | Render `conversions and cross-product clawback ledger` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Commission rules and tiered calculation** | Render `commission rules and tiered calculation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Payout approvals/exports via PayoutSettlementContract** | Render `payout approvals/exports via payoutsettlementcontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Disputes, fraud controls, assets, and partner portal** | Render `disputes, fraud controls, assets, and partner portal` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AffiliateQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Queries/AffiliateQuery.php) | `public function affiliates(int $teamId): Builder`<br>`public function events(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ApplyAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApplyAffiliate.php) | `public function execute(int $teamId, array $input): Affiliate` |
+| [ApproveAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliate.php) | `public function execute(int $teamId, Affiliate $affiliate): Affiliate` |
+| [ApproveAffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliatePayout.php) | `public function execute(int $teamId, int $actorId, AffiliatePayout $payout): AffiliatePayout` |
+| [CreateAffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/CreateAffiliateLink.php) | `public function execute(int $teamId, Affiliate $affiliate, array $input): AffiliateLink` |
+| [RecordAffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/RecordAffiliateEvent.php) | `public function execute(int $teamId, AffiliateLink $link, array $input): AffiliateEvent` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Affiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/Affiliate.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateLink.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliatePayout.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [AffiliateController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-api/src/Http/Controllers/AffiliateController.php) | `public function __construct(private readonly AffiliateQuery $query)`<br>`public function index(): JsonResponse`<br>`public function store(ApplyAffiliate $action): JsonResponse`<br>`public function approve(Affiliate $affiliate, ApproveAffiliate $action): JsonResponse`<br>`public function link(Affiliate $affiliate, CreateAffiliateLink $action): JsonResponse`<br>`public function event(AffiliateLink $link, RecordAffiliateEvent $action): JsonResponse`<br>`public function events(): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-affiliate-management-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/affiliate-management')->group(function (): void {
+Route::get('affiliates', [AffiliateController::class, 'index']);
+Route::post('affiliates', [AffiliateController::class, 'store']);
+Route::post('affiliates/{affiliate}/approve', [AffiliateController::class, 'approve']);
+Route::post('affiliates/{affiliate}/links', [AffiliateController::class, 'link']);
+Route::post('links/{link}/events', [AffiliateController::class, 'event']);
+Route::get('events', [AffiliateController::class, 'events']);
+```
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,16 @@ The Crm Consent And Preferences module owns crm consent and preferences domain b
 
 ## 2. Full feature scope
 
-- **Crm Consent And Preferences:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Lawful basis:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Subscriptions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Channel/topic preferences:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Suppression:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Quiet hours:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recording consent:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Proof:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Expiry:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Withdrawal:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Policy evaluation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +87,40 @@ The Crm Consent And Preferences module owns crm consent and preferences domain b
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Lawful basis** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `lawful basis`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Subscriptions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `subscriptions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Channel/topic preferences** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `channel/topic preferences`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Suppression** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `suppression`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Quiet hours** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `quiet hours`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recording consent** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recording consent`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Proof** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `proof`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Expiry** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `expiry`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Withdrawal** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `withdrawal`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Policy evaluation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `policy evaluation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-consent-and-preferences.md) | [Source map](../SOURCE-MAPPING.md#crm-consent-and-preferences) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-consent-and-preferences.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-consent-and-preferences.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-consent-and-preferences-filament`](https://github.com/liberusoftware/module-crm-consent-and-preferences-filament) (`liberusoftware/crm-consent-and-preferences-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-consent-and-preferences.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-consent-and-preferences.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-consent-and-preferences-react-inertia`](https://github.com/liberusoftware/module-crm-consent-and-preferences-react-inertia) (`@liberusoftware/module-crm-consent-and-preferences-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-consent-and-preferences.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-consent-and-preferences-vue-inertia`](https://github.com/liberusoftware/module-crm-consent-and-preferences-vue-inertia) (`@liberusoftware/module-crm-consent-and-preferences-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-consent-and-preferences.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-consent-and-preferences-nuxt`](https://github.com/liberusoftware/module-crm-consent-and-preferences-nuxt) (`@liberusoftware/module-crm-consent-and-preferences-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-consent-and-preferences.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-consent-and-preferences-nextjs`](https://github.com/liberusoftware/module-crm-consent-and-preferences-nextjs) (`@liberusoftware/module-crm-consent-and-preferences-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-consent-and-preferences.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-consent-and-preferences-react-native`](https://github.com/liberusoftware/module-crm-consent-and-preferences-react-native) (`@liberusoftware/module-crm-consent-and-preferences-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-consent-and-preferences.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-consent-and-preferences-flutter`](https://github.com/liberusoftware/module-crm-consent-and-preferences-flutter) (`module_crm_consent_and_preferences_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-consent-and-preferences.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-consent-and-preferences-dart-mobile`](https://github.com/liberusoftware/module-crm-consent-and-preferences-dart-mobile) (`module_crm_consent_and_preferences_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-consent-and-preferences-dart-desktop`](https://github.com/liberusoftware/module-crm-consent-and-preferences-dart-desktop) (`module_crm_consent_and_preferences_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

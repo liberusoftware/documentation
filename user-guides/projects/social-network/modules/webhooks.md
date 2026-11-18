@@ -12,7 +12,7 @@
 
 The intended **Webhooks** workspace covers webhooks domain behavior.
 
-The relevant capability areas are **Webhooks**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Endpoint registration**, **Signing**, **Delivery attempts**, **Retries**, **Replay**, **Event filtering**, **Logs**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

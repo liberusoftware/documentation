@@ -3,6 +3,8 @@
 This is the technology-specific implementation specification for `mobile-flutter` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-mobile-flutter
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-flutter
+- Capability skeleton catalog: [`modules/skeletons/mobile-flutter.md`](../../modules/skeletons/mobile-flutter.md)
 - Presentation layer directory in product docs: `flutter/`
 - Adapter identity pattern: `module-{capability}-flutter`
 - Consumes product `-laravel-api`: yes

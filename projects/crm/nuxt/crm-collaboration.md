@@ -18,7 +18,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Collaboration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Record comments:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Mentions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Followers:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Shared work queues:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Approvals:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Handoffs:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Internal channels:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Collaboration-provider adapters:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +36,14 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-collaboration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `record-comments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `mentions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `followers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `shared-work-queues`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `approvals`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `handoffs`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `internal-channels`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `collaboration-provider-adapters`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +64,60 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-collaboration` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-collaboration.md)) |
+| Capability Nuxt module skeleton | [`module-crm-collaboration-nuxt`](https://github.com/liberusoftware/module-crm-collaboration-nuxt) (`@liberusoftware/module-crm-collaboration-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Record comments** | Expose composable and Vue 3 component for `record comments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Mentions** | Expose composable and Vue 3 component for `mentions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Followers** | Expose composable and Vue 3 component for `followers` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Shared work queues** | Expose composable and Vue 3 component for `shared work queues` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Approvals** | Expose composable and Vue 3 component for `approvals` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Handoffs** | Expose composable and Vue 3 component for `handoffs` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Internal channels** | Expose composable and Vue 3 component for `internal channels` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Collaboration-provider adapters** | Expose composable and Vue 3 component for `collaboration-provider adapters` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-collaboration.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CollaborationQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration/src/Queries/CollaborationQuery.php) | `public function records(int $teamId, string $recordKey): Builder`<br>`public function queue(int $teamId, string $queueKey): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AddCollaborationRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration/src/Actions/AddCollaborationRecord.php) | `public function execute(int $teamId, string $recordKey, string $authorKey, string $body, string $kind = 'comment', array $mentions = []): CollaborationRecord` |
+| [AssignCollaborationWork.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration/src/Actions/AssignCollaborationWork.php) | `public function execute(int $teamId, string $queueKey, string $subjectKey, ?string $assigneeKey = null, array $metadata = []): CollaborationWork` |
+| [HandoffCollaborationWork.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration/src/Actions/HandoffCollaborationWork.php) | `public function execute(int $teamId, CollaborationWork $work, string $assigneeKey, string $reason): CollaborationWork` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CollaborationRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration/src/Models/CollaborationRecord.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CollaborationWork.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration/src/Models/CollaborationWork.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CollaborationController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration-api/src/Http/Controllers/CollaborationController.php) | `public function __construct(private readonly CollaborationQuery $query)`<br>`public function records(string $recordKey): JsonResponse`<br>`public function record(AddCollaborationRecord $a): JsonResponse`<br>`public function assign(AssignCollaborationWork $a): JsonResponse`<br>`public function handoff(CollaborationWork $work, HandoffCollaborationWork $a): JsonResponse`<br>`public function queue(string $queueKey): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-collaboration-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-collaboration-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/collaboration')->group(function (): void {
+Route::get('records/{recordKey}', [CollaborationController::class, 'records']);
+Route::post('records', [CollaborationController::class, 'record']);
+Route::post('work', [CollaborationController::class, 'assign']);
+Route::post('work/{work}/handoff', [CollaborationController::class, 'handoff']);
+Route::get('queues/{queueKey}', [CollaborationController::class, 'queue']);
+```
+<!-- layer-implementation-plan:end -->

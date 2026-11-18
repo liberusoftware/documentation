@@ -76,6 +76,7 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Pricing](../features/pricing.md) | [Next.js plan](pricing.md) | [This module](pricing.md) |
 | [Profiles](../features/profiles.md) | [Next.js plan](profiles.md) | [Shared plan](../../boilerplate/nextjs/profiles.md) |
 | [Provisioning](../features/provisioning.md) | [Next.js plan](provisioning.md) | [This module](provisioning.md) |
+| [Referrals and Advocate Rewards](../features/referrals.md) | [Next.js plan](referrals.md) | [This module](referrals.md) |
 | [Reporting](../features/reporting.md) | [Next.js plan](reporting.md) | [This module](reporting.md) |
 | [Roles Permissions](../features/roles-permissions.md) | [Next.js plan](roles-permissions.md) | [Shared plan](../../boilerplate/nextjs/roles-permissions.md) |
 | [Scheduler Queues](../features/scheduler-queues.md) | [Next.js plan](scheduler-queues.md) | [Shared plan](../../boilerplate/nextjs/scheduler-queues.md) |

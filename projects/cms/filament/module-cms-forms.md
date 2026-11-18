@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Forms:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Form schema builder:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Multi-step and conditional fields:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Spam and rate-limit protection:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Consent and retention tracking:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Submission inbox and exports:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-forms`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `form-schema-builder`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `multi-step-and-conditional-fields`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `spam-and-rate-limit-protection`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `consent-and-retention-tracking`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `submission-inbox-and-exports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,32 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-forms` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-forms-filament`](https://github.com/liberusoftware/module-cms-forms-filament) (`liberusoftware/cms-forms-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-forms.md) · [API plan](../api/module-cms-forms.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Form schema builder** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `form schema builder`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Multi-step and conditional fields** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `multi-step and conditional fields`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Spam and rate-limit protection** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `spam and rate-limit protection`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Consent and retention tracking** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `consent and retention tracking`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Submission inbox and exports** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `submission inbox and exports`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [FormResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-forms/src/Filament/FormResource.php) · [FormSubmissionResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-forms/src/Filament/FormSubmissionResource.php) · [ListFormSubmissions.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-forms/src/Filament/Pages/ListFormSubmissions.php) · [ListForms.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-forms/src/Filament/Pages/ListForms.php).
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Form.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-forms/src/Models/Form.php) | `name`, `slug`, `fields`, `team_id` |
+| [FormSubmission.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-forms/src/Models/FormSubmission.php) | `form_id`, `data`, `meta`, `team_id` |
+<!-- layer-implementation-plan:end -->

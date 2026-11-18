@@ -18,7 +18,15 @@ The Cms Comments And Discussion module owns cms comments and discussion domain b
 
 ## 2. Full feature scope
 
-- **Cms Comments And Discussion:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Threaded comments:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Guest/member policy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Moderation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Subscriptions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Mentions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Spam control:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Editing:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Reports:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Retention:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Cms Comments And Discussion module owns cms comments and discussion domain b
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Threaded comments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `threaded comments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Guest/member policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `guest/member policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Moderation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `moderation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Subscriptions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `subscriptions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Mentions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `mentions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Spam control** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `spam control`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Editing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `editing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reports** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reports`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Retention** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `retention`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cms-comments-and-discussion.md) | [Source map](../SOURCE-MAPPING.md#cms-comments-and-discussion) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cms-comments-and-discussion.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cms-comments-and-discussion.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-comments-and-discussion-filament`](https://github.com/liberusoftware/module-cms-comments-and-discussion-filament) (`liberusoftware/cms-comments-and-discussion-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cms-comments-and-discussion.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cms-comments-and-discussion.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-comments-and-discussion-react-inertia`](https://github.com/liberusoftware/module-cms-comments-and-discussion-react-inertia) (`@liberusoftware/module-cms-comments-and-discussion-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cms-comments-and-discussion.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-comments-and-discussion-vue-inertia`](https://github.com/liberusoftware/module-cms-comments-and-discussion-vue-inertia) (`@liberusoftware/module-cms-comments-and-discussion-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cms-comments-and-discussion.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-comments-and-discussion-nuxt`](https://github.com/liberusoftware/module-cms-comments-and-discussion-nuxt) (`@liberusoftware/module-cms-comments-and-discussion-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cms-comments-and-discussion.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-comments-and-discussion-nextjs`](https://github.com/liberusoftware/module-cms-comments-and-discussion-nextjs) (`@liberusoftware/module-cms-comments-and-discussion-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cms-comments-and-discussion.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-comments-and-discussion-react-native`](https://github.com/liberusoftware/module-cms-comments-and-discussion-react-native) (`@liberusoftware/module-cms-comments-and-discussion-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cms-comments-and-discussion.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-comments-and-discussion-flutter`](https://github.com/liberusoftware/module-cms-comments-and-discussion-flutter) (`module_cms_comments_and_discussion_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cms-comments-and-discussion.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-comments-and-discussion-dart-mobile`](https://github.com/liberusoftware/module-cms-comments-and-discussion-dart-mobile) (`module_cms_comments_and_discussion_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-comments-and-discussion-dart-desktop`](https://github.com/liberusoftware/module-cms-comments-and-discussion-dart-desktop) (`module_cms_comments_and_discussion_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

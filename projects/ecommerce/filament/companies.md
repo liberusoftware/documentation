@@ -38,13 +38,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `company-accounts/locations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `company-accounts-locations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `contacts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `roles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `buyers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `approvers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `sales-reps`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `tax/exemption`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tax-exemption`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `payment-terms`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `addresses`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `lifecycle`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -60,3 +60,32 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-companies` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-companies-filament`](https://github.com/liberusoftware/module-ecommerce-companies-filament) (`liberusoftware/ecommerce-companies-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/companies.md) · [API plan](../api/companies.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Company accounts/locations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `company accounts/locations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Contacts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `contacts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Roles** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `roles`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Buyers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `buyers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Approvers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `approvers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sales reps** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sales reps`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tax/exemption** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tax/exemption`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Payment terms** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payment terms`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Addresses** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `addresses`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Lifecycle** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `lifecycle`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

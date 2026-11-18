@@ -12,7 +12,7 @@
 
 The intended **Payment Operations** workspace covers capture/refund queues, disputes/chargebacks, manual review, provider webhooks, settlement reconciliation, and exception handling.
 
-The relevant capability areas are **Capture/refund queues**, **Disputes/chargebacks**, **Manual review**, **Provider webhooks**, **Settlement reconciliation**, **Exception handling**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Capture/refund queues over payment-contracts**, **Disputes/chargebacks via DisputeAndChargebackHandlerContract**, **Manual review and fraud-hold release**, **Verified provider webhooks via MerchantWebhookVerifierContract**, **Settlement reconciliation via PayoutAndSettlementReconcilerContract**, **Exception handling and operator replay**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

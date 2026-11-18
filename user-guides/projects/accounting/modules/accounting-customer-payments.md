@@ -12,7 +12,7 @@
 
 The intended **Customer Payments** workspace covers receipts, payment links, gateway/bank references, deposits, undeposited funds, allocations, partial/overpayments, refunds, and reconciliation.
 
-The relevant capability areas are **Receipts**, **Payment links**, **Gateway/bank references**, **Deposits**, **Undeposited funds**, **Allocations**, **Partial/overpayments**, **Refunds**, **Reconciliation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Receipts and online payment links via payment-contracts**, **Gateway/bank references and provider provenance**, **Deposits and undeposited funds clearing**, **Allocations and partial/overpayments**, **Refunds and chargeback adjustments**, **Reconciliation with merchant settlements**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

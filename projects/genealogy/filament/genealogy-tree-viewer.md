@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Genealogy Tree Viewer:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Pedigree:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Descendants:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Fan/chart views:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Navigation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Filters:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Large-tree rendering:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `genealogy-tree-viewer`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `pedigree`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `descendants`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `fan-chart-views`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `navigation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `filters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `large-tree-rendering`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,42 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `genealogy-tree-viewer` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-genealogy-tree-viewer-filament`](https://github.com/liberusoftware/module-genealogy-tree-viewer-filament) (`liberusoftware/genealogy-tree-viewer-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/genealogy-tree-viewer.md) · [API plan](../api/genealogy-tree-viewer.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Pedigree** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `pedigree`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Descendants** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `descendants`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Fan/chart views** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `fan/chart views`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Navigation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `navigation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Filters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `filters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Large-tree rendering** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `large-tree rendering`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [TreeViewResource.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer-api/src/Resources/TreeViewResource.php) · [TreeViewResource.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer-filament/src/Resources/TreeViewResource.php) · [CreateTreeView.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer-filament/src/Resources/TreeViewResource/Pages/CreateTreeView.php) · [EditTreeView.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer-filament/src/Resources/TreeViewResource/Pages/EditTreeView.php) · [ListTreeViews.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer-filament/src/Resources/TreeViewResource/Pages/ListTreeViews.php) · [TreeGraph.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer-filament/src/Resources/TreeViewResource/Pages/TreeGraph.php) · [TreeViewerFilamentServiceProvider.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer-filament/src/TreeViewerFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [TreeGraph.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer/src/Queries/TreeGraph.php) | `public function for( Person $root, int $generations = 3, bool $includeLiving = true, string $view = 'chart', bool $includeSiblings = false, int $maxNodes = 2000, ): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateTreeView.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer/src/Actions/CreateTreeView.php) | `public function execute(array $attributes): TreeView` |
+| [DeleteTreeView.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer/src/Actions/DeleteTreeView.php) | `public function execute(TreeView $tree): void` |
+| [UpdateTreeView.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer/src/Actions/UpdateTreeView.php) | `public function execute(TreeView $tree, array $attributes): TreeView` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [TreeView.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-tree-viewer/src/Models/TreeView.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

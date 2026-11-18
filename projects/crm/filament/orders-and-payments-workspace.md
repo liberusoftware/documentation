@@ -36,10 +36,10 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 - `payment-links`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `deposits`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `order/subscription-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `invoice/payment-status`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `refunds/disputes-visibility`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `billing/ecommerce-handoff`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `order-subscription-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `invoice-payment-status`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `refunds-disputes-visibility`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `billing-ecommerce-handoff`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -52,3 +52,43 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-orders-and-payments-workspace` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-orders-and-payments-workspace-filament`](https://github.com/liberusoftware/module-crm-orders-and-payments-workspace-filament) (`liberusoftware/crm-orders-and-payments-workspace-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/orders-and-payments-workspace.md) · [API plan](../api/orders-and-payments-workspace.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Payment links** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payment links`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deposits** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deposits`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Order/subscription references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `order/subscription references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Invoice/payment status** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `invoice/payment status`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Refunds/disputes visibility** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `refunds/disputes visibility`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Billing/Ecommerce handoff** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `billing/ecommerce handoff`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [OrdersAndPaymentsWorkspaceFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace-filament/src/OrdersAndPaymentsWorkspaceFilamentServiceProvider.php) · [CreatePaymentTransaction.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace-filament/src/Resources/Pages/CreatePaymentTransaction.php) · [EditPaymentTransaction.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace-filament/src/Resources/Pages/EditPaymentTransaction.php) · [ListPaymentTransactions.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace-filament/src/Resources/Pages/ListPaymentTransactions.php) · [PaymentTransactionResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace-filament/src/Resources/PaymentTransactionResource.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [TransactionQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Queries/TransactionQuery.php) | `public function forTeam(int $teamId)` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateTransaction.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Actions/CreateTransaction.php) | `public function __construct(private readonly OrdersPaymentsPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PaymentTransaction` |
+| [RecordPaymentEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Actions/RecordPaymentEvent.php) | `public function __construct(private readonly OrdersPaymentsPolicy $policy)`<br>`public function execute(int $teamId, int $userId, PaymentTransaction $transaction, array $input): PaymentEvent` |
+| [OrdersPaymentsPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Services/OrdersPaymentsPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PaymentEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Models/PaymentEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentTransaction.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-orders-and-payments-workspace/src/Models/PaymentTransaction.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

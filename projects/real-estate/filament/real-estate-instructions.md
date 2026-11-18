@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Real Estate Instructions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Agency agreements:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Ownership checks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Terms:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Disclosures:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Approvals:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Withdrawal:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `real-estate-instructions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `agency-agreements`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `ownership-checks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `terms`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `disclosures`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `approvals`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `withdrawal`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,36 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `real-estate-instructions` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-real-estate-instructions-filament`](https://github.com/liberusoftware/module-real-estate-instructions-filament) (`liberusoftware/real-estate-instructions-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/real-estate-instructions.md) · [API plan](../api/real-estate-instructions.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Agency agreements** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `agency agreements`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Ownership checks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `ownership checks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Terms** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `terms`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Disclosures** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `disclosures`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Approvals** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `approvals`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Withdrawal** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `withdrawal`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [InstructionsFilamentPlugin.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-filament/src/InstructionsFilamentPlugin.php) · [InstructionsFilamentServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-filament/src/InstructionsFilamentServiceProvider.php) · [InstructionResource.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-filament/src/Resources/InstructionResource.php) · [CreateInstruction.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-filament/src/Resources/InstructionResource/Pages/CreateInstruction.php) · [EditInstruction.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-filament/src/Resources/InstructionResource/Pages/EditInstruction.php) · [ListInstructions.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions-filament/src/Resources/InstructionResource/Pages/ListInstructions.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [InstructionPolicy.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions/src/Policies/InstructionPolicy.php) | `public function viewAny(AuthUser $authUser): bool`<br>`public function view(AuthUser $authUser, Instruction $instruction): bool`<br>`public function create(AuthUser $authUser): bool`<br>`public function update(AuthUser $authUser, Instruction $instruction): bool`<br>`public function delete(AuthUser $authUser, Instruction $instruction): bool`<br>`public function deleteAny(AuthUser $authUser): bool`<br>`public function restore(AuthUser $authUser, Instruction $instruction): bool`<br>`public function forceDelete(AuthUser $authUser, Instruction $instruction): bool`<br>`public function forceDeleteAny(AuthUser $authUser): bool`<br>`public function restoreAny(AuthUser $authUser): bool`<br>`public function replicate(AuthUser $authUser, Instruction $instruction): bool`<br>`public function reorder(AuthUser $authUser): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Instruction.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-instructions/src/Models/Instruction.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

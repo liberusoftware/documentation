@@ -18,7 +18,8 @@ The Liberu Revenue And Care Orchestration module owns liberu revenue and care or
 
 ## 2. Full feature scope
 
-- **Liberu Revenue And Care Orchestration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Liberu revenue and care orchestration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Liberu revenue and care orchestration lifecycle:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +79,32 @@ The Liberu Revenue And Care Orchestration module owns liberu revenue and care or
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Liberu revenue and care orchestration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `liberu revenue and care orchestration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Liberu revenue and care orchestration lifecycle** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `liberu revenue and care orchestration lifecycle`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/liberu-revenue-and-care-orchestration.md) | [Source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/liberu-revenue-and-care-orchestration.md) | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/liberu-revenue-and-care-orchestration.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) · [`module-liberu-revenue-and-care-orchestration-68bcf257-filament`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-filament) (`liberusoftware/liberu-revenue-and-care-orchestration-68bcf257-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/liberu-revenue-and-care-orchestration.md) | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/liberu-revenue-and-care-orchestration.md) | [`project-automation-laravel-inertia-react`](https://github.com/liberusoftware/project-automation-laravel-inertia-react) · [`module-liberu-revenue-and-care-orchestration-68bcf257-react-inertia`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-react-inertia) (`@liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/liberu-revenue-and-care-orchestration.md) | [`project-automation-laravel-inertia-vue`](https://github.com/liberusoftware/project-automation-laravel-inertia-vue) · [`module-liberu-revenue-and-care-orchestration-68bcf257-vue-inertia`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-vue-inertia) (`@liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/liberu-revenue-and-care-orchestration.md) | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) · [`module-liberu-revenue-and-care-orchestration-68bcf257-nuxt`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-nuxt) (`@liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-nuxt`) | Standalone Vue SSR client consuming `project-automation-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/liberu-revenue-and-care-orchestration.md) | [`project-automation-next-react`](https://github.com/liberusoftware/project-automation-next-react) · [`module-liberu-revenue-and-care-orchestration-68bcf257-nextjs`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-nextjs) (`@liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-nextjs`) | App Router Server/Client components consuming `project-automation-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/liberu-revenue-and-care-orchestration.md) | [`project-automation-mobile-react`](https://github.com/liberusoftware/project-automation-mobile-react) · [`module-liberu-revenue-and-care-orchestration-68bcf257-react-native`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-react-native) (`@liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/liberu-revenue-and-care-orchestration.md) | [`project-automation-mobile-flutter`](https://github.com/liberusoftware/project-automation-mobile-flutter) · [`module-liberu-revenue-and-care-orchestration-68bcf257-flutter`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-flutter) (`module_liberu_revenue_and_care_orchestration_68bcf257_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/liberu-revenue-and-care-orchestration.md) | [`project-automation-dart-mobile`](https://github.com/liberusoftware/project-automation-dart-mobile) · [`module-liberu-revenue-and-care-orchestration-68bcf257-dart-mobile`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-dart-mobile) (`module_liberu_revenue_and_care_orchestration_68bcf257_dart_mobile`)<br>[`project-automation-dart-desktop`](https://github.com/liberusoftware/project-automation-dart-desktop) · [`module-liberu-revenue-and-care-orchestration-68bcf257-dart-desktop`](https://github.com/liberusoftware/module-liberu-revenue-and-care-orchestration-68bcf257-dart-desktop) (`module_liberu_revenue_and_care_orchestration_68bcf257_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

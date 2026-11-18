@@ -18,7 +18,14 @@ The Crm Mobile Messaging module owns crm mobile messaging domain behavior. It is
 
 ## 2. Full feature scope
 
-- **Crm Mobile Messaging:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Consent-aware SMS/MMS/WhatsApp/push campaigns:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Templates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Short links:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Keywords:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Opt-in/out:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Quiet hours:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Sender governance:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Delivery/reply handling:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,38 @@ The Crm Mobile Messaging module owns crm mobile messaging domain behavior. It is
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Consent-aware SMS/MMS/WhatsApp/push campaigns** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `consent-aware sms/mms/whatsapp/push campaigns`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Templates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `templates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Short links** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `short links`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Keywords** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `keywords`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Opt-in/out** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `opt-in/out`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Quiet hours** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `quiet hours`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sender governance** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sender governance`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Delivery/reply handling** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `delivery/reply handling`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-mobile-messaging.md) | [Source map](../SOURCE-MAPPING.md#crm-mobile-messaging) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-mobile-messaging.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-mobile-messaging.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-mobile-messaging-filament`](https://github.com/liberusoftware/module-crm-mobile-messaging-filament) (`liberusoftware/crm-mobile-messaging-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-mobile-messaging.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-mobile-messaging.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-mobile-messaging-react-inertia`](https://github.com/liberusoftware/module-crm-mobile-messaging-react-inertia) (`@liberusoftware/module-crm-mobile-messaging-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-mobile-messaging.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-mobile-messaging-vue-inertia`](https://github.com/liberusoftware/module-crm-mobile-messaging-vue-inertia) (`@liberusoftware/module-crm-mobile-messaging-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-mobile-messaging.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-mobile-messaging-nuxt`](https://github.com/liberusoftware/module-crm-mobile-messaging-nuxt) (`@liberusoftware/module-crm-mobile-messaging-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-mobile-messaging.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-mobile-messaging-nextjs`](https://github.com/liberusoftware/module-crm-mobile-messaging-nextjs) (`@liberusoftware/module-crm-mobile-messaging-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-mobile-messaging.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-mobile-messaging-react-native`](https://github.com/liberusoftware/module-crm-mobile-messaging-react-native) (`@liberusoftware/module-crm-mobile-messaging-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-mobile-messaging.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-mobile-messaging-flutter`](https://github.com/liberusoftware/module-crm-mobile-messaging-flutter) (`module_crm_mobile_messaging_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-mobile-messaging.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-mobile-messaging-dart-mobile`](https://github.com/liberusoftware/module-crm-mobile-messaging-dart-mobile) (`module_crm_mobile_messaging_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-mobile-messaging-dart-desktop`](https://github.com/liberusoftware/module-crm-mobile-messaging-dart-desktop) (`module_crm_mobile_messaging_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

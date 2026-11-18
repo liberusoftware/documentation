@@ -12,7 +12,7 @@
 
 The intended **Search** workspace covers search domain behavior.
 
-The relevant capability areas are **Search**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Authorized indexing**, **Search contracts**, **Filters**, **Pagination**, **Reindexing**, **Provider adapters**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

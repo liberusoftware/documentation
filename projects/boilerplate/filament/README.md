@@ -1,7 +1,7 @@
 # Boilerplate Filament Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **55 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
@@ -10,6 +10,8 @@ Each file defines the optional Filament 5 presentation package for exactly one m
 | --- | --- | --- |
 | [Activity and Comments Filament presentation packages](activity-and-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-and-comments) | [core](../core/activity-and-comments.md) · [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
 | [Activity Comments Filament](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Affiliate Contracts Filament](affiliate-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#affiliate-contracts) | [core](../core/affiliate-contracts.md) · [api](../api/affiliate-contracts.md) · [nextjs](../nextjs/affiliate-contracts.md) |
+| [Affiliates and Partner Programs Filament](affiliates.md) | [Target/source map](../SOURCE-MAPPING.md#affiliates) | [core](../core/affiliates.md) · [api](../api/affiliates.md) · [nextjs](../nextjs/affiliates.md) |
 | [Analytics Core Filament presentation packages](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google Filament](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta Filament](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
@@ -39,6 +41,16 @@ Each file defines the optional Filament 5 presentation package for exactly one m
 | [Observability Filament presentation packages](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
 | [Organizations and Teams Filament presentation packages](organizations-and-teams.md) | [liberusoftware/organizations-teams-filament](../../../modules/source/liberusoftware--organizations-teams-filament.md) | [core](../core/organizations-and-teams.md) · [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
 | [Organizations Teams Filament](organizations-teams.md) | [liberusoftware/organizations-teams-filament](../../../modules/source/liberusoftware--organizations-teams-filament.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Passkeys and WebAuthn Filament](passkeys.md) | [Target/source map](../SOURCE-MAPPING.md#passkeys) | [core](../core/passkeys.md) · [api](../api/passkeys.md) · [nextjs](../nextjs/passkeys.md) |
+| [Payment Adyen Adapter Filament](payment-adyen.md) | [Target/source map](../SOURCE-MAPPING.md#payment-adyen) | [core](../core/payment-adyen.md) · [api](../api/payment-adyen.md) · [nextjs](../nextjs/payment-adyen.md) |
+| [Payment Contracts Filament](payment-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#payment-contracts) | [core](../core/payment-contracts.md) · [api](../api/payment-contracts.md) · [nextjs](../nextjs/payment-contracts.md) |
+| [Payment Core Filament](payment-core.md) | [Target/source map](../SOURCE-MAPPING.md#payment-core) | [core](../core/payment-core.md) · [api](../api/payment-core.md) · [nextjs](../nextjs/payment-core.md) |
+| [Payment GoCardless Adapter Filament](payment-gocardless.md) | [Target/source map](../SOURCE-MAPPING.md#payment-gocardless) | [core](../core/payment-gocardless.md) · [api](../api/payment-gocardless.md) · [nextjs](../nextjs/payment-gocardless.md) |
+| [Payment Mollie Adapter Filament](payment-mollie.md) | [Target/source map](../SOURCE-MAPPING.md#payment-mollie) | [core](../core/payment-mollie.md) · [api](../api/payment-mollie.md) · [nextjs](../nextjs/payment-mollie.md) |
+| [Payment Paddle Adapter Filament](payment-paddle.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paddle) | [core](../core/payment-paddle.md) · [api](../api/payment-paddle.md) · [nextjs](../nextjs/payment-paddle.md) |
+| [Payment PayPal Adapter Filament](payment-paypal.md) | [Target/source map](../SOURCE-MAPPING.md#payment-paypal) | [core](../core/payment-paypal.md) · [api](../api/payment-paypal.md) · [nextjs](../nextjs/payment-paypal.md) |
+| [Payment Square Adapter Filament](payment-square.md) | [Target/source map](../SOURCE-MAPPING.md#payment-square) | [core](../core/payment-square.md) · [api](../api/payment-square.md) · [nextjs](../nextjs/payment-square.md) |
+| [Payment Stripe Adapter Filament](payment-stripe.md) | [Target/source map](../SOURCE-MAPPING.md#payment-stripe) | [core](../core/payment-stripe.md) · [api](../api/payment-stripe.md) · [nextjs](../nextjs/payment-stripe.md) |
 | [Profiles Filament presentation packages](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
 | [Roles and Permissions Filament presentation packages](roles-and-permissions.md) | [liberusoftware/roles-permissions-filament](../../../modules/source/liberusoftware--roles-permissions-filament.md) | [core](../core/roles-and-permissions.md) · [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
 | [Roles Permissions Filament](roles-permissions.md) | [liberusoftware/roles-permissions-filament](../../../modules/source/liberusoftware--roles-permissions-filament.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |

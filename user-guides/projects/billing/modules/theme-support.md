@@ -12,7 +12,7 @@
 
 The intended **Theme Support** workspace covers theme support domain behavior.
 
-The relevant capability areas are **Theme Support**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Theme discovery**, **View overrides**, **Safe asset directives**, **Preferences**, **Panel palettes**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

@@ -102,3 +102,43 @@ The Telephony module owns Numbers, caller ID, IVR, queues, business hours, skill
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Numbers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `numbers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Caller ID** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `caller id`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **IVR** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `ivr`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Queues** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `queues`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Business hours** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `business hours`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Skills** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `skills`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recording** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recording`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Voicemail** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `voicemail`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Transfers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `transfers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Dispositions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `dispositions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Click-to-call** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `click-to-call`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Call logging** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `call logging`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Provider adapters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider adapters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/telephony.md) | [Source map](../SOURCE-MAPPING.md#telephony) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/telephony.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/telephony.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-telephony-filament`](https://github.com/liberusoftware/module-crm-telephony-filament) (`liberusoftware/crm-telephony-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/telephony.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/telephony.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-telephony-react-inertia`](https://github.com/liberusoftware/module-crm-telephony-react-inertia) (`@liberusoftware/module-crm-telephony-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/telephony.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-telephony-vue-inertia`](https://github.com/liberusoftware/module-crm-telephony-vue-inertia) (`@liberusoftware/module-crm-telephony-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/telephony.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-telephony-nuxt`](https://github.com/liberusoftware/module-crm-telephony-nuxt) (`@liberusoftware/module-crm-telephony-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/telephony.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-telephony-nextjs`](https://github.com/liberusoftware/module-crm-telephony-nextjs) (`@liberusoftware/module-crm-telephony-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/telephony.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-telephony-react-native`](https://github.com/liberusoftware/module-crm-telephony-react-native) (`@liberusoftware/module-crm-telephony-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/telephony.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-telephony-flutter`](https://github.com/liberusoftware/module-crm-telephony-flutter) (`module_crm_telephony_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/telephony.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-telephony-dart-mobile`](https://github.com/liberusoftware/module-crm-telephony-dart-mobile) (`module_crm_telephony_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-telephony-dart-desktop`](https://github.com/liberusoftware/module-crm-telephony-dart-desktop) (`module_crm_telephony_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

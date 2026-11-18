@@ -18,7 +18,10 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Plaid:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Link token integration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Incremental transaction sync:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Institution and balance access:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Webhook-compatible provider client:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +32,10 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-plaid`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `link-token-integration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `incremental-transaction-sync`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `institution-and-balance-access`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `webhook-compatible-provider-client`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +48,26 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-plaid` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-plaid-filament`](https://github.com/liberusoftware/module-accounting-plaid-filament) (`liberusoftware/accounting-plaid-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-plaid.md) · [API plan](../api/accounting-plaid.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Link token integration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `link token integration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Incremental transaction sync** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `incremental transaction sync`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Institution and balance access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `institution and balance access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Webhook-compatible provider client** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `webhook-compatible provider client`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

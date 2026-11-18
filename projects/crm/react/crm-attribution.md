@@ -18,7 +18,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Crm Attribution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **First/last/multi-touch models:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Campaign members:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Source normalization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **UTM/click IDs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Offline conversions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Influence:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cost allocation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Model comparison:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `crm-attribution`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `first-last-multi-touch-models`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `campaign-members`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `source-normalization`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `utm-click-ids`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `offline-conversions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `influence`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `cost-allocation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `model-comparison`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,58 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `crm-attribution` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-crm-attribution-react-inertia`](https://github.com/liberusoftware/module-crm-attribution-react-inertia) (`@liberusoftware/module-crm-attribution-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/crm-attribution.md) · [Core plan](../core/crm-attribution.md) · [API plan](../api/crm-attribution.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **First/last/multi-touch models** | Render `first/last/multi-touch models` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Campaign members** | Render `campaign members` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Source normalization** | Render `source normalization` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **UTM/click IDs** | Render `utm/click ids` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Offline conversions** | Render `offline conversions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Influence** | Render `influence` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Cost allocation** | Render `cost allocation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Model comparison** | Render `model comparison` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AttributionQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Queries/AttributionQuery.php) | `public function touchpoints(int $teamId): Builder`<br>`public function conversions(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordConversion.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Actions/RecordConversion.php) | `public function execute(int $teamId, array $input): Conversion` |
+| [RecordTouchpoint.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Actions/RecordTouchpoint.php) | `public function execute(int $teamId, array $input): Touchpoint` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Conversion.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Models/Conversion.php) | No literal fillable array detected; inspect the model and API schema. |
+| [Touchpoint.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution/src/Models/Touchpoint.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [AttributionController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution-api/src/Http/Controllers/AttributionController.php) | `public function __construct(private readonly AttributionQuery $query)`<br>`public function touchpoints(Request $request): JsonResponse`<br>`public function recordTouchpoint(Request $request, RecordTouchpoint $action): JsonResponse`<br>`public function conversions(Request $request): JsonResponse`<br>`public function recordConversion(Request $request, RecordConversion $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-attribution-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-attribution-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/attribution')->group(function (): void {
+Route::get('touchpoints', [AttributionController::class, 'touchpoints']);
+Route::post('touchpoints', [AttributionController::class, 'recordTouchpoint']);
+Route::get('conversions', [AttributionController::class, 'conversions']);
+Route::post('conversions', [AttributionController::class, 'recordConversion']);
+```
+<!-- layer-implementation-plan:end -->

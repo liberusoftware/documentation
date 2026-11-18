@@ -7,10 +7,11 @@
 ## Canonical independent module specification
 
 **Domain module:** `module-billing-module-billing-stripe`
+**Extends / implements contracts:** `liberusoftware/payment-contracts (PaymentGatewayAdapterContract, PaymentIntentServiceContract, PaymentCaptureAndRefundContract, SavedPaymentMethodVaultContract, MerchantWebhookVerifierContract, DisputeAndChargebackHandlerContract, PayoutAndSettlementReconcilerContract)`
 **Application:** Billing  
 **Capability group:** Module Billing Stripe  
 **Source scope:** [BILLING.md](../BILLING.md)  
-**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [PAYMENTS.md](../../../architecture/PAYMENTS.md)
 
 ## 1. Purpose
 
@@ -18,7 +19,12 @@ The Module Billing Stripe module owns module billing stripe domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Module Billing Stripe:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Consolidate into shared liberusoftware/payment-stripe:** Bridge existing billing-stripe driver registrations into the single shared liberusoftware/payment-stripe adapter using stripe/stripe-php ^20.3+ and pinned StripeClient API version.
+- **PaymentIntent and SetupIntent orchestration:** Implement PaymentIntentServiceContract and SavedPaymentMethodVaultContract for Stripe PaymentIntents, SetupIntents, CustomerSession, 3DS2/SCA client actions, and off-session payment methods.
+- **Payment capture and idempotent refunds:** Implement PaymentCaptureAndRefundContract for full/partial capture, authorization void, and full/partial refunds with deterministic Stripe idempotency_key options.
+- **Stripe-Signature webhook verification and normalization:** Implement MerchantWebhookVerifierContract via \Stripe\Webhook::constructEvent() to verify raw webhook signatures and emit normalized MerchantWebhookEventDto events into payment-core.
+- **Dispute defense and settlement reconciliation:** Implement DisputeAndChargebackHandlerContract and PayoutAndSettlementReconcilerContract for Stripe Radar disputes and BalanceTransaction payout reconciliation.
+- **Provider references and gateway driver bridge:** Maintain backward-compatible GatewayDriver registration with module-billing-payments while conforming to the canonical payment-stripe adapter contract.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,36 @@ The Module Billing Stripe module owns module billing stripe domain behavior. It 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Consolidate into shared liberusoftware/payment-stripe** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `consolidate into shared liberusoftware/payment-stripe`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **PaymentIntent and SetupIntent orchestration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `paymentintent and setupintent orchestration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Payment capture and idempotent refunds** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `payment capture and idempotent refunds`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Stripe-Signature webhook verification and normalization** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `stripe-signature webhook verification and normalization`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Dispute defense and settlement reconciliation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `dispute defense and settlement reconciliation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Provider references and gateway driver bridge** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider references and gateway driver bridge`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-billing-stripe.md) | [Source map](../SOURCE-MAPPING.md#module-billing-stripe) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-billing-stripe.md) | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-billing-stripe.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) · [`module-billing-stripe-filament`](https://github.com/liberusoftware/module-billing-stripe-filament) (`liberusoftware/billing-stripe-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-billing-stripe.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-billing-stripe.md) | [`project-billing-laravel-inertia-react`](https://github.com/liberusoftware/project-billing-laravel-inertia-react) · [`module-billing-stripe-react-inertia`](https://github.com/liberusoftware/module-billing-stripe-react-inertia) (`@liberusoftware/module-billing-stripe-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-billing-stripe.md) | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) · [`module-billing-stripe-vue-inertia`](https://github.com/liberusoftware/module-billing-stripe-vue-inertia) (`@liberusoftware/module-billing-stripe-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-billing-stripe.md) | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) · [`module-billing-stripe-nuxt`](https://github.com/liberusoftware/module-billing-stripe-nuxt) (`@liberusoftware/module-billing-stripe-nuxt`) | Standalone Vue SSR client consuming `project-billing-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-billing-stripe.md) | [`project-billing-next-react`](https://github.com/liberusoftware/project-billing-next-react) · [`module-billing-stripe-nextjs`](https://github.com/liberusoftware/module-billing-stripe-nextjs) (`@liberusoftware/module-billing-stripe-nextjs`) | App Router Server/Client components consuming `project-billing-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-billing-stripe.md) | [`project-billing-mobile-react`](https://github.com/liberusoftware/project-billing-mobile-react) · [`module-billing-stripe-react-native`](https://github.com/liberusoftware/module-billing-stripe-react-native) (`@liberusoftware/module-billing-stripe-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-billing-stripe.md) | [`project-billing-mobile-flutter`](https://github.com/liberusoftware/project-billing-mobile-flutter) · [`module-billing-stripe-flutter`](https://github.com/liberusoftware/module-billing-stripe-flutter) (`module_billing_stripe_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-billing-stripe.md) | [`project-billing-dart-mobile`](https://github.com/liberusoftware/project-billing-dart-mobile) · [`module-billing-stripe-dart-mobile`](https://github.com/liberusoftware/module-billing-stripe-dart-mobile) (`module_billing_stripe_dart_mobile`)<br>[`project-billing-dart-desktop`](https://github.com/liberusoftware/project-billing-dart-desktop) · [`module-billing-stripe-dart-desktop`](https://github.com/liberusoftware/module-billing-stripe-dart-desktop) (`module_billing_stripe_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -37,9 +37,9 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `category/product-placement`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `category-product-placement`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `pins`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `boosts/buries`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `boosts-buries`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `badges`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `campaigns`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
@@ -66,3 +66,31 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-merchandising` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/merchandising.md)) |
+| Capability Nuxt module skeleton | [`module-ecommerce-merchandising-nuxt`](https://github.com/liberusoftware/module-ecommerce-merchandising-nuxt) (`@liberusoftware/module-ecommerce-merchandising-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Category/product placement** | Expose composable and Vue 3 component for `category/product placement` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Pins** | Expose composable and Vue 3 component for `pins` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Boosts/buries** | Expose composable and Vue 3 component for `boosts/buries` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Badges** | Expose composable and Vue 3 component for `badges` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Rules** | Expose composable and Vue 3 component for `rules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Campaigns** | Expose composable and Vue 3 component for `campaigns` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Preview** | Expose composable and Vue 3 component for `preview` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Schedules** | Expose composable and Vue 3 component for `schedules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Performance** | Expose composable and Vue 3 component for `performance` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/merchandising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

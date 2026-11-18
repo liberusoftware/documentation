@@ -12,7 +12,7 @@
 
 The intended **Localization Contracts** workspace covers localization contracts domain behavior.
 
-The relevant capability areas are **Localization Contracts**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Translation provider interface contracts**, **Locale and language-pair value objects**, **Segment translation request and result DTOs**, **Fallback and quota error contracts**, **Catalog synchronization metadata**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 This is a supporting contract/integration capability. A consuming workspace may use it without exposing an independent end-user page; configuration and diagnostics are offered only where the application needs them.
 

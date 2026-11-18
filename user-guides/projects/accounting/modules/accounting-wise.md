@@ -12,7 +12,7 @@
 
 The intended **Accounting Wise** workspace covers accounting wise domain behavior.
 
-The relevant capability areas are **Accounting Wise**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **OAuth authorization**, **Profile and balance access**, **Transfer synchronization**, **Single payments**, **Bounded bulk payments**, **Token refresh**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

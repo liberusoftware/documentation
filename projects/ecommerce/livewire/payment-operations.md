@@ -18,12 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Capture/refund queues:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Disputes/chargebacks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Manual review:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Provider webhooks:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Settlement reconciliation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Exception handling:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Capture/refund queues over payment-contracts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Disputes/chargebacks via DisputeAndChargebackHandlerContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Manual review and fraud-hold release:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Verified provider webhooks via MerchantWebhookVerifierContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Settlement reconciliation via PayoutAndSettlementReconcilerContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Exception handling and operator replay:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -34,12 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `capture/refund-queues`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `disputes/chargebacks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `manual-review`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `provider-webhooks`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `settlement-reconciliation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `exception-handling`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `capture-refund-queues-over-payment-contracts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `disputes-chargebacks-via-disputeandchargebackhandlercontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `manual-review-and-fraud-hold-release`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `verified-provider-webhooks-via-merchantwebhookverifiercontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `settlement-reconciliation-via-payoutandsettlementreconcilercontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `exception-handling-and-operator-replay`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -52,3 +52,28 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `ecommerce-payment-operations` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/payment-operations.md) · [API plan](../api/payment-operations.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Capture/refund queues over payment-contracts** | Expose a focused Livewire 4 component and namespaced Blade default view for `capture/refund queues over payment-contracts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Disputes/chargebacks via DisputeAndChargebackHandlerContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `disputes/chargebacks via disputeandchargebackhandlercontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Manual review and fraud-hold release** | Expose a focused Livewire 4 component and namespaced Blade default view for `manual review and fraud-hold release` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Verified provider webhooks via MerchantWebhookVerifierContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `verified provider webhooks via merchantwebhookverifiercontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Settlement reconciliation via PayoutAndSettlementReconcilerContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `settlement reconciliation via payoutandsettlementreconcilercontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Exception handling and operator replay** | Expose a focused Livewire 4 component and namespaced Blade default view for `exception handling and operator replay` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

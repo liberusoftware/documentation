@@ -88,3 +88,36 @@ The Game Core module owns Worlds/shards, game clock, rulesets, content versions,
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Worlds/shards** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `worlds/shards`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Game clock** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `game clock`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rulesets** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rulesets`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Content versions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `content versions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Feature flags** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `feature flags`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Maintenance state** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `maintenance state`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/game-core.md) | [Source map](../SOURCE-MAPPING.md#game-core) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/game-core.md) | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/game-core.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) · [`module-browser-game-game-core-filament`](https://github.com/liberusoftware/module-browser-game-game-core-filament) (`liberusoftware/browser-game-game-core-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/game-core.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/game-core.md) | [`project-browser-game-laravel-inertia-react`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-react) · [`module-browser-game-game-core-react-inertia`](https://github.com/liberusoftware/module-browser-game-game-core-react-inertia) (`@liberusoftware/module-browser-game-game-core-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/game-core.md) | [`project-browser-game-laravel-inertia-vue`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue) · [`module-browser-game-game-core-vue-inertia`](https://github.com/liberusoftware/module-browser-game-game-core-vue-inertia) (`@liberusoftware/module-browser-game-game-core-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/game-core.md) | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) · [`module-browser-game-game-core-nuxt`](https://github.com/liberusoftware/module-browser-game-game-core-nuxt) (`@liberusoftware/module-browser-game-game-core-nuxt`) | Standalone Vue SSR client consuming `project-browser-game-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/game-core.md) | [`project-browser-game-next-react`](https://github.com/liberusoftware/project-browser-game-next-react) · [`module-browser-game-game-core-nextjs`](https://github.com/liberusoftware/module-browser-game-game-core-nextjs) (`@liberusoftware/module-browser-game-game-core-nextjs`) | App Router Server/Client components consuming `project-browser-game-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/game-core.md) | [`project-browser-game-mobile-react`](https://github.com/liberusoftware/project-browser-game-mobile-react) · [`module-browser-game-game-core-react-native`](https://github.com/liberusoftware/module-browser-game-game-core-react-native) (`@liberusoftware/module-browser-game-game-core-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/game-core.md) | [`project-browser-game-mobile-flutter`](https://github.com/liberusoftware/project-browser-game-mobile-flutter) · [`module-browser-game-game-core-flutter`](https://github.com/liberusoftware/module-browser-game-game-core-flutter) (`module_browser_game_game_core_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/game-core.md) | [`project-browser-game-dart-mobile`](https://github.com/liberusoftware/project-browser-game-dart-mobile) · [`module-browser-game-game-core-dart-mobile`](https://github.com/liberusoftware/module-browser-game-game-core-dart-mobile) (`module_browser_game_game_core_dart_mobile`)<br>[`project-browser-game-dart-desktop`](https://github.com/liberusoftware/project-browser-game-dart-desktop) · [`module-browser-game-game-core-dart-desktop`](https://github.com/liberusoftware/module-browser-game-game-core-dart-desktop) (`module_browser_game_game_core_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

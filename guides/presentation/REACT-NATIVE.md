@@ -1,5 +1,26 @@
 # Implement React Native and Expo mobile presentation
 
+## Liberu boilerplate, skeleton repositories, and API backend
+
+Start from the provisioned React Native + Expo application and capability module skeletons on GitHub:
+
+- **Application template:** [`project-boilerplate-mobile-react`](https://github.com/liberusoftware/project-boilerplate-mobile-react) (product skeletons: `project-{product}-mobile-react` in [REPOSITORIES.md](../../projects/REPOSITORIES.md#mobile-and-desktop-applications)).
+- **Shared product API backend:** `project-{product}-laravel-api` ([Laravel API backends](../LARAVEL-API-BACKENDS.md)), consumed via typed HTTP clients.
+- **Reusable module foundation & catalog:** [`module-boilerplate-react-native`](https://github.com/liberusoftware/module-boilerplate-react-native) and the [631 React Native capability skeleton repositories](../../modules/skeletons/mobile-react.md) (`@liberusoftware/module-{capability}-react-native`, tracked via `module-skeleton.json`).
+- **Wayfinder specification:** [mobile-react.md](../../projects/wayfinders/mobile-react.md).
+
+```bash
+git clone https://github.com/liberusoftware/project-crm-mobile-react.git
+cd project-crm-mobile-react
+npm ci
+npm run lint
+npm run typecheck
+npm run export
+npm start
+```
+
+Configure product-specific bundle/application identifiers, deep-link schemes, and `EXPO_PUBLIC_API_BASE_URL` pointing to `project-{product}-laravel-api`. Follow the module feature matrix in `projects/{product}/react-native/{module}.md` and the repository wayfinder issue when implementing each capability slice.
+
 React Native is a native iOS/Android API client, not a React DOM/Inertia app. Expo is a React Native framework and delivery workflow. Follow [the foundation/API selection](README.md), [mobile architecture](../../architecture/MOBILE.md) and [mobile standards](../../standards/MOBILE.md). Reuse DTOs, intent/outcome types and design tokens with web when compatible; use native controls, navigation and device services rather than copying desktop pages.
 
 ## 1. Select the device baseline and create the skeleton

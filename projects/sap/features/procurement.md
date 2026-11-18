@@ -96,3 +96,39 @@ The Procurement module owns Requisitions, sourcing, suppliers, approvals, purcha
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Requisitions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `requisitions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sourcing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sourcing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Suppliers** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `suppliers`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Approvals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approvals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Purchase orders** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `purchase orders`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Receipts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `receipts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Invoices** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `invoices`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Spend analysis** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `spend analysis`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/procurement.md) | [Source map](../SOURCE-MAPPING.md#procurement) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/procurement.md) | [`project-enterprise-sap-laravel-api`](https://github.com/liberusoftware/project-enterprise-sap-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/procurement.md) | [`project-enterprise-sap-laravel-filament`](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament) · [`module-sap-procurement-filament`](https://github.com/liberusoftware/module-sap-procurement-filament) (`liberusoftware/sap-procurement-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/procurement.md) | [`project-enterprise-sap-laravel-filament`](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/procurement.md) | [`project-enterprise-sap-laravel-inertia-react`](https://github.com/liberusoftware/project-enterprise-sap-laravel-inertia-react) · [`module-sap-procurement-react-inertia`](https://github.com/liberusoftware/module-sap-procurement-react-inertia) (`@liberusoftware/module-sap-procurement-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/procurement.md) | [`project-enterprise-sap-laravel-inertia-vue`](https://github.com/liberusoftware/project-enterprise-sap-laravel-inertia-vue) · [`module-sap-procurement-vue-inertia`](https://github.com/liberusoftware/module-sap-procurement-vue-inertia) (`@liberusoftware/module-sap-procurement-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/procurement.md) | [`project-enterprise-sap-nuxt-vue`](https://github.com/liberusoftware/project-enterprise-sap-nuxt-vue) · [`module-sap-procurement-nuxt`](https://github.com/liberusoftware/module-sap-procurement-nuxt) (`@liberusoftware/module-sap-procurement-nuxt`) | Standalone Vue SSR client consuming `project-enterprise-sap-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/procurement.md) | [`project-enterprise-sap-next-react`](https://github.com/liberusoftware/project-enterprise-sap-next-react) · [`module-sap-procurement-nextjs`](https://github.com/liberusoftware/module-sap-procurement-nextjs) (`@liberusoftware/module-sap-procurement-nextjs`) | App Router Server/Client components consuming `project-enterprise-sap-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/procurement.md) | [`project-enterprise-sap-mobile-react`](https://github.com/liberusoftware/project-enterprise-sap-mobile-react) · [`module-sap-procurement-react-native`](https://github.com/liberusoftware/module-sap-procurement-react-native) (`@liberusoftware/module-sap-procurement-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/procurement.md) | [`project-enterprise-sap-mobile-flutter`](https://github.com/liberusoftware/project-enterprise-sap-mobile-flutter) · [`module-sap-procurement-flutter`](https://github.com/liberusoftware/module-sap-procurement-flutter) (`module_sap_procurement_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/procurement.md) | [`project-enterprise-sap-dart-mobile`](https://github.com/liberusoftware/project-enterprise-sap-dart-mobile) · [`module-sap-procurement-dart-mobile`](https://github.com/liberusoftware/module-sap-procurement-dart-mobile) (`module_sap_procurement_dart_mobile`)<br>[`project-enterprise-sap-dart-desktop`](https://github.com/liberusoftware/project-enterprise-sap-dart-desktop) · [`module-sap-procurement-dart-desktop`](https://github.com/liberusoftware/module-sap-procurement-dart-desktop) (`module_sap_procurement_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

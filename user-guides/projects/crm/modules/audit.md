@@ -12,7 +12,7 @@
 
 The intended **Audit** workspace covers audit domain behavior.
 
-The relevant capability areas are **Audit**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Actor**, **Tenant**, **Request context**, **Material changes**, **Privileged actions**, **Retention**, **Tamper evidence**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

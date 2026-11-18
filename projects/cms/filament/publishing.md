@@ -35,13 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `immediate/scheduled-publishing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `immediate-scheduled-publishing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `embargo`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `expiry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `unpublish/archive`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `unpublish-archive`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `recurring-review`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `atomic-release`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `cache/index-events`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cache-index-events`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -54,3 +54,38 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-publishing` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-publishing-filament`](https://github.com/liberusoftware/module-cms-publishing-filament) (`liberusoftware/cms-publishing-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/publishing.md) · [API plan](../api/publishing.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Immediate/scheduled publishing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `immediate/scheduled publishing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Embargo** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `embargo`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Expiry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `expiry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Unpublish/archive** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `unpublish/archive`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Recurring review** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `recurring review`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Atomic release** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `atomic release`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cache/index events** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cache/index events`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [PublishingFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-publishing-filament/src/PublishingFilamentServiceProvider.php) · [ListPublicationReleases.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-publishing-filament/src/Resources/Pages/ListPublicationReleases.php) · [PublicationReleaseResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-publishing-filament/src/Resources/PublicationReleaseResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PublishingService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Services/PublishingService.php) | `public function create(array $attributes): PublicationRelease`<br>`public function schedule(PublicationRelease $release): PublicationRelease`<br>`public function publish(PublicationRelease $release): PublicationRelease`<br>`public function unpublish(PublicationRelease $release): PublicationRelease`<br>`public function archive(PublicationRelease $release): PublicationRelease`<br>`public function processDue(): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PublicationRelease.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Models/PublicationRelease.php) | `key`, `state`, `publish_at`, `embargo_until`, `expires_at`, `review_at`, `recurrence`, `targets`, `cache_tags`, `team_id` |
+| [PublicationReleaseEvent.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-publishing/src/Models/PublicationReleaseEvent.php) | `release_id`, `event`, `payload`, `occurred_at` |
+<!-- layer-implementation-plan:end -->

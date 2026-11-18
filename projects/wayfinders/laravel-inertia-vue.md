@@ -3,6 +3,8 @@
 This is the technology-specific implementation specification for `laravel-inertia-vue` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-vue-inertia
+- Capability skeleton catalog: [`modules/skeletons/laravel-inertia-vue.md`](../../modules/skeletons/laravel-inertia-vue.md)
 - Presentation layer directory in product docs: `vue/`
 - Adapter identity pattern: `module-{capability}-vue-inertia`
 - Consumes product `-laravel-api`: no (Laravel/Inertia host; HTTP API optional)

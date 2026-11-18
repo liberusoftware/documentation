@@ -18,7 +18,13 @@ The Browser Game Accounts module owns browser game accounts domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Browser Game Accounts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Player identity:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Sessions:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Age/region policy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Bans:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recovery:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Privacy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Account lifecycle:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +84,37 @@ The Browser Game Accounts module owns browser game accounts domain behavior. It 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Player identity** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `player identity`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sessions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sessions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Age/region policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `age/region policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Bans** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `bans`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recovery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recovery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Privacy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `privacy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Account lifecycle** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `account lifecycle`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/browser-game-accounts.md) | [Source map](../SOURCE-MAPPING.md#browser-game-accounts) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/browser-game-accounts.md) | [`project-browser-game-laravel-api`](https://github.com/liberusoftware/project-browser-game-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/browser-game-accounts.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) · [`module-browser-game-accounts-filament`](https://github.com/liberusoftware/module-browser-game-accounts-filament) (`liberusoftware/browser-game-accounts-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/browser-game-accounts.md) | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/browser-game-accounts.md) | [`project-browser-game-laravel-inertia-react`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-react) · [`module-browser-game-accounts-react-inertia`](https://github.com/liberusoftware/module-browser-game-accounts-react-inertia) (`@liberusoftware/module-browser-game-accounts-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/browser-game-accounts.md) | [`project-browser-game-laravel-inertia-vue`](https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue) · [`module-browser-game-accounts-vue-inertia`](https://github.com/liberusoftware/module-browser-game-accounts-vue-inertia) (`@liberusoftware/module-browser-game-accounts-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/browser-game-accounts.md) | [`project-browser-game-nuxt-vue`](https://github.com/liberusoftware/project-browser-game-nuxt-vue) · [`module-browser-game-accounts-nuxt`](https://github.com/liberusoftware/module-browser-game-accounts-nuxt) (`@liberusoftware/module-browser-game-accounts-nuxt`) | Standalone Vue SSR client consuming `project-browser-game-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/browser-game-accounts.md) | [`project-browser-game-next-react`](https://github.com/liberusoftware/project-browser-game-next-react) · [`module-browser-game-accounts-nextjs`](https://github.com/liberusoftware/module-browser-game-accounts-nextjs) (`@liberusoftware/module-browser-game-accounts-nextjs`) | App Router Server/Client components consuming `project-browser-game-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/browser-game-accounts.md) | [`project-browser-game-mobile-react`](https://github.com/liberusoftware/project-browser-game-mobile-react) · [`module-browser-game-accounts-react-native`](https://github.com/liberusoftware/module-browser-game-accounts-react-native) (`@liberusoftware/module-browser-game-accounts-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/browser-game-accounts.md) | [`project-browser-game-mobile-flutter`](https://github.com/liberusoftware/project-browser-game-mobile-flutter) · [`module-browser-game-accounts-flutter`](https://github.com/liberusoftware/module-browser-game-accounts-flutter) (`module_browser_game_accounts_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/browser-game-accounts.md) | [`project-browser-game-dart-mobile`](https://github.com/liberusoftware/project-browser-game-dart-mobile) · [`module-browser-game-accounts-dart-mobile`](https://github.com/liberusoftware/module-browser-game-accounts-dart-mobile) (`module_browser_game_accounts_dart_mobile`)<br>[`project-browser-game-dart-desktop`](https://github.com/liberusoftware/project-browser-game-dart-desktop) · [`module-browser-game-accounts-dart-desktop`](https://github.com/liberusoftware/module-browser-game-accounts-dart-desktop) (`module_browser_game_accounts_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

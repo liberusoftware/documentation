@@ -12,7 +12,7 @@
 
 The intended **Cms Users** workspace covers cms users domain behavior.
 
-The relevant capability areas are **Cms Users**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Editorial roles and permissions**, **Section and site-scoped access**, **Author profiles**, **Approval authority**, **Audit of permission changes**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

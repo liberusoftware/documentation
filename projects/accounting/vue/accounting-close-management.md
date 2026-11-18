@@ -18,7 +18,17 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Accounting Close Management:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Checklist:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Owners:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Dependencies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Due dates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Evidence:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reconciliations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Adjustments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Review:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Certification:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Lock:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Reopen:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +39,17 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `accounting-close-management`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `checklist`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `owners`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `dependencies`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `due-dates`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `evidence`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `reconciliations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `adjustments`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `review`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `certification`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `lock`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `reopen`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +80,68 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-close-management` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-accounting-erp-laravel-inertia-vue`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-accounting-close-management-vue-inertia`](https://github.com/liberusoftware/module-accounting-close-management-vue-inertia) (`@liberusoftware/module-accounting-close-management-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/accounting-close-management.md) · [Core plan](../core/accounting-close-management.md) · [API plan](../api/accounting-close-management.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Checklist** | Render `checklist` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Owners** | Render `owners` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Dependencies** | Render `dependencies` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Due dates** | Render `due dates` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Evidence** | Render `evidence` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Reconciliations** | Render `reconciliations` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Adjustments** | Render `adjustments` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Review** | Render `review` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Certification** | Render `certification` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Lock** | Render `lock` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Reopen** | Render `reopen` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CloseCycleQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Queries/CloseCycleQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CertifyCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/CertifyCloseCycle.php) | `public function handle(CloseCycle $cycle, array $certification): CloseCycle` |
+| [CreateCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/CreateCloseCycle.php) | `public function handle(array $attributes): CloseCycle` |
+| [LockCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/LockCloseCycle.php) | `public function handle(CloseCycle $cycle): CloseCycle` |
+| [RecordCloseEvidence.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/RecordCloseEvidence.php) | `public function handle(CloseCycle $cycle, array $evidence): CloseCycle` |
+| [ReopenCloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/ReopenCloseCycle.php) | `public function handle(CloseCycle $cycle, string $reason): CloseCycle` |
+| [UpdateCloseChecklist.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Actions/UpdateCloseChecklist.php) | `public function handle(CloseCycle $cycle, array $checklist): CloseCycle` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CloseCycle.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management/src/Models/CloseCycle.php) | `team_id`, `cycle_ref`, `period`, `due_date`, `status`, `checklist`, `owners`, `dependencies`, `evidence`, `reconciliations`, `adjustments`, `review`, `certification` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CloseCyclesController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management-api/src/Http/Controllers/CloseCyclesController.php) | `public function index(CloseCycleQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCloseCycle $action): JsonResponse`<br>`public function checklist(Request $request, string $cycle, UpdateCloseChecklist $action): JsonResponse`<br>`public function evidence(Request $request, string $cycle, RecordCloseEvidence $action): JsonResponse`<br>`public function certify(Request $request, string $cycle, CertifyCloseCycle $action): JsonResponse`<br>`public function lock(string $cycle, LockCloseCycle $action): JsonResponse`<br>`public function reopen(Request $request, string $cycle, ReopenCloseCycle $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-close-management-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-close-management-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/close-management')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.close-management.read')->get('/', [CloseCyclesController::class, 'index']);
+Route::middleware('ability:accounting.close-management.write')->group(function (): void {
+Route::post('/', [CloseCyclesController::class, 'store']);
+Route::post('/{cycle}/checklist', [CloseCyclesController::class, 'checklist']);
+Route::post('/{cycle}/evidence', [CloseCyclesController::class, 'evidence']);
+Route::post('/{cycle}/certify', [CloseCyclesController::class, 'certify']);
+Route::post('/{cycle}/lock', [CloseCyclesController::class, 'lock']);
+Route::post('/{cycle}/reopen', [CloseCyclesController::class, 'reopen']);
+```
+<!-- layer-implementation-plan:end -->

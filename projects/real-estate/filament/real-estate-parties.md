@@ -18,7 +18,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Real Estate Parties:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Applicants:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Vendors:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Landlords:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tenants:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Buyers:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Solicitors:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Contractors:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Relationships:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Consent:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +37,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `real-estate-parties`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `applicants`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `vendors`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `landlords`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tenants`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `buyers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `solicitors`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `contractors`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `relationships`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `consent`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,43 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `real-estate-parties` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-real-estate-parties-filament`](https://github.com/liberusoftware/module-real-estate-parties-filament) (`liberusoftware/real-estate-parties-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/real-estate-parties.md) · [API plan](../api/real-estate-parties.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Applicants** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `applicants`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Vendors** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `vendors`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Landlords** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `landlords`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tenants** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tenants`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Buyers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `buyers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Solicitors** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `solicitors`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Contractors** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `contractors`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Relationships** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `relationships`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Consent** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `consent`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [PartiesFilamentPlugin.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-filament/src/PartiesFilamentPlugin.php) · [PartiesFilamentServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-filament/src/PartiesFilamentServiceProvider.php) · [PartyResource.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-filament/src/Resources/PartyResource.php) · [CreateParty.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-filament/src/Resources/PartyResource/Pages/CreateParty.php) · [EditParty.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-filament/src/Resources/PartyResource/Pages/EditParty.php) · [ListParties.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-filament/src/Resources/PartyResource/Pages/ListParties.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PartyPolicy.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties/src/Policies/PartyPolicy.php) | `public function viewAny(AuthUser $authUser): bool`<br>`public function view(AuthUser $authUser, Party $party): bool`<br>`public function create(AuthUser $authUser): bool`<br>`public function update(AuthUser $authUser, Party $party): bool`<br>`public function delete(AuthUser $authUser, Party $party): bool`<br>`public function deleteAny(AuthUser $authUser): bool`<br>`public function restore(AuthUser $authUser, Party $party): bool`<br>`public function forceDelete(AuthUser $authUser, Party $party): bool`<br>`public function forceDeleteAny(AuthUser $authUser): bool`<br>`public function restoreAny(AuthUser $authUser): bool`<br>`public function replicate(AuthUser $authUser, Party $party): bool`<br>`public function reorder(AuthUser $authUser): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Contact.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties/src/Models/Contact.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ContactMessage.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties/src/Models/ContactMessage.php) | No literal fillable array detected; inspect the model and API schema. |
+| [Party.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties/src/Models/Party.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PartyRelationship.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties/src/Models/PartyRelationship.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PartyReview.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties/src/Models/PartyReview.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

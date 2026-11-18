@@ -92,3 +92,38 @@ The Cross-Border module owns Duties/import taxes, landed cost estimates, restric
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Duties/import taxes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `duties/import taxes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Landed cost estimates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `landed cost estimates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Restrictions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `restrictions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Harmonized codes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `harmonized codes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Origin** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `origin`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Importer policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `importer policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Customs documents** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `customs documents`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Adapters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `adapters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cross-border.md) | [Source map](../SOURCE-MAPPING.md#cross-border) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cross-border.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cross-border.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-cross-border-filament`](https://github.com/liberusoftware/module-ecommerce-cross-border-filament) (`liberusoftware/ecommerce-cross-border-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cross-border.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cross-border.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-cross-border-react-inertia`](https://github.com/liberusoftware/module-ecommerce-cross-border-react-inertia) (`@liberusoftware/module-ecommerce-cross-border-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cross-border.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-cross-border-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-cross-border-vue-inertia) (`@liberusoftware/module-ecommerce-cross-border-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cross-border.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-cross-border-nuxt`](https://github.com/liberusoftware/module-ecommerce-cross-border-nuxt) (`@liberusoftware/module-ecommerce-cross-border-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cross-border.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-cross-border-nextjs`](https://github.com/liberusoftware/module-ecommerce-cross-border-nextjs) (`@liberusoftware/module-ecommerce-cross-border-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cross-border.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-cross-border-react-native`](https://github.com/liberusoftware/module-ecommerce-cross-border-react-native) (`@liberusoftware/module-ecommerce-cross-border-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cross-border.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-cross-border-flutter`](https://github.com/liberusoftware/module-ecommerce-cross-border-flutter) (`module_ecommerce_cross_border_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cross-border.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-cross-border-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-cross-border-dart-mobile) (`module_ecommerce_cross_border_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-cross-border-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-cross-border-dart-desktop) (`module_ecommerce_cross_border_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

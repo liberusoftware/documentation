@@ -33,10 +33,10 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `available/ledger-balances`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `outstanding-receipts/payments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `available-ledger-balances`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `outstanding-receipts-payments`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `committed-cash`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `entity/currency-views`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `entity-currency-views`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `freshness`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
@@ -58,3 +58,54 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-cash-position` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/cash-position.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-cash-position-nuxt`](https://github.com/liberusoftware/module-accounting-cash-position-nuxt) (`@liberusoftware/module-accounting-cash-position-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Available/ledger balances** | Expose composable and Vue 3 component for `available/ledger balances` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-position.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Outstanding receipts/payments** | Expose composable and Vue 3 component for `outstanding receipts/payments` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-position.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Committed cash** | Expose composable and Vue 3 component for `committed cash` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-position.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Entity/currency views** | Expose composable and Vue 3 component for `entity/currency views` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-position.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Freshness** | Expose composable and Vue 3 component for `freshness` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/cash-position.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CashPositionQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-position/src/Queries/CashPositionQuery.php) | `public function forTeam(int $teamId): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateCashPosition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-position/src/Actions/CreateCashPosition.php) | `public function handle(array $attributes): CashPosition` |
+| [RefreshCashPosition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-position/src/Actions/RefreshCashPosition.php) | `public function handle(CashPosition $position, array $balances): CashPosition` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CashPosition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-position/src/Models/CashPosition.php) | `team_id`, `view_ref`, `entity_ref`, `currency`, `ledger_balance`, `available_balance`, `outstanding_receipts`, `outstanding_payments`, `committed_cash`, `refreshed_at` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [CashPositionsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-position-api/src/Http/Controllers/CashPositionsController.php) | `public function index(CashPositionQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCashPosition $action): JsonResponse`<br>`public function refresh(Request $request, string $position, RefreshCashPosition $action): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/accounting-cash-position-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-position-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/cash-position')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::middleware('ability:accounting.cash-position.read')->get('/', [CashPositionsController::class, 'index']);
+Route::middleware('ability:accounting.cash-position.write')->group(function (): void {
+Route::post('/', [CashPositionsController::class, 'store']);
+Route::post('/{position}/refresh', [CashPositionsController::class, 'refresh']);
+```
+<!-- layer-implementation-plan:end -->

@@ -18,13 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Advocate links/codes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Referred customers:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Qualification:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Rewards:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Duplicate/fraud rules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Attribution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Status:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Advocate links/codes via ReferralAttributionContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Referred customers and checkout attribution:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Order qualification via ConversionRecorderContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Two-sided rewards via RewardFulfillmentContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Duplicate/fraud rules via FraudAndSelfReferralPolicyContract:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Attribution and status tracking:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -35,13 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `advocate-links/codes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `referred-customers`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `qualification`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `rewards`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `duplicate/fraud-rules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `status`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `advocate-links-codes-via-referralattributioncontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `referred-customers-and-checkout-attribution`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `order-qualification-via-conversionrecordercontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `two-sided-rewards-via-rewardfulfillmentcontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `duplicate-fraud-rules-via-fraudandselfreferralpolicycontract`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `attribution-and-status-tracking`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -54,3 +52,28 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `ecommerce-referrals` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/referrals.md) · [API plan](../api/referrals.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Advocate links/codes via ReferralAttributionContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `advocate links/codes via referralattributioncontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Referred customers and checkout attribution** | Expose a focused Livewire 4 component and namespaced Blade default view for `referred customers and checkout attribution` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Order qualification via ConversionRecorderContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `order qualification via conversionrecordercontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Two-sided rewards via RewardFulfillmentContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `two-sided rewards via rewardfulfillmentcontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Duplicate/fraud rules via FraudAndSelfReferralPolicyContract** | Expose a focused Livewire 4 component and namespaced Blade default view for `duplicate/fraud rules via fraudandselfreferralpolicycontract` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Attribution and status tracking** | Expose a focused Livewire 4 component and namespaced Blade default view for `attribution and status tracking` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

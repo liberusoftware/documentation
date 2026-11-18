@@ -12,7 +12,7 @@
 
 The intended **Localization Core** workspace covers localization core domain behavior.
 
-The relevant capability areas are **Localization Core**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Locale negotiation**, **Translations**, **Pluralization**, **RTL direction**, **Timezone**, **Localized formatting**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

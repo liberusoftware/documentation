@@ -18,13 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Advocate links/codes:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Referred customers:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Qualification:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Rewards:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Duplicate/fraud rules:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Attribution:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Status:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Advocate links/codes via ReferralAttributionContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Referred customers and checkout attribution:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Order qualification via ConversionRecorderContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Two-sided rewards via RewardFulfillmentContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Duplicate/fraud rules via FraudAndSelfReferralPolicyContract:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Attribution and status tracking:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -35,13 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `advocate-links/codes`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `referred-customers`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `qualification`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `rewards`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `duplicate/fraud-rules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `attribution`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `status`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `advocate-links-codes-via-referralattributioncontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `referred-customers-and-checkout-attribution`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `order-qualification-via-conversionrecordercontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `two-sided-rewards-via-rewardfulfillmentcontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `duplicate-fraud-rules-via-fraudandselfreferralpolicycontract`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `attribution-and-status-tracking`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -62,3 +60,28 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-referrals` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/referrals.md)) |
+| Capability Nuxt module skeleton | [`module-ecommerce-referrals-nuxt`](https://github.com/liberusoftware/module-ecommerce-referrals-nuxt) (`@liberusoftware/module-ecommerce-referrals-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Advocate links/codes via ReferralAttributionContract** | Expose composable and Vue 3 component for `advocate links/codes via referralattributioncontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/referrals.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Referred customers and checkout attribution** | Expose composable and Vue 3 component for `referred customers and checkout attribution` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/referrals.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Order qualification via ConversionRecorderContract** | Expose composable and Vue 3 component for `order qualification via conversionrecordercontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/referrals.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Two-sided rewards via RewardFulfillmentContract** | Expose composable and Vue 3 component for `two-sided rewards via rewardfulfillmentcontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/referrals.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Duplicate/fraud rules via FraudAndSelfReferralPolicyContract** | Expose composable and Vue 3 component for `duplicate/fraud rules via fraudandselfreferralpolicycontract` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/referrals.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+| **Attribution and status tracking** | Expose composable and Vue 3 component for `attribution and status tracking` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/referrals.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-ecommerce-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

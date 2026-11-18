@@ -1,8 +1,24 @@
 # Ecommerce: Catering — Dart mobile
 
+**Matching domain module:** `ecommerce-catering`<br>
+**Host skeleton:** [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) ([wayfinder](../../wayfinders/dart-mobile.md) · [runbook](../../../guides/presentation/DART.md))<br>
+**Shared API backend:** [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md))
+
 ## Delivery boundary
 
 Maintain a distinct host for the Dart mobile repository using Flutter widgets and typed API contracts. Support safe areas, touch, platform back navigation, deep-link validation and secure token storage. Do not assume the separate Flutter mobile host is the same release artifact.
+
+## Feature and mobile surface matrix
+
+| Feature / aspect | Dart mobile (`iOS` / `Android`) implementation contract |
+| --- | --- |
+| **Meals and ingredient composition** | Staff-only mobile maintenance cards with unit/yield validation; customer views show only approved meal descriptions and dietary disclosures. |
+| **Recipes and preparation yields** | Restricted to authorized staff sessions; never cached or serialized in customer DTOs, local storage, or crash/error logs. |
+| **Staff-managed catering packages** | Browseable package selection cards and configurable guest/quantity sheets with explicit revision tracking. |
+| **Event requirements and venue context** | Native mobile date/time/IANA timezone pickers, venue details, guest counts, and dietary/service requirement inputs. |
+| **Immutable menu revisions** | Display active revision badge; any quantity or meal change creates/requests a new revision rather than mutating an accepted snapshot. |
+| **Reproducible quotation context** | Show currency, itemized quote snapshot, expiry timestamp, and atomic acceptance confirmation; prompt re-quote when expired or stale. |
+| **Availability confirmation and order conversion** | Render availability, quote acceptance, order creation, deposit, and payment as distinct statuses; use a durable `Idempotency-Key` and online reconciliation for conversion. |
 
 ## Shared workflow and security
 

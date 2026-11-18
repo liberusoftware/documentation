@@ -18,7 +18,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Localization Core:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Locale negotiation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Translations:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Pluralization:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **RTL direction:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Timezone:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Localized formatting:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +34,12 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `localization-core`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `locale-negotiation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `translations`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `pluralization`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `rtl-direction`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `timezone`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `localized-formatting`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,28 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `localization-core` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/localization-core.md) · [API plan](../api/localization-core.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Locale negotiation** | Expose a focused Livewire 4 component and namespaced Blade default view for `locale negotiation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Translations** | Expose a focused Livewire 4 component and namespaced Blade default view for `translations` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Pluralization** | Expose a focused Livewire 4 component and namespaced Blade default view for `pluralization` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **RTL direction** | Expose a focused Livewire 4 component and namespaced Blade default view for `rtl direction` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Timezone** | Expose a focused Livewire 4 component and namespaced Blade default view for `timezone` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Localized formatting** | Expose a focused Livewire 4 component and namespaced Blade default view for `localized formatting` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [LanguageSwitcher.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/localization-core-livewire/src/Livewire/LanguageSwitcher.php) · [LocalizationLivewireServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/localization-core-livewire/src/LocalizationLivewireServiceProvider.php).
+<!-- layer-implementation-plan:end -->

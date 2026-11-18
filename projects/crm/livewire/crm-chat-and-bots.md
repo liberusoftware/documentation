@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Crm Chat And Bots:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Web chat:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Bot/playbook builder:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Qualification:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Knowledge answers:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Meeting booking:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Live-agent handoff:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Office hours:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Transcripts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Channel identity:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `crm-chat-and-bots`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `web-chat`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `bot-playbook-builder`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `qualification`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `knowledge-answers`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `meeting-booking`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `live-agent-handoff`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `office-hours`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `transcripts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `channel-identity`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,46 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-chat-and-bots` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/crm-chat-and-bots.md) · [API plan](../api/crm-chat-and-bots.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Web chat** | Expose a focused Livewire 4 component and namespaced Blade default view for `web chat` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Bot/playbook builder** | Expose a focused Livewire 4 component and namespaced Blade default view for `bot/playbook builder` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Qualification** | Expose a focused Livewire 4 component and namespaced Blade default view for `qualification` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Knowledge answers** | Expose a focused Livewire 4 component and namespaced Blade default view for `knowledge answers` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Meeting booking** | Expose a focused Livewire 4 component and namespaced Blade default view for `meeting booking` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Live-agent handoff** | Expose a focused Livewire 4 component and namespaced Blade default view for `live-agent handoff` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Office hours** | Expose a focused Livewire 4 component and namespaced Blade default view for `office hours` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Transcripts** | Expose a focused Livewire 4 component and namespaced Blade default view for `transcripts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Channel identity** | Expose a focused Livewire 4 component and namespaced Blade default view for `channel identity` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [ChatAndBotsLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-livewire/src/ChatAndBotsLivewireServiceProvider.php) · [BotBrowser.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-livewire/src/Components/BotBrowser.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ChatBotQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Queries/ChatBotQuery.php) | `public function bots(int $teamId): Builder`<br>`public function sessions(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateChatBot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/CreateChatBot.php) | `public function execute(int $teamId, int $ownerId, string $name, array $playbook, array $channels = []): ChatBot` |
+| [HandoffChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/HandoffChatSession.php) | `public function execute(int $teamId, ChatSession $session, string $assignee): ChatSession` |
+| [StartChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/StartChatSession.php) | `public function execute(int $teamId, ChatBot $bot, string $visitorKey, string $channel = 'web'): ChatSession` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ChatBot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Models/ChatBot.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Models/ChatSession.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

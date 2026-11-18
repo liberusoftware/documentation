@@ -39,8 +39,8 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - `campaign-visibility`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `lead-ad-ingestion`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `crm-audiences`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `offline/server-conversions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `spend/performance-sync`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `offline-server-conversions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `spend-performance-sync`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 - `attribution`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
@@ -62,3 +62,58 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-advertising` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/advertising.md)) |
+| Capability Nuxt module skeleton | [`module-crm-advertising-nuxt`](https://github.com/liberusoftware/module-crm-advertising-nuxt) (`@liberusoftware/module-crm-advertising-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Ad-account connections** | Expose composable and Vue 3 component for `ad-account connections` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/advertising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Campaign visibility** | Expose composable and Vue 3 component for `campaign visibility` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/advertising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Lead-ad ingestion** | Expose composable and Vue 3 component for `lead-ad ingestion` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/advertising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **CRM audiences** | Expose composable and Vue 3 component for `crm audiences` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/advertising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Offline/server conversions** | Expose composable and Vue 3 component for `offline/server conversions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/advertising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Spend/performance sync** | Expose composable and Vue 3 component for `spend/performance sync` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/advertising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Attribution** | Expose composable and Vue 3 component for `attribution` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/advertising.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AdvertisingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Queries/AdvertisingQuery.php) | `public function records(int $teamId, ?string $kind = null): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TransitionRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Actions/TransitionRecord.php) | `public function execute(int $teamId, int $id, string $status): AdvertisingRecord` |
+| [UpsertRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Actions/UpsertRecord.php) | `public function execute(int $teamId, array $attributes, ?int $id = null): AdvertisingRecord` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [AdvertisingRecord.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising/src/Models/AdvertisingRecord.php) | `team_id`, `kind`, `name`, `status`, `external_id`, `platform`, `payload`, `starts_at`, `ends_at`, `completed_at` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [AdvertisingController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-api/src/Http/Controllers/AdvertisingController.php) | `public function __construct(private readonly AdvertisingQuery $query)`<br>`public function index(Request $request): JsonResponse`<br>`public function store(Request $request, UpsertRecord $upsert): JsonResponse`<br>`public function show(int $record): AdvertisingResource`<br>`public function update(Request $request, int $record, UpsertRecord $upsert): JsonResponse`<br>`public function transition(Request $request, int $record, TransitionRecord $transition): JsonResponse`<br>`public function destroy(int $record, TransitionRecord $transition): JsonResponse` |
+
+**Observed route declarations:**
+
+[modules/crm-advertising-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-advertising-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/advertising')->group(function (): void {
+Route::get('records', [AdvertisingController::class, 'index']);
+Route::post('records', [AdvertisingController::class, 'store']);
+Route::get('records/{record}', [AdvertisingController::class, 'show']);
+Route::patch('records/{record}', [AdvertisingController::class, 'update']);
+Route::post('records/{record}/transition', [AdvertisingController::class, 'transition']);
+Route::delete('records/{record}', [AdvertisingController::class, 'destroy']);
+```
+<!-- layer-implementation-plan:end -->

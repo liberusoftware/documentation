@@ -18,7 +18,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Liberu Executive Insights:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Metric registry:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cross-product projections:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Evidence drill-through:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Decision snapshots:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Data-quality operations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `liberu-executive-insights`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `metric-registry`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `cross-product-projections`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `evidence-drill-through`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `decision-snapshots`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `data-quality-operations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,34 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `liberu-executive-insights` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-automation-laravel-inertia-vue`](https://github.com/liberusoftware/project-automation-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-liberu-executive-insights-b7a299fc-vue-inertia`](https://github.com/liberusoftware/module-liberu-executive-insights-b7a299fc-vue-inertia) (`@liberusoftware/module-liberu-executive-insights-b7a299fc-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/liberu-executive-insights.md) · [Core plan](../core/liberu-executive-insights.md) · [API plan](../api/liberu-executive-insights.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Metric registry** | Render `metric registry` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Cross-product projections** | Render `cross-product projections` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Evidence drill-through** | Render `evidence drill-through` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Decision snapshots** | Render `decision snapshots` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Data-quality operations** | Render `data-quality operations` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateInsightSnapshot.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights/src/Actions/CreateInsightSnapshot.php) | `public function execute(array $attributes): InsightSnapshot` |
+| [TransitionInsightSnapshot.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights/src/Actions/TransitionInsightSnapshot.php) | `public function execute(InsightSnapshot $record, LifecycleStatus $to): InsightSnapshot` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [InsightSnapshot.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights/src/Models/InsightSnapshot.php) | `tenant_id`, `idempotency_key`, `name`, `status`, `metadata` |
+<!-- layer-implementation-plan:end -->

@@ -90,3 +90,37 @@ The Refunds module owns Refund calculation, original/alternative tender policy, 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Refund calculation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `refund calculation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Original/alternative tender policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `original/alternative tender policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Approval** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approval`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Provider execution** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `provider execution`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Store credit** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `store credit`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Failure recovery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `failure recovery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Accounting events** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `accounting events`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/refunds.md) | [Source map](../SOURCE-MAPPING.md#refunds) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/refunds.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/refunds.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-refunds-filament`](https://github.com/liberusoftware/module-ecommerce-refunds-filament) (`liberusoftware/ecommerce-refunds-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/refunds.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/refunds.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-refunds-react-inertia`](https://github.com/liberusoftware/module-ecommerce-refunds-react-inertia) (`@liberusoftware/module-ecommerce-refunds-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/refunds.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-refunds-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-refunds-vue-inertia) (`@liberusoftware/module-ecommerce-refunds-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/refunds.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-refunds-nuxt`](https://github.com/liberusoftware/module-ecommerce-refunds-nuxt) (`@liberusoftware/module-ecommerce-refunds-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/refunds.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-refunds-nextjs`](https://github.com/liberusoftware/module-ecommerce-refunds-nextjs) (`@liberusoftware/module-ecommerce-refunds-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/refunds.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-refunds-react-native`](https://github.com/liberusoftware/module-ecommerce-refunds-react-native) (`@liberusoftware/module-ecommerce-refunds-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/refunds.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-refunds-flutter`](https://github.com/liberusoftware/module-ecommerce-refunds-flutter) (`module_ecommerce_refunds_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/refunds.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-refunds-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-refunds-dart-mobile) (`module_ecommerce_refunds_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-refunds-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-refunds-dart-desktop) (`module_ecommerce_refunds_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -18,7 +18,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Billing Paddle:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Paddle Billing transactions and Merchant-of-Record checkout:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Transaction capture and full/partial refund adjustments:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Saved payment methods and subscription renewal bridge:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Paddle-Signature webhook verification and normalization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Provider references, MoR tax/fee breakdown, and settlement reconciliation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-billing-paddle`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `paddle-billing-transactions-and-merchant-of-record-checkout`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `transaction-capture-and-full-partial-refund-adjustments`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `saved-payment-methods-and-subscription-renewal-bridge`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `paddle-signature-webhook-verification-and-normalization`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `provider-references-mor-tax-fee-breakdown-and-settlement-reconciliation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,27 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-billing-paddle` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-billing-paddle-vue-inertia`](https://github.com/liberusoftware/module-billing-paddle-vue-inertia) (`@liberusoftware/module-billing-paddle-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-billing-paddle.md) · [Core plan](../core/module-billing-paddle.md) · [API plan](../api/module-billing-paddle.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Paddle Billing transactions and Merchant-of-Record checkout** | Render `paddle billing transactions and merchant-of-record checkout` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Transaction capture and full/partial refund adjustments** | Render `transaction capture and full/partial refund adjustments` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Saved payment methods and subscription renewal bridge** | Render `saved payment methods and subscription renewal bridge` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Paddle-Signature webhook verification and normalization** | Render `paddle-signature webhook verification and normalization` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Provider references, MoR tax/fee breakdown, and settlement reconciliation** | Render `provider references, mor tax/fee breakdown, and settlement reconciliation` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

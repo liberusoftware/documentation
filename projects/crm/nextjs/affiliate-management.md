@@ -2,15 +2,22 @@
 
 <!-- nextjs-plan:generated -->
 
-**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+**Status:** proposed adapter over a published capability skeleton, not a certified npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
 
-**Adapter group:** `liberusoftware/module-crm-affiliate-management`.
+**Adapter group:** `liberusoftware/module-crm-affiliate-management`.<br>
+**Matching domain module:** `affiliate-management`
 
 **Proposed design identifier:** `module-crm-affiliate-management-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
-## Scope and ownership
+## Scope, skeleton repositories, and backend ownership
 
 The [domain specification](../features/affiliate-management.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Next.js host skeleton | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) | Application App Router shell, session/BFF boundary, layout, and route composition ([template](https://github.com/liberusoftware/project-boilerplate-next-react) · [wayfinder](../../wayfinders/next-react.md) · [runbook](../../../guides/presentation/NEXTJS.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Product HTTP composition root publishing versioned `/api/v1` contracts ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/affiliate-management.md)) |
+| Capability Next.js module skeleton | [module-crm-affiliate-management-nextjs](https://github.com/liberusoftware/module-crm-affiliate-management-nextjs) (`@liberusoftware/module-crm-affiliate-management-nextjs`) | Reusable React Server/Client component and typed DTO adapter ([foundation](https://github.com/liberusoftware/module-boilerplate-nextjs) · [catalog](../../../modules/skeletons/next-react.md)) |
 
 This plan is the shared documentation home for **2 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
 
@@ -21,19 +28,16 @@ This plan is the shared documentation home for **2 existing design spellings/con
 
 ## Module surfaces and component contracts
 
-| Capability in the domain scope | Next.js composition target |
-| --- | --- |
-| Affiliates | A focused authorized view or workflow section for affiliates; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Applications | A focused authorized view or workflow section for applications; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Links | A focused authorized view or workflow section for links; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Campaigns | A focused authorized view or workflow section for campaigns; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Clicks | A focused authorized view or workflow section for clicks; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Conversions | A focused authorized view or workflow section for conversions; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Commission rules | A focused authorized view or workflow section for commission rules; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Payout approvals/exports | A focused authorized view or workflow section for payout approvals/exports; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Disputes | A focused authorized view or workflow section for disputes; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Assets | A focused authorized view or workflow section for assets; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
-| Portal | A focused authorized view or workflow section for portal; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Capability / feature aspect | Next.js Server & Client Component boundary | API transport, caching & recovery contract |
+| --- | --- | --- |
+| **Affiliates and partner profiles** | Server Component loads authorized `affiliates and partner profiles` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Applications and onboarding approval** | Server Component loads authorized `applications and onboarding approval` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Links, promo codes, and campaigns** | Server Component loads authorized `links, promo codes, and campaigns` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Clicks and first-party touch attribution** | Server Component loads authorized `clicks and first-party touch attribution` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Conversions and cross-product clawback ledger** | Server Component loads authorized `conversions and cross-product clawback ledger` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Commission rules and tiered calculation** | Server Component loads authorized `commission rules and tiered calculation` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Payout approvals/exports via PayoutSettlementContract** | Server Component loads authorized `payout approvals/exports via payoutsettlementcontract` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
+| **Disputes, fraud controls, assets, and partner portal** | Server Component loads authorized `disputes, fraud controls, assets, and partner portal` read model; Client Component (`'use client'`) manages interactive filters, forms, focus, and keyboard state. | Consume reviewed `project-crm-laravel-api` DTOs with `cache: 'no-store'` default; map 401/403/409/412/422/429 and preserve safe drafts on validation or conflict. |
 
 Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
 

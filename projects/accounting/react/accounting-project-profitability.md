@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Project Profitability:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Revenue:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cost:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Margin:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Estimates:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Committed/actual:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Unbilled WIP:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Realization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Dashboards:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Drill-through:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-project-profitability`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `revenue`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `cost`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `margin`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `estimates`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `committed-actual`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `unbilled-wip`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `realization`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `dashboards`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `drill-through`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,61 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-project-profitability` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-project-profitability-react-inertia`](https://github.com/liberusoftware/module-accounting-project-profitability-react-inertia) (`@liberusoftware/module-accounting-project-profitability-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-project-profitability.md) · [Core plan](../core/accounting-project-profitability.md) · [API plan](../api/accounting-project-profitability.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Revenue** | Render `revenue` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Cost** | Render `cost` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Margin** | Render `margin` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Estimates** | Render `estimates` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Committed/actual** | Render `committed/actual` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Unbilled WIP** | Render `unbilled wip` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Realization** | Render `realization` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Dashboards** | Render `dashboards` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Drill-through** | Render `drill-through` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ProjectProfitabilityDashboard.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Queries/ProjectProfitabilityDashboard.php) | `public function forProject(int $projectJobId, ?int $teamId = null): array`<br>`public function summarize(Collection $rows): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [FinalizeProjectProfitability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Actions/FinalizeProjectProfitability.php) | `public function handle(ProjectProfitability $record): ProjectProfitability` |
+| [RecordProjectProfitability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Actions/RecordProjectProfitability.php) | `public function handle(array $attributes): ProjectProfitability` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ProjectProfitability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Models/ProjectProfitability.php) | `team_id`, `project_job_id`, `period_start`, `period_end`, `currency`, `revenue_amount`, `cost_amount`, `estimate_amount`, `committed_amount`, `actual_amount`, `unbilled_wip_amount`, `billed_amount`, `status`, `dimensions`, `source_links`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ProjectProfitabilityController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability-api/src/Http/Controllers/ProjectProfitabilityController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, RecordProjectProfitability $action): mixed`<br>`public function show(Request $request, ProjectProfitability $projectProfitability): ProjectProfitability`<br>`public function finalize(Request $request, ProjectProfitability $projectProfitability, FinalizeProjectProfitability $action): ProjectProfitability`<br>`public function dashboard(Request $request, int $projectJobId, ProjectProfitabilityDashboard $query): array` |
+
+**Observed route declarations:**
+
+[modules/accounting-project-profitability-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/project-profitability')->group(function (): void {
+Route::middleware('ability:accounting.project-profitability.read')->group(function (): void {
+Route::get('/', [ProjectProfitabilityController::class, 'index']);
+Route::get('/{projectProfitability}', [ProjectProfitabilityController::class, 'show']);
+Route::get('/project/{projectJobId}/dashboard', [ProjectProfitabilityController::class, 'dashboard']);
+Route::middleware('ability:accounting.project-profitability.write')->group(function (): void {
+Route::post('/', [ProjectProfitabilityController::class, 'store']);
+Route::post('/{projectProfitability}/finalize', [ProjectProfitabilityController::class, 'finalize']);
+```
+<!-- layer-implementation-plan:end -->

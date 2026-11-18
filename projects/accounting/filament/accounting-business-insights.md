@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Accounting Business Insights:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Trends:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Ratios:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Working capital:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Profitability:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Cash runway:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Anomalies:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Benchmarks adapters:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Explanations:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `accounting-business-insights`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `trends`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `ratios`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `working-capital`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `profitability`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `cash-runway`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `anomalies`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `benchmarks-adapters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `explanations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,43 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-business-insights` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-business-insights-filament`](https://github.com/liberusoftware/module-accounting-business-insights-filament) (`liberusoftware/accounting-business-insights-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/accounting-business-insights.md) · [API plan](../api/accounting-business-insights.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Trends** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `trends`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Ratios** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `ratios`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Working capital** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `working capital`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Profitability** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `profitability`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cash runway** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cash runway`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Anomalies** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `anomalies`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Benchmarks adapters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `benchmarks adapters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Explanations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `explanations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [BusinessInsightsFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights-filament/src/BusinessInsightsFilamentServiceProvider.php) · [InsightSnapshotResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights-filament/src/Resources/InsightSnapshotResource.php) · [CreateInsightSnapshot.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights-filament/src/Resources/Pages/CreateInsightSnapshot.php) · [ListInsightSnapshots.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights-filament/src/Resources/Pages/ListInsightSnapshots.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [InsightQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights/src/Queries/InsightQuery.php) | `public function paginate(int $teamId, ?string $metric = null, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordInsight.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights/src/Actions/RecordInsight.php) | `public function handle(array $attributes): InsightSnapshot` |
+| [BusinessInsightsPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights-api/src/Policies/BusinessInsightsPolicy.php) | `public function viewAny(?object $user): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [InsightSnapshot.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-business-insights/src/Models/InsightSnapshot.php) | `team_id`, `metric`, `period_start`, `period_end`, `value`, `comparison_value`, `unit`, `explanation`, `metadata`, `refreshed_at` |
+<!-- layer-implementation-plan:end -->

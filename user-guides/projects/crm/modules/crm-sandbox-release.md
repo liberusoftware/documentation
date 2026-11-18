@@ -12,7 +12,7 @@
 
 The intended **Crm Sandbox Release** workspace covers crm sandbox release domain behavior.
 
-The relevant capability areas are **Crm Sandbox Release**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Configuration snapshots**, **Test data policy**, **Change sets**, **Validation**, **Dependency analysis**, **Promotion**, **Rollback**, **Environment comparison**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

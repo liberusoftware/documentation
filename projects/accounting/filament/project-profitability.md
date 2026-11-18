@@ -41,7 +41,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 - `cost`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `margin`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `estimates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `committed/actual`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `committed-actual`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `unbilled-wip`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `realization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `dashboards`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -58,3 +58,44 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `accounting-project-profitability` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-accounting-project-profitability-filament`](https://github.com/liberusoftware/module-accounting-project-profitability-filament) (`liberusoftware/accounting-project-profitability-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/project-profitability.md) · [API plan](../api/project-profitability.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Revenue** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `revenue`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Cost** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `cost`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Margin** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `margin`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Estimates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `estimates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Committed/actual** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `committed/actual`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Unbilled WIP** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `unbilled wip`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Realization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `realization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Dashboards** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `dashboards`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Drill-through** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `drill-through`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ProjectProfitabilityFilamentPlugin.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability-filament/src/ProjectProfitabilityFilamentPlugin.php) · [ProjectProfitabilityFilamentServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability-filament/src/ProjectProfitabilityFilamentServiceProvider.php) · [ListProjectProfitability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability-filament/src/Resources/Pages/ListProjectProfitability.php) · [ProjectProfitabilityResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability-filament/src/Resources/ProjectProfitabilityResource.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ProjectProfitabilityDashboard.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Queries/ProjectProfitabilityDashboard.php) | `public function forProject(int $projectJobId, ?int $teamId = null): array`<br>`public function summarize(Collection $rows): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [FinalizeProjectProfitability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Actions/FinalizeProjectProfitability.php) | `public function handle(ProjectProfitability $record): ProjectProfitability` |
+| [RecordProjectProfitability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Actions/RecordProjectProfitability.php) | `public function handle(array $attributes): ProjectProfitability` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ProjectProfitability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-project-profitability/src/Models/ProjectProfitability.php) | `team_id`, `project_job_id`, `period_start`, `period_end`, `currency`, `revenue_amount`, `cost_amount`, `estimate_amount`, `committed_amount`, `actual_amount`, `unbilled_wip_amount`, `billed_amount`, `status`, `dimensions`, `source_links`, `metadata` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,10 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Accounting Plaid:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Link token integration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Incremental transaction sync:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Institution and balance access:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Webhook-compatible provider client:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +32,10 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `accounting-plaid`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `link-token-integration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `incremental-transaction-sync`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `institution-and-balance-access`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `webhook-compatible-provider-client`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +48,26 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `accounting-plaid` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/accounting-plaid.md) · [API plan](../api/accounting-plaid.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Link token integration** | Expose a focused Livewire 4 component and namespaced Blade default view for `link token integration` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Incremental transaction sync** | Expose a focused Livewire 4 component and namespaced Blade default view for `incremental transaction sync` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Institution and balance access** | Expose a focused Livewire 4 component and namespaced Blade default view for `institution and balance access` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Webhook-compatible provider client** | Expose a focused Livewire 4 component and namespaced Blade default view for `webhook-compatible provider client` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

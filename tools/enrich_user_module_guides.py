@@ -22,10 +22,15 @@ def main():
             home=Path(registry[key]['home']);owner_project=home.parts[1];owner_stem=home.stem
             scope=ROOT/'projects'/owner_project/'features'/(owner_stem+'.md')
             if not scope.exists():scope=ROOT/'projects'/project/'core'/(stem+'.md')
-            content=scope.read_text();title=content.splitlines()[0].removeprefix('# ').split(': ',1)[-1].removesuffix(' domain packages')
-            group=re.search(r'^## 2\. Full feature scope\n(.*?)(?=^## |\Z)',content,re.M|re.S)
+            content=scope.read_text();title=content.splitlines()[0].removeprefix('# ').split(': ',1)[-1].removesuffix(' domain packages').removesuffix(' — Domain specifications')
+            group=re.search(r'^## (?:2\. Full feature scope|New capabilities|Business capabilities)\n(.*?)(?=^## |\Z)',content,re.M|re.S)
             labels=re.findall(r'^- \*\*([^*]+):\*\*',group.group(1),re.M) if group else []
-            purpose=re.search(r'^## 1\. Purpose\n\n(.*?)(?=\n\n|\n## |\Z)',content,re.M|re.S)
+            if not labels:
+                cap=re.search(r'\*\*Capability:\*\*\s*(.+)',content)
+                if cap:
+                    raw=re.sub(r'\s+and\s+',', ',cap.group(1).strip().rstrip('.'))
+                    labels=[p.strip().removeprefix('and ').strip().capitalize() for p in raw.split(',') if p.strip()]
+            purpose=re.search(r'^## (?:1\. )?Purpose(?: and scope)?\n\n(.*?)(?=\n\n|\n## |\Z)',content,re.M|re.S)
             summary=purpose.group(1) if purpose else ''
             summary=re.sub(r'^The .+? module owns ','',summary)
             summary=re.sub(r'\. It is the authoritative boundary.*','.',summary)

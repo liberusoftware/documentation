@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms Media:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Files/media entities:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Folders:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tags:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Collections:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Metadata:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Usage references:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Search:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Bulk operations:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Replacement:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms-media`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `files-media-entities`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `folders`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tags`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `collections`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `metadata`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `usage-references`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `search`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `bulk-operations`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `replacement`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,33 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-media` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms-media.md) · [API plan](../api/cms-media.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Files/media entities** | Expose a focused Livewire 4 component and namespaced Blade default view for `files/media entities` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Folders** | Expose a focused Livewire 4 component and namespaced Blade default view for `folders` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tags** | Expose a focused Livewire 4 component and namespaced Blade default view for `tags` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Collections** | Expose a focused Livewire 4 component and namespaced Blade default view for `collections` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Metadata** | Expose a focused Livewire 4 component and namespaced Blade default view for `metadata` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Usage references** | Expose a focused Livewire 4 component and namespaced Blade default view for `usage references` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Search** | Expose a focused Livewire 4 component and namespaced Blade default view for `search` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Bulk operations** | Expose a focused Livewire 4 component and namespaced Blade default view for `bulk operations` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Replacement** | Expose a focused Livewire 4 component and namespaced Blade default view for `replacement` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Media.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-media/src/Models/Media.php) | `disk`, `path`, `file_name`, `mime_type`, `size`, `folder`, `metadata`, `team_id` |
+<!-- layer-implementation-plan:end -->

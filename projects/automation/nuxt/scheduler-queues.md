@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Scheduler Queues:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Queue conventions:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Unique/idempotent jobs:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Schedules:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Locks:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Retries:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Failures:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Graceful deployment:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `scheduler-queues`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `queue-conventions`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `unique-idempotent-jobs`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `schedules`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `locks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `retries`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `failures`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `graceful-deployment`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,36 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `scheduler-queues` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-automation-nuxt-vue`](https://github.com/liberusoftware/project-automation-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-automation-laravel-api`](https://github.com/liberusoftware/project-automation-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/scheduler-queues.md)) |
+| Capability Nuxt module skeleton | [`module-scheduler-queues-nuxt`](https://github.com/liberusoftware/module-scheduler-queues-nuxt) (`@liberusoftware/module-scheduler-queues-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Queue conventions** | Expose composable and Vue 3 component for `queue conventions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/scheduler-queues.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Unique/idempotent jobs** | Expose composable and Vue 3 component for `unique/idempotent jobs` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/scheduler-queues.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Schedules** | Expose composable and Vue 3 component for `schedules` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/scheduler-queues.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Locks** | Expose composable and Vue 3 component for `locks` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/scheduler-queues.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Retries** | Expose composable and Vue 3 component for `retries` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/scheduler-queues.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Failures** | Expose composable and Vue 3 component for `failures` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/scheduler-queues.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+| **Graceful deployment** | Expose composable and Vue 3 component for `graceful deployment` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/scheduler-queues.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-automation-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+**Observed route declarations:**
+
+[modules/scheduler-queues-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/scheduler-queues-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/scheduler-queues')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('scheduler-queues-api.status');
+```
+<!-- layer-implementation-plan:end -->

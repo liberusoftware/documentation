@@ -18,7 +18,11 @@ The Cms Offline And Pwa module owns cms offline and pwa domain behavior. It is t
 
 ## 2. Full feature scope
 
-- **Cms Offline And Pwa:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Manifest/service-worker integration points:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Content caching policy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Offline pages:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Update behavior:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Install metadata:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +82,35 @@ The Cms Offline And Pwa module owns cms offline and pwa domain behavior. It is t
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Manifest/service-worker integration points** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `manifest/service-worker integration points`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Content caching policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `content caching policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Offline pages** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `offline pages`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Update behavior** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `update behavior`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Install metadata** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `install metadata`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cms-offline-and-pwa.md) | [Source map](../SOURCE-MAPPING.md#cms-offline-and-pwa) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cms-offline-and-pwa.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cms-offline-and-pwa.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-offline-and-pwa-filament`](https://github.com/liberusoftware/module-cms-offline-and-pwa-filament) (`liberusoftware/cms-offline-and-pwa-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cms-offline-and-pwa.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cms-offline-and-pwa.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-offline-and-pwa-react-inertia`](https://github.com/liberusoftware/module-cms-offline-and-pwa-react-inertia) (`@liberusoftware/module-cms-offline-and-pwa-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cms-offline-and-pwa.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-offline-and-pwa-vue-inertia`](https://github.com/liberusoftware/module-cms-offline-and-pwa-vue-inertia) (`@liberusoftware/module-cms-offline-and-pwa-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cms-offline-and-pwa.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-offline-and-pwa-nuxt`](https://github.com/liberusoftware/module-cms-offline-and-pwa-nuxt) (`@liberusoftware/module-cms-offline-and-pwa-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cms-offline-and-pwa.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-offline-and-pwa-nextjs`](https://github.com/liberusoftware/module-cms-offline-and-pwa-nextjs) (`@liberusoftware/module-cms-offline-and-pwa-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cms-offline-and-pwa.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-offline-and-pwa-react-native`](https://github.com/liberusoftware/module-cms-offline-and-pwa-react-native) (`@liberusoftware/module-cms-offline-and-pwa-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cms-offline-and-pwa.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-offline-and-pwa-flutter`](https://github.com/liberusoftware/module-cms-offline-and-pwa-flutter) (`module_cms_offline_and_pwa_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cms-offline-and-pwa.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-offline-and-pwa-dart-mobile`](https://github.com/liberusoftware/module-cms-offline-and-pwa-dart-mobile) (`module_cms_offline_and_pwa_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-offline-and-pwa-dart-desktop`](https://github.com/liberusoftware/module-cms-offline-and-pwa-dart-desktop) (`module_cms_offline_and_pwa_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

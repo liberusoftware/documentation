@@ -18,7 +18,12 @@ The Social Network Social Core module owns social network social core domain beh
 
 ## 2. Full feature scope
 
-- **Social Network Social Core:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Network settings:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Deployment mode:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Terminology:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Feature policy:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Shared IDs:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Events:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Social Network Social Core module owns social network social core domain beh
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Network settings** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `network settings`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Deployment mode** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `deployment mode`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Terminology** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `terminology`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Feature policy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `feature policy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Shared IDs** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `shared ids`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Events** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `events`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/social-network-social-core.md) | [Source map](../SOURCE-MAPPING.md#social-network-social-core) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/social-network-social-core.md) | [`project-social-network-laravel-api`](https://github.com/liberusoftware/project-social-network-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/social-network-social-core.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) · [`module-social-network-social-core-filament`](https://github.com/liberusoftware/module-social-network-social-core-filament) (`liberusoftware/social-network-social-core-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/social-network-social-core.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/social-network-social-core.md) | [`project-social-network-laravel-inertia-react`](https://github.com/liberusoftware/project-social-network-laravel-inertia-react) · [`module-social-network-social-core-react-inertia`](https://github.com/liberusoftware/module-social-network-social-core-react-inertia) (`@liberusoftware/module-social-network-social-core-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/social-network-social-core.md) | [`project-social-network-laravel-inertia-vue`](https://github.com/liberusoftware/project-social-network-laravel-inertia-vue) · [`module-social-network-social-core-vue-inertia`](https://github.com/liberusoftware/module-social-network-social-core-vue-inertia) (`@liberusoftware/module-social-network-social-core-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/social-network-social-core.md) | [`project-social-network-nuxt-vue`](https://github.com/liberusoftware/project-social-network-nuxt-vue) · [`module-social-network-social-core-nuxt`](https://github.com/liberusoftware/module-social-network-social-core-nuxt) (`@liberusoftware/module-social-network-social-core-nuxt`) | Standalone Vue SSR client consuming `project-social-network-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/social-network-social-core.md) | [`project-social-network-next-react`](https://github.com/liberusoftware/project-social-network-next-react) · [`module-social-network-social-core-nextjs`](https://github.com/liberusoftware/module-social-network-social-core-nextjs) (`@liberusoftware/module-social-network-social-core-nextjs`) | App Router Server/Client components consuming `project-social-network-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/social-network-social-core.md) | [`project-social-network-mobile-react`](https://github.com/liberusoftware/project-social-network-mobile-react) · [`module-social-network-social-core-react-native`](https://github.com/liberusoftware/module-social-network-social-core-react-native) (`@liberusoftware/module-social-network-social-core-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/social-network-social-core.md) | [`project-social-network-mobile-flutter`](https://github.com/liberusoftware/project-social-network-mobile-flutter) · [`module-social-network-social-core-flutter`](https://github.com/liberusoftware/module-social-network-social-core-flutter) (`module_social_network_social_core_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/social-network-social-core.md) | [`project-social-network-dart-mobile`](https://github.com/liberusoftware/project-social-network-dart-mobile) · [`module-social-network-social-core-dart-mobile`](https://github.com/liberusoftware/module-social-network-social-core-dart-mobile) (`module_social_network_social_core_dart_mobile`)<br>[`project-social-network-dart-desktop`](https://github.com/liberusoftware/project-social-network-dart-desktop) · [`module-social-network-social-core-dart-desktop`](https://github.com/liberusoftware/module-social-network-social-core-dart-desktop) (`module_social_network_social_core_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

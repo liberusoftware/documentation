@@ -2,9 +2,9 @@
 
 ## Canonical one-to-one API module index
 
-Each API document describes the optional `module-{independent-module-name}-api` presentation package matching exactly one independent domain module. Applications compose these packages into unified external APIs without moving ownership.
+Each API document describes the optional `module-{independent-module-name}-api` presentation package matching exactly one independent domain module. Each product's [`project-{product}-laravel-api`](../../guides/LARAVEL-API-BACKENDS.md) repository composes these packages into a unified versioned `/api/v1` backend without moving domain ownership.
 
-Nuxt clients consume these API contracts through the matching one-to-one packages under [Nuxt 4 implementations](../nuxt/README.md). They must use documented routes, schemas, authentication, permissions, tenant/team context, pagination, errors, idempotency, and versioning; they must not call private Laravel implementation details.
+Independent web, mobile, and desktop clients consume these API contracts through their matching one-to-one presentation packages under [Next.js](../nextjs/README.md), [Nuxt 4](../nuxt/README.md), [React Native + Expo](../react-native/README.md), [Flutter](../flutter/README.md), and the [capability skeleton catalogs](../skeletons/README.md) (including [Dart mobile](../skeletons/dart-mobile.md) and [Dart desktop](../skeletons/dart-desktop.md)). They must use documented routes, OpenAPI 3.1 schemas, authentication, permissions, tenant/team context, pagination, Problem Details errors, idempotency, and versioning; they must not call private Laravel implementation details.
 
 ## Implementation plan
 
@@ -76,7 +76,7 @@ For a first-party SPA, use `/sanctum/csrf-cookie`, session login, and `auth:sanc
 | [CMS](../../projects/cms/api/README.md) | 252 | [API](../../architecture/API.md) |
 | [Control Panel](../../projects/control-panel/api/README.md) | 61 | [API](../../architecture/API.md) |
 | [CRM](../../projects/crm/api/README.md) | 218 | [API](../../architecture/API.md) |
-| [Ecommerce](../../projects/ecommerce/api/README.md) | 107 | [API](../../architecture/API.md) |
+| [Ecommerce](../../projects/ecommerce/api/README.md) | 108 | [API](../../architecture/API.md) |
 | [Genealogy](../../projects/genealogy/api/README.md) | 62 | [API](../../architecture/API.md) |
 | [Liberu platform](../../projects/liberu/api/README.md) | 4 | [API](../../architecture/API.md) |
 | [Maintenance](../../projects/maintenance/api/README.md) | 60 | [API](../../architecture/API.md) |

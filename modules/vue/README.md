@@ -20,7 +20,7 @@ Use strict TypeScript contracts, CSRF/authentication, explicit error and validat
 | [CMS](../../projects/cms/vue/README.md) | 252 | [VUE](../../standards/VUE.md) |
 | [Control Panel](../../projects/control-panel/vue/README.md) | 61 | [VUE](../../standards/VUE.md) |
 | [CRM](../../projects/crm/vue/README.md) | 218 | [VUE](../../standards/VUE.md) |
-| [Ecommerce](../../projects/ecommerce/vue/README.md) | 107 | [VUE](../../standards/VUE.md) |
+| [Ecommerce](../../projects/ecommerce/vue/README.md) | 108 | [VUE](../../standards/VUE.md) |
 | [Genealogy](../../projects/genealogy/vue/README.md) | 62 | [VUE](../../standards/VUE.md) |
 | [Liberu platform](../../projects/liberu/vue/README.md) | 4 | [VUE](../../standards/VUE.md) |
 | [Maintenance](../../projects/maintenance/vue/README.md) | 60 | [VUE](../../standards/VUE.md) |

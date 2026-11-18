@@ -20,7 +20,7 @@ Use typed form state and validation, explicit authorization on records and actio
 | [CMS](../../projects/cms/filament/README.md) | 252 | [FILAMENT](../../standards/FILAMENT.md) |
 | [Control Panel](../../projects/control-panel/filament/README.md) | 61 | [FILAMENT](../../standards/FILAMENT.md) |
 | [CRM](../../projects/crm/filament/README.md) | 218 | [FILAMENT](../../standards/FILAMENT.md) |
-| [Ecommerce](../../projects/ecommerce/filament/README.md) | 107 | [FILAMENT](../../standards/FILAMENT.md) |
+| [Ecommerce](../../projects/ecommerce/filament/README.md) | 108 | [FILAMENT](../../standards/FILAMENT.md) |
 | [Genealogy](../../projects/genealogy/filament/README.md) | 62 | [FILAMENT](../../standards/FILAMENT.md) |
 | [Liberu platform](../../projects/liberu/filament/README.md) | 4 | [FILAMENT](../../standards/FILAMENT.md) |
 | [Maintenance](../../projects/maintenance/filament/README.md) | 60 | [FILAMENT](../../standards/FILAMENT.md) |

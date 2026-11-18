@@ -25,3 +25,26 @@ Own the health-signal projection, care-risk decision, contact-protection decisio
 ## Verification
 
 Cover event replay, duplicate delivery, expiry, source correction, wrong brand/tenant, cooling-off boundaries, concurrent dispatch, consent changes, provider failures, approval rejection, migration/rebuild, and accessibility-facing read models. Add architecture tests for private-table access and provider/framework coupling.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Customer health constellation** | Model `customer health constellation` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Revenue-aware service recovery** | Model `revenue-aware service recovery` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Contact-protection ledger** | Model `contact-protection ledger` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Cross-brand consent and quiet-hour evaluation** | Model `cross-brand consent and quiet-hour evaluation` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Approval-gated AI recommendations** | Model `approval-gated ai recommendations` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Mobile-ready daily queues** | Model `mobile-ready daily queues` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/revenue-and-care-orchestration.md) · [Filament 5](../filament/revenue-and-care-orchestration.md) · [Livewire 4](../livewire/revenue-and-care-orchestration.md) · [React + Inertia](../react/revenue-and-care-orchestration.md) · [Vue + Inertia](../vue/revenue-and-care-orchestration.md) · [Nuxt 4](../nuxt/revenue-and-care-orchestration.md) · [Next.js](../nextjs/revenue-and-care-orchestration.md) · [React Native](../react-native/revenue-and-care-orchestration.md) · [Flutter & Dart](../flutter/revenue-and-care-orchestration.md)
+<!-- core-implementation-plan:end -->

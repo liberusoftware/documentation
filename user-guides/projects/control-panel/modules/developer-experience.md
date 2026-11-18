@@ -12,7 +12,7 @@
 
 The intended **Developer Experience** workspace covers developer experience domain behavior.
 
-The relevant capability areas are **Developer Experience**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Local setup**, **Fixtures**, **Factories**, **Quality scripts**, **CI**, **Architecture tests**, **Docs**, **Upgrade automation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

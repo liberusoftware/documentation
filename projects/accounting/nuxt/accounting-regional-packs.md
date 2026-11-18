@@ -18,7 +18,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Accounting Regional Packs:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Country-specific tax:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Reports:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Document formats:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Filing calendars:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Account templates:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Terminology:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Compliance tests:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +35,13 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `accounting-regional-packs`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `country-specific-tax`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `reports`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `document-formats`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `filing-calendars`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `account-templates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `terminology`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `compliance-tests`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +62,55 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `accounting-regional-packs` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-accounting-erp-nuxt-vue`](https://github.com/liberusoftware/project-accounting-erp-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-accounting-erp-laravel-api`](https://github.com/liberusoftware/project-accounting-erp-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/accounting-regional-packs.md)) |
+| Capability Nuxt module skeleton | [`module-accounting-regional-packs-nuxt`](https://github.com/liberusoftware/module-accounting-regional-packs-nuxt) (`@liberusoftware/module-accounting-regional-packs-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Country-specific tax** | Expose composable and Vue 3 component for `country-specific tax` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-regional-packs.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Reports** | Expose composable and Vue 3 component for `reports` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-regional-packs.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Document formats** | Expose composable and Vue 3 component for `document formats` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-regional-packs.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Filing calendars** | Expose composable and Vue 3 component for `filing calendars` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-regional-packs.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Account templates** | Expose composable and Vue 3 component for `account templates` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-regional-packs.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Terminology** | Expose composable and Vue 3 component for `terminology` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-regional-packs.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+| **Compliance tests** | Expose composable and Vue 3 component for `compliance tests` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/accounting-regional-packs.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-accounting-erp-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateRegionalPack.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-regional-packs/src/Actions/CreateRegionalPack.php) | `public function handle(array $attributes): RegionalPack` |
+| [PublishRegionalPack.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-regional-packs/src/Actions/PublishRegionalPack.php) | `public function handle(RegionalPack $pack, array $artifacts): RegionalPack` |
+| [RunComplianceTests.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-regional-packs/src/Actions/RunComplianceTests.php) | `public function handle(RegionalPack $pack): RegionalPack` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [RegionalPack.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-regional-packs/src/Models/RegionalPack.php) | `country_code`, `locale`, `currency`, `version`, `status`, `effective_from`, `effective_to`, `metadata` |
+| [RegionalPackArtifact.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-regional-packs/src/Models/RegionalPackArtifact.php) | `pack_id`, `type`, `key`, `definition`, `status`, `test_results`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [RegionalPacksController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-regional-packs-api/src/Http/Controllers/RegionalPacksController.php) | `public function index(): mixed`<br>`public function store(Request $request, CreateRegionalPack $action): RegionalPack`<br>`public function show(RegionalPack $pack): RegionalPack`<br>`public function publish(Request $request, RegionalPack $pack, PublishRegionalPack $action): RegionalPack`<br>`public function test(RegionalPack $pack, RunComplianceTests $action): RegionalPack` |
+
+**Observed route declarations:**
+
+[modules/accounting-regional-packs-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-regional-packs-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/regional-packs')->group(function (): void {
+Route::get('/', [RegionalPacksController::class, 'index']);
+Route::post('/', [RegionalPacksController::class, 'store']);
+Route::get('/{pack}', [RegionalPacksController::class, 'show']);
+Route::post('/{pack}/publish', [RegionalPacksController::class, 'publish']);
+Route::post('/{pack}/compliance-tests', [RegionalPacksController::class, 'test']);
+```
+<!-- layer-implementation-plan:end -->

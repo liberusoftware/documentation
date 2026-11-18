@@ -18,7 +18,18 @@ The Crm Quotas And Incentives module owns crm quotas and incentives domain behav
 
 ## 2. Full feature scope
 
-- **Crm Quotas And Incentives:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Quotas:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Ramps:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Crediting:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Splits:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Territories:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Attainment:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Commission plans:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Accelerators:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Adjustments:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Disputes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Approvals:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Payroll/export adapters:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +89,42 @@ The Crm Quotas And Incentives module owns crm quotas and incentives domain behav
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Quotas** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `quotas`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Ramps** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `ramps`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Crediting** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `crediting`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Splits** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `splits`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Territories** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `territories`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Attainment** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `attainment`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Commission plans** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `commission plans`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Accelerators** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `accelerators`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Adjustments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `adjustments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Disputes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `disputes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Approvals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approvals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Payroll/export adapters** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `payroll/export adapters`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-quotas-and-incentives.md) | [Source map](../SOURCE-MAPPING.md#crm-quotas-and-incentives) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-quotas-and-incentives.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-quotas-and-incentives.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-quotas-and-incentives-filament`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-filament) (`liberusoftware/crm-quotas-and-incentives-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-quotas-and-incentives.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-quotas-and-incentives.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-quotas-and-incentives-react-inertia`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-react-inertia) (`@liberusoftware/module-crm-quotas-and-incentives-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-quotas-and-incentives.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-quotas-and-incentives-vue-inertia`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-vue-inertia) (`@liberusoftware/module-crm-quotas-and-incentives-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-quotas-and-incentives.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-quotas-and-incentives-nuxt`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-nuxt) (`@liberusoftware/module-crm-quotas-and-incentives-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-quotas-and-incentives.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-quotas-and-incentives-nextjs`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-nextjs) (`@liberusoftware/module-crm-quotas-and-incentives-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-quotas-and-incentives.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-quotas-and-incentives-react-native`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-react-native) (`@liberusoftware/module-crm-quotas-and-incentives-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-quotas-and-incentives.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-quotas-and-incentives-flutter`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-flutter) (`module_crm_quotas_and_incentives_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-quotas-and-incentives.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-quotas-and-incentives-dart-mobile`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-dart-mobile) (`module_crm_quotas_and_incentives_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-quotas-and-incentives-dart-desktop`](https://github.com/liberusoftware/module-crm-quotas-and-incentives-dart-desktop) (`module_crm_quotas_and_incentives_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

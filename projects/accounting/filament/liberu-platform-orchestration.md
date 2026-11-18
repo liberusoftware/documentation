@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Liberu Platform Orchestration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Composition manifest:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Capability graph:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Lifecycle coordination:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Release gates:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Ownership registry:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `liberu-platform-orchestration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `composition-manifest`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `capability-graph`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `lifecycle-coordination`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `release-gates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `ownership-registry`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,33 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `liberu-platform-orchestration` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-module-liberu-platform-orchestration-c64302ad-filament`](https://github.com/liberusoftware/module-module-liberu-platform-orchestration-c64302ad-filament) (`liberusoftware/module-liberu-platform-orchestration-c64302ad-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/liberu-platform-orchestration.md) · [API plan](../api/liberu-platform-orchestration.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Composition manifest** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `composition manifest`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Capability graph** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `capability graph`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Lifecycle coordination** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `lifecycle coordination`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Release gates** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `release gates`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Ownership registry** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `ownership registry`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreatePlatformWorkflow.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/Actions/CreatePlatformWorkflow.php) | `public function execute(array $attributes): PlatformWorkflow` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [PlatformComposition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Models/PlatformComposition.php) | `team_id`, `key`, `display_name`, `application`, `state`, `manifest`, `metadata` |
+<!-- layer-implementation-plan:end -->

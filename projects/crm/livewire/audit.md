@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Audit:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Actor:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tenant:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Request context:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Material changes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Privileged actions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Retention:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tamper evidence:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `audit`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `actor`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tenant`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `request-context`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `material-changes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `privileged-actions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `retention`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tamper-evidence`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,33 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `audit` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/audit.md) · [API plan](../api/audit.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Actor** | Expose a focused Livewire 4 component and namespaced Blade default view for `actor` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tenant** | Expose a focused Livewire 4 component and namespaced Blade default view for `tenant` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Request context** | Expose a focused Livewire 4 component and namespaced Blade default view for `request context` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Material changes** | Expose a focused Livewire 4 component and namespaced Blade default view for `material changes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Privileged actions** | Expose a focused Livewire 4 component and namespaced Blade default view for `privileged actions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Retention** | Expose a focused Livewire 4 component and namespaced Blade default view for `retention` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tamper evidence** | Expose a focused Livewire 4 component and namespaced Blade default view for `tamper evidence` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/audit-livewire/src/Livewire/Overview.php) · [AuditLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/audit-livewire/src/AuditLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AuditRecorder.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/audit/src/Contracts/AuditRecorder.php) | `public function record(string $event, string $subjectType, string\|int\|null $subjectId, array $before, array $after, AuditContext $context): void` |
+<!-- layer-implementation-plan:end -->

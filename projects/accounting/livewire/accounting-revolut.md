@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Accounting Revolut:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Account synchronization:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Transaction synchronization:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Single payments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Bulk payment drafts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Token refresh:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `accounting-revolut`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `account-synchronization`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `transaction-synchronization`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `single-payments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `bulk-payment-drafts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `token-refresh`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `accounting-revolut` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/accounting-revolut.md) · [API plan](../api/accounting-revolut.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Account synchronization** | Expose a focused Livewire 4 component and namespaced Blade default view for `account synchronization` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Transaction synchronization** | Expose a focused Livewire 4 component and namespaced Blade default view for `transaction synchronization` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Single payments** | Expose a focused Livewire 4 component and namespaced Blade default view for `single payments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Bulk payment drafts** | Expose a focused Livewire 4 component and namespaced Blade default view for `bulk payment drafts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Token refresh** | Expose a focused Livewire 4 component and namespaced Blade default view for `token refresh` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

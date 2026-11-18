@@ -1,7 +1,7 @@
 # Billing Core Modules
 
 <!-- catalogue-status:start -->
-This index preserves **81 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **82 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Billing domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
@@ -78,6 +78,7 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Billing 
 | [Pricing Core Module](pricing.md) | [liberusoftware/module-billing-pricing](../../../modules/source/liberusoftware--module-billing-pricing.md) | [api](../api/pricing.md) · [nextjs](../nextjs/pricing.md) |
 | [Profiles Core Module](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
 | [Provisioning Core Module](provisioning.md) | [liberusoftware/module-billing-provisioning](../../../modules/source/liberusoftware--module-billing-provisioning.md) | [api](../api/provisioning.md) · [nextjs](../nextjs/provisioning.md) |
+| [Referrals and Advocate Rewards Core Module](referrals.md) | [Target/source map](../SOURCE-MAPPING.md#referrals) | [api](../api/referrals.md) · [nextjs](../nextjs/referrals.md) |
 | [Reporting Core Module](reporting.md) | [liberusoftware/module-billing-reporting](../../../modules/source/liberusoftware--module-billing-reporting.md) | [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
 | [Roles Permissions Core Module](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
 | [Scheduler Queues Core Module](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |

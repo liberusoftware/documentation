@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Module Billing Stripe:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Consolidate into shared liberusoftware/payment-stripe:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **PaymentIntent and SetupIntent orchestration:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Payment capture and idempotent refunds:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Stripe-Signature webhook verification and normalization:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Dispute defense and settlement reconciliation:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Provider references and gateway driver bridge:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `module-billing-stripe`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `consolidate-into-shared-liberusoftware-payment-stripe`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `paymentintent-and-setupintent-orchestration`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `payment-capture-and-idempotent-refunds`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `stripe-signature-webhook-verification-and-normalization`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `dispute-defense-and-settlement-reconciliation`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `provider-references-and-gateway-driver-bridge`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,28 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `module-billing-stripe` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/module-billing-stripe.md)) |
+| Capability Nuxt module skeleton | [`module-billing-stripe-nuxt`](https://github.com/liberusoftware/module-billing-stripe-nuxt) (`@liberusoftware/module-billing-stripe-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Consolidate into shared liberusoftware/payment-stripe** | Expose composable and Vue 3 component for `consolidate into shared liberusoftware/payment-stripe` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-billing-stripe.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **PaymentIntent and SetupIntent orchestration** | Expose composable and Vue 3 component for `paymentintent and setupintent orchestration` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-billing-stripe.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Payment capture and idempotent refunds** | Expose composable and Vue 3 component for `payment capture and idempotent refunds` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-billing-stripe.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Stripe-Signature webhook verification and normalization** | Expose composable and Vue 3 component for `stripe-signature webhook verification and normalization` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-billing-stripe.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Dispute defense and settlement reconciliation** | Expose composable and Vue 3 component for `dispute defense and settlement reconciliation` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-billing-stripe.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Provider references and gateway driver bridge** | Expose composable and Vue 3 component for `provider references and gateway driver bridge` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/module-billing-stripe.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

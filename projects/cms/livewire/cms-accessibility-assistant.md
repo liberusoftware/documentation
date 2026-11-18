@@ -18,7 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Cms Accessibility Assistant:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Authoring checks for headings:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Links:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Tables:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Alternatives:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Contrast metadata:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Language:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Captions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Exceptions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `cms-accessibility-assistant`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `authoring-checks-for-headings`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `links`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `tables`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `alternatives`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `contrast-metadata`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `language`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `captions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `exceptions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,34 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `cms-accessibility-assistant` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/cms-accessibility-assistant.md) · [API plan](../api/cms-accessibility-assistant.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Authoring checks for headings** | Expose a focused Livewire 4 component and namespaced Blade default view for `authoring checks for headings` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Links** | Expose a focused Livewire 4 component and namespaced Blade default view for `links` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Tables** | Expose a focused Livewire 4 component and namespaced Blade default view for `tables` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Alternatives** | Expose a focused Livewire 4 component and namespaced Blade default view for `alternatives` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Contrast metadata** | Expose a focused Livewire 4 component and namespaced Blade default view for `contrast metadata` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Language** | Expose a focused Livewire 4 component and namespaced Blade default view for `language` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Captions** | Expose a focused Livewire 4 component and namespaced Blade default view for `captions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Exceptions** | Expose a focused Livewire 4 component and namespaced Blade default view for `exceptions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [AccessibilityAnalyzer.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-accessibility-assistant-livewire/src/Livewire/AccessibilityAnalyzer.php) · [AccessibilityAssistantLivewireServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-accessibility-assistant-livewire/src/AccessibilityAssistantLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AccessibilityAssistantService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-accessibility-assistant/src/Services/AccessibilityAssistantService.php) | `public function analyze(string $html, array $exceptions = []): array` |
+<!-- layer-implementation-plan:end -->

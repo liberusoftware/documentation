@@ -40,3 +40,35 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+<!-- core-implementation-plan:start -->
+## Module features, domain aspects, and source architecture
+
+### Feature and domain aspect implementation matrix
+
+| Feature / aspect | Domain model & invariant ownership | Application action, query, persistence & event contract |
+| --- | --- | --- |
+| **Page/render/query/object cache contracts** | Model `page/render/query/object cache contracts` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Cache tags** | Model `cache tags` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Warming** | Model `warming` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Invalidation** | Model `invalidation` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Asset optimization hooks** | Model `asset optimization hooks` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+| **Diagnostics** | Model `diagnostics` with explicit value objects, state transitions, and invariant guards inside the domain boundary. | Provide a dedicated application action/query, enforce policy and tenant context, persist inside module-owned tables, and publish post-commit events. |
+
+### Observed domain and transport source evidence
+
+**Observed migration files:** [2026_08_29_000300_create_cms_cache_and_performance_tables.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/database/migrations/2026_08_29_000300_create_cms_cache_and_performance_tables.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CacheAndPerformanceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Services/CacheAndPerformanceService.php) | `public function remember(?int $teamId, string $key, string $type, int $ttl, callable $resolver, array $tags = [], array $metadata = []): array`<br>`public function invalidate(?int $teamId, array $tags = [], array $keys = [], string $idempotencyKey = ''): CacheInvalidation`<br>`public function diagnostics(?int $teamId): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CacheEntry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheEntry.php) | `team_id`, `cache_key`, `cache_type`, `tags`, `status`, `ttl_seconds`, `size_bytes`, `hits`, `misses`, `warmed_at`, `last_invalidated_at`, `metadata` |
+| [CacheInvalidation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheInvalidation.php) | `team_id`, `idempotency_key`, `tags`, `cache_keys`, `status`, `invalidated_count`, `failure_reason`, `completed_at` |
+
+### Consuming adapter specifications
+
+- [HTTP API contract](../api/cache-and-performance.md) · [Filament 5](../filament/cache-and-performance.md) · [Livewire 4](../livewire/cache-and-performance.md) · [React + Inertia](../react/cache-and-performance.md) · [Vue + Inertia](../vue/cache-and-performance.md) · [Nuxt 4](../nuxt/cache-and-performance.md) · [Next.js](../nextjs/cache-and-performance.md) · [React Native](../react-native/cache-and-performance.md) · [Flutter & Dart](../flutter/cache-and-performance.md)
+<!-- core-implementation-plan:end -->

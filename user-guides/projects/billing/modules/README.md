@@ -74,6 +74,7 @@ End-user guides for each Billing module.
 | [Pricing](pricing.md) | [Context](../../../../projects/billing/SOURCE-MAPPING.md#pricing) |
 | [Billing Profiles](profiles.md) | [Context](../../../../projects/billing/SOURCE-MAPPING.md#profiles) |
 | [Provisioning](provisioning.md) | [Context](../../../../projects/billing/SOURCE-MAPPING.md#provisioning) |
+| [Billing Referrals and Advocate Rewards](referrals.md) | [Context](../../../../projects/billing/SOURCE-MAPPING.md#referrals) |
 | [Reporting](reporting.md) | [Context](../../../../projects/billing/SOURCE-MAPPING.md#reporting) |
 | [Billing Roles Permissions](roles-permissions.md) | [Context](../../../../projects/billing/SOURCE-MAPPING.md#roles-permissions) |
 | [Billing Scheduler Queues](scheduler-queues.md) | [Context](../../../../projects/billing/SOURCE-MAPPING.md#scheduler-queues) |

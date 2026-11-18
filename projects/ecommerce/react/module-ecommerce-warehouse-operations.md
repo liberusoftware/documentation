@@ -18,7 +18,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Module Ecommerce Warehouse Operations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Waves/batches:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Pick paths:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Packing stations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Scans:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Labels:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Manifests:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Exceptions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Warehouse-system adapters:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `module-ecommerce-warehouse-operations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `waves-batches`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `pick-paths`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `packing-stations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `scans`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `labels`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `manifests`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `exceptions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `warehouse-system-adapters`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,30 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-ecommerce-warehouse-operations` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-ecommerce-module-ecommerce-warehouse-operations-react-inertia`](https://github.com/liberusoftware/module-ecommerce-module-ecommerce-warehouse-operations-react-inertia) (`@liberusoftware/module-ecommerce-module-ecommerce-warehouse-operations-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/module-ecommerce-warehouse-operations.md) · [Core plan](../core/module-ecommerce-warehouse-operations.md) · [API plan](../api/module-ecommerce-warehouse-operations.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Waves/batches** | Render `waves/batches` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Pick paths** | Render `pick paths` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Packing stations** | Render `packing stations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Scans** | Render `scans` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Labels** | Render `labels` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Manifests** | Render `manifests` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Exceptions** | Render `exceptions` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Warehouse-system adapters** | Render `warehouse-system adapters` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -12,7 +12,7 @@
 
 The intended **Cms Collections** workspace covers cms collections domain behavior.
 
-The relevant capability areas are **Cms Collections**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Custom collections**, **Hierarchical and flat taxonomies**, **Term assignments and ordering**, **Filterable archive queries**, **Localized term slugs**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

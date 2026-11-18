@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Views And Query Builder:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Permission-safe listings from content/fields/relationships with filters:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sorting:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Grouping:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Exposed filters:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Pagination:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Feeds:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Displays:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-views-and-query-builder`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `permission-safe-listings-from-content-fields-relationships-with-filters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sorting`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `grouping`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `exposed-filters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `pagination`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `feeds`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `displays`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,42 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-views-and-query-builder` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-views-and-query-builder-filament`](https://github.com/liberusoftware/module-cms-views-and-query-builder-filament) (`liberusoftware/cms-views-and-query-builder-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-views-and-query-builder.md) · [API plan](../api/cms-views-and-query-builder.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Permission-safe listings from content/fields/relationships with filters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `permission-safe listings from content/fields/relationships with filters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sorting** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sorting`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Grouping** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `grouping`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Exposed filters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `exposed filters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Pagination** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `pagination`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Feeds** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `feeds`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Displays** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `displays`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ListViewDefinitions.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-views-and-query-builder-filament/src/Resources/Pages/ListViewDefinitions.php) · [ViewDefinitionResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-views-and-query-builder-filament/src/Resources/ViewDefinitionResource.php) · [ViewsAndQueryBuilderFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-views-and-query-builder-filament/src/ViewsAndQueryBuilderFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ListingQueryService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-views-and-query-builder/src/Queries/ListingQueryService.php) | `public function execute(ViewDefinition $view, int $perPage = 15, array $input = []): LengthAwarePaginator` |
+| [ViewDefinitionQuery.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-views-and-query-builder/src/Queries/ViewDefinitionQuery.php) | `public function list(int $perPage = 15, string $search = ''): LengthAwarePaginator`<br>`public function find(string $slug): ?ViewDefinition`<br>`public function publishedList(int $perPage = 15, string $search = ''): LengthAwarePaginator`<br>`public function findPublished(string $slug): ?ViewDefinition` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ViewDefinitionMutationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-views-and-query-builder/src/Actions/ViewDefinitionMutationService.php) | `public function create(array $attributes): ViewDefinition`<br>`public function update(ViewDefinition $view, array $attributes): ViewDefinition` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ViewDefinition.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-views-and-query-builder/src/Models/ViewDefinition.php) | `name`, `slug`, `source`, `description`, `definition`, `visibility`, `status`, `published_at`, `user_id`, `team_id` |
+<!-- layer-implementation-plan:end -->

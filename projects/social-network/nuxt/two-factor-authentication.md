@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Two Factor Authentication:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **TOTP enrollment:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Recovery codes:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Enforcement:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Trusted devices:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Recovery:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Audit:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `two-factor-authentication`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `totp-enrollment`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `recovery-codes`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `enforcement`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `trusted-devices`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `recovery`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `audit`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,39 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `two-factor-authentication` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-social-network-nuxt-vue`](https://github.com/liberusoftware/project-social-network-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-social-network-laravel-api`](https://github.com/liberusoftware/project-social-network-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/two-factor-authentication.md)) |
+| Capability Nuxt module skeleton | [`module-two-factor-authentication-nuxt`](https://github.com/liberusoftware/module-two-factor-authentication-nuxt) (`@liberusoftware/module-two-factor-authentication-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **TOTP enrollment** | Expose composable and Vue 3 component for `totp enrollment` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/two-factor-authentication.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Recovery codes** | Expose composable and Vue 3 component for `recovery codes` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/two-factor-authentication.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Enforcement** | Expose composable and Vue 3 component for `enforcement` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/two-factor-authentication.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Trusted devices** | Expose composable and Vue 3 component for `trusted devices` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/two-factor-authentication.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Recovery** | Expose composable and Vue 3 component for `recovery` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/two-factor-authentication.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+| **Audit** | Expose composable and Vue 3 component for `audit` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/two-factor-authentication.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-social-network-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [TwoFactorRecovery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/two-factor-authentication/src/Contracts/TwoFactorRecovery.php) | `public function recover(Authenticatable $subject, Authenticatable $administrator, string $reason): void` |
+
+**Observed route declarations:**
+
+[modules/two-factor-authentication-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/two-factor-authentication-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/two-factor-authentication')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('two-factor-authentication-api.status');
+```
+<!-- layer-implementation-plan:end -->

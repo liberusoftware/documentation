@@ -18,7 +18,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Content Intelligence:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Inventory:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Quality:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Readability:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Accessibility:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **SEO:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Freshness:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Duplication:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Gaps:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Performance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Improvement queues:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +38,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-content-intelligence`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `inventory`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `quality`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `readability`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `accessibility`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `seo`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `freshness`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `duplication`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `gaps`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `performance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `improvement-queues`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +60,40 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-content-intelligence` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-content-intelligence-filament`](https://github.com/liberusoftware/module-cms-content-intelligence-filament) (`liberusoftware/cms-content-intelligence-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-content-intelligence.md) · [API plan](../api/module-cms-content-intelligence.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Inventory** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `inventory`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Quality** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `quality`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Readability** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `readability`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Accessibility** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `accessibility`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **SEO** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `seo`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Freshness** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `freshness`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Duplication** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `duplication`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Gaps** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `gaps`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Performance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `performance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Improvement queues** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `improvement queues`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ContentIntelligenceFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-intelligence-filament/src/ContentIntelligenceFilamentServiceProvider.php) · [ContentInsightResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-content-intelligence-filament/src/Resources/ContentInsightResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ContentIntelligenceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-intelligence/src/Services/ContentIntelligenceService.php) | `public function insights(?int $teamId, ?string $metric = null, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function analyze(array $data, ?int $teamId = null): ContentInsight`<br>`public function review(ContentInsight $insight, string $status): ContentInsight` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ContentInsight.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-intelligence/src/Models/ContentInsight.php) | `team_id`, `subject_type`, `subject_key`, `metric`, `score`, `severity`, `summary`, `rationale`, `context`, `status`, `reviewed_at` |
+<!-- layer-implementation-plan:end -->

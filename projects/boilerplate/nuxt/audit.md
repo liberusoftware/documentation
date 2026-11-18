@@ -21,3 +21,40 @@ This package presents the Audit core capability through Nuxt 4. It owns routes, 
 ## Scope
 
 The package is optional and installable independently. Applications may omit it, replace it with another presentation adapter, or compose it with a custom theme while retaining the same Audit core boundary.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-boilerplate-nuxt-vue`](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-boilerplate-laravel-api`](https://github.com/liberusoftware/project-boilerplate-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/audit.md)) |
+| Capability Nuxt module skeleton | [`module-audit-nuxt`](https://github.com/liberusoftware/module-audit-nuxt) (`@liberusoftware/module-audit-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Actor** | Expose composable and Vue 3 component for `actor` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/audit.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-boilerplate-laravel-api`. |
+| **Tenant** | Expose composable and Vue 3 component for `tenant` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/audit.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-boilerplate-laravel-api`. |
+| **Request context** | Expose composable and Vue 3 component for `request context` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/audit.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-boilerplate-laravel-api`. |
+| **Material changes** | Expose composable and Vue 3 component for `material changes` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/audit.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-boilerplate-laravel-api`. |
+| **Privileged actions** | Expose composable and Vue 3 component for `privileged actions` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/audit.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-boilerplate-laravel-api`. |
+| **Retention** | Expose composable and Vue 3 component for `retention` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/audit.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-boilerplate-laravel-api`. |
+| **Tamper evidence** | Expose composable and Vue 3 component for `tamper evidence` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/audit.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-boilerplate-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AuditRecorder.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/audit/src/Contracts/AuditRecorder.php) | `public function record(string $event, string $subjectType, string\|int\|null $subjectId, array $before, array $after, AuditContext $context): void` |
+
+**Observed route declarations:**
+
+[modules/audit-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/audit-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/audit')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('audit-api.status');
+```
+<!-- layer-implementation-plan:end -->

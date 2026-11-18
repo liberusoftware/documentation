@@ -1,6 +1,6 @@
 # Next.js adapter ownership and reuse
 
-The documentation preserves **1384 module spellings** across **15 scopes**, with **609 adapter plan groups**. 775 consumer/alias documents reference shared homes rather than claiming separate implementations. These are design/documentation homes, not a registry availability or stability claim.
+The documentation preserves **1420 module spellings** across **16 scopes**, with **645 adapter plan groups**. 775 consumer/alias documents reference shared homes rather than claiming separate implementations. These are design/documentation homes, not a registry availability or stability claim.
 
 Groups use exact observed core identities where one name match exists. Different PHP identities are not silently merged by similar spelling. Planned scopes without a source match remain separate, including all Ecommerce modules. Source variants and PHP/API compatibility must be reviewed before a shared npm release.
 
@@ -464,6 +464,19 @@ Groups use exact observed core identities where one name match exists. Different
 | `liberusoftware/two-factor-authentication` | [Plan](../../projects/boilerplate/nextjs/two-factor-authentication.md) | 11 |
 | `liberusoftware/webhooks` | [Plan](../../projects/boilerplate/nextjs/webhooks.md) | 11 |
 | `planned:billing:module-billing-core` | [Plan](../../projects/billing/nextjs/module-billing-core.md) | 1 |
+| `planned:billing:referrals` | [Plan](../../projects/billing/nextjs/referrals.md) | 1 |
+| `planned:boilerplate:affiliate-contracts` | [Plan](../../projects/boilerplate/nextjs/affiliate-contracts.md) | 1 |
+| `planned:boilerplate:affiliates` | [Plan](../../projects/boilerplate/nextjs/affiliates.md) | 1 |
+| `planned:boilerplate:passkeys` | [Plan](../../projects/boilerplate/nextjs/passkeys.md) | 1 |
+| `planned:boilerplate:payment-adyen` | [Plan](../../projects/boilerplate/nextjs/payment-adyen.md) | 1 |
+| `planned:boilerplate:payment-contracts` | [Plan](../../projects/boilerplate/nextjs/payment-contracts.md) | 1 |
+| `planned:boilerplate:payment-core` | [Plan](../../projects/boilerplate/nextjs/payment-core.md) | 1 |
+| `planned:boilerplate:payment-gocardless` | [Plan](../../projects/boilerplate/nextjs/payment-gocardless.md) | 1 |
+| `planned:boilerplate:payment-mollie` | [Plan](../../projects/boilerplate/nextjs/payment-mollie.md) | 1 |
+| `planned:boilerplate:payment-paddle` | [Plan](../../projects/boilerplate/nextjs/payment-paddle.md) | 1 |
+| `planned:boilerplate:payment-paypal` | [Plan](../../projects/boilerplate/nextjs/payment-paypal.md) | 1 |
+| `planned:boilerplate:payment-square` | [Plan](../../projects/boilerplate/nextjs/payment-square.md) | 1 |
+| `planned:boilerplate:payment-stripe` | [Plan](../../projects/boilerplate/nextjs/payment-stripe.md) | 1 |
 | `planned:cms:audit-and-history` | [Plan](../../projects/cms/nextjs/audit-and-history.md) | 1 |
 | `planned:cms:cms` | [Plan](../../projects/cms/nextjs/cms.md) | 1 |
 | `planned:cms:content-entities` | [Plan](../../projects/cms/nextjs/content-entities.md) | 1 |
@@ -505,6 +518,7 @@ Groups use exact observed core identities where one name match exists. Different
 | `planned:ecommerce:catalog-import-and-export` | [Plan](../../projects/ecommerce/nextjs/catalog-import-and-export.md) | 1 |
 | `planned:ecommerce:catalog-staging` | [Plan](../../projects/ecommerce/nextjs/catalog-staging.md) | 1 |
 | `planned:ecommerce:categories-and-navigation` | [Plan](../../projects/ecommerce/nextjs/categories-and-navigation.md) | 1 |
+| `planned:ecommerce:catering` | [Plan](../../projects/ecommerce/nextjs/catering.md) | 1 |
 | `planned:ecommerce:checkout` | [Plan](../../projects/ecommerce/nextjs/checkout.md) | 1 |
 | `planned:ecommerce:checkout-extensibility` | [Plan](../../projects/ecommerce/nextjs/checkout-extensibility.md) | 1 |
 | `planned:ecommerce:commerce-automation-pack` | [Plan](../../projects/ecommerce/nextjs/commerce-automation-pack.md) | 1 |
@@ -600,6 +614,28 @@ Groups use exact observed core identities where one name match exists. Different
 | `planned:liberu:executive-insights` | [Plan](../../projects/liberu/nextjs/executive-insights.md) | 1 |
 | `planned:liberu:platform-orchestration` | [Plan](../../projects/liberu/nextjs/platform-orchestration.md) | 1 |
 | `planned:liberu:revenue-and-care-orchestration` | [Plan](../../projects/liberu/nextjs/revenue-and-care-orchestration.md) | 1 |
+| `planned:music:arrangement` | [Plan](../../projects/music/nextjs/arrangement.md) | 1 |
+| `planned:music:audio-devices` | [Plan](../../projects/music/nextjs/audio-devices.md) | 1 |
+| `planned:music:audio-engine` | [Plan](../../projects/music/nextjs/audio-engine.md) | 1 |
+| `planned:music:automation-modulation` | [Plan](../../projects/music/nextjs/automation-modulation.md) | 1 |
+| `planned:music:clip-launcher` | [Plan](../../projects/music/nextjs/clip-launcher.md) | 1 |
+| `planned:music:collaboration` | [Plan](../../projects/music/nextjs/collaboration.md) | 1 |
+| `planned:music:composition-score` | [Plan](../../projects/music/nextjs/composition-score.md) | 1 |
+| `planned:music:controllers` | [Plan](../../projects/music/nextjs/controllers.md) | 1 |
+| `planned:music:effects` | [Plan](../../projects/music/nextjs/effects.md) | 1 |
+| `planned:music:export-mastering` | [Plan](../../projects/music/nextjs/export-mastering.md) | 1 |
+| `planned:music:instruments` | [Plan](../../projects/music/nextjs/instruments.md) | 1 |
+| `planned:music:live-performance` | [Plan](../../projects/music/nextjs/live-performance.md) | 1 |
+| `planned:music:media-library` | [Plan](../../projects/music/nextjs/media-library.md) | 1 |
+| `planned:music:midi-sequencing` | [Plan](../../projects/music/nextjs/midi-sequencing.md) | 1 |
+| `planned:music:mixer-routing` | [Plan](../../projects/music/nextjs/mixer-routing.md) | 1 |
+| `planned:music:plugin-hosting` | [Plan](../../projects/music/nextjs/plugin-hosting.md) | 1 |
+| `planned:music:presets` | [Plan](../../projects/music/nextjs/presets.md) | 1 |
+| `planned:music:projects` | [Plan](../../projects/music/nextjs/projects.md) | 1 |
+| `planned:music:recording` | [Plan](../../projects/music/nextjs/recording.md) | 1 |
+| `planned:music:sync-offline` | [Plan](../../projects/music/nextjs/sync-offline.md) | 1 |
+| `planned:music:tempo-groove` | [Plan](../../projects/music/nextjs/tempo-groove.md) | 1 |
+| `planned:music:video-timecode` | [Plan](../../projects/music/nextjs/video-timecode.md) | 1 |
 | `planned:real-estate:portals-and-reporting` | [Plan](../../projects/real-estate/nextjs/portals-and-reporting.md) | 1 |
 | `planned:sap:assets-and-facilities` | [Plan](../../projects/sap/nextjs/assets-and-facilities.md) | 1 |
 | `planned:sap:controlling` | [Plan](../../projects/sap/nextjs/controlling.md) | 1 |
@@ -628,5 +664,3 @@ Some Liberu platform capabilities have both prefixed and unprefixed PHP identiti
 - `module-liberu-revenue-and-care-orchestration-nextjs`: `liberusoftware/liberu-revenue-and-care-orchestration`, `liberusoftware/module-liberu-revenue-and-care-orchestration`, `planned:liberu:revenue-and-care-orchestration`
 
 Reproduce with `python3 tools/build_nextjs_plans.py` after rebuilding source references/mapping. Authored enterprise module plans are retained; generated plans carry a marker. [Machine-readable adapter registry](../../architecture/nextjs-adapter-plans.json).
-
-Eight source navigation/cache entries are excluded from capability ownership. Their reference pages remain available to explain the classification; see the registry JSON exclusions.

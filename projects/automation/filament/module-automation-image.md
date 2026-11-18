@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Automation Image:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Generation/editing requests:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Source assets:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Moderation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Provenance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Variants:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Delivery:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-automation-image`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `generation-editing-requests`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `source-assets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `moderation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `provenance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `variants`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `delivery`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,37 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-automation-image` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-automation-laravel-filament`](https://github.com/liberusoftware/project-automation-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-automation-image-filament`](https://github.com/liberusoftware/module-automation-image-filament) (`liberusoftware/automation-image-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-automation-image.md) · [API plan](../api/module-automation-image.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Generation/editing requests** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `generation/editing requests`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Source assets** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `source assets`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Moderation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `moderation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Provenance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `provenance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Variants** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `variants`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Delivery** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `delivery`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ImageFilamentPlugin.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image-filament/src/ImageFilamentPlugin.php) · [ImageFilamentServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image-filament/src/ImageFilamentServiceProvider.php) · [ImageResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image-filament/src/Resources/ImageResource.php) · [CreateImage.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image-filament/src/Resources/ImageResource/Pages/CreateImage.php) · [EditImage.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image-filament/src/Resources/ImageResource/Pages/EditImage.php) · [ListImage.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image-filament/src/Resources/ImageResource/Pages/ListImage.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateImageResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image/src/Actions/CreateImageResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): ImageResource` |
+| [TransitionImageResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image/src/Actions/TransitionImageResource.php) | `public function execute(ImageResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): ImageResource` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ImageResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-image/src/Models/ImageResource.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ The Localization Mymemory module owns localization mymemory domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Localization Mymemory:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **MyMemory provider configuration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Segment translation requests:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Language-pair and locale validation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Translation response caching:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Rate limit and quota fallback handling:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Translation provenance and review diagnostics:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Localization Mymemory module owns localization mymemory domain behavior. It 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **MyMemory provider configuration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `mymemory provider configuration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Segment translation requests** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `segment translation requests`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Language-pair and locale validation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `language-pair and locale validation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Translation response caching** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `translation response caching`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rate limit and quota fallback handling** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rate limit and quota fallback handling`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Translation provenance and review diagnostics** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `translation provenance and review diagnostics`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/localization-mymemory.md) | [Source map](../SOURCE-MAPPING.md#localization-mymemory) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/localization-mymemory.md) | [`project-control-panel-laravel-api`](https://github.com/liberusoftware/project-control-panel-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/localization-mymemory.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) · [`module-localization-mymemory-filament`](https://github.com/liberusoftware/module-localization-mymemory-filament) (`liberusoftware/localization-mymemory-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/localization-mymemory.md) | [`project-control-panel-laravel-filament`](https://github.com/liberusoftware/project-control-panel-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/localization-mymemory.md) | [`project-control-panel-laravel-inertia-react`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-react) · [`module-localization-mymemory-react-inertia`](https://github.com/liberusoftware/module-localization-mymemory-react-inertia) (`@liberusoftware/module-localization-mymemory-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/localization-mymemory.md) | [`project-control-panel-laravel-inertia-vue`](https://github.com/liberusoftware/project-control-panel-laravel-inertia-vue) · [`module-localization-mymemory-vue-inertia`](https://github.com/liberusoftware/module-localization-mymemory-vue-inertia) (`@liberusoftware/module-localization-mymemory-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/localization-mymemory.md) | [`project-control-panel-nuxt-vue`](https://github.com/liberusoftware/project-control-panel-nuxt-vue) · [`module-localization-mymemory-nuxt`](https://github.com/liberusoftware/module-localization-mymemory-nuxt) (`@liberusoftware/module-localization-mymemory-nuxt`) | Standalone Vue SSR client consuming `project-control-panel-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/localization-mymemory.md) | [`project-control-panel-next-react`](https://github.com/liberusoftware/project-control-panel-next-react) · [`module-localization-mymemory-nextjs`](https://github.com/liberusoftware/module-localization-mymemory-nextjs) (`@liberusoftware/module-localization-mymemory-nextjs`) | App Router Server/Client components consuming `project-control-panel-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/localization-mymemory.md) | [`project-control-panel-mobile-react`](https://github.com/liberusoftware/project-control-panel-mobile-react) · [`module-localization-mymemory-react-native`](https://github.com/liberusoftware/module-localization-mymemory-react-native) (`@liberusoftware/module-localization-mymemory-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/localization-mymemory.md) | [`project-control-panel-mobile-flutter`](https://github.com/liberusoftware/project-control-panel-mobile-flutter) · [`module-localization-mymemory-flutter`](https://github.com/liberusoftware/module-localization-mymemory-flutter) (`module_localization_mymemory_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/localization-mymemory.md) | [`project-control-panel-dart-mobile`](https://github.com/liberusoftware/project-control-panel-dart-mobile) · [`module-localization-mymemory-dart-mobile`](https://github.com/liberusoftware/module-localization-mymemory-dart-mobile) (`module_localization_mymemory_dart_mobile`)<br>[`project-control-panel-dart-desktop`](https://github.com/liberusoftware/project-control-panel-dart-desktop) · [`module-localization-mymemory-dart-desktop`](https://github.com/liberusoftware/module-localization-mymemory-dart-desktop) (`module_localization_mymemory_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

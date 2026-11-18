@@ -94,3 +94,39 @@ The Media module owns Images, video, audio, files, processing, alt text, caption
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Images** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `images`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Video** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `video`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Audio** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `audio`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Files** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `files`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Processing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `processing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Alt text** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `alt text`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Captions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `captions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rights** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rights`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Delivery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `delivery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/media.md) | [Source map](../SOURCE-MAPPING.md#media) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/media.md) | [`project-social-network-laravel-api`](https://github.com/liberusoftware/project-social-network-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/media.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) · [`module-social-network-media-filament`](https://github.com/liberusoftware/module-social-network-media-filament) (`liberusoftware/social-network-media-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/media.md) | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/media.md) | [`project-social-network-laravel-inertia-react`](https://github.com/liberusoftware/project-social-network-laravel-inertia-react) · [`module-social-network-media-react-inertia`](https://github.com/liberusoftware/module-social-network-media-react-inertia) (`@liberusoftware/module-social-network-media-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/media.md) | [`project-social-network-laravel-inertia-vue`](https://github.com/liberusoftware/project-social-network-laravel-inertia-vue) · [`module-social-network-media-vue-inertia`](https://github.com/liberusoftware/module-social-network-media-vue-inertia) (`@liberusoftware/module-social-network-media-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/media.md) | [`project-social-network-nuxt-vue`](https://github.com/liberusoftware/project-social-network-nuxt-vue) · [`module-social-network-media-nuxt`](https://github.com/liberusoftware/module-social-network-media-nuxt) (`@liberusoftware/module-social-network-media-nuxt`) | Standalone Vue SSR client consuming `project-social-network-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/media.md) | [`project-social-network-next-react`](https://github.com/liberusoftware/project-social-network-next-react) · [`module-social-network-media-nextjs`](https://github.com/liberusoftware/module-social-network-media-nextjs) (`@liberusoftware/module-social-network-media-nextjs`) | App Router Server/Client components consuming `project-social-network-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/media.md) | [`project-social-network-mobile-react`](https://github.com/liberusoftware/project-social-network-mobile-react) · [`module-social-network-media-react-native`](https://github.com/liberusoftware/module-social-network-media-react-native) (`@liberusoftware/module-social-network-media-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/media.md) | [`project-social-network-mobile-flutter`](https://github.com/liberusoftware/project-social-network-mobile-flutter) · [`module-social-network-media-flutter`](https://github.com/liberusoftware/module-social-network-media-flutter) (`module_social_network_media_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/media.md) | [`project-social-network-dart-mobile`](https://github.com/liberusoftware/project-social-network-dart-mobile) · [`module-social-network-media-dart-mobile`](https://github.com/liberusoftware/module-social-network-media-dart-mobile) (`module_social_network_media_dart_mobile`)<br>[`project-social-network-dart-desktop`](https://github.com/liberusoftware/project-social-network-dart-desktop) · [`module-social-network-media-dart-desktop`](https://github.com/liberusoftware/module-social-network-media-dart-desktop) (`module_social_network_media_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -18,17 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Affiliates:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Applications:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Links:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Campaigns:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Clicks:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Conversions:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Commission rules:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Payout approvals/exports:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Disputes:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Assets:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Portal:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Affiliates and partner profiles:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Applications and onboarding approval:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Links, promo codes, and campaigns:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Clicks and first-party touch attribution:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Conversions and cross-product clawback ledger:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Commission rules and tiered calculation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Payout approvals/exports via PayoutSettlementContract:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Disputes, fraud controls, assets, and partner portal:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -39,17 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `affiliates`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `applications`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `links`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `campaigns`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `clicks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `conversions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `commission-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `payout-approvals/exports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `disputes`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `assets`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `portal`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `affiliates-and-partner-profiles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `applications-and-onboarding-approval`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `links-promo-codes-and-campaigns`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `clicks-and-first-party-touch-attribution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `conversions-and-cross-product-clawback-ledger`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `commission-rules-and-tiered-calculation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `payout-approvals-exports-via-payoutsettlementcontract`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `disputes-fraud-controls-assets-and-partner-portal`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -62,3 +56,49 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-affiliate-management` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-affiliate-management-filament`](https://github.com/liberusoftware/module-crm-affiliate-management-filament) (`liberusoftware/crm-affiliate-management-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/affiliate-management.md) · [API plan](../api/affiliate-management.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Affiliates and partner profiles** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `affiliates and partner profiles`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Applications and onboarding approval** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `applications and onboarding approval`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Links, promo codes, and campaigns** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `links, promo codes, and campaigns`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Clicks and first-party touch attribution** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `clicks and first-party touch attribution`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Conversions and cross-product clawback ledger** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `conversions and cross-product clawback ledger`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Commission rules and tiered calculation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `commission rules and tiered calculation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Payout approvals/exports via PayoutSettlementContract** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `payout approvals/exports via payoutsettlementcontract`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Disputes, fraud controls, assets, and partner portal** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `disputes, fraud controls, assets, and partner portal`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [AffiliateManagementFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-filament/src/AffiliateManagementFilamentPlugin.php) · [AffiliateManagementFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-filament/src/AffiliateManagementFilamentServiceProvider.php) · [AffiliateResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-filament/src/Resources/AffiliateResource.php) · [CreateAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-filament/src/Resources/AffiliateResource/Pages/CreateAffiliate.php) · [EditAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-filament/src/Resources/AffiliateResource/Pages/EditAffiliate.php) · [ListAffiliates.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management-filament/src/Resources/AffiliateResource/Pages/ListAffiliates.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [AffiliateQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Queries/AffiliateQuery.php) | `public function affiliates(int $teamId): Builder`<br>`public function events(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ApplyAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApplyAffiliate.php) | `public function execute(int $teamId, array $input): Affiliate` |
+| [ApproveAffiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliate.php) | `public function execute(int $teamId, Affiliate $affiliate): Affiliate` |
+| [ApproveAffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/ApproveAffiliatePayout.php) | `public function execute(int $teamId, int $actorId, AffiliatePayout $payout): AffiliatePayout` |
+| [CreateAffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/CreateAffiliateLink.php) | `public function execute(int $teamId, Affiliate $affiliate, array $input): AffiliateLink` |
+| [RecordAffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Actions/RecordAffiliateEvent.php) | `public function execute(int $teamId, AffiliateLink $link, array $input): AffiliateEvent` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Affiliate.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/Affiliate.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliateLink.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliateLink.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AffiliatePayout.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-affiliate-management/src/Models/AffiliatePayout.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

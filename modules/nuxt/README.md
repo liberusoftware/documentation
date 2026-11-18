@@ -20,7 +20,7 @@ Design for public, authenticated, and tenant-scoped users separately; apply auth
 | [CMS](../../projects/cms/nuxt/README.md) | 252 | [NUXT](../../standards/NUXT.md) |
 | [Control Panel](../../projects/control-panel/nuxt/README.md) | 61 | [NUXT](../../standards/NUXT.md) |
 | [CRM](../../projects/crm/nuxt/README.md) | 218 | [NUXT](../../standards/NUXT.md) |
-| [Ecommerce](../../projects/ecommerce/nuxt/README.md) | 107 | [NUXT](../../standards/NUXT.md) |
+| [Ecommerce](../../projects/ecommerce/nuxt/README.md) | 108 | [NUXT](../../standards/NUXT.md) |
 | [Genealogy](../../projects/genealogy/nuxt/README.md) | 62 | [NUXT](../../standards/NUXT.md) |
 | [Liberu platform](../../projects/liberu/nuxt/README.md) | 4 | [NUXT](../../standards/NUXT.md) |
 | [Maintenance](../../projects/maintenance/nuxt/README.md) | 60 | [NUXT](../../standards/NUXT.md) |

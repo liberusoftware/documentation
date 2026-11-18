@@ -1,7 +1,7 @@
 # Ecommerce: Automation Pack
 
 <!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-automation-pack). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-automation-pack). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. This retained spelling maps to `automation-pack`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
 ## Canonical independent module specification
@@ -88,3 +88,36 @@ The Automation Pack module owns Commerce triggers/actions/recipes, versioning, s
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Commerce triggers/actions/recipes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `commerce triggers/actions/recipes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Versioning** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `versioning`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Simulation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `simulation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Approvals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approvals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Idempotency** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `idempotency`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Generic Automation integration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `generic automation integration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/commerce-automation-pack.md) | [Source map](../SOURCE-MAPPING.md#commerce-automation-pack) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/commerce-automation-pack.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/commerce-automation-pack.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-commerce-automation-pack-filament`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-filament) (`liberusoftware/ecommerce-commerce-automation-pack-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/commerce-automation-pack.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/commerce-automation-pack.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-commerce-automation-pack-react-inertia`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-react-inertia) (`@liberusoftware/module-ecommerce-commerce-automation-pack-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/commerce-automation-pack.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-commerce-automation-pack-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-vue-inertia) (`@liberusoftware/module-ecommerce-commerce-automation-pack-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/commerce-automation-pack.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-commerce-automation-pack-nuxt`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-nuxt) (`@liberusoftware/module-ecommerce-commerce-automation-pack-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/commerce-automation-pack.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-commerce-automation-pack-nextjs`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-nextjs) (`@liberusoftware/module-ecommerce-commerce-automation-pack-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/commerce-automation-pack.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-commerce-automation-pack-react-native`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-react-native) (`@liberusoftware/module-ecommerce-commerce-automation-pack-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/commerce-automation-pack.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-commerce-automation-pack-flutter`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-flutter) (`module_ecommerce_commerce_automation_pack_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/commerce-automation-pack.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-commerce-automation-pack-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-dart-mobile) (`module_ecommerce_commerce_automation_pack_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-commerce-automation-pack-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-commerce-automation-pack-dart-desktop) (`module_ecommerce_commerce_automation_pack_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -18,7 +18,16 @@ The Crm Journey Orchestration module owns crm journey orchestration domain behav
 
 ## 2. Full feature scope
 
-- **Crm Journey Orchestration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Triggered/scheduled journeys:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Branching:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Waits:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Goals:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Re-entry:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Suppression:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Frequency caps:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Experiments:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Stop-on-response:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Versioned publication:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +87,40 @@ The Crm Journey Orchestration module owns crm journey orchestration domain behav
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Triggered/scheduled journeys** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `triggered/scheduled journeys`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Branching** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `branching`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Waits** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `waits`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Goals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `goals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Re-entry** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `re-entry`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Suppression** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `suppression`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Frequency caps** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `frequency caps`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Experiments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `experiments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Stop-on-response** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `stop-on-response`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Versioned publication** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `versioned publication`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-journey-orchestration.md) | [Source map](../SOURCE-MAPPING.md#crm-journey-orchestration) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-journey-orchestration.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-journey-orchestration.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-journey-orchestration-filament`](https://github.com/liberusoftware/module-crm-journey-orchestration-filament) (`liberusoftware/crm-journey-orchestration-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-journey-orchestration.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-journey-orchestration.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-journey-orchestration-react-inertia`](https://github.com/liberusoftware/module-crm-journey-orchestration-react-inertia) (`@liberusoftware/module-crm-journey-orchestration-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-journey-orchestration.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-journey-orchestration-vue-inertia`](https://github.com/liberusoftware/module-crm-journey-orchestration-vue-inertia) (`@liberusoftware/module-crm-journey-orchestration-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-journey-orchestration.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-journey-orchestration-nuxt`](https://github.com/liberusoftware/module-crm-journey-orchestration-nuxt) (`@liberusoftware/module-crm-journey-orchestration-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-journey-orchestration.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-journey-orchestration-nextjs`](https://github.com/liberusoftware/module-crm-journey-orchestration-nextjs) (`@liberusoftware/module-crm-journey-orchestration-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-journey-orchestration.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-journey-orchestration-react-native`](https://github.com/liberusoftware/module-crm-journey-orchestration-react-native) (`@liberusoftware/module-crm-journey-orchestration-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-journey-orchestration.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-journey-orchestration-flutter`](https://github.com/liberusoftware/module-crm-journey-orchestration-flutter) (`module_crm_journey_orchestration_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-journey-orchestration.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-journey-orchestration-dart-mobile`](https://github.com/liberusoftware/module-crm-journey-orchestration-dart-mobile) (`module_crm_journey_orchestration_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-journey-orchestration-dart-desktop`](https://github.com/liberusoftware/module-crm-journey-orchestration-dart-desktop) (`module_crm_journey_orchestration_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

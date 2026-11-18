@@ -12,7 +12,7 @@
 
 The intended **Crm Template Snapshots** workspace covers crm template snapshots domain behavior.
 
-The relevant capability areas are **Crm Template Snapshots**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Versioned bundles of fields**, **Pipelines**, **Workflows**, **Forms**, **Funnels**, **Calendars**, **Templates**, **Dashboards**, **Settings with preview**, **Protected sharing**, **Install**, **Update**, **Rollback**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

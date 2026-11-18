@@ -92,3 +92,38 @@ The Editorial Workflow module owns Configurable states/transitions, assignments,
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Configurable states/transitions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `configurable states/transitions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Assignments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `assignments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Review** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `review`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Approvals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `approvals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Rejection** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `rejection`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Delegation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `delegation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Separation of duties** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `separation of duties`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Evidence** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `evidence`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/editorial-workflow.md) | [Source map](../SOURCE-MAPPING.md#editorial-workflow) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/editorial-workflow.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/editorial-workflow.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-editorial-workflow-filament`](https://github.com/liberusoftware/module-cms-editorial-workflow-filament) (`liberusoftware/cms-editorial-workflow-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/editorial-workflow.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/editorial-workflow.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-editorial-workflow-react-inertia`](https://github.com/liberusoftware/module-cms-editorial-workflow-react-inertia) (`@liberusoftware/module-cms-editorial-workflow-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/editorial-workflow.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-editorial-workflow-vue-inertia`](https://github.com/liberusoftware/module-cms-editorial-workflow-vue-inertia) (`@liberusoftware/module-cms-editorial-workflow-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/editorial-workflow.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-editorial-workflow-nuxt`](https://github.com/liberusoftware/module-cms-editorial-workflow-nuxt) (`@liberusoftware/module-cms-editorial-workflow-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/editorial-workflow.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-editorial-workflow-nextjs`](https://github.com/liberusoftware/module-cms-editorial-workflow-nextjs) (`@liberusoftware/module-cms-editorial-workflow-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/editorial-workflow.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-editorial-workflow-react-native`](https://github.com/liberusoftware/module-cms-editorial-workflow-react-native) (`@liberusoftware/module-cms-editorial-workflow-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/editorial-workflow.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-editorial-workflow-flutter`](https://github.com/liberusoftware/module-cms-editorial-workflow-flutter) (`module_cms_editorial_workflow_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/editorial-workflow.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-editorial-workflow-dart-mobile`](https://github.com/liberusoftware/module-cms-editorial-workflow-dart-mobile) (`module_cms_editorial_workflow_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-editorial-workflow-dart-desktop`](https://github.com/liberusoftware/module-cms-editorial-workflow-dart-desktop) (`module_cms_editorial_workflow_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

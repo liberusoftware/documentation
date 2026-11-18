@@ -6,6 +6,8 @@ End-user guides for each Boilerplate module.
 | --- | --- |
 | [Activity AND Comments](activity-and-comments.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#activity-and-comments) |
 | [Boilerplate Activity Comments](activity-comments.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#activity-comments) |
+| [Boilerplate Affiliate Contracts](affiliate-contracts.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#affiliate-contracts) |
+| [Boilerplate Affiliates and Partner Programs](affiliates.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#affiliates) |
 | [Analytics Core](analytics-core.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#analytics-core) |
 | [Boilerplate Analytics Google](analytics-google.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#analytics-google) |
 | [Boilerplate Analytics Meta](analytics-meta.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#analytics-meta) |
@@ -35,6 +37,16 @@ End-user guides for each Boilerplate module.
 | [Observability](observability.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#observability) |
 | [Organizations AND Teams](organizations-and-teams.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#organizations-and-teams) |
 | [Boilerplate Organizations Teams](organizations-teams.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#organizations-teams) |
+| [Boilerplate Passkeys and WebAuthn](passkeys.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#passkeys) |
+| [Boilerplate Payment Adyen Adapter](payment-adyen.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-adyen) |
+| [Boilerplate Payment Contracts](payment-contracts.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-contracts) |
+| [Boilerplate Payment Core](payment-core.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-core) |
+| [Boilerplate Payment GoCardless Adapter](payment-gocardless.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-gocardless) |
+| [Boilerplate Payment Mollie Adapter](payment-mollie.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-mollie) |
+| [Boilerplate Payment Paddle Adapter](payment-paddle.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-paddle) |
+| [Boilerplate Payment PayPal Adapter](payment-paypal.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-paypal) |
+| [Boilerplate Payment Square Adapter](payment-square.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-square) |
+| [Boilerplate Payment Stripe Adapter](payment-stripe.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#payment-stripe) |
 | [Profiles](profiles.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#profiles) |
 | [Roles AND Permissions](roles-and-permissions.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#roles-and-permissions) |
 | [Boilerplate Roles Permissions](roles-permissions.md) | [Context](../../../../projects/boilerplate/SOURCE-MAPPING.md#roles-permissions) |

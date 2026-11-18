@@ -12,7 +12,7 @@
 
 The intended **Two Factor Authentication** workspace covers two factor authentication domain behavior.
 
-The relevant capability areas are **Two Factor Authentication**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **TOTP enrollment**, **Recovery codes**, **Enforcement**, **Trusted devices**, **Recovery**, **Audit**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

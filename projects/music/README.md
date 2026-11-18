@@ -19,3 +19,5 @@ Start with the [product scope](MUSIC.md), [runtime architecture](ARCHITECTURE.md
 - [Next.js: 22 module plans](nextjs/README.md)
 - [React Native + Expo: 22 module plans](react-native/README.md)
 - [Flutter: 22 module plans](flutter/README.md)
+
+- [Design-to-source reconciliation](SOURCE-MAPPING.md) — exact package identities, retained aliases, unmatched observed modules, and source implementation references.

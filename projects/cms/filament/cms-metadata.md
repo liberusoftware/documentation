@@ -18,7 +18,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Cms Metadata:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Arbitrary governed metadata:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Definitions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Inheritance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Validation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Provenance:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Indexing:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **API exposure:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +35,13 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `cms-metadata`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `arbitrary-governed-metadata`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `definitions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `inheritance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `validation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `provenance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `indexing`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `api-exposure`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,37 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-metadata` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-metadata-filament`](https://github.com/liberusoftware/module-cms-metadata-filament) (`liberusoftware/cms-metadata-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/cms-metadata.md) · [API plan](../api/cms-metadata.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Arbitrary governed metadata** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `arbitrary governed metadata`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Definitions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `definitions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Inheritance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `inheritance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Validation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `validation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Provenance** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `provenance`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Indexing** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `indexing`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **API exposure** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `api exposure`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [MetadataFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-metadata-filament/src/MetadataFilamentServiceProvider.php) · [MetadataEntryResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-metadata-filament/src/Resources/MetadataEntryResource.php) · [ListMetadataEntries.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-metadata-filament/src/Resources/Pages/ListMetadataEntries.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MetadataService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Services/MetadataService.php) | `public function all(string $subjectType, int\|string $subjectId): array`<br>`public function get(string $subjectType, int\|string $subjectId, string $key, mixed $default = null): mixed`<br>`public function set(string $subjectType, int\|string $subjectId, string $key, mixed $value, ?int $teamId = null): MetadataEntry`<br>`public function remove(string $subjectType, int\|string $subjectId, string $key): bool` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [MetadataEntry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Models/MetadataEntry.php) | `subject_type`, `subject_id`, `key`, `value`, `value_type`, `team_id` |
+<!-- layer-implementation-plan:end -->

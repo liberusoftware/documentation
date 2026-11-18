@@ -18,7 +18,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Crm Conversation Analytics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Topics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Objections:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Competitors:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Talk ratios:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Questions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Outcomes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Coaching moments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Quality scorecards:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Trend comparison:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +37,15 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `crm-conversation-analytics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `topics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `objections`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `competitors`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `talk-ratios`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `questions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `outcomes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `coaching-moments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `quality-scorecards`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `trend-comparison`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,44 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-conversation-analytics` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/crm-conversation-analytics.md) · [API plan](../api/crm-conversation-analytics.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Topics** | Expose a focused Livewire 4 component and namespaced Blade default view for `topics` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Objections** | Expose a focused Livewire 4 component and namespaced Blade default view for `objections` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Competitors** | Expose a focused Livewire 4 component and namespaced Blade default view for `competitors` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Talk ratios** | Expose a focused Livewire 4 component and namespaced Blade default view for `talk ratios` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Questions** | Expose a focused Livewire 4 component and namespaced Blade default view for `questions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Outcomes** | Expose a focused Livewire 4 component and namespaced Blade default view for `outcomes` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Coaching moments** | Expose a focused Livewire 4 component and namespaced Blade default view for `coaching moments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Quality scorecards** | Expose a focused Livewire 4 component and namespaced Blade default view for `quality scorecards` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Trend comparison** | Expose a focused Livewire 4 component and namespaced Blade default view for `trend comparison` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [ConversationAnalyticsLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics-livewire/src/ConversationAnalyticsLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ConversationAnalyticsQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Queries/ConversationAnalyticsQuery.php) | `public function analyses(int $teamId): Builder`<br>`public function trends(int $teamId): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RecordConversationAnalysis.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Actions/RecordConversationAnalysis.php) | `public function execute(int $teamId, int $analystId, string $conversationKey, array $input): ConversationAnalysis` |
+| [ScoreConversation.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Actions/ScoreConversation.php) | `public function execute(int $teamId, ConversationAnalysis $analysis, array $scores): ConversationAnalysis` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ConversationAnalysis.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-conversation-analytics/src/Models/ConversationAnalysis.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

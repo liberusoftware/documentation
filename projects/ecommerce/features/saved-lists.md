@@ -94,3 +94,39 @@ The Saved Lists module owns Wishlists, favorites, gift registries, requisition l
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Wishlists** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `wishlists`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Favorites** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `favorites`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Gift registries** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `gift registries`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Requisition lists** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `requisition lists`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Repeat-order lists** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `repeat-order lists`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sharing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sharing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Privacy** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `privacy`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Alerts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `alerts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Cart conversion** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `cart conversion`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/saved-lists.md) | [Source map](../SOURCE-MAPPING.md#saved-lists) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/saved-lists.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/saved-lists.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-saved-lists-filament`](https://github.com/liberusoftware/module-ecommerce-saved-lists-filament) (`liberusoftware/ecommerce-saved-lists-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/saved-lists.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/saved-lists.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-saved-lists-react-inertia`](https://github.com/liberusoftware/module-ecommerce-saved-lists-react-inertia) (`@liberusoftware/module-ecommerce-saved-lists-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/saved-lists.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-saved-lists-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-saved-lists-vue-inertia) (`@liberusoftware/module-ecommerce-saved-lists-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/saved-lists.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-saved-lists-nuxt`](https://github.com/liberusoftware/module-ecommerce-saved-lists-nuxt) (`@liberusoftware/module-ecommerce-saved-lists-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/saved-lists.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-saved-lists-nextjs`](https://github.com/liberusoftware/module-ecommerce-saved-lists-nextjs) (`@liberusoftware/module-ecommerce-saved-lists-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/saved-lists.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-saved-lists-react-native`](https://github.com/liberusoftware/module-ecommerce-saved-lists-react-native) (`@liberusoftware/module-ecommerce-saved-lists-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/saved-lists.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-saved-lists-flutter`](https://github.com/liberusoftware/module-ecommerce-saved-lists-flutter) (`module_ecommerce_saved_lists_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/saved-lists.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-saved-lists-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-saved-lists-dart-mobile) (`module_ecommerce_saved_lists_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-saved-lists-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-saved-lists-dart-desktop) (`module_ecommerce_saved_lists_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

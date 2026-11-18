@@ -18,7 +18,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Contracts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Content and media repository contracts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Block and rendering pipeline interfaces:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Publication state and revision DTOs:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Menu and taxonomy query contracts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Headless delivery and webhook event interfaces:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +33,11 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-contracts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `content-and-media-repository-contracts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `block-and-rendering-pipeline-interfaces`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `publication-state-and-revision-dtos`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `menu-and-taxonomy-query-contracts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `headless-delivery-and-webhook-event-interfaces`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,27 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-contracts` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-contracts-filament`](https://github.com/liberusoftware/module-cms-contracts-filament) (`liberusoftware/cms-contracts-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-contracts.md) · [API plan](../api/module-cms-contracts.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Content and media repository contracts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `content and media repository contracts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Block and rendering pipeline interfaces** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `block and rendering pipeline interfaces`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Publication state and revision DTOs** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `publication state and revision dtos`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Menu and taxonomy query contracts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `menu and taxonomy query contracts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Headless delivery and webhook event interfaces** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `headless delivery and webhook event interfaces`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Cms Media:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Files/media entities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Folders:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Tags:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Collections:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Metadata:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Usage references:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Search:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Bulk operations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Replacement:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +37,15 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `cms-media`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `files-media-entities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `folders`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `tags`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `collections`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `metadata`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `usage-references`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `search`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `bulk-operations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `replacement`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +76,33 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `cms-media` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-cms-media-react-inertia`](https://github.com/liberusoftware/module-cms-media-react-inertia) (`@liberusoftware/module-cms-media-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/cms-media.md) · [Core plan](../core/cms-media.md) · [API plan](../api/cms-media.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Files/media entities** | Render `files/media entities` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Folders** | Render `folders` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Tags** | Render `tags` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Collections** | Render `collections` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Metadata** | Render `metadata` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Usage references** | Render `usage references` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Search** | Render `search` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Bulk operations** | Render `bulk operations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Replacement** | Render `replacement` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Media.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-media/src/Models/Media.php) | `disk`, `path`, `file_name`, `mime_type`, `size`, `folder`, `metadata`, `team_id` |
+<!-- layer-implementation-plan:end -->

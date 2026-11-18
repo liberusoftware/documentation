@@ -18,7 +18,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Rich Text Editor:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Semantic rich text:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Links:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tables:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Embeds:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Code:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Paste cleanup:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Accessibility hints:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Formats:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Sanitization:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +37,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-rich-text-editor`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `semantic-rich-text`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `links`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tables`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `embeds`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `code`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `paste-cleanup`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `accessibility-hints`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `formats`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `sanitization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,35 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-rich-text-editor` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-rich-text-editor-filament`](https://github.com/liberusoftware/module-cms-rich-text-editor-filament) (`liberusoftware/cms-rich-text-editor-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-rich-text-editor.md) · [API plan](../api/module-cms-rich-text-editor.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Semantic rich text** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `semantic rich text`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Links** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `links`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tables** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tables`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Embeds** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `embeds`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Code** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `code`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Paste cleanup** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `paste cleanup`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Accessibility hints** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `accessibility hints`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Formats** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `formats`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sanitization** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sanitization`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [EditorResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-rich-text-editor-filament/src/Resources/EditorResource.php) · [RichTextEditorFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-rich-text-editor-filament/src/RichTextEditorFilamentServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [RichTextService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-rich-text-editor/src/Services/RichTextService.php) | `public function __construct(private HtmlSanitizer $sanitizer)`<br>`public function sanitize(?string $html): string`<br>`public function cleanPaste(string $html): string`<br>`public function prepare(string $html, string $format = 'html'): array`<br>`public function accessibilityHints(string $html): array`<br>`public function embed(string $url, ?string $title = null): string` |
+<!-- layer-implementation-plan:end -->

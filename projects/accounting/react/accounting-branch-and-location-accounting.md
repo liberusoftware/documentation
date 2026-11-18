@@ -18,7 +18,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Accounting Branch And Location Accounting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Branch/location dimensions or books:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Local sequences/tax:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Allocations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Performance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Statutory requirements:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +33,11 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `accounting-branch-and-location-accounting`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `branch-location-dimensions-or-books`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `local-sequences-tax`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `allocations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `performance`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `statutory-requirements`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +68,53 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `accounting-branch-and-location-accounting` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-accounting-erp-laravel-inertia-react`](https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-accounting-branch-and-location-accounting-react-inertia`](https://github.com/liberusoftware/module-accounting-branch-and-location-accounting-react-inertia) (`@liberusoftware/module-accounting-branch-and-location-accounting-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/accounting-branch-and-location-accounting.md) · [Core plan](../core/accounting-branch-and-location-accounting.md) · [API plan](../api/accounting-branch-and-location-accounting.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Branch/location dimensions or books** | Render `branch/location dimensions or books` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Local sequences/tax** | Render `local sequences/tax` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Allocations** | Render `allocations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Performance** | Render `performance` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Statutory requirements** | Render `statutory requirements` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [BranchQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Queries/BranchQuery.php) | `public function forTeam(int $teamId, ?string $status = null): Collection` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocateBranchValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Actions/AllocateBranchValue.php) | `public function handle(Branch $branch, float $amount): array` |
+| [CreateBranch.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Actions/CreateBranch.php) | `public function handle(array $attributes): Branch` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Branch.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting/src/Models/Branch.php) | `team_id`, `code`, `name`, `location`, `local_tax_code`, `sequence_prefix`, `allocation_rule`, `performance_target`, `statutory_reference`, `status`, `metadata` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [BranchController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting-api/src/Http/Controllers/BranchController.php) | `public function index(Request $request, BranchQuery $query): mixed`<br>`public function store(Request $request, CreateBranch $action): mixed`<br>`public function allocate(Request $request, string $branch, AllocateBranchValue $action): mixed` |
+
+**Observed route declarations:**
+
+[modules/accounting-branch-and-location-accounting-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-branch-and-location-accounting-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/accounting/branches')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+Route::get('/', [BranchController::class, 'index'])->middleware('ability:accounting.branch-and-location-accounting.read');
+Route::post('/', [BranchController::class, 'store'])->middleware('ability:accounting.branch-and-location-accounting.write');
+Route::post('/{branch}/allocate', [BranchController::class, 'allocate'])->middleware('ability:accounting.branch-and-location-accounting.write');
+```
+<!-- layer-implementation-plan:end -->

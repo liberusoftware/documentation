@@ -18,14 +18,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Methods:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Mandates:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Gateway drivers:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Capture:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Allocation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Refunds:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Disputes:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Reconciliation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Unified payment-contracts and payment-core integration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Methods and vaulted payment instruments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Mandates and Direct Debit lifecycles:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Gateway drivers and capability discovery:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Capture, partial invoice payments, and allocation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Refunds and credit reversals:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Disputes and chargeback evidence:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Reconciliation and settlement batches:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -36,14 +36,14 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `methods`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `mandates`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `gateway-drivers`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `capture`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `allocation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `refunds`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `disputes`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `reconciliation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `unified-payment-contracts-and-payment-core-integration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `methods-and-vaulted-payment-instruments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `mandates-and-direct-debit-lifecycles`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `gateway-drivers-and-capability-discovery`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `capture-partial-invoice-payments-and-allocation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `refunds-and-credit-reversals`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `disputes-and-chargeback-evidence`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `reconciliation-and-settlement-batches`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -56,3 +56,57 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `billing-payments` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/payments.md) · [API plan](../api/payments.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Unified payment-contracts and payment-core integration** | Expose a focused Livewire 4 component and namespaced Blade default view for `unified payment-contracts and payment-core integration` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Methods and vaulted payment instruments** | Expose a focused Livewire 4 component and namespaced Blade default view for `methods and vaulted payment instruments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Mandates and Direct Debit lifecycles** | Expose a focused Livewire 4 component and namespaced Blade default view for `mandates and direct debit lifecycles` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Gateway drivers and capability discovery** | Expose a focused Livewire 4 component and namespaced Blade default view for `gateway drivers and capability discovery` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Capture, partial invoice payments, and allocation** | Expose a focused Livewire 4 component and namespaced Blade default view for `capture, partial invoice payments, and allocation` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Refunds and credit reversals** | Expose a focused Livewire 4 component and namespaced Blade default view for `refunds and credit reversals` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Disputes and chargeback evidence** | Expose a focused Livewire 4 component and namespaced Blade default view for `disputes and chargeback evidence` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Reconciliation and settlement batches** | Expose a focused Livewire 4 component and namespaced Blade default view for `reconciliation and settlement batches` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [PaymentList.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-livewire/src/Components/PaymentList.php) · [PaymentMethods.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-livewire/src/Components/PaymentMethods.php) · [PaymentOperations.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-livewire/src/Components/PaymentOperations.php) · [PaymentsLivewireServiceProvider.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-livewire/src/PaymentsLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ListPayments.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Queries/ListPayments.php) | `public function execute(?int $teamId, int $perPage = 25): LengthAwarePaginator` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [AllocatePayment.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/AllocatePayment.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(Payment $payment, int $amountMinor, ?int $invoiceId = null): PaymentAllocation` |
+| [CapturePayment.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/CapturePayment.php) | `public function __construct(private DatabaseManager $database, private GatewayManager $gateways)`<br>`public function execute(Payment $payment): Payment` |
+| [CreatePayment.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/CreatePayment.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(array $attributes): Payment` |
+| [CreatePaymentMandate.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/CreatePaymentMandate.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(array $attributes): PaymentMandate` |
+| [CreatePaymentMethod.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/CreatePaymentMethod.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(array $attributes): PaymentMethod` |
+| [OpenDispute.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/OpenDispute.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(Payment $payment, int $amountMinor, string $reason): PaymentDispute` |
+| [ReconcilePayment.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/ReconcilePayment.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(Payment $payment, string $providerReference, bool $matched = true, ?string $notes = null): PaymentReconciliation` |
+| [RefundPayment.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/RefundPayment.php) | `public function __construct(private DatabaseManager $database, private GatewayManager $gateways)`<br>`public function execute(Payment $payment, int $amountMinor, string $reason = 'requested'): PaymentRefund` |
+| [TransitionPaymentMandate.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/TransitionPaymentMandate.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(PaymentMandate $mandate, string $status): PaymentMandate` |
+| [TransitionPaymentMethod.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Actions/TransitionPaymentMethod.php) | `public function __construct(private DatabaseManager $database)`<br>`public function execute(PaymentMethod $method, PaymentMethodStatus $status): PaymentMethod` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [Payment.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Models/Payment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentAllocation.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Models/PaymentAllocation.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentDispute.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Models/PaymentDispute.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentMandate.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Models/PaymentMandate.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentMethod.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Models/PaymentMethod.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentReconciliation.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Models/PaymentReconciliation.php) | No literal fillable array detected; inspect the model and API schema. |
+| [PaymentRefund.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments/src/Models/PaymentRefund.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,19 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Crm Template Snapshots:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Versioned bundles of fields:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Pipelines:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Workflows:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Forms:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Funnels:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Calendars:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Templates:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Dashboards:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Settings with preview:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Protected sharing:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Install:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Update:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Rollback:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +41,19 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `crm-template-snapshots`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `versioned-bundles-of-fields`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `pipelines`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `workflows`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `forms`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `funnels`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `calendars`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `templates`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `dashboards`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `settings-with-preview`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `protected-sharing`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `install`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `update`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `rollback`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +74,35 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-template-snapshots` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/crm-template-snapshots.md)) |
+| Capability Nuxt module skeleton | [`module-crm-crm-template-snapshots-nuxt`](https://github.com/liberusoftware/module-crm-crm-template-snapshots-nuxt) (`@liberusoftware/module-crm-crm-template-snapshots-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Versioned bundles of fields** | Expose composable and Vue 3 component for `versioned bundles of fields` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Pipelines** | Expose composable and Vue 3 component for `pipelines` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Workflows** | Expose composable and Vue 3 component for `workflows` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Forms** | Expose composable and Vue 3 component for `forms` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Funnels** | Expose composable and Vue 3 component for `funnels` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Calendars** | Expose composable and Vue 3 component for `calendars` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Templates** | Expose composable and Vue 3 component for `templates` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Dashboards** | Expose composable and Vue 3 component for `dashboards` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Settings with preview** | Expose composable and Vue 3 component for `settings with preview` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Protected sharing** | Expose composable and Vue 3 component for `protected sharing` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Install** | Expose composable and Vue 3 component for `install` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Update** | Expose composable and Vue 3 component for `update` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+| **Rollback** | Expose composable and Vue 3 component for `rollback` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/crm-template-snapshots.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-crm-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -90,3 +90,37 @@ The Advertising module owns Ad-account connections, campaign visibility, lead-ad
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Ad-account connections** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `ad-account connections`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Campaign visibility** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `campaign visibility`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Lead-ad ingestion** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `lead-ad ingestion`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **CRM audiences** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `crm audiences`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Offline/server conversions** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `offline/server conversions`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Spend/performance sync** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `spend/performance sync`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Attribution** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `attribution`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/advertising.md) | [Source map](../SOURCE-MAPPING.md#advertising) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/advertising.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/advertising.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-advertising-filament`](https://github.com/liberusoftware/module-crm-advertising-filament) (`liberusoftware/crm-advertising-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/advertising.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/advertising.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-advertising-react-inertia`](https://github.com/liberusoftware/module-crm-advertising-react-inertia) (`@liberusoftware/module-crm-advertising-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/advertising.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-advertising-vue-inertia`](https://github.com/liberusoftware/module-crm-advertising-vue-inertia) (`@liberusoftware/module-crm-advertising-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/advertising.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-advertising-nuxt`](https://github.com/liberusoftware/module-crm-advertising-nuxt) (`@liberusoftware/module-crm-advertising-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/advertising.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-advertising-nextjs`](https://github.com/liberusoftware/module-crm-advertising-nextjs) (`@liberusoftware/module-crm-advertising-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/advertising.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-advertising-react-native`](https://github.com/liberusoftware/module-crm-advertising-react-native) (`@liberusoftware/module-crm-advertising-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/advertising.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-advertising-flutter`](https://github.com/liberusoftware/module-crm-advertising-flutter) (`module_crm_advertising_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/advertising.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-advertising-dart-mobile`](https://github.com/liberusoftware/module-crm-advertising-dart-mobile) (`module_crm_advertising_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-advertising-dart-desktop`](https://github.com/liberusoftware/module-crm-advertising-dart-desktop) (`module_crm_advertising_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -18,7 +18,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Accounting Financial Statements:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Profit and loss:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Balance sheet:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Cash flow:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Changes in equity:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Comparative periods:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Dimensions:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Drill-through:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +35,13 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `accounting-financial-statements`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `profit-and-loss`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `balance-sheet`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `cash-flow`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `changes-in-equity`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `comparative-periods`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `dimensions`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `drill-through`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +54,37 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `accounting-financial-statements` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/accounting-financial-statements.md) · [API plan](../api/accounting-financial-statements.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Profit and loss** | Expose a focused Livewire 4 component and namespaced Blade default view for `profit and loss` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Balance sheet** | Expose a focused Livewire 4 component and namespaced Blade default view for `balance sheet` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Cash flow** | Expose a focused Livewire 4 component and namespaced Blade default view for `cash flow` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Changes in equity** | Expose a focused Livewire 4 component and namespaced Blade default view for `changes in equity` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Comparative periods** | Expose a focused Livewire 4 component and namespaced Blade default view for `comparative periods` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Dimensions** | Expose a focused Livewire 4 component and namespaced Blade default view for `dimensions` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Drill-through** | Expose a focused Livewire 4 component and namespaced Blade default view for `drill-through` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [Statements.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements-livewire/src/Livewire/Statements.php) · [FinancialStatementsLivewireServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements-livewire/src/FinancialStatementsLivewireServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [StatementQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements/src/Queries/StatementQuery.php) | `public function profitAndLoss(int $bookId, string $start, string $end, ?array $dimensions = null): array`<br>`public function balanceSheet(int $bookId, string $asOf, ?array $dimensions = null): array`<br>`public function cashFlow(int $bookId, string $start, string $end, ?array $dimensions = null): array`<br>`public function changesInEquity(int $bookId, string $start, string $end, ?array $dimensions = null): array`<br>`public function comparative(int $bookId, string $start, string $end, string $compareStart, string $compareEnd, ?array $dimensions = null): array`<br>`public function drillThrough(int $bookId, int $accountId, string $start, string $end, ?array $dimensions = null): array` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [FinancialStatementsPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-financial-statements-api/src/Policies/FinancialStatementsPolicy.php) | `public function view(?Authenticatable $user): bool` |
+<!-- layer-implementation-plan:end -->

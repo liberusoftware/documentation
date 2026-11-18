@@ -18,7 +18,17 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Accounting Sage Accounting Migration:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Chart/analysis types:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Contacts:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Products:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Sales/purchases:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Payments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Bank:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **VAT/CIS evidence:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Currencies:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Budgets:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Attachments:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Source IDs:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +39,17 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `accounting-sage-accounting-migration`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `chart-analysis-types`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `contacts`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `products`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `sales-purchases`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `payments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `bank`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `vat-cis-evidence`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `currencies`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `budgets`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `attachments`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `source-ids`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +62,45 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `accounting-sage-accounting-migration` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/accounting-sage-accounting-migration.md) · [API plan](../api/accounting-sage-accounting-migration.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Chart/analysis types** | Expose a focused Livewire 4 component and namespaced Blade default view for `chart/analysis types` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Contacts** | Expose a focused Livewire 4 component and namespaced Blade default view for `contacts` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Products** | Expose a focused Livewire 4 component and namespaced Blade default view for `products` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Sales/purchases** | Expose a focused Livewire 4 component and namespaced Blade default view for `sales/purchases` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Payments** | Expose a focused Livewire 4 component and namespaced Blade default view for `payments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Bank** | Expose a focused Livewire 4 component and namespaced Blade default view for `bank` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **VAT/CIS evidence** | Expose a focused Livewire 4 component and namespaced Blade default view for `vat/cis evidence` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Currencies** | Expose a focused Livewire 4 component and namespaced Blade default view for `currencies` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Budgets** | Expose a focused Livewire 4 component and namespaced Blade default view for `budgets` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Attachments** | Expose a focused Livewire 4 component and namespaced Blade default view for `attachments` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Source IDs** | Expose a focused Livewire 4 component and namespaced Blade default view for `source ids` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+**Observed Livewire / view files:** [SageAccountingMigrationLivewireServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sage-accounting-migration-livewire/src/SageAccountingMigrationLivewireServiceProvider.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateMigrationRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sage-accounting-migration/src/Actions/CreateMigrationRun.php) | `public function handle(?int $connectionId, array $metadata = []): SageMigrationRun` |
+| [ImportMigrationRecords.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sage-accounting-migration/src/Actions/ImportMigrationRecords.php) | `public function handle(SageMigrationRun $run, array $records): SageMigrationRun` |
+| [ReconcileMigration.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sage-accounting-migration/src/Actions/ReconcileMigration.php) | `public function handle(SageMigrationRun $run): SageMigrationRun` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SageMigrationConnection.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sage-accounting-migration/src/Models/SageMigrationConnection.php) | `team_id`, `provider`, `external_business_id`, `access_token`, `refresh_token`, `token_expires_at`, `status`, `last_synced_at` |
+| [SageMigrationRecord.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sage-accounting-migration/src/Models/SageMigrationRecord.php) | `run_id`, `entity_type`, `source_id`, `status`, `payload`, `payload_hash`, `error_message`, `metadata` |
+| [SageMigrationRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sage-accounting-migration/src/Models/SageMigrationRun.php) | `connection_id`, `status`, `total_records`, `imported_records`, `failed_records`, `metadata`, `started_at`, `finished_at` |
+<!-- layer-implementation-plan:end -->

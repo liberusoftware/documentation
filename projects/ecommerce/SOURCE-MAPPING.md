@@ -30,6 +30,7 @@ Multiple matches are left visible for review. Repeated design spellings may poin
 | <a id="catalog-import-and-export"></a>[catalog-import-and-export](features/catalog-import-and-export.md) | No dedicated name match | No dedicated name match | No dedicated name match | No dedicated name match |
 | <a id="catalog-staging"></a>[catalog-staging](features/catalog-staging.md) | No dedicated name match | No dedicated name match | No dedicated name match | No dedicated name match |
 | <a id="categories-and-navigation"></a>[categories-and-navigation](features/categories-and-navigation.md) | No dedicated name match | No dedicated name match | No dedicated name match | No dedicated name match |
+| <a id="catering"></a>[catering](features/catering.md) | No dedicated name match | No dedicated name match | No dedicated name match | No dedicated name match |
 | <a id="checkout"></a>[checkout](features/checkout.md) | No dedicated name match | No dedicated name match | No dedicated name match | No dedicated name match |
 | <a id="checkout-extensibility"></a>[checkout-extensibility](features/checkout-extensibility.md) | No dedicated name match | No dedicated name match | No dedicated name match | No dedicated name match |
 | <a id="commerce-automation-pack"></a>[commerce-automation-pack](features/commerce-automation-pack.md) | No dedicated name match | No dedicated name match | No dedicated name match | No dedicated name match |
@@ -131,9 +132,3 @@ These package references document observed modules even when an existing feature
 | — | No unmatched dedicated package identities in this scan |
 
 Reproduce with `python3 tools/reconcile_source_modules.py` after rebuilding the inventory and package references. The [machine-readable mapping](../../architecture/source-design-mapping.json) includes every layer match. Follow the [reuse guide](../../architecture/SHARED-MODULES.md), [Composer lifecycle](../../guides/COMPOSER.md) and [npm lifecycle](../../guides/NPM.md) when implementing or adopting a module.
-
-<a id="catering"></a>
-
-## Catering (new design)
-
-[Catering core](core/catering.md) proposes `liberusoftware/ecommerce-catering`; no manifest or released package is asserted by this addition. Resolve the boundary approvals before schema work, then update observed inventories from actual source evidence. See the [delivery map](CATERING.md).

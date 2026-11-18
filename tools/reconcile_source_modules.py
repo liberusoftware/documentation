@@ -17,6 +17,11 @@ FOUNDATION_ALIASES = {
     'organizations-and-teams': 'organizations-teams', 'roles-and-permissions': 'roles-permissions',
     'scheduler-and-queues': 'scheduler-queues', 'sessions-and-devices': 'sessions-devices',
 }
+ECOMMERCE_ALIASES = {
+    'commerce-core': 'core', 'commerce-customers': 'customers',
+    'commerce-extensions': 'extensions', 'commerce-functions': 'functions',
+    'commerce-automation-pack': 'automation-pack', 'commerce-copilot': 'copilot',
+}
 START = '<!-- source-reconciliation:start -->'
 END = '<!-- source-reconciliation:end -->'
 
@@ -54,7 +59,7 @@ def main():
         matches = {}
         mapped = set()
         for feature in slugs:
-            base = FOUNDATION_ALIASES.get(feature, feature) if project.name == 'boilerplate' else feature
+            base = FOUNDATION_ALIASES.get(feature, feature) if project.name == 'boilerplate' else (ECOMMERCE_ALIASES.get(feature, feature) if project.name == 'ecommerce' else feature)
             group = {}
             for layer in ('core', 'api', 'filament', 'livewire', 'react', 'vue', 'nuxt', 'react-native', 'flutter', 'nextjs'):
                 suffix = '' if layer == 'core' else {'react': '-react-inertia', 'vue': '-vue-inertia'}.get(layer, '-' + layer)
@@ -76,6 +81,8 @@ def main():
                  '**Preservation rule:** all existing product scopes and module documents remain in place. A blank package match means only that this scan did not find a dedicated manifest under the expected naming pattern; implementation can exist elsewhere or use another identity.', '']
         if project.name == 'ecommerce':
             lines += ['Ecommerce has application-owned implementations outside the immediate package folder. Use the [application capability map](SOURCE-APPLICATION.md) and retain the [full catalogue](ECOMMERCE.md). Every blank row below preserves the existing module design; it is not a recommendation to remove that module.', '']
+        elif project.name == 'music':
+            lines += ['Liberu Music DAW defines 22 proposed domain, API, web, mobile and desktop capabilities with explicit native audio runtime boundaries. Use [MUSIC.md](MUSIC.md), [ARCHITECTURE.md](ARCHITECTURE.md), [PRESENTATION.md](PRESENTATION.md) and the [capability repository catalog](../../modules/skeletons/README.md).', '']
         elif not record:
             lines += ['No corresponding application repository was included in the requested `liberusoftware/*-laravel` discovery set. Use the enterprise/platform composition documents and owning product sources rather than inventing a source package.', '']
         else:

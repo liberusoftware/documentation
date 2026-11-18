@@ -38,7 +38,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 - `transfer-orders`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `in-transit-stock`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `min/max/reorder`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `min-max-reorder`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `demand-signals`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `purchase-references`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `receiving`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -56,3 +56,30 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-transfers-and-replenishment` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-transfers-and-replenishment-filament`](https://github.com/liberusoftware/module-ecommerce-transfers-and-replenishment-filament) (`liberusoftware/ecommerce-transfers-and-replenishment-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/transfers-and-replenishment.md) · [API plan](../api/transfers-and-replenishment.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Transfer orders** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `transfer orders`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **In-transit stock** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `in-transit stock`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Min/max/reorder** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `min/max/reorder`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Demand signals** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `demand signals`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Purchase references** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `purchase references`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Receiving** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `receiving`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Discrepancies** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `discrepancies`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Alerts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `alerts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

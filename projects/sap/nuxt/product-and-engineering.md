@@ -56,3 +56,31 @@ Show the selected entity, source/subject reference, current business state and s
 - Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
 
 Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-enterprise-sap-nuxt-vue`](https://github.com/liberusoftware/project-enterprise-sap-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-enterprise-sap-laravel-api`](https://github.com/liberusoftware/project-enterprise-sap-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/product-and-engineering.md)) |
+| Capability Nuxt module skeleton | [`module-sap-product-and-engineering-nuxt`](https://github.com/liberusoftware/module-sap-product-and-engineering-nuxt) (`@liberusoftware/module-sap-product-and-engineering-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Products** | Expose composable and Vue 3 component for `products` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **Roadmaps** | Expose composable and Vue 3 component for `roadmaps` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **Requirements** | Expose composable and Vue 3 component for `requirements` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **Releases** | Expose composable and Vue 3 component for `releases` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **Licenses** | Expose composable and Vue 3 component for `licenses` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **Repositories** | Expose composable and Vue 3 component for `repositories` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **Issues** | Expose composable and Vue 3 component for `issues` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **CI/CD links** | Expose composable and Vue 3 component for `ci/cd links` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+| **Support feedback** | Expose composable and Vue 3 component for `support feedback` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/product-and-engineering.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-enterprise-sap-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

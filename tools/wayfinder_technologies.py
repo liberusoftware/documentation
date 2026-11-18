@@ -10,6 +10,8 @@ LAYERS = {
         'Laravel Inertia React',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-react-inertia',
+            'skeleton_catalog': 'modules/skeletons/laravel-inertia-react.md',
             'api_client': False,
             'boundary': (
                 'Laravel routes, sessions and CSRF own mutations; page components receive '
@@ -69,6 +71,8 @@ LAYERS = {
         'Laravel Inertia Vue',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-vue-inertia',
+            'skeleton_catalog': 'modules/skeletons/laravel-inertia-vue.md',
             'api_client': False,
             'boundary': (
                 'Laravel routes, sessions and CSRF own mutations; page components receive '
@@ -128,6 +132,8 @@ LAYERS = {
         'Nuxt Vue',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-nuxt-vue',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-nuxt',
+            'skeleton_catalog': 'modules/skeletons/nuxt-vue.md',
             'api_client': True,
             'boundary': (
                 'Consume the product `-laravel-api` HTTP contracts from an independently deployed Nuxt 4 Vue app; '
@@ -187,6 +193,8 @@ LAYERS = {
         'Next.js React',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-next-react',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-nextjs',
+            'skeleton_catalog': 'modules/skeletons/next-react.md',
             'api_client': True,
             'boundary': (
                 'Consume the product `-laravel-api` HTTP contracts from an independently deployed Next.js App Router app; '
@@ -246,6 +254,8 @@ LAYERS = {
         'React Native Expo',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-mobile-react',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-react-native',
+            'skeleton_catalog': 'modules/skeletons/mobile-react.md',
             'api_client': True,
             'boundary': (
                 'Consume the product `-laravel-api` with typed clients, secure device credentials, validated deep links, '
@@ -304,6 +314,8 @@ LAYERS = {
         'Flutter mobile',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-mobile-flutter',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-flutter',
+            'skeleton_catalog': 'modules/skeletons/mobile-flutter.md',
             'api_client': True,
             'boundary': (
                 'Consume the product `-laravel-api` with typed Dart clients, secure device credentials, native widget '
@@ -362,6 +374,8 @@ LAYERS = {
         'Dart mobile',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-dart-mobile',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-dart-mobile',
+            'skeleton_catalog': 'modules/skeletons/dart-mobile.md',
             'api_client': True,
             'boundary': (
                 'A distinct mobile host/release using Flutter/Dart and the product `-laravel-api`; verify touch navigation, '
@@ -379,7 +393,7 @@ LAYERS = {
                 ('Flutter implementation runbook', 'guides/presentation/FLUTTER.md'),
             ],
             'module_index': 'modules/flutter/README.md',
-            'adapter_pattern': 'module-{capability}-flutter',
+            'adapter_pattern': 'module-{capability}-dart-mobile',
             'method': [
                 'Treat this repository as a separate mobile application root from `-mobile-flutter`: independent release identity, bundle IDs and store listing.',
                 'Use the Flutter/Dart versions pinned in `.flutter-version` / `.fvmrc`; `flutter pub get`, `analyze`, `test`, then run on iOS/Android targets.',
@@ -416,6 +430,8 @@ LAYERS = {
         'Dart desktop',
         {
             'boilerplate': 'https://github.com/liberusoftware/project-boilerplate-dart-desktop',
+            'module_foundation': 'https://github.com/liberusoftware/module-boilerplate-dart-desktop',
+            'skeleton_catalog': 'modules/skeletons/dart-desktop.md',
             'api_client': True,
             'boundary': (
                 'A distinct desktop host/release using Flutter/Dart and the product `-laravel-api`; verify keyboard/focus, '
@@ -433,7 +449,7 @@ LAYERS = {
                 ('Flutter implementation runbook', 'guides/presentation/FLUTTER.md'),
             ],
             'module_index': 'modules/flutter/README.md',
-            'adapter_pattern': 'module-{capability}-flutter',
+            'adapter_pattern': 'module-{capability}-dart-desktop',
             'method': [
                 'Treat this repository as a separate desktop application root: independent release identity and OS packaging from mobile hosts.',
                 'Use the pinned Flutter/Dart toolchain; enable Linux/macOS/Windows targets as product support requires; `flutter pub get`, `analyze`, `test`.',
@@ -482,6 +498,8 @@ def render_wayfinder_doc(suffix: str) -> str:
         'Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.',
         '',
         f'- Boilerplate template: {profile["boilerplate"]}',
+        f'- Reusable module foundation: {profile["module_foundation"]}',
+        f'- Capability skeleton catalog: [`{profile["skeleton_catalog"]}`](../../{profile["skeleton_catalog"]})',
         f'- Presentation layer directory in product docs: `{layer}/`',
         f'- Adapter identity pattern: `{profile["adapter_pattern"]}`',
         f'- Consumes product `-laravel-api`: {"yes" if profile["api_client"] else "no (Laravel/Inertia host; HTTP API optional)"}',
@@ -531,14 +549,14 @@ def write_wayfinder_docs(root):
         'implementation method and technical specification those issues follow. Product capability checklists remain in the issues; '
         'framework depth lives in standards and presentation runbooks linked from each page.',
         '',
-        '| Technology | Specification | Boilerplate |',
-        '| --- | --- | --- |',
+        '| Technology | Specification | Boilerplate | Module foundation | Skeleton catalog |',
+        '| --- | --- | --- | --- | --- |',
     ]
     for suffix, (_, label, profile) in LAYERS.items():
         path = out / f'{suffix}.md'
         path.write_text(render_wayfinder_doc(suffix))
         index.append(
-            f'| {label} | [{suffix}.md]({suffix}.md) | [template]({profile["boilerplate"]}) |'
+            f'| {label} | [{suffix}.md]({suffix}.md) | [template]({profile["boilerplate"]}) | [module template]({profile["module_foundation"]}) | [catalog](../../{profile["skeleton_catalog"]}) |'
         )
     index += [
         '',

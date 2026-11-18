@@ -7,10 +7,11 @@
 ## Canonical independent module specification
 
 **Domain module:** `module-ecommerce-payments`
+**Extends / implements contracts:** `liberusoftware/payment-contracts, liberusoftware/payment-core`
 **Application:** Ecommerce  
 **Capability group:** Order and payment modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  
-**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [PAYMENTS.md](../../../architecture/PAYMENTS.md)
 
 ## 1. Purpose
 
@@ -18,11 +19,11 @@ The Payments module owns Shared payment-core integration, tender selection, auth
 
 ## 2. Full feature scope
 
-- **Shared payment-core integration:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Tender selection:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Authorize/capture/void/refund references:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Payment status projection:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Reconciliation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Shared payment-contracts and payment-core integration:** Consume liberusoftware/payment-contracts and liberusoftware/payment-core so Stripe, PayPal, Paddle, Adyen, Mollie, Square, and GoCardless adapters plug in without checkout schema changes.
+- **Tender selection and dynamic capability routing:** Present eligible payment methods (cards, Apple/Google Pay, PayPal, BNPL, iDEAL, SEPA, POS terminal) using PaymentCapabilityDescriptorDto.
+- **Authorize/capture/void/refund references:** Execute idempotent PaymentIntentServiceContract and PaymentCaptureAndRefundContract commands correlated to order and fulfillment milestones.
+- **Saved payment method vault and 3DS/SCA continuation:** Support vaulted customer payment instruments and normalized 3DS2/redirect client actions via SavedPaymentMethodVaultContract.
+- **Payment status projection and settlement reconciliation:** Project canonical PaymentLifecycleState onto orders and reconcile gross-to-net merchant settlements via PayoutAndSettlementReconcilerContract.
 
 ## 3. Ownership and boundaries
 
@@ -86,3 +87,35 @@ The Payments module owns Shared payment-core integration, tender selection, auth
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Shared payment-contracts and payment-core integration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `shared payment-contracts and payment-core integration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Tender selection and dynamic capability routing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `tender selection and dynamic capability routing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Authorize/capture/void/refund references** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `authorize/capture/void/refund references`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Saved payment method vault and 3DS/SCA continuation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `saved payment method vault and 3ds/sca continuation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Payment status projection and settlement reconciliation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `payment status projection and settlement reconciliation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/payments.md) | [Source map](../SOURCE-MAPPING.md#payments) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/payments.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/payments.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-payments-filament`](https://github.com/liberusoftware/module-ecommerce-payments-filament) (`liberusoftware/ecommerce-payments-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/payments.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/payments.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-payments-react-inertia`](https://github.com/liberusoftware/module-ecommerce-payments-react-inertia) (`@liberusoftware/module-ecommerce-payments-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/payments.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-payments-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-payments-vue-inertia) (`@liberusoftware/module-ecommerce-payments-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/payments.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-payments-nuxt`](https://github.com/liberusoftware/module-ecommerce-payments-nuxt) (`@liberusoftware/module-ecommerce-payments-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/payments.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-payments-nextjs`](https://github.com/liberusoftware/module-ecommerce-payments-nextjs) (`@liberusoftware/module-ecommerce-payments-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/payments.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-payments-react-native`](https://github.com/liberusoftware/module-ecommerce-payments-react-native) (`@liberusoftware/module-ecommerce-payments-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/payments.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-payments-flutter`](https://github.com/liberusoftware/module-ecommerce-payments-flutter) (`module_ecommerce_payments_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/payments.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-payments-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-payments-dart-mobile) (`module_ecommerce_payments_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-payments-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-payments-dart-desktop) (`module_ecommerce_payments_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

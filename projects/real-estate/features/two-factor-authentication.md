@@ -18,7 +18,12 @@ The Two Factor Authentication module owns two factor authentication domain behav
 
 ## 2. Full feature scope
 
-- **Two Factor Authentication:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **TOTP enrollment:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recovery codes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Enforcement:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Trusted devices:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Recovery:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Audit:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Two Factor Authentication module owns two factor authentication domain behav
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **TOTP enrollment** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `totp enrollment`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recovery codes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recovery codes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Enforcement** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `enforcement`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Trusted devices** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `trusted devices`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recovery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recovery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Audit** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `audit`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/two-factor-authentication.md) | [Source map](../SOURCE-MAPPING.md#two-factor-authentication) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/two-factor-authentication.md) | [`project-real-estate-laravel-api`](https://github.com/liberusoftware/project-real-estate-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/two-factor-authentication.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) · [`module-two-factor-authentication-filament`](https://github.com/liberusoftware/module-two-factor-authentication-filament) (`liberusoftware/two-factor-authentication-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/two-factor-authentication.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/two-factor-authentication.md) | [`project-real-estate-laravel-inertia-react`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-react) · [`module-two-factor-authentication-react-inertia`](https://github.com/liberusoftware/module-two-factor-authentication-react-inertia) (`@liberusoftware/module-two-factor-authentication-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/two-factor-authentication.md) | [`project-real-estate-laravel-inertia-vue`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-vue) · [`module-two-factor-authentication-vue-inertia`](https://github.com/liberusoftware/module-two-factor-authentication-vue-inertia) (`@liberusoftware/module-two-factor-authentication-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/two-factor-authentication.md) | [`project-real-estate-nuxt-vue`](https://github.com/liberusoftware/project-real-estate-nuxt-vue) · [`module-two-factor-authentication-nuxt`](https://github.com/liberusoftware/module-two-factor-authentication-nuxt) (`@liberusoftware/module-two-factor-authentication-nuxt`) | Standalone Vue SSR client consuming `project-real-estate-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/two-factor-authentication.md) | [`project-real-estate-next-react`](https://github.com/liberusoftware/project-real-estate-next-react) · [`module-two-factor-authentication-nextjs`](https://github.com/liberusoftware/module-two-factor-authentication-nextjs) (`@liberusoftware/module-two-factor-authentication-nextjs`) | App Router Server/Client components consuming `project-real-estate-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/two-factor-authentication.md) | [`project-real-estate-mobile-react`](https://github.com/liberusoftware/project-real-estate-mobile-react) · [`module-two-factor-authentication-react-native`](https://github.com/liberusoftware/module-two-factor-authentication-react-native) (`@liberusoftware/module-two-factor-authentication-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/two-factor-authentication.md) | [`project-real-estate-mobile-flutter`](https://github.com/liberusoftware/project-real-estate-mobile-flutter) · [`module-two-factor-authentication-flutter`](https://github.com/liberusoftware/module-two-factor-authentication-flutter) (`module_two_factor_authentication_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/two-factor-authentication.md) | [`project-real-estate-dart-mobile`](https://github.com/liberusoftware/project-real-estate-dart-mobile) · [`module-two-factor-authentication-dart-mobile`](https://github.com/liberusoftware/module-two-factor-authentication-dart-mobile) (`module_two_factor_authentication_dart_mobile`)<br>[`project-real-estate-dart-desktop`](https://github.com/liberusoftware/project-real-estate-dart-desktop) · [`module-two-factor-authentication-dart-desktop`](https://github.com/liberusoftware/module-two-factor-authentication-dart-desktop) (`module_two_factor_authentication_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

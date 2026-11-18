@@ -7,10 +7,11 @@
 ## Canonical independent module specification
 
 **Domain module:** `module-ecommerce-payment-operations`
+**Extends / implements contracts:** `liberusoftware/payment-contracts, liberusoftware/payment-core`
 **Application:** Ecommerce  
 **Capability group:** Order and payment modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  
-**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [PAYMENTS.md](../../../architecture/PAYMENTS.md)
 
 ## 1. Purpose
 
@@ -18,12 +19,12 @@ The Payment Operations module owns Capture/refund queues, disputes/chargebacks, 
 
 ## 2. Full feature scope
 
-- **Capture/refund queues:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Disputes/chargebacks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Manual review:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Provider webhooks:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Settlement reconciliation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
-- **Exception handling:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Capture/refund queues over payment-contracts:** Process queued fulfillment-triggered captures and return-triggered refunds through PaymentCaptureAndRefundContract with idempotency locks.
+- **Disputes/chargebacks via DisputeAndChargebackHandlerContract:** Ingest normalized dispute notifications, assemble order/delivery evidence, and track win/loss outcomes across Stripe, PayPal, Adyen, Mollie, Square, and GoCardless.
+- **Manual review and fraud-hold release:** Coordinate manual fraud review holds before capturing or voiding authorized payment intents.
+- **Verified provider webhooks via MerchantWebhookVerifierContract:** Verify cryptographic webhook signatures, deduplicate provider event IDs in the payment-core inbox, and reconcile out-of-order events.
+- **Settlement reconciliation via PayoutAndSettlementReconcilerContract:** Match merchant payout batches, processing fees, FX conversions, and reserve holds against order payment ledgers.
+- **Exception handling and operator replay:** Surface stuck authorizations, failed captures, and mismatched settlements with audited operator retry actions.
 
 ## 3. Ownership and boundaries
 
@@ -88,3 +89,36 @@ The Payment Operations module owns Capture/refund queues, disputes/chargebacks, 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Capture/refund queues over payment-contracts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `capture/refund queues over payment-contracts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Disputes/chargebacks via DisputeAndChargebackHandlerContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `disputes/chargebacks via disputeandchargebackhandlercontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Manual review and fraud-hold release** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `manual review and fraud-hold release`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Verified provider webhooks via MerchantWebhookVerifierContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `verified provider webhooks via merchantwebhookverifiercontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Settlement reconciliation via PayoutAndSettlementReconcilerContract** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `settlement reconciliation via payoutandsettlementreconcilercontract`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Exception handling and operator replay** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `exception handling and operator replay`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/payment-operations.md) | [Source map](../SOURCE-MAPPING.md#payment-operations) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/payment-operations.md) | [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/payment-operations.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) · [`module-ecommerce-payment-operations-filament`](https://github.com/liberusoftware/module-ecommerce-payment-operations-filament) (`liberusoftware/ecommerce-payment-operations-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/payment-operations.md) | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/payment-operations.md) | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) · [`module-ecommerce-payment-operations-react-inertia`](https://github.com/liberusoftware/module-ecommerce-payment-operations-react-inertia) (`@liberusoftware/module-ecommerce-payment-operations-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/payment-operations.md) | [`project-ecommerce-laravel-inertia-vue`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue) · [`module-ecommerce-payment-operations-vue-inertia`](https://github.com/liberusoftware/module-ecommerce-payment-operations-vue-inertia) (`@liberusoftware/module-ecommerce-payment-operations-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/payment-operations.md) | [`project-ecommerce-nuxt-vue`](https://github.com/liberusoftware/project-ecommerce-nuxt-vue) · [`module-ecommerce-payment-operations-nuxt`](https://github.com/liberusoftware/module-ecommerce-payment-operations-nuxt) (`@liberusoftware/module-ecommerce-payment-operations-nuxt`) | Standalone Vue SSR client consuming `project-ecommerce-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/payment-operations.md) | [`project-ecommerce-next-react`](https://github.com/liberusoftware/project-ecommerce-next-react) · [`module-ecommerce-payment-operations-nextjs`](https://github.com/liberusoftware/module-ecommerce-payment-operations-nextjs) (`@liberusoftware/module-ecommerce-payment-operations-nextjs`) | App Router Server/Client components consuming `project-ecommerce-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/payment-operations.md) | [`project-ecommerce-mobile-react`](https://github.com/liberusoftware/project-ecommerce-mobile-react) · [`module-ecommerce-payment-operations-react-native`](https://github.com/liberusoftware/module-ecommerce-payment-operations-react-native) (`@liberusoftware/module-ecommerce-payment-operations-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/payment-operations.md) | [`project-ecommerce-mobile-flutter`](https://github.com/liberusoftware/project-ecommerce-mobile-flutter) · [`module-ecommerce-payment-operations-flutter`](https://github.com/liberusoftware/module-ecommerce-payment-operations-flutter) (`module_ecommerce_payment_operations_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/payment-operations.md) | [`project-ecommerce-dart-mobile`](https://github.com/liberusoftware/project-ecommerce-dart-mobile) · [`module-ecommerce-payment-operations-dart-mobile`](https://github.com/liberusoftware/module-ecommerce-payment-operations-dart-mobile) (`module_ecommerce_payment_operations_dart_mobile`)<br>[`project-ecommerce-dart-desktop`](https://github.com/liberusoftware/project-ecommerce-dart-desktop) · [`module-ecommerce-payment-operations-dart-desktop`](https://github.com/liberusoftware/module-ecommerce-payment-operations-dart-desktop) (`module_ecommerce_payment_operations_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

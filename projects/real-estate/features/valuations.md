@@ -90,3 +90,37 @@ The Valuations module owns Appraisals, comparables, pricing, fees, recommendatio
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Appraisals** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `appraisals`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Comparables** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `comparables`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Pricing** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `pricing`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Fees** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `fees`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Recommendations** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `recommendations`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Follow-up** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `follow-up`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Conversion** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `conversion`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/valuations.md) | [Source map](../SOURCE-MAPPING.md#valuations) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/valuations.md) | [`project-real-estate-laravel-api`](https://github.com/liberusoftware/project-real-estate-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/valuations.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) · [`module-real-estate-valuations-filament`](https://github.com/liberusoftware/module-real-estate-valuations-filament) (`liberusoftware/real-estate-valuations-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/valuations.md) | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/valuations.md) | [`project-real-estate-laravel-inertia-react`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-react) · [`module-real-estate-valuations-react-inertia`](https://github.com/liberusoftware/module-real-estate-valuations-react-inertia) (`@liberusoftware/module-real-estate-valuations-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/valuations.md) | [`project-real-estate-laravel-inertia-vue`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-vue) · [`module-real-estate-valuations-vue-inertia`](https://github.com/liberusoftware/module-real-estate-valuations-vue-inertia) (`@liberusoftware/module-real-estate-valuations-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/valuations.md) | [`project-real-estate-nuxt-vue`](https://github.com/liberusoftware/project-real-estate-nuxt-vue) · [`module-real-estate-valuations-nuxt`](https://github.com/liberusoftware/module-real-estate-valuations-nuxt) (`@liberusoftware/module-real-estate-valuations-nuxt`) | Standalone Vue SSR client consuming `project-real-estate-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/valuations.md) | [`project-real-estate-next-react`](https://github.com/liberusoftware/project-real-estate-next-react) · [`module-real-estate-valuations-nextjs`](https://github.com/liberusoftware/module-real-estate-valuations-nextjs) (`@liberusoftware/module-real-estate-valuations-nextjs`) | App Router Server/Client components consuming `project-real-estate-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/valuations.md) | [`project-real-estate-mobile-react`](https://github.com/liberusoftware/project-real-estate-mobile-react) · [`module-real-estate-valuations-react-native`](https://github.com/liberusoftware/module-real-estate-valuations-react-native) (`@liberusoftware/module-real-estate-valuations-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/valuations.md) | [`project-real-estate-mobile-flutter`](https://github.com/liberusoftware/project-real-estate-mobile-flutter) · [`module-real-estate-valuations-flutter`](https://github.com/liberusoftware/module-real-estate-valuations-flutter) (`module_real_estate_valuations_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/valuations.md) | [`project-real-estate-dart-mobile`](https://github.com/liberusoftware/project-real-estate-dart-mobile) · [`module-real-estate-valuations-dart-mobile`](https://github.com/liberusoftware/module-real-estate-valuations-dart-mobile) (`module_real_estate_valuations_dart_mobile`)<br>[`project-real-estate-dart-desktop`](https://github.com/liberusoftware/project-real-estate-dart-desktop) · [`module-real-estate-valuations-dart-desktop`](https://github.com/liberusoftware/module-real-estate-valuations-dart-desktop) (`module_real_estate_valuations_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

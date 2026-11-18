@@ -1,7 +1,7 @@
 # Billing API Module Specifications
 
 <!-- catalogue-status:start -->
-This index preserves **81 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **82 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional API presentation package for exactly one matching domain module.
@@ -78,6 +78,7 @@ Each file defines the optional API presentation package for exactly one matching
 | [Pricing API](pricing.md) | [liberusoftware/module-billing-pricing-api](../../../modules/source/liberusoftware--module-billing-pricing-api.md) | [core](../core/pricing.md) · [nextjs](../nextjs/pricing.md) |
 | [Profiles API](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [nextjs](../nextjs/profiles.md) |
 | [Provisioning API](provisioning.md) | [liberusoftware/module-billing-provisioning-api](../../../modules/source/liberusoftware--module-billing-provisioning-api.md) | [core](../core/provisioning.md) · [nextjs](../nextjs/provisioning.md) |
+| [Referrals and Advocate Rewards API](referrals.md) | [Target/source map](../SOURCE-MAPPING.md#referrals) | [core](../core/referrals.md) · [nextjs](../nextjs/referrals.md) |
 | [Reporting API](reporting.md) | [liberusoftware/module-billing-reporting-api](../../../modules/source/liberusoftware--module-billing-reporting-api.md) | [core](../core/reporting.md) · [nextjs](../nextjs/reporting.md) |
 | [Roles Permissions API](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
 | [Scheduler Queues API](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |

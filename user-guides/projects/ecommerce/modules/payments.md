@@ -12,7 +12,7 @@
 
 The intended **Payments** workspace covers shared payment-core integration, tender selection, authorize/capture/void/refund references, payment status projection, and reconciliation.
 
-The relevant capability areas are **Shared payment-core integration**, **Tender selection**, **Authorize/capture/void/refund references**, **Payment status projection**, **Reconciliation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Shared payment-contracts and payment-core integration**, **Tender selection and dynamic capability routing**, **Authorize/capture/void/refund references**, **Saved payment method vault and 3DS/SCA continuation**, **Payment status projection and settlement reconciliation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

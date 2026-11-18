@@ -29,7 +29,7 @@ These counts describe documents, not released packages. Consult the [source inve
 | [cms](../../projects/cms/react-native/README.md) | 252 |
 | [control-panel](../../projects/control-panel/react-native/README.md) | 61 |
 | [crm](../../projects/crm/react-native/README.md) | 218 |
-| [ecommerce](../../projects/ecommerce/react-native/README.md) | 107 |
+| [ecommerce](../../projects/ecommerce/react-native/README.md) | 108 |
 | [genealogy](../../projects/genealogy/react-native/README.md) | 62 |
 | [liberu](../../projects/liberu/react-native/README.md) | 4 |
 | [maintenance](../../projects/maintenance/react-native/README.md) | 60 |

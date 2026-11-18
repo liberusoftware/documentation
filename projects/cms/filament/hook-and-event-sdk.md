@@ -34,7 +34,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `stable-content/editor/render/admin/cli-events`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `stable-content-editor-render-admin-cli-events`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `typed-extension-points`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `priorities`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `isolation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -52,3 +52,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `cms-hook-and-event-sdk` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-hook-and-event-sdk-filament`](https://github.com/liberusoftware/module-cms-hook-and-event-sdk-filament) (`liberusoftware/cms-hook-and-event-sdk-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/hook-and-event-sdk.md) · [API plan](../api/hook-and-event-sdk.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Stable content/editor/render/admin/CLI events** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `stable content/editor/render/admin/cli events`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Typed extension points** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `typed extension points`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Priorities** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `priorities`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Isolation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `isolation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Diagnostics** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `diagnostics`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Deprecation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `deprecation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 2. Module-specific surfaces
 
-- **Feature Flags:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Typed flags:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Environment/tenant/user targeting:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Rollout:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Telemetry:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Ownership:** page/component/composable/API-action behavior for this module's authorized workflow.
+- **Cleanup:** page/component/composable/API-action behavior for this module's authorized workflow.
 
 ## 3. Nuxt 4 implementation
 
@@ -29,7 +34,12 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ### Capability mapping
 
-- `feature-flags`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `typed-flags`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `environment-tenant-user-targeting`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `rollout`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `telemetry`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `ownership`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+- `cleanup`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
 
 ## 4. API contract and Nuxt consumption
 
@@ -50,3 +60,35 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `feature-flags` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Nuxt 4 host skeleton | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) | Standalone Nuxt 4 + Vue 3 application shell, Nitro server handlers, and SSR runtime config ([template](https://github.com/liberusoftware/project-boilerplate-nuxt-vue) · [wayfinder](../../wayfinders/nuxt-vue.md) · [runbook](../../../guides/presentation/NUXT.md)) |
+| Shared product API backend | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Authoritative Laravel HTTP composition root publishing versioned `/api/v1` endpoints ([backend guide](../../../guides/LARAVEL-API-BACKENDS.md) · [API plan](../api/feature-flags.md)) |
+| Capability Nuxt module skeleton | [`module-feature-flags-nuxt`](https://github.com/liberusoftware/module-feature-flags-nuxt) (`@liberusoftware/module-feature-flags-nuxt`) | Reusable Nuxt 4 components, composables, and typed DTO parsers ([foundation](https://github.com/liberusoftware/module-boilerplate-nuxt) · [catalog](../../../modules/skeletons/nuxt-vue.md)) |
+
+### Nuxt 4 feature, SSR, and API integration matrix
+
+| Feature / aspect | Nuxt 4 page, Vue component & composable contract | SSR cache isolation, `$fetch` command & recovery contract |
+| --- | --- | --- |
+| **Typed flags** | Expose composable and Vue 3 component for `typed flags` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/feature-flags.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Environment/tenant/user targeting** | Expose composable and Vue 3 component for `environment/tenant/user targeting` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/feature-flags.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Rollout** | Expose composable and Vue 3 component for `rollout` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/feature-flags.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Telemetry** | Expose composable and Vue 3 component for `telemetry` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/feature-flags.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Ownership** | Expose composable and Vue 3 component for `ownership` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/feature-flags.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+| **Cleanup** | Expose composable and Vue 3 component for `cleanup` using validated DTOs from `shared/`; share framework-neutral Vue UI with [Vue Inertia](../vue/feature-flags.md). | Use actor/tenant-scoped `useFetch`/`useAsyncData` keys (`private, no-store` default for authenticated reads) and `$fetch` mutations against `project-billing-laravel-api`. |
+
+### Observed domain and transport source evidence
+
+**Observed route declarations:**
+
+[modules/feature-flags-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/feature-flags-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/feature-flags')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('feature-flags-api.status');
+```
+<!-- layer-implementation-plan:end -->

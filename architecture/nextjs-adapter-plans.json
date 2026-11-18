@@ -9347,6 +9347,162 @@
         }
       ]
     },
+    "planned:billing:referrals": {
+      "home": "projects/billing/nextjs/referrals.md",
+      "proposed_name": "module-billing-referrals-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "billing",
+          "design": "referrals",
+          "document": "projects/billing/nextjs/referrals.md"
+        }
+      ]
+    },
+    "planned:boilerplate:affiliate-contracts": {
+      "home": "projects/boilerplate/nextjs/affiliate-contracts.md",
+      "proposed_name": "module-boilerplate-affiliate-contracts-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "affiliate-contracts",
+          "document": "projects/boilerplate/nextjs/affiliate-contracts.md"
+        }
+      ]
+    },
+    "planned:boilerplate:affiliates": {
+      "home": "projects/boilerplate/nextjs/affiliates.md",
+      "proposed_name": "module-boilerplate-affiliates-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "affiliates",
+          "document": "projects/boilerplate/nextjs/affiliates.md"
+        }
+      ]
+    },
+    "planned:boilerplate:passkeys": {
+      "home": "projects/boilerplate/nextjs/passkeys.md",
+      "proposed_name": "module-boilerplate-passkeys-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "passkeys",
+          "document": "projects/boilerplate/nextjs/passkeys.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-adyen": {
+      "home": "projects/boilerplate/nextjs/payment-adyen.md",
+      "proposed_name": "module-boilerplate-payment-adyen-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-adyen",
+          "document": "projects/boilerplate/nextjs/payment-adyen.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-contracts": {
+      "home": "projects/boilerplate/nextjs/payment-contracts.md",
+      "proposed_name": "module-boilerplate-payment-contracts-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-contracts",
+          "document": "projects/boilerplate/nextjs/payment-contracts.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-core": {
+      "home": "projects/boilerplate/nextjs/payment-core.md",
+      "proposed_name": "module-boilerplate-payment-core-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-core",
+          "document": "projects/boilerplate/nextjs/payment-core.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-gocardless": {
+      "home": "projects/boilerplate/nextjs/payment-gocardless.md",
+      "proposed_name": "module-boilerplate-payment-gocardless-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-gocardless",
+          "document": "projects/boilerplate/nextjs/payment-gocardless.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-mollie": {
+      "home": "projects/boilerplate/nextjs/payment-mollie.md",
+      "proposed_name": "module-boilerplate-payment-mollie-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-mollie",
+          "document": "projects/boilerplate/nextjs/payment-mollie.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-paddle": {
+      "home": "projects/boilerplate/nextjs/payment-paddle.md",
+      "proposed_name": "module-boilerplate-payment-paddle-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-paddle",
+          "document": "projects/boilerplate/nextjs/payment-paddle.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-paypal": {
+      "home": "projects/boilerplate/nextjs/payment-paypal.md",
+      "proposed_name": "module-boilerplate-payment-paypal-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-paypal",
+          "document": "projects/boilerplate/nextjs/payment-paypal.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-square": {
+      "home": "projects/boilerplate/nextjs/payment-square.md",
+      "proposed_name": "module-boilerplate-payment-square-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-square",
+          "document": "projects/boilerplate/nextjs/payment-square.md"
+        }
+      ]
+    },
+    "planned:boilerplate:payment-stripe": {
+      "home": "projects/boilerplate/nextjs/payment-stripe.md",
+      "proposed_name": "module-boilerplate-payment-stripe-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "boilerplate",
+          "design": "payment-stripe",
+          "document": "projects/boilerplate/nextjs/payment-stripe.md"
+        }
+      ]
+    },
     "planned:cms:audit-and-history": {
       "home": "projects/cms/nextjs/audit-and-history.md",
       "proposed_name": "module-cms-audit-and-history-nextjs",
@@ -9836,6 +9992,18 @@
           "project": "ecommerce",
           "design": "categories-and-navigation",
           "document": "projects/ecommerce/nextjs/categories-and-navigation.md"
+        }
+      ]
+    },
+    "planned:ecommerce:catering": {
+      "home": "projects/ecommerce/nextjs/catering.md",
+      "proposed_name": "module-ecommerce-catering-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "ecommerce",
+          "design": "catering",
+          "document": "projects/ecommerce/nextjs/catering.md"
         }
       ]
     },
@@ -10979,6 +11147,270 @@
         }
       ]
     },
+    "planned:music:arrangement": {
+      "home": "projects/music/nextjs/arrangement.md",
+      "proposed_name": "module-music-arrangement-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "arrangement",
+          "document": "projects/music/nextjs/arrangement.md"
+        }
+      ]
+    },
+    "planned:music:audio-devices": {
+      "home": "projects/music/nextjs/audio-devices.md",
+      "proposed_name": "module-music-audio-devices-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "audio-devices",
+          "document": "projects/music/nextjs/audio-devices.md"
+        }
+      ]
+    },
+    "planned:music:audio-engine": {
+      "home": "projects/music/nextjs/audio-engine.md",
+      "proposed_name": "module-music-audio-engine-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "audio-engine",
+          "document": "projects/music/nextjs/audio-engine.md"
+        }
+      ]
+    },
+    "planned:music:automation-modulation": {
+      "home": "projects/music/nextjs/automation-modulation.md",
+      "proposed_name": "module-music-automation-modulation-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "automation-modulation",
+          "document": "projects/music/nextjs/automation-modulation.md"
+        }
+      ]
+    },
+    "planned:music:clip-launcher": {
+      "home": "projects/music/nextjs/clip-launcher.md",
+      "proposed_name": "module-music-clip-launcher-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "clip-launcher",
+          "document": "projects/music/nextjs/clip-launcher.md"
+        }
+      ]
+    },
+    "planned:music:collaboration": {
+      "home": "projects/music/nextjs/collaboration.md",
+      "proposed_name": "module-music-collaboration-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "collaboration",
+          "document": "projects/music/nextjs/collaboration.md"
+        }
+      ]
+    },
+    "planned:music:composition-score": {
+      "home": "projects/music/nextjs/composition-score.md",
+      "proposed_name": "module-music-composition-score-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "composition-score",
+          "document": "projects/music/nextjs/composition-score.md"
+        }
+      ]
+    },
+    "planned:music:controllers": {
+      "home": "projects/music/nextjs/controllers.md",
+      "proposed_name": "module-music-controllers-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "controllers",
+          "document": "projects/music/nextjs/controllers.md"
+        }
+      ]
+    },
+    "planned:music:effects": {
+      "home": "projects/music/nextjs/effects.md",
+      "proposed_name": "module-music-effects-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "effects",
+          "document": "projects/music/nextjs/effects.md"
+        }
+      ]
+    },
+    "planned:music:export-mastering": {
+      "home": "projects/music/nextjs/export-mastering.md",
+      "proposed_name": "module-music-export-mastering-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "export-mastering",
+          "document": "projects/music/nextjs/export-mastering.md"
+        }
+      ]
+    },
+    "planned:music:instruments": {
+      "home": "projects/music/nextjs/instruments.md",
+      "proposed_name": "module-music-instruments-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "instruments",
+          "document": "projects/music/nextjs/instruments.md"
+        }
+      ]
+    },
+    "planned:music:live-performance": {
+      "home": "projects/music/nextjs/live-performance.md",
+      "proposed_name": "module-music-live-performance-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "live-performance",
+          "document": "projects/music/nextjs/live-performance.md"
+        }
+      ]
+    },
+    "planned:music:media-library": {
+      "home": "projects/music/nextjs/media-library.md",
+      "proposed_name": "module-music-media-library-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "media-library",
+          "document": "projects/music/nextjs/media-library.md"
+        }
+      ]
+    },
+    "planned:music:midi-sequencing": {
+      "home": "projects/music/nextjs/midi-sequencing.md",
+      "proposed_name": "module-music-midi-sequencing-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "midi-sequencing",
+          "document": "projects/music/nextjs/midi-sequencing.md"
+        }
+      ]
+    },
+    "planned:music:mixer-routing": {
+      "home": "projects/music/nextjs/mixer-routing.md",
+      "proposed_name": "module-music-mixer-routing-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "mixer-routing",
+          "document": "projects/music/nextjs/mixer-routing.md"
+        }
+      ]
+    },
+    "planned:music:plugin-hosting": {
+      "home": "projects/music/nextjs/plugin-hosting.md",
+      "proposed_name": "module-music-plugin-hosting-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "plugin-hosting",
+          "document": "projects/music/nextjs/plugin-hosting.md"
+        }
+      ]
+    },
+    "planned:music:presets": {
+      "home": "projects/music/nextjs/presets.md",
+      "proposed_name": "module-music-presets-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "presets",
+          "document": "projects/music/nextjs/presets.md"
+        }
+      ]
+    },
+    "planned:music:projects": {
+      "home": "projects/music/nextjs/projects.md",
+      "proposed_name": "module-music-projects-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "projects",
+          "document": "projects/music/nextjs/projects.md"
+        }
+      ]
+    },
+    "planned:music:recording": {
+      "home": "projects/music/nextjs/recording.md",
+      "proposed_name": "module-music-recording-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "recording",
+          "document": "projects/music/nextjs/recording.md"
+        }
+      ]
+    },
+    "planned:music:sync-offline": {
+      "home": "projects/music/nextjs/sync-offline.md",
+      "proposed_name": "module-music-sync-offline-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "sync-offline",
+          "document": "projects/music/nextjs/sync-offline.md"
+        }
+      ]
+    },
+    "planned:music:tempo-groove": {
+      "home": "projects/music/nextjs/tempo-groove.md",
+      "proposed_name": "module-music-tempo-groove-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "tempo-groove",
+          "document": "projects/music/nextjs/tempo-groove.md"
+        }
+      ]
+    },
+    "planned:music:video-timecode": {
+      "home": "projects/music/nextjs/video-timecode.md",
+      "proposed_name": "module-music-video-timecode-nextjs",
+      "source_identity_review_required": false,
+      "consumers": [
+        {
+          "project": "music",
+          "design": "video-timecode",
+          "document": "projects/music/nextjs/video-timecode.md"
+        }
+      ]
+    },
     "planned:real-estate:portals-and-reporting": {
       "home": "projects/real-estate/nextjs/portals-and-reporting.md",
       "proposed_name": "module-real-estate-portals-and-reporting-nextjs",
@@ -11182,40 +11614,6 @@
           "document": "projects/sap/nextjs/service-management.md"
         }
       ]
-    }
-  },
-  "excluded_non_capabilities": {
-    "planned:cms:features": {
-      "reason": "Feature specification navigation index",
-      "sourceDirectory": "modules/features"
-    },
-    "planned:cms:filament": {
-      "reason": "Filament presentation navigation index",
-      "sourceDirectory": "modules/filament"
-    },
-    "planned:cms:livewire": {
-      "reason": "Livewire presentation navigation index",
-      "sourceDirectory": "modules/livewire"
-    },
-    "planned:real-estate:.graphify": {
-      "reason": "Local code-analysis cache, not application source",
-      "sourceDirectory": "modules/.graphify"
-    },
-    "planned:real-estate:api": {
-      "reason": "API adapter navigation index",
-      "sourceDirectory": "modules/api"
-    },
-    "planned:real-estate:features": {
-      "reason": "Feature specification navigation index",
-      "sourceDirectory": "modules/features"
-    },
-    "planned:real-estate:filament": {
-      "reason": "Filament presentation navigation index",
-      "sourceDirectory": "modules/filament"
-    },
-    "planned:real-estate:livewire": {
-      "reason": "Livewire presentation navigation index",
-      "sourceDirectory": "modules/livewire"
     }
   }
 }

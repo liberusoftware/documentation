@@ -42,7 +42,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 - `mappings`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `validation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `dry-run`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `media/relationship-resolution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `media-relationship-resolution`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `batches`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `schedules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `errors`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -60,3 +60,32 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-catalog-import-and-export` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-catalog-import-and-export-filament`](https://github.com/liberusoftware/module-ecommerce-catalog-import-and-export-filament) (`liberusoftware/ecommerce-catalog-import-and-export-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/catalog-import-and-export.md) · [API plan](../api/catalog-import-and-export.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Schemas** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `schemas`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Mappings** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `mappings`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Validation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `validation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Dry run** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `dry run`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Media/relationship resolution** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `media/relationship resolution`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Batches** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `batches`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Schedules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `schedules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Errors** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `errors`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Resume** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `resume`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reconciliation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reconciliation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Seo:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Titles/descriptions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Canonical URLs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Robots:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Structured data:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Social cards:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Hreflang:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Index controls:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Content checks:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +36,14 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `module-cms-seo`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `titles-descriptions`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `canonical-urls`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `robots`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `structured-data`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `social-cards`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `hreflang`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `index-controls`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `content-checks`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +74,46 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `module-cms-seo` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-cms-seo-vue-inertia`](https://github.com/liberusoftware/module-cms-seo-vue-inertia) (`@liberusoftware/module-cms-seo-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/module-cms-seo.md) · [Core plan](../core/module-cms-seo.md) · [API plan](../api/module-cms-seo.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Titles/descriptions** | Render `titles/descriptions` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Canonical URLs** | Render `canonical urls` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Robots** | Render `robots` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Structured data** | Render `structured data` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Social cards** | Render `social cards` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Hreflang** | Render `hreflang` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Index controls** | Render `index controls` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Content checks** | Render `content checks` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SeoMetadata.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/src/Models/SeoMetadata.php) | `seoable_type`, `seoable_id`, `title`, `description`, `canonical_url`, `robots`, `structured_data`, `social_cards`, `hreflang`, `noindex`, `noarchive`, `team_id` |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [RobotsController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/src/Http/Controllers/RobotsController.php) | `public function __invoke(): Response` |
+| [SitemapController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/src/Http/Controllers/SitemapController.php) | `public function __construct(private SitemapRegistryInterface $registry)`<br>`public function __invoke(): Response` |
+
+**Observed route declarations:**
+
+[modules/cms-seo/routes/web.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/routes/web.php)
+
+```php
+Route::get('/sitemap.xml', SitemapController::class)->name('cms-seo.sitemap');
+Route::get('/robots.txt', RobotsController::class)->name('cms-seo.robots');
+```
+<!-- layer-implementation-plan:end -->

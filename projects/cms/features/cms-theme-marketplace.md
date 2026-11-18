@@ -18,7 +18,15 @@ The Cms Theme Marketplace module owns cms theme marketplace domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Cms Theme Marketplace:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Theme manifests:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Compatibility:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Previews:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Licenses:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Child themes:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Installation:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Updates:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Security review:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Ratings:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +86,39 @@ The Cms Theme Marketplace module owns cms theme marketplace domain behavior. It 
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Theme manifests** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `theme manifests`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Compatibility** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `compatibility`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Previews** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `previews`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Licenses** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `licenses`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Child themes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `child themes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Installation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `installation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Updates** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `updates`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Security review** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `security review`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Ratings** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `ratings`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/cms-theme-marketplace.md) | [Source map](../SOURCE-MAPPING.md#cms-theme-marketplace) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/cms-theme-marketplace.md) | [`project-cms-laravel-api`](https://github.com/liberusoftware/project-cms-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/cms-theme-marketplace.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) · [`module-cms-theme-marketplace-filament`](https://github.com/liberusoftware/module-cms-theme-marketplace-filament) (`liberusoftware/cms-theme-marketplace-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/cms-theme-marketplace.md) | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/cms-theme-marketplace.md) | [`project-cms-laravel-inertia-react`](https://github.com/liberusoftware/project-cms-laravel-inertia-react) · [`module-cms-theme-marketplace-react-inertia`](https://github.com/liberusoftware/module-cms-theme-marketplace-react-inertia) (`@liberusoftware/module-cms-theme-marketplace-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/cms-theme-marketplace.md) | [`project-cms-laravel-inertia-vue`](https://github.com/liberusoftware/project-cms-laravel-inertia-vue) · [`module-cms-theme-marketplace-vue-inertia`](https://github.com/liberusoftware/module-cms-theme-marketplace-vue-inertia) (`@liberusoftware/module-cms-theme-marketplace-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/cms-theme-marketplace.md) | [`project-cms-nuxt-vue`](https://github.com/liberusoftware/project-cms-nuxt-vue) · [`module-cms-theme-marketplace-nuxt`](https://github.com/liberusoftware/module-cms-theme-marketplace-nuxt) (`@liberusoftware/module-cms-theme-marketplace-nuxt`) | Standalone Vue SSR client consuming `project-cms-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/cms-theme-marketplace.md) | [`project-cms-next-react`](https://github.com/liberusoftware/project-cms-next-react) · [`module-cms-theme-marketplace-nextjs`](https://github.com/liberusoftware/module-cms-theme-marketplace-nextjs) (`@liberusoftware/module-cms-theme-marketplace-nextjs`) | App Router Server/Client components consuming `project-cms-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/cms-theme-marketplace.md) | [`project-cms-mobile-react`](https://github.com/liberusoftware/project-cms-mobile-react) · [`module-cms-theme-marketplace-react-native`](https://github.com/liberusoftware/module-cms-theme-marketplace-react-native) (`@liberusoftware/module-cms-theme-marketplace-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/cms-theme-marketplace.md) | [`project-cms-mobile-flutter`](https://github.com/liberusoftware/project-cms-mobile-flutter) · [`module-cms-theme-marketplace-flutter`](https://github.com/liberusoftware/module-cms-theme-marketplace-flutter) (`module_cms_theme_marketplace_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/cms-theme-marketplace.md) | [`project-cms-dart-mobile`](https://github.com/liberusoftware/project-cms-dart-mobile) · [`module-cms-theme-marketplace-dart-mobile`](https://github.com/liberusoftware/module-cms-theme-marketplace-dart-mobile) (`module_cms_theme_marketplace_dart_mobile`)<br>[`project-cms-dart-desktop`](https://github.com/liberusoftware/project-cms-dart-desktop) · [`module-cms-theme-marketplace-dart-desktop`](https://github.com/liberusoftware/module-cms-theme-marketplace-dart-desktop) (`module_cms_theme_marketplace_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

@@ -10,7 +10,9 @@
 
 ## Module-specific scope
 
-Use this guide for the **Revenue and Care Orchestration** capability and its authorized workflow.
+The intended **Revenue and Care Orchestration** workspace covers this module turns authoritative CRM, CMS, Billing, Control Panel, Ecommerce, Maintenance, Projects, and Automation events into explainable customer-health projections and safe next actions. It coordinates the Liberu hosting and professional-services journey without duplicating customer, case, invoice, subscription, infrastructure, project, or AI records.
+
+The relevant capability areas are **Customer health constellation**, **Revenue-aware service recovery**, **Contact-protection ledger**, **Cross-brand consent and quiet-hour evaluation**, **Approval-gated AI recommendations**, **Mobile-ready daily queues**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

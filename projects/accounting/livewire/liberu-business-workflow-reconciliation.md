@@ -18,7 +18,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 2. Module-specific interactions
 
-- **Liberu Business Workflow Reconciliation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Workflow run registry:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **State mapping:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Reconciliation rules:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Recovery coordination:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+- **Audit timeline:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
 
 ## 3. Livewire 4 implementation
 
@@ -29,7 +33,11 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ### Capability mapping
 
-- `liberu-business-workflow-reconciliation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `workflow-run-registry`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `state-mapping`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `reconciliation-rules`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `recovery-coordination`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+- `audit-timeline`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
 
 ## 4. Security and verification
 
@@ -42,3 +50,33 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `liberu-business-workflow-reconciliation` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, view resolution contract, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Laravel host | [`project-accounting-erp-laravel-filament`](https://github.com/liberusoftware/project-accounting-erp-laravel-filament) | Route composition, session/CSRF middleware, and tracked `/modules` + `/themes` |
+| Livewire & default views contract | [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [THEMES.md](../../../standards/THEMES.md) | Namespaced `resources/views` defaults resolved after active/parent theme overrides |
+| Authoritative domain owner | [Core plan](../core/liberu-business-workflow-reconciliation.md) · [API plan](../api/liberu-business-workflow-reconciliation.md) | Domain actions, queries, policies, and persistence |
+
+### Livewire 4 feature and component matrix
+
+| Feature / aspect | Livewire 4 component & locked/typed state contract | Validation, domain delegation & recovery UX |
+| --- | --- | --- |
+| **Workflow run registry** | Expose a focused Livewire 4 component and namespaced Blade default view for `workflow run registry` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **State mapping** | Expose a focused Livewire 4 component and namespaced Blade default view for `state mapping` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Reconciliation rules** | Expose a focused Livewire 4 component and namespaced Blade default view for `reconciliation rules` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Recovery coordination** | Expose a focused Livewire 4 component and namespaced Blade default view for `recovery coordination` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+| **Audit timeline** | Expose a focused Livewire 4 component and namespaced Blade default view for `audit timeline` with minimal non-sensitive public properties and `#[Locked]` identifiers. | Re-authorize actor/tenant context on every call, validate form inputs, invoke the core action/query, and render accessible loading, conflict, and error states. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateReconciliationCase.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) | `public function execute(array $attributes): ReconciliationCase` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [WorkflowRun.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/src/Models/WorkflowRun.php) | `team_id`, `correlation_id`, `workflow_key`, `contract_version`, `state`, `steps`, `last_error` |
+<!-- layer-implementation-plan:end -->

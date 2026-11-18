@@ -18,7 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Localization Core:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Locale negotiation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Translations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Pluralization:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **RTL direction:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Timezone:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Localized formatting:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -29,7 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `localization-core`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `locale-negotiation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `translations`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `pluralization`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `rtl-direction`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `timezone`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `localized-formatting`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +70,35 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `localization-core` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-genealogy-laravel-inertia-react`](https://github.com/liberusoftware/project-genealogy-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-localization-core-react-inertia`](https://github.com/liberusoftware/module-localization-core-react-inertia) (`@liberusoftware/module-localization-core-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/localization-core.md) · [Core plan](../core/localization-core.md) · [API plan](../api/localization-core.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Locale negotiation** | Render `locale negotiation` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Translations** | Render `translations` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Pluralization** | Render `pluralization` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **RTL direction** | Render `rtl direction` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Timezone** | Render `timezone` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Localized formatting** | Render `localized formatting` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+**Observed route declarations:**
+
+[modules/localization-core-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/localization-core-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/localization-core')->middleware('api')->group(function (): void {
+Route::get('/status', StatusController::class)->name('localization-core-api.status');
+```
+<!-- layer-implementation-plan:end -->

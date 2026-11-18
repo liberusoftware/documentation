@@ -18,13 +18,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 2. Module-specific surfaces
 
-- **Advocate links/codes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Referred customers:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Qualification:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Rewards:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Duplicate/fraud rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Attribution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Status:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Advocate links/codes via ReferralAttributionContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Referred customers and checkout attribution:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Order qualification via ConversionRecorderContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Two-sided rewards via RewardFulfillmentContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Duplicate/fraud rules via FraudAndSelfReferralPolicyContract:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Attribution and status tracking:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. React 19.2 + Inertia 3 implementation
 
@@ -35,13 +34,12 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ### Capability mapping
 
-- `advocate-links-codes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `referred-customers`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `qualification`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `rewards`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `duplicate-fraud-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `attribution`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `status`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `advocate-links-codes-via-referralattributioncontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `referred-customers-and-checkout-attribution`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `order-qualification-via-conversionrecordercontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `two-sided-rewards-via-rewardfulfillmentcontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `duplicate-fraud-rules-via-fraudandselfreferralpolicycontract`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `attribution-and-status-tracking`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -72,3 +70,28 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `ecommerce-referrals` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia React host skeleton | [`project-ecommerce-laravel-inertia-react`](https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react) | Laravel 13 + Inertia 3 + React 19.2 host shell, web/session/CSRF routes, and Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react) · [wayfinder](../../wayfinders/laravel-inertia-react.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability React Inertia module skeleton | [`module-ecommerce-referrals-react-inertia`](https://github.com/liberusoftware/module-ecommerce-referrals-react-inertia) (`@liberusoftware/module-ecommerce-referrals-react-inertia`) | Reusable Inertia React pages, hooks, forms, and framework-independent React UI ([foundation](https://github.com/liberusoftware/module-boilerplate-react-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-react.md)) |
+| Shared React reuse | [Next.js plan](../nextjs/referrals.md) · [Core plan](../core/referrals.md) · [API plan](../api/referrals.md) | Share presentational React components and DTO types with Next.js while keeping Inertia navigation/forms in this adapter |
+
+### React 19.2 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia React page, shared component & hook contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Advocate links/codes via ReferralAttributionContract** | Render `advocate links/codes via referralattributioncontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Referred customers and checkout attribution** | Render `referred customers and checkout attribution` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Order qualification via ConversionRecorderContract** | Render `order qualification via conversionrecordercontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Two-sided rewards via RewardFulfillmentContract** | Render `two-sided rewards via rewardfulfillmentcontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Duplicate/fraud rules via FraudAndSelfReferralPolicyContract** | Render `duplicate/fraud rules via fraudandselfreferralpolicycontract` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+| **Attribution and status tracking** | Render `attribution and status tracking` with typed Inertia page props (`resources/js/Pages`) and framework-neutral React components (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; map validation (422), conflict (409/412), and pending operations without losing draft state. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

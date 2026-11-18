@@ -92,3 +92,38 @@ The Scheduling module owns Calendars, skills, territories, shifts, availability,
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Calendars** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `calendars`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Skills** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `skills`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Territories** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `territories`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Shifts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `shifts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Availability** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `availability`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Travel** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `travel`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Dispatch** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `dispatch`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Conflict handling** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `conflict handling`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/scheduling.md) | [Source map](../SOURCE-MAPPING.md#scheduling) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/scheduling.md) | [`project-maintenance-laravel-api`](https://github.com/liberusoftware/project-maintenance-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/scheduling.md) | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) · [`module-maintenance-scheduling-filament`](https://github.com/liberusoftware/module-maintenance-scheduling-filament) (`liberusoftware/maintenance-scheduling-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/scheduling.md) | [`project-maintenance-laravel-filament`](https://github.com/liberusoftware/project-maintenance-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/scheduling.md) | [`project-maintenance-laravel-inertia-react`](https://github.com/liberusoftware/project-maintenance-laravel-inertia-react) · [`module-maintenance-scheduling-react-inertia`](https://github.com/liberusoftware/module-maintenance-scheduling-react-inertia) (`@liberusoftware/module-maintenance-scheduling-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/scheduling.md) | [`project-maintenance-laravel-inertia-vue`](https://github.com/liberusoftware/project-maintenance-laravel-inertia-vue) · [`module-maintenance-scheduling-vue-inertia`](https://github.com/liberusoftware/module-maintenance-scheduling-vue-inertia) (`@liberusoftware/module-maintenance-scheduling-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/scheduling.md) | [`project-maintenance-nuxt-vue`](https://github.com/liberusoftware/project-maintenance-nuxt-vue) · [`module-maintenance-scheduling-nuxt`](https://github.com/liberusoftware/module-maintenance-scheduling-nuxt) (`@liberusoftware/module-maintenance-scheduling-nuxt`) | Standalone Vue SSR client consuming `project-maintenance-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/scheduling.md) | [`project-maintenance-next-react`](https://github.com/liberusoftware/project-maintenance-next-react) · [`module-maintenance-scheduling-nextjs`](https://github.com/liberusoftware/module-maintenance-scheduling-nextjs) (`@liberusoftware/module-maintenance-scheduling-nextjs`) | App Router Server/Client components consuming `project-maintenance-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/scheduling.md) | [`project-maintenance-mobile-react`](https://github.com/liberusoftware/project-maintenance-mobile-react) · [`module-maintenance-scheduling-react-native`](https://github.com/liberusoftware/module-maintenance-scheduling-react-native) (`@liberusoftware/module-maintenance-scheduling-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/scheduling.md) | [`project-maintenance-mobile-flutter`](https://github.com/liberusoftware/project-maintenance-mobile-flutter) · [`module-maintenance-scheduling-flutter`](https://github.com/liberusoftware/module-maintenance-scheduling-flutter) (`module_maintenance_scheduling_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/scheduling.md) | [`project-maintenance-dart-mobile`](https://github.com/liberusoftware/project-maintenance-dart-mobile) · [`module-maintenance-scheduling-dart-mobile`](https://github.com/liberusoftware/module-maintenance-scheduling-dart-mobile) (`module_maintenance_scheduling_dart_mobile`)<br>[`project-maintenance-dart-desktop`](https://github.com/liberusoftware/project-maintenance-dart-desktop) · [`module-maintenance-scheduling-dart-desktop`](https://github.com/liberusoftware/module-maintenance-scheduling-dart-desktop) (`module_maintenance_scheduling_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

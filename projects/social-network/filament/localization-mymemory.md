@@ -18,7 +18,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Localization Mymemory:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **MyMemory provider configuration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Segment translation requests:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Language-pair and locale validation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Translation response caching:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Rate limit and quota fallback handling:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Translation provenance and review diagnostics:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +34,12 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `localization-mymemory`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `mymemory-provider-configuration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `segment-translation-requests`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `language-pair-and-locale-validation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `translation-response-caching`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `rate-limit-and-quota-fallback-handling`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `translation-provenance-and-review-diagnostics`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +52,28 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `localization-mymemory` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-social-network-laravel-filament`](https://github.com/liberusoftware/project-social-network-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-localization-mymemory-filament`](https://github.com/liberusoftware/module-localization-mymemory-filament) (`liberusoftware/localization-mymemory-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/localization-mymemory.md) · [API plan](../api/localization-mymemory.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **MyMemory provider configuration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `mymemory provider configuration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Segment translation requests** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `segment translation requests`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Language-pair and locale validation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `language-pair and locale validation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Translation response caching** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `translation response caching`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Rate limit and quota fallback handling** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `rate limit and quota fallback handling`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Translation provenance and review diagnostics** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `translation provenance and review diagnostics`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

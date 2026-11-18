@@ -18,7 +18,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Crm Cpq:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Guided configuration:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Compatibility rules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Price books:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Tiers:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Discounts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Approvals:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Margin guardrails:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Amendments:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Renewals:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Authoritative pricing adapters:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +38,16 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `crm-cpq`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `guided-configuration`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `compatibility-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `price-books`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `tiers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `discounts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `approvals`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `margin-guardrails`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `amendments`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `renewals`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `authoritative-pricing-adapters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +60,46 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-cpq` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-cpq-filament`](https://github.com/liberusoftware/module-crm-cpq-filament) (`liberusoftware/crm-cpq-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/crm-cpq.md) · [API plan](../api/crm-cpq.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Guided configuration** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `guided configuration`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Compatibility rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `compatibility rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Price books** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `price books`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Tiers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `tiers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Discounts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `discounts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Approvals** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `approvals`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Margin guardrails** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `margin guardrails`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Amendments** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `amendments`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Renewals** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `renewals`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Authoritative pricing adapters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `authoritative pricing adapters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [CpqFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-filament/src/CpqFilamentPlugin.php) · [CpqFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-filament/src/CpqFilamentServiceProvider.php) · [CpqQuoteResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-filament/src/Resources/CpqQuoteResource.php) · [CreateCpqQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-filament/src/Resources/CpqQuoteResource/Pages/CreateCpqQuote.php) · [EditCpqQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-filament/src/Resources/CpqQuoteResource/Pages/EditCpqQuote.php) · [ListCpqQuotes.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq-filament/src/Resources/CpqQuoteResource/Pages/ListCpqQuotes.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [CpqQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Queries/CpqQuery.php) | `public function quotes(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [PriceQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Actions/PriceQuote.php) | `public function execute(int $teamId, int $userId, array $input): CpqQuote` |
+| [SubmitQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Actions/SubmitQuote.php) | `public function execute(int $teamId, int $userId, CpqQuote $quote): CpqApproval` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [CpqApproval.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Models/CpqApproval.php) | No literal fillable array detected; inspect the model and API schema. |
+| [CpqQuote.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-cpq/src/Models/CpqQuote.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

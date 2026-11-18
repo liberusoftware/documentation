@@ -38,7 +38,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 - `canonical-commerce-events`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `sessions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `funnels`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `campaign/source-mapping`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `campaign-source-mapping`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `server-side-conversion-adapters`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `consent`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `reconciliation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -54,3 +54,29 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `ecommerce-attribution-and-analytics` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-ecommerce-laravel-filament`](https://github.com/liberusoftware/project-ecommerce-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-ecommerce-attribution-and-analytics-filament`](https://github.com/liberusoftware/module-ecommerce-attribution-and-analytics-filament) (`liberusoftware/ecommerce-attribution-and-analytics-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/attribution-and-analytics.md) · [API plan](../api/attribution-and-analytics.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Canonical commerce events** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `canonical commerce events`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Sessions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `sessions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Funnels** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `funnels`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Campaign/source mapping** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `campaign/source mapping`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Server-side conversion adapters** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `server-side conversion adapters`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Consent** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `consent`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reconciliation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reconciliation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+No dedicated source files were matched in the pinned module roots for this spelling. Consult the [project source map](../SOURCE-MAPPING.md) and owning domain/API plans before implementing new callables or routes.
+<!-- layer-implementation-plan:end -->

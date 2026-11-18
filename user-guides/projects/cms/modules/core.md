@@ -12,7 +12,7 @@
 
 The intended **Core** workspace covers core domain behavior.
 
-The relevant capability areas are **Core**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Sites**, **Channels**, **Content identity**, **Aliases**, **Ownership**, **Shared terminology**, **Settings**, **Domain events**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

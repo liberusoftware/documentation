@@ -12,7 +12,7 @@
 
 The intended **Analytics Core** workspace covers analytics core domain behavior.
 
-The relevant capability areas are **Analytics Core**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Provider-neutral events**, **Identity/consent context**, **Destinations**, **Routing**, **Deduplication**, **Delivery audit**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

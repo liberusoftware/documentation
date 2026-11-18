@@ -7,10 +7,11 @@
 ## Canonical independent module specification
 
 **Domain module:** `module-billing-module-billing-payments`
+**Extends / implements contracts:** `liberusoftware/payment-contracts, liberusoftware/payment-core`
 **Application:** Billing  
 **Capability group:** Module Billing Payments  
 **Source scope:** [BILLING.md](../BILLING.md)  
-**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [PAYMENTS.md](../../../architecture/PAYMENTS.md)
 
 ## 1. Purpose
 
@@ -18,7 +19,13 @@ The Module Billing Payments module owns module billing payments domain behavior.
 
 ## 2. Full feature scope
 
-- **Module Billing Payments:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Unified payment-contracts and payment-core integration:** Delegate gateway driver resolution to liberusoftware/payment-core and provider adapters (payment-stripe, payment-paypal, payment-paddle, payment-adyen, payment-mollie, payment-square, payment-gocardless) implementing liberusoftware/payment-contracts.
+- **Methods and vaulted payment instruments:** Manage customer cards, wallets, and payment tokens through SavedPaymentMethodVaultContract.
+- **Mandates and Direct Debit lifecycles:** Manage SEPA, Bacs, ACH, and recurring billing mandates across installed merchant adapters.
+- **Gateway drivers and capability discovery:** Bridge GatewayDriver and GatewayManager with PaymentGatewayAdapterContract.
+- **Capture and allocation:** Execute idempotent payment captures and allocate receipts to open invoices.
+- **Refunds and disputes:** Process full/partial refunds and manage chargeback disputes through unified contracts.
+- **Reconciliation:** Match local payments against merchant settlement batches and provider references.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +85,37 @@ The Module Billing Payments module owns module billing payments domain behavior.
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Unified payment-contracts and payment-core integration** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `unified payment-contracts and payment-core integration`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Methods and vaulted payment instruments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `methods and vaulted payment instruments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Mandates and Direct Debit lifecycles** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `mandates and direct debit lifecycles`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Gateway drivers and capability discovery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `gateway drivers and capability discovery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Capture and allocation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `capture and allocation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Refunds and disputes** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `refunds and disputes`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Reconciliation** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `reconciliation`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/module-billing-payments.md) | [Source map](../SOURCE-MAPPING.md#module-billing-payments) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/module-billing-payments.md) | [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/module-billing-payments.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) · [`module-billing-payments-filament`](https://github.com/liberusoftware/module-billing-payments-filament) (`liberusoftware/billing-payments-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/module-billing-payments.md) | [`project-billing-laravel-filament`](https://github.com/liberusoftware/project-billing-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/module-billing-payments.md) | [`project-billing-laravel-inertia-react`](https://github.com/liberusoftware/project-billing-laravel-inertia-react) · [`module-billing-payments-react-inertia`](https://github.com/liberusoftware/module-billing-payments-react-inertia) (`@liberusoftware/module-billing-payments-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/module-billing-payments.md) | [`project-billing-laravel-inertia-vue`](https://github.com/liberusoftware/project-billing-laravel-inertia-vue) · [`module-billing-payments-vue-inertia`](https://github.com/liberusoftware/module-billing-payments-vue-inertia) (`@liberusoftware/module-billing-payments-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/module-billing-payments.md) | [`project-billing-nuxt-vue`](https://github.com/liberusoftware/project-billing-nuxt-vue) · [`module-billing-payments-nuxt`](https://github.com/liberusoftware/module-billing-payments-nuxt) (`@liberusoftware/module-billing-payments-nuxt`) | Standalone Vue SSR client consuming `project-billing-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/module-billing-payments.md) | [`project-billing-next-react`](https://github.com/liberusoftware/project-billing-next-react) · [`module-billing-payments-nextjs`](https://github.com/liberusoftware/module-billing-payments-nextjs) (`@liberusoftware/module-billing-payments-nextjs`) | App Router Server/Client components consuming `project-billing-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/module-billing-payments.md) | [`project-billing-mobile-react`](https://github.com/liberusoftware/project-billing-mobile-react) · [`module-billing-payments-react-native`](https://github.com/liberusoftware/module-billing-payments-react-native) (`@liberusoftware/module-billing-payments-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/module-billing-payments.md) | [`project-billing-mobile-flutter`](https://github.com/liberusoftware/project-billing-mobile-flutter) · [`module-billing-payments-flutter`](https://github.com/liberusoftware/module-billing-payments-flutter) (`module_billing_payments_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/module-billing-payments.md) | [`project-billing-dart-mobile`](https://github.com/liberusoftware/project-billing-dart-mobile) · [`module-billing-payments-dart-mobile`](https://github.com/liberusoftware/module-billing-payments-dart-mobile) (`module_billing_payments_dart_mobile`)<br>[`project-billing-dart-desktop`](https://github.com/liberusoftware/project-billing-dart-desktop) · [`module-billing-payments-dart-desktop`](https://github.com/liberusoftware/module-billing-payments-dart-desktop) (`module_billing_payments_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

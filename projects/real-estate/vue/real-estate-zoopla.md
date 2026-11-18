@@ -18,7 +18,9 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 2. Module-specific surfaces
 
-- **Real Estate Zoopla:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Zoopla sync state:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Provider payload boundary:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Retry and error state:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
 
 ## 3. Vue 3 + Inertia 3 implementation
 
@@ -29,7 +31,9 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ### Capability mapping
 
-- `real-estate-zoopla`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `zoopla-sync-state`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `provider-payload-boundary`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `retry-and-error-state`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
 
 ## 4. API contract and Inertia consumption
 
@@ -60,3 +64,48 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 - Package identity, public exports, API dependency, and module dependency match `real-estate-zoopla` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, skeleton repository, and source evidence
+
+| Delivery boundary | Repository / specification | Role in implementation |
+| --- | --- | --- |
+| Product Inertia Vue host skeleton | [`project-real-estate-laravel-inertia-vue`](https://github.com/liberusoftware/project-real-estate-laravel-inertia-vue) | Laravel 13 + Inertia 3 + Vue 3 host shell, web/session/CSRF routes, and `vue-tsc` Vite build ([template](https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue) · [wayfinder](../../wayfinders/laravel-inertia-vue.md) · [runbook](../../../guides/presentation/INERTIA.md)) |
+| Capability Vue Inertia module skeleton | [`module-real-estate-zoopla-vue-inertia`](https://github.com/liberusoftware/module-real-estate-zoopla-vue-inertia) (`@liberusoftware/module-real-estate-zoopla-vue-inertia`) | Reusable Inertia Vue SFC pages, composables, forms, and framework-independent Vue UI ([foundation](https://github.com/liberusoftware/module-boilerplate-vue-inertia) · [catalog](../../../modules/skeletons/laravel-inertia-vue.md)) |
+| Shared Vue reuse | [Nuxt plan](../nuxt/real-estate-zoopla.md) · [Core plan](../core/real-estate-zoopla.md) · [API plan](../api/real-estate-zoopla.md) | Share presentational Vue SFCs and DTO types with Nuxt 4 while keeping Inertia navigation/forms in this adapter |
+
+### Vue 3 + Inertia 3 feature and component matrix
+
+| Feature / aspect | Inertia Vue SFC page, shared component & composable contract | Laravel controller, `useForm` mutation & recovery contract |
+| --- | --- | --- |
+| **Zoopla sync state** | Render `zoopla sync state` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Provider payload boundary** | Render `provider payload boundary` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+| **Retry and error state** | Render `retry and error state` with `<script setup lang="ts">` Inertia page props (`resources/js/Pages`) and reusable Vue primitives (`resources/js/Components`). | Submit commands via Inertia `useForm`/`router` to Laravel session/CSRF routes; preserve drafts, focus invalid fields, and surface conflicts clearly. |
+
+### Observed domain and transport source evidence
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [ZooplaTransport.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Contracts/ZooplaTransport.php) | `public function sendProperty(string $reference, array $payload, array $credentials): array`<br>`public function removeProperty(string $reference, array $credentials): array`<br>`public function branchPropertyList(array $credentials): array` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Models/ZooplaSync.php) | No literal fillable array detected; inspect the model and API schema. |
+
+| Observed API controller | Handler signatures |
+| --- | --- |
+| [ZooplaSyncController.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-api/src/Http/Controllers/ZooplaSyncController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateZooplaSync $create): JsonResponse`<br>`public function show(Request $request, ZooplaSync $zooplaSync): JsonResponse`<br>`public function sync(Request $request, ZooplaSync $zooplaSync, SyncZooplaListing $sync): JsonResponse`<br>`public function update(Request $request, ZooplaSync $zooplaSync, UpdateZooplaSync $update): JsonResponse`<br>`public function destroy(Request $request, ZooplaSync $zooplaSync, DeleteZooplaSync $delete): Response` |
+
+**Observed route declarations:**
+
+[modules/real-estate-zoopla-api/routes/api.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/real-estate/integrations/zoopla/syncs')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [ZooplaSyncController::class, 'index']);
+Route::post('/', [ZooplaSyncController::class, 'store']);
+Route::post('/{zooplaSync}/sync', [ZooplaSyncController::class, 'sync']);
+Route::get('/{zooplaSync}', [ZooplaSyncController::class, 'show']);
+Route::delete('/{zooplaSync}', [ZooplaSyncController::class, 'destroy']);
+```
+<!-- layer-implementation-plan:end -->

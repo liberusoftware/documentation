@@ -10,7 +10,9 @@
 
 ## Module-specific scope
 
-Use this guide for the **Executive Insights** capability and its authorized workflow.
+The intended **Executive Insights** workspace covers executive Insights provides governed cross-product metrics and read models for leadership and operations. Source systems remain authoritative; this module owns metric definitions, lineage, freshness, access, snapshots, and drill-through evidence.
+
+The relevant capability areas are **Metric registry**, **Cross-product projections**, **Evidence drill-through**, **Decision snapshots**, **Data-quality operations**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

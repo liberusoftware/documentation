@@ -12,7 +12,7 @@
 
 The intended **Cms Blocks** workspace covers cms blocks domain behavior.
 
-The relevant capability areas are **Cms Blocks**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Typed content blocks**, **Nesting rules**, **Patterns**, **Reusable/global blocks**, **Locking**, **Transforms**, **Previews**, **Revision-safe data**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

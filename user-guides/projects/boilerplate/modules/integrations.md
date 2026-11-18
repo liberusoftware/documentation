@@ -12,7 +12,7 @@
 
 The intended **Integrations** workspace covers integrations domain behavior.
 
-The relevant capability areas are **Integrations**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Provider credentials**, **Capabilities**, **OAuth callbacks**, **Secret rotation**, **Connection tests**, **Sync**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

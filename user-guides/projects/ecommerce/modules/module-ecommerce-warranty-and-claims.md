@@ -12,7 +12,7 @@
 
 The intended **Module Ecommerce Warranty And Claims** workspace covers module ecommerce warranty and claims domain behavior.
 
-The relevant capability areas are **Module Ecommerce Warranty And Claims**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Warranty terms**, **Registration**, **Claims**, **Evidence**, **Troubleshooting**, **Repair/replace/refund decisions**, **Providers**, **History**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

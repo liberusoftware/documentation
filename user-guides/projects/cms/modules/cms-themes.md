@@ -12,7 +12,7 @@
 
 The intended **Cms Themes** workspace covers cms themes domain behavior.
 
-The relevant capability areas are **Cms Themes**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Theme manifests and parent inheritance**, **Design tokens and typography**, **Template and layout overrides**, **Safe asset compilation**, **Preview and activation checks**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

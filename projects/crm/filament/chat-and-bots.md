@@ -38,7 +38,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 ### Capability mapping
 
 - `web-chat`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `bot/playbook-builder`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `bot-playbook-builder`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `qualification`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `knowledge-answers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 - `meeting-booking`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
@@ -58,3 +58,46 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `crm-chat-and-bots` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-crm-chat-and-bots-filament`](https://github.com/liberusoftware/module-crm-chat-and-bots-filament) (`liberusoftware/crm-chat-and-bots-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/chat-and-bots.md) · [API plan](../api/chat-and-bots.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Web chat** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `web chat`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Bot/playbook builder** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `bot/playbook builder`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Qualification** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `qualification`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Knowledge answers** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `knowledge answers`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Meeting booking** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `meeting booking`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Live-agent handoff** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `live-agent handoff`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Office hours** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `office hours`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Transcripts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `transcripts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Channel identity** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `channel identity`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [ChatAndBotsFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-filament/src/ChatAndBotsFilamentPlugin.php) · [ChatAndBotsFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-filament/src/ChatAndBotsFilamentServiceProvider.php) · [ChatBotResource.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-filament/src/Resources/ChatBotResource.php) · [CreateChatBotPage.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-filament/src/Resources/ChatBotResource/Pages/CreateChatBotPage.php) · [ListChatBots.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots-filament/src/Resources/ChatBotResource/Pages/ListChatBots.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [ChatBotQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Queries/ChatBotQuery.php) | `public function bots(int $teamId): Builder`<br>`public function sessions(int $teamId): Builder` |
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [CreateChatBot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/CreateChatBot.php) | `public function execute(int $teamId, int $ownerId, string $name, array $playbook, array $channels = []): ChatBot` |
+| [HandoffChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/HandoffChatSession.php) | `public function execute(int $teamId, ChatSession $session, string $assignee): ChatSession` |
+| [StartChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Actions/StartChatSession.php) | `public function execute(int $teamId, ChatBot $bot, string $visitorKey, string $channel = 'web'): ChatSession` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [ChatBot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Models/ChatBot.php) | No literal fillable array detected; inspect the model and API schema. |
+| [ChatSession.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-chat-and-bots/src/Models/ChatSession.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Files Media:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Storage contracts:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Uploads:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Validation:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Scanning:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Metadata:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Access:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Transformations:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Retention:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `files-media`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `storage-contracts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `uploads`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `validation`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `scanning`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `metadata`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `access`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `transformations`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `retention`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,36 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `files-media` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-real-estate-laravel-filament`](https://github.com/liberusoftware/project-real-estate-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-files-media-filament`](https://github.com/liberusoftware/module-files-media-filament) (`liberusoftware/files-media-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/files-media.md) · [API plan](../api/files-media.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Storage contracts** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `storage contracts`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Uploads** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `uploads`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Validation** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `validation`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Scanning** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `scanning`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Metadata** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `metadata`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Access** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `access`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Transformations** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `transformations`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Retention** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `retention`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [FilesMediaFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/files-media-filament/src/FilesMediaFilamentPlugin.php) · [FilesMediaFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/files-media-filament/src/FilesMediaFilamentServiceProvider.php) · [Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/files-media-filament/src/Pages/Overview.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [MalwareScanner.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MalwareScanner.php) | `public function clean(string $path): bool` |
+| [MediaAccess.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MediaAccess.php) | `public function authorized(string\|int\|null $actorId, string $mediaId, string $operation): bool` |
+| [MediaTransformer.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/files-media/src/Contracts/MediaTransformer.php) | `public function transform(string $source, string $operation, array $parameters = []): string` |
+<!-- layer-implementation-plan:end -->

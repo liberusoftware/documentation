@@ -18,7 +18,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Browser Game Social:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Friends:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Parties:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Chat:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Mail:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Guilds:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Alliances:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Permissions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Activity:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Reporting:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +37,15 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `browser-game-social`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `friends`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `parties`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `chat`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `mail`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `guilds`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `alliances`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `permissions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `activity`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reporting`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +58,41 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `browser-game-social` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-browser-game-laravel-filament`](https://github.com/liberusoftware/project-browser-game-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-browser-game-social-filament`](https://github.com/liberusoftware/module-browser-game-social-filament) (`liberusoftware/browser-game-social-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/browser-game-social.md) · [API plan](../api/browser-game-social.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Friends** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `friends`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Parties** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `parties`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Chat** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `chat`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Mail** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `mail`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Guilds** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `guilds`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Alliances** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `alliances`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Permissions** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `permissions`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Activity** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `activity`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reporting** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reporting`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [SocialResource.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-filament/src/Resources/SocialResource.php) · [CreateSocial.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-filament/src/Resources/SocialResource/Pages/CreateSocial.php) · [EditSocial.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-filament/src/Resources/SocialResource/Pages/EditSocial.php) · [ListSocial.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-filament/src/Resources/SocialResource/Pages/ListSocial.php) · [SocialFilamentPlugin.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-filament/src/SocialFilamentPlugin.php) · [SocialFilamentServiceProvider.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social-filament/src/SocialFilamentServiceProvider.php).
+
+| Observed core query | Public method signatures |
+| --- | --- |
+| [SocialQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Queries/SocialQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [SocialActivity.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Models/SocialActivity.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SocialMembership.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Models/SocialMembership.php) | No literal fillable array detected; inspect the model and API schema. |
+| [SocialRecord.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-social/src/Models/SocialRecord.php) | No literal fillable array detected; inspect the model and API schema. |
+<!-- layer-implementation-plan:end -->

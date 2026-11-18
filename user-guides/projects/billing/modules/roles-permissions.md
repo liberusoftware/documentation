@@ -12,7 +12,7 @@
 
 The intended **Roles Permissions** workspace covers roles permissions domain behavior.
 
-The relevant capability areas are **Roles Permissions**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
+The relevant capability areas are **Permission definitions**, **Assignments**, **Contextual scope**, **Policies**, **Caches**, **Safeguards**, **Audit**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 
 ## Follow the task safely
 

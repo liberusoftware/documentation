@@ -18,7 +18,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 2. Module-specific surfaces
 
-- **Module Cms Block Editor:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Typed content blocks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Nesting rules:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Patterns:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Reusable/global blocks:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Locking:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Transforms:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Previews:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Revision-safe data:** resource/table/form/action or page behavior for this module's authorized workflow.
 
 ## 3. Filament 5 implementation
 
@@ -29,7 +36,14 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ### Capability mapping
 
-- `module-cms-block-editor`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `typed-content-blocks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `nesting-rules`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `patterns`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `reusable-global-blocks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `locking`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `transforms`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `previews`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `revision-safe-data`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
 
 ## 4. Security and verification
 
@@ -42,3 +56,39 @@ This optional Filament 5 presentation package presents exactly one independent d
 - Package identity, namespace, plugin ID, and dependency match `module-cms-block-editor` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+<!-- layer-implementation-plan:start -->
+## Structured feature plan, repository skeleton, and source evidence
+
+| Delivery boundary | Repository / specification | Responsibility |
+| --- | --- | --- |
+| Product Filament host | [`project-cms-laravel-filament`](https://github.com/liberusoftware/project-cms-laravel-filament) | Panel registration, tenant/workspace context, navigation, and tracked `/modules` + `/themes` |
+| Capability Filament package | [`module-cms-block-editor-filament`](https://github.com/liberusoftware/module-cms-block-editor-filament) (`liberusoftware/cms-block-editor-filament`) | One-to-one Filament 5 resources, schemas, tables, infolists, widgets, and actions ([foundation](https://github.com/liberusoftware/module-boilerplate-filament) · [catalog](../../../modules/skeletons/laravel-filament.md)) |
+| Authoritative domain owner | [Core plan](../core/module-cms-block-editor.md) · [API plan](../api/module-cms-block-editor.md) | Domain actions, queries, policies, and persistence |
+
+### Filament 5 feature and surface matrix
+
+| Feature / aspect | Filament 5 resource, schema, table, infolist & widget contract | Policy, tenant scope & action delegation |
+| --- | --- | --- |
+| **Typed content blocks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `typed content blocks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Nesting rules** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `nesting rules`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Patterns** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `patterns`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Reusable/global blocks** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `reusable/global blocks`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Locking** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `locking`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Transforms** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `transforms`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Previews** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `previews`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+| **Revision-safe data** | Provide a dedicated Filament 5 table column/filter, form schema section, infolist entry, or header/table action for `revision-safe data`. | Authorize via the core policy and current workspace/tenant before rendering or executing the domain action; never bypass domain actions with raw model saves. |
+
+### Observed domain and transport source evidence
+
+**Observed Filament class files:** [BlockEditorFilamentServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-block-editor-filament/src/BlockEditorFilamentServiceProvider.php) · [BlockDocumentResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-block-editor-filament/src/Resources/BlockDocumentResource.php).
+
+| Observed core action / service / policy | Public method signatures |
+| --- | --- |
+| [BlockEditorService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-block-editor/src/Services/BlockEditorService.php) | `public function __construct(private BlockTypeRegistry $registry, private BlockRenderer $renderer)`<br>`public function save(?int $teamId, string $subjectType, string $subjectId, array $blocks, ?int $expectedVersion = null): BlockDocument`<br>`public function createPattern(?int $teamId, string $name, array $blocks, bool $reusable = true): BlockPattern`<br>`public function lock(BlockDocument $document, bool $locked = true): BlockDocument` |
+
+| Observed storage model | Fillable attributes (review sensitivity for DTO projection) |
+| --- | --- |
+| [BlockDocument.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-block-editor/src/Models/BlockDocument.php) | `team_id`, `subject_type`, `subject_id`, `blocks`, `version`, `locked`, `preview_html` |
+| [BlockPattern.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-block-editor/src/Models/BlockPattern.php) | `team_id`, `name`, `blocks`, `reusable`, `locked` |
+<!-- layer-implementation-plan:end -->

@@ -18,7 +18,17 @@ The Crm Feedback And Voice Of Customer module owns crm feedback and voice of cus
 
 ## 2. Full feature scope
 
-- **Crm Feedback And Voice Of Customer:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **CSAT:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **NPS:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **CES:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Custom surveys:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Sampling:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Delivery:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Responses:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Text analysis:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Alerts:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Close-the-loop cases:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Trend reporting:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +88,41 @@ The Crm Feedback And Voice Of Customer module owns crm feedback and voice of cus
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **CSAT** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `csat`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **NPS** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `nps`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **CES** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `ces`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Custom surveys** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `custom surveys`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Sampling** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `sampling`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Delivery** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `delivery`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Responses** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `responses`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Text analysis** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `text analysis`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Alerts** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `alerts`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Close-the-loop cases** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `close-the-loop cases`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Trend reporting** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `trend reporting`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-feedback-and-voice-of-customer.md) | [Source map](../SOURCE-MAPPING.md#crm-feedback-and-voice-of-customer) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-feedback-and-voice-of-customer.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-feedback-and-voice-of-customer.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-feedback-and-voice-of-customer-filament`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-filament) (`liberusoftware/crm-feedback-and-voice-of-customer-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-feedback-and-voice-of-customer.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-feedback-and-voice-of-customer.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-feedback-and-voice-of-customer-react-inertia`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-react-inertia) (`@liberusoftware/module-crm-feedback-and-voice-of-customer-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-feedback-and-voice-of-customer.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-feedback-and-voice-of-customer-vue-inertia`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-vue-inertia) (`@liberusoftware/module-crm-feedback-and-voice-of-customer-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-feedback-and-voice-of-customer.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-feedback-and-voice-of-customer-nuxt`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-nuxt) (`@liberusoftware/module-crm-feedback-and-voice-of-customer-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-feedback-and-voice-of-customer.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-feedback-and-voice-of-customer-nextjs`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-nextjs) (`@liberusoftware/module-crm-feedback-and-voice-of-customer-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-feedback-and-voice-of-customer.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-feedback-and-voice-of-customer-react-native`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-react-native) (`@liberusoftware/module-crm-feedback-and-voice-of-customer-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-feedback-and-voice-of-customer.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-feedback-and-voice-of-customer-flutter`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-flutter) (`module_crm_feedback_and_voice_of_customer_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-feedback-and-voice-of-customer.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-feedback-and-voice-of-customer-dart-mobile`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-dart-mobile) (`module_crm_feedback_and_voice_of_customer_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-feedback-and-voice-of-customer-dart-desktop`](https://github.com/liberusoftware/module-crm-feedback-and-voice-of-customer-dart-desktop) (`module_crm_feedback_and_voice_of_customer_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->

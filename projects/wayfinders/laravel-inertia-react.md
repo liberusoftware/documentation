@@ -3,6 +3,8 @@
 This is the technology-specific implementation specification for `laravel-inertia-react` project hosts. Product wayfinder issues embed the method and a condensed form of this specification, and link here for the durable reference.
 
 - Boilerplate template: https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react
+- Reusable module foundation: https://github.com/liberusoftware/module-boilerplate-react-inertia
+- Capability skeleton catalog: [`modules/skeletons/laravel-inertia-react.md`](../../modules/skeletons/laravel-inertia-react.md)
 - Presentation layer directory in product docs: `react/`
 - Adapter identity pattern: `module-{capability}-react-inertia`
 - Consumes product `-laravel-api`: no (Laravel/Inertia host; HTTP API optional)

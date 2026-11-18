@@ -18,7 +18,12 @@ The Crm Field Service Coordination module owns crm field service coordination do
 
 ## 2. Full feature scope
 
-- **Crm Field Service Coordination:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Work types:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Service appointments:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Dispatch references:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Technician/contractor visibility:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Asset/service history:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
+- **Maintenance module handoff:** implement the complete lifecycle, validation, permissions, failure handling, audit evidence, and operator/user feedback required by this capability.
 
 ## 3. Ownership and boundaries
 
@@ -78,3 +83,36 @@ The Crm Field Service Coordination module owns crm field service coordination do
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+<!-- feature-technology-matrix:start -->
+## Cross-technology implementation plan and feature matrix
+
+Every aspect of this capability is implemented once in the authoritative core domain module and exposed through optional one-to-one presentation and API adapters. Clients never duplicate business invariants or write directly to another module's persistence.
+
+### Feature and domain aspect breakdown
+
+| Feature / aspect | Domain aggregate & invariant focus | Application action, query & audit contract |
+| --- | --- | --- |
+| **Work types** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `work types`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Service appointments** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `service appointments`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Dispatch references** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `dispatch references`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Technician/contractor visibility** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `technician/contractor visibility`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Asset/service history** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `asset/service history`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+| **Maintenance module handoff** | Enforce lifecycle state transitions, value-object invariants, and tenant/workspace ownership for `maintenance module handoff`. | Expose a typed command/query DTO, recheck policy at the application boundary, and emit post-commit domain/audit events. |
+
+### Technology delivery matrix
+
+| Technology layer | Specification | Host & skeleton repositories | Delivery boundary |
+| --- | --- | --- | --- |
+| Core domain (`PHP 8.5 / Laravel 13`) | [Core plan](../core/crm-field-service-coordination.md) | [Source map](../SOURCE-MAPPING.md#crm-field-service-coordination) | Authoritative domain model, actions, queries, policies, migrations, and events |
+| HTTP API (`OpenAPI 3.1 / Sanctum`) | [API plan](../api/crm-field-service-coordination.md) | [`project-crm-laravel-api`](https://github.com/liberusoftware/project-crm-laravel-api) | Versioned `/api/v1` REST/OpenAPI contract for independent web, mobile, and desktop clients |
+| Filament 5 (`Laravel Admin`) | [Filament plan](../filament/crm-field-service-coordination.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) · [`module-crm-field-service-coordination-filament`](https://github.com/liberusoftware/module-crm-field-service-coordination-filament) (`liberusoftware/crm-field-service-coordination-filament`) | Resources, schemas, tables, infolists, widgets, and panel actions |
+| Livewire 4 (`Server UI`) | [Livewire plan](../livewire/crm-field-service-coordination.md) | [`project-crm-laravel-filament`](https://github.com/liberusoftware/project-crm-laravel-filament) | Server-driven reactive components and namespaced default Blade views |
+| React 19.2 + Inertia 3 | [React Inertia plan](../react/crm-field-service-coordination.md) | [`project-crm-laravel-inertia-react`](https://github.com/liberusoftware/project-crm-laravel-inertia-react) · [`module-crm-field-service-coordination-react-inertia`](https://github.com/liberusoftware/module-crm-field-service-coordination-react-inertia) (`@liberusoftware/module-crm-field-service-coordination-react-inertia`) | Laravel session/CSRF routes with typed Inertia page props and shared React primitives |
+| Vue 3 + Inertia 3 | [Vue Inertia plan](../vue/crm-field-service-coordination.md) | [`project-crm-laravel-inertia-vue`](https://github.com/liberusoftware/project-crm-laravel-inertia-vue) · [`module-crm-field-service-coordination-vue-inertia`](https://github.com/liberusoftware/module-crm-field-service-coordination-vue-inertia) (`@liberusoftware/module-crm-field-service-coordination-vue-inertia`) | Laravel session/CSRF routes with Vue SFC pages and shared composables |
+| Nuxt 4 + Vue 3 | [Nuxt plan](../nuxt/crm-field-service-coordination.md) | [`project-crm-nuxt-vue`](https://github.com/liberusoftware/project-crm-nuxt-vue) · [`module-crm-field-service-coordination-nuxt`](https://github.com/liberusoftware/module-crm-field-service-coordination-nuxt) (`@liberusoftware/module-crm-field-service-coordination-nuxt`) | Standalone Vue SSR client consuming `project-crm-laravel-api` with isolated caches |
+| Next.js + React 19.2 | [Next.js plan](../nextjs/crm-field-service-coordination.md) | [`project-crm-next-react`](https://github.com/liberusoftware/project-crm-next-react) · [`module-crm-field-service-coordination-nextjs`](https://github.com/liberusoftware/module-crm-field-service-coordination-nextjs) (`@liberusoftware/module-crm-field-service-coordination-nextjs`) | App Router Server/Client components consuming `project-crm-laravel-api` |
+| React Native + Expo | [React Native plan](../react-native/crm-field-service-coordination.md) | [`project-crm-mobile-react`](https://github.com/liberusoftware/project-crm-mobile-react) · [`module-crm-field-service-coordination-react-native`](https://github.com/liberusoftware/module-crm-field-service-coordination-react-native) (`@liberusoftware/module-crm-field-service-coordination-react-native`) | Native iOS/Android mobile screens with SecureStore credentials and offline recovery |
+| Flutter mobile | [Flutter plan](../flutter/crm-field-service-coordination.md) | [`project-crm-mobile-flutter`](https://github.com/liberusoftware/project-crm-mobile-flutter) · [`module-crm-field-service-coordination-flutter`](https://github.com/liberusoftware/module-crm-field-service-coordination-flutter) (`module_crm_field_service_coordination_flutter`) | Native iOS/Android Dart/Flutter widgets and typed repository client |
+| Dart mobile & desktop | [Flutter & Dart plan](../flutter/crm-field-service-coordination.md) | [`project-crm-dart-mobile`](https://github.com/liberusoftware/project-crm-dart-mobile) · [`module-crm-field-service-coordination-dart-mobile`](https://github.com/liberusoftware/module-crm-field-service-coordination-dart-mobile) (`module_crm_field_service_coordination_dart_mobile`)<br>[`project-crm-dart-desktop`](https://github.com/liberusoftware/project-crm-dart-desktop) · [`module-crm-field-service-coordination-dart-desktop`](https://github.com/liberusoftware/module-crm-field-service-coordination-dart-desktop) (`module_crm_field_service_coordination_dart_desktop`) | Dedicated mobile (`iOS`/`Android`) and desktop (`Linux`/`macOS`/`Windows`) Flutter hosts |
+<!-- feature-technology-matrix:end -->
