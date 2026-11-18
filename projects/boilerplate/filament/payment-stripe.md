@@ -1,9 +1,5 @@
 # Boilerplate: Payment Stripe Adapter Filament
 
-<!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#payment-stripe). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
-<!-- source-reconciliation:end -->
-
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-payment-stripe-filament`  

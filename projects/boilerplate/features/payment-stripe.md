@@ -1,9 +1,5 @@
 # Boilerplate: Payment Stripe Adapter
 
-<!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#payment-stripe). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
-<!-- source-reconciliation:end -->
-
 ## Canonical independent module specification
 
 **Domain module:** `module-boilerplate-payment-stripe`
@@ -16,11 +12,11 @@
 
 ## 1. Purpose
 
-The Payment Stripe Adapter module owns the single shared Stripe merchant payment provider adapter built on the latest stripe/stripe-php SDK (^20.3+) and pinned StripeClient API version, extending liberusoftware/payment-contracts and consolidating liberusoftware/billing-stripe for PaymentIntents, SetupIntents, CustomerSession, Checkout\Session, ConfirmationToken, Stripe Payment Element, Apple Pay / Google Pay / Link / SEPA / ACH / Klarna, manual and automatic capture, full/partial refunds, Radar disputes, Stripe Terminal POS readers, BalanceTransaction settlement reconciliation, and Webhook::constructEvent signature verification. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
+The Payment Stripe Adapter module owns the single shared Stripe merchant payment provider adapter built on the latest stripe/stripe-php SDK (^23.0) and pinned StripeClient API version, extending liberusoftware/payment-contracts and consolidating liberusoftware/billing-stripe for PaymentIntents, SetupIntents, CustomerSession, Checkout\Session, ConfirmationToken, Stripe Payment Element, Apple Pay / Google Pay / Link / SEPA / ACH / Klarna, manual and automatic capture, full/partial refunds, Radar disputes, Stripe Terminal POS readers, BalanceTransaction settlement reconciliation, and Webhook::constructEvent signature verification. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
 
 ## 2. Full feature scope
 
-- **Latest Stripe SDK client and pinned API version:** Instantiate \Stripe\StripeClient (stripe/stripe-php ^20.3+) per tenant credential with explicit pinned stripe_version, max_network_retries, and per-request idempotency_key options.
+- **Latest Stripe SDK client and pinned API version:** Instantiate \Stripe\StripeClient (stripe/stripe-php ^23.0) per tenant credential with explicit pinned stripe_version, max_network_retries, and per-request idempotency_key options.
 - **PaymentIntents, Checkout Sessions, and 3DS2/SCA confirmation:** Implement PaymentIntentServiceContract using automatic_payment_methods, ConfirmationToken, CustomerSession, and next_action 3DS/redirect handling.
 - **SetupIntents and PaymentMethod vaulting:** Implement SavedPaymentMethodVaultContract for off-session recurring cards, wallets, SEPA Direct Debit, and US Bank Account mandates.
 - **Full/partial capture, cancellation, and idempotent refunds:** Implement PaymentCaptureAndRefundContract with deterministic Stripe idempotency_key options and provider reference tracking.

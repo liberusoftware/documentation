@@ -187,14 +187,14 @@ NEW_MODULES = [
         'extends_contract': 'liberusoftware/payment-contracts (PaymentGatewayAdapterContract, PaymentIntentServiceContract, PaymentCaptureAndRefundContract, SavedPaymentMethodVaultContract, MerchantWebhookVerifierContract, DisputeAndChargebackHandlerContract, PayoutAndSettlementReconcilerContract, POSHardwareTerminalContract)',
         'purpose': (
             'the single shared Stripe merchant payment provider adapter built on the latest stripe/stripe-php SDK '
-            '(^20.3+) and pinned StripeClient API version, extending liberusoftware/payment-contracts and consolidating '
+            '(^23.0) and pinned StripeClient API version, extending liberusoftware/payment-contracts and consolidating '
             'liberusoftware/billing-stripe for PaymentIntents, SetupIntents, CustomerSession, Checkout\\Session, '
             'ConfirmationToken, Stripe Payment Element, Apple Pay / Google Pay / Link / SEPA / ACH / Klarna, manual '
             'and automatic capture, full/partial refunds, Radar disputes, Stripe Terminal POS readers, '
             'BalanceTransaction settlement reconciliation, and Webhook::constructEvent signature verification.'
         ),
         'features': [
-            ('Latest Stripe SDK client and pinned API version', 'Instantiate \\Stripe\\StripeClient (stripe/stripe-php ^20.3+) per tenant credential with explicit pinned stripe_version, max_network_retries, and per-request idempotency_key options.'),
+            ('Latest Stripe SDK client and pinned API version', 'Instantiate \\Stripe\\StripeClient (stripe/stripe-php ^23.0) per tenant credential with explicit pinned stripe_version, max_network_retries, and per-request idempotency_key options.'),
             ('PaymentIntents, Checkout Sessions, and 3DS2/SCA confirmation', 'Implement PaymentIntentServiceContract using automatic_payment_methods, ConfirmationToken, CustomerSession, and next_action 3DS/redirect handling.'),
             ('SetupIntents and PaymentMethod vaulting', 'Implement SavedPaymentMethodVaultContract for off-session recurring cards, wallets, SEPA Direct Debit, and US Bank Account mandates.'),
             ('Full/partial capture, cancellation, and idempotent refunds', 'Implement PaymentCaptureAndRefundContract with deterministic Stripe idempotency_key options and provider reference tracking.'),
@@ -870,7 +870,7 @@ def update_existing_module_specs():
             'PAYMENTS.md',
             'liberusoftware/payment-contracts (PaymentGatewayAdapterContract, PaymentIntentServiceContract, PaymentCaptureAndRefundContract, SavedPaymentMethodVaultContract, MerchantWebhookVerifierContract, DisputeAndChargebackHandlerContract, PayoutAndSettlementReconcilerContract)',
             [
-                ('Consolidate into shared liberusoftware/payment-stripe', 'Bridge existing billing-stripe driver registrations into the single shared liberusoftware/payment-stripe adapter using stripe/stripe-php ^20.3+ and pinned StripeClient API version.'),
+                ('Consolidate into shared liberusoftware/payment-stripe', 'Bridge existing billing-stripe driver registrations into the single shared liberusoftware/payment-stripe adapter using stripe/stripe-php ^23.0 and pinned StripeClient API version.'),
                 ('PaymentIntent and SetupIntent orchestration', 'Implement PaymentIntentServiceContract and SavedPaymentMethodVaultContract for Stripe PaymentIntents, SetupIntents, CustomerSession, 3DS2/SCA client actions, and off-session payment methods.'),
                 ('Payment capture and idempotent refunds', 'Implement PaymentCaptureAndRefundContract for full/partial capture, authorization void, and full/partial refunds with deterministic Stripe idempotency_key options.'),
                 ('Stripe-Signature webhook verification and normalization', 'Implement MerchantWebhookVerifierContract via \\Stripe\\Webhook::constructEvent() to verify raw webhook signatures and emit normalized MerchantWebhookEventDto events into payment-core.'),

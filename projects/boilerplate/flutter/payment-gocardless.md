@@ -1,9 +1,5 @@
 # Payment GoCardless Adapter Flutter + Dart
 
-<!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#payment-gocardless). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
-<!-- source-reconciliation:end -->
-
 **Package:** `module-payment-gocardless-flutter`
 **Matching domain module:** `payment-gocardless`
 **Matching core package:** `module-payment-gocardless` ([implementation](../core/payment-gocardless.md))

@@ -1,9 +1,5 @@
 # Payment Core React Native + Expo
 
-<!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#payment-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
-<!-- source-reconciliation:end -->
-
 **Package:** `module-payment-core-react-native`
 **Matching domain module:** `payment-core`
 **Matching core package:** `module-payment-core` ([implementation](../core/payment-core.md))

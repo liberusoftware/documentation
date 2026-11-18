@@ -1,9 +1,5 @@
 # Payment PayPal Adapter React Native + Expo
 
-<!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#payment-paypal). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
-<!-- source-reconciliation:end -->
-
 **Package:** `module-payment-paypal-react-native`
 **Matching domain module:** `payment-paypal`
 **Matching core package:** `module-payment-paypal` ([implementation](../core/payment-paypal.md))

@@ -19,7 +19,7 @@ The Module Billing Stripe module owns module billing stripe domain behavior. It 
 
 ## 2. Full feature scope
 
-- **Consolidate into shared liberusoftware/payment-stripe:** Bridge existing billing-stripe driver registrations into the single shared liberusoftware/payment-stripe adapter using stripe/stripe-php ^20.3+ and pinned StripeClient API version.
+- **Consolidate into shared liberusoftware/payment-stripe:** Bridge existing billing-stripe driver registrations into the single shared liberusoftware/payment-stripe adapter using stripe/stripe-php ^23.0 and pinned StripeClient API version.
 - **PaymentIntent and SetupIntent orchestration:** Implement PaymentIntentServiceContract and SavedPaymentMethodVaultContract for Stripe PaymentIntents, SetupIntents, CustomerSession, 3DS2/SCA client actions, and off-session payment methods.
 - **Payment capture and idempotent refunds:** Implement PaymentCaptureAndRefundContract for full/partial capture, authorization void, and full/partial refunds with deterministic Stripe idempotency_key options.
 - **Stripe-Signature webhook verification and normalization:** Implement MerchantWebhookVerifierContract via \Stripe\Webhook::constructEvent() to verify raw webhook signatures and emit normalized MerchantWebhookEventDto events into payment-core.
