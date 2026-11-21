@@ -1,21 +1,21 @@
-# Browser Game gameplay modules
+# Browser Game gameplay module ownership
 
-This map describes the gameplay extraction proposed for `project-browser-game-laravel-filament`. It follows the domain and adapter boundaries in the [module architecture](../../architecture/MODULES.md). The [source inventory](SOURCE-MODULES.md) records a separate, commit-pinned snapshot of the published capability packages.
+The shipped Browser Game integration belongs to the existing Browser Game packages. This map describes the application changes under review. The [source inventory](SOURCE-MODULES.md) gives the commit-pinned references for the reusable packages.
 
-| Gameplay domain | Owned behavior and data | Application adapters |
+| Owning module | Integration with the shipped game | Presentation packages |
 | --- | --- | --- |
-| `browser-game-play-adventure` | Player and character progression, quests, achievements, player statistics, starter content, and game setup defaults | `browser-game-play-adventure-api`, `browser-game-play-adventure-filament`, `browser-game-play-adventure-livewire` |
-| `browser-game-play-arena` | Combat simulation, opt-in duels, NPC encounters, arena rules, and battle history | `browser-game-play-arena-api`, `browser-game-play-arena-filament`, `browser-game-play-arena-livewire` |
-| `browser-game-play-community` | Guilds, rankings, game notifications, and daily rewards | `browser-game-play-community-api`, `browser-game-play-community-filament`, `browser-game-play-community-livewire` |
-| `browser-game-play-inventory` | Items, equipment, resources, crafting, and marketplace transactions | `browser-game-play-inventory-api`, `browser-game-play-inventory-filament`, `browser-game-play-inventory-livewire` |
+| `browser-game-quests` | Starter adventure, quests, progression, and achievements. Quest rewards use the existing `browser-game-characters` level calculation. | `browser-game-quests-api`, `browser-game-quests-filament`, `browser-game-quests-livewire` |
+| `browser-game-combat` | Arena battles, NPC encounters, duels, and existing battle records | `browser-game-combat-api`, `browser-game-combat-filament`, `browser-game-combat-livewire` |
+| `browser-game-social` | Guilds and the shipped community screens for rankings, rewards, and game notifications | `browser-game-social-api`, `browser-game-social-filament`, `browser-game-social-livewire` |
+| `browser-game-items` | Inventory and equipment, including the shipped crafting and marketplace integration | `browser-game-items-api`, `browser-game-items-filament`, `browser-game-items-livewire` |
 
-## Composition and upgrade
+## Composition and upgrades
 
-Composer resolves each `liberusoftware/browser-game-play-*` package through the application checkout and installs it in the matching `modules/` directory. Each adapter declares its corresponding gameplay domain in Composer and in its module manifest. Filament plugins contribute pages, resources, and widgets to the existing host panels. API service providers register the existing route paths and Sanctum middleware. The Livewire adapters supply the existing component classes and their Blade views.
+Each referenced package keeps its established Composer identity. Application integration lives in the owning package's `host/` directory. The application registers those providers and panel contributions through its composition root. This preserves the existing route paths, Sanctum guards, Livewire aliases, model names, table names, and migration filenames. An existing database retains its migration history.
 
-The shipped application enables the gameplay modules by default. Providers register the original migration filenames so Laravel continues to identify previously applied migrations by the same names. Keep the normal Laravel migration and rollback commands when upgrading. The extracted code retains the existing model class names, table and column names, route names, and component aliases for compatibility with existing data and integrations.
+The application resolves the affected packages from the checkout. Build the new lock file in a clean checkout or build directory with a fresh Composer vendor directory. Composer can replace module directories when transitioning an installed package from a distribution archive to a checkout path.
 
-These packages are tracked host-path extractions under [module promotion readiness](../../architecture/MODULES.md#301-promotion-readiness). They still share the application's player models and schema. Independent release requires explicit public contracts for cross-domain operations, contained persistence, standalone Testbench suites, and the compatibility and coverage evidence in the promotion standard.
+The package publisher excludes `host/` when building standalone releases. Package `src/` and standalone suites retain their reusable contracts. The compatibility code still uses the original shared player schema. Migrating those records and entry points onto the reusable managers requires a data and behavior transition with the evidence in the [module architecture](../../architecture/MODULES.md#301-promotion-readiness).
 
 ## Verification
 
@@ -23,8 +23,8 @@ From the application root:
 
 ```bash
 composer install
-vendor/bin/pest --testsuite=Modules
-XDEBUG_MODE=coverage vendor/bin/pest --coverage --min=100 --coverage-clover=coverage.xml
+composer test:modules
+XDEBUG_MODE=coverage composer test:coverage
 ```
 
-The Modules suite discovers `modules/*/tests/Integration`. The full run includes the host's cross-package and architecture suites and measures executable application and module PHP. Coverage scope and release requirements follow the [testing standard](../../standards/TESTING.md#13-coverage-policy).
+The Modules suite discovers `modules/*/host/tests/Integration`. The full application run includes the host's cross-package and architecture suites and measures executable application and module PHP. Standalone package tests run in their owning repositories. The [testing standard](../../standards/TESTING.md#13-coverage-policy) defines coverage scope and the release gate.
