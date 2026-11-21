@@ -121,6 +121,13 @@ They follow the capability split. Published packages such as
 public contracts. Licensing, projects, and ticket support are Billing Filament
 capabilities with application-owned persistence and UI.
 
+## Module management
+
+The Composer package `liberusoftware/module-manager` loads the registered Billing
+packages. Its `php artisan module:list` and `module:validate` commands inspect
+that registry. The separate `php artisan module …` commands still use
+`app/Modules/` to manage the existing extension format, including `BlogModule`.
+
 ## Verify the changed behavior
 
 The root `phpunit.xml` declares the `Unit`, `Feature`, `Architecture`, and `Modules` suites. The first three use the host-owned tests under `modules/billing-*/tests`. The `Modules` suite exercises reusable package tests. Read the root bootstrap and environment configuration before running database tests.
@@ -131,7 +138,7 @@ vendor/bin/pest modules/billing-money/tests/Feature/BillingCore
 XDEBUG_MODE=coverage php -d memory_limit=1G vendor/bin/pest --coverage --min=100 --coverage-clover=coverage.xml
 ```
 
-The coverage gate measures executable lines in `app/` and `modules/*/src`. Billing Core's focused result covers a smaller scope than the release gate.
+The coverage gate measures executable lines in `app/` and `modules/*/src`. Billing Core and its HTTP adapter can be measured in the focused host integration suite. The full release scope remains subject to the 100% gate.
 
 The root declares a `test` script. Run `composer run test` in the configured test environment, plus the relevant module/consumer checks. Use targeted test selection supported by the declared runner when validating a focused change.
 

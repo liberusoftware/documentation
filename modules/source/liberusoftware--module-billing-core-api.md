@@ -4,6 +4,8 @@
 
 HTTP API adapter for the Liberu Billing Core module.
 
+Billing Filament exercises the API through host integration tests in `modules/billing-money/tests/Feature/BillingCore`. These tests use the Composer-installed adapter to create, list, update, and delete each supported record type and verify team scoping. See the [Billing development guide](../../projects/billing/DEVELOPMENT.md#verify-the-changed-behavior).
+
 ## Source locations
 
 | Application | Actual directory | Commit | Reference variant | Test files |
