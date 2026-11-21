@@ -33,6 +33,19 @@ Observed implementation references: [liberusoftware/module-accounting-inventory-
 Presentation/transport detail: [API plan](../../../../projects/accounting/api/inventory-accounting.md) · [Next.js plan and shared adapter home](../../../../projects/accounting/nextjs/inventory-accounting.md). Inertia and independent API clients can share domain/UI contracts while keeping their navigation, session and form lifecycles separate.
 <!-- module-scope:end -->
 
+## Create or edit a bill of materials
+
+This workflow is available in the Accounting ERP Filament app when the ERP Inventory feature is enabled and the BOM migration has run. You need an active team and permission to update its inventory.
+
+1. Open **Assets → Inventory items** and find the finished item. The finished item and its components must already exist as inventory records for the current team.
+2. Choose **Bill of materials** on the finished item.
+3. Add each component and enter its **Quantity per unit**. For example, if one assembly requires four bolts, enter `4` on the bolt row. The component selector shows the item’s SKU and name.
+4. Save. Open **Bill of materials** again to review or revise the saved component list.
+
+Each inventory item has one editable bill of materials. A component can have its own bill of materials. The editor rejects duplicate components, items outside the current team, and combinations that would create a circular reference. Quantities must be positive and may have up to four decimal places.
+
+Saving the bill of materials records what goes into one finished unit. Stock quantities, inventory valuation, and the ledger are affected by their existing inventory operations.
+
 ## What users see
 
 See context, one primary action, result/status, and a clear recovery path. The module should explain its purpose in the page heading, keep related evidence close to the decision, and never require users to understand internal package names.
