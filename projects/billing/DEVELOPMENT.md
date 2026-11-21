@@ -147,9 +147,14 @@ Clover. These numbers cover the listed source paths.
 | --- | ---: |
 | `modules/module-billing-billing-core/src` | 177 / 177 (100%) |
 | `modules/module-billing-core-api/src` | 145 / 145 (100%) |
-| Retained `app/Modules` compatibility code | 598 / 712 (84.0%) |
+| Retained `app/Modules` compatibility code | 712 / 712 (100%) |
+| `modules/billing-usage/src` | 29 / 29 (100%) |
+| `modules/module-billing-usage/src` | 122 / 122 (100%) |
+| `modules/module-billing-usage-api/src` | 53 / 53 (100%) |
+| `modules/module-billing-usage-filament/src` | 40 / 40 (100%) |
+| `modules/module-billing-usage-livewire/src` | 59 / 59 (100%) |
 
-The full GitHub Actions suite passed 1,779 tests and skipped 6. The release
+The previous full GitHub Actions suite passed 1,779 tests and skipped 6. The release
 coverage check measured 45.2% and stayed below the 100% requirement.
 [GitHub Actions coverage run](https://github.com/liberusoftware/project-billing-laravel-filament/actions/runs/44921874142).
 
