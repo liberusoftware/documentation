@@ -4,6 +4,8 @@
 
 Framework-neutral billing accounts, contacts, currencies, tax profiles, sequences, terms, settings, and period primitives.
 
+The Billing Filament application now uses [`modules/module-billing-billing-core`](https://github.com/liberusoftware/project-billing-laravel-filament/tree/aa96378dab533806d1efe5c53227e8ee3a6ab303/modules/module-billing-billing-core) as the sole source for this package. The earlier `modules/billing-core` directory contained the same PHP, migrations, and tests. The table below preserves the historical snapshot. See the [Billing application module layout](../../projects/billing/DEVELOPMENT.md#application-module-layout).
+
 ## Source locations
 
 | Application | Actual directory | Commit | Reference variant | Test files |

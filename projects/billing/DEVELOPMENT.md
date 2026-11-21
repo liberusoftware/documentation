@@ -68,9 +68,70 @@ Choose only the presentation surfaces the application needs. PHP-based API, Fila
 
 If a local module edit changes an installed tracked copy, make the durable change in its canonical package repository and update the application through the lockfile. Unextracted application-owned code is changed with the application. Source compatibility symlinks are alternate paths, not another package to publish.
 
+## Application module layout
+
+Source: [Billing Filament capability split](https://github.com/liberusoftware/project-billing-laravel-filament/commit/aa96378dab533806d1efe5c53227e8ee3a6ab303).
+
+Billing Filament's project-specific code is split by capability. `billing-application`
+holds Laravel composition and shared entry points. Capability-specific Filament
+resources sit with their owners and the host's panel providers discover them.
+
+| Directory under `modules/` | Specification | Application ownership |
+| --- | --- | --- |
+| `billing-application` | [Application](features/application.md) | Laravel composition, shared entry points and cross-capability integration tests |
+| `billing-audit` | [Audit](features/audit.md) | Billing audit log and application adapters |
+| `billing-catalog` | [Catalog](features/catalog.md) | Products, services and package groups |
+| `billing-collections` | [Collections](features/collections.md) | Invoice reminders, late fees, disputes and suspension |
+| `billing-communications` | [Communications](features/communications.md) | VoIP billing, call rates, email and SMS |
+| `billing-customer-portal` | [Customer Portal](features/customer-portal.md) | Client records, portal services and storefront |
+| `billing-domains` | [Domains](features/domains.md) | Availability, renewals, registrars and DNS |
+| `billing-files` | [Files and Media](features/files-media.md) | Application files, folders and shares |
+| `billing-filament` | Filament composition | Panel registration, discovery and shared UI |
+| `billing-hosting` | [Hosting](features/hosting.md) | Hosting fulfillment and control-panel integration |
+| `billing-identity` | [Identity and Teams](features/identity-core.md) | Billing users, teams, roles and account access |
+| `billing-integrations` | [Integrations](features/integrations.md) | External connections, Git, webhooks and domain event transport |
+| `billing-invoicing` | [Invoicing](features/invoicing.md) | Invoices, credits, recurring invoice generation and templates |
+| `billing-isp` | [ISP](features/isp.md) | Access services, RADIUS and IP address management |
+| `billing-licensing` | Licensing | License validation, release delivery and the licensing SDK |
+| `billing-money` | [Billing Core](features/billing-core.md) | Application currency and tax workflows and Billing Core integration tests |
+| `billing-orders` | [Orders](features/orders.md) | Orders, quotes and order forms |
+| `billing-payments` | [Payments](features/payments.md) | Gateways, checkout, refunds and payment reconciliation |
+| `billing-pricing` | [Pricing](features/pricing.md) | Price and discount calculation |
+| `billing-projects` | Projects | Projects, tasks, time tracking and project billing |
+| `billing-provisioning` | [Provisioning](features/provisioning.md) | Service provisioning and automation |
+| `billing-referrals` | [Referrals](features/referrals.md) | Affiliate accounts, transactions and referral reporting |
+| `billing-reporting` | [Reporting](features/reporting.md) | Reports, generation and export |
+| `billing-search` | [Search](features/search.md) | Saved searches and project search integration |
+| `billing-settings` | [Settings](features/settings.md) | Application site settings and administration |
+| `billing-subscriptions` | [Subscriptions](features/subscriptions.md) | Subscription lifecycle and change processing |
+| `billing-support` | Support | Tickets, knowledge base, canned replies and inbound email |
+| `billing-usage` | [Usage](features/usage.md) | Usage records and import |
+
+Each capability contains its source and, where applicable, its migrations,
+factories, seeders, views, and tests. Composer preserves the existing `App\` and
+`Database\` class identities. Existing migration filenames, routes and command
+names carry forward. The application extension loader remains at `app/Modules/`.
+
+The [module architecture specification](../../architecture/MODULES.md) defines a
+module as an independently released Composer package with a manifest, declared
+dependencies and a standalone suite. The `billing-*` areas above are host-owned
+implementations and integration code that still use Billing application classes.
+They follow the capability split. Published packages such as
+`liberusoftware/module-billing-billing-core` keep their independent lifecycle and
+public contracts. Licensing, projects, and ticket support are Billing Filament
+capabilities with application-owned persistence and UI.
+
 ## Verify the changed behavior
 
-The root [phpunit.xml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/phpunit.xml) declares test suites: `Unit`, `Feature`, `Architecture`. Read its bootstrap and environment configuration before running database tests.
+The root `phpunit.xml` declares the `Unit`, `Feature`, `Architecture`, and `Modules` suites. The first three use the host-owned tests under `modules/billing-*/tests`. The `Modules` suite exercises reusable package tests. Read the root bootstrap and environment configuration before running database tests.
+
+```bash
+vendor/bin/pest modules/billing-application/tests/Architecture
+vendor/bin/pest modules/billing-money/tests/Feature/BillingCore
+XDEBUG_MODE=coverage php -d memory_limit=1G vendor/bin/pest --coverage --min=100 --coverage-clover=coverage.xml
+```
+
+The coverage gate measures executable lines in `app/` and `modules/*/src`. Billing Core's focused result covers a smaller scope than the release gate.
 
 The root declares a `test` script. Run `composer run test` in the configured test environment, plus the relevant module/consumer checks. Use targeted test selection supported by the declared runner when validating a focused change.
 

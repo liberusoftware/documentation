@@ -4,6 +4,8 @@
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#billing-core). Observed identity: [`liberusoftware/module-billing-billing-core`](../../../modules/source/liberusoftware--module-billing-billing-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
+The Billing Filament application loads this package from `modules/module-billing-billing-core`. The manifest, provider, and migrations resolve from that single Composer installation. Host integration tests in `modules/billing-money/tests/Feature/BillingCore` exercise it through the Billing Core API. See the [project development guide](../DEVELOPMENT.md#application-module-layout).
+
 ## Package contract
 
 **Design package identifier:** `module-billing-billing-core`

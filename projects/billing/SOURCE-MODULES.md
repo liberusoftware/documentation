@@ -8,6 +8,8 @@ Found **146 immediate directories under `modules/`**. This count does not measur
 
 Of these, **0 are symlink aliases**, not additional package implementations. Their target directories are recorded below and are counted once in shared-package comparisons.
 
+The [application module layout](DEVELOPMENT.md#application-module-layout) describes the later consolidation. The commit-pinned inventory below records the earlier snapshot, including the former duplicate Billing Core directory.
+
 ## Other source locations
 
 Application-owned implementation can precede package extraction. These tracked locations must also be reviewed before making availability or ownership claims.

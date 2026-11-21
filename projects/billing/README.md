@@ -4,6 +4,10 @@
 
 **Scope:** Billing modules
 
+## Laravel Filament application
+
+Billing Filament groups host code, database files, views, and tests by capability under `modules/billing-*`. The shared Laravel composition lives in `billing-application`. Separately released billing packages load through Composer and the module registry. See the [development guide](DEVELOPMENT.md#application-module-layout) for paths and verification commands.
+
 ## Module indexes
 
 - [Core domain modules](core/README.md) — 82 specification documents

@@ -15,6 +15,8 @@
 
 ## Module plan
 
+See the [Billing Filament capability layout](DEVELOPMENT.md#application-module-layout) for current ownership and how the host composes the released modules.
+
 | Module          | Responsibilities                                                                                  |
 | --------------- | ------------------------------------------------------------------------------------------------- |
 | Billing Core    | Accounts, contacts, currencies, tax profiles, sequences, terms, and billing settings              |
