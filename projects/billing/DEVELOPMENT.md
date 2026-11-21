@@ -125,7 +125,7 @@ capabilities with application-owned persistence and UI.
 
 The Composer package `liberusoftware/module-manager` loads the registered Billing
 packages. Its `php artisan module:list` and `module:validate` commands inspect
-that registry. The separate `php artisan module …` commands still use
+that registry. Billing uses `liberusoftware/module-manager-filament` 1.12 or later for the management UI and its host-compatible tests. The separate `php artisan module …` commands still use
 `app/Modules/` to manage the existing extension format, including `BlogModule`.
 
 ## Verify the changed behavior
@@ -139,6 +139,16 @@ XDEBUG_MODE=coverage php -d memory_limit=1G vendor/bin/pest --coverage --min=100
 ```
 
 The coverage gate measures executable lines in `app/` and `modules/*/src`. Billing Core and its HTTP adapter can be measured in the focused host integration suite. The full release scope remains subject to the 100% gate.
+
+The capability split's focused Pest runs measured the following with PCOV and
+Clover. These numbers cover the listed source paths.
+
+| Scope | Executed lines |
+| --- | ---: |
+| `modules/module-billing-billing-core/src` | 177 / 177 (100%) |
+| `modules/module-billing-core-api/src` | 145 / 145 (100%) |
+| Retained `app/Modules` compatibility code | 598 / 712 (84.0%) |
+
 
 The root declares a `test` script. Run `composer run test` in the configured test environment, plus the relevant module/consumer checks. Use targeted test selection supported by the declared runner when validating a focused change.
 
