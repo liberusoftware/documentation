@@ -149,6 +149,11 @@ Clover. These numbers cover the listed source paths.
 | `modules/module-billing-core-api/src` | 145 / 145 (100%) |
 | Retained `app/Modules` compatibility code | 598 / 712 (84.0%) |
 
+The full GitHub Actions suite passed 1,779 tests and skipped 6. The release
+coverage check measured 45.2% and stayed below the 100% requirement.
+[GitHub Actions coverage run](https://github.com/liberusoftware/project-billing-laravel-filament/actions/runs/44921874142).
+
+
 
 The root declares a `test` script. Run `composer run test` in the configured test environment, plus the relevant module/consumer checks. Use targeted test selection supported by the declared runner when validating a focused change.
 
