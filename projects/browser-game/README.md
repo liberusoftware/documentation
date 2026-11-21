@@ -19,6 +19,7 @@
 
 ## Source and additional presentation options
 
+- [Shipped gameplay module map](PLAY-MODULES.md) — ownership, adapters, compatibility, and test commands.
 - [Observed source modules](SOURCE-MODULES.md) — exact manifest identities and commit-pinned source links.
 - [Next.js module plan](nextjs/README.md) — API-consuming React adapters and shared component boundaries.
 

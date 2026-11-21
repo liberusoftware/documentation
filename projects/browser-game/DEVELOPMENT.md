@@ -2,6 +2,8 @@
 
 **Source snapshot:** `project-browser-game-laravel-filament` at `790fdffebd3a19bf914aea8a4ef049f87f52c62d`. This guide reads the root manifests and setup paths; it does not claim a completed local installation or passing application tests. Start with the [project documentation](README.md) and [source mapping](SOURCE-MAPPING.md).
 
+For the gameplay extraction and its verification commands, see the [shipped gameplay module map](PLAY-MODULES.md).
+
 ## Choose the source and environment
 
 The requested clone is available at `/home/liberu/projects/project-browser-game-laravel-filament`. It is a shallow application checkout; deepen history when a migration or implementation review needs earlier commits. Read its README and contribution instructions before changing it.
