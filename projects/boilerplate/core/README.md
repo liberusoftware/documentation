@@ -1,7 +1,7 @@
 # Boilerplate Core Modules
 
 <!-- catalogue-status:start -->
-This index preserves **55 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **68 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Boilerplate domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
@@ -63,3 +63,16 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Boilerpl
 | [Theme Support Core Module](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
 | [Two-Factor Authentication domain packages](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
 | [Webhooks domain packages](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Integrations Google Core Module](integrations-google.md) | [liberusoftware/integrations-google](../../../modules/source/liberusoftware--integrations-google.md) | [feature](../features/integrations-google.md) |
+| [Integrations IMAP/POP3 Core Module](integrations-imap-pop3.md) | [liberusoftware/integrations-imap-pop3](../../../modules/source/liberusoftware--integrations-imap-pop3.md) | [feature](../features/integrations-imap-pop3.md) |
+| [Integrations LinkedIn Core Module](integrations-linkedin.md) | [liberusoftware/integrations-linkedin](../../../modules/source/liberusoftware--integrations-linkedin.md) | [feature](../features/integrations-linkedin.md) |
+| [Integrations MailChimp Core Module](integrations-mailchimp.md) | [liberusoftware/integrations-mailchimp](../../../modules/source/liberusoftware--integrations-mailchimp.md) | [feature](../features/integrations-mailchimp.md) |
+| [Integrations Meta Core Module](integrations-meta.md) | [liberusoftware/integrations-meta](../../../modules/source/liberusoftware--integrations-meta.md) | [feature](../features/integrations-meta.md) |
+| [Integrations Microsoft Core Module](integrations-microsoft.md) | [liberusoftware/integrations-microsoft](../../../modules/source/liberusoftware--integrations-microsoft.md) | [feature](../features/integrations-microsoft.md) |
+| [Integrations SSO Core Module](integrations-sso.md) | [liberusoftware/integrations-sso](../../../modules/source/liberusoftware--integrations-sso.md) | [feature](../features/integrations-sso.md) |
+| [Integrations Stripe Core Module](integrations-stripe.md) | [liberusoftware/integrations-stripe](../../../modules/source/liberusoftware--integrations-stripe.md) | [feature](../features/integrations-stripe.md) |
+| [Integrations Twilio Core Module](integrations-twilio.md) | [liberusoftware/integrations-twilio](../../../modules/source/liberusoftware--integrations-twilio.md) | [feature](../features/integrations-twilio.md) |
+| [Integrations Twitter Core Module](integrations-twitter.md) | [liberusoftware/integrations-twitter](../../../modules/source/liberusoftware--integrations-twitter.md) | [feature](../features/integrations-twitter.md) |
+| [Integrations Zernio Core Module](integrations-zernio.md) | [liberusoftware/integrations-zernio](../../../modules/source/liberusoftware--integrations-zernio.md) | [feature](../features/integrations-zernio.md) |
+| [Tenancy Core Module](tenancy.md) | [liberusoftware/tenancy](../../../modules/source/liberusoftware--tenancy.md) | [feature](../features/tenancy.md) |
+| [Users and Roles Core Module](users-roles.md) | [liberusoftware/users-roles](../../../modules/source/liberusoftware--users-roles.md) | [feature](../features/users-roles.md) |

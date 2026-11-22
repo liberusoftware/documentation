@@ -1,7 +1,7 @@
 # Boilerplate Feature Specifications
 
 <!-- catalogue-status:start -->
-This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **56 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
@@ -51,3 +51,16 @@ Each file defines one independent module. Modules remain independently installab
 | [Theme Support](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
 | [Two Factor Authentication](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
 | [Webhooks](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Integrations Google](integrations-google.md) | [liberusoftware/integrations-google](../../../modules/source/liberusoftware--integrations-google.md) | [core](../core/integrations-google.md) |
+| [Integrations IMAP/POP3](integrations-imap-pop3.md) | [liberusoftware/integrations-imap-pop3](../../../modules/source/liberusoftware--integrations-imap-pop3.md) | [core](../core/integrations-imap-pop3.md) |
+| [Integrations LinkedIn](integrations-linkedin.md) | [liberusoftware/integrations-linkedin](../../../modules/source/liberusoftware--integrations-linkedin.md) | [core](../core/integrations-linkedin.md) |
+| [Integrations MailChimp](integrations-mailchimp.md) | [liberusoftware/integrations-mailchimp](../../../modules/source/liberusoftware--integrations-mailchimp.md) | [core](../core/integrations-mailchimp.md) |
+| [Integrations Meta](integrations-meta.md) | [liberusoftware/integrations-meta](../../../modules/source/liberusoftware--integrations-meta.md) | [core](../core/integrations-meta.md) |
+| [Integrations Microsoft](integrations-microsoft.md) | [liberusoftware/integrations-microsoft](../../../modules/source/liberusoftware--integrations-microsoft.md) | [core](../core/integrations-microsoft.md) |
+| [Integrations SSO](integrations-sso.md) | [liberusoftware/integrations-sso](../../../modules/source/liberusoftware--integrations-sso.md) | [core](../core/integrations-sso.md) |
+| [Integrations Stripe](integrations-stripe.md) | [liberusoftware/integrations-stripe](../../../modules/source/liberusoftware--integrations-stripe.md) | [core](../core/integrations-stripe.md) |
+| [Integrations Twilio](integrations-twilio.md) | [liberusoftware/integrations-twilio](../../../modules/source/liberusoftware--integrations-twilio.md) | [core](../core/integrations-twilio.md) |
+| [Integrations Twitter](integrations-twitter.md) | [liberusoftware/integrations-twitter](../../../modules/source/liberusoftware--integrations-twitter.md) | [core](../core/integrations-twitter.md) |
+| [Integrations Zernio](integrations-zernio.md) | [liberusoftware/integrations-zernio](../../../modules/source/liberusoftware--integrations-zernio.md) | [core](../core/integrations-zernio.md) |
+| [Tenancy](tenancy.md) | [liberusoftware/tenancy](../../../modules/source/liberusoftware--tenancy.md) | [core](../core/tenancy.md) |
+| [Users and Roles](users-roles.md) | [liberusoftware/users-roles](../../../modules/source/liberusoftware--users-roles.md) | [core](../core/users-roles.md) |

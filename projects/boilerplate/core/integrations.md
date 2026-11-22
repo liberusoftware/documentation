@@ -50,3 +50,19 @@ API, Filament, Livewire, React, Vue, and Nuxt consumers use only this package's 
 
 - [HTTP API contract](../api/integrations.md) · [Filament 5](../filament/integrations.md) · [Livewire 4](../livewire/integrations.md) · [React + Inertia](../react/integrations.md) · [Vue + Inertia](../vue/integrations.md) · [Nuxt 4](../nuxt/integrations.md) · [Next.js](../nextjs/integrations.md) · [React Native](../react-native/integrations.md) · [Flutter & Dart](../flutter/integrations.md)
 <!-- core-implementation-plan:end -->
+
+## Contracts and modular provider adapters
+
+`liberusoftware/integrations` defines provider-neutral contracts and registries (`IntegrationAdapter`, `OAuthIntegrationAdapter`, `PaymentProviderAdapter`, `CalendarService`, `CredentialVault`, `IntegrationRegistry`, `SsrfGuard`), while provider-specific implementations live in independently installable adapter modules:
+
+- [`liberusoftware/integrations-google`](integrations-google.md) — Google Ads, Google Calendar, Gmail, YouTube
+- [`liberusoftware/integrations-imap-pop3`](integrations-imap-pop3.md) — IMAP and POP3 inbound mail
+- [`liberusoftware/integrations-linkedin`](integrations-linkedin.md) — LinkedIn organic and Ads
+- [`liberusoftware/integrations-mailchimp`](integrations-mailchimp.md) — MailChimp marketing lists and campaigns
+- [`liberusoftware/integrations-meta`](integrations-meta.md) — Facebook, Facebook Ads, Messenger, Instagram, WhatsApp Business
+- [`liberusoftware/integrations-microsoft`](integrations-microsoft.md) — Outlook Mail and Outlook Calendar
+- [`liberusoftware/integrations-sso`](integrations-sso.md) — OIDC and SAML 2.0 SSO with JIT provisioning and enforcement
+- [`liberusoftware/integrations-stripe`](integrations-stripe.md) — Stripe billing and subscription integration
+- [`liberusoftware/integrations-twilio`](integrations-twilio.md) — Twilio voice, SMS, OAuth, and call settings
+- [`liberusoftware/integrations-twitter`](integrations-twitter.md) — Twitter / X publishing
+- [`liberusoftware/integrations-zernio`](integrations-zernio.md) — Zernio publishing, advertising, webhooks, and tenant provisioning
