@@ -47,6 +47,8 @@
 - Store run timelines, prompt/model versions, provider request identifiers, approvals, errors, tokens, duration, and estimated cost.
 - Provide test mode, fixtures, deterministic stubs, replay with redaction, and side-effect-free simulation.
 - Expose APIs, events, Filament operations, and embeddable approval/run-status Livewire components.
+- Keep host `app/` code limited to application composition (`ModulePlugins`, `User`, `AdminPanelProvider`, `AppPanelProvider`, `ThemeColors`); workspace onboarding (`AccountSetupWizard`) lives in `liberusoftware/automation-automation-core-filament` and persists onboarding state via `Liberu\Foundation\Organizations\Models\TeamOnboarding` (`liberusoftware/organizations-teams`) and encrypted provider credentials via `Liberu\Foundation\Integrations\Models\IntegrationConnection` (`liberusoftware/integrations`).
+- Do not retain `Legacy` directories or namespaces in modules or the host application.
 
 ## Integrations
 
