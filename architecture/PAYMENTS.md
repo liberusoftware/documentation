@@ -75,6 +75,7 @@ Every merchant payment adapter implements the core gateway contract and the opti
 | `DisputeAndChargebackHandlerContract` | Normalizes provider dispute/chargeback notifications, evidence deadlines, submission payloads, and final win/loss resolution states | `fetchDispute(string $providerDisputeId, MerchantAccountContextDto $account): PaymentDisputeDto`<br>`submitEvidence(SubmitDisputeEvidenceCommand $command): PaymentDisputeDto` |
 | `PayoutAndSettlementReconcilerContract` | Fetches provider balance transactions, settlement batches, merchant fees, FX conversions, and net payout transfers for automated reconciliation against local payment records | `listSettlementTransactions(SettlementQueryDto $query): iterable` |
 | `POSHardwareTerminalContract` | Optional contract implemented by omnichannel providers (e.g., Stripe Terminal, Square Terminal, Adyen Terminal API) for in-person card-present reader handshakes | `createTerminalPayment(CreateTerminalPaymentCommand $command): TerminalPaymentResultDto` |
+| `OutboundPaymentAdapterContract` | Optional contract extending `PaymentGatewayAdapterContract` for provider-neutral outbound single and batch disbursements (e.g., supplier bill payments via Wise or Revolut) orchestrated by `PaymentOrchestrator::sendOutboundPayment()` and `sendOutboundBatch()` | `sendOutboundPayment(MerchantAccountContextDto $account, array $payment): array`<br>`sendOutboundBatch(MerchantAccountContextDto $account, string $title, array $payments, ?string $scheduleFor = null): array` |
 
 ## 3. Canonical payment state machine and money rules
 

@@ -4,17 +4,17 @@ Observed repository: [project-accounting-erp-laravel-filament](https://github.co
 
 This is a manifest inventory, not a claim that a module is complete, tested, independently released, or available from a registry. Planned feature specifications may use different names. Use the exact manifest identity for dependency resolution.
 
-Found **466 immediate directories under `modules/`**. This count does not measure capabilities implemented elsewhere in the application. Existing documented modules are preserved independently of their current source location. See [inventory method and shared identities](../../architecture/SOURCE-INVENTORY.md).
+Found **481 immediate directories under `modules/`**. This count does not measure capabilities implemented elsewhere in the application. Existing documented modules are preserved independently of their current source location. See [inventory method and shared identities](../../architecture/SOURCE-INVENTORY.md).
 
 Of these, **0 are symlink aliases**, not additional package implementations. Their target directories are recorded below and are counted once in shared-package comparisons.
 
 ## Other source locations
 
-Application-owned implementation can precede package extraction. These tracked locations must also be reviewed before making availability or ownership claims.
+Application-owned implementation can precede package extraction. All domain logic has been extracted out of `app/` into dedicated modules under `modules/`; `app/` retains only host Laravel/Filament bootstrap wiring (12 files: `Handler`, `Kernel`, `ModulePlugins`, `ThemeColors`, and service/panel providers).
 
 | Source root | Tracked files |
 | --- | ---: |
-| [app/](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/39a49babafc0b8caf12c018abdd765f215ecf207/app) | 485 |
+| [app/](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/main/app) | 12 |
 | [routes/](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/39a49babafc0b8caf12c018abdd765f215ecf207/routes) | 6 |
 | [resources/](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/39a49babafc0b8caf12c018abdd765f215ecf207/resources) | 107 |
 | [database/](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/39a49babafc0b8caf12c018abdd765f215ecf207/database) | 166 |
@@ -492,3 +492,17 @@ Other manifest paths: `app/Modules/BlogModule/module.json`, `app/Modules/FixedAs
 | [theme-support-livewire](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/39a49babafc0b8caf12c018abdd765f215ecf207/modules/theme-support-livewire) | liberusoftware/theme-support-livewire | — | — | Livewire theme-switching presentation adapter for Liberu Theme Support. |
 | [two-factor-authentication](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/39a49babafc0b8caf12c018abdd765f215ecf207/modules/two-factor-authentication) | liberusoftware/two-factor-authentication | — | — | TOTP enforcement policy and one-time recovery-code primitives. |
 | [webhooks](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/39a49babafc0b8caf12c018abdd765f215ecf207/modules/webhooks) | liberusoftware/webhooks | — | — | Signed filtered webhook endpoints, durable delivery attempts, retry, replay, and secret rotation. |
+| [accounting-erp-filament](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/main/modules/accounting-erp-filament) | liberusoftware/module-accounting-erp-filament | — | — | Filament 5 presentation adapter for integrated ERP resources, portals, and Bills of Materials. |
+| [accounting-erp-http](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/tree/main/modules/accounting-erp-http) | liberusoftware/module-accounting-erp-http | — | — | HTTP controllers, middleware, and web/API routes for integrated ERP runtime. |
+| [passkeys](https://github.com/liberusoftware/passkeys) | liberusoftware/passkeys | — | — | WebAuthn passkey authentication foundation module. |
+| [payment-adyen](https://github.com/liberusoftware/payment-adyen) | liberusoftware/payment-adyen | — | — | Adyen merchant payment adapter implementing `payment-contracts`. |
+| [payment-contracts](https://github.com/liberusoftware/payment-contracts) | liberusoftware/payment-contracts | — | — | Provider-neutral merchant and outbound payment gateway contracts, DTOs, and lifecycle state machine. |
+| [payment-core](https://github.com/liberusoftware/payment-core) | liberusoftware/payment-core | — | — | Provider-neutral merchant and outbound payment orchestration, gateway registry, idempotency, webhook inbox, and reconciliation core. |
+| [payment-gocardless](https://github.com/liberusoftware/payment-gocardless) | liberusoftware/payment-gocardless | — | — | GoCardless Direct Debit and Open Banking payment adapter implementing `payment-contracts`. |
+| [payment-mollie](https://github.com/liberusoftware/payment-mollie) | liberusoftware/payment-mollie | — | — | Mollie merchant payment adapter implementing `payment-contracts`. |
+| [payment-paddle](https://github.com/liberusoftware/payment-paddle) | liberusoftware/payment-paddle | — | — | Paddle Billing merchant-of-record payment adapter implementing `payment-contracts`. |
+| [payment-paypal](https://github.com/liberusoftware/payment-paypal) | liberusoftware/payment-paypal | — | — | PayPal Commerce merchant payment adapter implementing `payment-contracts`. |
+| [payment-square](https://github.com/liberusoftware/payment-square) | liberusoftware/payment-square | — | — | Square merchant and POS payment adapter implementing `payment-contracts`. |
+| [payment-stripe](https://github.com/liberusoftware/payment-stripe) | liberusoftware/payment-stripe | — | — | Stripe merchant payment adapter implementing `payment-contracts`. |
+| [tenancy](https://github.com/liberusoftware/module-tenancy) | liberusoftware/tenancy | — | — | Tenant context, scoping, and queue tenant-awareness foundation module. |
+| [users-roles](https://github.com/liberusoftware/module-users-roles) | liberusoftware/users-roles | — | — | User and role assignment foundation module. |

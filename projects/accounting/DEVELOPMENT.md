@@ -71,7 +71,7 @@ If a local module edit changes an installed tracked copy, make the durable chang
 
 ## Verify the changed behavior
 
-The root [phpunit.xml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/phpunit.xml) declares test suites: `Unit`, `Feature`, `Architecture`. Read its bootstrap and environment configuration before running database tests.
+The root [phpunit.xml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/main/phpunit.xml) declares test suites: `Unit`, `Feature`, `Architecture`, `Modules` (`modules/*/tests`), with coverage source scope covering `app/` and `modules/*/src` enforced at 100% (`php artisan test --coverage --coverage-clover=coverage.xml --min=100`). Read its bootstrap and environment configuration before running database tests.
 
 The root declares a `test` script. Run `composer run test` in the configured test environment, plus the relevant module/consumer checks. Use targeted test selection supported by the declared runner when validating a focused change.
 
