@@ -52,6 +52,10 @@
 - Model dependencies so suspension or cancellation cannot orphan related services or data.
 - Provide bulk operations with previews, limits, approvals, progress, and recoverable failures.
 - Expose versioned APIs/events for accounts, catalog, orders, subscriptions, invoices, payments, usage, domains, and services.
+- Keep `app/` free of domain logic: host application capabilities are organized under `modules/billing-*` (with `billing-application` owning Laravel composition, `billing-filament` owning panel providers and `ModulePlugins` across `admin`, `app`, and `client` panels, `billing-extensions` owning host extension loading, and capability directories for licensing, projects, support, files, referrals, search, and billing adapters), while independently installable domain and presentation packages live in `modules/module-billing-*`, `modules/payment-*`, `modules/affiliate-*`, and boilerplate foundation modules.
+- Exclude module packages from Laravel auto-discovery via `extra.laravel.dont-discover` so `liberusoftware/module-manager` remains the single authority for module booting and enablement.
+- Do not retain `Legacy` directories or namespaces in modules or the host application.
+- Maintain 100% test coverage across `modules/*` and `app/`.
 
 ## Integrations
 
